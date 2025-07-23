@@ -1,0 +1,51 @@
+{
+    "amazonGiftCard": {
+        "banner": {
+            "title": "Amazon Gift Card Surveys",
+            "subtitle": "Love shopping on Amazon? Make your wishlist a reality by earning free gift cards through surveys.",
+            "description": "Share your opinions and get rewarded! Profitpiller offers exciting online surveys that earn you Amazon gift cards. Start now and spend on anything you love.",
+            "signUpButton": "Sign Up Now",
+            "signUpNote": "It’s never been easier to earn Amazon gift cards. Begin your first survey today!"
+        },
+        "section1": {
+            "subtitle": "Surveys with Instant Amazon Rewards",
+            "title": "Claim Amazon Gift Cards by Taking Surveys",
+            "description1": "Redeem your Profitpiller points for Amazon rewards quickly and easily.",
+            "description2": "Amazon gift cards are versatile and never expire. Use them to shop for anything — from gadgets and books to groceries and gifts — directly through your Amazon account.",
+            "description3": "Take a quick $5 Amazon gift card survey or stack up multiple surveys to unlock higher value cards. Spend your earnings on what matters most to you.",
+            "description4": "No long waits, no minimum payout. Most users see their first Amazon reward within 17 minutes of joining.",
+            "strongConclusion": "Join Profitpiller and start earning your Amazon gift card today."
+        },
+        "features": {
+            "subtitle": "Earn While You Share Opinions",
+            "title": "Get Amazon Gift Cards from Surveys",
+            "description": "Your feedback helps shape products—get rewarded with Amazon gift cards for your time.",
+            "step1": {
+                "label": "Step .1",
+                "title": "Create a Profitpiller account to start earning Amazon gift cards for your opinions."
+            },
+            "step2": {
+                "label": "Step .2",
+                "title": "Choose and complete the surveys that interest you the most.",
+                "description": "Each completed survey earns you points that you can redeem for Amazon gift cards and more."
+            },
+            "step3": {
+                "label": "Step .3",
+                "title": "Redeem your points for Amazon gift cards and shop your favorites.",
+                "description": "Take as many surveys as you want. You’re always in control of your rewards. Cash out instantly or save for larger gift card values — the choice is yours."
+            }
+        },
+        "rewardsGrid": {
+            "visaCard": "Get Visa Gift Cards",
+            "paypalRewards": "Redeem for PayPal Rewards"
+        },
+        "support": {
+            "title": "Ready to earn your first Amazon gift card?",
+            "description": "Join Profitpiller now and start completing surveys. Our average user receives their first Amazon reward in under 20 minutes. No long waits — just easy, rewarding surveys!",
+            "joinNow": "Join Now"
+        }
+    },
+    "common": {
+        "learnMore": "Learn More"
+    }
+}

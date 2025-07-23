@@ -1,0 +1,44 @@
+<nav mat-tab-nav-bar [tabPanel]="tabPanel" mat-stretch-tabs="false" mat-align-tabs="center" class="nav-tabs">
+    @for (link of links; track link) {
+    <a mat-tab-link (click)="activeLink = link;changeSurveyType(link)" [active]="activeLink == link"> {{link}} </a> }
+</nav>
+
+<mat-tab-nav-panel #tabPanel>
+    <div class="card-container">
+        @for(item of filteredSurveys; track item.name) {
+        <mat-card class="custom-card" (click)="attemptSurvey(item)">
+            <div class="top-bar">
+                <div class="left">
+                    <mat-icon class="clock-icon">schedule</mat-icon>
+                    <span>{{ item.loi }} min</span>
+                </div>
+                <div class="right label">
+                    {{ item.name }}
+                </div>
+            </div>
+            <div class="points-rating-vertical centered">
+                <div class="points">
+                    {{ item.points }} <span class="points-label">Points</span>
+                </div>
+                <div class="rating">
+                    <mat-icon *ngFor="let star of getStars(item.rating)" class="star">
+                        {{ star === 'filled' ? 'star' : star === 'half' ? 'star_half' : 'star_border' }}
+                    </mat-icon>
+                    <span class="review-count">({{ item.ratingCount }})</span>
+                </div>
+            </div>
+
+        </mat-card>
+        }
+
+        <div class="no-survey-container mat-elevation-z1" *ngIf="isApiLoaded && (!surveys || surveys.length<1)">
+            <div class="no-survey-icon">
+                <mat-icon class="clock-icon" color="warn">access_time</mat-icon>
+            </div>
+            <h2 class="title">No surveys at the moment</h2>
+            <p class="subtitle">Unfortunately currently there are no surveys</p>
+            <p class="highlight-text">Please come back later!</p>
+        </div>
+    </div>
+
+</mat-tab-nav-panel>

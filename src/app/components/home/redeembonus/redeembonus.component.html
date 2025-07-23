@@ -1,0 +1,28 @@
+<mat-card class="card-bottom cardWithShadow overflow-hidden" routerLink="/app/refer">
+    <div class="bg-primary p-x-24 p-y-10 text-white">
+        <mat-card-title class="d-flex align-items-center gap-10">
+            <a mat-icon-button class="text-white d-flex justify-content-center">
+                <i-tabler name="chevron-left" class="icon-18 d-flex">
+                </i-tabler>
+            </a> {{ 'redeem.heading.title' | translate }}</mat-card-title>
+    </div>
+</mat-card>
+
+<mat-card>
+    <div class="pad-10">
+        <p>{{ 'redeem.heading.subtitle' | translate }}</p>
+        <div class="row m-t-24">
+            <div class="col-6">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>{{ 'redeem.bonus_code' | translate }}</mat-label>
+                    <input matInput placeholder="{{ 'redeem.enter_code' | translate }}" [(ngModel)]="bonusCode">
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <button mat-flat-button color="primary" class="w-100" (click)="redeemBonus()">
+                    {{ 'redeem.redeem_code' | translate }}
+                </button>
+            </div>
+        </div>
+    </div>
+</mat-card>

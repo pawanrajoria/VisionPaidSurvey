@@ -1,0 +1,33 @@
+<div class="survey-modal">
+     <button mat-icon-button class="close" (click)="closeSurvey()" aria-label="Close">
+        <mat-icon>close</mat-icon>
+      </button>
+    <mat-card appearance="outlined" class="custom-card text-center">
+        <mat-card-content>
+            <div class="icon">
+                <img src="assets/images/icon/party.png">
+            </div>
+            <h2>You've qualified for this survey!</h2>
+            <p>
+                click below to get started and earn your rewards.
+            </p>
+            <div class="clock">
+                Survey will take around 20 minutes</div>
+
+            <button class="custom-btn" mat-flat-button color="primary" (click)="participateSurvey()">Participate</button>
+            <div class="bg">
+
+                <div class="card-box">
+                    <div class="icon">
+                        <!-- <img src="assets/images/icon/done.png"> -->
+                        <mat-icon>wb_sunny</mat-icon>
+                    </div>
+                    <div class="des text-left">
+                        <h4>Survey Success Tip</h4>
+                        <p>If you take surveys on other sites always come here first to aviod getting many declines.</p>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

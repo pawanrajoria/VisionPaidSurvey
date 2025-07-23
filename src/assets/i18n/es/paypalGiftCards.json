@@ -1,0 +1,45 @@
+{
+  "paypalGiftCards": {
+    "banner": {
+      "title": "Gana Tarjetas de Regalo de PayPal con Encuestas Rápidas",
+      "subtitle": "¿Te encanta usar PayPal para tus compras en línea? Empieza a ahorrar más en cada compra.",
+      "description": "¡Únete a Profitpiller y obtén recompensas por tus opiniones! Realiza encuestas rápidas y atractivas sobre temas cotidianos (desde marcas que conoces hasta productos que te encantan) y gana tarjetas de regalo de PayPal a cambio. Es simple, seguro y 100% gratis.",
+      "startButton": "Comenzar Ahora",
+      "startNote": "Completa tu primera encuesta y comienza a ganar al instante."
+    },
+    "section1": {
+      "subtitle": "Recompensas Instantáneas, Valor Real",
+      "title": "Recibe Pagos a Través de PayPal — Solo por Compartir tus Pensamientos",
+      "description1": "Ya sea que estés comprando en línea o apoyando a vendedores locales, Profitpiller te ayuda a ganar dinero real a través de tarjetas de regalo de PayPal, más rápido de lo que esperas.",
+      "description2": "Canjea recompensas fácilmente, sin caducidad ni requisito de retiro mínimo. Ahorra para grandes descuentos o usa tus tarjetas de regalo para pequeñas compras, la decisión es completamente tuya.",
+      "description3": "Desde ropa y productos electrónicos hasta comida para llevar y servicios, Profitpiller te permite usar tus recompensas de PayPal como quieras.",
+      "description4": "Regístrate y cobra en tan solo 17 minutos. Comienza a ganar recompensas de PayPal desde tu primera encuesta, solo con Profitpiller."
+    },
+    "features": {
+      "subtitle": "Haz que Cada Minuto Cuente",
+      "title": "Completa Encuestas, Gana Recompensas de PayPal al Instante",
+      "description": "Profitpiller facilita la obtención de recompensas digitales mientras ayuda a las principales marcas a mejorar. Tu opinión importa y paga. Participa en encuestas en cualquier momento desde casa, tu teléfono o dondequiera que estés.",
+      "step1": {
+        "label": "Paso 1",
+        "title": "Crea tu cuenta gratuita de Profitpiller y elige una encuesta que se adapte a ti."
+      },
+      "step2": {
+        "label": "Paso 2",
+        "title": "Gana puntos por cada encuesta completada y canjéalos en cualquier momento.",
+        "description": "Canjea tus puntos por tarjetas de regalo de PayPal al instante. ¿Prefieres recompensas de Amazon o Visa? También las tenemos. Con Profitpiller, tú eliges cómo ser recompensado."
+      }
+    },
+    "rewardsGrid": {
+      "paypalSurveys": "Encuestas para Tarjetas de Regalo de PayPal",
+      "amazonSurveys": "Encuestas para Tarjetas de Regalo de Amazon"
+    },
+    "support": {
+      "title": "Comienza a Ganar Recompensas de PayPal Hoy con Profitpiller",
+      "description": "Regístrate ahora y convierte tu tiempo libre en recompensas en efectivo reales. Es rápido, gratuito y fácil de empezar. Comparte tus pensamientos, completa encuestas y recibe pagos a través de PayPal, solo en Profitpiller.",
+      "joinNow": "Únete Ahora"
+    }
+  },
+  "common": {
+    "arrowForward": "arrow_forward"
+  }
+}

@@ -1,0 +1,180 @@
+#Refer-card {
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #fff;
+    .illustration {
+        img {
+            max-width: 100%
+        }
+    }
+    .head {
+        margin-bottom: 30px;
+        h2 {
+            font-size: 30px;
+            color: #2f5d2c;
+            font-weight: 600;
+        }
+        p {
+            font-size: 16px;
+        }
+    }
+    .content {
+        position: relative;
+        .des {
+            width: 100%;
+            min-height: 200px;
+            clip-path: polygon(0 0, 100% 13%, 100% 100%, 0 100%);
+            background: url('/assets/images/backgrounds/rh-vps-bg.gif');
+            background-position: bottom center;
+            background-size: cover;
+            padding: 50px 30px;
+            color: #fff;
+            position: relative;
+            padding-bottom: 30px;
+            h4 {
+                font-size: 26px;
+                font-weight: 600;
+            }
+            ul {
+                list-style: none;
+                padding: 0;
+                margin-top: 30px;
+                li {
+                    margin-bottom: 20px;
+                    padding-left: 44px;
+                    position: relative;
+                    &::before {
+                        content: "";
+                        filter: invert(1);
+                        background: url('/assets/images/icon/checked.png');
+                        background-position: left center;
+                        background-repeat: no-repeat;
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                        width: 40px;
+                        height: 40px;
+                    }
+                    h6 {
+                        font-size: 18px;
+                        font-weight: 500;
+                        margin-bottom: 6px;
+                    }
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        .error {
+            position: absolute;
+            bottom: -18px;
+            left: 40px;
+            background-color: #fe8500;
+            min-width: 80%;
+            padding: 8px 20px;
+            border-radius: .25rem;
+            p {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                margin: 0;
+                color: #fff;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.refer-actions {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    .box {
+        button {
+            width: 48%;
+        }
+    }
+}
+
+.refer-stats {
+    border-top: 1px solid #458761;
+    display: flex;
+    flex-wrap: wrap;
+    .box {
+        flex: 1 0 0%;
+        max-width: 200px;
+        margin: 20px 10px;
+        box-shadow: 0 25px 50px rgba(8, 21, 66, .06);
+        border: 1px solid rgba(69, 135, 96, 0.144);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 10px;
+        border-radius: .25rem;
+        transition: transform 0.3s ease, box-shadow ease .2s;
+        cursor: pointer;
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 5px 12px rgba(126, 142, 177, .2);
+        }
+        .mat-icon {
+            font-size: 40px;
+            height: auto;
+            width: auto;
+            color: #fe8500;
+        }
+        h4 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #105749;
+            span {
+                display: block;
+                font-size: 16px;
+                font-weight: 400;
+                margin-top: 5px;
+                color: #333;
+            }
+        }
+    }
+}
+
+@media (max-width:767px) {
+    #Refer-card {
+        padding-left: 14px;
+        padding-right: 14px;
+        .illustration {
+            display: none;
+        }
+        .content {
+            .des {
+                padding: 50px 14px;
+            }
+            .error {
+                left: 10px;
+                padding: 8px 10px;
+                .mat-icon {
+                    width: auto;
+                    height: auto;
+                    overflow: inherit;
+                }
+            }
+            .refer-actions {
+                flex-wrap: wrap;
+            }
+        }
+    }
+    .refer-stats {
+        .box {
+            gap: 2px;
+            margin: 10px 5px;
+            padding: 10px 5px;
+            .mat-icon {
+                font-size: 32px;
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+{
+  "help": {
+    "heading": {
+      "title": "¿Necesitas ayuda con Profit Piller?",
+      "intro": "Estamos aquí para que tu experiencia sea fluida. Ya sea que necesites ayuda con encuestas, canjes o recompensas, nuestro equipo de soporte te respalda."
+    },
+    "faqs": {
+      "q1": {
+        "question": "¿Cómo empiezo a ganar en Profit Piller?",
+        "answer": "Simplemente regístrate para obtener una cuenta gratuita, completa tu perfil y accede a encuestas y ofertas. ¡Tus ganancias comenzarán a acumularse de inmediato!"
+      },
+      "q2": {
+        "question": "¿Cuándo puedo canjear mis recompensas?",
+        "answer": "Una vez que alcances el umbral mínimo de canje (por ejemplo, ₹425 para PayPal o tarjetas de regalo), podrás canjear tus puntos al instante."
+      },
+      "q3": {
+        "question": "¿Por qué no recibí crédito por una encuesta?",
+        "answer": "Es posible que hayas sido descalificado debido a los requisitos de la encuesta o a respuestas incompletas. Si crees que fue un error, <a href=\"mailto:support@profitpiller.com\">contacta a nuestro equipo de soporte</a>."
+      },
+      "q4": {
+        "question": "¿Cómo puedo contactar al soporte de Profit Piller?",
+        "answer": "Envíanos un correo electrónico a <a href=\"mailto:support@profitpiller.com\">support@profitpiller.com</a> o utiliza el formulario de contacto en nuestro sitio web."
+      },
+      "q5": {
+        "question": "¿Hay límites de ganancias diarios o semanales?",
+        "answer": "¡No hay límites estrictos! Puedes completar tantas encuestas y ofertas como estén disponibles. Cuanto más activo seas, más ganarás."
+      },
+      "q6": {
+        "question": "¿Puedo usar Profit Piller en el móvil?",
+        "answer": "¡Absolutamente! Nuestra plataforma es totalmente adaptable para dispositivos móviles y funciona sin problemas en cualquier smartphone o tablet."
+      },
+      "q7": {
+        "question": "¿Están seguros mis datos con Profit Piller?",
+        "answer": "Sí. Seguimos estrictos protocolos de privacidad de datos y nunca compartimos tus datos personales con terceros sin tu consentimiento."
+      },
+      "q8": {
+        "question": "¿Puedo referir a otros y ganar bonificaciones?",
+        "answer": "¡Sí! Puedes invitar a amigos y ganar bonificaciones por referencia una vez que comiencen a ganar en la plataforma. Consulta el panel de tu cuenta para ver las opciones de referencia."
+      }
+    },
+    "supportSection": {
+      "title": "¿Todavía necesitas ayuda o tienes preguntas?",
+      "point1": "¿Eres nuevo en la plataforma o tienes problemas para acceder a las funciones?",
+      "point2": "No te preocupes, estamos aquí para guiarte.",
+      "point3": "Espera un soporte rápido, amable y útil de nuestro equipo.",
+      "point4": "Ya sea una consulta simple o un problema técnico,",
+      "point5": "contáctanos en cualquier momento, estamos a solo un clic de distancia.",
+      "contactButton": "Contacta a nuestro equipo de soporte"
+    }
+  },
+  "common": {
+    "arrowForward": "arrow_forward"
+  }
+}

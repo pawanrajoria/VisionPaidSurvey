@@ -1,0 +1,28 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+@include mat.menu-overrides((
+    container-shape: var(--mat-sys-level2),
+    item-label-text-color:var(--mat-sys-on-surface),
+    item-icon-color:var(--mat-sys-on-surface-variant),
+    item-hover-state-layer-color:var(--mat-sys-on-surface),
+    item-focus-state-layer-color:var(--mat-sys-on-surface),
+    container-color:var(--mat-sys-surface-container),
+    divider-color:var(--mat-sys-surface-variant)));
+
+html {
+  .mat-mdc-menu-panel {
+    background-color: var(--mat-sys-surface-container);
+    color: var(--mat-sys-on-background);
+  }
+
+  .mat-mdc-menu-item,
+  .mat-mdc-menu-item:visited,
+  .mat-mdc-menu-item:link {
+    color: var(--mat-sys-on-background);
+  }
+
+  .mdc-list-item--with-leading-icon .mdc-list-item__start {
+    color: var(--mat-sys-on-background);
+  }
+}

@@ -1,0 +1,33 @@
+<div mat-dialog-content class="dialog-container">
+    <div class="dialog-header">
+        <button mat-icon-button (click)="onBack()">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+        <span class="title">{{ offer.offerName }}</span>
+        <button mat-icon-button (click)="onClose()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+
+    <div class="qr-instruction">Scan the QR Code with your phone.</div>
+
+    <div class="qr-code-wrapper">
+        <ngx-qrcode-styling [template]="'beans'" [data]="offer.clickUrl" [width]="200" [height]="200">
+        </ngx-qrcode-styling>
+    </div>
+
+    <div class="device-info">
+        Available Devices
+        <div><mat-icon fontIcon="apple" class="device-icon"></mat-icon></div>
+    </div>
+</div>
+
+<div mat-dialog-actions class="app-footer">
+    <img [src]="offer.imageUrl" alt="{{ offer.offerName }}" class="app-icon" />
+    <div class="app-details">
+        <div class="app-name">{{ offer.offerName }}
+            <span class="points-value text-right">{{ offer.points }}</span> Points
+        </div>
+        <div class="app-desc">{{ offer.description }}</div>
+    </div>
+</div>

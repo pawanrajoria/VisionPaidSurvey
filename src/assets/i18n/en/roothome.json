@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "title": "Easy Cash for Everyday Opinions!",
+    "description": "Your thoughts help brands improve — and they’re ready to pay for them. Take surveys, complete simple offers, and earn real rewards effortlessly.",
+    "offer1": {
+      "title": "Earn ${{amount}} for Your Opinion — No Experience Needed!",
+      "subtitle": "{{surveys}} surveys waiting for you."
+    },
+    "offer2": {
+      "title": "${{amount}} earned yesterday by average users",
+      "subtitle": "You could be next! Cash out from ${{minPayout}}"
+    },
+    "login": {
+      "title": "Earn Cash by Sharing Your Opinion",
+      "signIn": "Sign Into Your Account",
+      "emailLabel": "Email Id",
+      "emailPlaceholder": "Email Id",
+      "passwordLabel": "Password",
+      "continueButton": "Continue",
+      "orLoginWith": "Or Login With",
+      "googleButton": "Google"
+    },
+    "loggedIn": {
+      "title": "Earn Cash by Sharing Your Opinion",
+      "message": "You are already signed in",
+      "goToAppButton": "Go to app"
+    }
+  },
+  "brandStrip": {
+    "description": "By sharing your thoughts on trending topics, trusted cleaning brands, or your favorite shows, you can turn opinions into income with the Profit Piller survey and offer app."
+  },
+  "choose": {
+    "title": "Got opinions? Turn them into money-right here.",
+    "description": "Take exciting surveys on Profit Piller and withdraw your earnings instantly — as cash or gift cards.",
+    "step1": {
+      "title": "Sign up",
+      "subtitle": "Join Now – It’s Free"
+    },
+    "step2": {
+      "title": "Complete Surveys and Unlock Offers",
+      "subtitle": "Choose any survey or offer to begin earning rewards."
+    },
+    "step3": {
+      "title": "Cash Out Now",
+      "subtitle": "Cash out or choose from 1000+ exciting rewards."
+    }
+  },
+  "rewards": {
+    "banner": {
+      "title": "Pick your favorite from 1000+ rewards",
+      "description": "Get paid through PayPal or pick from a wide range of <br>gift cards."
+    }
+  },
+  "howItWorks": {
+    "title": "Make money online with surveys and offer – available across <span class=\"highlight f-w-900\">the world.</span>",
+    "subtitle": "Take exciting surveys, get rewarded fast. Cash out or redeem gift cards immediately with Profit Piller.",
+    "playGames": {
+      "title": "Play games",
+      "subtitle": "Earn per game",
+      "price": "$0.80 - $100"
+    },
+    "takeSurveys": {
+      "title": "Take surveys",
+      "subtitle": "Earn per 2-10 min survey",
+      "price": "$1.80 - $100"
+    },
+    "completeOffers": {
+      "title": "Complete offers",
+      "subtitle": "Earn per app",
+      "price": "$1.80 - $100"
+    }
+  },
+  "landing": {
+    "title": "Online Survey and Offer App with Quick Payouts & Low Minimum Withdrawal",
+    "subtitle": "Every survey and offer you complete could put money in your pocket — just imagine!",
+    "valueTime": {
+      "title": "We value your time — and at <span class=\"highlight\">Profit Piller</span>, we reward it.",
+      "description": "With our low minimum payout, you can cash out on the same day — no waiting. Your rewards, your way."
+    },
+    "infoBadge": "On average, it takes just {{minutes}} minutes to earn your first payout!",
+    "step1": {
+      "strong": "Start by signing up, then pick the paid surveys and offer you’d like to take.",
+      "paragraph": "With hundreds of surveys and offer available, you can earn by playing games, sharing what you shop for, or talking about the teams you love."
+    },
+    "step2": {
+      "strong": "Earn points every time you complete a survey — it’s that simple!",
+      "paragraph": "Visit the rewards page to turn your points into cash or gift cards."
+    }
+  },
+  "rewardsGrid": {
+    "paypal": {
+      "description": "Redeem Points for PayPal Gift Cards"
+    },
+    "amazon": {
+      "description": "Redeem for an Amazon Gift Card"
+    },
+    "visa": {
+      "description": "Or just withdraw the cash — it's up to you."
+    }
+  },
+  "common": {
+    "learnMore": "Learn More"
+  }
+}

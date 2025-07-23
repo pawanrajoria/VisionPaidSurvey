@@ -1,0 +1,152 @@
+<h4 mat-dialog-title>{{profileSettingDialogData.title}}</h4>
+
+
+<form class="m-t-30" *ngIf="profileSettingDialogData.type==1" [formGroup]="changeUserNameForm"
+    (submit)="updateUserName()">
+    <mat-dialog-content class="mat-typography">
+        <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>{{ 'text.username' | translate }}</mat-label>
+            <input matInput formControlName="userName">
+            @if (changeUserNameForm.get('userName')?.hasError('required')) {
+            <mat-error class="text-right">{{ 'messages.username.required' | translate }}</mat-error>
+            }
+        </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button type="button" mat-dialog-close>{{ 'buttons.cancel' | translate }}</button>
+        <button mat-button type="submit" cdkFocusInitial>{{ 'buttons.save' | translate }}</button>
+    </mat-dialog-actions>
+</form>
+
+<form class="m-t-30" *ngIf="profileSettingDialogData.type==2" [formGroup]="changeEmailForm" (submit)="updateEmail()">
+    <mat-dialog-content class="mat-typography">
+        <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>{{ 'text.emailid' | translate }}</mat-label>
+            <input matInput formControlName="emailId">
+            @if (changeEmailForm.get('emailId')?.hasError('required')) {
+            <mat-error class="text-right">{{ 'messages.email.required' | translate }}</mat-error>
+            }
+            @else if (changeEmailForm.get('emailId')?.hasError('email')) {
+            <mat-error class="text-right">{{ 'messages.email.invalid' | translate }}</mat-error>
+            }
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>{{ 'text.password' | translate }}</mat-label>
+            <input matInput formControlName="password">
+            @if (changeEmailForm.get('password')?.hasError('required')) {
+            <mat-error class="text-right">{{ 'messages.password.required' | translate }}</mat-error>
+            }
+        </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button type="button" mat-dialog-close>{{ 'buttons.cancel' | translate }}</button>
+        <button mat-button type="submit" cdkFocusInitial>{{ 'buttons.save' | translate }}</button>
+    </mat-dialog-actions>
+</form>
+
+<form class="m-t-30" *ngIf="profileSettingDialogData.type==3" [formGroup]="changePasswordForm"
+    (submit)="updatePassword()">
+    <mat-dialog-content class="mat-typography">
+        <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>{{ 'text.oldpassword' | translate }}</mat-label>
+            <input matInput formControlName="password">
+            @if (changeEmailForm.get('password')?.hasError('required')) {
+            <mat-error class="text-right">{{ 'messages.oldpassword.required' | translate }}</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>{{ 'text.newpassword' | translate }}</mat-label>
+            <input matInput formControlName="newPassword">
+            @if (changeEmailForm.get('password')?.hasError('required')) {
+            <mat-error class="text-right">{{ 'messages.newpassword.required' | translate }}</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>{{ 'text.confirmnewpassword' | translate }}</mat-label>
+            <input matInput formControlName="confirmNewPassword">
+            @if (changeEmailForm.get('confirmNewPassword')?.hasError('required')) {
+            <mat-error class="text-right">{{ 'messages.confirmnewpassword.required' | translate }}</mat-error>
+            }
+        </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button type="button" mat-dialog-close>{{ 'buttons.cancel' | translate }}</button>
+        <button mat-button type="submit" cdkFocusInitial>{{ 'buttons.save' | translate }}</button>
+    </mat-dialog-actions>
+</form>
+
+<form class="m-t-30" *ngIf="profileSettingDialogData.type==4" [formGroup]="deleteAccountForm"
+    (submit)="deleteAccount()">
+    <mat-dialog-content class="mat-typography">
+        <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>{{ 'text.password' | translate }}</mat-label>
+            <input matInput formControlName="password">
+            @if (changeEmailForm.get('password')?.hasError('required')) {
+            <mat-error class="text-right">{{ 'messages.password.required' | translate }}</mat-error>
+            }
+        </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button type="button" mat-dialog-close>{{ 'buttons.cancel' | translate }}</button>
+        <button mat-button type="submit" cdkFocusInitial>{{ 'buttons.save' | translate }}</button>
+    </mat-dialog-actions>
+</form>
+
+<form class="user-details-form" *ngIf="profileSettingDialogData.type == 5" [formGroup]="changeUserDetailsForm"
+    (submit)="updateUserDetails()">
+
+    <mat-dialog-content class="mat-typography">
+
+        <!-- Profile Image on Top -->
+        <!-- <div class="profile-pic-section">
+            <label for="fileInput" class="image-upload">
+                <img [src]="profileImage || 'assets/default-avatar.png'" class="profile-img" />
+                <div class="camera-icon">
+                    <mat-icon>photo_camera</mat-icon>
+                </div>
+            </label>
+            <input type="file" id="fileInput" (change)="onFileSelected($event)" accept="image/*" hidden />
+            <div class="error-text" *ngIf="changeUserDetailsForm.get('imageUrl')?.hasError('required')">
+                ProfilePic is required.
+            </div>
+        </div> -->
+
+        <!-- Form Fields -->
+        <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>{{ 'account.dateOfBirth' | translate }}</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dateOfBirth" />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="changeUserDetailsForm.get('dateOfBirth')?.hasError('required')">
+                {{ 'messages.dateofbirth.required' | translate }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>{{ 'account.gender' | translate }}</mat-label>
+            <mat-select formControlName="gender">
+                <mat-option *ngFor="let g of genders" [value]="g.value">{{ g.name }}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="changeUserDetailsForm.get('gender')?.hasError('required')">
+                {{ 'messages.gender.required' | translate }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>{{ 'account.zip_code' | translate }}</mat-label>
+            <input matInput formControlName="zip" />
+            <mat-error *ngIf="changeUserDetailsForm.get('zip')?.hasError('required')">
+                {{ 'messages.zip_code.required' | translate }}
+            </mat-error>
+        </mat-form-field>
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+        <button mat-button type="button" mat-dialog-close>{{ 'buttons.cancel' | translate }}</button>
+        <button mat-button type="submit" cdkFocusInitial>{{ 'buttons.save' | translate }}</button>
+    </mat-dialog-actions>
+</form>

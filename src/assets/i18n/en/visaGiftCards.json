@@ -1,0 +1,45 @@
+{
+  "visaGiftCards": {
+    "banner": {
+      "title": "Earn Visa Gift Cards for Sharing Your Opinion",
+      "subtitle": "Prefer paying with Visa? Want to earn rewards you can spend almost anywhere?",
+      "description": "With Profitpiller, you can earn Visa gift cards just by completing simple surveys. Whether you're saving for a new gadget or want to reduce your weekly expenses, Visa gift card rewards give you the flexibility to spend how you want.",
+      "startButton": "Start Earning Now",
+      "startNote": "Sign up today and start earning Visa rewards with Profitpiller."
+    },
+    "section1": {
+      "subtitle": "Real Rewards, Fast Surveys",
+      "title": "Get Rewarded with Visa Gift Cards Instantly",
+      "description1": "Visa gift cards can be used almost anywhere. Earn yours online and enjoy the freedom to shop in-store, online, or wherever Visa is accepted—worldwide.",
+      "description2": "Use your Visa reward to pay for your favorite fashion, book a vacation, or even cover everyday essentials. Whether it's groceries or gadgets, you choose how to spend your rewards.",
+      "description3": "Getting started is simple. Join Profitpiller and complete quick surveys about your favorite shows, products, or recent purchases. Your opinions help businesses improve—and you get rewarded in return.",
+      "description4": "Sign up now and claim your first Visa gift card just by completing your first survey on Profitpiller."
+    },
+    "features": {
+      "subtitle": "Turn Your Free Time Into Gift Cards",
+      "title": "Get Paid with Visa Gift Cards for Every Survey",
+      "description": "Join Profitpiller and start earning instantly. It’s completely free, and surveys are short, simple, and fun. Redeem your points for Visa gift cards that work almost anywhere you shop.",
+      "step1": {
+        "label": "Step 1",
+        "title": "Sign up for your free Profitpiller account and claim your welcome bonus instantly."
+      },
+      "step2": {
+        "label": "Step 2",
+        "title": "Complete surveys and watch your balance grow.",
+        "description": "After just one survey, you can redeem your points for a Visa gift card—or keep earning for bigger rewards. <br>Enjoy flexible reward options including <a routerLink=\"\">$5 Amazon gift cards</a> or <a routerLink=\"\">PayPal gift cards</a>. Profitpiller makes it easy to get what you want."
+      }
+    },
+    "rewardsGrid": {
+      "paypalSurveys": "Surveys for PayPal Gift Cards",
+      "amazonSurveys": "Surveys for Amazon Gift Cards"
+    },
+    "support": {
+      "title": "Start Earning Visa Rewards Instantly",
+      "description": "Join Profitpiller today and turn your feedback into real value. Share your opinion, earn points, and redeem Visa gift cards you can use anywhere. It's fast, secure, and always free to start.",
+      "joinNow": "Join Now"
+    }
+  },
+  "common": {
+    "arrowForward": "arrow_forward"
+  }
+}

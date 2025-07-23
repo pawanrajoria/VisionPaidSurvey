@@ -1,0 +1,37 @@
+{
+    "refer": {
+        "heading": {
+            "subtitle": "Share your link and get 10% lifetime commission on your friends' earnings.",
+            "title": "Boost Your Earnings — Refer & Earn!"
+        },
+        "title": "How It Works",
+        "Earned": "Earned",
+        "CopyCode": "Copy Code",
+        "uselink": "Use Link Instead",
+        "referrallink": "Referral Link",
+        "your_referrallink": "Your referral link",
+        "instruction": "You can only have one account and you can not refer yourself!",
+        "copy_link": "Copy Link",
+        "step1": {
+            "title": "Invite Your Friends",
+            "description": "Tell your friends about ProfitPiller and share your referral link on social media, chats, or anywhere you like."
+        },
+        "step2": {
+            "title": "Share Your Bonus Code",
+            "description": "When new users redeem your bonus code within 24 hours of signing up, they become your referral and enjoy a 10% bonus for their first 24 hours."
+        },
+        "step3": {
+            "title": "Receive Your Commission",
+            "description": "Earn a 10% commission on all the survey rewards your referrals earn — for life. Don’t worry, their earnings stay the same — your rewards are on us!"
+        }
+    },
+    "redeem": {
+        "bonus_code": "Bonus Code",
+        "enter_code": "Enter your code",
+        "redeem_code": "Redeem Code",
+        "heading": {
+            "subtitle": "Enter your bonus code below to receive a 10% bonus valid for 24 hours.",
+            "title": "Redeem Bonus Code"
+        }
+    }
+}

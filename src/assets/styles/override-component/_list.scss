@@ -1,0 +1,25 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+@include mat.list-overrides((active-indicator-color:var(--mat-sys-secondary-container),
+        list-item-leading-avatar-color:var(--mat-sys-primary-container),
+        list-item-disabled-state-layer-color:var(--mat-sys-on-surface),
+        list-item-label-text-color:var(--mat-sys-on-surface),
+        list-item-supporting-text-color:var(--mat-sys-on-surface-variant),
+        list-item-leading-icon-color:var(--mat-sys-on-surface-variant),
+        list-item-trailing-supporting-text-color:var(--mat-sys-on-surface-variant),
+        list-item-trailing-icon-color:var(--mat-sys-on-surface-variant),
+        list-item-selected-trailing-icon-color:var(--mat-sys-primary),
+        list-item-disabled-label-text-color:var(--mat-sys-on-surface),
+        list-item-disabled-leading-icon-color:var(--mat-sys-on-surface),
+        list-item-disabled-trailing-icon-color:var(--mat-sys-on-surface),
+        list-item-hover-label-text-color:var(--mat-sys-on-surface),
+        list-item-focus-label-text-color:var(--mat-sys-on-surface),
+        list-item-hover-state-layer-color:var(--mat-sys-on-surface),
+        list-item-focus-state-layer-color:var(--mat-sys-on-surface)));
+
+html {
+    .mdc-list-item:hover .mdc-list-item__primary-text {
+        color: var(--mat-sys-on-surface-variant);
+    }
+}

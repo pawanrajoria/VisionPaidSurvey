@@ -1,0 +1,22 @@
+.dialog-container {
+    text-align: center;
+    padding: 1rem;
+    max-height: 100vh;
+    max-width: 100vh;
+    overflow: hidden;
+
+    .dialog-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.dialog-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

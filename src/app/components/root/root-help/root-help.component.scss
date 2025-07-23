@@ -1,0 +1,184 @@
+#Help {
+    padding-bottom: 0;
+    .head {
+        h2 {
+            line-height: 48px;
+            transition: all 0.4s;
+            font-size: 40px;
+            margin: 20px 0px;
+        }
+        p {}
+    }
+}
+
+.help-page {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    mat-card {
+        width: 100%;
+        max-width: 800px;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .intro {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+        .help-accordion {
+            mat-expansion-panel {
+                margin-bottom: 0.75rem;
+                border-radius: 0px;
+                box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 4%), 0px 2px 2px 0px rgb(0 0 0 / 4%), 0px 1px 5px 0px rgb(0 0 0 / 4%);
+                mat-expansion-panel-header {
+                    height: 54px;
+                }
+            }
+        }
+        .footer-note {
+            margin-top: 2rem;
+            font-size: 0.95rem;
+            text-align: center;
+            color: #555;
+            a {
+                color: #3f51b5;
+                text-decoration: underline;
+            }
+        }
+    }
+    @media (max-width: 600px) {
+        padding: 1rem;
+        mat-card {
+            padding: 1.5rem;
+            h2 {
+                font-size: 1.5rem;
+            }
+            .intro {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+#Support {
+    // background: #135444 url('/assets/images/backgrounds/footer-bg1.png');
+    background: radial-gradient( circle, rgb(135, 190, 119) 0%, rgb(25, 97, 69) 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(/assets/images/backgrounds/footer-bg1.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .footer-note {
+        text-align: left;
+        color: #fff;
+        h4 {
+            font-size: 34px;
+            font-weight: 100;
+            line-height: 40px;
+        }
+        ul {
+            li {
+                font-size: 18px;
+                line-height: 38px;
+                font-weight: 100;
+                list-style: circle;
+            }
+        }
+        a {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 0 20px;
+            height: 54px;
+            border-radius: 8px;
+            color: #fff;
+            background: linear-gradient(90deg, #2f6c55 0%, #599c6b 100%);
+            z-index: 1;
+            line-height: 20px;
+            font-weight: 700;
+            transition: all 0.4s;
+            text-decoration: none;
+            mat-icon {
+                border-radius: 50%;
+                text-align: center;
+                margin-left: 4px;
+                transform: rotate(-45deg);
+                transition: all 0.4s;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                height: 100%;
+                width: 10px;
+                border-radius: 8px;
+                background: linear-gradient(90deg, #599c6b 0%, #2f6c55 100%);
+                transition: all 0.4s;
+                top: 0;
+                left: 50%;
+                border-radius: 8px;
+                z-index: -1;
+                visibility: hidden;
+                opacity: 0;
+            }
+            &:hover {
+                transition: all 0.4s;
+                transform: translateY(-5px);
+                mat-icon {
+                    transform: rotate(0);
+                    transition: all 0.4s;
+                }
+                &::after {
+                    visibility: visible;
+                    opacity: 1;
+                    transition: all 0.4s;
+                    width: 100%;
+                    left: 0;
+                }
+            }
+        }
+    }
+    .cta-images {
+        position: relative;
+        z-index: 0;
+        .img1 {
+            position: relative;
+            bottom: -5px;
+        }
+        .elements7 {
+            position: absolute;
+            z-index: -1;
+            bottom: 0;
+            left: 0;
+            animation-name: animation-7;
+            animation-duration: 90s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: cubic-bezier(0.59, 0.59, 1, 1);
+        }
+    }
+    @keyframes animation-7 {
+        0% {
+            transform: rotate(0);
+        }
+        100% {
+            transform: rotate(-1000deg);
+        }
+    }
+}

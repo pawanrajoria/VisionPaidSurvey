@@ -1,0 +1,45 @@
+{
+  "visaGiftCards": {
+    "banner": {
+      "title": "Gana Tarjetas de Regalo Visa por Compartir Tu Opinión",
+      "subtitle": "¿Prefieres pagar con Visa? ¿Quieres ganar recompensas que puedas gastar en casi cualquier lugar?",
+      "description": "Con Profitpiller, puedes ganar tarjetas de regalo Visa simplemente completando encuestas sencillas. Ya sea que estés ahorrando para un nuevo gadget o quieras reducir tus gastos semanales, las recompensas de tarjetas de regalo Visa te dan la flexibilidad de gastar como quieras.",
+      "startButton": "Comenzar a Ganar Ahora",
+      "startNote": "Regístrate hoy y comienza a ganar recompensas Visa con Profitpiller."
+    },
+    "section1": {
+      "subtitle": "Recompensas Reales, Encuestas Rápidas",
+      "title": "Obtén Recompensas con Tarjetas de Regalo Visa al Instante",
+      "description1": "Las tarjetas de regalo Visa se pueden usar en casi cualquier lugar. Gana la tuya en línea y disfruta de la libertad de comprar en tiendas, en línea o dondequiera que se acepte Visa, en todo el mundo.",
+      "description2": "Usa tu recompensa Visa para pagar tu moda favorita, reservar unas vacaciones o incluso cubrir los gastos esenciales del día a día. Ya sean comestibles o gadgets, tú eliges cómo gastar tus recompensas.",
+      "description3": "Empezar es sencillo. Únete a Profitpiller y completa encuestas rápidas sobre tus programas, productos o compras recientes favoritos. Tus opiniones ayudan a las empresas a mejorar, y tú recibes recompensas a cambio.",
+      "description4": "Regístrate ahora y reclama tu primera tarjeta de regalo Visa simplemente completando tu primera encuesta en Profitpiller."
+    },
+    "features": {
+      "subtitle": "Convierte Tu Tiempo Libre en Tarjetas de Regalo",
+      "title": "Recibe Pagos con Tarjetas de Regalo Visa por Cada Encuesta",
+      "description": "Únete a Profitpiller y comienza a ganar al instante. Es completamente gratis, y las encuestas son cortas, sencillas y divertidas. Canjea tus puntos por tarjetas de regalo Visa que funcionan en casi cualquier lugar donde compres.",
+      "step1": {
+        "label": "Paso 1",
+        "title": "Regístrate para obtener tu cuenta gratuita de Profitpiller y reclama tu bono de bienvenida al instante."
+      },
+      "step2": {
+        "label": "Paso 2",
+        "title": "Completa encuestas y observa cómo crece tu saldo.",
+        "description": "Después de una sola encuesta, puedes canjear tus puntos por una tarjeta de regalo Visa, o seguir ganando para obtener recompensas más grandes. <br>Disfruta de opciones de recompensa flexibles que incluyen <a routerLink=\"\">tarjetas de regalo de Amazon de $5</a> o <a routerLink=\"\">tarjetas de regalo de PayPal</a>. Profitpiller te facilita obtener lo que quieres."
+      }
+    },
+    "rewardsGrid": {
+      "paypalSurveys": "Encuestas para Tarjetas de Regalo de PayPal",
+      "amazonSurveys": "Encuestas para Tarjetas de Regalo de Amazon"
+    },
+    "support": {
+      "title": "Comienza a Ganar Recompensas Visa al Instante",
+      "description": "Únete a Profitpiller hoy y convierte tus comentarios en valor real. Comparte tu opinión, gana puntos y canjea tarjetas de regalo Visa que puedes usar en cualquier lugar. Es rápido, seguro y siempre gratis para empezar.",
+      "joinNow": "Únete Ahora"
+    }
+  },
+  "common": {
+    "arrowForward": "arrow_forward"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "help": {
+    "heading": {
+      "title": "Benötigen Sie Hilfe mit Profit Piller?",
+      "intro": "Wir sind hier, um Ihre Erfahrung reibungslos zu gestalten. Egal, ob Sie Hilfe bei Umfragen, Einlösungen oder Belohnungen benötigen – unser Support-Team steht Ihnen zur Seite."
+    },
+    "faqs": {
+      "q1": {
+        "question": "Wie fange ich an, auf Profit Piller zu verdienen?",
+        "answer": "Melden Sie sich einfach für ein kostenloses Konto an, vervollständigen Sie Ihr Profil und greifen Sie auf Umfragen und Angebote zu. Ihre Einnahmen beginnen sofort zu steigen!"
+      },
+      "q2": {
+        "question": "Wann kann ich meine Belohnungen einlösen?",
+        "answer": "Sobald Sie den Mindesteinlöseschwellenwert (z. B. 425 ₹ für PayPal oder Geschenkkarten) erreicht haben, können Sie Ihre Punkte sofort einlösen."
+      },
+      "q3": {
+        "question": "Warum habe ich für eine Umfrage keine Gutschrift erhalten?",
+        "answer": "Möglicherweise wurden Sie aufgrund von Umfrageanforderungen oder unvollständigen Antworten disqualifiziert. Wenn Sie der Meinung sind, dass dies ein Fehler war, <a href=\"mailto:support@profitpiller.com\">kontaktieren Sie unser Support-Team</a>."
+      },
+      "q4": {
+        "question": "Wie kann ich den Profit Piller Support kontaktieren?",
+        "answer": "Senden Sie uns eine E-Mail an <a href=\"mailto:support@profitpiller.com\">support@profitpiller.com</a> oder nutzen Sie das Kontaktformular auf unserer Website."
+      },
+      "q5": {
+        "question": "Gibt es tägliche oder wöchentliche Verdienstgrenzen?",
+        "answer": "Keine strengen Grenzen! Sie können so viele Umfragen und Angebote abschließen, wie verfügbar sind. Je aktiver Sie sind, desto mehr verdienen Sie."
+      },
+      "q6": {
+        "question": "Kann ich Profit Piller auf dem Handy nutzen?",
+        "answer": "Absolut! Unsere Plattform ist vollständig mobilfreundlich und funktioniert nahtlos auf jedem Smartphone oder Tablet."
+      },
+      "q7": {
+        "question": "Sind meine Daten bei Profit Piller sicher?",
+        "answer": "Ja. Wir befolgen strenge Datenschutzprotokolle und geben Ihre persönlichen Daten niemals ohne Zustimmung an Dritte weiter."
+      },
+      "q8": {
+        "question": "Kann ich andere werben und Boni verdienen?",
+        "answer": "Ja! Sie können Freunde einladen und Empfehlungsboni verdienen, sobald diese auf der Plattform mit dem Verdienen beginnen. Überprüfen Sie Ihr Kontodashboard auf Empfehlungsoptionen."
+      }
+    },
+    "supportSection": {
+      "title": "Brauchen Sie noch Hilfe oder haben Sie Fragen?",
+      "point1": "Neu auf der Plattform oder Probleme beim Zugriff auf Funktionen?",
+      "point2": "Keine Sorge – wir sind hier, um Sie zu führen.",
+      "point3": "Erwarten Sie schnellen, freundlichen und hilfreichen Support von unserem Team.",
+      "point4": "Ob es sich um eine einfache Anfrage oder ein technisches Problem handelt,",
+      "point5": "kontaktieren Sie uns jederzeit – wir sind nur einen Klick entfernt.",
+      "contactButton": "Kontaktieren Sie unser Support-Team"
+    }
+  },
+  "common": {
+    "arrowForward": "arrow_forward"
+  }
+}

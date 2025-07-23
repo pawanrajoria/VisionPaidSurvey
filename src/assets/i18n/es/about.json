@@ -1,0 +1,29 @@
+{
+    "about": {
+        "head": {
+            "subtitle": "Donde las ideas se convierten en resultados",
+            "title": "Experimente el impacto de Profit Piller"
+        },
+        "intro": {
+            "strong": "Profit Piller es un espacio de confianza donde su voz impulsa el progreso y le otorga recompensas reales.",
+            "paragraph": "Conectamos a personas reales con las mejores marcas e investigadores para dar forma a mejores productos y servicios a través de comentarios auténticos. Nuestro propósito es simple: que su opinión cuente y recompensarlo por ello."
+        },
+        "mission": {
+            "title": "Nuestra Misión",
+            "description": "En Profit Piller, nuestro objetivo es empoderar a las personas haciendo que sus conocimientos importen, al mismo tiempo que ayudamos a las empresas a tomar decisiones más inteligentes. Todos merecen una voz y una recompensa por usarla."
+        },
+        "rewards": {
+            "title": "Nuestras Recompensas",
+            "description": "Ofrecemos múltiples opciones de recompensa en Profit Piller: puede canjear puntos por efectivo, tarjetas de regalo, crédito o incluso donar a causas. En lugar de gastar mucho en publicidad, elegimos recompensarle a usted, nuestros miembros, por lo que nuestros pagos se encuentran entre los mejores de la industria."
+        },
+        "feedback": {
+            "title": "Su Opinión",
+            "description": "Cada miembro de Profit Piller es valorado. Escuchamos activamente los comentarios y nos mantenemos en estrecho contacto con nuestra comunidad. Nuestro objetivo es elevar el nivel de calidad de las plataformas de encuestas en línea."
+        },
+        "contact": {
+            "title": "Información de Contacto",
+            "email": "support@profitpiller.com",
+            "phone": "+91-8876654356"
+        }
+    }
+}

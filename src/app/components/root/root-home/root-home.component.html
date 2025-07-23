@@ -1,0 +1,386 @@
+<!-- start -->
+<div class="container-fluid rh-hero-section-outer">
+    <img src="assets/images/elements6.png" alt="" class="elements6 ">
+    <img src="assets/images/elements5.png" alt="" class="elements5 vl-shape-1">
+    <img src="assets/images/elements4.png" alt="" class="elements4">
+    <div class="container">
+        <div class="row">
+            <!-- test -->
+            <div class="col-lg-7 col-md-7 col-sm-6 col-12">
+                <div class="rh-hero-left-part">
+                    <div class="rh-hero-left-text">
+                        <h1><span>{{ 'hero.title' | translate }}</span></h1>
+                        <p>{{ 'hero.description' | translate }}</p>
+                    </div>
+                    <div class="rh-hero-left-col-part m-t-30 d-none d-md-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="rh-hero-left-offerC">
+                                    <div class="icon"><img src="assets/images/icon/doller.png" alt="Dollar Icon"></div>
+                                    <div>
+                                        <h3>{{ 'hero.offer1.title' | translate:{ amount: 3 } }}</h3>
+                                        <p>{{ 'hero.offer1.subtitle' | translate:{ surveys: 276 } }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="rh-hero-left-offerC">
+                                    <div class="icon"><img src="assets/images/icon/money.png" alt="Money Icon"></div>
+                                    <div>
+                                        <h3>{{ 'hero.offer2.title' | translate:{ amount: 50 } }}</h3>
+                                        <p>{{ 'hero.offer2.subtitle' | translate:{ minPayout: 5 } }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <div class="rh-hero-right-part">
+                    <div class="bg-trans" *ngIf="!isLoggedIn">
+                        <div class="rh-hr-rgt-top">
+                            <mat-icon>paid</mat-icon>
+                            <h3>{{ 'hero.login.title' | translate }}</h3>
+                        </div>
+                        <div class="rh-hr-rgt-form">
+                            <p>{{ 'hero.login.signIn' | translate }}</p>
+                            <div class="rh-hr-rgt-form-email">
+                                <mat-form-field appearance="outline" class="w-100">
+                                    <mat-label>{{ 'hero.login.emailLabel' | translate }}</mat-label>
+                                    <input matInput [placeholder]="'hero.login.emailPlaceholder' | translate"
+                                        [(ngModel)]="email" type="email" name="email" required>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="rh-hr-rgt-form-email">
+                                <mat-form-field appearance="outline" class="w-100" *ngIf="isEmailValidCheck">
+                                    <mat-label>{{ 'hero.login.passwordLabel' | translate }}</mat-label>
+                                    <input matInput type="password" [(ngModel)]="password">
+                                </mat-form-field>
+                            </div>
+
+                            <button mat-flat-button (click)="login()" color="primary" class="w-100 btn-theme">{{
+                                'hero.login.continueButton' | translate }}</button>
+                        </div>
+                        <div class="extra-login clearfix">
+                            <span>{{ 'hero.login.orLoginWith' | translate }}</span>
+                        </div>
+                        <div class="rh-hr-rgt-social-part">
+                            <div class="row">
+                                <div class="col-12">
+                                    <a href="javascript://" target="_self" class="rh-hr-form-social-btn" googlelogin>
+                                        <img src="/assets/images/icon/rh-google.svg" alt="google">{{
+                                        'hero.login.googleButton' | translate }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-trans" *ngIf="isLoggedIn">
+                        <div class="rh-hr-rgt-top">
+                            <mat-icon>paid</mat-icon>
+                            <h3>{{ 'hero.loggedIn.title' | translate }}</h3>
+                        </div>
+                        <div class="rh-hr-rgt-form">
+                            <p>{{ 'hero.loggedIn.message' | translate }}</p>
+                            <button mat-flat-button (click)="goToApp()" color="primary" class="w-100 btn-theme">{{
+                                'hero.loggedIn.goToAppButton' | translate }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="rh-hero-left-part">
+                    <div class="rh-hero-left-col-part m-t-30 d-md-none">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="rh-hero-left-offerC">
+                                    <div class="icon"><img src="assets/images/icon/doller.png" alt="Dollar Icon"></div>
+                                    <div>
+                                        <h3>{{ 'hero.offer1.title' | translate:{ amount: 425 } }}</h3>
+                                        <p>{{ 'hero.offer1.subtitle' | translate:{ surveys: 276 } }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="rh-hero-left-offerC">
+                                    <div class="icon"><img src="assets/images/icon/money.png" alt="Money Icon"></div>
+                                    <div>
+                                        <h3>{{ 'hero.offer2.title' | translate:{ amount: 966 } }}</h3>
+                                        <p>{{ 'hero.offer2.subtitle' | translate:{ minPayout: 425 } }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- test end -->
+        </div>
+    </div>
+</div>
+<!-- end -->
+
+<div class="brand-strip position-relative">
+    <img src="assets/images/backgrounds/elements42.png" alt="" class="elements42">
+    <div class="cta4-section-area">
+        <img src="assets/images/backgrounds/elements33.png" alt="" class="elements33 aniamtion-key-1">
+    </div>
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-10 m-auto">
+                <p>{{ 'brandStrip.description' | translate }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="brand-logos m-t-20">
+                    <div class="box"><img src="assets/images/paypal.png" alt="Paypal" /></div>
+                    <div class="box"> <img src="assets/images/visa.png" alt="Visa" /></div>
+                    <div class="box"><img src="assets/images/apple.png" alt="Apple" /></div>
+                    <div class="box"><img src="assets/images/playstation.png" alt="PlayStation" /></div>
+                    <div class="box"><img src="assets/images/xbox.png" alt="Xbox" /></div>
+                    <div class="box"><img src="assets/images/uber.png" alt="Uber" /></div>
+                    <div class="box"> <img src="assets/images/more.png" alt="More" /></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="choose-section">
+    <div class="container">
+        <div class="row g-6 flex-row-reverse justify-content-between align-items-center">
+            <div class="col-lg-12 m-auto">
+                <div class="section-header text-center m-b-40">
+                    <h3 [innerHTML]="'choose.title' | translate | safeHtml"></h3>
+                    <p>{{ 'choose.description' | translate }}</p>
+                </div>
+                <ul class="steps-work m-t-30">
+                    <li class="step-work">
+                        <div class="img-holder">
+                            <img src="assets/images/icon/homepage_signup_icon1.svg" alt="Sign Up Icon">
+                        </div>
+                        <h3><span class="counter"></span> {{ 'choose.step1.title' | translate }}</h3>
+                        <p>{{ 'choose.step1.subtitle' | translate }}</p>
+                    </li>
+                    <li class="step-work">
+                        <div class="img-holder">
+                            <img src="assets/images/icon/icon2.svg" alt="Survey Icon">
+                        </div>
+                        <h3><span class="counter"></span> {{ 'choose.step2.title' | translate }}</h3>
+                        <p>{{ 'choose.step2.subtitle' | translate }}</p>
+                    </li>
+                    <li class="step-work">
+                        <div class="img-holder">
+                            <img src="assets/images/icon/icon3.svg" alt="Cash Out Icon">
+                        </div>
+                        <h3><span class="counter"></span> {{ 'choose.step3.title' | translate }}</h3>
+                        <p>{{ 'choose.step3.subtitle' | translate }}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="reward-banner">
+    <div class="container">
+        <div class="head">
+            <h2>{{ 'rewards.banner.title' | translate }}</h2>
+            <p [innerHTML]="'rewards.banner.description' | translate | safeHtml"></p>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="reward-selection-container">
+                    <!-- Category Sidebar -->
+                    <div class="category-panel">
+                        <button mat-flat-button *ngFor="let category of categories"
+                            [color]="selectedCategory === category.name ? 'primary' : ''"
+                            (click)="selectCategory(category.name)" class="category-button"
+                            [ngClass]="{ 'active': selectedCategory === category.name }">
+                            <mat-icon>{{ category.icon }}</mat-icon>
+                            <span>{{ category.name }}</span>
+                        </button>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="divider"></div>
+
+                    <!-- Rewards Panel -->
+                    <div class="reward-cards" [@fadeIn]>
+                        <mat-card *ngFor="let reward of rewards[selectedCategory]" class="reward-card m-b-0"
+                            [@cardAnimation] (click)="selectReward(reward)">
+                            <div class="icon">
+                                <img [src]="reward.logo" alt="logo" />
+                            </div>
+                            <div class="text-start">
+                                <div class="amount">{{ reward.amount }}</div>
+                                <div class="label">{{ reward.label }}</div>
+                            </div>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-5 position-relative" id="how-it-works">
+    <div class="cta-images">
+        <img src="assets/images/backgrounds/elements7.png" alt="" class="elements7 keyframe5">
+    </div>
+    <img src="assets/images/backgrounds/elements46.png" alt="" class="elements46">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="how-it-work rounded">
+                    <div class="head">
+                        <h1 class="title f-w-500" [innerHTML]="'howItWorks.title' | translate | safeHtml"></h1>
+                        <p class="subtitle">{{ 'howItWorks.subtitle' | translate }}</p>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-item text-center">
+                                <div class="icon-area rounded-circle">
+                                    <img src="/assets/images/icon/gamepad.png" alt="Gamepad Icon">
+                                </div>
+                                <div class="text-area">
+                                    <h4>{{ 'howItWorks.playGames.title' | translate }}</h4>
+                                    <span>{{ 'howItWorks.playGames.subtitle' | translate }}</span>
+                                    <div class="price">{{ 'howItWorks.playGames.price' | translate }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 position-relative">
+                            <div class="line-area d-center d-xl-flex position-absolute">
+                                <img src="assets/images/backgrounds/how-works-line-1.png" alt="Icon">
+                            </div>
+                            <div class="line-area d-center d-xl-flex second position-absolute mb-20 pb-12">
+                                <img src="assets/images/backgrounds/how-works-line-2.png" alt="Icon">
+                            </div>
+                            <div class="single-item text-center">
+                                <div class="icon-area rounded-circle">
+                                    <img src="/assets/images/icon/survey.png" alt="Survey Icon">
+                                </div>
+                                <div class="text-area">
+                                    <h4>{{ 'howItWorks.takeSurveys.title' | translate }}</h4>
+                                    <span>{{ 'howItWorks.takeSurveys.subtitle' | translate }}</span>
+                                    <div class="price">{{ 'howItWorks.takeSurveys.price' | translate }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-item text-center">
+                                <div class="icon-area rounded-circle">
+                                    <img src="/assets/images/icon/offer.png" alt="Offer Icon">
+                                </div>
+                                <div class="text-area">
+                                    <h4>{{ 'howItWorks.completeOffers.title' | translate }}</h4>
+                                    <span>{{ 'howItWorks.completeOffers.subtitle' | translate }}</span>
+                                    <div class="price">{{ 'howItWorks.completeOffers.price' | translate }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="landing-container position-relative" @fadeIn>
+    <img src="assets/images/backgrounds/elements9.png" alt="" class="elements9">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="illustration">
+                    <img src="assets/images/online-survey.jpg" alt="Online Survey Illustration" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="content">
+                    <h1>{{ 'landing.title' | translate }}</h1>
+                    <p class="subtitle">{{ 'landing.subtitle' | translate }}</p>
+
+                    <h3 [innerHTML]="'landing.valueTime.title' | translate | safeHtml"></h3>
+                    <p>{{ 'landing.valueTime.description' | translate }}</p>
+
+                    <div class="info-badge">
+                        <mat-icon>schedule</mat-icon>
+                        <span>{{ 'landing.infoBadge' | translate:{ minutes: 15 } }}</span>
+                    </div>
+
+                    <div class="steps">
+                        <div class="step">
+                            <div class="number">
+                                <img src="assets/images/icon/accounting.png" alt="Accounting Icon">
+                            </div>
+                            <div>
+                                <strong>{{ 'landing.step1.strong' | translate }}</strong>
+                                <p>{{ 'landing.step1.paragraph' | translate }}</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="number">
+                                <img src="assets/images/icon/task.png" alt="Task Icon">
+                            </div>
+                            <div>
+                                <strong>{{ 'landing.step2.strong' | translate }}</strong>
+                                <p>{{ 'landing.step2.paragraph' | translate }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="rewards-grid" @fadeIn>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="reward-card blue-bg">
+                    <img src="assets/images/icon/paypal.png" class="logo" alt="PayPal Logo" />
+                    <div>
+                        <p>{{ 'rewardsGrid.paypal.description' | translate }}</p>
+                        <a href="javascript://" routerLink="/paypal" class="learn-link">
+                            {{ 'common.learnMore' | translate }} <mat-icon>arrow_forward</mat-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="reward-card yellow-bg">
+                    <img src="assets/images/icon/amazon.png" class="logo" alt="Amazon Logo" />
+                    <div>
+                        <p>{{ 'rewardsGrid.amazon.description' | translate }}</p>
+                        <a href="javascript://" routerLink="/amazongiftcard" class="learn-link">
+                            {{ 'common.learnMore' | translate }} <mat-icon>arrow_forward</mat-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="reward-card grey-bg">
+                    <img src="assets/images/icon/visa.png" class="logo" alt="Visa Logo" />
+                    <div>
+                        <p>{{ 'rewardsGrid.visa.description' | translate }}</p>
+                        <a href="javascript://" routerLink="/visa" class="learn-link">
+                            {{ 'common.learnMore' | translate }} <mat-icon>arrow_forward</mat-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-root-faq></app-root-faq>

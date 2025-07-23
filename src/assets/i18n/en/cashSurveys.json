@@ -1,0 +1,51 @@
+{
+    "cashSurveys": {
+        "banner": {
+            "title": "Get Paid in Cash for Your Opinions",
+            "subtitle": "Want a simple way to earn extra cash in your spare time? Share your thoughts and get directly paid in cash for every survey you complete.",
+            "description1": "Whether you're planning for something special or need a quick cash boost, completing surveys for cash is a smart way to meet your goals.",
+            "description2": "Whether you're planning for something special or just want a quick cash top-up, get rewarded in real cash by sharing your views.",
+            "signUpButton": "Sign Up Now",
+            "signUpNote": "Start your first paid cash survey with Profitpiller today."
+        },
+        "section1": {
+            "subtitle": "Fast Surveys, Instant Cash",
+            "title": "Cash Out for Every Survey You Complete",
+            "description1": "Real surveys. Real opinions. Real cash in your account.",
+            "description2": "Companies want your feedback — and they’re willing to pay in cash to get it. With Profitpiller, you can earn real money for your time and input on brand preferences, product ideas, or daily habits.",
+            "description3": "We connect you with top-paying survey providers who value your insights. Complete surveys at your convenience and cash out whenever you're ready.",
+            "description4": "No fluff, no points — just direct cash rewards for sharing what you think."
+        },
+        "features": {
+            "subtitle": "Maximize Your Free Time",
+            "title": "Turn Opinions into Instant Cash",
+            "description": "Kick off your first cash survey now and cash out in as little as <span>17 minutes.</span>",
+            "step1": {
+                "label": "Step 1",
+                "title": "Create your Profitpiller account to claim your Welcome Bonus and unlock access to cash surveys."
+            },
+            "step2": {
+                "label": "Step 2",
+                "title": "Pick surveys that pay the most cash and complete them on your own schedule.",
+                "description": "Take as many surveys as you'd like daily — the more you do, the more cash you earn."
+            },
+            "step3": {
+                "label": "Step 3",
+                "title": "Ready to cash out? Redeem your earnings for PayPal or gift cards instantly.",
+                "description": "Whether it's real cash or spending at your favorite retailer, the choice is yours."
+            }
+        },
+        "rewardsGrid": {
+            "paypalWithdraw": "Withdraw Your Cash with PayPal",
+            "amazonPaid": "Get Paid via Amazon Gift Cards"
+        },
+        "support": {
+            "title": "Join Profitpiller & Get Paid Cash for Surveys",
+            "description": "It only takes a minute to sign up — start getting paid in real cash today for every survey you complete.",
+            "joinNow": "Join Now"
+        }
+    },
+    "common": {
+        "learnMore": "Learn More"
+    }
+}

@@ -1,0 +1,195 @@
+ .container-fluid {
+     width: 100%;
+     padding-right: .75rem;
+     padding-left: .75rem;
+     margin-right: auto;
+     margin-left: auto;
+ }
+ 
+ #Login {
+     min-height: 100vh;
+     position: relative;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     //  background: linear-gradient(132deg, #9fda86, #75b576, #1a5a49);
+     background-size: 400% 400%;
+     animation: Gradient 55s ease infinite;
+     background: #fff;
+     background: url('/assets/images/backgrounds/rh-vps-bg.gif');
+     background-position: center;
+     z-index: 0;
+     &::after {
+         content: '';
+         width: 100%;
+         height: 100%;
+         position: absolute;
+         top: 0;
+         left: 0;
+         background: url('/assets/images/backgrounds/wave-png-9948.png');
+         background-position: bottom center;
+         background-repeat: no-repeat;
+         background-size: cover;
+         z-index: -1;
+     }
+     .top-head {
+         position: absolute;
+         top: 6px;
+         left: 50%;
+         transform: translateX(-50%);
+         z-index: 99;
+         width: 100%;
+         justify-content: space-between;
+         align-items: center;
+         padding-left: 30px;
+         padding-right: 30px;
+     }
+     .button {
+         .my-custom-button {
+             color: #ffffff;
+             border: 1px solid #c7ff9b;
+             transition: all .3s ease-in-out;
+             &:hover {
+                 color: #0c4237;
+                 background: linear-gradient(90deg, #c7ff9b, #fff6a7);
+                 border: 1px solid transparent;
+             }
+         }
+     }
+     .bg-img {
+         top: 0;
+         bottom: 0;
+         min-height: 100vh;
+         z-index: 999;
+         opacity: 1;
+         position: relative;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding: 30px;
+         overflow: hidden;
+         background: #fff;
+         border-radius: 0 0 350px 0;
+         z-index: -1;
+         .logo {
+             position: absolute;
+             top: 50px;
+             left: 30px;
+         }
+         .bg-img-inner {
+             &::before,
+             &::after {
+                 content: "";
+                 position: absolute;
+             }
+             //  &::before {
+             //      width: 20%;
+             //      height: 20%;
+             //      top: 50px;
+             //      left: 50px;
+             //      border-radius: 100% 0 100% 100%;
+             //      background: url('/assets/images/backgrounds/rh-vps-bg.gif');
+             //      background-size: cover;
+             //      background-position: center;
+             //      background-size: cover;
+             //  }
+             &::after {
+                 width: 30%;
+                 height: 60%;
+                 top: 20%;
+                 right: 0;
+                 z-index: -1;
+                 -webkit-clip-path: polygon(0 0, 30% 0, 70% 10%);
+                 clip-path: polygon(0 0, 100% 50%, 100% 80%);
+                 background: url('/assets/images/backgrounds/rh-vps-bg.gif');
+                 background-size: cover;
+                 background-position: center;
+                 background-size: cover;
+             }
+             .info {
+                 z-index: 999;
+                 max-width: 650px;
+                 p {
+                     margin-bottom: 0;
+                     line-height: 28px;
+                 }
+                 .center {
+                     h1 {
+                         color: rgba(255, 0, 0, 0.1);
+                         font-size: 50px;
+                         text-transform: uppercase;
+                         font-weight: 700;
+                         background-size: cover;
+                         background-image: url('/assets/images/backgrounds/rh-vps-bg.gif');
+                         -webkit-background-clip: text;
+                         animation: background-text-animation 15s linear infinite;
+                         margin-bottom: 20px;
+                         line-height: 52px;
+                     }
+                 }
+             }
+         }
+     }
+     .form-info {
+         min-height: 100vh;
+         position: relative;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding: 30px 15px;
+         padding-top: 64px;
+         .form-section {
+             max-width: 450px;
+             margin: 0 auto;
+             width: 100%;
+         }
+     }
+ }
+ 
+ @keyframes background-text-animation {
+     0% {
+         background-position: left 0px top 50%;
+     }
+     50% {
+         background-position: left 1500px top 50%;
+     }
+     100% {
+         background-position: left 0px top 50%;
+     }
+ }
+ 
+ @keyframes Gradient {
+     0% {
+         background-position: 0% 50%;
+     }
+     50% {
+         background-position: 100% 50%;
+     }
+     100% {
+         background-position: 0% 50%;
+     }
+ }
+ 
+ @media (max-width:767px) {
+     #Login {
+         align-items: start;
+         .top-head {
+             z-index: 99;
+             padding-left: 10px;
+             padding-right: 10px;
+             .logo {
+                 width: 120px;
+                 img {
+                     width: 160px;
+                 }
+             }
+         }
+         .form-info {
+             min-height: auto;
+             margin-top: 20px;
+         }
+         .bg-img {
+             display: none;
+         }
+     }
+ }

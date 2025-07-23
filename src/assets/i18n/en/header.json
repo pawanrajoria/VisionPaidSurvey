@@ -1,0 +1,41 @@
+{
+  "header": {
+    "loginOrSignUp": "Log in or Sign up",
+    "earnRewards": "Earn Rewards",
+    "surveysOffers": "Surveys & Offers",
+    "redeemPoint": "Redeem Point",
+    "language": "English (भारत)",
+    "goToApp": "Go to App",
+    "livePayouts": "Live Payouts",
+    "Levels": "Levels",
+    "blue_level": "🔹 Blue Tier Achieved! 💙",
+    "motivated_message": "Stay active and level up faster!",
+    "left_headline": "Tier/Bonus",
+    "right_headline": "Levels",
+    "payoutItem": {
+      "paypal": "PayPal"
+    },
+    "levels": {
+      "l1": {
+        "title": "Blue Tier",
+        "description": "The journey begins here. Earn more to rise through the ranks!",
+        "range": "1-20"
+      },
+      "l2": {
+        "title": "Silver Tier",
+        "description": "Each Month, One Day. Big Bonuses. Unlimited Earning!",
+        "range": "21-30"
+      },
+      "l3": {
+        "title": "Gold Tier",
+        "description": "Enjoy VIP Access to Discounted Rewards!",
+        "range": "21-30"
+      },
+       "l4": {
+        "title": "Platinum Tier",
+        "description": "Unlock Early Access & Premium Perks",
+        "range": "31+"
+      }
+    }
+  }
+}

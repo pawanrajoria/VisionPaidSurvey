@@ -1,0 +1,86 @@
+<section id="Contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 m-auto">
+                <div class="heading">
+                    <h5>
+                        <mat-icon>card_membership</mat-icon> {{ 'contact.heading.subtitle' | translate }}
+                    </h5>
+                    <h2>{{ 'contact.heading.title' | translate }}</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="widget-contactbox">
+                            <div class="icons">
+                                <mat-icon> email</mat-icon>
+                            </div>
+                            <div class="content">
+                                <h4>{{ 'contact.emailUs.title' | translate }}</h4>
+                                <a href="mailto:support@profitpiller.com">{{ 'contact.emailUs.address' | translate }}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="widget-contactbox">
+                            <div class="icons">
+                                <mat-icon>phone_in_talk</mat-icon>
+                            </div>
+                            <div class="content">
+                                <h4>{{ 'contact.callUs.title' | translate }}</h4>
+                                <a href="tel:+91-8876654356">{{ 'contact.callUs.number' | translate }}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="widget-contactbox">
+                            <div class="icons">
+                                <mat-icon> add_location</mat-icon>
+                            </div>
+                            <div class="content">
+                                <h4>{{ 'contact.headOffice.title' | translate }}</h4>
+                                <p>{{ 'contact.headOffice.address' | translate }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <mat-card class="contact-card shadow-none text-left">
+                    <h2>{{ 'contact.form.title' | translate }}</h2>
+                    <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+                        <mat-form-field  appearance="outline" class="full-width">
+                            <mat-label>{{ 'contact.form.nameLabel' | translate }}</mat-label>
+                            <input matInput name="name" required [(ngModel)]="contact.name">
+                        </mat-form-field>
+
+                        <mat-form-field  appearance="outline" class="full-width">
+                            <mat-label>{{ 'contact.form.emailLabel' | translate }}</mat-label>
+                            <input matInput type="email" name="email" required [(ngModel)]="contact.email">
+                        </mat-form-field>
+
+                        <mat-form-field  appearance="outline" class="full-width">
+                            <mat-label>{{ 'contact.form.phoneLabel' | translate }}</mat-label>
+                            <input matInput type="tel" name="phone" [(ngModel)]="contact.phone">
+                        </mat-form-field>
+
+                        <mat-form-field  appearance="outline" class="full-width">
+                            <mat-label>{{ 'contact.form.messageLabel' | translate }}</mat-label>
+                            <textarea matInput rows="5" name="message" required [(ngModel)]="contact.message"></textarea>
+                        </mat-form-field>
+
+                        <button mat-raised-button color="primary" class="btn-submit" type="submit" [disabled]="!contactForm.valid">
+                            {{ 'contact.form.submitButton' | translate }}
+                        </button>
+                    </form>
+                </mat-card>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="img1 image-anime">
+                    <img src="assets/images/contact-us.jpg" alt="Contact Profit Piller">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

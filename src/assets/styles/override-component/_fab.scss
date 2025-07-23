@@ -1,0 +1,7 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+@include mat.fab-overrides((container-shape: 30px,
+    container-elevation-shadow: none,
+    hover-container-elevation-shadow: var(--mat-sys-level3),
+  ));

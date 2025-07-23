@@ -1,0 +1,32 @@
+<mat-card class="card-bottom cardWithShadow overflow-hidden" routerLink="/app/account">
+    <div class="bg-primary p-x-24 p-y-10 text-white">
+        <mat-card-title class="d-flex align-items-center gap-10">
+            <a mat-icon-button class="text-white d-flex justify-content-center">
+                <i-tabler name="chevron-left" class="icon-18 d-flex">
+                </i-tabler>
+            </a> {{ 'account.headings.survey_log' | translate }} </mat-card-title>
+    </div>
+</mat-card>
+
+<div class="transaction-list">
+    <mat-card *ngFor="let activity of surveyData"
+        [class]="activity.status === 'Completed'?'transaction-card green':'transaction-card'">
+        <div class="transaction-content">
+            <div class="transaction-points">
+                <div class="points">Points <strong class="highlight">{{ activity.points }}</strong></div>
+            </div>
+
+            <div class="transaction-status">
+                <div class="status">
+                    {{ activity.status }}
+                    <mat-icon *ngIf="activity.status === 'Completed'" class="complete-icon">check_circle</mat-icon>
+                    <mat-icon *ngIf="activity.status !== 'Completed'">sync</mat-icon>
+                </div>
+                <div class="date">Date {{ activity.attemptDate | date: 'd MMM yyyy' }}</div>
+            </div>
+        </div>
+    </mat-card>
+    <mat-card *ngIf="!surveyData || surveyData.length<1">
+        <mat-card-content>{{ 'messages.norecord_found' | translate }}</mat-card-content>
+    </mat-card>
+</div>

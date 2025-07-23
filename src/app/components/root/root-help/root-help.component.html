@@ -1,0 +1,109 @@
+<section id="Help">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 m-auto">
+                <div class="head">
+                    <h2>{{ 'help.heading.title' | translate }}</h2>
+                    <p class="intro">
+                        {{ 'help.heading.intro' | translate }}
+                    </p>
+                </div>
+
+                <div class="help-page">
+                    <mat-card>
+                        <mat-accordion class="help-accordion" multi>
+
+                            <!-- Original FAQs -->
+                            <mat-expansion-panel>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>{{ 'help.faqs.q1.question' | translate }}</mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <p>{{ 'help.faqs.q1.answer' | translate }}</p>
+                            </mat-expansion-panel>
+
+                            <mat-expansion-panel>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>{{ 'help.faqs.q2.question' | translate }}</mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <p>{{ 'help.faqs.q2.answer' | translate }}</p>
+                            </mat-expansion-panel>
+
+                            <mat-expansion-panel>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>{{ 'help.faqs.q3.question' | translate }}</mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <p [innerHTML]="'help.faqs.q3.answer' | translate | safeHtml"></p>
+                            </mat-expansion-panel>
+
+                            <mat-expansion-panel>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>{{ 'help.faqs.q4.question' | translate }}</mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <p [innerHTML]="'help.faqs.q4.answer' | translate | safeHtml"></p>
+                            </mat-expansion-panel>
+
+                            <!-- New FAQs -->
+                            <mat-expansion-panel>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>{{ 'help.faqs.q5.question' | translate }}</mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <p>{{ 'help.faqs.q5.answer' | translate }}</p>
+                            </mat-expansion-panel>
+
+                            <mat-expansion-panel>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>{{ 'help.faqs.q6.question' | translate }}</mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <p>{{ 'help.faqs.q6.answer' | translate }}</p>
+                            </mat-expansion-panel>
+
+                            <mat-expansion-panel>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>{{ 'help.faqs.q7.question' | translate }}</mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <p>{{ 'help.faqs.q7.answer' | translate }}</p>
+                            </mat-expansion-panel>
+
+                            <mat-expansion-panel>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>{{ 'help.faqs.q8.question' | translate }}</mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <p>{{ 'help.faqs.q8.answer' | translate }}</p>
+                            </mat-expansion-panel>
+
+                        </mat-accordion>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="Support" class="p-b-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="footer-note">
+                    <h4>{{ 'help.supportSection.title' | translate }}</h4>
+                    <ul>
+                        <li>{{ 'help.supportSection.point1' | translate }}</li>
+                        <li>{{ 'help.supportSection.point2' | translate }}</li>
+                        <li>{{ 'help.supportSection.point3' | translate }}</li>
+                        <li>{{ 'help.supportSection.point4' | translate }}</li>
+                        <li>{{ 'help.supportSection.point5' | translate }}</li>
+                    </ul>
+                    <a href="javascript://" routerLink="/contactus">{{ 'help.supportSection.contactButton' | translate
+                        }} <mat-icon>{{ 'common.arrowForward' | translate }}</mat-icon></a>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-1">
+                <div class="cta-images">
+                    <img src="assets/images/backgrounds/elements7.png" class="elements7" alt="Elements">
+                    <div class="img1">
+                        <img src="assets/images/cta-img1.png" alt="Support Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

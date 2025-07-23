@@ -1,0 +1,61 @@
+<nav mat-tab-nav-bar [tabPanel]="tabPanel" mat-stretch-tabs="false" mat-align-tabs="center" class="nav-tabs">
+    @for (link of links; track link) {
+    <a mat-tab-link (click)="activeLink = link;changeSurveyType(link)" [active]="activeLink == link"> {{link}} </a> }
+</nav>
+
+<mat-tab-nav-panel #tabPanel>
+    <div class="top-bar-wrapper">
+        <mat-form-field appearance="outline" class="search-field">
+            <input matInput placeholder="Search" [(ngModel)]="searchTxt" (input)="filterItems()" />
+        </mat-form-field>
+
+        <mat-button-toggle-group name="Change Devices" [(ngModel)]="selectedDeviceType" (change)="filterItems()" class="toggle-group" multiple>
+            <mat-button-toggle value="Android">
+                <i-tabler name="brand-android" class="fill-black"></i-tabler>
+            </mat-button-toggle>
+            <mat-button-toggle value="IPhone">
+                <i-tabler name="brand-apple" class="fill-black"></i-tabler>
+            </mat-button-toggle>
+            <mat-button-toggle value="All">
+                <i-tabler name="device-imac" class="fill-black"></i-tabler>
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+    <div class="offer-grid">
+        <mat-card class="offer-card" *ngFor="let offer of filteredOffers" (click)="openDialog(offer)">
+            <div class="offer-content">
+                <div>
+                    <div class="offer-image">
+                        <img [src]="offer.imageUrl" alt="Offer" />
+
+                        <div class="platform-icon">
+                            @if(offer?.device?.includes('All')) {
+                            <mat-icon>apple</mat-icon>
+                            <mat-icon>android</mat-icon>
+                            } @else{ @if(offer?.device?.includes('IPhone') || offer?.device?.includes('IPad')) {
+                            <mat-icon>apple</mat-icon>
+                            } @if(offer?.device?.includes('Android')) {
+                            <mat-icon>android</mat-icon>
+                            } }
+
+                        </div>
+                    </div>
+                    <div class="category">{{ offer.description }}</div>
+                </div>
+                <div class="offer-details">
+                    <div class="title">{{ offer.offerName }}</div>
+                    <div class="points">
+                        <div class="value">{{ offer.points }} <span class="label">Points</span></div>
+
+                    </div>
+                    <div class="stars">
+                        <mat-icon *ngFor="let i of [1,2,3,4,5]" class="star" [ngClass]="{ filled: i <= offer.rating }">star</mat-icon>
+                    </div>
+                </div>
+
+
+            </div>
+        </mat-card>
+    </div>
+
+</mat-tab-nav-panel>

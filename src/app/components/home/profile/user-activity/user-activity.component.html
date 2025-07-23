@@ -1,0 +1,30 @@
+<mat-card class="cardWithShadow overflow-hidden" routerLink="/app/account">
+    <div class="bg-primary p-x-24 p-y-10 text-white">
+        <mat-card-title class="d-flex align-items-center gap-10">
+            <a mat-icon-button class="text-white d-flex justify-content-center">
+                <i-tabler name="chevron-left" class="icon-18 d-flex">
+                </i-tabler>
+            </a> {{ 'account.headings.activity_log' | translate }} </mat-card-title>
+    </div>
+</mat-card>
+
+<div class="transaction-tabs">
+    <mat-card *ngFor="let log of userLogs"
+        [class]="log.status === 'Completed'?'transaction-card green':'transaction-card'">
+        <div class="transaction-content">
+            <div class="transaction-points">
+                <div class="points"><strong class="highlight">{{ log.pageName }}</strong></div>
+                <div class="balance">{{ log.eventName }}</div>
+
+            </div>
+
+            <div class="transaction-status">
+                <div class="status"> {{ log.status }} </div>
+                <div class="date">{{ log.logDate | date: 'd MMM yyyy' }}</div>
+            </div>
+        </div>
+    </mat-card>
+    <mat-card *ngIf="!userLogs || userLogs.length<1">
+        <mat-card-content>{{ 'messages.norecord_found' | translate }}</mat-card-content>
+    </mat-card>
+</div>

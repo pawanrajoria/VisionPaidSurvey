@@ -1,0 +1,17 @@
+{
+    "faq": {
+        "heading": {
+            "subtitle": "FAQ",
+            "title": "Frequently asked questions (FAQs)",
+            "description": "Check out the most common questions users ask about using <strong>ProfitPiller</strong> and how to start earning."
+        },
+        "checkAllQuestions": "Check All Questions",
+        "needHelp": {
+            "title": "Need help? Your answers are only a click away.",
+            "description": "Need further assistance? Our team is here to help. If you didn’t find the answer you were looking for, just reach out — we’ll ensure you get the clarity you need."
+        }
+    },
+    "common": {
+        "arrowForward": "arrow_forward"
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "contact": {
+        "heading": {
+            "subtitle": "Des questions ? Nous sommes là pour vous aider !",
+            "title": "Connectez-vous avec Profit Piller dès aujourd'hui"
+        },
+        "emailUs": {
+            "title": "Envoyez-nous un e-mail",
+            "address": "support@profitpiller.com"
+        },
+        "callUs": {
+            "title": "Appelez-nous",
+            "number": "+91-8876654356"
+        },
+        "headOffice": {
+            "title": "Siège social",
+            "address": "Spaze ITech Park, Secteur 49, Gurgaon, Haryana – 122001, Inde"
+        },
+        "form": {
+            "title": "Contactez-nous",
+            "nameLabel": "Nom",
+            "emailLabel": "E-mail",
+            "phoneLabel": "Numéro de téléphone",
+            "messageLabel": "Message",
+            "submitButton": "Envoyer le message"
+        }
+    }
+}

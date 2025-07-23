@@ -1,0 +1,68 @@
+<div class="text-center top-head">
+    <p>{{ 'login.headline' | translate }} </p>
+</div>
+<div class="rh-hero-right-part">
+    <div class="bg-trans">
+        <div class="rh-hr-rgt-top">
+            <i class="fa"><img src="assets/images/icon/trophy-star.png"></i>
+            <h3>{{ defaultAmount | currency: 'USD' : 'symbol' }} million <span>{{ 'login.earn_members' | translate
+                    }}</span></h3>
+        </div>
+        <div class="rh-hr-rgt-form">
+            <h3>{{ 'signup.signuptext' | translate }}</h3>
+
+            <div class="form-box">
+                <div *ngIf="!isResend">
+                    <form [formGroup]="signUpForm" (submit)="submit()">
+
+                        <mat-form-field appearance="outline" color="primary" class="w-100">
+                            <mat-label>{{ 'text.emailid' | translate }}</mat-label>
+                            <input matInput formControlName="email" readonly> @if
+                            (signUpForm.get('email')?.hasError('required')) {
+                            <mat-error class="text-right">{{ 'messages.email.required' | translate }}</mat-error>
+                            } @else if (signUpForm.get('email')?.hasError('email')) {
+                            <mat-error class="text-right">{{ 'messages.email.invalid' | translate }}</mat-error>
+                            }
+
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" color="primary" class="w-100">
+                            <mat-label>{{ 'text.password' | translate }}</mat-label>
+                            <input matInput type="password" formControlName="password"> @if
+                            (signUpForm.get('password')?.hasError('required')) {
+                            <mat-error class="text-right">{{ 'messages.password.required' | translate }}</mat-error>
+                            }
+                        </mat-form-field>
+
+                        <div class="terms-container">
+                            <mat-checkbox formControlName="isAccepted">
+                                {{ 'signup.accepttext' | translate }}
+                                <a href="/privacy-policy" target="_blank"> {{ 'signup.privacy_policy' | translate }}</a>
+                                {{ 'signup.andText' | translate }}
+                                <a href="/terms-conditions" target="_blank"> {{ 'signup.terms_conditions' | translate
+                                    }}</a>
+                            </mat-checkbox>
+                        </div>
+
+                        <!-- info card -->
+                        <div class="info-box">
+                            <p> {{ 'signup.singup_instraction' | translate }}</p>
+                        </div>
+                        <button type="submit" [disabled]="!signUpForm.get('isAccepted')?.value" mat-flat-button
+                            color="primary" class="w-100 m-y-1rem btn-theme">{{ 'buttons.continue' | translate
+                            }}</button>
+                    </form>
+                </div>
+                <div class="confirm-container text-center mat-typography" *ngIf="isResend">
+                    <h2 class="title m-b-12"> {{ 'signup.comfirm_email_text' | translate }}</h2>
+                    <mat-icon class="email-icon">mail</mat-icon>
+                    <p class="instruction m-b-4">
+                        {{ 'signup.comfirm_email_instraction' | translate }}
+                    </p>
+
+                    <a class="resend-link" (click)="onResend()">{{ 'buttons.resend' | translate }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

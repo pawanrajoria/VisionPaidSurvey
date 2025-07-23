@@ -1,0 +1,54 @@
+{
+  "help": {
+    "heading": {
+      "title": "Besoin d'aide avec Profit Piller ?",
+      "intro": "Nous sommes là pour rendre votre expérience fluide. Que vous ayez besoin d'aide pour les sondages, les échanges ou les récompenses, notre équipe de support est là pour vous."
+    },
+    "faqs": {
+      "q1": {
+        "question": "Comment commencer à gagner sur Profit Piller ?",
+        "answer": "Il suffit de créer un compte gratuit, de compléter votre profil et d'accéder aux sondages et offres. Vos gains commencent à s'accumuler immédiatement !"
+      },
+      "q2": {
+        "question": "Quand puis-je échanger mes récompenses ?",
+        "answer": "Une fois que vous atteignez le seuil de rachat minimum (par exemple, 425 ₹ pour PayPal ou les cartes cadeaux), vous pouvez échanger vos points instantanément."
+      },
+      "q3": {
+        "question": "Pourquoi n'ai-je pas reçu de crédit pour un sondage ?",
+        "answer": "Vous avez peut-être été disqualifié en raison des exigences du sondage ou de réponses incomplètes. Si vous pensez qu'il s'agit d'une erreur, <a href=\"mailto:support@profitpiller.com\">contactez notre équipe de support</a>."
+      },
+      "q4": {
+        "question": "Comment puis-je contacter le support de Profit Piller ?",
+        "answer": "Envoyez-nous un e-mail à <a href=\"mailto:support@profitpiller.com\">support@profitpiller.com</a> ou utilisez le formulaire de contact sur notre site Web."
+      },
+      "q5": {
+        "question": "Y a-t-il des limites de gains quotidiens ou hebdomadaires ?",
+        "answer": "Pas de limites strictes ! Vous pouvez compléter autant de sondages et d'offres que disponibles. Plus vous êtes actif, plus vous gagnez."
+      },
+      "q6": {
+        "question": "Puis-je utiliser Profit Piller sur mobile ?",
+        "answer": "Absolument ! Notre plateforme est entièrement adaptée aux mobiles et fonctionne parfaitement sur n'importe quel smartphone ou tablette."
+      },
+      "q7": {
+        "question": "Mes données sont-elles en sécurité avec Profit Piller ?",
+        "answer": "Oui. Nous suivons des protocoles stricts de confidentialité des données et ne partageons jamais vos informations personnelles avec des tiers sans consentement."
+      },
+      "q8": {
+        "question": "Puis-je parrainer d'autres personnes et gagner des bonus ?",
+        "answer": "Oui ! Vous pouvez inviter des amis et gagner des bonus de parrainage une fois qu'ils commencent à gagner sur la plateforme. Consultez votre tableau de bord de compte pour les options de parrainage."
+      }
+    },
+    "supportSection": {
+      "title": "Toujours besoin d'aide ou avez des questions ?",
+      "point1": "Nouveau sur la plateforme ou avez du mal à accéder aux fonctionnalités ?",
+      "point2": "Ne vous inquiétez pas — nous sommes là pour vous guider.",
+      "point3": "Attendez-vous à un support rapide, amical et utile de notre équipe.",
+      "point4": "Qu'il s'agisse d'une simple question ou d'un problème technique,",
+      "point5": "contactez-nous à tout moment — nous ne sommes qu'à un clic.",
+      "contactButton": "Contacter notre équipe de support"
+    }
+  },
+  "common": {
+    "arrowForward": "arrow_forward"
+  }
+}

@@ -1,0 +1,89 @@
+<div class="my-profile">
+    <div class="row">
+        <div class="col-lg-4 profile-nav">
+            <mat-card class="example-card" appearance="outlined">
+                <div class="panel">
+                    <div class="user-heading">
+                        <a href="javascript://">
+                            <img src="assets/images/icon/happy-smiling.jpg">
+                        </a>
+                        <h1>{{ 'account.hey_text' | translate }} <strong>{{ userInfo?.name }}</strong></h1>
+                        <p>{{ userInfo.emailId }}</p>
+                        <p class="earn">{{ 'account.earning_text' | translate }} <span><em>{{userBalanceInfo.balance}}
+                                    Points</em></span></p>
+                    </div>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active">
+                            <a extended routerLink="/app/account">
+                                <mat-icon>perm_identity</mat-icon> {{ 'account.profile' | translate }}</a>
+                        </li>
+                        <li>
+                            <a extended routerLink="/app/account/activity">
+                                <mat-icon>calendar_today</mat-icon> {{ 'account.recent_activity' | translate }} <span
+                                    class="label">9</span></a>
+                        </li>
+                        <li>
+                            <a extended routerLink="/app/account/accountsettings">
+                                <mat-icon>settings</mat-icon>
+                                {{ 'account.setting' | translate }}
+                            </a>
+                        </li>
+                        <li>
+                            <a (click)="authService.logOut()" extended routerLink="/app/account/">
+                                <mat-icon>input</mat-icon>
+                                {{ 'account.log_out' | translate }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </mat-card>
+
+        </div>
+        <div class="col-lg-8 profile-info">
+            <mat-card class="example-card" appearance="outlined">
+                <div class="panel">
+                    <div class="bio-graph-heading">
+                        {{ 'account.profile_slogen' | translate }}
+                    </div>
+                    <div class="bio-graph-info">
+                        <h2> {{ 'account.personal_details' | translate }}</h2>
+                        <ul>
+                            <li><strong>{{ 'account.age' | translate }}</strong>: {{ getAge(userInfo?.dateOfBirth) }}
+                                years old</li>
+                            <li *ngIf="!!userInfo.dateOfBirth"><strong>{{ 'account.dateOfBirth' | translate }}</strong>:
+                                {{ userInfo.dateOfBirth | date: 'MMM d, y' }}</li>
+                            <li><strong>{{ 'account.gender' | translate }}</strong>: {{ userInfo.gender }}</li>
+                            <li><strong>{{ 'account.zip_code' | translate }}</strong>: {{ userInfo.zip }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <mat-nav-list>
+                    <ul>
+
+
+                        @for (heading of userHeading; track heading) {
+                        <li>
+                            <mat-list-item class="h-100 bg-light-secondary" (click)="onHeadingClick(heading)">
+                                <div class="p-14 d-flex align-items-center gap-16">
+                                    <div
+                                        class="icon icon-38 rounded d-flex align-items-center justify-content-center bg-primary text-white">
+                                        <i-tabler name="{{heading.icon}}" class="icon-24 d-flex"></i-tabler>
+                                    </div>
+                                    <div class="info">
+                                        <h5 class="f-w-900 lh-sm f-s-14">{{heading.title}}</h5>
+                                        <h5 class="f-w-400 lh-sm f-s-14">{{ 'account.'+heading.subtitle | translate }}
+                                        </h5>
+                                    </div>
+                                </div>
+                            </mat-list-item>
+                        </li>
+                        }
+                    </ul>
+
+                </mat-nav-list>
+            </mat-card>
+
+        </div>
+    </div>
+</div>

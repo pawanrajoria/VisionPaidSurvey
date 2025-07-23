@@ -1,0 +1,232 @@
+.my-profile {
+    position: relative;
+    .profile-nav {
+        .example-card {
+            .panel {
+                .user-heading {
+                    background: url('/assets/images/backgrounds/rh-vps-bg.gif');
+                    background-size: cover;
+                    background-position: top center;
+                    color: #fff;
+                    border-radius: 4px 4px 0 0;
+                    padding: 30px;
+                    text-align: center;
+                    a {
+                        width: 112px;
+                        height: 112px;
+                        border-radius: 50%;
+                        border: 6px solid rgba(255, 255, 255, 0.3);
+                        display: inline-block;
+                        img {
+                            border-radius: 50%;
+                            width: 100%;
+                        }
+                    }
+                    h1 {
+                        font-size: 22px;
+                        font-weight: 300;
+                        margin-top: 12px;
+                        margin-bottom: 6px;
+                        strong {
+                            font-weight: 600;
+                        }
+                    }
+                    p {
+                        margin: 0;
+                        font-size: 16px;
+                        &.earn {
+                            margin-top: 10px;
+                            span {
+                                background: rgba(21, 94, 74, 1);
+                                padding: 4px 12px;
+                                border-radius: 4px;
+                                em {
+                                    color: transparent;
+                                    font-weight: 600;
+                                    background: linear-gradient(102deg, rgb(255 255 255) 16.73%, rgb(255, 225, 119) 42.67%, rgb(255 255 255) 81.59%, rgb(255, 246, 214) 163.24%) text;
+                                    font-size: 14px;
+                                    margin-bottom: 4px;
+                                    white-space: nowrap;
+                                    padding: 0 3px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            ul {
+                margin-top: 1px;
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                border-top: 1px solid #fff;
+                li {
+                    border-bottom: 1px solid #ebeae6;
+                    margin-top: 0;
+                    line-height: 30px;
+                    a {
+                        padding: 10px 15px;
+                        position: relative;
+                        text-decoration: none;
+                        display: flex;
+                        justify-content: start;
+                        gap: 4px;
+                        align-items: center;
+                        border-radius: 0;
+                        border-bottom: 0;
+                        font-size: 15px;
+                        color: #89817f !important;
+                        border-left: 5px solid transparent;
+                        span {
+                            &.label {
+                                margin: 6px 0 0;
+                                font-size: 12px;
+                                background-color: #155b4b;
+                                position: absolute;
+                                font-weight: 700;
+                                right: 10px;
+                                padding: .2em .6em .3em;
+                                border-radius: .25em;
+                                line-height: 1;
+                                color: #fff;
+                                text-align: center;
+                                white-space: nowrap;
+                                vertical-align: baseline;
+                                border-radius: .25em;
+                            }
+                        }
+                    }
+                    &.active,
+                    &:hover {
+                        a {
+                            background: #f8f7f5 !important;
+                            border-left: 5px solid #155b4b;
+                            color: #89817f !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .profile-info {
+        position: relative;
+        .example-card {
+            overflow: hidden;
+            .bio-graph-heading {
+                background: url('/assets/images/backgrounds/rh-vps-bg.gif');
+                background-size: cover;
+                background-position: top center;
+                color: #fff;
+                text-align: center;
+                font-style: italic;
+                padding: 40px 110px;
+                border-radius: 4px 4px 0 0;
+                font-size: 16px;
+                font-weight: 300;
+            }
+            .bio-graph-info {
+                padding: 15px;
+                color: #89817e;
+                h2 {
+                    font-size: 22px;
+                    font-weight: 300;
+                    margin: 0 0 20px;
+                }
+                ul {
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+                    display: flex;
+                    flex-wrap: wrap;
+                    li {
+                        display: flex;
+                        gap: 30px;
+                        align-items: center;
+                        font-size: 15px;
+                        text-rendering: optimizeLegibility;
+                        line-height: 32px;
+                        flex: 0 0 auto;
+                        width: 50%;
+                        strong {
+                            min-width: 100px;
+                        }
+                    }
+                }
+            }
+            hr {
+                background-color: #bec8d0;
+                width: 100%;
+            }
+        }
+        mat-nav-list {
+            ul {
+                padding: 0;
+                list-style: none;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: start;
+                gap: 6px;
+                margin-top: 0;
+                li {
+                    flex: 0 0 auto;
+                    width: 46.33333333%;
+                    mat-list-item {
+                        margin: 10px;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mdc-list-item.mdc-list-item--with-one-line {
+    height: 90%;
+}
+
+.height30 {
+    height: 40px;
+}
+
+@media (max-width:767px) {
+    .my-profile {
+        .profile-info {
+            .example-card {
+                .bio-graph-heading {
+                    padding: 20px 15px;
+                }
+                .bio-graph-info {
+                    ul {
+                        li {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            mat-nav-list {
+                ul {
+                    li {
+                        mat-list-item {
+                            margin: 4px;
+                            .gap-16 {
+                                gap: 5px !important;
+                                padding: 10px !important;
+                                .icon-38 {
+                                    height: 25px !important;
+                                    width: 25px !important;
+                                }
+                                .info {
+                                    h5 {
+                                        font-size: 12px !important;
+                                        line-height: 16px !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

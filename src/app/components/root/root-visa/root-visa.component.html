@@ -1,0 +1,157 @@
+<div class="breadcrumb-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="hero2-heading">
+                    <h2>{{ 'visaGiftCards.banner.title' | translate }}</h2>
+                    <h6>{{ 'visaGiftCards.banner.subtitle' | translate }}</h6>
+                    <div class="d-none d-md-block">
+                        <p>{{ 'visaGiftCards.banner.description' | translate }}</p>
+                        <div class="sign-up">
+                            <a href="javascript://" routerLink="/auth/login">{{ 'visaGiftCards.banner.startButton' | translate }} <mat-icon>arrow_forward</mat-icon></a>
+                            <p>{{ 'visaGiftCards.banner.startNote' | translate }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="img1">
+                    <img src="assets/images/gift-cards/Visa.png" alt="Visa Card">
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="hero2-heading d-md-none">
+                    <p>{{ 'visaGiftCards.banner.description' | translate }}</p>
+                    <div class="sign-up">
+                        <a href="javascript://" routerLink="/auth/login">{{ 'visaGiftCards.banner.startButton' | translate }} <mat-icon>arrow_forward</mat-icon></a>
+                        <p>{{ 'visaGiftCards.banner.startNote' | translate }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="landing-container position-relative" @fadeIn>
+    <img src="assets/images/backgrounds/elements9.png" alt="" class="elements9">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="illustration">
+                    <img src="assets/images/gift-cards/Visa_Giftcard.jpg" alt="Visa Giftcard Illustration" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="content">
+                    <h5 class="m-b-12">
+                        <mat-icon>card_giftcard</mat-icon> {{ 'visaGiftCards.section1.subtitle' | translate }}
+                    </h5>
+                    <h1>{{ 'visaGiftCards.section1.title' | translate }}</h1>
+                    <p class="subtitle m-t-0">
+                        {{ 'visaGiftCards.section1.description1' | translate }}
+                    </p>
+                    <div class="des">
+                        <p>{{ 'visaGiftCards.section1.description2' | translate }}</p>
+                        <p>{{ 'visaGiftCards.section1.description3' | translate }}</p>
+                        <p>{{ 'visaGiftCards.section1.description4' | translate }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features-section-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 m-auto">
+                <div class="features-heading">
+                    <h5 class="m-b-12">
+                        <mat-icon>card_giftcard</mat-icon> {{ 'visaGiftCards.features.subtitle' | translate }}
+                    </h5>
+                    <h2>{{ 'visaGiftCards.features.title' | translate }}</h2>
+                    <p>{{ 'visaGiftCards.features.description' | translate }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-md-12">
+                <div class="main-timeline">
+                    <div class="timeline">
+                        <div class="timeline-content">
+                            <div class="circle"><span class="homebox">
+                                    <img src="assets/images/icon/homepage_signup_icon1.svg" class="img" alt="Sign Up Icon">
+                                </span></div>
+                            <div class="content">
+                                <span class="year">{{ 'visaGiftCards.features.step1.label' | translate }}</span>
+                                <h3 class="title h4">{{ 'visaGiftCards.features.step1.title' | translate }}</h3>
+                                <div class="icon"><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-content">
+                            <div class="circle"><span class="homebox"><img src="assets/images/icon/icon2.svg"
+                                            class="img" alt="Survey Icon" /></span></div>
+                            <div class="content">
+                                <span class="year">{{ 'visaGiftCards.features.step2.label' | translate }}</span>
+                                <h3 class="title h4">{{ 'visaGiftCards.features.step2.title' | translate }}</h3>
+                                <p class="description" [innerHTML]="'visaGiftCards.features.step2.description' | translate | safeHtml"></p>
+                                <div class="icon"><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="rewards-grid" @fadeIn>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="reward-card blue-bg">
+                    <img src="assets/images/icon/paypal.png" class="logo" alt="PayPal Logo" />
+                    <div>
+                        <p>{{ 'visaGiftCards.rewardsGrid.paypalSurveys' | translate }}</p>
+                        <a href="javascript://" routerLink="/paypal" class="learn-link">Learn More <mat-icon>arrow_forward</mat-icon></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="reward-card yellow-bg">
+                    <img src="assets/images/icon/amazon.png" class="logo" alt="Amazon Logo" />
+                    <div>
+                        <p>{{ 'visaGiftCards.rewardsGrid.amazonSurveys' | translate }}</p>
+                        <a href="javascript://" routerLink="/amazongiftcard" class="learn-link">Learn More <mat-icon>arrow_forward</mat-icon></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-root-faq></app-root-faq>
+
+<section id="Support" class="p-b-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="footer-note">
+                    <h4>{{ 'visaGiftCards.support.title' | translate }}</h4>
+                    <p>{{ 'visaGiftCards.support.description' | translate }}</p>
+                    <a href="javascript://" routerLink="/auth/login">Join Now<mat-icon>arrow_forward</mat-icon></a>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-1">
+                <div class="cta-images">
+                    <img src="assets/images/backgrounds/elements7.png" class="elements7" alt="Elements">
+                    <div class="img1">
+                        <img src="assets/images/cta-img1.png" alt="CTA Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,39 @@
+{
+    "account": {
+        "heading": {
+            "title": "Need Help with Profit Piller?",
+            "intro": "We’re here to make your experience smooth. Whether you need help with surveys, redemptions, or rewards — our support team has your back."
+        },
+        "hey_text": "Hey",
+        "earning_text": "Earnings",
+        "profile": "Profile",
+        "recent_activity": "Recent Activity",
+        "setting": "Account Setting",
+        "log_out": "Log Out",
+        "profile_slogen": "Your profile is more than just details — it's the gateway to higher earnings, faster matches, and better opportunities.",
+        "age": "Age",
+        "gender": "Gender",
+        "zip_code": "Postal Code",
+        "dateOfBirth": "Date of Birth",
+        "personal_details": "Personal Details",
+        "Activity": "Activity",
+        "Points Earned": "Points Earned",
+        "Rewards Redeemed": "Rewards Redeemed",
+        "Survey Completed": "Survey Completed",
+        "Offer Completed": "Offer Completed",
+        "Achievements Earned": "Achievements Earned",
+        "Leaderboard Level": "Leaderboard Level",
+        "headings": {
+            "activity_log": "Activity Log",
+            "survey_log": "Survey's Activities",
+            "account_setting": "Account Settings",
+            "change_basic_setting": "Change Basic Info",
+            "change_username": "Change UserName",
+            "change_password": "Change Password",
+            "change_email": "Change Email",
+            "delete_account": "Delete Account",
+            "reward_transaction": "Rewards & Transactions",
+            "offers_activity": "Offer's Activities"
+        }
+    }
+}

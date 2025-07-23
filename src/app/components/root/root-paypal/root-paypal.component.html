@@ -1,0 +1,157 @@
+<div class="breadcrumb-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="hero2-heading">
+                    <h2>{{ 'paypalGiftCards.banner.title' | translate }}</h2>
+                    <h6>{{ 'paypalGiftCards.banner.subtitle' | translate }}</h6>
+                    <div class="d-none d-md-block">
+                        <p>{{ 'paypalGiftCards.banner.description' | translate }}</p>
+                        <div class="sign-up">
+                            <a href="javascript://" routerLink="/auth/login">{{ 'paypalGiftCards.banner.startButton' | translate }} <mat-icon>arrow_forward</mat-icon></a>
+                            <p>{{ 'paypalGiftCards.banner.startNote' | translate }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="img1">
+                    <img src="assets/images/gift-cards/paypal.png" alt="PayPal Icon">
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="hero2-heading d-md-none">
+                    <p>{{ 'paypalGiftCards.banner.description' | translate }}</p>
+                    <div class="sign-up">
+                        <a href="javascript://" routerLink="/auth/login">{{ 'paypalGiftCards.banner.startButton' | translate }} <mat-icon>arrow_forward</mat-icon></a>
+                        <p>{{ 'paypalGiftCards.banner.startNote' | translate }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="landing-container position-relative" @fadeIn>
+    <img src="assets/images/backgrounds/elements9.png" alt="" class="elements9">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="illustration">
+                    <img src="assets/images/gift-cards/paypal_Giftcard.jpg" alt="PayPal Giftcard Illustration" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="content">
+                    <h5 class="m-b-12">
+                        <mat-icon>card_giftcard</mat-icon> {{ 'paypalGiftCards.section1.subtitle' | translate }}
+                    </h5>
+                    <h1>{{ 'paypalGiftCards.section1.title' | translate }}</h1>
+                    <p class="subtitle m-t-0">
+                        {{ 'paypalGiftCards.section1.description1' | translate }}
+                    </p>
+                    <div class="des">
+                        <p>{{ 'paypalGiftCards.section1.description2' | translate }}</p>
+                        <p>{{ 'paypalGiftCards.section1.description3' | translate }}</p>
+                        <p>{{ 'paypalGiftCards.section1.description4' | translate }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features-section-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 m-auto">
+                <div class="features-heading">
+                    <h5 class="m-b-12">
+                        <mat-icon>card_giftcard</mat-icon> {{ 'paypalGiftCards.features.subtitle' | translate }}
+                    </h5>
+                    <h2>{{ 'paypalGiftCards.features.title' | translate }}</h2>
+                    <p>{{ 'paypalGiftCards.features.description' | translate }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-md-12">
+                <div class="main-timeline">
+                    <div class="timeline">
+                        <div class="timeline-content">
+                            <div class="circle"><span class="homebox">
+                                    <img src="assets/images/icon/homepage_signup_icon1.svg" class="img" alt="Sign Up Icon">
+                                </span></div>
+                            <div class="content">
+                                <span class="year">{{ 'paypalGiftCards.features.step1.label' | translate }}</span>
+                                <h3 class="title h4">{{ 'paypalGiftCards.features.step1.title' | translate }}</h3>
+                                <div class="icon"><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-content">
+                            <div class="circle"><span class="homebox"><img src="assets/images/icon/icon2.svg"
+                                            class="img" alt="Survey Icon" /></span></div>
+                            <div class="content">
+                                <span class="year">{{ 'paypalGiftCards.features.step2.label' | translate }}</span>
+                                <h3 class="title h4">{{ 'paypalGiftCards.features.step2.title' | translate }}</h3>
+                                <p class="description">{{ 'paypalGiftCards.features.step2.description' | translate }}</p>
+                                <div class="icon"><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="rewards-grid" @fadeIn>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="reward-card blue-bg">
+                    <img src="assets/images/icon/paypal.png" class="logo" alt="PayPal Logo" />
+                    <div>
+                        <p>{{ 'paypalGiftCards.rewardsGrid.paypalSurveys' | translate }}</p>
+                        <a href="javascript://" routerLink="/paypal" class="learn-link">{{ 'common.arrowForward' | translate }} <mat-icon>arrow_forward</mat-icon></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="reward-card yellow-bg">
+                    <img src="assets/images/icon/amazon.png" class="logo" alt="Amazon Logo" />
+                    <div>
+                        <p>{{ 'paypalGiftCards.rewardsGrid.amazonSurveys' | translate }}</p>
+                        <a href="javascript://" routerLink="/amazongiftcard" class="learn-link">{{ 'common.arrowForward' | translate }} <mat-icon>arrow_forward</mat-icon></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-root-faq></app-root-faq>
+
+<section id="Support" class="p-b-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="footer-note">
+                    <h4>{{ 'paypalGiftCards.support.title' | translate }}</h4>
+                    <p>{{ 'paypalGiftCards.support.description' | translate }}</p>
+                    <a href="javascript://" routerLink="/auth/login">{{ 'paypalGiftCards.support.joinNow' | translate }} <mat-icon>arrow_forward</mat-icon></a>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-1">
+                <div class="cta-images">
+                    <img src="assets/images/backgrounds/elements7.png" class="elements7" alt="Elements">
+                    <div class="img1">
+                        <img src="assets/images/cta-img1.png" alt="CTA Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,94 @@
+<mat-dialog-content class="rewards-dialog-content">
+
+    <div class="reward-container">
+        <div class="d-flex align-items-center justify-content-between m-b-16">
+            <h3 class="text-center">Select rewards</h3>
+            <button mat-icon-button mat-dialog-close>
+                <i-tabler name="x" class="x icon-20"></i-tabler>
+            </button>
+        </div>
+        <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>Search rewards...</mat-label>
+            <input matInput [(ngModel)]="searchText" />
+        </mat-form-field>
+
+        <!-- Transfer Section -->
+        <div class="section">
+            <div class="section-header">
+                <mat-icon>account_balance</mat-icon>
+                <span>Transfer (1)</span>
+            </div>
+            <div class="section-content" *ngFor="let card of rewardInfo.transferCards">
+
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <div class="reward-header p-y-16">
+                                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_74x46.jpg" />
+                                    <div>
+                                        <div class="reward-title">{{card.name}}</div>
+                                        <div class="reward-subtitle">From {{card.minValue}} points</div>
+                                    </div>
+                                </div>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="amount-body">
+                            <img src="assets/images/backgrounds/gift-2.png" class="elements46">
+                            <img src="assets/images/backgrounds/dust-gold-hi.png" class="stars">
+                            <img src="assets/images/elements4.png" class="elements4">
+                            <div class="gift-point">
+                                <div *ngFor="let amount of card.options" class="amount-card" [class.selected]="selectedAmount === amount.amount" (click)="selectAmount(amount,card)">
+                                    <div class="text">{{ amount.amount }}</div>
+                                    <div class="points">{{ amount.points }} points</div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </div>
+
+        <!-- Gift Cards Section -->
+        <div class="section m-y-1rem">
+            <div class="section-header">
+                <mat-icon>card_giftcard</mat-icon>
+                <span>Gift Cards ({{ rewardInfo.giftCards.length }})</span>
+            </div>
+            <div class="section-content" *ngFor="let gift of rewardInfo.giftCards">
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <div class="reward-header p-y-16">
+                                    <img [src]="gift.imageUrl" />
+                                    <div>
+                                        <div class="reward-title">{{ gift.name }}</div>
+                                        <div class="reward-subtitle">From {{ gift.minValue }} points</div>
+                                    </div>
+                                </div>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="amount-body">
+                            <img src="assets/images/backgrounds/gift-2.png" class="elements46">
+                            <img src="assets/images/backgrounds/dust-gold-hi.png" class="stars">
+                            <img src="assets/images/elements4.png" class="elements4">
+                            <div class="grid gift-point grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div *ngFor="let amount of gift.options" class="amount-card" [ngClass]="{ 'selected': selectedAmount === amount.amount }" (click)="selectAmount(amount,gift)">
+                                    <div class="text-lg font-semibold">{{ amount.amount }}</div>
+                                    <div class="text-sm text-gray-500">{{ amount.points }} points</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end" class="dialog-footer">
+    <button mat-raised-button class="footer-button" [disabled]="!selectedAmount" (click)="onSelectReward()">
+        Select
+    </button>
+</mat-dialog-actions>

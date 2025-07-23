@@ -1,13 +1,53 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="orange_theme light-theme">
+
 <head>
   <meta charset="utf-8">
-  <title>VisionPaidSurvey</title>
+  <title>Profitpiller – Paid Surveys & Gift Cards</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ✅ SEO Tags -->
+  <meta name="description" content="Take surveys and earn gift cards on Profitpiller. Trusted by thousands of users." />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://www.profitpiller.com" />
+
+  <!-- ✅ Open Graph Tags -->
+  <meta property="og:title" content="Profitpiller – Paid Surveys & Gift Cards" />
+  <meta property="og:description"
+    content="Earn PayPal, Visa, and Amazon gift cards by sharing your opinion on Profitpiller." />
+  <meta property="og:image" content="https://www.profitpiller.com/assets/images/og-image.png" />
+  <meta property="og:url" content="https://www.profitpiller.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- ✅ Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- ✅ Fonts: Optimize load order -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- ✅ Preload Hero Font for LCP Text -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ✅ Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- ✅ Optional Secondary Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <script async src="./assets/js/fingerprint.js"></script>
 </head>
-<body>
+
+<body class="mat-typography">
   <app-root></app-root>
+
+  <!-- ✅ Optional: Lazy load non-critical scripts after LCP -->
+  <!-- <script src="analytics.js" defer></script> -->
+
 </body>
+
 </html>

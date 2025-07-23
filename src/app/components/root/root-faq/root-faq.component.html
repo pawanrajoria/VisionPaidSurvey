@@ -1,0 +1,53 @@
+<section class="position-relative" id="FAQ-Sec">
+    <div class="container" @fadeIn>
+        <div class="row align-items-end m-b-30">
+            <div class="col-lg-6 col-md-7">
+                <div class="section-header">
+                    <div class="d-flex align-items-center gap-2 m-b-12 theme-clr">
+                        <mat-icon> bar_chart</mat-icon> {{ 'faq.heading.subtitle' | translate }}
+                    </div>
+                    <h2 class="faq-title">{{ 'faq.heading.title' | translate }}</h2>
+                    
+                    <p class="faq-subtitle" [innerHTML]="'faq.heading.description' | translate | safeHtml"></p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-5">
+                <div class="text-end">
+                    <a href="javascript://" routerLink="/help" class="theme-clr4">
+                        <mat-icon class="bg-white rounded-circle">{{ 'common.arrowForward' | translate }}</mat-icon> {{ 'faq.checkAllQuestions' | translate }}
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-7">
+                <div class="accordion-scroll">
+                    <mat-accordion multi class="faq-accordion">
+                        <mat-expansion-panel *ngFor="let item of faqs">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    {{ item.question }}
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>{{ item.answer }}</p>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="faq-content_wrap text-start">
+                    <div class="d-flex gap-2 justify-content-between p-b-48">
+                        <h3>{{ 'faq.needHelp.title' | translate }}</h3>
+                        <div class="icon">
+                            <mat-icon>help_outline</mat-icon>
+                        </div>
+                    </div>
+                    <p>{{ 'faq.needHelp.description' | translate }}</p>
+                    <a href="javascript://" routerLink="/help" class="theme-btn style1">
+                        <mat-icon class="bg-white rounded-circle">{{ 'common.arrowForward' | translate }}</mat-icon> {{ 'faq.checkAllQuestions' | translate }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

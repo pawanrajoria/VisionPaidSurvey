@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "title": "¡Dinero fácil por opiniones cotidianas!",
+    "description": "Tus pensamientos ayudan a las marcas a mejorar, y están listas para pagar por ellos. Realiza encuestas, completa ofertas sencillas y gana recompensas reales sin esfuerzo.",
+    "offer1": {
+      "title": "Gana ₹{{amount}} por tu opinión — ¡No se necesita experiencia!",
+      "subtitle": "{{surveys}} encuestas esperándote en India 🇮🇳"
+    },
+    "offer2": {
+      "title": "₹{{amount}} ganados ayer por usuarios promedio",
+      "subtitle": "¡Tú podrías ser el siguiente! Cobra a partir de ₹{{minPayout}}"
+    },
+    "login": {
+      "title": "Gana dinero compartiendo tu opinión",
+      "signIn": "Inicia sesión en tu cuenta",
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "Correo electrónico",
+      "passwordLabel": "Contraseña",
+      "continueButton": "Continuar",
+      "orLoginWith": "O inicia sesión con",
+      "googleButton": "Google"
+    },
+    "loggedIn": {
+      "title": "Gana dinero compartiendo tu opinión",
+      "message": "Ya has iniciado sesión",
+      "goToAppButton": "Ir a la aplicación"
+    }
+  },
+  "brandStrip": {
+    "description": "Al compartir tus pensamientos sobre temas de actualidad, marcas de limpieza de confianza o tus programas favoritos, puedes convertir opiniones en ingresos con la aplicación de encuestas y ofertas Profit Piller."
+  },
+  "choose": {
+    "title": "¿Tienes opiniones? ¡Conviértelas en dinero aquí en<span> India!</span>",
+    "description": "Realiza encuestas emocionantes en Profit Piller y retira tus ganancias al instante, como efectivo o tarjetas de regalo.",
+    "step1": {
+      "title": "Regístrate",
+      "subtitle": "Únete ahora – Es gratis"
+    },
+    "step2": {
+      "title": "Completa encuestas y desbloquea ofertas",
+      "subtitle": "Elige cualquier encuesta u oferta para empezar a ganar recompensas."
+    },
+    "step3": {
+      "title": "Cobra ahora",
+      "subtitle": "Cobra o elige entre más de 1000 recompensas emocionantes."
+    }
+  },
+  "rewards": {
+    "banner": {
+      "title": "Elige tu favorito entre más de 1000 recompensas",
+      "description": "Recibe pagos a través de PayPal o elige entre una amplia gama de <br>tarjetas de regalo."
+    }
+  },
+  "howItWorks": {
+    "title": "Gana dinero en línea con encuestas y ofertas – disponible en toda <span class=\"highlight f-w-900\">India.</span>",
+    "subtitle": "Realiza encuestas emocionantes, obtén recompensas rápidamente. Cobra o canjea tarjetas de regalo de inmediato con Profit Piller.",
+    "playGames": {
+      "title": "Jugar juegos",
+      "subtitle": "Gana por juego",
+      "price": "$0.80 - $100"
+    },
+    "takeSurveys": {
+      "title": "Realizar encuestas",
+      "subtitle": "Gana por encuesta de 2-10 min",
+      "price": "$1.80 - $100"
+    },
+    "completeOffers": {
+      "title": "Completar ofertas",
+      "subtitle": "Gana por aplicación",
+      "price": "$1.80 - $100"
+    }
+  },
+  "landing": {
+    "title": "Aplicación de encuestas y ofertas en línea con pagos rápidos y retiro mínimo bajo",
+    "subtitle": "Cada encuesta y oferta que completes podría poner dinero en tu bolsillo, ¡imagínate!",
+    "valueTime": {
+      "title": "Valoramos tu tiempo, y en <span class=\"highlight\">Profit Piller</span>, lo recompensamos.",
+      "description": "Con nuestro bajo pago mínimo, puedes cobrar el mismo día, sin esperas. Tus recompensas, a tu manera."
+    },
+    "infoBadge": "En promedio, ¡solo se necesitan {{minutes}} minutos para obtener tu primer pago!",
+    "step1": {
+      "strong": "Comienza registrándote, luego elige las encuestas pagadas y las ofertas que te gustaría realizar.",
+      "paragraph": "Con cientos de encuestas y ofertas disponibles, puedes ganar jugando, compartiendo tus compras o hablando de tus equipos favoritos."
+    },
+    "step2": {
+      "strong": "Gana puntos cada vez que completes una encuesta, ¡así de simple!",
+      "paragraph": "Visita la página de recompensas para convertir tus puntos en efectivo o tarjetas de regalo."
+    }
+  },
+  "rewardsGrid": {
+    "paypal": {
+      "description": "Canjear puntos por tarjetas de regalo de PayPal"
+    },
+    "amazon": {
+      "description": "Canjear por una tarjeta de regalo de Amazon"
+    },
+    "visa": {
+      "description": "O simplemente retira el efectivo, tú decides."
+    }
+  },
+  "common": {
+    "learnMore": "Saber más"
+  }
+}

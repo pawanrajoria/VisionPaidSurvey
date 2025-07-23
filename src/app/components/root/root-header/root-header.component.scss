@@ -1,0 +1,257 @@
+.navbar {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    background: #105749 url('/assets/images/backgrounds/rh-vps-bg.gif'); // Or transparent, but white is cleaner for fixed
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: top center;
+    &.shrunk {
+        position: fixed;
+        height: auto;
+        background-color: #105749;
+        -webkit-transition: background-color 300ms linear, height 300ms;
+        -ms-transition: background-color 300ms linear, height 300ms;
+        transition: background-color 300ms linear, height 300ms;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        .my-custom-toolbar-inner {
+            height: 50px;
+            .navbar-left {
+                .logo {
+                    height: 32px;
+                }
+            }
+        }
+    }
+    .navbar-left {
+        .logo {
+            height: 65px;
+            transition: height 0.3s ease;
+        }
+    }
+    .spacer {
+        flex: 1;
+    }
+    .navbar-links {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .mobile-menu-btn {
+        display: none;
+    }
+    @media (max-width: 768px) {
+        .navbar-links {
+            display: none;
+        }
+        .mobile-menu-btn {
+            display: inline-flex;
+        }
+    }
+}
+
+
+/* rahul toolbar code */
+
+.my-custom-toolbar {
+    //background-color: #105749; /* Example color */
+    color: #ffffff;
+    /* Adjust text color if needed */
+    .container {
+        width: 100%;
+    }
+}
+
+.my-custom-toolbar-inner {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    button {
+        &.site-header-button {
+            display: none;
+        }
+    }
+    .navbar-left {
+        .logo {
+            height: 65px;
+            transition: height 0.3s ease;
+        }
+    }
+    .spacer {
+        flex: 1;
+    }
+    .navbar-links {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .mobile-menu-btn {
+        display: none;
+    }
+    @media (max-width: 768px) {
+        .navbar-links {
+            display: none;
+        }
+        .mobile-menu-btn {
+            display: inline-flex;
+            border-radius: 50%;
+        }
+        button {
+            &.site-header-button {
+                display: inherit;
+                min-height: 30px;
+                font-weight: 600;
+                line-height: 36px;
+                padding: 0px 12px;
+                border: 0;
+                font-size: 12px;
+                margin-right: 5px;
+                color: #0c4237;
+                background: linear-gradient(90deg, #c7ff9b, #fff6a7);
+            }
+        }
+    }
+}
+
+.mat-mdc-button:not(:disabled) {
+    color: #ffffff;
+}
+
+.mat-mdc-unelevated-button:not(:disabled) {
+    color: #0c4237;
+    background: linear-gradient(90deg, #c7ff9b, #fff6a7);
+    border: 1px solid transparent;
+}
+
+.mat-mdc-unelevated-button:not(:disabled):hover {
+    background: transparent;
+    border: 1px solid #c7ff9b;
+    color: #fff;
+}
+
+.mat-mdc-button .mat-mdc-button-ripple {
+    background-color: #c7ff9b;
+}
+
+.navbar-links>a.nav-link:hover {
+    background-color: #c7ff9b;
+    color: #0c4237;
+    transition: background-color 500ms;
+}
+
+.my-custom-button {
+    border: 1px solid #c7ff9b;
+}
+
+.my-custom-button:hover {
+    color: #0c4237;
+    background: linear-gradient(90deg, #c7ff9b, #fff6a7);
+    border: 1px solid transparent;
+}
+
+.mobile-menu-btn {
+    color: #0c4237;
+    background: linear-gradient(90deg, #c7ff9b, #fff6a7);
+    border-radius: 6px;
+}
+
+.live-payout {
+    width: 100%;
+    border-top: 1px solid #30755c;
+    border-bottom: 1px solid #30755c;
+    .trending-nows-aera {
+        display: flex;
+        gap: 20px;
+        padding: 12px 0px;
+        position: relative;
+        .live-payouts {
+            position: relative;
+            padding-left: 12px;
+            width: 106px;
+            flex: 0 0 auto;
+            .blink {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: #73f627;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                filter: blur(1px);
+                animation: blink 1.2s infinite;
+            }
+            @keyframes blink {
+                0% {
+                    opacity: 0
+                }
+                49% {
+                    opacity: 0
+                }
+                50% {
+                    opacity: 1
+                }
+            }
+        }
+        .card-list {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 8px;
+            overflow: hidden;
+            .payout-item {
+                white-space: nowrap;
+                text-transform: uppercase;
+                font-size: 13px;
+                flex-shrink: 0;
+                text-transform: uppercase;
+                border-radius: 24px;
+                background: #2e725b;
+                padding: 2px 10px 2px 3px;
+                width: max-content;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                min-width: 134px;
+                transform: translateX(0);
+                animation: a-text-scroll 4s linear infinite;
+                span {
+                    font-weight: 300;
+                }
+            }
+            @keyframes a-text-scroll {
+                0% {
+                    transform: translate3d(-100%, 0, 0);
+                }
+                100% {
+                    transform: translate3d(0%, 0, 0);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:992px) and (max-width:1024px) {}
+
+@media (min-width:768px) and (max-width:991px) {}
+
+@media (max-width:767px) {
+    .my-custom-toolbar-inner {
+        .navbar-left {
+            .logo {
+                height: 38px;
+            }
+        }
+    }
+    .trending-nows-aera {
+        gap: 6px;
+    }
+}

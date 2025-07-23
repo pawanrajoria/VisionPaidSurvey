@@ -1,0 +1,25 @@
+{
+    "personalInformation": {
+        "heading": {
+            "title": "Do Not Sell My Info"
+        },
+        "intro": {
+            "paragraph": "At <strong>Profitpiller</strong>, we prioritize your privacy and respect your control over your personal information. In accordance with privacy regulations like the California Consumer Privacy Act (CCPA), you have the right to request that your personal data not be sold."
+        },
+        "whatItMeans": {
+            "title": "What does this mean?",
+            "paragraph": "We may collect certain data to enhance your user experience and support the functionality of our services. While we do not \"sell\" your data in the traditional sense, some forms of data sharing with partners may be considered a \"sale\" under certain privacy laws."
+        },
+        "optOutForm": {
+            "title": "Opt-Out Form",
+            "fullNameLabel": "Your Full Name",
+            "emailLabel": "Email Address",
+            "commentsLabel": "Additional Comments (Optional)",
+            "submitButton": "Submit Request"
+        },
+        "questions": {
+            "title": "Questions?",
+            "paragraph": "For any questions or additional information about how we manage your personal data, feel free to contact us at <a href=\"mailto:privacy@profitpiller.com\">privacy@profitpiller.com</a>."
+        }
+    }
+}

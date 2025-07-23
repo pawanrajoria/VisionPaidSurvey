@@ -1,0 +1,14 @@
+{
+  "header": {
+    "loginOrSignUp": "Se connecter ou S'inscrire",
+    "earnRewards": "Gagner des récompenses",
+    "surveysOffers": "Sondages et Offres",
+    "redeemPoint": "Échanger des points",
+    "language": "Français (France)",
+    "goToApp": "Aller à l'application",
+    "livePayouts": "Paiements en direct",
+    "payoutItem": {
+      "paypal": "PayPal"
+    }
+  }
+}

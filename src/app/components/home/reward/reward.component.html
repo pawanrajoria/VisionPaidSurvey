@@ -1,0 +1,122 @@
+<h2 class="section-title text-center">
+    <mat-icon color="primary">redeem</mat-icon>
+    {{ 'Redeem Points' | translate }}
+    <mat-icon class="info-icon">help_outline</mat-icon>
+</h2>
+
+<div class="section m-y-1rem">
+    <div class="section-header">
+        <mat-icon>account_balance</mat-icon>
+        <span> {{ 'Transfer' | translate }} ({{ rewardInfo.transferCards.length }})</span>
+    </div>
+    <div class="section-content">
+        <div class="giftcard-grid">
+            @for (card of rewardInfo.transferCards; track card.productId) {
+            <mat-card class="giftcard" [ngClass]="{ 'active': selectedCard?.productId === card.productId }"
+                (click)="toggleCard(card)" [class.expanded]="selectedCard?.productId === card.productId">
+                <div class="card-header">
+                    <img [src]="card.imageUrl" alt="{{ card.name }}" />
+                    <div class="card-info">
+                        <h3>{{ card.name }}</h3>
+                        <p>{{ 'From' | translate }} {{ card.minPoints }} points</p>
+                    </div>
+                    <button mat-icon-button class="expand-icon" (click)="toggleCard(card); $event.stopPropagation()">
+                        <mat-icon>
+                            {{ selectedCard?.productId === card.productId ? 'expand_less' : 'expand_more' }}
+                        </mat-icon>
+                    </button>
+                </div>
+            </mat-card>
+            <div *ngIf="selectedCard?.productId=== card.productId" class="giftcard-expand-row" [@expandCollapse]>
+                <img src="assets/images/backgrounds/gift-2.png" class="elements46">
+                <img src="assets/images/backgrounds/dust-gold-hi.png" class="stars">
+                <img src="assets/images/elements4.png" class="elements4">
+                <!-- <div class="cta-images">
+                    <img src="assets/images/backgrounds/gift-img.png" class="elements7 keyframe5">
+                </div> -->
+                <div class="gift-point">
+
+                    <div class="child-options">
+                        <div class="child-card" *ngFor="let option of card.options;"
+                            [class.selected]="selectedChildOptionCard?.amount === option.amount"
+                            (click)="selectChilOption(option, $event)">
+                            <div class="child-card-content">
+                                <div>{{ option.amount | currency: card.currencyCode : 'symbol' }}</div>
+                                <div class="points">{{ option.points }} points</div>
+                            </div>
+                            <mat-icon class="lock-icon">lock</mat-icon>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="selectedChildOptionCard" class="redeem-button-container">
+                    <button mat-flat-button color="accent" class="btn-theme"
+                        (click)="redeemPayPal(selectedChildOptionCard)">
+                        {{ 'buttons.redeem' | translate }} {{ selectedChildOptionCard.amount | currency:
+                        card.currencyCode : 'symbol' }}
+                    </button>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+    <div class="section-header">
+        <mat-icon>card_giftcard</mat-icon>
+        <span> {{ 'Gift Cards' | translate }} ({{ rewardInfo.giftCards.length }})</span>
+    </div>
+
+    <div class="section-content">
+        <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>{{ 'search_reward' | translate }}</mat-label>
+            <input matInput [(ngModel)]="searchText" />
+        </mat-form-field>
+        <div class="giftcard-grid">
+            @for  (card of filteredGiftCards; track card.productId) {
+            <mat-card class="giftcard" [ngClass]="{ 'active': selectedCard?.productId === card.productId }"
+                (click)="toggleCard(card)" [class.expanded]="selectedCard?.productId === card.productId">
+                <div class="card-header">
+                    <img [src]="card.imageUrl" alt="{{ card.name }}" />
+                    <div class="card-info">
+                        <h3>{{ card.name }}</h3>
+                        <p> {{ 'From' | translate }} {{ card.minPoints }} points</p>
+                    </div>
+                    <button mat-icon-button class="expand-icon " (click)="toggleCard(card); $event.stopPropagation()">
+                        <mat-icon>
+                            {{ selectedCard?.productId === card.productId ? 'expand_less' : 'expand_more' }}
+                        </mat-icon>
+                    </button>
+                </div>
+            </mat-card>
+            <div *ngIf="selectedCard?.productId === card.productId" class="giftcard-expand-row" [@expandCollapse]>
+                <img src="assets/images/backgrounds/gift-2.png" class="elements46">
+                <img src="assets/images/backgrounds/dust-gold-hi.png" class="stars">
+                <img src="assets/images/elements4.png" class="elements4">
+                <div class="child-options">
+                    <div class="child-card" *ngFor="let option of card.options;"
+                        [class.selected]="selectedChildOptionCard?.amount === option.amount"
+                        (click)="selectChilOption(option, $event)">
+                        <div class="child-card-content">
+                            <div>{{ option.amount | currency: card.currencyCode : 'symbol' }}</div>
+                            <div class="points">{{ option.points }} points</div>
+                        </div>
+                        <mat-icon class="lock-icon">lock</mat-icon>
+                    </div>
+                </div>
+                <div *ngIf="selectedChildOptionCard" class="redeem-button-container">
+                    <button mat-flat-button color="accent" class="btn-theme"
+                        (click)="redeemGift(selectedChildOptionCard,selectedCard)">
+                        {{ 'buttons.redeem' | translate }} {{ selectedChildOptionCard.amount | currency:
+                        card.currencyCode : 'symbol' }}
+                    </button>
+                </div>
+            </div>
+            }
+        </div>
+
+        <div class="view-more-container" *ngIf="!showAllGiftCards && rewardInfo.giftCards.length > pageSize">
+            <button mat-button class="view-more-link" (click)="viewMoreGiftCards()">
+                {{ 'View' | translate }} {{ rewardInfo.giftCards.length - pageSize }} {{ 'more_giftcard' | translate }}
+            </button>
+        </div>
+    </div>
+
+</div>

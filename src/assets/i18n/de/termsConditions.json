@@ -1,0 +1,132 @@
+{
+  "termsConditions": {
+    "heading": {
+      "title": "Allgemeine Geschäftsbedingungen / Nutzungsbedingungen",
+      "effectiveDate": "Gültigkeitsdatum: 6. Mai 2025"
+    },
+    "applicability": {
+      "title": "Anwendbarkeit",
+      "paragraph1": "Profitpiller (das „Panel“) ist eine digitale Marktforschungsplattform, die von Cralpk Research Pvt. Ltd. betrieben und Eigentum ist.",
+      "paragraph2": "Als Panel-Mitglied werden Sie eingeladen, an Marktforschungsstudien und damit verbundenen Teilnahmeaktivitäten teilzunehmen.",
+      "paragraph3": "Teile dieser Bedingungen und/oder unserer Datenschutzrichtlinie können jederzeit nach alleinigem Ermessen von Profitpiller geändert, aktualisiert oder entfernt werden. Es liegt in Ihrer Verantwortung, sich durch regelmäßige Überprüfung dieser Bedingungen auf dem Laufenden zu halten. Das obige Datum spiegelt die letzte Aktualisierung wider.",
+      "paragraph4": "Details zur Verwaltung Ihrer Daten finden Sie in unserer Datenschutzrichtlinie.",
+      "paragraph5": "Diese Bedingungen stellen einen bindenden Rechtsvertrag zwischen Ihnen und Profitpiller dar. Durch die Registrierung, den Zugriff oder die Nutzung unserer Dienste bestätigen Sie Ihr Einverständnis mit diesen Bedingungen.",
+      "paragraph6": "Diese Vereinbarung beinhaltet einen Verzicht auf Sammelklagen. Wenn Sie mit Teilen dieser Bedingungen nicht einverstanden sind, nutzen Sie die Dienste bitte nicht."
+    },
+    "eligibility": {
+      "title": "Berechtigung",
+      "paragraph1": "Die Mitgliedschaft steht nur Einzelpersonen (nicht Organisationen oder juristischen Personen) zur Verfügung, die mindestens 18 Jahre alt sind oder das in ihrem Land oder ihrer Region erforderliche Alter erreicht haben.",
+      "paragraph2": "Die Panel-Teilnahme ist für den persönlichen, nicht-kommerziellen Gebrauch bestimmt. Pro Person ist nur ein Konto zulässig.",
+      "paragraph3": "Profitpiller behält sich das Recht vor, Dienste jederzeit und ohne Angabe von Gründen zu verweigern."
+    },
+    "panelRegistration": {
+      "title": "Panel-Registrierung",
+      "paragraph1": "Um dem Panel beizutreten und Coins zu erhalten, müssen Sie das Registrierungsformular genau ausfüllen und eine gültige E-Mail-Adresse und ein Passwort angeben.",
+      "paragraph2": "Sie stimmen zu, Ihre Kontoinformationen genau und aktuell zu halten. Andernfalls kann dies zur Sperrung oder Kündigung Ihres Kontos und zum Verlust der angesammelten Coins führen.",
+      "paragraph3": "Ihre Teilnahme am Panel erfolgt als unabhängiger Auftragnehmer. Durch diese Vereinbarung wird kein Arbeits-, Partnerschafts- oder Agenturverhältnis begründet."
+    },
+    "rewards": {
+      "title": "Belohnungen",
+      "coinsDefinition": {
+        "subtitle": "Definition von Coins",
+        "description": "Profitpiller vergibt digitale Credits namens „Coins“, die gegen Bargeld oder andere Belohnungen gemäß spezifischen Bedingungen eingelöst werden können."
+      },
+      "earningCoins": {
+        "subtitle": "Coins verdienen",
+        "description1": "Coins werden für genehmigte Aktivitäten wie die Anmeldung, das Ausfüllen Ihres Profils und das Beenden von Umfragen vergeben. Für die meisten Umfragen ist eine Qualifikation erforderlich. Sie erhalten keine Coins für Umfragen, für die Sie disqualifiziert werden.",
+        "listTitle": "Sie können Coins verdienen für:",
+        "point1": "Willkommensbonus – einmaliger Bonus nach der Registrierung.",
+        "point2": "Umfrageabschluss – Coins werden basierend auf jeder qualifizierenden und abgeschlossenen Umfrage vergeben.",
+        "point3": "Umfrageversuch – Gelegentlich kann auch bei nicht vollständiger Umfrage eine Teilanrechnung erfolgen.",
+        "point4": "Empfehlungen – Verdienen Sie Coins, wenn geworbene Benutzer über Ihren Empfehlungslink beitreten und teilnehmen.",
+        "description2": "Sie sind für die Überwachung Ihres Coin-Guthabens verantwortlich. Streitigkeiten müssen innerhalb von 30 Tagen gemeldet werden. Profitpiller wird den Fall untersuchen und Sie über das Ergebnis informieren."
+      },
+      "redeemingCoins": {
+        "subtitle": "Coins einlösen",
+        "description1": "Sie können Coins über Ihr Panel-Dashboard einlösen. 100 Coins = 1,00 $ oder Gegenwert. Coins können auch gegen Geschenkkarten eingetauscht werden.",
+        "description2": "Geschenkkarten werden an Ihre registrierte E-Mail-Adresse gesendet. Lieferprobleme müssen innerhalb von 3 Monaten nach Ausstellung gemeldet werden.",
+        "description3": "Zahlungen über PayPal, UPI oder Banküberweisung erfordern gültige Kontodaten. Es liegt in Ihrer Verantwortung, diese Informationen aktuell zu halten.",
+        "description4": "Die Bearbeitungszeit kann zwischen 10 Minuten und zwei Wochen variieren. Die Einlöseanforderungen können sich aufgrund gesetzlicher Bestimmungen ändern."
+      },
+      "taxResponsibility": {
+        "subtitle": "Steuerliche Verantwortung",
+        "description": "Coins und Belohnungen können der Besteuerung unterliegen. Sie sind für die Einhaltung der Steuervorschriften in Ihrer Gerichtsbarkeit verantwortlich."
+      },
+      "expirationOfCoins": {
+        "subtitle": "Verfall von Coins",
+        "description": "Coins verfallen 12 Monate nach dem Erwerbsdatum. Das Löschen Ihres Kontos führt ebenfalls zum Verlust aller ungenutzten Coins."
+      },
+      "fraudAccountAdjustments": {
+        "subtitle": "Betrug & Kontokorrekturen",
+        "description1": "Profitpiller überwacht die Kontoaktivität. Betrügerisches oder missbräuchliches Verhalten kann zur Kontokündigung und zum Verfall von Belohnungen führen. Systemfehler bei der Coin-Zuweisung werden nach Ermessen von Profitpiller korrigiert.",
+        "description2": "<strong>Übertragbarkeit</strong>: Coins haben außerhalb des Panels keinen Geldwert und können nicht übertragen, verpfändet oder vererbt werden."
+      }
+    },
+    "prohibitedActivities": {
+      "title": "Verbotene Aktivitäten",
+      "intro": "Sie stimmen zu, Folgendes nicht zu tun:",
+      "point1": "Bots, Scraper oder nicht autorisierte Automatisierungstools verwenden",
+      "point2": "Ungenaue, falsche oder identische Antworten in Umfragen einreichen",
+      "point3": "Auf Ihr Konto außerhalb Ihres registrierten Landes zugreifen",
+      "point4": "Mehr als ein Konto besitzen",
+      "point5": "Proxys, VPNs oder Standortmaskierungsdienste verwenden",
+      "point6": "Lokale, nationale oder internationale Gesetze unter Verwendung der Plattform verletzen",
+      "point7": "Andere missbrauchen oder sich als andere ausgeben, einschließlich Personal oder Mitglieder",
+      "point8": "Vertrauliche Inhalte erneut veröffentlichen, weiterverkaufen oder teilen",
+      "conclusion": "Verstöße können zur sofortigen Kontokündigung und zum Verlust aller Belohnungen führen."
+    },
+    "restrictedContent": {
+      "title": "Eingeschränkter Inhalt",
+      "description": "Sie können während Ihrer Teilnahme an Profitpiller auf geschützte Informationen zugreifen. Dieser Inhalt ist durch Gesetze zum Schutz des geistigen Eigentums geschützt. Es ist Ihnen untersagt, solche Inhalte ohne schriftliche Zustimmung zu kopieren, zu ändern, zu verbreiten oder zurückzuentwickeln."
+    },
+    "emailCommunication": {
+      "title": "E-Mail-Kommunikation",
+      "description": "Wir senden wichtige und werbliche E-Mails. Sie können Marketing-E-Mails über den Abmeldelink oder in den Kontoeinstellungen abbestellen. Transaktions-E-Mails (z. B. Kontoaktivität) werden jedoch weiterhin gesendet. Um alle E-Mails zu stoppen, müssen Sie Ihr Konto löschen."
+    },
+    "cancelingAccount": {
+      "title": "Konto kündigen",
+      "description1": "Zum Kündigen gehen Sie zu „Einstellungen“ und wählen „Konto löschen“. Nach der Löschung gehen Ihre Coins dauerhaft verloren, und Ihr Zugang wird widerrufen.",
+      "description2": "Profitpiller kann inaktive Konten (12 Monate Inaktivität) deaktivieren oder sperren, oder wenn E-Mails wiederholt zurückgewiesen werden."
+    },
+    "disclaimer": {
+      "title": "Haftungsausschluss",
+      "description": "Ihre Nutzung von Profitpiller erfolgt auf eigenes Risiko. Wir geben keine Garantien für den Betrieb oder die Genauigkeit der Plattform über das ausdrücklich Genannte hinaus."
+    },
+    "limitationsOfLiability": {
+      "title": "Haftungsbeschränkungen",
+      "description": "Im größtmöglichen gesetzlich zulässigen Umfang haftet Profitpiller nicht für indirekte oder Folgeschäden. Die maximale Haftung ist auf den tatsächlichen Wert der nicht eingelösten Coins oder der anwendbaren Belohnung begrenzt."
+    },
+    "indemnification": {
+      "title": "Schadensersatz",
+      "description": "Sie erklären sich damit einverstanden, Profitpiller, seine verbundenen Unternehmen und Vertreter von allen rechtlichen Ansprüchen, die sich aus Ihrer Nutzung der Plattform ergeben, einschließlich Anwaltskosten, schadlos zu halten."
+    },
+    "notices": {
+      "title": "Hinweise",
+      "description": "Wir können Sie per E-Mail oder über Ihr Kontodashboard benachrichtigen. Sie sind dafür verantwortlich, Ihre Kontaktdaten auf dem neuesten Stand zu halten. Sie können uns über die auf unserer Website angegebene E-Mail-Adresse kontaktieren."
+    },
+    "arbitration": {
+      "title": "Schiedsverfahren",
+      "description": "Streitigkeiten werden durch ein verbindliches Schiedsverfahren in Delaware beigelegt, es sei denn, das Gesetz erlaubt etwas anderes. Sie verzichten auf Ihr Recht auf ein Schwurgerichtsverfahren oder eine Sammelklage. Die Schiedsregeln folgen dem Federal Arbitration Act."
+    },
+    "classActionWaiver": {
+      "title": "Verzicht auf Sammelklage",
+      "description1": "Alle rechtlichen Ansprüche müssen einzeln eingereicht werden. Sie verzichten auf Ihr Recht, an einer Sammelklage teilzunehmen. Sie können sich innerhalb von 30 Tagen nach der ersten Nutzung der Website abmelden, indem Sie privacy@profitpiller.com.",
+      "address1": "Profitpiller",
+      "address2": "8 The Green Ste R",
+      "address3": "Dover, DE 19902",
+      "address4": "USA"
+    },
+    "severability": {
+      "title": "Salvatorische Klausel",
+      "description": "Sollte eine Bestimmung dieser Bedingungen ungültig oder undurchsetzbar sein, bleiben die übrigen Bestimmungen in vollem Umfang in Kraft."
+    },
+    "jurisdiction": {
+      "title": "Gerichtsstand",
+      "description": "Diese Bedingungen unterliegen den Gesetzen von Delaware, USA. Alle Streitigkeiten müssen vor den Gerichten in Delaware ausgetragen werden."
+    },
+    "miscellaneousTerms": {
+      "title": "Verschiedene Bestimmungen",
+      "description": "Abschnittsüberschriften dienen nur als Referenz. Das Versäumnis von Profitpiller, eine Bestimmung durchzusetzen, verzichtet nicht auf seine Rechte. Diese Bedingungen und alle referenzierten Richtlinien stellen die vollständige Vereinbarung zwischen Ihnen und Profitpiller dar."
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<div class="live-payouts">
+    <span class="dot"></span> Live Payouts
+    <div class="scroller">
+        <div class="scroll-track">
+            <mat-chip-set>
+                <ng-container *ngFor="let payout of payouts; let i = index">
+                    <mat-chip>
+                        <img [src]="payout.icon" alt="icon" class="icon" />
+                        <span>{{ payout.label }} <b>{{ payout.amount }}</b></span></mat-chip>
+                </ng-container>
+            </mat-chip-set>
+        </div>
+    </div>
+</div>

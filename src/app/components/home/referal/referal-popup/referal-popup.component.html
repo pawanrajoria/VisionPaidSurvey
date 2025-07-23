@@ -1,0 +1,21 @@
+<mat-dialog-content class="text-center">
+    <h2 class="text-xl font-semibold mb-4">{{ 'refer.referrallink' | translate }}</h2>
+    <p class="mb-4 text-gray-700">{{ 'refer.your_referrallink' | translate }}</p>
+
+    <div class="bg-blue-50 rounded-xl p-4 border border-blue-200 mb-4">
+        <a [href]="referalLink" target="_blank" class="block text-blue-600 hover:underline break-all">
+            {{ referalLink }}
+        </a>
+    </div>
+
+    <button mat-flat-button color="primary"
+        class="bg-gradient-to-r from-blue-600 to-pink-500 text-white w-full rounded-full py-2" (click)="copyLink()">
+        {{ 'refer.copy_link' | translate }}
+    </button>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-icon-button (click)="close()">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-dialog-actions>

@@ -1,0 +1,50 @@
+html.light-theme {
+  color-scheme: light;
+
+  // Primary and Secondary (from $blue-theme and $grey-theme)
+  --mat-sys-primary: #105749; /* blue-theme[500] */
+  --mat-sys-primary-fixed-dim: rgba(16, 87, 73, 0.08); /* subtle tint from blue 500 */
+  --mat-sys-secondary: #5b6b79; /* grey-theme[600] */
+  --mat-sys-secondary-fixed-dim: rgba(91, 107, 121, 0.08);
+
+  // Error and Alerts (from $red-theme)
+  --mat-sys-error: #dc2626; /* red-theme[500] */
+  --mat-sys-error-fixed-dim: rgba(220, 38, 38, 0.3);
+
+  // Success (from $green-theme)
+  --mat-sys-success: #2ca87f; /* green-theme[500] */
+  --mat-sys-success-fixed-dim: rgba(44, 168, 127, 0.1);
+
+  // Warnings (from $yellow-theme)
+  --mat-sys-warning: #e58a00; /* yellow-theme[500] */
+  --mat-sys-warning-fixed-dim: rgba(229, 138, 0, 0.1);
+
+  // Corners
+  --mat-sys-corner-small: 6px;
+  --mat-sys-corner-medium: 18px;
+
+  // Backgrounds and Surfaces (from $grey-theme)
+  --mat-sys-background: #ffffff;       // grey-theme[50]
+  --mat-sys-surface-bright: #f8f9fa;   // grey-theme[100]
+  --mat-sys-surface: #ffffff;          // grey-theme[50]
+  --mat-sys-surface-container: #f3f5f7; // grey-theme[200]
+  --mat-sys-surface-container-low: #fafafa;
+
+  // Text and Outline
+  --mat-sys-on-background: #1d2630;    // grey-theme[800]
+  --mat-sys-outline: #dbe0e5;          // grey-theme[300]
+  --mat-sys-outline-variant: #bec8d0;  // grey-theme[400]
+
+  // Component-specific tokens
+  --mdc-outlined-text-field-hover-outline-color: #dbe0e5;
+  --mdc-checkbox-unselected-hover-state-layer-color: #dbe0e5;
+  --mat-menu-item-hover-state-layer-color: #f3f5f7;
+  --mat-standard-button-toggle-state-layer-color: #f3f5f7;
+  --mat-option-focus-state-layer-color: #f3f5f7;
+  --mat-option-hover-state-layer-color: #f3f5f7;
+  --mdc-switch-unselected-track-color: #e0e0e0;
+  --mat-stepper-header-focus-state-layer-color: #f3f5f7;
+  --mat-stepper-header-hover-state-layer-color: #f3f5f7;
+  --mdc-dialog-supporting-text-color: var(--mat-sys-on-background);
+  --mat-expansion-header-hover-state-layer-color: #f3f5f7;
+}

@@ -1,0 +1,47 @@
+{
+  "giftCardSurveys": {
+    "banner": {
+      "title": "Surveys That Pay Gift Cards",
+      "subtitle": "Want to unlock your Amazon wishlist or save on your next online order?",
+      "description": "Complete surveys and earn gift cards to your favorite retailers. With Profitpiller, you can turn your spare time into real rewards from PayPal, Visa, Amazon, and more.",
+      "startButton": "Start Earning",
+      "startNote": "Create your free Profitpiller account to start earning gift cards now."
+    },
+    "section1": {
+      "subtitle": "Simple Surveys, Instant Rewards",
+      "title": "Get Free Gift Cards for Sharing Your Thoughts",
+      "description1": "Complete quick surveys and redeem gift cards from popular brands.",
+      "description2": "Your feedback helps companies improve, and they're ready to reward you. From daily habits to product choices, your opinions matter — and Profitpiller ensures you’re compensated with gift cards you’ll actually use.",
+      "description3": "Profitpiller connects you to real brands looking for real answers — and you earn real gift cards in return. It’s a win-win for everyone.",
+      "description4": "No complex signups, no minimum payout hurdles, no boring surveys. Just join Profitpiller and start earning gift cards within minutes — some users get their first reward in just 17 minutes!",
+      "strongConclusion": "Start now and exchange your answers for <a routerLink=\"#\">free gift cards</a> instantly!"
+    },
+    "features": {
+      "subtitle": "Your Time, Your Rewards",
+      "title": "Profitpiller Surveys That Reward You With Gift Cards",
+      "description": "Join Profitpiller, complete surveys, and unlock gift cards from your favorite stores.",
+      "step1": {
+        "label": "Step 1",
+        "title": "Create your Profitpiller account and get ready to earn free gift cards by completing surveys."
+      },
+      "step2": {
+        "label": "Step 2",
+        "title": "Pick the surveys that suit you best and earn points for every response.",
+        "description": "There's no limit — the more you participate, the more gift cards you can earn. Watch your balance grow with every survey."
+      },
+      "step3": {
+        "label": "Step 3",
+        "title": "Redeem your points for gift cards from Visa, Amazon, PayPal, and more.",
+        "description": "Use your rewards however you like — spend online, grab a treat, or save them up for something big. With no cashout minimum and flexible options, Profitpiller puts you in charge of your earnings."
+      }
+    },
+    "support": {
+      "title": "Start Earning Gift Cards with Profitpiller Today",
+      "description": "Don't miss out — create your account now and turn your voice into real gift cards. Answer quick surveys, share your opinions, and choose from dozens of popular brands for your reward. It’s simple, rewarding, and totally free.",
+      "joinNow": "Join Now"
+    }
+  },
+  "common": {
+    "arrowForward": "arrow_forward"
+  }
+}

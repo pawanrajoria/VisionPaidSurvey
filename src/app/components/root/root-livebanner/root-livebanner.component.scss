@@ -1,0 +1,50 @@
+.live-payouts {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 600;
+    overflow: hidden;
+    padding: 0.5rem 2rem;
+
+    .scroller {
+        overflow: hidden;
+        flex: 1;
+        position: relative;
+
+        .scroll-track {
+            display: flex;
+            width: max-content;
+            animation: scroll-left 3s linear infinite;
+
+            &:hover {
+                animation-play-state: paused;
+            }
+        }
+
+        .icon {
+            height: 18px;
+        }
+    }
+
+    .dot {
+        height: 10px;
+        width: 10px;
+        background-color: #4caf50;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    mat-chip-list {
+        margin-left: 1rem;
+    }
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-20%);
+    }
+}

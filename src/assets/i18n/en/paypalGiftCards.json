@@ -1,0 +1,45 @@
+{
+  "paypalGiftCards": {
+    "banner": {
+      "title": "Earn PayPal Gift Cards with Quick Surveys",
+      "subtitle": "Love using PayPal for your online shopping? Start saving more on every purchase.",
+      "description": "Join Profitpiller and get rewarded for your opinions! Take quick and engaging surveys on everyday topics—from brands you know to products you love—and earn PayPal gift cards in return. It’s simple, secure, and 100% free.",
+      "startButton": "Get Started Now",
+      "startNote": "Complete your first survey and start earning instantly."
+    },
+    "section1": {
+      "subtitle": "Instant Rewards, Real Value",
+      "title": "Get Paid Through PayPal — Just by Sharing Your Thoughts",
+      "description1": "Whether you're shopping online or supporting local sellers, Profitpiller helps you earn real money through PayPal gift cards—faster than you’d expect.",
+      "description2": "Redeem rewards easily, with no expiration or minimum cash-out required. Save up for big discounts or use your gift cards for small purchases—it’s completely up to you.",
+      "description3": "From clothes and electronics to takeout and services, Profitpiller lets you use your PayPal rewards any way you like.",
+      "description4": "Sign up and cash out in as little as 17 minutes. Start earning PayPal rewards from your first survey—only with Profitpiller."
+    },
+    "features": {
+      "subtitle": "Make Every Minute Count",
+      "title": "Complete Surveys, Earn PayPal Rewards Instantly",
+      "description": "Profitpiller makes it easy to earn digital rewards while helping top brands improve. Your feedback matters—and it pays. Jump into surveys anytime from home, your phone, or wherever you are.",
+      "step1": {
+        "label": "Step 1",
+        "title": "Create your free Profitpiller account and pick a survey that fits you."
+      },
+      "step2": {
+        "label": "Step 2",
+        "title": "Earn points for every completed survey—redeem them anytime.",
+        "description": "Exchange your points for PayPal gift cards instantly. Prefer Amazon or Visa rewards? We've got those too. With Profitpiller, you choose how to get rewarded."
+      }
+    },
+    "rewardsGrid": {
+      "paypalSurveys": "Surveys for PayPal Gift Cards",
+      "amazonSurveys": "Surveys for Amazon Gift Cards"
+    },
+    "support": {
+      "title": "Start Earning PayPal Rewards Today with Profitpiller",
+      "description": "Sign up now and turn your spare time into real cash rewards. It’s fast, free, and easy to begin. Share your thoughts, complete surveys, and get paid through PayPal—only on Profitpiller.",
+      "joinNow": "Join Now"
+    }
+  },
+  "common": {
+    "arrowForward": "arrow_forward"
+  }
+}

@@ -1,0 +1,51 @@
+{
+    "amazonGiftCard": {
+        "banner": {
+            "title": "Encuestas de Tarjetas de Regalo de Amazon",
+            "subtitle": "¿Te encanta comprar en Amazon? Haz realidad tu lista de deseos ganando tarjetas de regalo gratis a través de encuestas.",
+            "description": "¡Comparte tus opiniones y obtén recompensas! Profitpiller ofrece emocionantes encuestas en línea que te permiten ganar tarjetas de regalo de Amazon. ¡Empieza ahora y gasta en lo que quieras!",
+            "signUpButton": "Regístrate Ahora",
+            "signUpNote": "Nunca ha sido tan fácil ganar tarjetas de regalo de Amazon. ¡Comienza tu primera encuesta hoy!"
+        },
+        "section1": {
+            "subtitle": "Encuestas con Recompensas Instantáneas de Amazon",
+            "title": "Reclama Tarjetas de Regalo de Amazon Realizando Encuestas",
+            "description1": "Canjea tus puntos de Profitpiller por recompensas de Amazon de forma rápida y sencilla.",
+            "description2": "Las tarjetas de regalo de Amazon son versátiles y nunca caducan. Úsalas para comprar cualquier cosa, desde gadgets y libros hasta comestibles y regalos, directamente a través de tu cuenta de Amazon.",
+            "description3": "Realiza una encuesta rápida para una tarjeta de regalo de Amazon de $5 o acumula varias encuestas para desbloquear tarjetas de mayor valor. Gasta tus ganancias en lo que más te importe.",
+            "description4": "Sin largas esperas, sin pago mínimo. La mayoría de los usuarios ven su primera recompensa de Amazon en menos de 17 minutos después de unirse.",
+            "strongConclusion": "Únete a Profitpiller y comienza a ganar tu tarjeta de regalo de Amazon hoy."
+        },
+        "features": {
+            "subtitle": "Gana mientras compartes opiniones",
+            "title": "Obtén Tarjetas de Regalo de Amazon con Encuestas",
+            "description": "Tus comentarios ayudan a dar forma a los productos; obtén recompensas con tarjetas de regalo de Amazon por tu tiempo.",
+            "step1": {
+                "label": "Paso .1",
+                "title": "Crea una cuenta de Profitpiller para empezar a ganar tarjetas de regalo de Amazon por tus opiniones."
+            },
+            "step2": {
+                "label": "Paso .2",
+                "title": "Elige y completa las encuestas que más te interesen.",
+                "description": "Cada encuesta completada te otorga puntos que puedes canjear por tarjetas de regalo de Amazon y más."
+            },
+            "step3": {
+                "label": "Paso .3",
+                "title": "Canjea tus puntos por tarjetas de regalo de Amazon y compra tus favoritos.",
+                "description": "Haz tantas encuestas como quieras. Siempre tienes el control de tus recompensas. Cobra al instante o ahorra para tarjetas de regalo de mayor valor; la elección es tuya."
+            }
+        },
+        "rewardsGrid": {
+            "visaCard": "Obtén Tarjetas de Regalo Visa",
+            "paypalRewards": "Canjea por Recompensas de PayPal"
+        },
+        "support": {
+            "title": "¿Listo para ganar tu primera tarjeta de regalo de Amazon?",
+            "description": "Únete a Profitpiller ahora y comienza a completar encuestas. Nuestro usuario promedio recibe su primera recompensa de Amazon en menos de 20 minutos. Sin largas esperas, ¡solo encuestas fáciles y gratificantes!",
+            "joinNow": "Únete Ahora"
+        }
+    },
+    "common": {
+        "learnMore": "Saber más"
+    }
+}

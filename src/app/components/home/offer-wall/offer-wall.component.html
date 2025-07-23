@@ -1,0 +1,67 @@
+<h2 class="section-title">
+    <mat-icon color="primary">groups</mat-icon>
+    {{ 'Offerwall' | translate }}
+    <mat-icon class="info-icon">help_outline</mat-icon>
+</h2>
+<div class="carousel-container">
+    <div class="carousel-wrapper">
+        <button mat-icon-button class="nav-btn left" (click)="scroll('left')">
+            <mat-icon>chevron_left</mat-icon>
+        </button>
+
+        <div class="carousel-track" #carousel>
+            <mat-card class="partner-card" *ngFor="let partner of offerspartners" (click)="goToPartner(partner)">
+                <div class="card-media">
+                    <img [src]="partner.logo" alt="{{ partner.name }}" class="partner-logo" />
+                </div>
+                <div class="card-body">
+                    <div class="partner-name">{{ partner.name }}</div>
+                    <div class="partner-rating">
+                        <mat-icon *ngFor="let s of stars(partner.rating)">
+                            {{ s }}
+                        </mat-icon>
+                    </div>
+                </div>
+
+            </mat-card>
+        </div>
+
+        <button mat-icon-button class="nav-btn right" (click)="scroll('right')">
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+    </div>
+</div>
+
+<h2 class="section-title">
+    <mat-icon color="primary">groups</mat-icon>
+     {{ 'Survey Partners' | translate }}
+    <mat-icon class="info-icon">help_outline</mat-icon>
+</h2>
+<div class="carousel-containersurvey">
+    <div class="carousel-wrapper">
+        <button mat-icon-button class="nav-btn left" (click)="scroll1('left')">
+            <mat-icon>chevron_left</mat-icon>
+        </button>
+
+        <div class="carousel-track" #carousel1>
+            <mat-card class="partner-card" *ngFor="let partner of surveyspartners" (click)="goToPartner(partner)">
+                <div class="card-media">
+                    <img [src]="partner.logo" alt="{{ partner.name }}" class="partner-logo" />
+                </div>
+                <div class="card-body">
+                    <div class="partner-name">{{ partner.name }}</div>
+                    <div class="partner-rating">
+                        <mat-icon *ngFor="let s of stars(partner.rating)">
+                            {{ s }}
+                        </mat-icon>
+                    </div>
+                </div>
+
+            </mat-card>
+        </div>
+
+        <button mat-icon-button class="nav-btn right" (click)="scroll1('right')">
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+    </div>
+</div>

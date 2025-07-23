@@ -1,0 +1,22 @@
+<mat-card class="cardWithShadow overflow-hidden" routerLink="/app/account">
+    <div class="bg-primary p-x-24 p-y-10 text-white">
+        <mat-card-title class="d-flex align-items-center gap-10">
+            <a mat-icon-button class="text-white d-flex justify-content-center">
+                <i-tabler name="chevron-left" class="icon-18 d-flex">
+                </i-tabler>
+            </a> {{ 'account.headings.reward_transaction' | translate }} </mat-card-title>
+    </div>
+</mat-card>
+
+<mat-card>
+    <mat-list>
+        @for (dataItem of headingData; track dataItem) {
+        <mat-list-item>
+            <div matListItemTitle class="f-s-16 f-w-600"><span>Points</span><span
+                    class="text-content d-inline-flex">Screenout </span> </div>
+            <div matListItemLine class="f-s-14"><span>Balance</span> <span class="text-content d-inline-flex">Date
+                </span></div>
+        </mat-list-item>
+        }
+    </mat-list>
+</mat-card>

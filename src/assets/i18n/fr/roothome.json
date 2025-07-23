@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "title": "De l'argent facile pour des opinions quotidiennes !",
+    "description": "Vos pensées aident les marques à s'améliorer — et elles sont prêtes à les rémunérer. Répondez à des sondages, complétez des offres simples et gagnez de vraies récompenses sans effort.",
+    "offer1": {
+      "title": "Gagnez ₹{{amount}} pour votre opinion — Aucune expérience requise !",
+      "subtitle": "{{surveys}} sondages vous attendent en Inde 🇮🇳"
+    },
+    "offer2": {
+      "title": "₹{{amount}} gagnés hier par les utilisateurs moyens",
+      "subtitle": "Vous pourriez être le prochain ! Encaissez à partir de ₹{{minPayout}}"
+    },
+    "login": {
+      "title": "Gagnez de l'argent en partageant votre opinion",
+      "signIn": "Connectez-vous à votre compte",
+      "emailLabel": "Adresse e-mail",
+      "emailPlaceholder": "Adresse e-mail",
+      "passwordLabel": "Mot de passe",
+      "continueButton": "Continuer",
+      "orLoginWith": "Ou connectez-vous avec",
+      "googleButton": "Google"
+    },
+    "loggedIn": {
+      "title": "Gagnez de l'argent en partageant votre opinion",
+      "message": "Vous êtes déjà connecté",
+      "goToAppButton": "Aller à l'application"
+    }
+  },
+  "brandStrip": {
+    "description": "En partageant vos réflexions sur les sujets tendance, les marques de nettoyage de confiance ou vos émissions préférées, vous pouvez transformer vos opinions en revenus avec l'application de sondages et d'offres Profit Piller."
+  },
+  "choose": {
+    "title": "Vous avez des opinions ? Transformez-les en argent — ici en<span> Inde !</span>",
+    "description": "Répondez à des sondages passionnants sur Profit Piller et retirez vos gains instantanément — en espèces ou en cartes cadeaux.",
+    "step1": {
+      "title": "S'inscrire",
+      "subtitle": "Adhérer maintenant – C'est gratuit"
+    },
+    "step2": {
+      "title": "Complétez des sondages et débloquez des offres",
+      "subtitle": "Choisissez n'importe quel sondage ou offre pour commencer à gagner des récompenses."
+    },
+    "step3": {
+      "title": "Encaissez maintenant",
+      "subtitle": "Encaissez ou choisissez parmi plus de 1000 récompenses passionnantes."
+    }
+  },
+  "rewards": {
+    "banner": {
+      "title": "Choisissez votre favori parmi plus de 1000 récompenses",
+      "description": "Soyez payé via PayPal ou choisissez parmi une large gamme de <br>cartes cadeaux."
+    }
+  },
+  "howItWorks": {
+    "title": "Gagnez de l'argent en ligne avec des sondages et des offres – disponible dans toute <span class=\"highlight f-w-900\">l'Inde.</span>",
+    "subtitle": "Répondez à des sondages passionnants, soyez récompensé rapidement. Encaissez ou échangez des cartes cadeaux immédiatement avec Profit Piller.",
+    "playGames": {
+      "title": "Jouer à des jeux",
+      "subtitle": "Gagnez par jeu",
+      "price": "0,80 $ - 100 $"
+    },
+    "takeSurveys": {
+      "title": "Répondre à des sondages",
+      "subtitle": "Gagnez par sondage de 2 à 10 min",
+      "price": "1,80 $ - 100 $"
+    },
+    "completeOffers": {
+      "title": "Compléter des offres",
+      "subtitle": "Gagnez par application",
+      "price": "1,80 $ - 100 $"
+    }
+  },
+  "landing": {
+    "title": "Application de sondages et d'offres en ligne avec paiements rapides et faible retrait minimum",
+    "subtitle": "Chaque sondage et offre que vous complétez pourrait vous rapporter de l'argent — imaginez !",
+    "valueTime": {
+      "title": "Nous valorisons votre temps — et chez <span class=\"highlight\">Profit Piller</span>, nous le récompensons.",
+      "description": "Avec notre faible seuil de paiement minimum, vous pouvez encaisser le jour même — pas d'attente. Vos récompenses, à votre façon."
+    },
+    "infoBadge": "En moyenne, il ne faut que {{minutes}} minutes pour obtenir votre premier paiement !",
+    "step1": {
+      "strong": "Commencez par vous inscrire, puis choisissez les sondages rémunérés et les offres que vous souhaitez effectuer.",
+      "paragraph": "Avec des centaines de sondages et d'offres disponibles, vous pouvez gagner en jouant à des jeux, en partageant vos achats ou en parlant de vos équipes préférées."
+    },
+    "step2": {
+      "strong": "Gagnez des points à chaque fois que vous complétez un sondage — c'est aussi simple que cela !",
+      "paragraph": "Visitez la page des récompenses pour transformer vos points en argent ou en cartes cadeaux."
+    }
+  },
+  "rewardsGrid": {
+    "paypal": {
+      "description": "Échangez des points contre des cartes cadeaux PayPal"
+    },
+    "amazon": {
+      "description": "Échangez contre une carte cadeau Amazon"
+    },
+    "visa": {
+      "description": "Ou retirez simplement l'argent — c'est à vous de choisir."
+    }
+  },
+  "common": {
+    "learnMore": "En savoir plus"
+  }
+}

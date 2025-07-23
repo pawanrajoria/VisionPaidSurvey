@@ -1,0 +1,70 @@
+<section id="Refer-card">
+    <div class="row">
+        <div class="col-12">
+            <div class="head">
+                <h2>{{ 'refer.heading.title' | translate }}</h2>
+                <p>{{ 'refer.heading.subtitle' | translate }}</p>
+            </div>
+        </div>
+        <div class="col-lg-7">
+            <div class="content">
+                <div class="position-relative">
+
+                    <div class="des">
+                        <h4>{{ 'refer.title' | translate }}</h4>
+                        <ul>
+                            <li>
+                                <h6>{{ 'refer.step1.title' | translate }}</h6>
+                                <p>{{ 'refer.step1.description' | translate }}</p>
+                            </li>
+                            <li>
+                                <h6>{{ 'refer.step2.title' | translate }}</h6>
+                                <p>{{ 'refer.step2.description' | translate }}</p>
+                            </li>
+                            <li>
+                                <h6>{{ 'refer.step3.title' | translate }}</h6>
+                                <p>{{ 'refer.step3.description' | translate }}</p>
+                            </li>
+                        </ul>
+
+
+                    </div>
+                    <div class="error">
+                        <p>
+                            <mat-icon>error_outline</mat-icon> {{ 'refer.instruction' | translate }}
+                        </p>
+                    </div>
+                </div>
+                <div class="refer-actions m-t-24">
+
+                    <button mat-flat-button color="secondary" class="w-100" (click)="copyCode()">
+                        <mat-icon>content_copy</mat-icon>
+                        {{ 'refer.CopyCode' | translate }}: <strong>{{ referDetails.referCode }}</strong>
+                    </button>
+
+                    <button mat-stroked-button color="primary" class="w-100" (click)="copyLink()">
+                        <mat-icon>link</mat-icon>
+                        {{ 'refer.uselink' | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="illustration">
+                <img src="assets/images/refer.jpg">
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="refer-stats">
+                <div class="box">
+                    <mat-icon>star_border</mat-icon>
+                    <h4>0<span>Points {{ 'refer.Earned' | translate }}</span></h4>
+                </div>
+                <div class="box">
+                    <mat-icon>supervised_user_circle</mat-icon>
+                    <h4>0<span>Points {{ 'refer.Earned' | translate }}</span></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

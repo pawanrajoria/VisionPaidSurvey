@@ -1,0 +1,51 @@
+{
+    "amazonGiftCard": {
+        "banner": {
+            "title": "Amazon Geschenkkarten-Umfragen",
+            "subtitle": "Lieben Sie es, bei Amazon einzukaufen? Machen Sie Ihre Wunschliste wahr, indem Sie kostenlose Geschenkkarten durch Umfragen verdienen.",
+            "description": "Teilen Sie Ihre Meinung und werden Sie belohnt! Profitpiller bietet spannende Online-Umfragen, mit denen Sie Amazon-Geschenkkarten verdienen können. Starten Sie jetzt und geben Sie für alles aus, was Sie lieben.",
+            "signUpButton": "Jetzt anmelden",
+            "signUpNote": "Es war noch nie so einfach, Amazon-Geschenkkarten zu verdienen. Beginnen Sie noch heute mit Ihrer ersten Umfrage!"
+        },
+        "section1": {
+            "subtitle": "Umfragen mit sofortigen Amazon-Belohnungen",
+            "title": "Fordern Sie Amazon-Geschenkkarten durch die Teilnahme an Umfragen an",
+            "description1": "Lösen Sie Ihre Profitpiller-Punkte schnell und einfach gegen Amazon-Belohnungen ein.",
+            "description2": "Amazon-Geschenkkarten sind vielseitig einsetzbar und verfallen nie. Verwenden Sie sie, um alles zu kaufen – von Gadgets und Büchern bis hin zu Lebensmitteln und Geschenken – direkt über Ihr Amazon-Konto.",
+            "description3": "Nehmen Sie an einer schnellen 5-Dollar-Amazon-Geschenkkarten-Umfrage teil oder sammeln Sie mehrere Umfragen, um höherwertige Karten freizuschalten. Geben Sie Ihre Einnahmen für das aus, was Ihnen am wichtigsten ist.",
+            "description4": "Keine langen Wartezeiten, keine Mindestauszahlung. Die meisten Benutzer erhalten ihre erste Amazon-Belohnung innerhalb von 17 Minuten nach der Anmeldung.",
+            "strongConclusion": "Treten Sie Profitpiller bei und verdienen Sie noch heute Ihre Amazon-Geschenkkarte."
+        },
+        "features": {
+            "subtitle": "Verdienen Sie, während Sie Meinungen teilen",
+            "title": "Erhalten Sie Amazon-Geschenkkarten durch Umfragen",
+            "description": "Ihr Feedback hilft, Produkte zu gestalten – werden Sie mit Amazon-Geschenkkarten für Ihre Zeit belohnt.",
+            "step1": {
+                "label": "Schritt .1",
+                "title": "Erstellen Sie ein Profitpiller-Konto, um Amazon-Geschenkkarten für Ihre Meinungen zu verdienen."
+            },
+            "step2": {
+                "label": "Schritt .2",
+                "title": "Wählen Sie die Umfragen aus, die Sie am meisten interessieren, und füllen Sie diese aus.",
+                "description": "Jede abgeschlossene Umfrage bringt Ihnen Punkte ein, die Sie gegen Amazon-Geschenkkarten und mehr einlösen können."
+            },
+            "step3": {
+                "label": "Schritt .3",
+                "title": "Lösen Sie Ihre Punkte gegen Amazon-Geschenkkarten ein und kaufen Sie Ihre Favoriten.",
+                "description": "Nehmen Sie an so vielen Umfragen teil, wie Sie möchten. Sie haben immer die Kontrolle über Ihre Belohnungen. Zahlen Sie sofort aus oder sparen Sie für größere Geschenkkartenwerte – die Wahl liegt bei Ihnen."
+            }
+        },
+        "rewardsGrid": {
+            "visaCard": "Visa-Geschenkkarten erhalten",
+            "paypalRewards": "Für PayPal-Belohnungen einlösen"
+        },
+        "support": {
+            "title": "Bereit, Ihre erste Amazon-Geschenkkarte zu verdienen?",
+            "description": "Treten Sie Profitpiller jetzt bei und beginnen Sie mit dem Ausfüllen von Umfragen. Unser durchschnittlicher Benutzer erhält seine erste Amazon-Belohnung in weniger als 20 Minuten. Keine langen Wartezeiten – einfach, lohnende Umfragen!",
+            "joinNow": "Jetzt beitreten"
+        }
+    },
+    "common": {
+        "learnMore": "Mehr erfahren"
+    }
+}

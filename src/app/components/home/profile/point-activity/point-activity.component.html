@@ -1,0 +1,115 @@
+<mat-card class="cardWithShadow overflow-hidden" routerLink="/app/account">
+    <div class="bg-primary p-x-24 p-y-10 text-white">
+        <mat-card-title class="d-flex align-items-center gap-10">
+            <a mat-icon-button class="text-white d-flex justify-content-center">
+                <i-tabler name="chevron-left" class="icon-18 d-flex">
+                </i-tabler>
+            </a> {{ 'account.headings.reward_transaction' | translate }}</mat-card-title>
+    </div>
+</mat-card>
+
+<div class="transaction-tabs">
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center" [selectedIndex]="selectedIndex">
+        <mat-tab label="Rewards">
+            <div class="transaction-list">
+                <mat-card *ngFor="let txn of pointTransactionInfo?.payoutRequests"
+                    [class]="txn.status=='Completed'?'transaction-card green':'transaction-card red'">
+                    <div class="transaction-content">
+                        <div class="transaction-points">
+                            <div class="points">Points - <strong class="highlight">{{ txn.points }}</strong></div>
+                            <div class="balance">Redeem By - {{ txn.method }}</div>
+                            <div class="balance" *ngIf="!!txn.approvedDate">
+                                Approved On - {{ txn.approvedDate | date: 'd MMM yyyy' }}</div>
+                        </div>
+
+                        <div class="transaction-status">
+                            <div class="status">
+                                <strong> {{ txn.status}}</strong>
+                                <mat-icon *ngIf="txn.status === 'Completed'"
+                                    class="complete-icon">check_circle</mat-icon>
+                                <mat-icon *ngIf="txn.status !== 'Completed'"
+                                    class="rejected-icon">highlight_off</mat-icon>
+                            </div>
+                            <div class="date">{{ txn.requestDate | date: 'd MMM yyyy' }}</div>
+                        </div>
+                    </div>
+                </mat-card>
+                <mat-card
+                    *ngIf="!pointTransactionInfo || !pointTransactionInfo.earnings || pointTransactionInfo.earnings.length<1">
+                    <mat-card-content>{{ 'messages.norecord_found' | translate }}</mat-card-content>
+                </mat-card>
+            </div>
+        </mat-tab>
+        <mat-tab label="Transactions">
+            <div class="transaction-list">
+                <mat-card *ngFor="let txn of pointTransactionInfo?.earnings"
+                    [class]="txn.status === 'Completed'?'transaction-card green':'transaction-card'">
+                    <div class="transaction-content">
+                        <div class="transaction-points">
+                            <div class="points">Points <strong class="highlight">{{ txn.points }}</strong></div>
+                            <div class="balance">Balance {{ txn.balance }}</div>
+
+                        </div>
+
+                        <div class="transaction-status">
+                            <div class="status">
+                                {{ txn.provider }} | {{ txn.status }}
+                                <mat-icon *ngIf="txn.status === 'Completed'"
+                                    class="complete-icon">check_circle</mat-icon>
+                                <mat-icon *ngIf="txn.status !== 'Completed'">sync</mat-icon>
+                            </div>
+                            <div class="date">Date {{ txn.earnDate | date: 'd MMM yyyy' }}</div>
+                        </div>
+                    </div>
+                </mat-card>
+                <mat-card
+                    *ngIf="!pointTransactionInfo || !pointTransactionInfo.earnings || pointTransactionInfo.earnings.length<1">
+                    <mat-card-content>{{ 'messages.norecord_found' | translate }}</mat-card-content>
+                </mat-card>
+            </div>
+        </mat-tab>
+        <mat-tab label="Pending">
+            <div class="transaction-list">
+                <mat-card *ngFor="let txn of pointTransactionInfo?.pendingEarnings"
+                    [class]="txn.status=='Completed'?'transaction-card green':'transaction-card'">
+                    <div class="transaction-content">
+                        <div class="transaction-points">
+                            <div class="points">Points - <strong class="highlight">{{ txn.points }}</strong></div>
+                            <div class="balance">Redeem By - {{ txn.method }}</div>
+                            <div class="balance" *ngIf="!!txn.approvedDate">
+                                Approved On - {{ txn.approvedDate | date: 'd MMM yyyy' }}</div>
+                        </div>
+
+                        <div class="transaction-status">
+                            <div class="status">
+                                {{ txn.status}}
+                                <mat-icon *ngIf="txn.status === 'Completed'"
+                                    class="complete-icon">check_circle</mat-icon>
+                                <mat-icon *ngIf="txn.status !== 'Completed'">sync</mat-icon>
+                            </div>
+                            <div class="date">{{ txn.requestDate | date: 'd MMM yyyy' }}</div>
+                        </div>
+                    </div>
+                </mat-card>
+                <mat-card
+                    *ngIf="!pointTransactionInfo || !pointTransactionInfo.earnings || pointTransactionInfo.earnings.length<1">
+                    <mat-card-content>{{ 'messages.norecord_found' | translate }}</mat-card-content>
+                </mat-card>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+<!-- 
+<mat-card>
+    <mat-list>
+        @for (earning of pointTransactionInfo?.earnings; track earning) {
+        <mat-list-item>
+            <div matListItemTitle class="f-s-16 f-w-600"><span>Points</span> {{earning.points}}<span
+                    class="text-content d-inline-flex">{{earning.status}} </span> </div>
+            <div matListItemLine class="f-s-14"><span>Balance</span> {{earning.balance}}<span
+                    class="text-content d-inline-flex">Date
+                </span></div>
+        </mat-list-item>
+        }
+    </mat-list>
+</mat-card> -->

@@ -1,0 +1,45 @@
+<div class="happen-modal">
+      <button mat-icon-button class="close" (click)="closeHappened()" aria-label="Close">
+        <mat-icon>close</mat-icon>
+      </button>
+    <mat-card appearance="outlined" class="custom-card text-center">
+        <mat-card-content class="form-field">
+            <h3>What happened?</h3>
+            <p>You did not return from the survey yet</p>
+            <div class="form-box">
+                <form>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1"> I did not like the survey </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                                checked>
+                            <label class="form-check-label" for="flexRadioDefault2"> The survey asked for personal
+                                information </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                            <label class="form-check-label" for="flexRadioDefault3"> The survey is broken/i con't
+                                continue </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4"
+                                checked>
+                            <label class="form-check-label" for="flexRadioDefault4"> Other </label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-floating">
+                            <textarea class="form-control" rows="4" placeholder="Comments"
+                                id="floatingTextarea"></textarea>
+
+                        </div>
+                    </div>
+                    <button mat-flat-button color="primary" (click)="submitFeedback()" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

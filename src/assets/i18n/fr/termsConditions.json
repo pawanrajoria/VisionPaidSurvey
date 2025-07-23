@@ -1,0 +1,132 @@
+{
+  "termsConditions": {
+    "heading": {
+      "title": "Conditions générales / Conditions d'utilisation",
+      "effectiveDate": "Date d'entrée en vigueur : 6 mai 2025"
+    },
+    "applicability": {
+      "title": "Applicabilité",
+      "paragraph1": "Profitpiller (le \"Panel\") est une plateforme de recherche de marché numérique exploitée et détenue par Cralpk Research Pvt. Ltd.",
+      "paragraph2": "En tant que membre du panel, vous êtes invité à participer à des études de marché et à des activités de participation connexes.",
+      "paragraph3": "Des parties de ces Conditions et/ou de notre Politique de Confidentialité peuvent être modifiées, mises à jour ou supprimées à tout moment à la seule discrétion de Profitpiller. Il est de votre responsabilité de rester informé en consultant régulièrement ces Conditions. La date ci-dessus reflète la dernière mise à jour.",
+      "paragraph4": "Pour plus de détails sur la façon dont nous gérons vos données, veuillez vous référer à notre Politique de Confidentialité.",
+      "paragraph5": "Ces Conditions représentent un contrat juridique contraignant entre vous et Profitpiller. En vous inscrivant, en accédant ou en utilisant nos services, vous confirmez votre accord avec ces Conditions.",
+      "paragraph6": "Cet accord inclut une renonciation aux recours collectifs. Si vous n'êtes pas d'accord avec une partie de ces conditions, veuillez ne pas utiliser les services."
+    },
+    "eligibility": {
+      "title": "Admissibilité",
+      "paragraph1": "L'adhésion est disponible uniquement pour les personnes physiques (pas les organisations ou entités juridiques) âgées d'au moins 18 ans ou de l'âge requis dans leur pays ou région.",
+      "paragraph2": "La participation au panel est à usage personnel et non commercial. Un seul compte par personne est autorisé.",
+      "paragraph3": "Profitpiller se réserve le droit de refuser des services à quiconque à tout moment, avec ou sans motif."
+    },
+    "panelRegistration": {
+      "title": "Inscription au panel",
+      "paragraph1": "Pour rejoindre le Panel et recevoir des Coins, vous devez remplir le formulaire d'inscription avec précision et fournir une adresse e-mail et un mot de passe valides.",
+      "paragraph2": "Vous acceptez de maintenir les informations de votre compte exactes et à jour. Le non-respect de cette obligation peut entraîner la suspension ou la résiliation de votre compte et la perte des Coins accumulés.",
+      "paragraph3": "Votre participation au Panel est en tant qu'entrepreneur indépendant. Aucune relation d'emploi, de partenariat ou d'agence n'est créée par cet accord."
+    },
+    "rewards": {
+      "title": "Récompenses",
+      "coinsDefinition": {
+        "subtitle": "Définition des Coins",
+        "description": "Profitpiller attribue des crédits numériques appelés « Coins » qui peuvent être échangés contre de l'argent ou d'autres récompenses selon des conditions spécifiques."
+      },
+      "earningCoins": {
+        "subtitle": "Gagner des Coins",
+        "description1": "Les Coins sont attribués pour les activités approuvées telles que l'inscription, la complétion de votre profil et la fin des sondages. Une qualification est requise pour la plupart des sondages. Vous ne gagnerez pas de Coins pour les sondages dont vous êtes disqualifié.",
+        "listTitle": "Vous pouvez gagner des Coins pour :",
+        "point1": "Bonus de bienvenue – bonus unique après l'inscription.",
+        "point2": "Achèvement du sondage – Coins attribués en fonction de chaque sondage qualifiant et complété.",
+        "point3": "Tentative de sondage – Parfois, un crédit partiel peut être accordé même si vous ne complétez pas un sondage.",
+        "point4": "Parrainages – Gagnez des Coins lorsque les utilisateurs parrainés rejoignent et participent en utilisant votre lien de parrainage.",
+        "description2": "Vous êtes responsable de la surveillance de votre solde de Coins. Les litiges doivent être signalés dans les 30 jours. Profitpiller enquêtera et vous informera du résultat."
+      },
+      "redeemingCoins": {
+        "subtitle": "Échanger des Coins",
+        "description1": "Vous pouvez échanger des Coins depuis votre tableau de bord du panel. 100 Coins = 1,00 $ ou équivalent. Les Coins peuvent également être échangés contre des cartes cadeaux.",
+        "description2": "Les cartes cadeaux sont envoyées à votre adresse e-mail enregistrée. Les problèmes de livraison doivent être signalés dans les 3 mois suivant l'émission.",
+        "description3": "Les paiements via PayPal, UPI ou virement bancaire nécessitent des coordonnées bancaires valides. Il est de votre responsabilité de maintenir ces informations à jour.",
+        "description4": "Le temps de traitement peut varier de 10 minutes à deux semaines. Les exigences de rachat peuvent changer en raison de la conformité légale."
+      },
+      "taxResponsibility": {
+        "subtitle": "Responsabilité fiscale",
+        "description": "Les Coins et les récompenses peuvent être soumis à l'imposition. Il est de votre responsabilité de vous conformer aux réglementations fiscales de votre juridiction."
+      },
+      "expirationOfCoins": {
+        "subtitle": "Expiration des Coins",
+        "description": "Les Coins expirent 12 mois à compter de la date d'acquisition. La suppression de votre compte entraînera également la perte de tous les Coins non utilisés."
+      },
+      "fraudAccountAdjustments": {
+        "subtitle": "Fraude et ajustements de compte",
+        "description1": "Profitpiller surveille l'activité du compte. Un comportement frauduleux ou abusif peut entraîner la résiliation du compte et la perte des récompenses. Toute erreur système dans l'attribution des Coins sera corrigée à la discrétion de Profitpiller.",
+        "description2": "<strong>Transférabilité</strong> : Les Coins n'ont aucune valeur monétaire en dehors du panel et ne peuvent être transférés, mis en gage ou hérités."
+      }
+    },
+    "prohibitedActivities": {
+      "title": "Activités interdites",
+      "intro": "Vous acceptez de ne pas :",
+      "point1": "Utiliser des bots, des scrapers ou des outils d'automatisation non autorisés",
+      "point2": "Soumettre des réponses inexactes, fausses ou identiques dans les sondages",
+      "point3": "Accéder à votre compte en dehors de votre pays d'enregistrement",
+      "point4": "Détenir plus d'un compte",
+      "point5": "Utiliser des proxys, des VPN ou des services de masquage de localisation",
+      "point6": "Violer les lois locales, nationales ou internationales en utilisant la plateforme",
+      "point7": "Utiliser abusivement ou usurper l'identité d'autrui, y compris le personnel ou les membres",
+      "point8": "Republier, revendre ou partager du contenu confidentiel",
+      "conclusion": "Les violations peuvent entraîner la résiliation immédiate du compte et la perte de toutes les récompenses."
+    },
+    "restrictedContent": {
+      "title": "Contenu restreint",
+      "description": "Vous pouvez accéder à des informations propriétaires lors de votre participation à Profitpiller. Ce contenu est protégé par les lois sur la propriété intellectuelle. Il vous est interdit de copier, modifier, distribuer ou désosser ce contenu sans consentement écrit."
+    },
+    "emailCommunication": {
+      "title": "Communication par e-mail",
+      "description": "Nous envoyons des e-mails essentiels et promotionnels. Vous pouvez vous désabonner des e-mails marketing via le lien de désabonnement ou dans les paramètres du compte. Cependant, les e-mails transactionnels (par exemple, activité du compte) seront toujours envoyés. Pour arrêter tous les e-mails, vous devez supprimer votre compte."
+    },
+    "cancelingAccount": {
+      "title": "Annuler votre compte",
+      "description1": "Pour annuler, allez dans « Paramètres » et sélectionnez « Supprimer le compte ». Lors de la suppression, vos Coins seront définitivement perdus et votre accès sera révoqué.",
+      "description2": "Profitpiller peut désactiver ou suspendre les comptes inactifs (12 mois d'inactivité) ou si les e-mails rebondissent à plusieurs reprises."
+    },
+    "disclaimer": {
+      "title": "Clause de non-responsabilité",
+      "description": "Votre utilisation de Profitpiller se fait à vos propres risques. Nous ne donnons aucune garantie concernant le fonctionnement ou l'exactitude de la plateforme au-delà de ce qui est expressément indiqué."
+    },
+    "limitationsOfLiability": {
+      "title": "Limitations de responsabilité",
+      "description": "Dans toute la mesure permise par la loi, Profitpiller n'est pas responsable des dommages indirects ou consécutifs. La responsabilité maximale est limitée à la valeur réelle des Coins non échangés ou de la récompense applicable."
+    },
+    "indemnification": {
+      "title": "Indemnisation",
+      "description": "Vous acceptez de tenir Profitpiller, ses affiliés et représentants indemnes de toute réclamation légale résultant de votre utilisation de la plateforme, y compris les honoraires d'avocat."
+    },
+    "notices": {
+      "title": "Avis",
+      "description": "Nous pouvons vous informer par e-mail ou via le tableau de bord de votre compte. Il est de votre responsabilité de maintenir vos coordonnées à jour. Vous pouvez nous contacter via l'adresse e-mail indiquée sur notre site web."
+    },
+    "arbitration": {
+      "title": "Arbitrage",
+      "description": "Les litiges seront résolus par arbitrage contraignant au Delaware, sauf disposition contraire de la loi. Vous renoncez à votre droit à un procès avec jury ou à une action collective. Les règles d'arbitrage suivent la loi fédérale sur l'arbitrage."
+    },
+    "classActionWaiver": {
+      "title": "Renonciation aux recours collectifs",
+      "description1": "Toute réclamation légale doit être déposée individuellement. Vous renoncez à votre droit de participer à toute action collective. Vous pouvez vous désinscrire dans les 30 jours suivant la première utilisation du site web en contactant privacy@profitpiller.com",
+      "address1": "Profitpiller",
+      "address2": "8 The Green Ste R",
+      "address3": "Dover, DE 19902",
+      "address4": "États-Unis"
+    },
+    "severability": {
+      "title": "Divisibilité",
+      "description": "Si une disposition de ces Conditions est jugée invalide ou inapplicable, les dispositions restantes resteront pleinement en vigueur."
+    },
+    "jurisdiction": {
+      "title": "Juridiction",
+      "description": "Ces Conditions sont régies par les lois du Delaware, États-Unis. Tous les litiges doivent être portés devant les tribunaux situés au Delaware."
+    },
+    "miscellaneousTerms": {
+      "title": "Dispositions diverses",
+      "description": "Les titres de section sont uniquement à titre de référence. Le fait que Profitpiller n'applique pas une disposition ne constitue pas une renonciation à ses droits. Ces Conditions et toutes les politiques référencées constituent l'intégralité de l'accord entre vous et Profitpiller."
+    }
+  }
+}

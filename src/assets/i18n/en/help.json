@@ -1,0 +1,109 @@
+{
+  "help": {
+    "heading": {
+      "title": "Need Help with Profit Piller?",
+      "intro": "We’re here to make your experience smooth. Whether you need help with surveys, redemptions, or rewards — our support team has your back."
+    },
+    "faqs": {
+      "q1": {
+        "question": "How do I start earning on Profit Piller?",
+        "answer": "Just sign up for a free account, complete your profile, and access surveys and offers. Your earnings start adding up right away!"
+      },
+      "q2": {
+        "question": "When can I redeem my rewards?",
+        "answer": "Once you reach the minimum redemption threshold (e.g., ₹425 for PayPal or gift cards), you can redeem your points instantly."
+      },
+      "q3": {
+        "question": "Why didn’t I receive credit for a survey?",
+        "answer": "You may have been disqualified due to survey requirements or incomplete responses. If you believe this was an error, <a href=\"mailto:support@profitpiller.com\">contact our support team</a>."
+      },
+      "q4": {
+        "question": "How can I contact Profit Piller support?",
+        "answer": "Email us at <a href=\"mailto:support@profitpiller.com\">support@profitpiller.com</a> or use the Contact Us form on our website."
+      },
+      "q5": {
+        "question": "Are there daily or weekly earning limits?",
+        "answer": "No strict limits! You can complete as many surveys and offers as available. The more active you are, the more you earn."
+      },
+      "q6": {
+        "question": "Can I use Profit Piller on mobile?",
+        "answer": "Absolutely! Our platform is fully mobile responsive and works seamlessly on any smartphone or tablet."
+      },
+      "q7": {
+        "question": "Is my data safe with Profit Piller?",
+        "answer": "Yes. We follow strict data privacy protocols and never share your personal details with third parties without consent."
+      },
+      "q8": {
+        "question": "Can I refer others and earn bonuses?",
+        "answer": "Yes! You can invite friends and earn referral bonuses once they start earning on the platform. Check your account dashboard for referral options."
+      }
+    },
+    "supportSection": {
+      "title": "Still need help or have questions?",
+      "point1": "New to the platform or having trouble accessing features?",
+      "point2": "Don’t worry — we’re here to guide you through.",
+      "point3": "Expect quick, friendly, and helpful support from our team.",
+      "point4": "Whether it’s a simple query or a technical issue,",
+      "point5": "reach out anytime — we’re just one click away.",
+      "contactButton": "Contact our support team"
+    }
+  },
+  "common": {
+    "arrowForward": "arrow_forward"
+  },
+  "afterloginhelp": {
+    "title": "Help & Support",
+    "subtitle": "We’re here for you — and your privacy is protected.",
+    "ask_question": "Submit a Query",
+    "question_title": "💬 Still Have Questions?",
+    "question_subtitle": "Don’t worry — answers are just a click away! If you need more help, our support team is ready to assist you. Submit your query below and we’ll make sure you get the clarity you need — fast and hassle-free.",
+    "question_instruction": "Please be precise about your question",
+    "enter_your_email": "Enter your e-mail",
+    "how_can_help": "How can we help?",
+    "survey_instruction": " If you had a problem with a survey or offer, please upload a screenshot of the issue you encountered.",
+    "upload_text":"Click or drag files to upload",
+    "upload_instruction": "PNG, JPG (Max 1MB)",
+    "faqs": {
+      "q1": {
+        "question": "How can I earn rewards?",
+        "answer": "You can earn rewards by completing surveys, special offers, and referral bonuses on Profit Piller."
+      },
+      "q2": {
+        "question": "How do I qualify for surveys?",
+        "answer": "Each survey has targeting criteria. Completing your profile honestly improves your chances of qualifying for more surveys."
+      },
+      "q3": {
+        "question": "Why are there no surveys available?",
+        "answer": "Survey availability depends on your profile and current demand from our partners. Make sure your profile is complete and try again later."
+      },
+      "q4": {
+        "question": "What is a screen-out?",
+        "answer": "A screen-out occurs when your responses don't match the target audience for a survey. You won't receive full credit, but it helps us match you better next time."
+      },
+      "q5": {
+        "question": "Why did I not receive the full reward for the survey?",
+        "answer": "Some surveys offer partial rewards for partial completions or disqualifications. Always ensure accurate answers and a stable internet connection."
+      },
+      "q6": {
+        "question": "Can I use a VPN or Proxy to take surveys?",
+        "answer": "No. Using VPNs or proxies is strictly prohibited and may result in account suspension or disqualification from surveys."
+      },
+      "q7": {
+        "question": "When can I redeem my rewards?",
+        "answer": "Once you reach the minimum threshold (e.g., ₹425), you can redeem instantly via PayPal, gift cards, or other available methods."
+      },
+      "q8": {
+        "question": "Can I refer others and earn bonuses?",
+        "answer": "Yes! Share your referral link. You’ll earn a 10% commission on what your referrals earn from surveys — for life!"
+      },
+      "q9": {
+        "question": "Is my data safe with Profit Piller?",
+        "answer": "Yes, your data is secured with strict privacy protocols and is never shared without your consent."
+      },
+      "q10": {
+        "question": "How do I contact support?",
+        "answer": "Reach us anytime at <a href='mailto:support@profitpiller.com'>support@profitpiller.com</a> or through the contact form in your dashboard."
+      }
+    }
+  }
+}

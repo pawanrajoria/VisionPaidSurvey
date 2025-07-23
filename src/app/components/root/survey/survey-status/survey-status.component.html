@@ -1,0 +1,32 @@
+<div class="example-sidenav-content">
+    <div class="wrapper">
+        <div class="main">
+            <div class="section">
+            </div>
+            <div class="container">
+                <div class="crtMsg-container">
+                    <div class="container">
+                        <div class="row mb-4" *ngIf="status == 1">
+                            <div class="col-12">
+                                <div class="crtMsg-outer crt-borderSuccess">
+                                    <h5>🎉 Congratulations! You have successfully completed the survey.</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4" *ngIf="status && status != 1">
+                            <div class="col-12">
+                                <div class="crtMsg-outer crt-borderError">
+                                    <img src="assets/images/sad.png" alt="sad face icon" />
+                                    <h5>Unfortunately, You didn’t meet the criteria.</h5>
+                                    <p>The partner is targeting different participants.</p>
+                                    <p>Try other surveys.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

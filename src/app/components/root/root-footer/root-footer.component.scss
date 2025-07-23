@@ -1,0 +1,71 @@
+.footer-container {
+    background: #f7f7f7 url('/assets/images/backgrounds/footer.png');
+    border-top: 2px solid #f2f2f2;
+    padding: 2rem 1rem;
+    font-family: "Work Sans", sans-serif;
+    .footer-content {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            text-align: left;
+        }
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            .logo {
+                height: 60px;
+                margin-bottom: 1rem;
+            }
+            p {
+                font-size: 0.875rem;
+                color: #555;
+                a {
+                    color: #105749;
+                    text-decoration: none;
+                }
+            }
+        }
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.5rem;
+            .footer-column {
+                h4 {
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    margin-bottom: 0.75rem;
+                    color: #333;
+                }
+                a {
+                    display: block;
+                    font-size: 0.975rem;
+                    color: #555;
+                    margin-bottom: 0.9rem;
+                    text-decoration: none;
+                    transition: all .4s ease-in-out;
+                    &:hover {
+                        text-decoration: underline;
+                        color: #105749;
+                        padding-left: 2px;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .footer-container {
+        .footer-content {
+            .footer-links {
+                grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+            }
+        }
+    }
+}

@@ -1,0 +1,89 @@
+<mat-card class="cardWithShadow overflow-hidden" routerLink="/app/account">
+    <div class="bg-primary p-x-24 p-y-10 text-white">
+        <mat-card-title class="d-flex align-items-center gap-10">
+            <a mat-icon-button class="text-white d-flex justify-content-center">
+                <i-tabler name="chevron-left" class="icon-18 d-flex">
+                </i-tabler>
+            </a> {{ 'account.headings.account_setting' | translate }} </mat-card-title>
+    </div>
+</mat-card>
+
+<mat-nav-list>
+    <div class="row">
+        <div class="col-sm-12 col-lg-6 p-10">
+            <mat-list-item class="h-100 bg-light-secondary gap-6" (click)="updateBasicInfo()">
+                <div mat-list-item-content class="d-flex h-100">
+                    <div mat-list-item-avatar class="d-flex justify-content-center align-items-center">
+                        <i-tabler name="user" class="icon-20">
+                        </i-tabler>
+                    </div>
+                    <div mat-line class="m-l-5 m-t-5 f-s-18 f-w-600">{{ 'account.headings.change_basic_setting' | translate }}</div>
+                    <div mat-list-item-avatar class="d-flex justify-content-end w-100">
+                        <i-tabler name="chevron-right" class="icon-20">
+                        </i-tabler>
+                    </div>
+                </div>
+            </mat-list-item>
+        </div>
+        <div class="col-sm-12 col-lg-6 p-10">
+            <mat-list-item class="h-100 bg-light-secondary gap-6" (click)="updateUserName()">
+                <div mat-list-item-content class="d-flex h-100">
+                    <div mat-list-item-avatar class="d-flex justify-content-center align-items-center">
+                        <i-tabler name="user" class="icon-20">
+                        </i-tabler>
+                    </div>
+                    <div mat-line class="m-l-5 m-t-5 f-s-18 f-w-600">{{ 'account.headings.change_username' | translate }}</div>
+                    <div mat-list-item-avatar class="d-flex justify-content-end w-100">
+                        <i-tabler name="chevron-right" class="icon-20">
+                        </i-tabler>
+                    </div>
+                </div>
+            </mat-list-item>
+        </div>
+        <div class="col-sm-12 col-lg-6 p-10">
+            <mat-list-item class="h-100 bg-light-secondary gap-6" (click)="updatePassword()">
+                <div mat-list-item-content class="d-flex align-items-center">
+                    <div mat-list-item-avatar class="d-flex justify-content-center align-items-center">
+                        <i-tabler name="lock-password" class="icon-20">
+                        </i-tabler>
+                    </div>
+                    <div mat-line class="m-l-5 m-t-5 f-s-18 f-w-600">{{ 'account.headings.change_password' | translate }}</div>
+                    <div mat-list-item-avatar class="d-flex justify-content-end w-100">
+                        <i-tabler name="chevron-right" class="icon-20">
+                        </i-tabler>
+                    </div>
+                </div>
+            </mat-list-item>
+        </div>
+        <div class="col-sm-12 col-lg-6 p-10">
+            <mat-list-item class="h-100 bg-light-secondary gap-6" (click)="updateEmail()">
+                <div mat-list-item-content class="d-flex align-items-center">
+                    <div mat-list-item-avatar class="d-flex justify-content-center align-items-center">
+                        <i-tabler name="mail-check" class="icon-20">
+                        </i-tabler>
+                    </div>
+                    <div mat-line class="m-l-5 m-t-5 f-s-18 f-w-600">{{ 'account.headings.change_email' | translate }}</div>
+                    <div mat-list-item-avatar class="d-flex justify-content-end w-100">
+                        <i-tabler name="chevron-right" class="icon-20">
+                        </i-tabler>
+                    </div>
+                </div>
+            </mat-list-item>
+        </div>
+        <div class="col-sm-12 col-lg-6 p-10">
+            <mat-list-item class="h-100 bg-light-error gap-6" (click)="deleteAccount()">
+                <div mat-list-item-content class="d-flex align-items-center">
+                    <div mat-list-item-avatar class="d-flex justify-content-center align-items-center">
+                        <i-tabler name="trash" class="icon-20">
+                        </i-tabler>
+                    </div>
+                    <div class="m-l-5 m-t-5 f-s-18 f-w-600">{{ 'account.headings.delete_account' | translate }}</div>
+                    <div mat-list-item-avatar class="d-flex justify-content-end w-100">
+                        <i-tabler name="chevron-right" class="icon-20">
+                        </i-tabler>
+                    </div>
+                </div>
+            </mat-list-item>
+        </div>
+    </div>
+</mat-nav-list>

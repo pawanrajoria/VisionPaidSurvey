@@ -1,0 +1,138 @@
+<div class="leaderboard-box">
+    <mat-card class="leaderboard-card">
+        <div class="leaderboard-header">
+            <mat-icon class="trophy-icon">emoji_events</mat-icon>
+            <div class="leaderboard-text">
+                <h2>Unlock leaderboard!</h2>
+                <p>Complete 10 more survey(s) to start competing</p>
+            </div>
+        </div>
+
+        <mat-progress-bar color="primary" mode="determinate" value="20"></mat-progress-bar>
+        <p class="survey-progress">0/10 surveys completed</p>
+
+        <div class="prize-pool">
+            <span>Weekly Prize Pool:</span>
+            <span class="points">$50–$100</span>
+        </div>
+    </mat-card>
+</div>
+<div class="leaderboard active">
+    <div class="top">
+        <div class="top-3">
+            <ul>
+                <li>
+                    <mat-card class="box">
+                        <div class="user-icon">
+                            <img src="assets/images/icon/man.png">
+                            <span>2</span>
+                        </div>
+                        <div class="user-details">
+                            <h4>Brian Ngo</h4>
+                            <div class="des">
+                                <div class="trophy">
+                                    <img src="assets/images/icon/trophy.png">
+                                </div>
+                                <span>Earn 2,000 points</span>
+                                <p class="price">💎$50,000 <span>Prize</span></p>
+                            </div>
+                        </div>
+                    </mat-card>
+                </li>
+                <li>
+                    <mat-card class="box">
+                        <div class="user-icon">
+                            <span>1</span>
+                            <img src="assets/images/icon/office-man.png">
+                            <img src="assets/images/icon/crown.png" class="crown"> </div>
+                        <div class="user-details">
+                            <h4>Jolie Joie</h4>
+                            <div class="des">
+                                <div class="trophy">
+                                    <img src="assets/images/icon/trophy.png">
+                                </div>
+                                <span>Earn 2,000 points</span>
+                                <p class="price">💎$100,000 <span>Prize</span></p>
+                            </div>
+                        </div>
+                    </mat-card>
+                </li>
+                <li>
+                    <mat-card class="box">
+                        <div class="user-icon">
+                            <span>3</span>
+                            <img src="assets/images/icon/hacker.png">
+                        </div>
+                        <div class="user-details">
+                            <h4>David Do</h4>
+                            <div class="des">
+                                <div class="trophy">
+                                    <img src="assets/images/icon/trophy.png">
+                                </div>
+                                <span>Earn 2,000 points</span>
+                                <p class="price">💎$20,000 <span>Prize</span></p>
+                            </div>
+                        </div>
+                    </mat-card>
+                </li>
+            </ul>
+            <div class="ends m-t-12">
+                <div class="icon">
+                    <mat-icon>alarm</mat-icon>
+                </div>
+                <p>Ends in <span>{{counter | formatTime}} </span></p>
+                <h5 class="tag"> You earned 💎<span>5</span> today and are ranked - out of <span>121,521 Users</span></h5>
+            </div>
+        </div>
+    </div>
+    <div class="table-data">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Rank </th>
+                    <th scope="col">User</th>
+                    <th scope="col">Earnings</th>
+                    <th scope="col">Prize</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Rilebub2030</td>
+                    <td>$0,436.00</td>
+                    <td>$4300</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>William32</td>
+                    <td>$2,136.00</td>
+                    <td>$9900</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Michael543</td>
+                    <td>$1,516.00</td>
+                    <td>$100</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>David21</td>
+                    <td>$1,236.00</td>
+                    <td>$400</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>John43</td>
+                    <td>$2,26.00</td>
+                    <td>$800</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>Richard434</td>
+                    <td>$236.00</td>
+                    <td>$600</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

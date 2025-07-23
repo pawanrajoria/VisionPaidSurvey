@@ -1,0 +1,69 @@
+<mat-dialog-content class="dialog-content">
+    <div class="dialog-header">
+        <span class="title">{{ offer.offerName }}</span>
+        <button mat-icon-button mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button>
+    </div>
+
+    <!-- <div class="d-flex align-items-center justify-content-between m-b-16">
+    <h2 class="offer-title">{{ offer.offerName }}</h2>
+    <button mat-icon-button mat-dialog-close>
+        <i-tabler name="x" class="x icon-20"></i-tabler>
+    </button>
+</div> -->
+
+
+    <div class="offer-header">
+        <div class="offer-image-container">
+            <img [src]="offer.imageUrl" alt="{{ offer.offerName }}" />
+            <mat-icon class="platform-icon">apple</mat-icon>
+        </div>
+
+        <div class="offer-summary">
+            <div class="points">
+                <span class="value">{{ offer.points }}</span> Points
+                <div class="chipupper">
+                    <div class="chip" *ngFor="let tag of offer.offerCategory">
+                        {{ tag }}
+                    </div>
+                </div>
+            </div>
+            <div class="description">{{ offer.description }}</div>
+
+        </div>
+
+
+    </div>
+
+    <h3 class="rewards-heading">Rewards</h3>
+
+    <div class="rewards-list">
+        <mat-card class="reward-item" *ngFor="let reward of offer.tasks">
+            <span class="reward-points">{{ reward.points }} Points</span>
+            <span class="reward-desc">{{ reward.name }}</span>
+        </mat-card>
+    </div>
+
+
+    <h3 class="rewards-heading">Requirements</h3>
+    <div class="rewards-list">
+        <span class="reward-desc">{{ offer.requirements }}</span>
+    </div>
+
+    <h3 class="rewards-heading">Confirmation Time</h3>
+    <div class="rewards-list">
+        <span class="reward-desc">{{ offer.confirmationTime }}</span>
+    </div>
+
+    <h3 class="rewards-heading">Expired On</h3>
+    <div class="rewards-list">
+        <span class="reward-desc">{{ offer.expireTime | date:'dd-MM-yyyy HH:MM:SS' }}</span>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="footer">
+    <button mat-flat-button color="primary" class="earn-button btn-theme" (click)="earn()">
+    Earn {{ offer.points }} Points
+  </button>
+</mat-dialog-actions>

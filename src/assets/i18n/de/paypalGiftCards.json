@@ -1,0 +1,45 @@
+{
+  "paypalGiftCards": {
+    "banner": {
+      "title": "Verdienen Sie PayPal-Geschenkkarten mit schnellen Umfragen",
+      "subtitle": "Nutzen Sie PayPal gerne für Ihre Online-Einkäufe? Sparen Sie bei jedem Einkauf mehr.",
+      "description": "Treten Sie Profitpiller bei und lassen Sie sich für Ihre Meinungen belohnen! Nehmen Sie an schnellen und ansprechenden Umfragen zu alltäglichen Themen teil – von Marken, die Sie kennen, bis zu Produkten, die Sie lieben – und verdienen Sie im Gegenzug PayPal-Geschenkkarten. Es ist einfach, sicher und 100 % kostenlos.",
+      "startButton": "Jetzt starten",
+      "startNote": "Schließen Sie Ihre erste Umfrage ab und beginnen Sie sofort zu verdienen."
+    },
+    "section1": {
+      "subtitle": "Sofortige Belohnungen, echter Wert",
+      "title": "Lassen Sie sich über PayPal bezahlen – einfach durch das Teilen Ihrer Gedanken",
+      "description1": "Egal, ob Sie online einkaufen oder lokale Verkäufer unterstützen, Profitpiller hilft Ihnen, echtes Geld durch PayPal-Geschenkkarten zu verdienen – schneller, als Sie erwarten würden.",
+      "description2": "Lösen Sie Belohnungen einfach ein, ohne Ablaufdatum oder Mindestauszahlung. Sparen Sie für große Rabatte oder verwenden Sie Ihre Geschenkkarten für kleine Einkäufe – es liegt ganz bei Ihnen.",
+      "description3": "Von Kleidung und Elektronik bis hin zu Lieferdiensten und Dienstleistungen – mit Profitpiller können Sie Ihre PayPal-Belohnungen verwenden, wie Sie möchten.",
+      "description4": "Melden Sie sich an und zahlen Sie in nur 17 Minuten aus. Beginnen Sie, PayPal-Belohnungen ab Ihrer ersten Umfrage zu verdienen – nur mit Profitpiller."
+    },
+    "features": {
+      "subtitle": "Machen Sie jede Minute zählbar",
+      "title": "Umfragen abschließen, sofort PayPal-Belohnungen verdienen",
+      "description": "Profitpiller macht es einfach, digitale Belohnungen zu verdienen und gleichzeitig Top-Marken zu helfen, sich zu verbessern. Ihr Feedback ist wichtig – und es zahlt sich aus. Nehmen Sie jederzeit von zu Hause, Ihrem Telefon oder wo immer Sie sind an Umfragen teil.",
+      "step1": {
+        "label": "Schritt 1",
+        "title": "Erstellen Sie Ihr kostenloses Profitpiller-Konto und wählen Sie eine Umfrage aus, die zu Ihnen passt."
+      },
+      "step2": {
+        "label": "Schritt 2",
+        "title": "Verdienen Sie Punkte für jede abgeschlossene Umfrage – lösen Sie diese jederzeit ein.",
+        "description": "Tauschen Sie Ihre Punkte sofort gegen PayPal-Geschenkkarten ein. Bevorzugen Sie Amazon- oder Visa-Belohnungen? Die haben wir auch. Mit Profitpiller wählen Sie, wie Sie belohnt werden möchten."
+      }
+    },
+    "rewardsGrid": {
+      "paypalSurveys": "Umfragen für PayPal-Geschenkkarten",
+      "amazonSurveys": "Umfragen für Amazon-Geschenkkarten"
+    },
+    "support": {
+      "title": "Beginnen Sie noch heute mit Profitpiller, PayPal-Belohnungen zu verdienen",
+      "description": "Melden Sie sich jetzt an und verwandeln Sie Ihre Freizeit in echte Bargeldprämien. Es ist schnell, kostenlos und einfach zu beginnen. Teilen Sie Ihre Gedanken, füllen Sie Umfragen aus und lassen Sie sich über PayPal bezahlen – nur auf Profitpiller.",
+      "joinNow": "Jetzt beitreten"
+    }
+  },
+  "common": {
+    "arrowForward": "arrow_forward"
+  }
+}

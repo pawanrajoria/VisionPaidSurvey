@@ -1,0 +1,132 @@
+{
+  "termsConditions": {
+    "heading": {
+      "title": "Terms & Conditions / Terms of Use",
+      "effectiveDate": "Effective Date: May 6, 2025"
+    },
+    "applicability": {
+      "title": "Applicability",
+      "paragraph1": "Profitpiller (the \"Panel\") is a digital market research platform operated and owned by Cralpk Research Pvt. Ltd.",
+      "paragraph2": "As a panel member, you are invited to engage in market research studies and related participation activities.",
+      "paragraph3": "Portions of these Terms and/or our Privacy Policy may be amended, updated, or removed at any time at Profitpiller’s sole discretion. It is your responsibility to stay informed by reviewing these Terms periodically. The date above reflects the latest update.",
+      "paragraph4": "For details on how we manage your data, refer to our Privacy Policy.",
+      "paragraph5": "These Terms represent a binding legal contract between you and Profitpiller. By registering, accessing, or using our services, you confirm your agreement to these Terms.",
+      "paragraph6": "This agreement includes a class action waiver. If you disagree with any part of these terms, please do not use the services."
+    },
+    "eligibility": {
+      "title": "Eligibility",
+      "paragraph1": "Membership is available only to individuals (not organizations or legal entities) who are at least 18 years of age or the age required in their country or region.",
+      "paragraph2": "Panel participation is for personal, non-commercial use. Only one account per person is permitted.",
+      "paragraph3": "Profitpiller reserves the right to deny services to anyone at any time, with or without reason."
+    },
+    "panelRegistration": {
+      "title": "Panel Registration",
+      "paragraph1": "To join the Panel and receive any Coins, you must complete the registration form accurately and provide a valid email and password.",
+      "paragraph2": "You agree to keep your account information accurate and up to date. Failure to do so may result in suspension or termination of your account and loss of accumulated Coins.",
+      "paragraph3": "Your participation in the Panel is as an independent contractor. No employment, partnership, or agency relationship is created through this agreement."
+    },
+    "rewards": {
+      "title": "Rewards",
+      "coinsDefinition": {
+        "subtitle": "Coins Definition",
+        "description": "Profitpiller awards digital credits called “Coins” which can be redeemed for cash or other rewards based on specific terms."
+      },
+      "earningCoins": {
+        "subtitle": "Earning Coins",
+        "description1": "Coins are awarded for approved activities like signing up, completing your profile, and finishing surveys. Qualification is required for most surveys. You will not earn Coins for surveys you are disqualified from.",
+        "listTitle": "You may earn Coins for:",
+        "point1": "Welcome Bonus – one-time bonus after registration.",
+        "point2": "Survey Completion – Coins awarded based on each qualifying and completed survey.",
+        "point3": "Survey Attempt – At times, partial credit may be given even if you don’t complete a survey.",
+        "point4": "Referrals – Earn Coins when referred users join and participate using your referral link.",
+        "description2": "You are responsible for monitoring your Coin balance. Disputes must be reported within 30 days. Profitpiller will investigate and notify you of the outcome."
+      },
+      "redeemingCoins": {
+        "subtitle": "Redeeming Coins",
+        "description1": "You can redeem Coins from your panel dashboard. 100 Coins = $1.00 or equivalent. Coins can also be exchanged for gift cards.",
+        "description2": "Gift cards are sent to your registered email. Delivery issues must be reported within 3 months of issuance.",
+        "description3": "Payments through PayPal, UPI, or bank transfer require valid account details. It’s your responsibility to keep this info updated.",
+        "description4": "Processing time may vary from 10 minutes up to two weeks. Redemption requirements may change due to legal compliance."
+      },
+      "taxResponsibility": {
+        "subtitle": "Tax Responsibility",
+        "description": "Coins and rewards may be subject to taxation. You are responsible for complying with tax regulations in your jurisdiction."
+      },
+      "expirationOfCoins": {
+        "subtitle": "Expiration of Coins",
+        "description": "Coins expire 12 months from the date earned. Deleting your account will also result in loss of any unused Coins."
+      },
+      "fraudAccountAdjustments": {
+        "subtitle": "Fraud & Account Adjustments",
+        "description1": "Profitpiller monitors account activity. Fraudulent or abusive behavior may result in account termination and reward forfeiture. Any system errors in Coin allocation will be corrected at Profitpiller’s discretion.",
+        "description2": "<strong>Transferability</strong>: Coins hold no monetary value outside the panel and cannot be transferred, pledged, or inherited."
+      }
+    },
+    "prohibitedActivities": {
+      "title": "Prohibited Activities",
+      "intro": "You agree not to:",
+      "point1": "Use bots, scrapers, or unauthorized automation tools",
+      "point2": "Submit inaccurate, false, or identical answers in surveys",
+      "point3": "Access your account outside of your registered country",
+      "point4": "Hold more than one account",
+      "point5": "Use proxies, VPNs, or location-masking services",
+      "point6": "Violate local, national, or international laws using the platform",
+      "point7": "Misuse or impersonate others, including staff or members",
+      "point8": "Repost, resell, or share confidential content",
+      "conclusion": "Violations may lead to immediate account termination and loss of all rewards."
+    },
+    "restrictedContent": {
+      "title": "Restricted Content",
+      "description": "You may access proprietary information while participating in Profitpiller. This content is protected by intellectual property laws. You are prohibited from copying, modifying, distributing, or reverse-engineering such content without written consent."
+    },
+    "emailCommunication": {
+      "title": "Email Communication",
+      "description": "We send essential and promotional emails. You may opt out of marketing emails via the unsubscribe link or in account settings. However, transactional emails (e.g., account activity) will still be sent. To stop all emails, you must delete your account."
+    },
+    "cancelingAccount": {
+      "title": "Canceling Your Account",
+      "description1": "To cancel, go to “Settings” and select “Delete Account.” Upon deletion, your Coins will be permanently lost, and your access will be revoked.",
+      "description2": "Profitpiller may deactivate or suspend inactive accounts (12 months of inactivity) or if emails bounce repeatedly."
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "description": "Your use of Profitpiller is at your own risk. We make no guarantees regarding the operation or accuracy of the platform beyond what is expressly stated."
+    },
+    "limitationsOfLiability": {
+      "title": "Limitations of Liability",
+      "description": "To the fullest extent allowed by law, Profitpiller is not liable for indirect or consequential damages. Maximum liability is limited to the actual value of unredeemed Coins or applicable reward."
+    },
+    "indemnification": {
+      "title": "Indemnification",
+      "description": "You agree to hold Profitpiller, its affiliates, and representatives harmless from any legal claims resulting from your use of the platform, including attorney fees."
+    },
+    "notices": {
+      "title": "Notices",
+      "description": "We may notify you via email or through your account dashboard. You are responsible for keeping your contact info up to date. You can contact us via the email listed on our website."
+    },
+    "arbitration": {
+      "title": "Arbitration",
+      "description": "Disputes will be resolved by binding arbitration in Delaware, unless otherwise permitted by law. You waive your right to a jury trial or class action lawsuit. Arbitration rules follow the Federal Arbitration Act."
+    },
+    "classActionWaiver": {
+      "title": "Class Action Waiver",
+      "description1": "Any legal claims must be filed individually. You waive your right to participate in any class action. You may opt out within 30 days of first using the website by contacting privacy@profitpiller.com.",
+      "address1": "Profitpiller",
+      "address2": "8 The Green Ste R",
+      "address3": "Dover, DE 19902",
+      "address4": "USA"
+    },
+    "severability": {
+      "title": "Severability",
+      "description": "If any provision in these Terms is deemed invalid or unenforceable, the remaining provisions will remain in full effect."
+    },
+    "jurisdiction": {
+      "title": "Jurisdiction",
+      "description": "These Terms are governed by the laws of Delaware, USA. All disputes must be brought to the courts located in Delaware."
+    },
+    "miscellaneousTerms": {
+      "title": "Miscellaneous Terms",
+      "description": "Section headings are for reference only. Profitpiller’s failure to enforce any provision does not waive its rights. These Terms and any referenced policies constitute the full agreement between you and Profitpiller."
+    }
+  }
+}

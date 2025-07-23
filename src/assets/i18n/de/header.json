@@ -1,0 +1,14 @@
+{
+  "header": {
+    "loginOrSignUp": "Anmelden oder Registrieren",
+    "earnRewards": "Belohnungen verdienen",
+    "surveysOffers": "Umfragen & Angebote",
+    "redeemPoint": "Punkte einlösen",
+    "language": "Deutsch (Deutschland)",
+    "goToApp": "Zur App gehen",
+    "livePayouts": "Live-Auszahlungen",
+    "payoutItem": {
+      "paypal": "PayPal"
+    }
+  }
+}

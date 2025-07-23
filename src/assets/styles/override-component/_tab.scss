@@ -1,0 +1,16 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+@include mat.tabs-overrides((active-indicator-color:var(--mat-sys-primary),
+        divider-color:var(--mat-sys-surface-variant),
+        pagination-icon-color:var(--mat-sys-on-surface),
+        inactive-label-text-color:var(--mat-sys-on-surface),
+        active-label-text-color:var(--mat-sys-on-surface),
+        active-ripple-color:var(--mat-sys-on-surface),
+        inactive-ripple-color:var(--mat-sys-on-surface),
+        inactive-focus-label-text-color:var(--mat-sys-on-surface),
+        inactive-hover-label-text-color:var(--mat-sys-on-surface),
+        active-focus-label-text-color:var(--mat-sys-on-surface),
+        active-hover-label-text-color:var(--mat-sys-on-surface),
+        active-focus-indicator-color:var(--mat-sys-primary),
+        active-hover-indicator-color:var(--mat-sys-primary)));

@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "title": "Einfaches Geld für alltägliche Meinungen!",
+    "description": "Ihre Gedanken helfen Marken, sich zu verbessern – und sie sind bereit, dafür zu bezahlen. Nehmen Sie an Umfragen teil, schließen Sie einfache Angebote ab und verdienen Sie mühelos echte Belohnungen.",
+    "offer1": {
+      "title": "Verdienen Sie ₹{{amount}} für Ihre Meinung – keine Erfahrung nötig!",
+      "subtitle": "{{surveys}} Umfragen warten in Indien 🇮🇳 auf Sie"
+    },
+    "offer2": {
+      "title": "₹{{amount}} gestern von durchschnittlichen Nutzern verdient",
+      "subtitle": "Sie könnten der Nächste sein! Auszahlung ab ₹{{minPayout}}"
+    },
+    "login": {
+      "title": "Geld verdienen, indem Sie Ihre Meinung teilen",
+      "signIn": "Melden Sie sich bei Ihrem Konto an",
+      "emailLabel": "E-Mail-Adresse",
+      "emailPlaceholder": "E-Mail-Adresse",
+      "passwordLabel": "Passwort",
+      "continueButton": "Weiter",
+      "orLoginWith": "Oder anmelden mit",
+      "googleButton": "Google"
+    },
+    "loggedIn": {
+      "title": "Geld verdienen, indem Sie Ihre Meinung teilen",
+      "message": "Sie sind bereits angemeldet",
+      "goToAppButton": "Zur App gehen"
+    }
+  },
+  "brandStrip": {
+    "description": "Indem Sie Ihre Gedanken zu Trendthemen, vertrauenswürdigen Reinigungsmarken oder Ihren Lieblingssendungen teilen, können Sie mit der Profit Piller Umfrage- und Angebots-App Meinungen in Einkommen verwandeln."
+  },
+  "choose": {
+    "title": "Haben Sie Meinungen? Verwandeln Sie sie hier in Geld – in<span> Indien!</span>",
+    "description": "Nehmen Sie an spannenden Umfragen auf Profit Piller teil und zahlen Sie Ihre Einnahmen sofort aus – als Bargeld oder Geschenkkarten.",
+    "step1": {
+      "title": "Anmelden",
+      "subtitle": "Jetzt beitreten – Es ist kostenlos"
+    },
+    "step2": {
+      "title": "Umfragen abschließen und Angebote freischalten",
+      "subtitle": "Wählen Sie eine Umfrage oder ein Angebot, um Belohnungen zu verdienen."
+    },
+    "step3": {
+      "title": "Jetzt auszahlen",
+      "subtitle": "Auszahlen oder aus über 1000 spannenden Belohnungen wählen."
+    }
+  },
+  "rewards": {
+    "banner": {
+      "title": "Wählen Sie Ihren Favoriten aus über 1000 Belohnungen",
+      "description": "Lassen Sie sich über PayPal bezahlen oder wählen Sie aus einer großen Auswahl an <br>Geschenkkarten."
+    }
+  },
+  "howItWorks": {
+    "title": "Online Geld verdienen mit Umfragen und Angeboten – verfügbar in ganz <span class=\"highlight f-w-900\">Indien.</span>",
+    "subtitle": "Nehmen Sie an spannenden Umfragen teil, erhalten Sie schnell Belohnungen. Zahlen Sie sofort aus oder lösen Sie Geschenkkarten sofort mit Profit Piller ein.",
+    "playGames": {
+      "title": "Spiele spielen",
+      "subtitle": "Verdienen pro Spiel",
+      "price": "0,80 $ - 100 $"
+    },
+    "takeSurveys": {
+      "title": "Umfragen beantworten",
+      "subtitle": "Verdienen pro 2-10 Min. Umfrage",
+      "price": "1,80 $ - 100 $"
+    },
+    "completeOffers": {
+      "title": "Angebote abschließen",
+      "subtitle": "Verdienen pro App",
+      "price": "1,80 $ - 100 $"
+    }
+  },
+  "landing": {
+    "title": "Online-Umfrage- und Angebots-App mit schnellen Auszahlungen und niedriger Mindestauszahlung",
+    "subtitle": "Jede Umfrage und jedes Angebot, das Sie abschließen, könnte Ihnen Geld in die Tasche bringen – stellen Sie sich das vor!",
+    "valueTime": {
+      "title": "Wir schätzen Ihre Zeit – und bei <span class=\"highlight\">Profit Piller</span> belohnen wir sie.",
+      "description": "Mit unserer niedrigen Mindestauszahlung können Sie noch am selben Tag auszahlen – ohne Wartezeit. Ihre Belohnungen, auf Ihre Weise."
+    },
+    "infoBadge": "Im Durchschnitt dauert es nur {{minutes}} Minuten, um Ihre erste Auszahlung zu erhalten!",
+    "step1": {
+      "strong": "Beginnen Sie mit der Anmeldung, dann wählen Sie die bezahlten Umfragen und Angebote aus, die Sie machen möchten.",
+      "paragraph": "Mit Hunderten von Umfragen und Angeboten können Sie Geld verdienen, indem Sie Spiele spielen, Ihre Einkäufe teilen oder über Ihre Lieblingsteams sprechen."
+    },
+    "step2": {
+      "strong": "Verdienen Sie Punkte jedes Mal, wenn Sie eine Umfrage abschließen – so einfach ist das!",
+      "paragraph": "Besuchen Sie die Belohnungsseite, um Ihre Punkte in Bargeld oder Geschenkkarten umzuwandeln."
+    }
+  },
+  "rewardsGrid": {
+    "paypal": {
+      "description": "Punkte für PayPal-Geschenkkarten einlösen"
+    },
+    "amazon": {
+      "description": "Für eine Amazon-Geschenkkarte einlösen"
+    },
+    "visa": {
+      "description": "Oder einfach das Bargeld abheben – es liegt an Ihnen."
+    }
+  },
+  "common": {
+    "learnMore": "Mehr erfahren"
+  }
+}
