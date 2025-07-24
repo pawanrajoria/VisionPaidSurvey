@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { SharedModule } from '../../../shared.module';
 
 @Component({
     selector: 'app-survey-status',
     templateUrl: './survey-status.component.html',
     styleUrls: ['./survey-status.component.scss'],
+    imports: [SharedModule]
 })
 export class SurveyStatusComponent {
     status = 0;

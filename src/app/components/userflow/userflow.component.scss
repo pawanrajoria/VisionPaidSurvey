@@ -1,0 +1,76 @@
+.container {
+    margin-top: 30px;
+    max-width: 100% !important;
+
+    .loader {
+        top: 50%;
+        position: fixed;
+        text-align: center;
+        width: 100%;
+    }
+
+    &.header {
+        max-width: 1320px !important;
+        margin-top: 0px;
+    }
+}
+
+.section {
+    background-color: #105749 !important;
+    height: 60px;
+}
+
+.spText {
+    font-size: small;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+}
+
+.headerText {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffffd6;
+    font-family: auto;
+}
+
+
+@media (max-width:767px) {
+
+    .container {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+.m-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color);
+  height: 60px; /* Fixed height of header */
+  overflow: hidden; /* Prevent overflow */
+  padding: 0 15px;
+
+  a {
+    display: block;
+    height: 100%;
+    max-height: 100%;
+    
+    img {
+      max-height: 100%;     /* Fit within header height */
+      max-width: 100%;      /* Fit within container */
+      width: auto;
+      height: auto;
+      object-fit: contain;  /* Maintain aspect ratio */
+      display: block;
+    }
+  }
+}
+
+
+@media (max-width: 767px) {
+    .m-header a {
+        max-width: 140px;
+    }
+}

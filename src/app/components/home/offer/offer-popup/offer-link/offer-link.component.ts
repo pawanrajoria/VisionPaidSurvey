@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { SharedModule } from "../../../../../shared.module";
 import { ActivatedRoute, Router } from "@angular/router";
-import { BaseComponent } from "../../../../layout/base.component";
+import { BaseComponent } from "../../../../../base.component";
 
 @Component({
     selector: 'redirect-offer',
@@ -20,7 +20,7 @@ export class OfferLinkComponent extends BaseComponent implements OnInit {
 
         if (target) {
             await this.logUserActivity("Offer", "offerLink", "Click", target);
-            window.location.href = target;
+            if (this.win) this.win.location.href = target;
         } else {
             // fallback
             this.router.navigate(['/app']);

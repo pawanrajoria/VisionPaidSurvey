@@ -1,38 +1,47 @@
-import { Component, Inject, inject, OnInit, PLATFORM_ID, signal } from "@angular/core";
-import { SharedModule } from "../../../shared.module";
-import { OfferService } from "./offer.service";
-import { IOfferResponseDto } from "./offer.vm";
-import { MatDialog } from "@angular/material/dialog";
-import { OfferPopupDialog } from "./offer-popup/offer-popup.component";
-import { BreakpointObserver } from "@angular/cdk/layout";
-import { isPlatformBrowser } from '@angular/common';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { SharedModule } from '../../../shared.module';
+import { OfferService } from './offer.service';
+import { IOfferResponseDto } from './offer.vm';
+import { MatDialog } from '@angular/material/dialog';
+import { OfferPopupDialog } from './offer-popup/offer-popup.component';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { BaseComponent } from '../../../base.component';
 
 @Component({
     selector: 'app-offer',
+    standalone: true,
     imports: [SharedModule],
     templateUrl: './offer.component.html',
     styleUrls: ['./offer.component.scss']
 })
-export class OfferComponent implements OnInit {
+export class OfferComponent extends BaseComponent implements OnInit {
     hideMultipleSelectionIndicator = signal(false);
 
-    offers: Array<IOfferResponseDto> = [];
-    filteredOffers = [...this.offers];
-    links = ['Best Match Offers', 'Most Points Offers', 'My Offers',];
+    offers: IOfferResponseDto[] = [];
+    filteredOffers: IOfferResponseDto[] = [];
+
+    links = ['Best Match Offers', 'Most Points Offers', 'My Offers'];
     activeLink = this.links[0];
-    offerType: string = "Best Match Offers";
+    offerType = 'Best Match Offers';
 
     selectedDeviceType: string[] = [];
-    searchTxt = "";
+    searchTxt = '';
 
     readonly dialog = inject(MatDialog);
+    readonly offerService = inject(OfferService);
+    readonly breakpointObserver = inject(BreakpointObserver);
 
-    constructor(private offerService: OfferService, private breakpointObserver: BreakpointObserver, @Inject(PLATFORM_ID) private platformId: any) {
-
+    constructor() {
+        super(); // calls BaseComponent constructor and binds browser globals
     }
 
-    async ngOnInit() {
+    async ngOnInit(): Promise<void> {
         await this.getOffers();
+    }
+
+    async getOffers() {
+        this.offers = await this.offerService.getOffers();
+        this.filterItems();
     }
 
     changeSurveyType(linkType: string) {
@@ -40,20 +49,15 @@ export class OfferComponent implements OnInit {
         this.filterItems();
     }
 
-    async getOffers() {
-        const self = this;
-        self.offers = await self.offerService.getOffers();
-        self.filterItems();
-    }
-
     openDialog(item: IOfferResponseDto) {
         let dialogWidth = '600px';
 
-        if (isPlatformBrowser(this.platformId) && this.breakpointObserver.isMatched('(max-width: 600px)')) {
+        if (this.isBrowser && this.breakpointObserver.isMatched('(max-width: 600px)')) {
             dialogWidth = '100vw';
         }
 
         item.currentDevice = this.currentDevice;
+
         this.dialog.open(OfferPopupDialog, {
             width: dialogWidth,
             maxWidth: '100vw',
@@ -62,47 +66,33 @@ export class OfferComponent implements OnInit {
         });
     }
 
-
     filterItems() {
         const text = this.searchTxt.toLowerCase();
 
-        this.filteredOffers = this.offers.filter(item => {
-            const matchesCategory =
-                this.selectedDeviceType.length === 0 ||
-                item.device.some(cat => this.selectedDeviceType.includes(cat));
+        this.filteredOffers = this.offers
+            .filter(item => {
+                const matchesCategory =
+                    this.selectedDeviceType.length === 0 ||
+                    item.device.some(cat => this.selectedDeviceType.includes(cat));
 
-            const matchesText = item.offerName?.toLowerCase().includes(text);
-
-            return matchesCategory && matchesText;
-        }).sort((a, b) => {
-            if (this.offerType === 'Best Match Offers') {
-                return b.offerId - a.offerId;
-            } else {
-                return b.points - a.points;
-            }
-        });
+                const matchesText = item.offerName?.toLowerCase().includes(text);
+                return matchesCategory && matchesText;
+            })
+            .sort((a, b) => {
+                if (this.offerType === 'Best Match Offers') {
+                    return b.offerId - a.offerId;
+                } else {
+                    return b.points - a.points;
+                }
+            });
     }
-
 
     get currentDevice(): string {
-        const ua = navigator.userAgent;
+        if (!this.isBrowser || !this.nav) return 'Unknown';
 
-        if (/iPhone|iPad|iPod|Android/i.test(ua)) {
-            return 'Mobile';
-        } else if (/Tablet|iPad/i.test(ua)) {
-            return 'Tablet';
-        } else {
-            return 'Desktop';
-        }
+        const ua = this.nav.userAgent;
+        if (/iPhone|iPad|iPod|Android/i.test(ua)) return 'Mobile';
+        if (/Tablet|iPad/i.test(ua)) return 'Tablet';
+        return 'Desktop';
     }
-
-    // get filteredOffers(): Array<IOfferResponseDto> {
-    //     if(!!this.deviceType && this.deviceType.length > 0)
-    //         console.log(this.deviceType);
-
-    //     return !!this.deviceType && this.deviceType.length > 0 ? this.offers.filter(p => p.device?.toString().includes(this.deviceType.toString()))
-    //         : !!this.searchTxt && this.searchTxt.length > 0 ? this.offers.filter(p => p.offerName?.toLowerCase()?.includes(this.searchTxt.toLowerCase()))
-    //             : this.offers || [];
-    // }
-
 }

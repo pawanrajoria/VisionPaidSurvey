@@ -1,0 +1,12 @@
+<div class="video-player__wave-wrapper">
+  <div class="audio-player__wave" data-audio-player-target="wave" data-action="click->audio-player#userInteraction" style="background: transparent;">
+  </div>
+  <video (click)="playVideo()" #videoPlayer style="width: 100%;" (timeupdate)="setProgress($event)" (ended)="vidEnded()" disablePictureInPicture controls controlsList="noplaybackrate nodownload nofullscreen">
+    <source [src]="field.src" type="video/mp4" />
+    Browser not supported
+  </video>
+  <button type="button" [class]="isPlaying?'video-player_pause':'video-player_play'" (click)="playVideo()" data-action="click->audio-player#handleTogglePlay">
+    <div [class]="isPlaying?'video-player_icon_pause':'video-player_icon_play'"></div>
+  </button>
+  <div class="video_player_progress" data-audio-player-target="progress" style="left: {{progress}};bottom: 0;height: 6px;background-color: rgb(86, 70, 70);"></div>
+</div>

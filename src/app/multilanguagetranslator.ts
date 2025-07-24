@@ -1,31 +1,32 @@
-// src/app/core/i18n/multi-translate-http-loader.ts
 import { HttpClient } from '@angular/common/http';
 import { TranslateLoader } from '@ngx-translate/core';
-import { forkJoin, map, Observable } from 'rxjs';
+import { Observable, forkJoin, map, of } from 'rxjs';
+import { isPlatformBrowser } from '@angular/common';
+import { inject, PLATFORM_ID } from '@angular/core';
 
-/**
- * Custom TranslateLoader that loads multiple translation files for a given language.
- */
 export class MultiTranslateHttpLoader implements TranslateLoader {
-    constructor(
-        private http: HttpClient,
-        public resources: { prefix: string; suffix: string }[] = [],
-    ) { }
+  private platformId = inject(PLATFORM_ID);
 
-    public getTranslation(lang: string): Observable<any> {
-        const requests = this.resources.map((config) => {
-            const path = `${config.prefix}${lang}${config.suffix}`;
-            return this.http.get(path);
-        });
+  constructor(
+    private http: HttpClient,
+    public resources: { prefix: string; suffix: string }[] = [],
+  ) { }
 
-        // forkJoin waits for all requests to complete and combines their results
-        return forkJoin(requests).pipe(
-            map((response: any[]) => {
-                // Merge all loaded JSON objects into a single object
-                return response.reduce((acc, current) => {
-                    return { ...acc, ...current };
-                }, {});
-            }),
-        );
+  public getTranslation(lang: string): Observable<any> {
+    // SSR: don't make HTTP calls to assets
+    if (!isPlatformBrowser(this.platformId)) {
+      return of({});
     }
+
+    const requests = this.resources.map((config) => {
+      const path = `${config.prefix}${lang}${config.suffix}`;
+      return this.http.get(path);
+    });
+
+    return forkJoin(requests).pipe(
+      map((response: any[]) => {
+        return response.reduce((acc, current) => ({ ...acc, ...current }), {});
+      }),
+    );
+  }
 }

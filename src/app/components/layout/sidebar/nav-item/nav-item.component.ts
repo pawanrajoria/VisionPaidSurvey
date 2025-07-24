@@ -13,6 +13,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '../../../../shared.module';
 import { NavService } from './nav.service';
 import { AuthService } from '../../../auth/auth.service';
+import { BaseComponent } from '../../../../base.component';
 
 @Component({
   selector: 'app-nav-item',
@@ -20,7 +21,7 @@ import { AuthService } from '../../../auth/auth.service';
   templateUrl: './nav-item.component.html',
   styleUrls: []
 })
-export class AppNavItemComponent implements OnChanges {
+export class AppNavItemComponent extends BaseComponent implements OnChanges {
   @Output() notify: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   @Input() item: NavItem | any;
@@ -30,11 +31,10 @@ export class AppNavItemComponent implements OnChanges {
   @HostBinding('attr.aria-expanded') ariaExpanded = this.expanded;
   @Input() depth: any;
 
-  constructor(public navService: NavService, public router: Router,
-    private authService: AuthService) { }
+  constructor(public navService: NavService, public router: Router) { super(); }
 
   async ngOnInit() {
-    
+
   }
 
 
@@ -53,28 +53,30 @@ export class AppNavItemComponent implements OnChanges {
     if (item.children && item.children.length) {
       this.expanded = !this.expanded;
     }
-    //scroll
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    });
-    if (!this.expanded) {
-      if (window.innerWidth < 1024) {
-        this.notify.emit();
+
+    if (this.win) {
+      this.win.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      });
+      if (!this.expanded) {
+        if (this.win.innerWidth < 1024) {
+          this.notify.emit();
+        }
       }
     }
   }
 
   openExternalLink(url: string): void {
-    if (url) {
-      window.open(url, '_blank');
+    if (url && this.win) {
+      this.win.open(url, '_blank');
     }
   }
 
   onSubItemSelected(item: NavItem) {
     if (!item.children || !item.children.length) {
-      if (this.expanded && window.innerWidth < 1024) {
+      if (this.expanded && this.win && this.win.innerWidth < 1024) {
         this.notify.emit();
       }
     }

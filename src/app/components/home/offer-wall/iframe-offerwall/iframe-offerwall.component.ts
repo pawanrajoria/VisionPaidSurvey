@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from "@angular/core";
 import { SharedModule } from "../../../../shared.module";
 import { MAT_DIALOG_DATA, MatDialog } from "@angular/material/dialog";
 import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
-import { BaseComponent } from "../../../layout/base.component";
+import { BaseComponent } from "../../../../base.component";
 
 @Component({
     selector: 'dialog-iframe-offerwall',

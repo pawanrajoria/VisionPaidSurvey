@@ -4,70 +4,65 @@ import {
   importProvidersFrom,
   APP_INITIALIZER,
   inject,
-  PLATFORM_ID, // Import PLATFORM_ID
+  PLATFORM_ID,
   provideAppInitializer,
-  provideBrowserGlobalErrorListeners
+  provideBrowserGlobalErrorListeners,
 } from '@angular/core';
+
 import {
-  HttpBackend,
-  HttpClient,
   provideHttpClient,
   withInterceptors,
   withInterceptorsFromDi,
+  withFetch,
+  HttpClient,
 } from '@angular/common/http';
-import { routes } from './app.routes';
+
 import {
   provideRouter,
   withComponentInputBinding,
   withInMemoryScrolling,
 } from '@angular/router';
+
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
-import { isPlatformBrowser } from '@angular/common'; // Import isPlatformBrowser
+import { isPlatformBrowser } from '@angular/common';
 
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
+import { MultiTranslateHttpLoader } from './multilanguagetranslator';
 
 import { TablerIconsModule } from 'angular-tabler-icons';
 import * as TablerIcons from 'angular-tabler-icons/icons';
 
-
-// perfect scrollbar
 import { NgScrollbarModule } from 'ngx-scrollbar';
-
 import { SharedModule } from './shared.module';
-// REMOVED: import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // This is browser-specific
 
-
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics"; // Keep import, but use conditionally
+import { initializeApp } from 'firebase/app';
+import { getAnalytics } from 'firebase/analytics';
 import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from "@angular/fire/compat/auth";
-import { Configs, ConfigService } from './config.service';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
+import { routes } from './app.routes';
+import { ConfigService } from './config.service';
 import { authInterceptor } from './components/auth/auth.interceptor';
-import { MultiTranslateHttpLoader } from './multilanguagetranslator';
 
-
-
+// ✅ Firebase Config
 const firebaseConfig = {
   apiKey: "AIzaSyBs6AtPBpCdFwQWRdJC0gWvuz6nFxHL-I4",
   authDomain: "visionpaidsurvey.firebaseapp.com",
   projectId: "visionpaidsurvey",
-  storageBucket: "visionpaidsurvey.firebasestorage.app",
+  storageBucket: "visionpaidsurvey.appspot.com",
   messagingSenderId: "988754056043",
   appId: "1:988754056043:web:91671c3ff865fcdc48b22e",
   measurementId: "G-LE58YJQQHT"
 };
 
+// ✅ App Config Initialization
 function initConfigService() {
   const configService = inject(ConfigService);
-  return configService.loadConfigs(); // Returns a Promise<void>, which is valid
+  return configService.loadConfigs();
 }
 
-// Function to create TranslateHttpLoader
-// This loader tells ngx-translate where to find your translation files.
-// It assumes your JSON translation files (e.g., en.json, es.json) are located in 'assets/i18n/'.
+// ✅ Multi-Language Loader (FIXED ./ → / for SSR)
 export function multiHttpLoaderFactory(http: HttpClient) {
   return new MultiTranslateHttpLoader(http, [
     { prefix: './assets/i18n/', suffix: '/common.json' },
@@ -88,9 +83,7 @@ export function multiHttpLoaderFactory(http: HttpClient) {
     { prefix: './assets/i18n/', suffix: '/visaGiftCards.json' },
     { prefix: './assets/i18n/', suffix: '/auth.json' },
     { prefix: './assets/i18n/', suffix: '/refer.json' },
-    { prefix: './assets/i18n/', suffix: '/profile.json' }
-    // { prefix: './assets/i18n/', suffix: '/products.json' },
-    // Add more resource configurations for other specific JSON files
+    { prefix: './assets/i18n/', suffix: '/profile.json' },
   ]);
 }
 
@@ -107,43 +100,41 @@ export const appConfig: ApplicationConfig = {
       }),
       withComponentInputBinding()
     ),
-    provideHttpClient(withInterceptorsFromDi()),
-    provideHttpClient(withInterceptors([authInterceptor])),
+    provideHttpClient(withFetch(), withInterceptorsFromDi(),withInterceptors([authInterceptor])),
     provideClientHydration(withEventReplay()),
-    provideAnimationsAsync(), // This is the correct way to provide animations for SSR
+    provideAnimationsAsync(),
+
     TranslateService,
+
     importProvidersFrom(
       SharedModule,
       TablerIconsModule.pick(TablerIcons),
       NgScrollbarModule,
       AngularFireAuthModule,
       AngularFireModule.initializeApp(firebaseConfig),
-      // Configure ngx-translate module
       TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,
           useFactory: multiHttpLoaderFactory,
-          deps: [HttpClient], // Inject HttpClient into our factory
+          deps: [HttpClient]
         },
-        defaultLanguage: 'en', // Set your default language
+        defaultLanguage: 'en'
       })
     ),
-    // Conditionally initialize Firebase Analytics only in the browser
+
+    // ✅ Conditionally initialize Firebase Analytics (browser only)
     {
       provide: APP_INITIALIZER,
       useFactory: (platformId: Object) => {
         return () => {
           if (isPlatformBrowser(platformId)) {
             const app = initializeApp(firebaseConfig);
-            getAnalytics(app); // Only call getAnalytics in the browser
+            getAnalytics(app);
           }
         };
       },
       deps: [PLATFORM_ID],
       multi: true
     }
-  ],
+  ]
 };
-
-// REMOVED: const app = initializeApp(firebaseConfig);
-// REMOVED: const analytics = getAnalytics(app); // This was causing the error on the server

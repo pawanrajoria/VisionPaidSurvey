@@ -1,0 +1,6 @@
+<div class="col-md-12">
+  <ng-template questionRoot></ng-template>
+  <div class="alert alert-danger my-1 p-2 fadeInDown animated" *ngIf="!isValid && isPatternError">
+    {{zipErrorMessage}}
+  </div>
+</div>

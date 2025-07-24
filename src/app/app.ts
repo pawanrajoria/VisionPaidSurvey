@@ -1,14 +1,19 @@
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import {
+  Component,
+  Inject,
+  OnInit,
+  PLATFORM_ID
+} from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { SharedModule } from './shared.module';
 import { filter, map, mergeMap, Observable } from 'rxjs';
+import { SharedModule } from './shared.module';
 import { LoaderService } from './components/layout/loader.service';
 import { SeoService } from './seo.service';
 import { TranslateService } from '@ngx-translate/core';
-import { HelperService } from './components/root/survey/helper.service';
+import { HelperService } from './components/userflow/helper.service';
 import { LocalStorageService } from './localstorage.service';
-import { isPlatformBrowser } from '@angular/common';
+import { BaseComponent } from './base.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +22,7 @@ import { isPlatformBrowser } from '@angular/common';
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent extends BaseComponent implements OnInit {
   title = 'VisionPaidSurvey';
   isLoading$!: Observable<boolean>;
 
@@ -33,23 +38,21 @@ export class AppComponent implements OnInit {
     private localStorageService: LocalStorageService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
+    super();
     this.isLoading$ = this.loader.loading$;
+
+    // ✅ SSR-safe language preference setup
+    const browserLang = this.isBrowser ? this.translate.getBrowserLang() : 'en';
     this.translate.setDefaultLang('en');
-    // Use a language from the browser or a stored preference
-    const browserLang = translate.getBrowserLang();
     this.translate.use(browserLang?.match(/en|es|fr/) ? browserLang : 'en');
   }
 
-
   ngOnInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      // Run only in browser
-      window.addEventListener('scroll', () => {
-
-      });
+    // ✅ SSR-safe check before using `window`
+    if (this.isBrowser && this.win) {
+      this.localStorageService.setItem('LandedUrl', this.win.location.href);
     }
 
-    this.localStorageService.setItem('LandedUrl', window.location.href);
     this.helperService.setDuid();
 
     this.router.events

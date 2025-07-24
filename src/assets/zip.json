@@ -1,0 +1,26 @@
+[
+  {
+    "LanguageId": "6",
+    "ErrorMessage": "Invalid zip code",
+    "Country": "India",
+    "ISO": "IN",
+    "Format": "NNNNNN,&#10;NNN NNN",
+    "Regex": "^\\d{6}$"
+  },
+  {
+    "LanguageId": "1",
+    "ErrorMessage": "Invalid zip code",
+    "Country": "US.",
+    "ISO": "US",
+    "Format": "NNNNN (optionally NNNNN-NNNN)",
+    "Regex": "^\\b\\d{5}\\b(?:[- ]{1}\\d{4})?$"
+  },
+  {
+    "LanguageId": "3",
+    "ErrorMessage": "Invalid zip code",
+    "Country": "GB.",
+    "ISO": "GB",
+    "Format": "NNNNN (optionally NNNNN-NNNN)",
+    "Regex": "^([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z])))) [0-9][A-Za-z]{2})$"
+  }
+]

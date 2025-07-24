@@ -1,0 +1,16 @@
+<div [formGroup]="form">
+  <mat-form-field appearance="fill" style="width:100%" *ngIf="!!field.qAnswers && field.qAnswers.length>10"
+    subscriptSizing="dynamic">
+    <mat-label>Search</mat-label>
+    <input matInput [formControlName]="field.searchingVariable" placeholder="Search" />
+    <mat-icon class='search-icon' color="primary" matPrefix>search</mat-icon>
+  </mat-form-field>
+  <div class="fixed-height-container">
+    <div *ngFor="let opt of field.qAnswers  | searchQuestion: form.controls['searchingVariable'].value;track opt"
+      class="form-check form-check">
+      <p><mat-checkbox color="primary" [formControlName]="opt.key" (change)="updateAnswer($event)" [value]="opt.preCode"
+          [checked]="opt.isChecked">
+          {{opt.text}}</mat-checkbox></p>
+    </div>
+  </div>
+</div>

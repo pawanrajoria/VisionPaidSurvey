@@ -1,0 +1,2 @@
+ <app-question *ngIf="!!qualification && !!qualification.qKey" [qualification]="qualification"
+                    [country]="country" (submitSurvey)="submitSurvey($event)"></app-question>

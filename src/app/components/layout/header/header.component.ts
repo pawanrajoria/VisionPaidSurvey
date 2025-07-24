@@ -17,7 +17,6 @@ import { AccountService } from '../../home/account.service';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { isPlatformBrowser } from '@angular/common';
 import { SelectRewardComponent } from '../../home/reward/select-reward/select-reward.component';
 
 @Component({

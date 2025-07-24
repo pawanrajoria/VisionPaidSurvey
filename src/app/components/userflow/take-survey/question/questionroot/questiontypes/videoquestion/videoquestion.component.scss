@@ -1,0 +1,113 @@
+video::-webkit-media-controls-fullscreen-button {
+  display: none;
+}
+
+video::-webkit-media-controls-play-button {
+  display: none;
+}
+
+video::-webkit-media-controls-timeline {
+  display: none;
+}
+
+video::-webkit-media-controls-current-time-display {
+}
+
+video::-webkit-media-controls-time-remaining-display {
+}
+
+video::-webkit-media-controls-mute-button {
+}
+
+video::-webkit-media-controls-toggle-closed-captions-button {
+}
+
+video::-webkit-media-controls-volume-slider {
+}
+
+.video-player__wave-wrapper {
+  position: relative;
+  background-color: #ccc;
+}
+
+.video-player__wave-wrapper:hover {
+
+}
+
+.video-player_play {
+  margin: 0 auto !important;
+  position: absolute;
+  cursor: pointer;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  padding: 15px 13px 15px 17px;
+  border: 0;
+  background-color: #fff;
+  transition: background-color 100ms;
+  border-radius: 50%;
+  box-shadow: 0 2px 3px rgb(0 0 0 / 10%);
+  left: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.video-player_icon_play {
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  transition: border 100ms;
+  border-top: 10px solid transparent;
+  border-right: 0 solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 20px solid #2a2a2a;
+}
+
+.video-player_icon_pause {
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  transition: border 100ms;
+}
+
+.video-player_icon_pause:hover {
+ /* border-top: 0 solid transparent;
+  border-right: 6.6666666667px solid #fff;
+  border-bottom: 0 solid transparent;
+  border-left: 6.6666666667px solid #fff;*/
+}
+
+.video-player_pause {
+  margin: 0 auto !important;
+  position: absolute;
+  cursor: pointer;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: 0;
+  z-index: 10;
+  padding: 15px;
+  border: 0;
+  background-color: transparent;
+  transition: background-color 100ms;
+  border-radius: 50%;
+  left: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.video-player_pause:hover {
+  /*background: #005ea2;*/
+  /*box-shadow: 0 2px 3px rgb(0 0 0 / 10%);*/
+}
+
+.video_player_progress {
+  position: absolute;
+  right: 0;
+  /*top: 0;*/
+  bottom: 0;
+  background-color: rgba(255,255,255,0.24);
+  pointer-events: none;
+  left: 0;
+}

@@ -2,18 +2,20 @@ import { Component } from '@angular/core';
 import { RespondentService } from '../respondent.service';
 import { RespondentEndSurveyResponseVM, RespondentEndSurveyVM } from '../respondent.vm';
 import { HelperService } from '../helper.service';
-import { LocalStorageService } from '../../../../localstorage.service';
+import { LocalStorageService } from '../../../localstorage.service';
+import { BaseComponent } from '../../../base.component';
 
 @Component({
   selector: 'app-complete-survey',
   templateUrl: './complete-survey.component.html',
   styleUrls: ['./complete-survey.component.scss'],
 })
-export class CompleteSurveyComponent {
+export class CompleteSurveyComponent extends BaseComponent {
   classname: string = "";
   constructor(private respondentService: RespondentService, private helperService: HelperService,
     private localStorageService: LocalStorageService
   ) {
+    super();
     this.completeSurvey();
   }
 
@@ -27,13 +29,13 @@ export class CompleteSurveyComponent {
       return;
 
     const duid = self.helperService.fetchDuid();
-    if (duid == "") {
-      window.location.reload();
+    if (duid == "" && this.win) {
+      this.win.location.reload();
     }
 
     let landedUrl: string = this.localStorageService.getItem('LandedUrl') ?? '';
-    if (landedUrl.length != window.location.href.length) {
-      landedUrl = window.location.href;
+    if (!!this.win && landedUrl.length != this.win.location.href.length) {
+      landedUrl = this.win.location.href;
     }
 
 
@@ -48,10 +50,14 @@ export class CompleteSurveyComponent {
 
     const ourputUrl: RespondentEndSurveyResponseVM = await self.respondentService.completeRespondent(request);
     if (!!ourputUrl && !!ourputUrl.requestUrl) {
-      window.location.href = ourputUrl.requestUrl;
+      if (this.win) {
+        this.win.location.href = ourputUrl.requestUrl;
+      }
     }
     else {
-      window.location.href = "https://profitpiller.com";
+      if (this.win) {
+        this.win.location.href = "https://profitpiller.com";
+      }
     }
   }
 }

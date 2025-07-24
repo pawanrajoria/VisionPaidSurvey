@@ -1,0 +1,17 @@
+<form (ngSubmit)="onSubmit(this.form.value)" [formGroup]="form" class="form-horizontal">
+  <div class="custom-container">
+
+    <div class="row">
+      <div class="col-md-6 m-auto">
+        <mat-card appearance="outlined">
+          <app-questionroot [field]="qualification" [form]="form"></app-questionroot>
+          <mat-card-actions class="justify-content-end">
+            <button type="Submit" mat-flat-button color="primary" [disabled]="!isValid"
+              class="w-100 btn-theme">Next
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { ConfigService } from "../../../config.service";
+import { ConfigService } from "../../config.service";
 import { RespondentEndSurveyResponseVM, RespondentEndSurveyVM, RespondentEntryRequestVM, RespondentEntryResponseVM, RespondentSubmitVM } from "./respondent.vm";
 @Injectable({
     providedIn: "root"

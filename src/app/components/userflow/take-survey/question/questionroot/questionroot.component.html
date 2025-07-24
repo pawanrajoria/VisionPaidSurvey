@@ -1,0 +1,12 @@
+<mat-card-header class="card-header-container">
+  <div [formGroup]="form">
+    <mat-card-title *ngIf="!!field && field.qText" [attr.for]="field.qText" class="mb-2">
+      <strong>Q : {{ field.qText }}</strong>
+      <strong class="text-danger" *ngIf="!!field && field.required">*</strong>
+    </mat-card-title>
+    <div class="row container-subquestion">
+      <question-builder [field]="field" [form]="form"></question-builder>
+    </div>
+  </div>
+
+</mat-card-header>

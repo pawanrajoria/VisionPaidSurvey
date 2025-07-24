@@ -1,0 +1,10 @@
+<div [formGroup]="form" *ngIf="!!field.qKey && field.qKey.length>0">
+       <span *ngIf="!!field && !!field.qAnsText">{{field.qAnsText}}</span>
+       <mat-form-field appearance="outline" color="primary" class="w-100">
+              <input matInput [attr.type]="field.qSubTypeToken" class="form-control" [id]="field.qKey"
+                     [name]="field.qKey" [formControlName]="field.qKey"
+                     (keypress)="checkcharacter($event,field.qSubTypeToken)">
+       </mat-form-field>
+       <!--<textarea *ngIf="field.multiline" [class.is-invalid]="isDirty && !isValid" [formControlName]="field.qKey"
+      [id]="field.qKey" rows="9" class="form-control" [placeholder]="field.placeholder"></textarea>-->
+</div>

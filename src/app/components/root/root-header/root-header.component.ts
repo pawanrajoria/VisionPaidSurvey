@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener, Input } from "@angular/core";
 import { SharedModule } from "../../../shared.module";
 import { Router } from "@angular/router";
+import { BaseComponent } from "../../../base.component";
 
 @Component({
     selector: 'app-root-header',
@@ -8,11 +9,12 @@ import { Router } from "@angular/router";
     templateUrl: './root-header.component.html',
     styleUrls: ['./root-header.component.scss']
 })
-export class RootHeaderComponent implements OnInit {
+export class RootHeaderComponent extends BaseComponent implements OnInit {
     isShrunk = false;
 
 
     constructor(private router: Router) {
+        super();
     }
 
 
@@ -26,10 +28,11 @@ export class RootHeaderComponent implements OnInit {
 
     @HostListener('window:scroll', [])
     onScroll(): void {
-        this.isShrunk = window.scrollY > 30;
+        if (this.isBrowser && this.win) {
+            this.isShrunk = this.win.scrollY > 30;
+        }
     }
-
     toggleMobileMenu() {
     }
-    
+
 }

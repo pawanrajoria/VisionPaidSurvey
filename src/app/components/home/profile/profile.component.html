@@ -7,7 +7,7 @@
                         <a href="javascript://">
                             <img src="assets/images/icon/happy-smiling.jpg">
                         </a>
-                        <h1>{{ 'account.hey_text' | translate }} <strong>{{ userInfo?.name }}</strong></h1>
+                        <h1>{{ 'account.hey_text' | translate }} <strong>{{ userInfo.name }}</strong></h1>
                         <p>{{ userInfo.emailId }}</p>
                         <p class="earn">{{ 'account.earning_text' | translate }} <span><em>{{userBalanceInfo.balance}}
                                     Points</em></span></p>
@@ -48,7 +48,7 @@
                     <div class="bio-graph-info">
                         <h2> {{ 'account.personal_details' | translate }}</h2>
                         <ul>
-                            <li><strong>{{ 'account.age' | translate }}</strong>: {{ getAge(userInfo?.dateOfBirth) }}
+                            <li><strong>{{ 'account.age' | translate }}</strong>: {{ getAge(userInfo.dateOfBirth) }}
                                 years old</li>
                             <li *ngIf="!!userInfo.dateOfBirth"><strong>{{ 'account.dateOfBirth' | translate }}</strong>:
                                 {{ userInfo.dateOfBirth | date: 'MMM d, y' }}</li>

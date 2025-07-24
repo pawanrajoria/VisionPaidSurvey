@@ -1,0 +1,8 @@
+<div class="audio-player__wave-wrapper" style="background-color: #809AA4; margin-bottom: 30px;">
+  <div class="audio-player__wave" data-audio-player-target="wave" data-action="click->audio-player#userInteraction" style="background: transparent;">
+  </div>
+  <button type="button" [class]="isPlaying?'audio-player__button__pause':'audio-player__button__play'" (click)="playAudio()" data-action="click->audio-player#handleTogglePlay">
+    <div [class]="isPlaying?'audio-player__button-icon__pause':'audio-player__button-icon__play'"></div>
+  </button>
+  <div class="audio-player__progress" data-audio-player-target="progress" style="left: {{progress}};"></div>
+</div>

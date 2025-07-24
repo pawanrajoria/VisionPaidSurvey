@@ -1,14 +1,11 @@
 import { HttpClient } from "@angular/common/http";
-import { Injectable, PLATFORM_ID } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { ConfigService } from "../../config.service";
 import { firstValueFrom } from "rxjs";
 import { Router } from "@angular/router";
 import * as CryptoJS from 'crypto-js';
-import { LoginTokenVM, RoleWiseModules } from "./module.vm";
 import { AccountService } from "../home/account.service";
-import { NavItem } from "../layout/sidebar/nav-item/nav-item";
-import { isPlatformBrowser } from '@angular/common';
 import { LocalStorageService } from "../../localstorage.service";
 
 

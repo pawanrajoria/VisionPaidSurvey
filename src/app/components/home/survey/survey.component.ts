@@ -2,11 +2,11 @@ import { Component, inject, OnInit } from "@angular/core";
 import { SharedModule } from "../../../shared.module";
 import { ISurveyVM } from "./survey.vm";
 import { SurveyService } from "./survey.service";
-import { BaseComponent } from "../../layout/base.component";
 import { MatDialog } from "@angular/material/dialog";
 import { SurveyQualifyPopupComponent } from "./survey-common-popup/survey-qualify-popup/survey-qualify-popup";
 import { SurveyFeedBackPopupComponent } from "./survey-common-popup/survey-feedback-popup/survey-feedback-popup";
 import { SurveyInstructionPopupComponent } from "./survey-common-popup/survey-instruction-popup/survey-instruction-popup";
+import { BaseComponent } from "../../../base.component";
 
 @Component({
     selector: 'app-survey',
@@ -62,11 +62,13 @@ export class SurveyComponent extends BaseComponent implements OnInit {
     }
 
     async startSurvey(item: ISurveyVM) {
-        const win = window.open(item.clickUrl, '_blank');
+        if (this.win) {
+            const winNew = this.win.open(item.clickUrl, '_blank');
 
-        if (!win) {
-            alert('Popup blocked. Please allow popups for this site.');
-            return;
+            if (!winNew) {
+                alert('Popup blocked. Please allow popups for this site.');
+                return;
+            }
         }
 
         await this.logUserActivity("Survey", "StartSurvey", "Click", item.clickUrl);

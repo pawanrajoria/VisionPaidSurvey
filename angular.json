@@ -25,7 +25,12 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "config.json",
+                "input": "src/assets",
+                "output": "assets"
+              }
             ],
             "styles": [
               "src/styles.scss",
@@ -35,7 +40,10 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "allowedCommonJsDependencies": [
+              "qr-code-styling"
+            ]
           },
           "configurations": {
             "production": {
@@ -87,13 +95,39 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "config.json",
+                "input": "src/assets",
+                "output": "assets"
+              }
             ],
             "styles": [
               "src/styles.scss",
               "src/assets/styles/style.scss"
             ]
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/VisionPaidSurvey/server",
+            "main": "src/main.server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "sourceMap": false,
+              "extractLicenses": true
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

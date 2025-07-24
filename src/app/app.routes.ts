@@ -6,8 +6,10 @@ import { AuthComponent } from './components/auth/auth.component';
 import { RootComponent } from './components/root/root.component';
 import { OfferLinkComponent } from './components/home/offer/offer-popup/offer-link/offer-link.component';
 import { AdminComponent } from './components/admin/admin.component';
-import { CompleteSurveyComponent } from './components/root/survey/complete-survey/complete-survey.component';
-import { SurveyStatusComponent } from './components/root/survey/survey-status/survey-status.component';
+import { CompleteSurveyComponent } from './components/userflow/complete-survey/complete-survey.component';
+import { SurveyStatusComponent } from './components/userflow/survey-status/survey-status.component';
+import { TakeSurveyComponent } from './components/userflow/take-survey/take-survey.component';
+import { UserflowComponent } from './components/userflow/userflow.component';
 
 export const routes: Routes = [
   {
@@ -176,18 +178,30 @@ export const routes: Routes = [
         path: 'visa',
         loadChildren: () =>
           import('./components/root/root-visa/root-visa.route').then((m) => m.rootVisaRoutes),
-      },
-      {
-        path: 'survey/completesurvey',
-        component: CompleteSurveyComponent
-      },
-      {
-        path: 'survey/getSurveyInventory',
-        component: SurveyStatusComponent
       }
     ],
   },
-  // Fallback for unknown routes (404 handling)
+  {
+    path: 'survey',
+    component: UserflowComponent,
+    children: [
+      {
+        path: 'completesurvey',
+        loadChildren: () =>
+          import('./components/userflow/complete-survey/complete-survey.route').then((m) => m.completeSurveyRoutes)
+      },
+      {
+        path: 'getSurveyInventory',
+        loadChildren: () =>
+          import('./components/userflow/survey-status/survey-status.route').then((m) => m.surveyStatusRoutes)
+      },
+      {
+        path: 'takeSurvey',
+        loadChildren: () =>
+          import('./components/userflow/take-survey/take-survey.route').then((m) => m.takeSurveyRoutes)
+      }
+    ],
+  },
   {
     path: '**',
     redirectTo: '/auth/login',

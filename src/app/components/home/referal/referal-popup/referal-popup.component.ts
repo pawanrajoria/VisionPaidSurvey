@@ -1,35 +1,42 @@
-import { Component, inject, OnInit } from "@angular/core";
-import { SharedModule } from "../../../../shared.module";
-import { IReferalVM } from "../referal.vm";
-import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from "@angular/material/dialog";
-import { ConfigService } from "../../../../config.service";
+import { Component, OnInit, inject } from '@angular/core';
+import { SharedModule } from '../../../../shared.module';
+import { IReferalVM } from '../referal.vm';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { ConfigService } from '../../../../config.service';
+import { BaseComponent } from '../../../../base.component';
 
 @Component({
     selector: 'app-referal-popup',
+    standalone: true,
     imports: [SharedModule],
     templateUrl: './referal-popup.component.html',
     styleUrls: ['./referal-popup.component.scss']
 })
-export class ReferalPopupComponent implements OnInit {
+export class ReferalPopupComponent extends BaseComponent implements OnInit {
     readonly referal = inject<IReferalVM>(MAT_DIALOG_DATA);
     readonly dialog = inject(MatDialog);
+    readonly configService = inject(ConfigService);
+    readonly dialogRef = inject(MatDialogRef<ReferalPopupComponent>);
 
-    constructor(private dialogRef: MatDialogRef<ReferalPopupComponent>, private configService: ConfigService) {
+    constructor() {
+        super(); // initializes BaseComponent's browser-safe bindings
     }
 
     ngOnInit(): void {
-        throw new Error("Method not implemented.");
+        // Optional: handle any dialog-specific init here
     }
 
-    get referalLink() {
+    get referalLink(): string {
         return `${this.configService.appUrl}/auth/login?referralCode=${this.referal.referLinkCode}`;
     }
 
-    copyLink() {
-        navigator.clipboard.writeText(this.referalLink);
+    copyLink(): void {
+        if (this.isBrowser && this.win?.navigator?.clipboard) {
+            this.win.navigator.clipboard.writeText(this.referalLink);
+        }
     }
 
-    close() {
+    close(): void {
         this.dialog.closeAll();
     }
 }
