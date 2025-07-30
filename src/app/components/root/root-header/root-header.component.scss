@@ -70,7 +70,7 @@
 
 .my-custom-toolbar-inner {
     width: 100%;
-    height: 80px;
+    // height: 80px;
     display: flex;
     align-items: center;
     button {
@@ -107,6 +107,7 @@
             &.site-header-button {
                 display: inherit;
                 min-height: 30px;
+                max-height: 35px;
                 font-weight: 600;
                 line-height: 36px;
                 padding: 0px 12px;
@@ -239,6 +240,138 @@
     }
 }
 
+
+/*-- Translate Modal Here --*/
+
+button {
+    &.close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 9;
+        background: #105749;
+        color: #fff;
+        border: 0;
+        box-shadow: none;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.translate-sec {
+    min-width: 480px;
+    max-width: 100%;
+    padding: 12px !important;
+    .header {
+        img {
+            max-width: 100px;
+            width: 100%;
+        }
+        h2 {
+            font-weight: 600;
+            font-size: 22px;
+            color: #105749;
+            margin: 14px 0px;
+        }
+    }
+    .translate-box {
+        max-height: 260px;
+        overflow: auto;
+        padding-right: 6px;
+        .accordion {
+            .accordion-item {
+                margin-bottom: 12px;
+                box-shadow: none;
+                border: 1px solid rgb(16 87 73 / 22%);
+                 ::ng-deep {
+                    .mat-expansion-panel-body {
+                        border-top: 1px solid rgb(16 87 73 / 012%);
+                        padding: 12px 14px 10px;
+                    }
+                }
+                .accordion-header {
+                    padding: 0 14px;
+                    .accordion-button {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                        .flag-icon {
+                            line-height: 0;
+                        }
+                    }
+                }
+                .accordion-collapse {
+                    text-align: left;
+                    p {
+                        margin: 0;
+                        color: #333;
+                        font-size: 15px;
+                        font-weight: 500;
+                    }
+                    .form-radio {
+                        gap: 20px;
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.btn-theme {
+    margin-top: 20px;
+    background: #196145;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+    overflow: hidden;
+    text-transform: capitalize;
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 18px;
+    letter-spacing: .7px;
+    font-weight: 400;
+    border-radius: 3px;
+    border: 0;
+    min-height: 44px;
+    z-index: 0;
+    &:hover {
+        color: #000;
+        &::before {
+            left: 0%;
+            transform: scale(1, 1);
+        }
+    }
+    &:before {
+        background: linear-gradient(270deg, rgba(252, 246, 166, 1) 0%, rgba(203, 255, 156, 1) 36%);
+        position: absolute;
+        content: '';
+        left: 96%;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 1;
+        transition: all 0.4s;
+        transform: skewX(-25deg);
+        z-index: -1;
+    }
+}
+
+.custom-card {
+    border: 0px !important;
+    margin-bottom: 0 !important;
+    position: relative;
+    z-index: 0;
+}
+
+
+/*-- Translate Modal Here End--*/
+
 @media (min-width:992px) and (max-width:1024px) {}
 
 @media (min-width:768px) and (max-width:991px) {}
@@ -253,5 +386,14 @@
     }
     .trending-nows-aera {
         gap: 6px;
+    }
+    .translate-sec {
+        min-width: inherit;
+        padding: 12px !important;
+        .header {
+            img {
+                display: none;
+            }
+        }
     }
 }

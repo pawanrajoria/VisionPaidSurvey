@@ -8,6 +8,7 @@ export interface AdminEarningResponseDto {
     totalLevelBonusEarn: number;
     earning: AdminTodayEarningResponseDto[];
     withdrawalRequests: AdminWithdrawalResponseDto[];
+    topEarningUsers: AdminTopEarningUserResponseDto[];
 }
 
 export interface AdminTodayEarningResponseDto {
@@ -16,6 +17,7 @@ export interface AdminTodayEarningResponseDto {
     userName: string;
     country: string;
     amount: string;
+    earnDate:Date; 
 }
 
 export interface AdminWithdrawalResponseDto {
@@ -30,4 +32,15 @@ export interface AdminWithdrawalResponseDto {
     requestedAmount: number;
     userName: string;
     country: string;
+}
+
+export interface AdminTopEarningUserResponseDto {
+    userId: number;
+    userName: string;
+    country: string;
+    totalEarning: number;
+    earningCount: number;
+    todayEarning: number;
+    rejectionCount: number;
+    rejectionAmount: number;
 }

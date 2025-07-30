@@ -38,7 +38,6 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
 
     // ✅ Skip auth logic for static or excluded routes
     if (skipRequest) {
-        console.log('✅ Skipping authInterceptor for:', req.url);
         return next(req.clone({
             headers: req.headers.set('X-Timezone', timezone)
         }));

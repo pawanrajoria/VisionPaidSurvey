@@ -10,9 +10,21 @@ import { AdminService } from "../admin.service";
     styleUrls: ['./dashboard.component.scss']
 })
 export class AdminDashboardComponent implements OnInit {
-    adminData!: AdminEarningResponseDto;
+    adminData: AdminEarningResponseDto = {
+        totalEarning: 0,
+        todayEarning: 0,
+        totalUsers: 0,
+        totalRejection: 0,
+        totalWithdrawalAmount: 0,
+        totalRefrelEarn: 0,
+        totalLevelBonusEarn: 0,
+        earning: [],
+        withdrawalRequests: [],
+        topEarningUsers: []
+    };
     displayedColumns: string[] = ['demo-position', 'demo-name', 'demo-weight', 'demo-symbol'];
-    
+    displayedEarnerColumns: string[] = ['demo-name', 'demo-weight'];
+
     constructor(private adminService: AdminService) {
     }
 
@@ -20,7 +32,7 @@ export class AdminDashboardComponent implements OnInit {
         await this.bindAdminData();
     }
 
-    async refresh(){
+    async refresh() {
         await this.bindAdminData();
     }
 
@@ -28,5 +40,8 @@ export class AdminDashboardComponent implements OnInit {
         const self = this;
 
         self.adminData = await self.adminService.getDashboardHistory();
+        self.adminData.earning = this.adminData.earning?.sort((a, b) =>
+            new Date(b.earnDate).getTime() - new Date(a.earnDate).getTime()
+        );
     }
 }

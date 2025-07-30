@@ -1,6 +1,7 @@
-import { Injectable } from "@angular/core";
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import * as CryptoJS from 'crypto-js';
-// declare function getDuid(callback: any, localStr: any): any;
+declare function getDuid(callback: any, localStr: any): any;
 import { LocalStorageService } from "../../localstorage.service";
 
 @Injectable({
@@ -8,13 +9,11 @@ import { LocalStorageService } from "../../localstorage.service";
 })
 export class HelperService {
   key: string = "a0f3dc257c884e299dfdde9088e6e0c9";
-  constructor(private localStorageService: LocalStorageService) { }
+  constructor(private localStorageService: LocalStorageService, @Inject(PLATFORM_ID) private platformId: Object) { }
 
   fetchDuid() {
     const duid = this.localStorageService.getItem('Duid');
     const appToken: any = this.localStorageService.getItem('AppToken');
-    console.log("duid", duid);
-    console.log("appToken", appToken);
     if (!duid || duid.length != 32)
       return "";
     else {
@@ -29,13 +28,19 @@ export class HelperService {
   }
 
   setDuid() {
-    // if (this.fetchDuid() == "" && !!getDuid) {
-    //   getDuid(finalCallback, this.localStorageService);
-    // }
+    if (isPlatformBrowser(this.platformId)) {
+      if (typeof (window as any).getDuid === 'function') { // Example for global function
+        const duid = (window as any).getDuid(finalCallback, this.localStorageService);
+      } else {
+        console.warn("getDuid function not found in browser environment.");
+      }
+    }
+    else {
+      console.log('Running setDuid in server environment (SSR)');
+    }
   }
 
 }
-
 const finalCallback: any = (duid: any, localStr: any) => {
   if (!!duid) {
     localStr.setItem('Duid', duid);

@@ -65,25 +65,25 @@ function initConfigService() {
 // ✅ Multi-Language Loader (FIXED ./ → / for SSR)
 export function multiHttpLoaderFactory(http: HttpClient) {
   return new MultiTranslateHttpLoader(http, [
-    { prefix: './assets/i18n/', suffix: '/common.json' },
-    { prefix: './assets/i18n/', suffix: '/roothome.json' },
-    { prefix: './assets/i18n/', suffix: '/about.json' },
-    { prefix: './assets/i18n/', suffix: '/amazonGiftCard.json' },
-    { prefix: './assets/i18n/', suffix: '/cashSurveys.json' },
-    { prefix: './assets/i18n/', suffix: '/contact.json' },
-    { prefix: './assets/i18n/', suffix: '/personalInformation.json' },
-    { prefix: './assets/i18n/', suffix: '/faq.json' },
-    { prefix: './assets/i18n/', suffix: '/footer.json' },
-    { prefix: './assets/i18n/', suffix: '/giftCardSurveys.json' },
-    { prefix: './assets/i18n/', suffix: '/header.json' },
-    { prefix: './assets/i18n/', suffix: '/help.json' },
-    { prefix: './assets/i18n/', suffix: '/paypalGiftCards.json' },
-    { prefix: './assets/i18n/', suffix: '/privacyPolicy.json' },
-    { prefix: './assets/i18n/', suffix: '/termsConditions.json' },
-    { prefix: './assets/i18n/', suffix: '/visaGiftCards.json' },
-    { prefix: './assets/i18n/', suffix: '/auth.json' },
-    { prefix: './assets/i18n/', suffix: '/refer.json' },
-    { prefix: './assets/i18n/', suffix: '/profile.json' },
+    { prefix: '/assets/i18n/', suffix: '/common.json' },
+    { prefix: '/assets/i18n/', suffix: '/roothome.json' },
+    { prefix: '/assets/i18n/', suffix: '/about.json' },
+    { prefix: '/assets/i18n/', suffix: '/amazonGiftCard.json' },
+    { prefix: '/assets/i18n/', suffix: '/cashSurveys.json' },
+    { prefix: '/assets/i18n/', suffix: '/contact.json' },
+    { prefix: '/assets/i18n/', suffix: '/personalInformation.json' },
+    { prefix: '/assets/i18n/', suffix: '/faq.json' },
+    { prefix: '/assets/i18n/', suffix: '/footer.json' },
+    { prefix: '/assets/i18n/', suffix: '/giftCardSurveys.json' },
+    { prefix: '/assets/i18n/', suffix: '/header.json' },
+    { prefix: '/assets/i18n/', suffix: '/help.json' },
+    { prefix: '/assets/i18n/', suffix: '/paypalGiftCards.json' },
+    { prefix: '/assets/i18n/', suffix: '/privacyPolicy.json' },
+    { prefix: '/assets/i18n/', suffix: '/termsConditions.json' },
+    { prefix: '/assets/i18n/', suffix: '/visaGiftCards.json' },
+    { prefix: '/assets/i18n/', suffix: '/auth.json' },
+    { prefix: '/assets/i18n/', suffix: '/refer.json' },
+    { prefix: '/assets/i18n/', suffix: '/profile.json' },
   ]);
 }
 
@@ -100,7 +100,7 @@ export const appConfig: ApplicationConfig = {
       }),
       withComponentInputBinding()
     ),
-    provideHttpClient(withFetch(), withInterceptorsFromDi(),withInterceptors([authInterceptor])),
+    provideHttpClient(withFetch(), withInterceptorsFromDi(), withInterceptors([authInterceptor])),
     provideClientHydration(withEventReplay()),
     provideAnimationsAsync(),
 

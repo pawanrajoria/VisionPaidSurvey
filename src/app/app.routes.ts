@@ -202,9 +202,9 @@ export const routes: Routes = [
       }
     ],
   },
-  {
-    path: '**',
-    redirectTo: '/auth/login',
-    pathMatch: 'full',
-  },
+  // {
+  //   path: '**',
+  //   redirectTo: '/auth/login',
+  //   pathMatch: 'full',
+  // },
 ];

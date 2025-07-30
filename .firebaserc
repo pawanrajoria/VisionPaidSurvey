@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "visionpaidsurvey"
-  }
+    "default": "visionpaidsurvey",
+    "production": "visionpaidsurvey"
+  },
+  "targets": {},
+  "etags": {}
 }

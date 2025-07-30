@@ -1,7 +1,8 @@
-import { Component, OnInit, HostListener, Input } from "@angular/core";
+import { Component, OnInit, HostListener, inject, ViewChild, TemplateRef, signal } from "@angular/core";
 import { SharedModule } from "../../../shared.module";
 import { Router } from "@angular/router";
 import { BaseComponent } from "../../../base.component";
+import { MatDialog } from "@angular/material/dialog";
 
 @Component({
     selector: 'app-root-header',
@@ -10,8 +11,10 @@ import { BaseComponent } from "../../../base.component";
     styleUrls: ['./root-header.component.scss']
 })
 export class RootHeaderComponent extends BaseComponent implements OnInit {
+    @ViewChild('Translate', { read: TemplateRef }) Translate!: TemplateRef<any>;
     isShrunk = false;
-
+    readonly dialog = inject(MatDialog);
+    readonly panelOpenState = signal(false);
 
     constructor(private router: Router) {
         super();
@@ -35,4 +38,11 @@ export class RootHeaderComponent extends BaseComponent implements OnInit {
     toggleMobileMenu() {
     }
 
+    openTranslate() {
+        this.dialog.open(this.Translate);
+    }
+
+    closeTranslate() {
+        this.dialog.closeAll();
+    }
 }
