@@ -1,0 +1,40 @@
+{
+    "account": {
+        "heading": {
+            "title": "Brauchen Sie Hilfe mit Profit Piller?",
+            "intro": "Wir sind hier, um Ihre Erfahrung reibungslos zu gestalten. Egal, ob Sie Hilfe bei Umfragen, Einlösungen oder Belohnungen benötigen – unser Support-Team steht Ihnen zur Seite."
+        },
+        "hey_text": "Hallo",
+        "earning_text": "Einnahmen",
+        "profile": "Profil",
+        "recent_activity": "Letzte Aktivität",
+        "setting": "Kontoeinstellungen",
+        "log_out": "Abmelden",
+        "profile_slogen": "Ihr Profil ist mehr als nur Details – es ist das Tor zu höheren Einnahmen, schnelleren Übereinstimmungen und besseren Gelegenheiten.",
+        "age": "Alter",
+        "gender": "Geschlecht",
+        "zip_code": "Postleitzahl",
+        "dateOfBirth": "Geburtsdatum",
+        "personal_details": "Persönliche Daten",
+        "Activity": "Aktivität",
+        "Points Earned": "Verdiente Punkte",
+        "Rewards Redeemed": "Eingelöste Prämien",
+        "Survey Completed": "Umfrage abgeschlossen",
+        "Offer Completed": "Angebot abgeschlossen",
+        "Achievements Earned": "Errungene Erfolge",
+        "Leaderboard Level": "Bestenlisten-Level",
+        "headings": {
+            "activity_log": "Aktivitätsprotokoll",
+            "survey_log": "Aktivitäten der Umfrage",
+            "account_setting": "Kontoeinstellungen",
+            "change_basic_setting": "Grundlegende Informationen ändern",
+            "change_username": "Benutzername ändern",
+            "change_password": "Passwort ändern",
+            "change_email": "E-Mail ändern",
+            "delete_account": "Konto löschen",
+            "reward_transaction": "Belohnungen & Transaktionen",
+            "notification": "Benachrichtigungen",
+            "help_support": "Hilfe & Support"
+        }
+    }
+}

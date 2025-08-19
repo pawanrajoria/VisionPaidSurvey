@@ -1,0 +1,45 @@
+{
+  "visaGiftCards": {
+    "banner": {
+      "title": "Guadagna carte regalo Visa per condividere la tua opinione",
+      "subtitle": "Preferisci pagare con Visa? Vuoi guadagnare premi che puoi spendere quasi ovunque?",
+      "description": "Con Profitpiller, puoi guadagnare carte regalo Visa semplicemente completando sondaggi. Che tu stia risparmiando per un nuovo gadget o voglia ridurre le tue spese settimanali, i premi in carte regalo Visa ti danno la flessibilità di spendere come vuoi.",
+      "startButton": "Inizia a guadagnare ora",
+      "startNote": "Iscriviti oggi e inizia a guadagnare premi Visa con Profitpiller."
+    },
+    "section1": {
+      "subtitle": "Premi veri, sondaggi veloci",
+      "title": "Ottieni subito premi con le carte regalo Visa",
+      "description1": "Le carte regalo Visa possono essere usate quasi ovunque. Guadagna la tua online e goditi la libertà di fare acquisti in negozio, online o ovunque sia accettata Visa, in tutto il mondo.",
+      "description2": "Usa il tuo premio Visa per pagare i tuoi abiti preferiti, prenotare una vacanza o anche coprire le spese quotidiane. Che si tratti di generi alimentari o gadget, sei tu a scegliere come spendere i tuoi premi.",
+      "description3": "Iniziare è semplice. Unisciti a Profitpiller e completa sondaggi veloci sui tuoi programmi, prodotti o acquisti recenti preferiti. Le tue opinioni aiutano le aziende a migliorare, e tu vieni premiato in cambio.",
+      "description4": "Iscriviti ora e richiedi la tua prima carta regalo Visa semplicemente completando il tuo primo sondaggio su Profitpiller."
+    },
+    "features": {
+      "subtitle": "Trasforma il tuo tempo libero in carte regalo",
+      "title": "Fatti pagare con carte regalo Visa per ogni sondaggio",
+      "description": "Unisciti a Profitpiller e inizia a guadagnare subito. È completamente gratuito e i sondaggi sono brevi, semplici e divertenti. Riscatta i tuoi punti per carte regalo Visa che funzionano quasi ovunque tu faccia acquisti.",
+      "step1": {
+        "label": "Passo 1",
+        "title": "Iscriviti per il tuo account Profitpiller gratuito e richiedi subito il tuo bonus di benvenuto."
+      },
+      "step2": {
+        "label": "Passo 2",
+        "title": "Completa i sondaggi e guarda il tuo saldo crescere.",
+        "description": "Dopo un solo sondaggio, puoi riscattare i tuoi punti per una carta regalo Visa, o continuare a guadagnare per premi più grandi. Goditi opzioni di premio flessibili, incluse carte regalo Amazon da 5 $ o carte regalo PayPal. Profitpiller rende facile ottenere ciò che vuoi."
+      }
+    },
+    "rewardsGrid": {
+      "paypalSurveys": "Sondaggi per carte regalo PayPal",
+      "amazonSurveys": "Sondaggi per carte regalo Amazon"
+    },
+    "support": {
+      "title": "Inizia a guadagnare premi Visa subito",
+      "description": "Unisciti a Profitpiller oggi e trasforma il tuo feedback in valore reale. Condividi la tua opinione, guadagna punti e riscatta carte regalo Visa che puoi usare ovunque. È veloce, sicuro e sempre gratuito per iniziare.",
+      "joinNow": "Unisciti ora"
+    }
+  },
+  "common": {
+    "arrowForward": "freccia in avanti"
+  }
+}

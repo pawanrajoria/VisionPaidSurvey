@@ -1,0 +1,42 @@
+{
+  "paypalGiftCards": {
+    "banner": {
+      "title": "通过快速调查赚取 PayPal 礼品卡",
+      "subtitle": "喜欢用 PayPal 进行在线购物吗？开始在每次购物中节省更多。",
+      "description": "加入 Profitpiller，为您的意见获得奖励！参与关于日常话题的快速而有趣的调查 — 从您熟悉的品牌到您喜爱的产品 — 并赚取 PayPal 礼品卡作为回报。这很简单、安全且 100% 免费。",
+      "startButton": "立即开始",
+      "startNote": "完成您的第一个调查，立即开始赚钱。"
+    },
+    "section1": {
+      "subtitle": "即时奖励，真实价值",
+      "title": "通过 PayPal 获得报酬 — 只需分享您的想法",
+      "description1": "无论您是在线购物还是支持本地卖家，Profitpiller 都能帮助您通过 PayPal 礼品卡赚取真金白银 — 比您想象的要快。",
+      "description2": "轻松兑换奖励，没有过期或最低提现要求。为大额折扣储蓄，或将您的礼品卡用于小额购买 — 完全由您决定。",
+      "description3": "从服装和电子产品到外卖和各项服务，Profitpiller 让您随心所欲地使用您的 PayPal 奖励。",
+      "description4": "最快可在 17 分钟内注册并提现。从您的第一个调查开始，即可赚取 PayPal 奖励 — 只有 Profitpiller 才能做到。"
+    },
+    "features": {
+      "subtitle": "让每一分钟都算数",
+      "title": "完成调查，即时赚取 PayPal 奖励",
+      "description": "Profitpiller 让您轻松赚取数字奖励，同时帮助顶级品牌改进。您的意见很重要，而且能带来回报。随时随地，在家中、手机上或任何地方，参与调查。",
+      "step1": {
+        "label": "第 1 步",
+        "title": "创建您的免费 Profitpiller 账户，并选择一个适合您的调查。"
+      },
+      "step2": {
+        "label": "第 2 步",
+        "title": "完成每个调查即可赚取积分 — 随时兑换。",
+        "description": "立即将您的积分兑换成 PayPal 礼品卡。更喜欢亚马逊或 Visa 奖励吗？我们也有。使用 Profitpiller，您可以选择如何获得奖励。"
+      }
+    },
+    "rewardsGrid": {
+      "paypalSurveys": "PayPal 礼品卡调查",
+      "amazonSurveys": "亚马逊礼品卡调查"
+    },
+    "support": {
+      "title": "立即使用 Profitpiller 开始赚取 PayPal 奖励",
+      "description": "立即注册，将您的业余时间变成真正的现金奖励。开始起来既快速、又免费、又简单。分享您的想法，完成调查，并通过 PayPal 获得报酬 — 仅在 Profitpiller 上。",
+      "joinNow": "立即加入"
+    }
+  }
+}

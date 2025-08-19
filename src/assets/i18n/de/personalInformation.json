@@ -1,25 +1,25 @@
 {
-    "personalInformation": {
-        "heading": {
-            "title": "Meine Daten nicht verkaufen"
-        },
-        "intro": {
-            "paragraph": "Bei <strong>Profitpiller</strong> legen wir Wert auf Ihre Privatsphäre und respektieren Ihre Kontrolle über Ihre persönlichen Daten. Gemäß Datenschutzbestimmungen wie dem California Consumer Privacy Act (CCPA) haben Sie das Recht, zu verlangen, dass Ihre persönlichen Daten nicht verkauft werden."
-        },
-        "whatItMeans": {
-            "title": "Was bedeutet das?",
-            "paragraph": "Wir können bestimmte Daten sammeln, um Ihre Benutzererfahrung zu verbessern und die Funktionalität unserer Dienste zu unterstützen. Obwohl wir Ihre Daten im traditionellen Sinne nicht \"verkaufen\", können einige Formen der Datenweitergabe an Partner unter bestimmten Datenschutzgesetzen als \"Verkauf\" betrachtet werden."
-        },
-        "optOutForm": {
-            "title": "Opt-Out-Formular",
-            "fullNameLabel": "Ihr vollständiger Name",
-            "emailLabel": "E-Mail-Adresse",
-            "commentsLabel": "Zusätzliche Kommentare (optional)",
-            "submitButton": "Anfrage senden"
-        },
-        "questions": {
-            "title": "Fragen?",
-            "paragraph": "Für Fragen oder zusätzliche Informationen zur Verwaltung Ihrer persönlichen Daten können Sie uns gerne unter <a href=\"mailto:privacy@profitpiller.com\">privacy@profitpiller.com</a> kontaktieren."
-        }
+  "personalInformation": {
+    "heading": {
+      "title": "Meine Informationen nicht verkaufen"
+    },
+    "intro": {
+      "paragraph": "Bei <strong>Profitpiller</strong> priorisieren wir Ihre Privatsphäre und respektieren Ihre Kontrolle über Ihre persönlichen Informationen. In Übereinstimmung mit Datenschutzbestimmungen wie dem California Consumer Privacy Act (CCPA) haben Sie das Recht, die Nicht-Weitergabe Ihrer persönlichen Daten zu verlangen."
+    },
+    "whatItMeans": {
+      "title": "Was bedeutet das?",
+      "paragraph": "Wir können bestimmte Daten sammeln, um Ihr Benutzererlebnis zu verbessern und die Funktionalität unserer Dienste zu unterstützen. Obwohl wir Ihre Daten nicht im herkömmlichen Sinne 'verkaufen', können bestimmte Formen der Datenweitergabe an Partner gemäß bestimmten Datenschutzgesetzen als 'Verkauf' angesehen werden."
+    },
+    "optOutForm": {
+      "title": "Opt-out-Formular",
+      "fullNameLabel": "Ihr vollständiger Name",
+      "emailLabel": "E-Mail-Adresse",
+      "commentsLabel": "Zusätzliche Kommentare (optional)",
+      "submitButton": "Anfrage senden"
+    },
+    "questions": {
+      "title": "Fragen?",
+      "paragraph": "Für alle Fragen oder zusätzliche Informationen darüber, wie wir Ihre persönlichen Daten verwalten, können Sie uns gerne unter <a href=\"mailto:privacy@profitpiller.com\">privacy@profitpiller.com</a> kontaktieren."
     }
+  }
 }

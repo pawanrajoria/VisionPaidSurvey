@@ -1,0 +1,132 @@
+{
+  "termsConditions": {
+    "heading": {
+      "title": "Termini e Condizioni / Termini di Utilizzo",
+      "effectiveDate": "Data di entrata in vigore: 6 maggio 2025"
+    },
+    "applicability": {
+      "title": "Applicabilità",
+      "paragraph1": "Profitpiller (il \"Panel\") è una piattaforma di ricerca di mercato digitale gestita e di proprietà di Cralpk Research Pvt. Ltd.",
+      "paragraph2": "In qualità di membro del panel, sei invitato a partecipare a studi di ricerca di mercato e attività di partecipazione correlate.",
+      "paragraph3": "Parti di questi Termini e/o della nostra Informativa sulla privacy possono essere modificate, aggiornate o rimosse in qualsiasi momento a sola discrezione di Profitpiller. È tua responsabilità rimanere informato rivedendo periodicamente questi Termini. La data sopra riportata riflette l'ultimo aggiornamento.",
+      "paragraph4": "Per i dettagli su come gestiamo i tuoi dati, fai riferimento alla nostra Informativa sulla privacy.",
+      "paragraph5": "Questi Termini rappresentano un contratto legale vincolante tra te e Profitpiller. Registrandoti, accedendo o utilizzando i nostri servizi, confermi il tuo accordo con questi Termini.",
+      "paragraph6": "Questo accordo include una rinuncia all'azione collettiva. Se non sei d'accordo con qualsiasi parte di questi termini, ti preghiamo di non utilizzare i servizi."
+    },
+    "eligibility": {
+      "title": "Eleggibilità",
+      "paragraph1": "L'iscrizione è disponibile solo per persone fisiche (non organizzazioni o entità legali) che hanno almeno 18 anni di età o l'età richiesta nel loro paese o regione.",
+      "paragraph2": "La partecipazione al panel è per uso personale, non commerciale. È consentito un solo account per persona.",
+      "paragraph3": "Profitpiller si riserva il diritto di negare i servizi a chiunque in qualsiasi momento, con o senza motivo."
+    },
+    "panelRegistration": {
+      "title": "Registrazione al Panel",
+      "paragraph1": "Per unirti al Panel e ricevere Coins, devi completare accuratamente il modulo di registrazione e fornire un'e-mail e una password valide.",
+      "paragraph2": "Accetti di mantenere le informazioni del tuo account accurate e aggiornate. La mancata osservanza di ciò può comportare la sospensione o la cessazione del tuo account e la perdita dei Coins accumulati.",
+      "paragraph3": "La tua partecipazione al Panel è in qualità di appaltatore indipendente. Nessun rapporto di lavoro, di partnership o di agenzia viene creato attraverso questo accordo."
+    },
+    "rewards": {
+      "title": "Premi",
+      "coinsDefinition": {
+        "subtitle": "Definizione di Coins",
+        "description": "Profitpiller assegna crediti digitali chiamati “Coins” che possono essere riscattati in contanti o altri premi in base a termini specifici."
+      },
+      "earningCoins": {
+        "subtitle": "Guadagnare Coins",
+        "description1": "I Coins vengono assegnati per attività approvate come l'iscrizione, il completamento del tuo profilo e il completamento dei sondaggi. La qualificazione è richiesta per la maggior parte dei sondaggi. Non guadagnerai Coins per i sondaggi da cui sei squalificato.",
+        "listTitle": "Puoi guadagnare Coins per:",
+        "point1": "Bonus di benvenuto – bonus una tantum dopo la registrazione.",
+        "point2": "Completamento del sondaggio – Coins assegnati in base a ogni sondaggio qualificante e completato.",
+        "point3": "Tentativo di sondaggio – A volte, un credito parziale può essere concesso anche se non completi un sondaggio.",
+        "point4": "Referral – Guadagna Coins quando gli utenti referenziati si uniscono e partecipano utilizzando il tuo link di referral.",
+        "description2": "Sei responsabile del monitoraggio del tuo saldo di Coins. Le controversie devono essere segnalate entro 30 giorni. Profitpiller indagherà e ti informerà del risultato."
+      },
+      "redeemingCoins": {
+        "subtitle": "Riscatto dei Coins",
+        "description1": "Puoi riscattare i Coins dal dashboard del tuo panel. 100 Coins = $1,00 o equivalente. I Coins possono anche essere scambiati con carte regalo.",
+        "description2": "Le carte regalo vengono inviate all'e-mail registrata. I problemi di consegna devono essere segnalati entro 3 mesi dall'emissione.",
+        "description3": "I pagamenti tramite PayPal, UPI o bonifico bancario richiedono dati di conto validi. È tua responsabilità mantenere queste informazioni aggiornate.",
+        "description4": "Il tempo di elaborazione può variare da 10 minuti a due settimane. I requisiti di riscatto possono cambiare a causa della conformità legale."
+      },
+      "taxResponsibility": {
+        "subtitle": "Responsabilità Fiscale",
+        "description": "I Coins e i premi possono essere soggetti a tassazione. Sei responsabile del rispetto delle normative fiscali nella tua giurisdizione."
+      },
+      "expirationOfCoins": {
+        "subtitle": "Scadenza dei Coins",
+        "description": "I Coins scadono 12 mesi dopo la data in cui sono stati guadagnati. L'eliminazione del tuo account comporterà anche la perdita di eventuali Coins non utilizzati."
+      },
+      "fraudAccountAdjustments": {
+        "subtitle": "Frode e aggiustamenti del conto",
+        "description1": "Profitpiller monitora l'attività del conto. Comportamenti fraudolenti o abusivi possono comportare la cessazione del conto e la perdita dei premi. Eventuali errori di sistema nell'allocazione dei Coins verranno corretti a discrezione di Profitpiller.",
+        "description2": "<strong>Trasferibilità</strong>: I Coins non hanno valore monetario al di fuori del panel e non possono essere trasferiti, impegnati o ereditati."
+      }
+    },
+    "prohibitedActivities": {
+      "title": "Attività Proibite",
+      "intro": "Accetti di non:",
+      "point1": "Utilizzare bot, scraper o strumenti di automazione non autorizzati",
+      "point2": "Inviare risposte inesatte, false o identiche nei sondaggi",
+      "point3": "Accedere al tuo account al di fuori del tuo paese registrato",
+      "point4": "Possedere più di un account",
+      "point5": "Utilizzare proxy, VPN o servizi di mascheramento della posizione",
+      "point6": "Violare le leggi locali, nazionali o internazionali utilizzando la piattaforma",
+      "point7": "Abusare o impersonare altri, inclusi il personale o i membri",
+      "point8": "Ripubblicare, rivendere o condividere contenuti riservati",
+      "conclusion": "Le violazioni possono portare all'immediata cessazione dell'account e alla perdita di tutti i premi."
+    },
+    "restrictedContent": {
+      "title": "Contenuto Riservato",
+      "description": "Puoi accedere a informazioni proprietarie durante la partecipazione a Profitpiller. Questo contenuto è protetto dalle leggi sulla proprietà intellettuale. Ti è proibito copiare, modificare, distribuire o decodificare tale contenuto senza consenso scritto."
+    },
+    "emailCommunication": {
+      "title": "Comunicazione via E-mail",
+      "description": "Inviamo e-mail essenziali e promozionali. Puoi annullare l'iscrizione alle e-mail di marketing tramite il link di annullamento dell'iscrizione o nelle impostazioni dell'account. Tuttavia, le e-mail transazionali (ad esempio, attività dell'account) verranno comunque inviate. Per interrompere tutte le e-mail, devi eliminare il tuo account."
+    },
+    "cancelingAccount": {
+      "title": "Cancellare il tuo Account",
+      "description1": "Per annullare, vai su “Impostazioni” e seleziona “Elimina account”. Dopo l'eliminazione, i tuoi Coins andranno persi in modo permanente e il tuo accesso verrà revocato.",
+      "description2": "Profitpiller può disattivare o sospendere gli account inattivi (12 mesi di inattività) o se le e-mail rimbalzano ripetutamente."
+    },
+    "disclaimer": {
+      "title": "Dichiarazione di non responsabilità",
+      "description": "L'utilizzo di Profitpiller è a tuo rischio. Non offriamo garanzie sul funzionamento o sull'accuratezza della piattaforma oltre a quanto espressamente dichiarato."
+    },
+    "limitationsOfLiability": {
+      "title": "Limitazioni di Responsabilità",
+      "description": "Nella misura massima consentita dalla legge, Profitpiller non è responsabile per danni indiretti o consequenziali. La responsabilità massima è limitata al valore effettivo dei Coins non riscattati o del premio applicabile."
+    },
+    "indemnification": {
+      "title": "Indennizzo",
+      "description": "Accetti di tenere indenne Profitpiller, le sue affiliate e i suoi rappresentanti da qualsiasi rivendicazione legale derivante dall'uso della piattaforma, comprese le spese legali."
+    },
+    "notices": {
+      "title": "Avvisi",
+      "description": "Potremmo informarti via e-mail o tramite il dashboard del tuo account. Sei responsabile di mantenere aggiornate le tue informazioni di contatto. Puoi contattarci tramite l'e-mail elencata sul nostro sito web."
+    },
+    "arbitration": {
+      "title": "Arbitrato",
+      "description": "Le controversie saranno risolte mediante arbitrato vincolante nel Delaware, a meno che la legge non lo consenta diversamente. Rinunci al tuo diritto a un processo con giuria o a un'azione collettiva. Le regole di arbitrato seguono il Federal Arbitration Act."
+    },
+    "classActionWaiver": {
+      "title": "Rinuncia all'Azione Collettiva",
+      "description1": "Qualsiasi rivendicazione legale deve essere presentata individualmente. Rinunci al tuo diritto di partecipare a qualsiasi azione collettiva. Puoi rinunciare entro 30 giorni dal primo utilizzo del sito web contattando privacy@profitpiller.com.",
+      "address1": "Profitpiller",
+      "address2": "8 The Green Ste R",
+      "address3": "Dover, DE 19902",
+      "address4": "USA"
+    },
+    "severability": {
+      "title": "Clausola di salvezza",
+      "description": "Se una qualsiasi disposizione di questi Termini viene ritenuta non valida o inapplicabile, le restanti disposizioni rimarranno in pieno vigore."
+    },
+    "jurisdiction": {
+      "title": "Giurisdizione",
+      "description": "Questi Termini sono regolati dalle leggi del Delaware, USA. Tutte le controversie devono essere portate davanti ai tribunali situati nel Delaware."
+    },
+    "miscellaneousTerms": {
+      "title": "Disposizioni Varie",
+      "description": "I titoli delle sezioni sono solo a scopo di riferimento. Il mancato rispetto di una qualsiasi disposizione da parte di Profitpiller non costituisce una rinuncia ai suoi diritti. Questi Termini e qualsiasi politica a cui si fa riferimento costituiscono l'intero accordo tra te e Profitpiller."
+    }
+  }
+}

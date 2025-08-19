@@ -1,0 +1,45 @@
+{
+  "visaGiftCards": {
+    "banner": {
+      "title": "Dapatkan Kad Hadiah Visa dengan Berkongsi Pendapat Anda",
+      "subtitle": "Lebih suka membayar dengan Visa? Ingin mendapatkan ganjaran yang boleh anda belanjakan hampir di mana-mana sahaja?",
+      "description": "Dengan Profitpiller, anda boleh mendapatkan kad hadiah Visa hanya dengan melengkapkan tinjauan mudah. Sama ada anda menyimpan untuk alat baharu atau ingin mengurangkan perbelanjaan mingguan anda, ganjaran kad hadiah Visa memberi anda fleksibiliti untuk berbelanja mengikut kehendak anda.",
+      "startButton": "Mula Mendapatkan Sekarang",
+      "startNote": "Daftar hari ini dan mula mendapatkan ganjaran Visa dengan Profitpiller."
+    },
+    "section1": {
+      "subtitle": "Ganjaran Sebenar, Tinjauan Pantas",
+      "title": "Dapatkan Ganjaran dengan Kad Hadiah Visa Secara Segera",
+      "description1": "Kad hadiah Visa boleh digunakan hampir di mana-mana sahaja. Dapatkan milik anda secara dalam talian dan nikmati kebebasan untuk membeli-belah di kedai, dalam talian, atau di mana-mana sahaja Visa diterima – di seluruh dunia.",
+      "description2": "Gunakan ganjaran Visa anda untuk membayar fesyen kegemaran anda, menempah percutian, atau bahkan menampung keperluan harian. Sama ada barangan runcit atau gajet, anda memilih cara untuk membelanjakan ganjaran anda.",
+      "description3": "Memulakan adalah mudah. Sertai Profitpiller dan lengkapkan tinjauan pantas tentang rancangan, produk atau pembelian kegemaran anda baru-baru ini. Pendapat anda membantu perniagaan bertambah baik – dan anda mendapat ganjaran sebagai balasan.",
+      "description4": "Daftar sekarang dan tuntut kad hadiah Visa pertama anda hanya dengan melengkapkan tinjauan pertama anda di Profitpiller."
+    },
+    "features": {
+      "subtitle": "Tukarkan Masa Lapang Anda Menjadi Kad Hadiah",
+      "title": "Dapatkan Bayaran dengan Kad Hadiah Visa untuk Setiap Tinjauan",
+      "description": "Sertai Profitpiller dan mula mendapatkan secara serta-merta. Ia adalah percuma sepenuhnya, dan tinjauan adalah pendek, mudah dan menyeronokkan. Tebus mata anda untuk kad hadiah Visa yang berfungsi hampir di mana-mana sahaja anda membeli-belah.",
+      "step1": {
+        "label": "Langkah 1",
+        "title": "Daftar untuk akaun Profitpiller percuma anda dan tuntut bonus alu-aluan anda dengan serta-merta."
+      },
+      "step2": {
+        "label": "Langkah 2",
+        "title": "Lengkapkan tinjauan dan lihat baki anda bertambah.",
+        "description": "Selepas hanya satu tinjauan, anda boleh menebus mata anda untuk kad hadiah Visa – atau terus mendapatkan untuk ganjaran yang lebih besar. Nikmati pilihan ganjaran yang fleksibel termasuk kad hadiah Amazon $5 atau kad hadiah PayPal. Profitpiller memudahkan untuk mendapatkan apa yang anda mahukan."
+      }
+    },
+    "rewardsGrid": {
+      "paypalSurveys": "Tinjauan untuk Kad Hadiah PayPal",
+      "amazonSurveys": "Tinjauan untuk Kad Hadiah Amazon"
+    },
+    "support": {
+      "title": "Mula Mendapatkan Ganjaran Visa Secara Segera",
+      "description": "Sertai Profitpiller hari ini dan tukarkan maklum balas anda menjadi nilai sebenar. Kongsi pendapat anda, dapatkan mata, dan tebus kad hadiah Visa yang boleh anda gunakan di mana-mana sahaja. Ia cepat, selamat, dan sentiasa percuma untuk bermula.",
+      "joinNow": "Sertai Sekarang"
+    }
+  },
+  "common": {
+    "arrowForward": "anak panah ke hadapan"
+  }
+}

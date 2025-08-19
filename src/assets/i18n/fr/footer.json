@@ -5,13 +5,13 @@
         "cralpkResearchGroup": "Cralpk Research Group",
         "platform": {
             "title": "Plateforme",
-            "loginOrSignUp": "Se connecter ou S'inscrire",
+            "loginOrSignUp": "Se connecter ou s'inscrire",
             "aboutProfitpiller": "À propos de Profitpiller",
-            "contactUs": "Nous contacter",
+            "contactUs": "Contactez-nous",
             "help": "Aide"
         },
         "legal": {
-            "title": "Légal",
+            "title": "Mentions légales",
             "privacyPolicy": "Politique de confidentialité",
             "termsConditions": "Conditions générales",
             "doNotSell": "Ne pas vendre mes informations personnelles"
@@ -19,10 +19,10 @@
         "exploreMore": {
             "title": "Explorer plus",
             "earnCash": "Gagner de l'argent avec des sondages rémunérés",
-            "getRewarded": "Être récompensé par des cartes cadeaux",
-            "redeemAmazon": "Échanger des cartes cadeaux Amazon",
+            "getRewarded": "Être récompensé avec des cartes-cadeaux",
+            "redeemAmazon": "Échanger des cartes-cadeaux Amazon",
             "getPaiyPal": "Être payé via PayPal",
-            "visaGiftCards": "Cartes cadeaux Visa et plus"
+            "visaGiftCards": "Cartes-cadeaux Visa et plus"
         }
     }
 }

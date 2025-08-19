@@ -1,0 +1,51 @@
+{
+    "amazonGiftCard": {
+        "banner": {
+            "title": "Tinjauan Kad Hadiah Amazon",
+            "subtitle": "Suka membeli-belah di Amazon? Jadikan senarai hajat anda kenyataan dengan mendapatkan kad hadiah percuma melalui tinjauan.",
+            "description": "Kongsi pendapat anda dan dapatkan ganjaran! Profitpiller menawarkan tinjauan dalam talian yang menarik yang memberikan anda kad hadiah Amazon. Mula sekarang dan berbelanja untuk apa sahaja yang anda suka.",
+            "signUpButton": "Daftar Sekarang",
+            "signUpNote": "Tidak pernah semudah ini untuk mendapatkan kad hadiah Amazon. Mulakan tinjauan pertama anda hari ini!"
+        },
+        "section1": {
+            "subtitle": "Tinjauan dengan Ganjaran Amazon Segera",
+            "title": "Tuntut Kad Hadiah Amazon dengan Menjawab Tinjauan",
+            "description1": "Tebus mata Profitpiller anda untuk ganjaran Amazon dengan cepat dan mudah.",
+            "description2": "Kad hadiah Amazon adalah serba boleh dan tidak pernah luput. Gunakannya untuk membeli apa sahaja — daripada gajet dan buku kepada barangan runcit dan hadiah — terus melalui akaun Amazon anda.",
+            "description3": "Jawab tinjauan kad hadiah Amazon $5 yang pantas atau kumpul beberapa tinjauan untuk membuka kunci kad nilai yang lebih tinggi. Belanjakan pendapatan anda untuk perkara yang paling penting bagi anda.",
+            "description4": "Tiada menunggu lama, tiada pembayaran minimum. Kebanyakan pengguna melihat ganjaran Amazon pertama mereka dalam masa 17 minit selepas menyertai.",
+            "strongConclusion": "Sertai Profitpiller dan mula dapatkan kad hadiah Amazon anda hari ini."
+        },
+        "features": {
+            "subtitle": "Dapatkan Pendapatan Semasa Anda Kongsi Pendapat",
+            "title": "Dapatkan Kad Hadiah Amazon daripada Tinjauan",
+            "description": "Maklum balas anda membantu membentuk produk—dapatkan ganjaran dengan kad hadiah Amazon untuk masa anda.",
+            "step1": {
+                "label": "Langkah 1",
+                "title": "Buat akaun Profitpiller untuk mula mendapatkan kad hadiah Amazon untuk pendapat anda."
+            },
+            "step2": {
+                "label": "Langkah 2",
+                "title": "Pilih dan lengkapkan tinjauan yang paling menarik minat anda.",
+                "description": "Setiap tinjauan yang dilengkapkan memberikan anda mata yang boleh anda tebus untuk kad hadiah Amazon dan banyak lagi."
+            },
+            "step3": {
+                "label": "Langkah 3",
+                "title": "Tebus mata anda untuk kad hadiah Amazon dan beli-belah kegemaran anda.",
+                "description": "Jawab seberapa banyak tinjauan yang anda mahu. Anda sentiasa mengawal ganjaran anda. Tunai keluar serta-merta atau simpan untuk nilai kad hadiah yang lebih besar—pilihan di tangan anda."
+            }
+        },
+        "rewardsGrid": {
+            "visaCard": "Dapatkan Kad Hadiah Visa",
+            "paypalRewards": "Tebus untuk Ganjaran PayPal"
+        },
+        "support": {
+            "title": "Bersedia untuk mendapatkan kad hadiah Amazon pertama anda?",
+            "description": "Sertai Profitpiller sekarang dan mula melengkapkan tinjauan. Purata pengguna kami menerima ganjaran Amazon pertama mereka dalam masa kurang daripada 20 minit. Tiada menunggu lama—hanya tinjauan yang mudah dan memberi ganjaran!",
+            "joinNow": "Sertai sekarang"
+        }
+    },
+    "common": {
+        "learnMore": "Ketahui lebih lanjut"
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "account": {
+        "heading": {
+            "title": "Hulp nodig met Profit Piller?",
+            "intro": "We zijn er om uw ervaring soepel te laten verlopen. Of u nu hulp nodig heeft met enquêtes, inwisselingen of beloningen - ons ondersteuningsteam staat voor u klaar."
+        },
+        "hey_text": "Hoi",
+        "earning_text": "Inkomsten",
+        "profile": "Profiel",
+        "recent_activity": "Recente activiteit",
+        "setting": "Accountinstellingen",
+        "log_out": "Uitloggen",
+        "profile_slogen": "Uw profiel is meer dan alleen details - het is de toegangspoort tot hogere inkomsten, snellere matches en betere kansen.",
+        "age": "Leeftijd",
+        "gender": "Geslacht",
+        "zip_code": "Postcode",
+        "dateOfBirth": "Geboortedatum",
+        "personal_details": "Persoonlijke gegevens",
+        "Activity": "Activiteit",
+        "Points Earned": "Verdiende punten",
+        "Rewards Redeemed": "Ingeleverde beloningen",
+        "Survey Completed": "Enquête voltooid",
+        "Offer Completed": "Aanbieding voltooid",
+        "Achievements Earned": "Behaalde prestaties",
+        "Leaderboard Level": "Klassement niveau",
+        "headings": {
+            "activity_log": "Activiteitenlogboek",
+            "survey_log": "Enquête-activiteiten",
+            "account_setting": "Accountinstellingen",
+            "change_basic_setting": "Basisinformatie wijzigen",
+            "change_username": "Gebruikersnaam wijzigen",
+            "change_password": "Wachtwoord wijzigen",
+            "change_email": "E-mail wijzigen",
+            "delete_account": "Account verwijderen",
+            "reward_transaction": "Beloningen & Transacties",
+            "notification": "Meldingen",
+            "help_support": "Hulp & ondersteuning"
+        }
+    }
+}

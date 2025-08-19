@@ -3,4 +3,12 @@
 <div class="loader-overlay" *ngIf="isLoading$ | async">
     <mat-spinner diameter="50" color="primary"></mat-spinner>
 </div>
-<router-outlet></router-outlet>
+
+<ng-container *ngIf="translationsLoadedInfo; else loading">
+  <router-outlet></router-outlet>
+</ng-container>
+
+
+<ng-template #loading>
+    <div class="splash-screen">Loading...</div>
+</ng-template>

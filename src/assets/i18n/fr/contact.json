@@ -1,28 +1,64 @@
 {
-    "contact": {
-        "heading": {
-            "subtitle": "Des questions ? Nous sommes là pour vous aider !",
-            "title": "Connectez-vous avec Profit Piller dès aujourd'hui"
-        },
-        "emailUs": {
-            "title": "Envoyez-nous un e-mail",
-            "address": "support@profitpiller.com"
-        },
-        "callUs": {
-            "title": "Appelez-nous",
-            "number": "+91-8876654356"
-        },
-        "headOffice": {
-            "title": "Siège social",
-            "address": "Spaze ITech Park, Secteur 49, Gurgaon, Haryana – 122001, Inde"
-        },
-        "form": {
-            "title": "Contactez-nous",
-            "nameLabel": "Nom",
-            "emailLabel": "E-mail",
-            "phoneLabel": "Numéro de téléphone",
-            "messageLabel": "Message",
-            "submitButton": "Envoyer le message"
-        }
+    "app.title": "Mon application géniale",
+    "buttons.save": "Sauvegarder",
+    "buttons.cancel": "Annuler",
+    "buttons.continue": "Continuer",
+    "buttons.resend": "Renvoyer",
+    "buttons.google": "Google",
+    "buttons.back": "Retour",
+    "buttons.submit": "Soumettre",
+    "buttons.redeem": "Échanger",
+    "buttons.soundgreat": "Ça a l'air super !",
+    "text.username": "Nom d'utilisateur",
+    "text.emailid": "Identifiant E-mail",
+    "text.password": "Mot de passe",
+    "text.confirmpassword": "Confirmer le mot de passe",
+    "text.oldpassword": "Ancien mot de passe",
+    "text.newpassword": "Nouveau mot de passe",
+    "text.confirmnewpassword": "Confirmer le nouveau mot de passe",
+    "Surveys": "Sondages",
+    "Offers": "Offres",
+    "Offerwalls": "Murs d'offres",
+    "Leaderboard": "Classement",
+    "Cashout": "Retrait",
+    "Account": "Compte",
+    "More": "Plus",
+    "Help": "Aide",
+    "Refer A Friend": "Parrainer un ami",
+    "Redeem Bonus Code": "Échanger un code bonus",
+    "Cashout Reward": "Retirer une récompense",
+    "My Account": "Mon compte",
+    "Earning": "Gain",
+    "Logout": "Se déconnecter",
+    "How Levels Work": "Fonctionnement des niveaux",
+    "Next LVL Reward": "Récompense du prochain niveau",
+    "Redeem Points": "Échanger des points",
+    "Transfer": "Transférer",
+    "From": "De",
+    "Gift Cards": "Cartes-cadeaux",
+    "search_reward": "Rechercher une carte-cadeau...",
+    "View": "Voir",
+    "more_giftcard": "plus de cartes-cadeaux",
+    "Offerwall": "Mur d'offres",
+    "Survey Partners": "Partenaires de sondage",
+    "messages": {
+        "email.required": "L'e-mail est requis.",
+        "username.required": "Le nom d'utilisateur est requis.",
+        "email.invalid": "Veuillez entrer une adresse e-mail valide.",
+        "password.required": "Le mot de passe est requis.",
+        "oldpassword.required": "L'ancien mot de passe est requis.",
+        "newpassword.required": "Le nouveau mot de passe est requis.",
+        "confirmnewpassword.required": "La confirmation du nouveau mot de passe est requise.",
+        "confirmpassword.required": "La confirmation du mot de passe est requise.",
+        "password.minlength": "Le mot de passe doit contenir au moins 6 caractères.",
+        "confirmpassword.notmatching": "La confirmation du mot de passe ne correspond pas.",
+        "login.success": "Connexion réussie !",
+        "login.error": "Échec de la connexion. Veuillez réessayer.",
+        "signup.success": "Inscription réussie ! Bienvenue à bord.",
+        "signup.error": "Échec de l'inscription. Veuillez vérifier vos informations et réessayer.",
+        "norecord_found": "Aucun enregistrement trouvé",
+        "dateofbirth.required": "La date de naissance est requise.",
+        "gender.required": "Le sexe est requis.",
+        "zip_code.required": "Le code postal est requis."
     }
 }

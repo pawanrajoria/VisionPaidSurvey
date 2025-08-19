@@ -1,0 +1,47 @@
+{
+  "giftCardSurveys": {
+    "banner": {
+      "title": "赠送礼品卡的调查",
+      "subtitle": "想解锁你的亚马逊心愿单或在下次在线订单中省钱吗？",
+      "description": "完成调查并赚取你最喜欢的零售商的礼品卡。使用 Profitpiller，你可以将你的业余时间变成来自 PayPal、Visa、亚马逊等的真实奖励。",
+      "startButton": "开始赚钱",
+      "startNote": "创建你的免费 Profitpiller 账户，立即开始赚取礼品卡。"
+    },
+    "section1": {
+      "subtitle": "简单的调查，即时奖励",
+      "title": "分享你的想法，获取免费礼品卡",
+      "description1": "完成快速调查并兑换流行品牌的礼品卡。",
+      "description2": "你的反馈可以帮助公司改进，他们也愿意为此奖励你。从日常习惯到产品选择，你的意见很重要 — Profitpiller 确保你获得的礼品卡是你会真正使用的。",
+      "description3": "Profitpiller 将你与寻找真实答案的真实品牌连接起来 — 而你则能赚取真实的礼品卡作为回报。这对每个人都是双赢的。",
+      "description4": "没有复杂的注册，没有最低支付门槛，没有无聊的调查。只需加入 Profitpiller，几分钟内即可开始赚取礼品卡 — 一些用户在短短17分钟内就获得了他们的第一个奖励！",
+      "strongConclusion": "立即开始，将你的回答即时兑换成 <a routerLink=\"#\">免费礼品卡</a>！"
+    },
+    "features": {
+      "subtitle": "你的时间，你的奖励",
+      "title": "Profitpiller 调查，用礼品卡奖励你",
+      "description": "加入 Profitpiller，完成调查，解锁你最喜欢的商店的礼品卡。",
+      "step1": {
+        "label": "第 1 步",
+        "title": "创建你的 Profitpiller 账户，准备好通过完成调查来赚取免费礼品卡。"
+      },
+      "step2": {
+        "label": "第 2 步",
+        "title": "选择最适合你的调查，为每个回答赚取积分。",
+        "description": "没有限制 — 你参与得越多，能赚取的礼品卡就越多。看着你的余额随着每次调查而增长。"
+      },
+      "step3": {
+        "label": "第 3 步",
+        "title": "将你的积分兑换成 Visa、亚马逊、PayPal 等的礼品卡。",
+        "description": "随心所欲地使用你的奖励 — 在线消费，给自己买个礼物，或攒起来买大件。没有最低提现要求，选择灵活，Profitpiller 让你掌控你的收入。"
+      }
+    },
+    "support": {
+      "title": "今天就开始使用 Profitpiller 赚取礼品卡",
+      "description": "不要错过 — 立即创建你的账户，将你的声音变成真实的礼品卡。回答快速调查，分享你的意见，并从数十个流行品牌中选择你的奖励。它简单、有回报，而且完全免费。",
+      "joinNow": "立即加入"
+    }
+  },
+  "common": {
+    "arrowForward": "arrow_forward"
+  }
+}

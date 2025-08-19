@@ -7,6 +7,7 @@
     <div class="card-container">
         @for(item of filteredSurveys; track item.name) {
         <mat-card class="custom-card" (click)="attemptSurvey(item)">
+            <div class="hot-icon" *ngIf="item.isHot"> 🔥 </div>
             <div class="top-bar">
                 <div class="left">
                     <mat-icon class="clock-icon">schedule</mat-icon>
@@ -27,7 +28,6 @@
                     <span class="review-count">({{ item.ratingCount }})</span>
                 </div>
             </div>
-
         </mat-card>
         }
 

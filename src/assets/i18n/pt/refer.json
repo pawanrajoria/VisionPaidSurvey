@@ -1,0 +1,37 @@
+{
+  "refer": {
+    "heading": {
+      "subtitle": "Compartilhe seu link e receba 10% de comissão vitalícia sobre os ganhos de seus amigos.",
+      "title": "Aumente seus Ganhos — Indique e Ganhe!"
+    },
+    "title": "Como Funciona",
+    "Earned": "Ganhos",
+    "CopyCode": "Copiar Código",
+    "uselink": "Usar Link em Vez",
+    "referrallink": "Link de Indicação",
+    "your_referrallink": "Seu link de indicação",
+    "instruction": "Você só pode ter uma conta e não pode indicar a si mesmo!",
+    "copy_link": "Copiar Link",
+    "step1": {
+      "title": "Convide seus Amigos",
+      "description": "Fale sobre o ProfitPiller para seus amigos e compartilhe seu link de indicação nas mídias sociais, chats ou onde quiser."
+    },
+    "step2": {
+      "title": "Compartilhe seu Código de Bônus",
+      "description": "Quando novos usuários resgatarem seu código de bônus em até 24 horas após se inscreverem, eles se tornarão sua indicação e desfrutarão de um bônus de 10% nas suas primeiras 24 horas."
+    },
+    "step3": {
+      "title": "Receba sua Comissão",
+      "description": "Ganhe uma comissão de 10% em todas as recompensas de pesquisa que suas indicações ganharem — para a vida toda. Não se preocupe, os ganhos deles permanecem os mesmos — suas recompensas são por nossa conta!"
+    }
+  },
+  "redeem": {
+    "bonus_code": "Código de Bônus",
+    "enter_code": "Insira seu código",
+    "redeem_code": "Resgatar Código",
+    "heading": {
+      "subtitle": "Resgate seu código de bônus para obter uma oferta especial.",
+      "title": "Resgatar Código de Bônus"
+    }
+  }
+}

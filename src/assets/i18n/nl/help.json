@@ -1,0 +1,61 @@
+{
+  "help": {
+    "heading": {
+      "title": "Hulp nodig met Profit Piller?",
+      "intro": "We zijn er om uw ervaring soepel te laten verlopen. Of u nu hulp nodig heeft met enquêtes, inwisselingen of beloningen — ons ondersteuningsteam staat voor u klaar."
+    },
+    "faqs": {
+      "q1": {
+        "question": "Hoe begin ik met verdienen op Profit Piller?",
+        "answer": "Meld u aan voor een gratis account, voltooi uw profiel en krijg toegang tot enquêtes en aanbiedingen. Uw verdiensten beginnen meteen op te tellen!"
+      },
+      "q2": {
+        "question": "Wanneer kan ik mijn beloningen inwisselen?",
+        "answer": "Zodra u de minimale inwisselingsdrempel heeft bereikt (bijv. ₹425 voor PayPal of cadeaubonnen), kunt u uw punten direct inwisselen."
+      },
+      "q3": {
+        "question": "Waarom heb ik geen krediet ontvangen voor een enquête?",
+        "answer": "U bent mogelijk gediskwalificeerd vanwege enquêtevereisten of onvolledige antwoorden. Als u denkt dat dit een fout was, <a href=\"mailto:support@profitpiller.com\">neem dan contact op met ons ondersteuningsteam</a>."
+      },
+      "q4": {
+        "question": "Hoe kan ik contact opnemen met de ondersteuning van Profit Piller?",
+        "answer": "Stuur ons een e-mail op <a href=\"mailto:support@profitpiller.com\">support@profitpiller.com</a> of gebruik het contactformulier op onze website."
+      },
+      "q5": {
+        "question": "Zijn er dagelijkse of wekelijkse verdienlimieten?",
+        "answer": "Nee, er zijn geen limieten. U kunt zoveel verdienen als u wilt, op basis van de beschikbare enquêtes en aanbiedingen."
+      },
+      "q6": {
+        "question": {
+          "text": "Ik ben gediskwalificeerd voor een enquête. Wat kan ik doen?",
+          "short": "Diskwalificatie van een enquête"
+        },
+        "answer": "We begrijpen dat dit frustrerend is. Enquêtekwalificaties worden beheerd door externe partners. Soms kunnen de eerste antwoorden aangeven dat u niet in het doelprofiel past. Blijf enquêtes proberen en u zult er een vinden die bij u past. Over het algemeen ontvangt u een kleine beloning voor de tijd die u hebt besteed aan het proberen te kwalificeren voor een enquête. U ontvangt niet het volledige krediet, maar het helpt ons om u de volgende keer beter te matchen."
+      },
+      "q7": {
+        "question": "Waarom heb ik niet de volledige beloning voor de enquête ontvangen?",
+        "answer": "Sommige enquêtes bieden gedeeltelijke beloningen voor gedeeltelijke voltooiingen of diskwalificaties. Zorg er altijd voor dat u nauwkeurige antwoorden geeft en een stabiele internetverbinding heeft."
+      },
+      "q8": {
+        "question": "Kan ik een VPN of proxy gebruiken om enquêtes in te vullen?",
+        "answer": "Nee. Het gebruik van VPN's of proxies is ten strengste verboden en kan leiden tot accountopschorting of diskwalificatie van enquêtes."
+      },
+      "q9": {
+        "question": "Wanneer kan ik mijn beloningen inwisselen?",
+        "answer": "Zodra u de minimale drempel heeft bereikt (bijv. ₹425), kunt u direct inwisselen via PayPal, cadeaubonnen of andere beschikbare methoden."
+      },
+      "q10": {
+        "question": "Kan ik anderen doorverwijzen en bonussen verdienen?",
+        "answer": "Ja! Deel uw verwijzingslink. U verdient een commissie van 10% op wat uw doorverwezen personen verdienen met enquêtes — levenslang!"
+      },
+      "q11": {
+        "question": "Zijn mijn gegevens veilig bij Profit Piller?",
+        "answer": "Ja, uw gegevens worden beveiligd met strikte privacyprotocollen en worden nooit gedeeld zonder uw toestemming."
+      },
+      "q12": {
+        "question": "Hoe neem ik contact op met de ondersteuning?",
+        "answer": "U kunt ons op elk moment bereiken op <a href='mailto:support@profitpiller.com'>support@profitpiller.com</a> of via het contactformulier in de app."
+      }
+    }
+  }
+}

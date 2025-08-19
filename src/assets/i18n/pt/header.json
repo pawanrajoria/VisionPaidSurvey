@@ -1,0 +1,40 @@
+{
+  "header": {
+    "loginOrSignUp": "Entrar ou Cadastrar",
+    "earnRewards": "Ganhar Recompensas",
+    "surveysOffers": "Pesquisas e Ofertas",
+    "redeemPoint": "Resgatar Pontos",
+    "language": "Português",
+    "goToApp": "Ir para o aplicativo",
+    "livePayouts": "Pagamentos ao vivo",
+    "Levels": "Níveis",
+    "blue_level": "🔹 Nível Azul Atingido! 💙",
+    "motivated_message": "Mantenha-se ativo e suba de nível mais rápido!",
+    "left_headline": "Nível/Bônus",
+    "right_headline": "Níveis",
+    "payoutItem": {
+      "paypal": "PayPal"
+    },
+    "levels": {
+      "l1": {
+        "title": "Nível Azul",
+        "description": "A jornada começa aqui. Ganhe mais para subir de rank!",
+        "range": "1-20"
+      },
+      "l2": {
+        "title": "Nível Prata",
+        "description": "Todo mês, um dia. Grandes bônus. Ganhos ilimitados!",
+        "range": "21-30"
+      },
+      "l3": {
+        "title": "Nível Ouro",
+        "description": "Desfrute de acesso VIP a recompensas com desconto!",
+        "range": "21-30"
+      },
+      "l4": {
+        "title": "Nível Platina",
+        "description": "Desbloqueie acesso antecipado &..."
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "header": {
+    "loginOrSignUp": "Accedi o Registrati",
+    "earnRewards": "Guadagna Ricompense",
+    "surveysOffers": "Sondaggi e Offerte",
+    "redeemPoint": "Riscatta Punti",
+    "language": "Italiano",
+    "goToApp": "Vai all'app",
+    "livePayouts": "Pagamenti in diretta",
+    "Levels": "Livelli",
+    "blue_level": "🔹 Livello Blu Raggiunto! 💙",
+    "motivated_message": "Rimani attivo e sali di livello più velocemente!",
+    "left_headline": "Livello/Bonus",
+    "right_headline": "Livelli",
+    "payoutItem": {
+      "paypal": "PayPal"
+    },
+    "levels": {
+      "l1": {
+        "title": "Livello Blu",
+        "description": "Il viaggio inizia qui. Guadagna di più per salire di rango!",
+        "range": "1-20"
+      },
+      "l2": {
+        "title": "Livello Argento",
+        "description": "Ogni mese, un giorno. Grandi bonus. Guadagni illimitati!",
+        "range": "21-30"
+      },
+      "l3": {
+        "title": "Livello Oro",
+        "description": "Goditi l'accesso VIP a ricompense scontate!",
+        "range": "21-30"
+      },
+      "l4": {
+        "title": "Livello Platino",
+        "description": "Sblocca l'accesso anticipato &..."
+      }
+    }
+  }
+}

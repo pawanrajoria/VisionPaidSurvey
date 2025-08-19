@@ -15,6 +15,7 @@ export interface IOfferResponseDto {
     tasks: IOfferTaskResponseDto[];
     rating: number;
     currentDevice?: string;
+    providerName: string;
 }
 
 export interface IOfferTaskResponseDto {

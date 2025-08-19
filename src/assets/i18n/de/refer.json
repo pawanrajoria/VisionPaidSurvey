@@ -1,0 +1,37 @@
+{
+  "refer": {
+    "heading": {
+      "subtitle": "Teilen Sie Ihren Link und erhalten Sie 10 % lebenslange Provision auf die Einnahmen Ihrer Freunde.",
+      "title": "Steigern Sie Ihre Einnahmen — Empfehlen & Verdienen!"
+    },
+    "title": "So funktioniert's",
+    "Earned": "Verdient",
+    "CopyCode": "Code kopieren",
+    "uselink": "Stattdessen Link verwenden",
+    "referrallink": "Empfehlungslink",
+    "your_referrallink": "Ihr Empfehlungslink",
+    "instruction": "Sie können nur ein Konto haben und Sie können sich nicht selbst empfehlen!",
+    "copy_link": "Link kopieren",
+    "step1": {
+      "title": "Laden Sie Ihre Freunde ein",
+      "description": "Erzählen Sie Ihren Freunden von ProfitPiller und teilen Sie Ihren Empfehlungslink in sozialen Medien, Chats oder wo immer Sie möchten."
+    },
+    "step2": {
+      "title": "Teilen Sie Ihren Bonuscode",
+      "description": "Wenn neue Benutzer Ihren Bonuscode innerhalb von 24 Stunden nach der Registrierung einlösen, werden sie zu Ihrer Empfehlung und erhalten einen Bonus von 10 % für ihre ersten 24 Stunden."
+    },
+    "step3": {
+      "title": "Erhalten Sie Ihre Provision",
+      "description": "Verdienen Sie eine 10 % Provision auf alle Umfrageprämien, die Ihre Empfehlungen verdienen — ein Leben lang. Keine Sorge, ihre Einnahmen bleiben gleich — Ihre Prämien gehen auf uns!"
+    }
+  },
+  "redeem": {
+    "bonus_code": "Bonuscode",
+    "enter_code": "Geben Sie Ihren Code ein",
+    "redeem_code": "Code einlösen",
+    "heading": {
+      "subtitle": "Lösen Sie Ihren Bonuscode ein, um ein Sonderangebot zu erhalten.",
+      "title": "Bonuscode einlösen"
+    }
+  }
+}

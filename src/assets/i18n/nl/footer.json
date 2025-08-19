@@ -1,0 +1,28 @@
+{
+    "footer": {
+        "copyright": "© 2025 Profit Piller - Alle rechten voorbehouden.",
+        "productOf": "Een product van",
+        "cralpkResearchGroup": "Cralpk Research Group",
+        "platform": {
+            "title": "Platform",
+            "loginOrSignUp": "Inloggen of aanmelden",
+            "aboutProfitpiller": "Over Profitpiller",
+            "contactUs": "Contact",
+            "help": "Hulp"
+        },
+        "legal": {
+            "title": "Juridisch",
+            "privacyPolicy": "Privacybeleid",
+            "termsConditions": "Algemene voorwaarden",
+            "doNotSell": "Verkoop mijn persoonlijke gegevens niet"
+        },
+        "exploreMore": {
+            "title": "Verken meer",
+            "earnCash": "Verdien geld met betaalde enquêtes",
+            "getRewarded": "Word beloond met cadeaubonnen",
+            "redeemAmazon": "Amazon-cadeaubonnen inwisselen",
+            "getPaiyPal": "Betaald krijgen via PayPal",
+            "visaGiftCards": "Visa-cadeaubonnen en meer"
+        }
+    }
+}

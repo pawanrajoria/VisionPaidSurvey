@@ -1,0 +1,40 @@
+{
+  "header": {
+    "loginOrSignUp": "Log masuk atau Daftar",
+    "earnRewards": "Jana Ganjaran",
+    "surveysOffers": "Tinjauan & Tawaran",
+    "redeemPoint": "Tebus Mata",
+    "language": "Bahasa Melayu",
+    "goToApp": "Pergi ke Aplikasi",
+    "livePayouts": "Pembayaran Langsung",
+    "Levels": "Tahap",
+    "blue_level": "🔹 Tahap Biru Tercapai! 💙",
+    "motivated_message": "Kekal aktif dan tingkatkan tahap lebih pantas!",
+    "left_headline": "Tahap/Bonus",
+    "right_headline": "Tahap",
+    "payoutItem": {
+      "paypal": "PayPal"
+    },
+    "levels": {
+      "l1": {
+        "title": "Tahap Biru",
+        "description": "Perjalanan bermula di sini. Jana lebih banyak untuk naik pangkat!",
+        "range": "1-20"
+      },
+      "l2": {
+        "title": "Tahap Perak",
+        "description": "Setiap Bulan, Satu Hari. Bonus Besar. Pendapatan Tanpa Had!",
+        "range": "21-30"
+      },
+      "l3": {
+        "title": "Tahap Emas",
+        "description": "Nikmati Akses VIP ke Ganjaran Berdiskaun!",
+        "range": "21-30"
+      },
+      "l4": {
+        "title": "Tahap Platinum",
+        "description": "Buka Kunci Akses Awal &..."
+      }
+    }
+  }
+}

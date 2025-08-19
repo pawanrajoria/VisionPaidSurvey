@@ -10,16 +10,16 @@
     "section1": {
       "subtitle": "Einfache Umfragen, sofortige Belohnungen",
       "title": "Erhalten Sie kostenlose Geschenkkarten für das Teilen Ihrer Gedanken",
-      "description1": "Füllen Sie schnelle Umfragen aus und lösen Sie Geschenkkarten von beliebten Marken ein.",
-      "description2": "Ihr Feedback hilft Unternehmen, sich zu verbessern, und sie sind bereit, Sie zu belohnen. Von täglichen Gewohnheiten bis hin zu Produktentscheidungen – Ihre Meinungen sind wichtig – und Profitpiller sorgt dafür, dass Sie mit Geschenkkarten entschädigt werden, die Sie tatsächlich verwenden werden.",
-      "description3": "Profitpiller verbindet Sie mit echten Marken, die nach echten Antworten suchen – und Sie erhalten im Gegenzug echte Geschenkkarten. Es ist eine Win-Win-Situation für alle.",
-      "description4": "Keine komplexen Anmeldungen, keine Mindestauszahlungshürden, keine langweiligen Umfragen. Treten Sie einfach Profitpiller bei und verdienen Sie innerhalb von Minuten Geschenkkarten – einige Benutzer erhalten ihre erste Belohnung in nur 17 Minuten!",
-      "strongConclusion": "Starten Sie jetzt und tauschen Sie Ihre Antworten sofort gegen <a routerLink=\"#\">kostenlose Geschenkkarten</a> ein!"
+      "description1": "Schließen Sie schnelle Umfragen ab und lösen Sie Geschenkkarten von beliebten Marken ein.",
+      "description2": "Ihr Feedback hilft Unternehmen, sich zu verbessern, und sie sind bereit, Sie dafür zu belohnen. Von täglichen Gewohnheiten bis zu Produktentscheidungen – Ihre Meinung zählt, und Profitpiller sorgt dafür, dass Sie mit Geschenkkarten entschädigt werden, die Sie tatsächlich verwenden werden.",
+      "description3": "Profitpiller verbindet Sie mit echten Marken, die nach echten Antworten suchen – und Sie verdienen im Gegenzug echte Geschenkkarten. Es ist eine Win-Win-Situation für alle.",
+      "description4": "Keine komplexen Anmeldungen, keine Mindestauszahlungshürden, keine langweiligen Umfragen. Treten Sie einfach Profitpiller bei und beginnen Sie innerhalb von Minuten, Geschenkkarten zu verdienen – einige Benutzer erhalten ihre erste Belohnung in nur 17 Minuten!",
+      "strongConclusion": "Starten Sie jetzt und tauschen Sie Ihre Antworten sofort gegen <a routerLink=\"#\">kostenlose Geschenkkarten</a>!"
     },
     "features": {
       "subtitle": "Ihre Zeit, Ihre Belohnungen",
-      "title": "Profitpiller-Umfragen, die Sie mit Geschenkkarten belohnen",
-      "description": "Treten Sie Profitpiller bei, füllen Sie Umfragen aus und schalten Sie Geschenkkarten von Ihren Lieblingsgeschäften frei.",
+      "title": "Profitpiller Umfragen, die Sie mit Geschenkkarten belohnen",
+      "description": "Treten Sie Profitpiller bei, schließen Sie Umfragen ab und schalten Sie Geschenkkarten von Ihren Lieblingsgeschäften frei.",
       "step1": {
         "label": "Schritt 1",
         "title": "Erstellen Sie Ihr Profitpiller-Konto und machen Sie sich bereit, kostenlose Geschenkkarten durch das Ausfüllen von Umfragen zu verdienen."
@@ -31,13 +31,13 @@
       },
       "step3": {
         "label": "Schritt 3",
-        "title": "Lösen Sie Ihre Punkte gegen Geschenkkarten von Visa, Amazon, PayPal und mehr ein.",
-        "description": "Nutzen Sie Ihre Belohnungen, wie Sie möchten – geben Sie online aus, gönnen Sie sich etwas oder sparen Sie für etwas Großes. Ohne Mindestauszahlung und mit flexiblen Optionen gibt Ihnen Profitpiller die Kontrolle über Ihre Einnahmen."
+        "title": "Tauschen Sie Ihre Punkte gegen Geschenkkarten von Visa, Amazon, PayPal und mehr ein.",
+        "description": "Verwenden Sie Ihre Belohnungen, wie Sie möchten – geben Sie sie online aus, gönnen Sie sich etwas oder sparen Sie sie für etwas Großes. Ohne Mindestauszahlung und mit flexiblen Optionen gibt Ihnen Profitpiller die Kontrolle über Ihre Einnahmen."
       }
     },
     "support": {
-      "title": "Beginnen Sie noch heute mit Profitpiller, Geschenkkarten zu verdienen",
-      "description": "Verpassen Sie es nicht – erstellen Sie jetzt Ihr Konto und verwandeln Sie Ihre Stimme in echte Geschenkkarten. Beantworten Sie schnelle Umfragen, teilen Sie Ihre Meinungen und wählen Sie aus Dutzenden beliebter Marken für Ihre Belohnung. Es ist einfach, lohnend und völlig kostenlos.",
+      "title": "Beginnen Sie noch heute, Geschenkkarten mit Profitpiller zu verdienen",
+      "description": "Verpassen Sie es nicht – erstellen Sie jetzt Ihr Konto und verwandeln Sie Ihre Stimme in echte Geschenkkarten. Beantworten Sie kurze Umfragen, teilen Sie Ihre Meinungen und wählen Sie Ihre Belohnung aus Dutzenden beliebter Marken aus. Es ist einfach, lohnend und absolut kostenlos.",
       "joinNow": "Jetzt beitreten"
     }
   },

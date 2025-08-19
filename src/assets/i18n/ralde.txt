@@ -1,0 +1,1 @@
+fr,es,de,it,pt,hi,zh,nl,ms,ka

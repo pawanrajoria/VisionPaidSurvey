@@ -116,7 +116,7 @@ export class RootHomeComponent implements OnInit {
 
         if (!self.isEmailValidCheck) {
             const response = await self.authService.loginbyemail({ email: self.email });
-            if (!!response && response) {
+            if (!!response && response.isSuccess) {
                 self.isEmailValidCheck = true;
             }
             else {

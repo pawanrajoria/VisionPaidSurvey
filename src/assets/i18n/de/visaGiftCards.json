@@ -1,32 +1,32 @@
 {
   "visaGiftCards": {
     "banner": {
-      "title": "Verdienen Sie Visa-Geschenkkarten, indem Sie Ihre Meinung teilen",
-      "subtitle": "Bevorzugen Sie die Zahlung mit Visa? Möchten Sie Belohnungen verdienen, die Sie fast überall ausgeben können?",
-      "description": "Mit Profitpiller können Sie Visa-Geschenkkarten verdienen, indem Sie einfach Umfragen ausfüllen. Egal, ob Sie für ein neues Gadget sparen oder Ihre wöchentlichen Ausgaben reduzieren möchten, Visa-Geschenkkarten-Belohnungen geben Ihnen die Flexibilität, Ihr Geld so auszugeben, wie Sie möchten.",
-      "startButton": "Jetzt verdienen",
-      "startNote": "Melden Sie sich noch heute an und beginnen Sie, Visa-Belohnungen mit Profitpiller zu verdienen."
+      "title": "Verdiene Visa-Geschenkkarten, indem du deine Meinung teilst",
+      "subtitle": "Zahlst du am liebsten mit Visa? Möchtest du Belohnungen verdienen, die du fast überall ausgeben kannst?",
+      "description": "Mit Profitpiller kannst du Visa-Geschenkkarten verdienen, indem du einfach an Umfragen teilnimmst. Egal, ob du für ein neues Gadget sparst oder deine wöchentlichen Ausgaben reduzieren möchtest, Visa-Geschenkkarten-Belohnungen geben dir die Flexibilität, dein Geld so auszugeben, wie du möchtest.",
+      "startButton": "Jetzt mit dem Verdienen beginnen",
+      "startNote": "Melde dich noch heute an und beginne, Visa-Belohnungen mit Profitpiller zu verdienen."
     },
     "section1": {
       "subtitle": "Echte Belohnungen, schnelle Umfragen",
-      "title": "Erhalten Sie sofort Visa-Geschenkkarten als Belohnung",
-      "description1": "Visa-Geschenkkarten können fast überall verwendet werden. Verdienen Sie Ihre online und genießen Sie die Freiheit, im Geschäft, online oder überall dort einzukaufen, wo Visa akzeptiert wird – weltweit.",
-      "description2": "Verwenden Sie Ihre Visa-Belohnung, um Ihre Lieblingsmode zu bezahlen, einen Urlaub zu buchen oder sogar alltägliche Notwendigkeiten abzudecken. Ob Lebensmittel oder Gadgets, Sie wählen, wie Sie Ihre Belohnungen ausgeben möchten.",
-      "description3": "Der Einstieg ist einfach. Treten Sie Profitpiller bei und füllen Sie kurze Umfragen zu Ihren Lieblingssendungen, Produkten oder letzten Einkäufen aus. Ihre Meinungen helfen Unternehmen, sich zu verbessern – und Sie werden im Gegenzug belohnt.",
-      "description4": "Melden Sie sich jetzt an und fordern Sie Ihre erste Visa-Geschenkkarte an, indem Sie einfach Ihre erste Umfrage auf Profitpiller abschließen."
+      "title": "Werde sofort mit Visa-Geschenkkarten belohnt",
+      "description1": "Visa-Geschenkkarten können fast überall verwendet werden. Verdiene deine online und genieße die Freiheit, in Geschäften, online oder überall dort einzukaufen, wo Visa akzeptiert wird – weltweit.",
+      "description2": "Nutze deine Visa-Belohnung, um deine Lieblingsmode zu bezahlen, einen Urlaub zu buchen oder sogar alltägliche Notwendigkeiten abzudecken. Ob es sich um Lebensmittel oder Gadgets handelt, du entscheidest, wie du deine Belohnungen ausgibst.",
+      "description3": "Der Einstieg ist einfach. Tritt Profitpiller bei und fülle kurze Umfragen zu deinen Lieblingssendungen, Produkten oder kürzlichen Einkäufen aus. Deine Meinungen helfen Unternehmen, sich zu verbessern – und du wirst im Gegenzug belohnt.",
+      "description4": "Melde dich jetzt an und fordere deine erste Visa-Geschenkkarte an, indem du einfach deine erste Umfrage auf Profitpiller abschließt."
     },
     "features": {
-      "subtitle": "Verwandeln Sie Ihre Freizeit in Geschenkkarten",
-      "title": "Lassen Sie sich für jede Umfrage mit Visa-Geschenkkarten bezahlen",
-      "description": "Treten Sie Profitpiller bei und beginnen Sie sofort zu verdienen. Es ist völlig kostenlos, und die Umfragen sind kurz, einfach und unterhaltsam. Lösen Sie Ihre Punkte gegen Visa-Geschenkkarten ein, die fast überall funktionieren, wo Sie einkaufen.",
+      "subtitle": "Verwandle deine Freizeit in Geschenkkarten",
+      "title": "Werde mit Visa-Geschenkkarten für jede Umfrage bezahlt",
+      "description": "Tritt Profitpiller bei und beginne sofort zu verdienen. Es ist völlig kostenlos, und die Umfragen sind kurz, einfach und machen Spaß. Tausche deine Punkte gegen Visa-Geschenkkarten ein, die fast überall funktionieren, wo du einkaufst.",
       "step1": {
         "label": "Schritt 1",
-        "title": "Melden Sie sich für Ihr kostenloses Profitpiller-Konto an und fordern Sie Ihren Willkommensbonus sofort an."
+        "title": "Melde dich für dein kostenloses Profitpiller-Konto an und fordere sofort deinen Willkommensbonus an."
       },
       "step2": {
         "label": "Schritt 2",
-        "title": "Füllen Sie Umfragen aus und beobachten Sie, wie Ihr Guthaben wächst.",
-        "description": "Nach nur einer Umfrage können Sie Ihre Punkte gegen eine Visa-Geschenkkarte einlösen – oder weiter verdienen, um größere Belohnungen zu erhalten. <br>Genießen Sie flexible Belohnungsoptionen, einschließlich <a routerLink=\"\">5-Dollar-Amazon-Geschenkkarten</a> oder <a routerLink=\"\">PayPal-Geschenkkarten</a>. Profitpiller macht es Ihnen leicht, das zu bekommen, was Sie wollen."
+        "title": "Nimm an Umfragen teil und sieh zu, wie dein Guthaben wächst.",
+        "description": "Nach nur einer Umfrage kannst du deine Punkte gegen eine Visa-Geschenkkarte einlösen – oder weiter verdienen, um größere Belohnungen zu erhalten. Genieße flexible Belohnungsoptionen, einschließlich 5-Dollar-Amazon-Geschenkkarten oder PayPal-Geschenkkarten. Profitpiller macht es einfach, das zu bekommen, was du willst."
       }
     },
     "rewardsGrid": {
@@ -34,12 +34,12 @@
       "amazonSurveys": "Umfragen für Amazon-Geschenkkarten"
     },
     "support": {
-      "title": "Beginnen Sie sofort, Visa-Belohnungen zu verdienen",
-      "description": "Treten Sie Profitpiller noch heute bei und verwandeln Sie Ihr Feedback in echten Wert. Teilen Sie Ihre Meinung, verdienen Sie Punkte und lösen Sie Visa-Geschenkkarten ein, die Sie überall verwenden können. Es ist schnell, sicher und immer kostenlos zu starten.",
+      "title": "Beginne sofort, Visa-Belohnungen zu verdienen",
+      "description": "Tritt Profitpiller noch heute bei und verwandle dein Feedback in echten Wert. Teile deine Meinung, verdiene Punkte und löse Visa-Geschenkkarten ein, die du überall verwenden kannst. Es ist schnell, sicher und der Start ist immer kostenlos.",
       "joinNow": "Jetzt beitreten"
     }
   },
   "common": {
-    "arrowForward": "arrow_forward"
+    "arrowForward": "Pfeil nach vorne"
   }
 }

@@ -1,0 +1,28 @@
+{
+    "footer": {
+        "copyright": "© 2025 प्रॉफिट पिलर - सभी अधिकार सुरक्षित।",
+        "productOf": "का एक उत्पाद",
+        "cralpkResearchGroup": "Cralpk Research Group",
+        "platform": {
+            "title": "प्लेटफार्म",
+            "loginOrSignUp": "लॉग इन करें या साइन अप करें",
+            "aboutProfitpiller": "प्रॉफिटपिलर के बारे में",
+            "contactUs": "हमसे संपर्क करें",
+            "help": "मदद"
+        },
+        "legal": {
+            "title": "कानूनी",
+            "privacyPolicy": "गोपनीयता नीति",
+            "termsConditions": "नियम और शर्तें",
+            "doNotSell": "मेरी व्यक्तिगत जानकारी न बेचें"
+        },
+        "exploreMore": {
+            "title": "और अधिक खोजें",
+            "earnCash": "सशुल्क सर्वेक्षणों से नकद कमाएं",
+            "getRewarded": "उपहार कार्ड के साथ पुरस्कृत हों",
+            "redeemAmazon": "अमेज़ॅन उपहार कार्ड भुनाएं",
+            "getPaiyPal": "पेपैल के माध्यम से भुगतान प्राप्त करें",
+            "visaGiftCards": "वीज़ा उपहार कार्ड और अधिक"
+        }
+    }
+}

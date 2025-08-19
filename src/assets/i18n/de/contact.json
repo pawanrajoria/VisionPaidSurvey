@@ -1,28 +1,64 @@
 {
-    "contact": {
-        "heading": {
-            "subtitle": "Fragen? Wir sind für Sie da!",
-            "title": "Kontaktieren Sie Profit Piller noch heute"
-        },
-        "emailUs": {
-            "title": "Senden Sie uns eine E-Mail",
-            "address": "support@profitpiller.com"
-        },
-        "callUs": {
-            "title": "Rufen Sie uns an",
-            "number": "+91-8876654356"
-        },
-        "headOffice": {
-            "title": "Hauptsitz",
-            "address": "Spaze ITech Park, Sektor 49, Gurgaon, Haryana – 122001, Indien"
-        },
-        "form": {
-            "title": "Kontaktieren Sie uns",
-            "nameLabel": "Name",
-            "emailLabel": "E-Mail",
-            "phoneLabel": "Telefonnummer",
-            "messageLabel": "Nachricht",
-            "submitButton": "Nachricht senden"
-        }
+    "app.title": "Meine Tolle App",
+    "buttons.save": "Speichern",
+    "buttons.cancel": "Abbrechen",
+    "buttons.continue": "Weiter",
+    "buttons.resend": "Erneut senden",
+    "buttons.google": "Google",
+    "buttons.back": "Zurück",
+    "buttons.submit": "Absenden",
+    "buttons.redeem": "Einlösen",
+    "buttons.soundgreat": "Klingt großartig!",
+    "text.username": "Benutzername",
+    "text.emailid": "E-Mail-Adresse",
+    "text.password": "Passwort",
+    "text.confirmpassword": "Passwort bestätigen",
+    "text.oldpassword": "Altes Passwort",
+    "text.newpassword": "Neues Passwort",
+    "text.confirmnewpassword": "Neues Passwort bestätigen",
+    "Surveys": "Umfragen",
+    "Offers": "Angebote",
+    "Offerwalls": "Angebotswände",
+    "Leaderboard": "Bestenliste",
+    "Cashout": "Auszahlung",
+    "Account": "Konto",
+    "More": "Mehr",
+    "Help": "Hilfe",
+    "Refer A Friend": "Einen Freund werben",
+    "Redeem Bonus Code": "Bonuscode einlösen",
+    "Cashout Reward": "Belohnung auszahlen lassen",
+    "My Account": "Mein Konto",
+    "Earning": "Verdienst",
+    "Logout": "Abmelden",
+    "How Levels Work": "So funktionieren Levels",
+    "Next LVL Reward": "Nächste LVL-Belohnung",
+    "Redeem Points": "Punkte einlösen",
+    "Transfer": "Übertragen",
+    "From": "Von",
+    "Gift Cards": "Geschenkkarten",
+    "search_reward": "Geschenkkarte suchen...",
+    "View": "Anzeigen",
+    "more_giftcard": "weitere Geschenkkarten",
+    "Offerwall": "Angebotswand",
+    "Survey Partners": "Umfragepartner",
+    "messages": {
+        "email.required": "E-Mail ist erforderlich.",
+        "username.required": "Benutzername ist erforderlich.",
+        "email.invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        "password.required": "Passwort ist erforderlich.",
+        "oldpassword.required": "Altes Passwort ist erforderlich.",
+        "newpassword.required": "Neues Passwort ist erforderlich.",
+        "confirmnewpassword.required": "Bestätigung des neuen Passworts ist erforderlich.",
+        "confirmpassword.required": "Bestätigung des Passworts ist erforderlich.",
+        "password.minlength": "Passwort muss mindestens 6 Zeichen lang sein.",
+        "confirmpassword.notmatching": "Bestätigung des Passworts stimmt nicht überein.",
+        "login.success": "Anmeldung erfolgreich!",
+        "login.error": "Anmeldung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+        "signup.success": "Anmeldung erfolgreich! Willkommen an Bord.",
+        "signup.error": "Anmeldung fehlgeschlagen. Bitte überprüfen Sie Ihre Daten und versuchen Sie es erneut.",
+        "norecord_found": "Kein Datensatz gefunden",
+        "dateofbirth.required": "Geburtsdatum ist erforderlich.",
+        "gender.required": "Geschlecht ist erforderlich.",
+        "zip_code.required": "Postleitzahl ist erforderlich."
     }
 }

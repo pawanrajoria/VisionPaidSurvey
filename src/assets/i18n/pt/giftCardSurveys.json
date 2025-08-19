@@ -1,0 +1,47 @@
+{
+  "giftCardSurveys": {
+    "banner": {
+      "title": "Pesquisas que pagam com cartões-presente",
+      "subtitle": "Quer desbloquear sua lista de desejos da Amazon ou economizar em seu próximo pedido online?",
+      "description": "Complete pesquisas e ganhe cartões-presente para seus varejistas favoritos. Com o Profitpiller, você pode transformar seu tempo livre em recompensas reais do PayPal, Visa, Amazon e muito mais.",
+      "startButton": "Começar a ganhar",
+      "startNote": "Crie sua conta Profitpiller gratuita para começar a ganhar cartões-presente agora."
+    },
+    "section1": {
+      "subtitle": "Pesquisas Simples, Recompensas Instantâneas",
+      "title": "Ganhe cartões-presente grátis por compartilhar suas opiniões",
+      "description1": "Complete pesquisas rápidas e resgate cartões-presente de marcas populares.",
+      "description2": "Seu feedback ajuda as empresas a melhorar, e elas estão prontas para recompensá-lo. Desde hábitos diários até escolhas de produtos, suas opiniões importam — e o Profitpiller garante que você seja compensado com cartões-presente que você realmente usará.",
+      "description3": "O Profitpiller conecta você a marcas reais que buscam respostas reais — e você ganha cartões-presente reais em troca. É uma situação vantajosa para todos.",
+      "description4": "Sem inscrições complexas, sem barreiras de pagamento mínimo, sem pesquisas chatas. Basta se juntar ao Profitpiller e começar a ganhar cartões-presente em minutos — alguns usuários obtêm sua primeira recompensa em apenas 17 minutos!",
+      "strongConclusion": "Comece agora e troque suas respostas por <a routerLink=\"#\">cartões-presente grátis</a> instantaneamente!"
+    },
+    "features": {
+      "subtitle": "Seu Tempo, Suas Recompensas",
+      "title": "Pesquisas do Profitpiller que recompensam você com cartões-presente",
+      "description": "Junte-se ao Profitpiller, complete pesquisas e desbloqueie cartões-presente de suas lojas favoritas.",
+      "step1": {
+        "label": "Passo 1",
+        "title": "Crie sua conta Profitpiller e prepare-se para ganhar cartões-presente grátis completando pesquisas."
+      },
+      "step2": {
+        "label": "Passo 2",
+        "title": "Escolha as pesquisas que melhor se adequam a você e ganhe pontos por cada resposta.",
+        "description": "Não há limite — quanto mais você participa, mais cartões-presente pode ganhar. Assista seu saldo crescer a cada pesquisa."
+      },
+      "step3": {
+        "label": "Passo 3",
+        "title": "Resgate seus pontos por cartões-presente da Visa, Amazon, PayPal e muito mais.",
+        "description": "Use suas recompensas como quiser — gaste online, compre um agrado ou economize para algo grande. Sem mínimo de saque e com opções flexíveis, o Profitpiller coloca você no controle de seus ganhos."
+      }
+    },
+    "support": {
+      "title": "Comece a ganhar cartões-presente com o Profitpiller hoje",
+      "description": "Não perca a oportunidade — crie sua conta agora e transforme sua voz em cartões-presente reais. Responda a pesquisas rápidas, compartilhe suas opiniões e escolha entre dezenas de marcas populares para sua recompensa. É simples, gratificante e totalmente grátis.",
+      "joinNow": "Junte-se agora"
+    }
+  },
+  "common": {
+    "arrowForward": "arrow_forward"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "paypalGiftCards": {
+    "banner": {
+      "title": "Verdien PayPal-cadeaubonnen met snelle enquêtes",
+      "subtitle": "Gebruikt u graag PayPal voor uw online aankopen? Begin meer te besparen op elke aankoop.",
+      "description": "Word lid van Profitpiller en word beloond voor uw mening! Neem deel aan snelle en boeiende enquêtes over alledaagse onderwerpen — van merken die u kent tot producten waar u van houdt — en verdien in ruil daarvoor PayPal-cadeaubonnen. Het is eenvoudig, veilig en 100% gratis.",
+      "startButton": "Nu beginnen",
+      "startNote": "Voltooi uw eerste enquête en begin direct met verdienen."
+    },
+    "section1": {
+      "subtitle": "Directe beloningen, echte waarde",
+      "title": "Ontvang betaald via PayPal — gewoon door uw mening te delen",
+      "description1": "Of u nu online winkelt of lokale verkopers ondersteunt, Profitpiller helpt u echt geld te verdienen via PayPal-cadeaubonnen — sneller dan u zou verwachten.",
+      "description2": "Wissel beloningen gemakkelijk in, zonder vervaldatum of minimaal uitbetalingsbedrag. Spaar voor grote kortingen of gebruik uw cadeaubonnen voor kleine aankopen — het is helemaal aan u.",
+      "description3": "Van kleding en elektronica tot afhaalmaaltijden en diensten, met Profitpiller kunt u uw PayPal-beloningen gebruiken zoals u wilt.",
+      "description4": "Meld u aan en laat u in slechts 17 minuten uitbetalen. Begin PayPal-beloningen te verdienen vanaf uw eerste enquête — alleen met Profitpiller."
+    },
+    "features": {
+      "subtitle": "Laat elke minuut tellen",
+      "title": "Voltooi enquêtes, verdien direct PayPal-beloningen",
+      "description": "Profitpiller maakt het gemakkelijk om digitale beloningen te verdienen en tegelijkertijd topmerken te helpen verbeteren. Uw mening telt — en betaalt. Doe op elk moment mee aan enquêtes vanuit huis, op uw telefoon of waar u ook bent.",
+      "step1": {
+        "label": "Stap 1",
+        "title": "Maak uw gratis Profitpiller-account aan en kies een enquête die bij u past."
+      },
+      "step2": {
+        "label": "Stap 2",
+        "title": "Verdien punten voor elke voltooide enquête — wissel ze op elk moment in.",
+        "description": "Wissel uw punten direct in voor PayPal-cadeaubonnen. Heeft u liever Amazon- of Visa-beloningen? Die hebben we ook. Met Profitpiller kiest u hoe u wordt beloond."
+      }
+    },
+    "rewardsGrid": {
+      "paypalSurveys": "Enquêtes voor PayPal-cadeaubonnen",
+      "amazonSurveys": "Enquêtes voor Amazon-cadeaubonnen"
+    },
+    "support": {
+      "title": "Begin vandaag nog met het verdienen van PayPal-beloningen met Profitpiller",
+      "description": "Meld u nu aan en verander uw vrije tijd in echte geldbeloningen. Het is snel, gratis en gemakkelijk om te beginnen. Deel uw mening, voltooi enquêtes en word betaald via PayPal — alleen bij Profitpiller.",
+      "joinNow": "Nu lid worden"
+    }
+  }
+}

@@ -1,45 +1,45 @@
 {
   "visaGiftCards": {
     "banner": {
-      "title": "Gagnez des cartes cadeaux Visa en partageant votre opinion",
-      "subtitle": "Vous préférez payer avec Visa ? Vous voulez gagner des récompenses que vous pouvez dépenser presque partout ?",
-      "description": "Avec Profitpiller, vous pouvez gagner des cartes cadeaux Visa simplement en répondant à de simples sondages. Que vous économisiez pour un nouveau gadget ou que vous souhaitiez réduire vos dépenses hebdomadaires, les récompenses en cartes cadeaux Visa vous offrent la flexibilité de dépenser comme vous le souhaitez.",
+      "title": "Gagnez des cartes-cadeaux Visa en partageant votre opinion",
+      "subtitle": "Vous préférez payer avec Visa ? Vous souhaitez gagner des récompenses que vous pouvez dépenser presque partout ?",
+      "description": "Avec Profitpiller, vous pouvez gagner des cartes-cadeaux Visa simplement en répondant à de simples enquêtes. Que vous économisiez pour un nouveau gadget ou que vous souhaitiez réduire vos dépenses hebdomadaires, les récompenses sous forme de cartes-cadeaux Visa vous offrent la flexibilité de dépenser comme vous le souhaitez.",
       "startButton": "Commencer à gagner maintenant",
-      "startNote": "Inscrivez-vous aujourd'hui et commencez à gagner des récompenses Visa avec Profitpiller."
+      "startNote": "Inscrivez-vous dès aujourd'hui et commencez à gagner des récompenses Visa avec Profitpiller."
     },
     "section1": {
-      "subtitle": "De vraies récompenses, des sondages rapides",
-      "title": "Soyez récompensé par des cartes cadeaux Visa instantanément",
-      "description1": "Les cartes cadeaux Visa peuvent être utilisées presque partout. Gagnez la vôtre en ligne et profitez de la liberté de faire vos achats en magasin, en ligne ou partout où Visa est acceptée — dans le monde entier.",
-      "description2": "Utilisez votre récompense Visa pour payer vos vêtements préférés, réserver des vacances ou même couvrir les dépenses quotidiennes essentielles. Qu'il s'agisse d'épicerie ou de gadgets, vous choisissez comment dépenser vos récompenses.",
-      "description3": "Commencer est simple. Rejoignez Profitpiller et répondez à de courts sondages sur vos émissions, produits ou achats récents préférés. Vos opinions aident les entreprises à s'améliorer — et vous êtes récompensé en retour.",
-      "description4": "Inscrivez-vous maintenant et réclamez votre première carte cadeau Visa simplement en complétant votre premier sondage sur Profitpiller."
+      "subtitle": "De vraies récompenses, des enquêtes rapides",
+      "title": "Soyez récompensé instantanément avec des cartes-cadeaux Visa",
+      "description1": "Les cartes-cadeaux Visa peuvent être utilisées presque partout. Gagnez la vôtre en ligne et profitez de la liberté de faire vos achats en magasin, en ligne ou partout où Visa est accepté, dans le monde entier.",
+      "description2": "Utilisez votre récompense Visa pour acheter vos articles de mode préférés, réserver des vacances ou même couvrir les dépenses quotidiennes. Qu'il s'agisse de courses ou de gadgets, vous choisissez comment dépenser vos récompenses.",
+      "description3": "Commencer est simple. Rejoignez Profitpiller et répondez à de courtes enquêtes sur vos émissions, produits ou achats récents préférés. Vos opinions aident les entreprises à s'améliorer, et vous êtes récompensé en retour.",
+      "description4": "Inscrivez-vous maintenant et réclamez votre première carte-cadeau Visa en remplissant simplement votre première enquête sur Profitpiller."
     },
     "features": {
-      "subtitle": "Transformez votre temps libre en cartes cadeaux",
-      "title": "Soyez payé avec des cartes cadeaux Visa pour chaque sondage",
-      "description": "Rejoignez Profitpiller et commencez à gagner instantanément. C'est entièrement gratuit, et les sondages sont courts, simples et amusants. Échangez vos points contre des cartes cadeaux Visa qui fonctionnent presque partout où vous faites vos achats.",
+      "subtitle": "Transformez votre temps libre en cartes-cadeaux",
+      "title": "Soyez payé avec des cartes-cadeaux Visa pour chaque enquête",
+      "description": "Rejoignez Profitpiller et commencez à gagner instantanément. C'est entièrement gratuit, et les enquêtes sont courtes, simples et amusantes. Échangez vos points contre des cartes-cadeaux Visa qui fonctionnent presque partout où vous faites vos achats.",
       "step1": {
         "label": "Étape 1",
-        "title": "Inscrivez-vous à votre compte Profitpiller gratuit et réclamez votre bonus de bienvenue instantanément."
+        "title": "Inscrivez-vous pour votre compte Profitpiller gratuit et réclamez votre bonus de bienvenue instantanément."
       },
       "step2": {
         "label": "Étape 2",
-        "title": "Complétez des sondages et regardez votre solde augmenter.",
-        "description": "Après un seul sondage, vous pouvez échanger vos points contre une carte cadeau Visa — ou continuer à gagner pour de plus grandes récompenses. <br>Profitez d'options de récompenses flexibles, y compris des <a routerLink=\"\">cartes cadeaux Amazon de 5 $</a> ou des <a routerLink=\"\">cartes cadeaux PayPal</a>. Profitpiller vous permet d'obtenir facilement ce que vous voulez."
+        "title": "Répondez aux enquêtes et regardez votre solde grandir.",
+        "description": "Après une seule enquête, vous pouvez échanger vos points contre une carte-cadeau Visa, ou continuer à gagner pour de plus grandes récompenses. Profitez d'options de récompense flexibles, y compris des cartes-cadeaux Amazon de 5 $ ou des cartes-cadeaux PayPal. Profitpiller vous permet d'obtenir facilement ce que vous voulez."
       }
     },
     "rewardsGrid": {
-      "paypalSurveys": "Sondages pour cartes cadeaux PayPal",
-      "amazonSurveys": "Sondages pour cartes cadeaux Amazon"
+      "paypalSurveys": "Enquêtes pour cartes-cadeaux PayPal",
+      "amazonSurveys": "Enquêtes pour cartes-cadeaux Amazon"
     },
     "support": {
       "title": "Commencez à gagner des récompenses Visa instantanément",
-      "description": "Rejoignez Profitpiller aujourd'hui et transformez vos commentaires en valeur réelle. Partagez votre opinion, gagnez des points et échangez des cartes cadeaux Visa que vous pouvez utiliser partout. C'est rapide, sécurisé et toujours gratuit pour commencer.",
-      "joinNow": "Adhérer maintenant"
+      "description": "Rejoignez Profitpiller dès aujourd'hui et transformez vos commentaires en valeur réelle. Partagez votre opinion, gagnez des points et échangez des cartes-cadeaux Visa que vous pouvez utiliser n'importe où. C'est rapide, sécurisé et toujours gratuit de commencer.",
+      "joinNow": "Rejoignez maintenant"
     }
   },
   "common": {
-    "arrowForward": "arrow_forward"
+    "arrowForward": "flèche vers l'avant"
   }
 }

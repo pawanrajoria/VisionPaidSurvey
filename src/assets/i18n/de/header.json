@@ -4,11 +4,37 @@
     "earnRewards": "Belohnungen verdienen",
     "surveysOffers": "Umfragen & Angebote",
     "redeemPoint": "Punkte einlösen",
-    "language": "Deutsch (Deutschland)",
+    "language": "Deutsch",
     "goToApp": "Zur App gehen",
     "livePayouts": "Live-Auszahlungen",
+    "Levels": "Stufen",
+    "blue_level": "🔹 Blaue Stufe erreicht! 💙",
+    "motivated_message": "Bleiben Sie aktiv und steigen Sie schneller auf!",
+    "left_headline": "Stufe/Bonus",
+    "right_headline": "Stufen",
     "payoutItem": {
       "paypal": "PayPal"
+    },
+    "levels": {
+      "l1": {
+        "title": "Blaue Stufe",
+        "description": "Die Reise beginnt hier. Verdienen Sie mehr, um in den Rängen aufzusteigen!",
+        "range": "1-20"
+      },
+      "l2": {
+        "title": "Silberne Stufe",
+        "description": "Jeden Monat, ein Tag. Große Boni. Unbegrenzte Einnahmen!",
+        "range": "21-30"
+      },
+      "l3": {
+        "title": "Goldene Stufe",
+        "description": "Genießen Sie VIP-Zugang zu ermäßigten Belohnungen!",
+        "range": "21-30"
+      },
+      "l4": {
+        "title": "Platin-Stufe",
+        "description": "Schalten Sie frühen Zugang frei &..."
+      }
     }
   }
 }

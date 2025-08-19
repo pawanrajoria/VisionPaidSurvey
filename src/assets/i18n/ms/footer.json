@@ -1,0 +1,28 @@
+{
+    "footer": {
+        "copyright": "© 2025 Profit Piller - Hak Cipta Terpelihara.",
+        "productOf": "Produk daripada",
+        "cralpkResearchGroup": "Cralpk Research Group",
+        "platform": {
+            "title": "Platform",
+            "loginOrSignUp": "Log Masuk atau Daftar",
+            "aboutProfitpiller": "Tentang Profitpiller",
+            "contactUs": "Hubungi Kami",
+            "help": "Bantuan"
+        },
+        "legal": {
+            "title": "Undang-undang",
+            "privacyPolicy": "Dasar Privasi",
+            "termsConditions": "Terma & Syarat",
+            "doNotSell": "Jangan Jual Maklumat Peribadi Saya"
+        },
+        "exploreMore": {
+            "title": "Terokai Lagi",
+            "earnCash": "Jana Tunai daripada Tinjauan Berbayar",
+            "getRewarded": "Dapatkan Ganjaran dengan Kad Hadiah",
+            "redeemAmazon": "Tebus Kad Hadiah Amazon",
+            "getPaiyPal": "Dapatkan Bayaran melalui PayPal",
+            "visaGiftCards": "Kad Hadiah Visa & Banyak Lagi"
+        }
+    }
+}

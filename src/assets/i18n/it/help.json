@@ -1,0 +1,61 @@
+{
+  "help": {
+    "heading": {
+      "title": "Hai bisogno di aiuto con Profit Piller?",
+      "intro": "Siamo qui per rendere la tua esperienza fluida. Che tu abbia bisogno di aiuto con sondaggi, riscatti o ricompense, il nostro team di supporto è al tuo fianco."
+    },
+    "faqs": {
+      "q1": {
+        "question": "Come posso iniziare a guadagnare su Profit Piller?",
+        "answer": "Basta registrarsi per un account gratuito, completare il tuo profilo e accedere a sondaggi e offerte. I tuoi guadagni iniziano ad accumularsi immediatamente!"
+      },
+      "q2": {
+        "question": "Quando posso riscattare le mie ricompense?",
+        "answer": "Una volta raggiunto la soglia di riscatto minima (ad esempio, ₹425 per PayPal o buoni regalo), puoi riscattare i tuoi punti istantaneamente."
+      },
+      "q3": {
+        "question": "Perché non ho ricevuto credito per un sondaggio?",
+        "answer": "Potresti essere stato squalificato a causa dei requisiti del sondaggio o di risposte incomplete. Se ritieni che sia stato un errore, <a href=\"mailto:support@profitpiller.com\">contatta il nostro team di supporto</a>."
+      },
+      "q4": {
+        "question": "Come posso contattare il supporto di Profit Piller?",
+        "answer": "Inviaci un'e-mail a <a href=\"mailto:support@profitpiller.com\">support@profitpiller.com</a> o utilizza il modulo di contatto sul nostro sito web."
+      },
+      "q5": {
+        "question": "Ci sono limiti di guadagno giornalieri o settimanali?",
+        "answer": "No, non ci sono limiti. Puoi guadagnare quanto vuoi in base ai sondaggi e alle offerte disponibili."
+      },
+      "q6": {
+        "question": {
+          "text": "Sono stato squalificato da un sondaggio. Cosa posso fare?",
+          "short": "Squalifica da un sondaggio"
+        },
+        "answer": "Comprendiamo che sia frustrante. Le qualifiche dei sondaggi sono gestite da partner terzi. A volte, le risposte iniziali possono indicare che non rientri nel profilo target. Continua a provare i sondaggi e ne troverai uno che fa per te. In genere, riceverai una piccola ricompensa per il tempo speso per qualificarti per un sondaggio. Non riceverai il credito completo, ma ci aiuterà ad abbinarti meglio la prossima volta."
+      },
+      "q7": {
+        "question": "Perché non ho ricevuto la ricompensa completa per il sondaggio?",
+        "answer": "Alcuni sondaggi offrono ricompense parziali per completamenti parziali o squalifiche. Assicurati sempre di dare risposte accurate e di avere una connessione internet stabile."
+      },
+      "q8": {
+        "question": "Posso usare una VPN o un proxy per rispondere ai sondaggi?",
+        "answer": "No. L'uso di VPN o proxy è severamente proibito e può comportare la sospensione dell'account o la squalifica dai sondaggi."
+      },
+      "q9": {
+        "question": "Quando posso riscattare le mie ricompense?",
+        "answer": "Una volta raggiunto la soglia minima (ad esempio, ₹425), puoi riscattare istantaneamente tramite PayPal, buoni regalo o altri metodi disponibili."
+      },
+      "q10": {
+        "question": "Posso invitare altre persone e guadagnare bonus?",
+        "answer": "Sì! Condividi il tuo link di riferimento. Guadagnerai una commissione del 10% su ciò che i tuoi referral guadagnano dai sondaggi — per tutta la vita!"
+      },
+      "q11": {
+        "question": "I miei dati sono al sicuro con Profit Piller?",
+        "answer": "Sì, i tuoi dati sono protetti con rigidi protocolli di privacy e non vengono mai condivisi senza il tuo consenso."
+      },
+      "q12": {
+        "question": "Come posso contattare il supporto?",
+        "answer": "Contattaci in qualsiasi momento a <a href='mailto:support@profitpiller.com'>support@profitpiller.com</a> o tramite il modulo di contatto dell'app."
+      }
+    }
+  }
+}

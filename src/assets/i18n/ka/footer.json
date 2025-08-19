@@ -1,0 +1,28 @@
+{
+    "footer": {
+        "copyright": "© 2025 Profit Piller - ყველა უფლება დაცულია.",
+        "productOf": "პროდუქტი",
+        "cralpkResearchGroup": "Cralpk Research Group",
+        "platform": {
+            "title": "პლატფორმა",
+            "loginOrSignUp": "შესვლა ან რეგისტრაცია",
+            "aboutProfitpiller": "Profitpiller-ის შესახებ",
+            "contactUs": "დაგვიკავშირდით",
+            "help": "დახმარება"
+        },
+        "legal": {
+            "title": "იურიდიული",
+            "privacyPolicy": "კონფიდენციალურობის პოლიტიკა",
+            "termsConditions": "წესები და პირობები",
+            "doNotSell": "არ გაყიდოთ ჩემი პირადი ინფორმაცია"
+        },
+        "exploreMore": {
+            "title": "მეტი გაიგეთ",
+            "earnCash": "ფულადი სახსრების გამომუშავება ფასიანი გამოკითხვებიდან",
+            "getRewarded": "დაჯილდოვდით სასაჩუქრე ბარათებით",
+            "redeemAmazon": "Amazon-ის სასაჩუქრე ბარათების გაცვლა",
+            "getPaiyPal": "გადახდა PayPal-ის საშუალებით",
+            "visaGiftCards": "Visa-ს სასაჩუქრე ბარათები და სხვა"
+        }
+    }
+}

@@ -1,0 +1,61 @@
+{
+  "help": {
+    "heading": {
+      "title": "Precisa de ajuda com o Profit Piller?",
+      "intro": "Estamos aqui para tornar sua experiência tranquila. Se você precisa de ajuda com pesquisas, resgates ou recompensas, nossa equipe de suporte está aqui para você."
+    },
+    "faqs": {
+      "q1": {
+        "question": "Como começo a ganhar no Profit Piller?",
+        "answer": "Basta se inscrever para uma conta gratuita, completar seu perfil e acessar pesquisas e ofertas. Seus ganhos começam a se acumular imediatamente!"
+      },
+      "q2": {
+        "question": "Quando posso resgatar minhas recompensas?",
+        "answer": "Assim que você atingir o limite mínimo de resgate (por exemplo, ₹425 para PayPal ou cartões-presente), você pode resgatar seus pontos instantaneamente."
+      },
+      "q3": {
+        "question": "Por que não recebi crédito por uma pesquisa?",
+        "answer": "Você pode ter sido desqualificado devido aos requisitos da pesquisa ou a respostas incompletas. Se você acredita que isso foi um erro, <a href=\"mailto:support@profitpiller.com\">entre em contato com nossa equipe de suporte</a>."
+      },
+      "q4": {
+        "question": "Como posso entrar em contato com o suporte do Profit Piller?",
+        "answer": "Envie-nos um e-mail para <a href=\"mailto:support@profitpiller.com\">support@profitpiller.com</a> ou use o formulário de contato em nosso site."
+      },
+      "q5": {
+        "question": "Existem limites de ganhos diários ou semanais?",
+        "answer": "Não, não há limites. Você pode ganhar o quanto quiser com base nas pesquisas e ofertas disponíveis."
+      },
+      "q6": {
+        "question": {
+          "text": "Fui desqualificado de uma pesquisa. O que posso fazer?",
+          "short": "Desqualificação de pesquisa"
+        },
+        "answer": "Entendemos que isso é frustrante. As qualificações das pesquisas são gerenciadas por parceiros terceirizados. Às vezes, as respostas iniciais podem indicar que você não se encaixa no perfil alvo. Continue tentando as pesquisas e você encontrará uma que se encaixe. Geralmente, você receberá uma pequena recompensa pelo tempo gasto tentando se qualificar para uma pesquisa. Você não receberá o crédito total, mas isso nos ajuda a combiná-lo melhor na próxima vez."
+      },
+      "q7": {
+        "question": "Por que não recebi a recompensa completa pela pesquisa?",
+        "answer": "Algumas pesquisas oferecem recompensas parciais por conclusões parciais ou desqualificações. Certifique-se sempre de dar respostas precisas e ter uma conexão de internet estável."
+      },
+      "q8": {
+        "question": "Posso usar uma VPN ou Proxy para fazer pesquisas?",
+        "answer": "Não. O uso de VPNs ou proxies é estritamente proibido e pode resultar na suspensão da conta ou desqualificação de pesquisas."
+      },
+      "q9": {
+        "question": "Quando posso resgatar minhas recompensas?",
+        "answer": "Assim que você atingir o limite mínimo (por exemplo, ₹425), você pode resgatar instantaneamente via PayPal, cartões-presente ou outros métodos disponíveis."
+      },
+      "q10": {
+        "question": "Posso indicar outras pessoas e ganhar bônus?",
+        "answer": "Sim! Compartilhe seu link de indicação. Você ganhará uma comissão de 10% sobre o que seus indicados ganharem com pesquisas — para sempre!"
+      },
+      "q11": {
+        "question": "Meus dados estão seguros com o Profit Piller?",
+        "answer": "Sim, seus dados são protegidos com protocolos de privacidade rigorosos e nunca são compartilhados sem sua autorização."
+      },
+      "q12": {
+        "question": "Como entro em contato com o suporte?",
+        "answer": "Entre em contato conosco a qualquer momento em <a href='mailto:support@profitpiller.com'>support@profitpiller.com</a> ou através do formulário de contato no aplicativo."
+      }
+    }
+  }
+}

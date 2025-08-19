@@ -19,6 +19,8 @@ export class OfferWallComponent implements OnInit {
     offerspartners = [
         { id: 2, name: 'Bit Lab', logo: 'assets/images/partners/BitLabsWhiteLogo.png', rating: 5, bonus: 50, description: 'RevU+' },
         { id: 4, name: 'TimeWall', logo: 'assets/images/partners/timewall-logo.png', rating: 5, bonus: 20 },
+        { id: 11, name: 'Lootably', logo: 'assets/images/partners/lootably.png', rating: 5, bonus: 20 },
+        { id: 14, name: 'MMWALL', logo: 'assets/images/partners/mmwall.svg', rating: 5, bonus: 20 },
         { id: 5, name: 'CPA Lead', logo: 'assets/images/partners/dark_logo_cpalead.webp', rating: 5, bonus: 50 },
         { id: 3, name: 'Notik', logo: 'assets/images/partners/notik_logo.png', rating: 5, bonus: 20 },
     ];

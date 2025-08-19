@@ -1,0 +1,45 @@
+{
+  "visaGiftCards": {
+    "banner": {
+      "title": "通过分享您的意见赚取 Visa 礼品卡",
+      "subtitle": "喜欢用 Visa 支付吗？想赚取几乎可以在任何地方使用的奖励吗？",
+      "description": "使用 Profitpiller，您只需完成简单的调查即可赚取 Visa 礼品卡。无论您是为购买新设备而存钱，还是想减少每周开支，Visa 礼品卡奖励都能让您灵活地按照自己的意愿消费。",
+      "startButton": "立即开始赚钱",
+      "startNote": "立即注册，开始使用 Profitpiller 赚取 Visa 奖励。"
+    },
+    "section1": {
+      "subtitle": "真正的奖励，快速的调查",
+      "title": "立即获得 Visa 礼品卡奖励",
+      "description1": "Visa 礼品卡几乎可以在任何地方使用。在线赚取您的礼品卡，享受在全球范围内，无论是在店内、在线还是任何接受 Visa 的地方购物的自由。",
+      "description2": "使用您的 Visa 奖励来支付您最喜欢的时尚、预订假期，甚至支付日常必需品。无论是杂货还是小工具，您都可以选择如何花费您的奖励。",
+      "description3": "开始很简单。加入 Profitpiller，完成关于您最喜欢的节目、产品或最近购买的快速调查。您的意见帮助企业改进——您也会因此获得奖励。",
+      "description4": "立即注册，只需在 Profitpiller 上完成您的第一次调查，即可领取您的第一张 Visa 礼品卡。"
+    },
+    "features": {
+      "subtitle": "将您的空闲时间变成礼品卡",
+      "title": "通过每次调查获得 Visa 礼品卡支付",
+      "description": "加入 Profitpiller，立即开始赚钱。这是完全免费的，调查简短、简单且有趣。将您的积分兑换成 Visa 礼品卡，这些礼品卡几乎可以在您购物的任何地方使用。",
+      "step1": {
+        "label": "第 1 步",
+        "title": "注册您的免费 Profitpiller 账户，并立即领取您的欢迎奖金。"
+      },
+      "step2": {
+        "label": "第 2 步",
+        "title": "完成调查，看着您的余额增长。",
+        "description": "只需完成一次调查，您就可以将您的积分兑换成 Visa 礼品卡——或者继续赚取更大的奖励。享受灵活的奖励选项，包括 5 美元的亚马逊礼品卡或 PayPal 礼品卡。Profitpiller 让您轻松获得您想要的东西。"
+      }
+    },
+    "rewardsGrid": {
+      "paypalSurveys": "PayPal 礼品卡调查",
+      "amazonSurveys": "亚马逊礼品卡调查"
+    },
+    "support": {
+      "title": "立即开始赚取 Visa 奖励",
+      "description": "立即加入 Profitpiller，将您的反馈转化为真正的价值。分享您的意见，赚取积分，并兑换您可以在任何地方使用的 Visa 礼品卡。它快速、安全，并且开始总是免费的。",
+      "joinNow": "立即加入"
+    }
+  },
+  "common": {
+    "arrowForward": "前进箭头"
+  }
+}

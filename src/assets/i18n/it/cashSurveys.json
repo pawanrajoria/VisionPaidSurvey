@@ -1,0 +1,51 @@
+{
+    "cashSurveys": {
+        "banner": {
+            "title": "Fatti pagare in contanti per le tue opinioni",
+            "subtitle": "Vuoi un modo semplice per guadagnare denaro extra nel tuo tempo libero? Condividi i tuoi pensieri e fatti pagare direttamente in contanti per ogni sondaggio che completi.",
+            "description1": "Che tu stia pianificando qualcosa di speciale o abbia bisogno di una rapida iniezione di denaro, completare sondaggi per contanti è un modo intelligente per raggiungere i tuoi obiettivi.",
+            "description2": "Che tu stia pianificando qualcosa di speciale o semplicemente desideri un rapido ricarico di denaro, fatti premiare con denaro reale condividendo le tue opinioni.",
+            "signUpButton": "Iscriviti ora",
+            "signUpNote": "Inizia il tuo primo sondaggio a pagamento in contanti con Profitpiller oggi stesso."
+        },
+        "section1": {
+            "subtitle": "Sondaggi veloci, contanti istantanei",
+            "title": "Ottieni contanti per ogni sondaggio che completi",
+            "description1": "Sondaggi reali. Opinioni reali. Contanti reali sul tuo conto.",
+            "description2": "Le aziende vogliono il tuo feedback e sono disposte a pagare in contanti per ottenerlo. Con Profitpiller, puoi guadagnare denaro reale per il tuo tempo e i tuoi contributi sulle preferenze del marchio, sulle idee di prodotto o sulle abitudini quotidiane.",
+            "description3": "Ti mettiamo in contatto con fornitori di sondaggi che pagano di più e che valorizzano le tue opinioni. Completa i sondaggi a tuo piacimento e incassa quando sei pronto.",
+            "description4": "Nessuna sciocchezza, nessun punto — solo ricompense dirette in contanti per aver condiviso ciò che pensi."
+        },
+        "features": {
+            "subtitle": "Massimizza il tuo tempo libero",
+            "title": "Trasforma le opinioni in contanti istantanei",
+            "description": "Avvia il tuo primo sondaggio in contanti ora e incassa in meno di <span>17 minuti.</span>",
+            "step1": {
+                "label": "Passaggio 1",
+                "title": "Crea il tuo account Profitpiller per richiedere il tuo bonus di benvenuto e sbloccare l'accesso ai sondaggi in contanti."
+            },
+            "step2": {
+                "label": "Passaggio 2",
+                "title": "Scegli i sondaggi che pagano di più in contanti e completali secondo il tuo programma.",
+                "description": "Fai tutti i sondaggi che vuoi ogni giorno: più ne fai, più contanti guadagni."
+            },
+            "step3": {
+                "label": "Passaggio 3",
+                "title": "Pronto a incassare? Riscatta i tuoi guadagni per PayPal o carte regalo all'istante.",
+                "description": "Che si tratti di denaro reale o di spese presso il tuo rivenditore preferito, la scelta è tua."
+            }
+        },
+        "rewardsGrid": {
+            "paypalWithdraw": "Preleva i tuoi contanti con PayPal",
+            "amazonPaid": "Fatti pagare tramite carte regalo Amazon"
+        },
+        "support": {
+            "title": "Unisciti a Profitpiller e fatti pagare in contanti per i sondaggi",
+            "description": "Ci vuole solo un minuto per iscriversi: inizia a essere pagato in contanti reali oggi stesso per ogni sondaggio che completi.",
+            "joinNow": "Iscriviti ora"
+        }
+    },
+    "common": {
+        "learnMore": "Scopri di più"
+    }
+}

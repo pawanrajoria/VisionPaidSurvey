@@ -1,0 +1,25 @@
+{
+  "personalInformation": {
+    "heading": {
+      "title": "Non vendere le mie informazioni"
+    },
+    "intro": {
+      "paragraph": "In <strong>Profitpiller</strong>, diamo la priorità alla tua privacy e rispettiamo il tuo controllo sulle tue informazioni personali. In conformità con le normative sulla privacy come il California Consumer Privacy Act (CCPA), hai il diritto di richiedere che i tuoi dati personali non vengano venduti."
+    },
+    "whatItMeans": {
+      "title": "Cosa significa?",
+      "paragraph": "Potremmo raccogliere alcuni dati per migliorare la tua esperienza utente e supportare la funzionalità dei nostri servizi. Sebbene non 'vendiamo' i tuoi dati nel senso tradizionale, alcune forme di condivisione dei dati con i partner possono essere considerate una 'vendita' ai sensi di alcune leggi sulla privacy."
+    },
+    "optOutForm": {
+      "title": "Modulo di opt-out",
+      "fullNameLabel": "Il tuo nome completo",
+      "emailLabel": "Indirizzo e-mail",
+      "commentsLabel": "Commenti aggiuntivi (facoltativo)",
+      "submitButton": "Invia richiesta"
+    },
+    "questions": {
+      "title": "Domande?",
+      "paragraph": "Per qualsiasi domanda o informazione aggiuntiva su come gestiamo i tuoi dati personali, non esitare a contattarci all'indirizzo <a href=\"mailto:privacy@profitpiller.com\">privacy@profitpiller.com</a>."
+    }
+  }
+}

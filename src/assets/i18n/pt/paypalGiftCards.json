@@ -1,0 +1,42 @@
+{
+  "paypalGiftCards": {
+    "banner": {
+      "title": "Ganhe Cartões-Presente do PayPal com Pesquisas Rápidas",
+      "subtitle": "Adora usar o PayPal para suas compras online? Comece a economizar mais em cada compra.",
+      "description": "Junte-se ao Profitpiller e seja recompensado por suas opiniões! Responda a pesquisas rápidas e envolventes sobre tópicos do dia a dia — desde marcas que você conhece até produtos que você ama — e ganhe cartões-presente do PayPal em troca. É simples, seguro e 100% gratuito.",
+      "startButton": "Começar agora",
+      "startNote": "Complete sua primeira pesquisa e comece a ganhar instantaneamente."
+    },
+    "section1": {
+      "subtitle": "Recompensas instantâneas, valor real",
+      "title": "Receba pagamentos através do PayPal — apenas por compartilhar suas opiniões",
+      "description1": "Seja fazendo compras online ou apoiando vendedores locais, o Profitpiller ajuda você a ganhar dinheiro real através de cartões-presente do PayPal — mais rápido do que você imagina.",
+      "description2": "Resgate recompensas facilmente, sem expiração ou mínimo de saque exigido. Economize para grandes descontos ou use seus cartões-presente para pequenas compras — a decisão é totalmente sua.",
+      "description3": "De roupas e eletrônicos a refeições e serviços, o Profitpiller permite que você use suas recompensas do PayPal da maneira que quiser.",
+      "description4": "Cadastre-se e saque em apenas 17 minutos. Comece a ganhar recompensas do PayPal desde sua primeira pesquisa — apenas com o Profitpiller."
+    },
+    "features": {
+      "subtitle": "Faça cada minuto valer a pena",
+      "title": "Complete Pesquisas, Ganhe Recompensas do PayPal Instantaneamente",
+      "description": "O Profitpiller torna fácil ganhar recompensas digitais enquanto ajuda as principais marcas a melhorar. Sua opinião importa — e ela paga. Participe de pesquisas a qualquer momento, de casa, do seu celular ou de onde estiver.",
+      "step1": {
+        "label": "Passo 1",
+        "title": "Crie sua conta gratuita do Profitpiller e escolha uma pesquisa que se adapte a você."
+      },
+      "step2": {
+        "label": "Passo 2",
+        "title": "Ganhe pontos por cada pesquisa concluída — resgate-os a qualquer momento.",
+        "description": "Resgate seus pontos por cartões-presente do PayPal instantaneamente. Prefere recompensas da Amazon ou Visa? Também temos essas. Com o Profitpiller, você escolhe como ser recompensado."
+      }
+    },
+    "rewardsGrid": {
+      "paypalSurveys": "Pesquisas para Cartões-Presente do PayPal",
+      "amazonSurveys": "Pesquisas para Cartões-Presente da Amazon"
+    },
+    "support": {
+      "title": "Comece a Ganhar Recompensas do PayPal Hoje com o Profitpiller",
+      "description": "Cadastre-se agora e transforme seu tempo livre em recompensas em dinheiro real. É rápido, gratuito e fácil de começar. Compartilhe suas opiniões, complete pesquisas e receba pagamentos através do PayPal — apenas no Profitpiller.",
+      "joinNow": "Junte-se agora"
+    }
+  }
+}

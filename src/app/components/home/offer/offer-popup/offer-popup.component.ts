@@ -45,8 +45,7 @@ export class OfferPopupDialog extends BaseComponent implements OnInit {
     earn(): void {
         const isMobileOrTablet =
             this.offer.currentDevice === 'Mobile' ||
-            this.offer.currentDevice === 'Tablet' ||
-            this.offer.device.some(d => d.includes('All'));
+            this.offer.currentDevice === 'Tablet';
 
         if (isMobileOrTablet) {
             const redirectUrl = `${this.configService.hostingDomain}auth/link?target=${encodeURIComponent(this.offer.clickUrl)}`;

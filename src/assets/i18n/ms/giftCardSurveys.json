@@ -1,0 +1,47 @@
+{
+  "giftCardSurveys": {
+    "banner": {
+      "title": "Tinjauan yang Membayar Kad Hadiah",
+      "subtitle": "Ingin membuka kunci senarai hajat Amazon anda atau menjimatkan pesanan dalam talian anda yang seterusnya?",
+      "description": "Lengkapkan tinjauan dan dapatkan kad hadiah untuk peruncit kegemaran anda. Dengan Profitpiller, anda boleh menukar masa lapang anda menjadi ganjaran sebenar daripada PayPal, Visa, Amazon, dan banyak lagi.",
+      "startButton": "Mula Jana Pendapatan",
+      "startNote": "Cipta akaun Profitpiller percuma anda untuk mula menjana kad hadiah sekarang."
+    },
+    "section1": {
+      "subtitle": "Tinjauan Mudah, Ganjaran Segera",
+      "title": "Dapatkan Kad Hadiah Percuma dengan Berkongsi Pendapat Anda",
+      "description1": "Lengkapkan tinjauan pantas dan tebus kad hadiah daripada jenama popular.",
+      "description2": "Maklum balas anda membantu syarikat bertambah baik, dan mereka bersedia untuk memberi ganjaran kepada anda. Daripada tabiat harian kepada pilihan produk, pendapat anda penting — dan Profitpiller memastikan anda diberi pampasan dengan kad hadiah yang anda akan gunakan.",
+      "description3": "Profitpiller menghubungkan anda dengan jenama sebenar yang mencari jawapan sebenar — dan anda memperoleh kad hadiah sebenar sebagai balasan. Ia adalah situasi menang-menang untuk semua orang.",
+      "description4": "Tiada pendaftaran yang rumit, tiada halangan pembayaran minimum, tiada tinjauan yang membosankan. Hanya sertai Profitpiller dan mula menjana kad hadiah dalam beberapa minit — beberapa pengguna mendapat ganjaran pertama mereka dalam masa 17 minit sahaja!",
+      "strongConclusion": "Mulakan sekarang dan tukar jawapan anda untuk <a routerLink=\"#\">kad hadiah percuma</a> dengan serta-merta!"
+    },
+    "features": {
+      "subtitle": "Masa Anda, Ganjaran Anda",
+      "title": "Tinjauan Profitpiller yang Memberi Ganjaran Kepada Anda dengan Kad Hadiah",
+      "description": "Sertai Profitpiller, lengkapkan tinjauan, dan buka kunci kad hadiah daripada kedai kegemaran anda.",
+      "step1": {
+        "label": "Langkah 1",
+        "title": "Cipta akaun Profitpiller anda dan bersedia untuk menjana kad hadiah percuma dengan melengkapkan tinjauan."
+      },
+      "step2": {
+        "label": "Langkah 2",
+        "title": "Pilih tinjauan yang paling sesuai untuk anda dan dapatkan mata untuk setiap respons.",
+        "description": "Tiada had — lebih banyak anda mengambil bahagian, lebih banyak kad hadiah yang anda boleh jana. Saksikan baki anda bertambah dengan setiap tinjauan."
+      },
+      "step3": {
+        "label": "Langkah 3",
+        "title": "Tebus mata anda untuk kad hadiah daripada Visa, Amazon, PayPal, dan banyak lagi.",
+        "description": "Gunakan ganjaran anda mengikut kehendak anda — berbelanja dalam talian, membeli hadiah, atau menyimpannya untuk sesuatu yang besar. Tanpa minimum pengeluaran dan dengan pilihan yang fleksibel, Profitpiller meletakkan anda bertanggungjawab ke atas pendapatan anda."
+      }
+    },
+    "support": {
+      "title": "Mula Jana Pendapatan Kad Hadiah dengan Profitpiller Hari Ini",
+      "description": "Jangan lepaskan peluang — cipta akaun anda sekarang dan tukar suara anda kepada kad hadiah sebenar. Jawab tinjauan pantas, kongsi pendapat anda, dan pilih daripada berpuluh-puluh jenama popular untuk ganjaran anda. Ia mudah, bermanfaat, dan percuma sepenuhnya.",
+      "joinNow": "Sertai Sekarang"
+    }
+  },
+  "common": {
+    "arrowForward": "arrow_forward"
+  }
+}

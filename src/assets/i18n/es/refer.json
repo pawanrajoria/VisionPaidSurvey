@@ -1,0 +1,37 @@
+{
+  "refer": {
+    "heading": {
+      "subtitle": "Comparte tu enlace y obtén una comisión del 10 % de por vida sobre las ganancias de tus amigos.",
+      "title": "Aumenta tus ganancias — ¡Recomienda y Gana!"
+    },
+    "title": "Cómo funciona",
+    "Earned": "Ganado",
+    "CopyCode": "Copiar código",
+    "uselink": "Usar enlace en su lugar",
+    "referrallink": "Enlace de referencia",
+    "your_referrallink": "Tu enlace de referencia",
+    "instruction": "¡Solo puedes tener una cuenta y no puedes recomendarte a ti mismo!",
+    "copy_link": "Copiar enlace",
+    "step1": {
+      "title": "Invita a tus amigos",
+      "description": "Habla a tus amigos sobre ProfitPiller y comparte tu enlace de referencia en redes sociales, chats o donde quieras."
+    },
+    "step2": {
+      "title": "Comparte tu código de bono",
+      "description": "Cuando nuevos usuarios canjean tu código de bono dentro de las 24 horas posteriores al registro, se convierten en tu referido y disfrutan de un 10 % de bono durante sus primeras 24 horas."
+    },
+    "step3": {
+      "title": "Recibe tu comisión",
+      "description": "Gana una comisión del 10 % en todas las recompensas de encuestas que tus referidos ganen — de por vida. No te preocupes, sus ganancias se mantienen — ¡tus recompensas corren de nuestra cuenta!"
+    }
+  },
+  "redeem": {
+    "bonus_code": "Código de bono",
+    "enter_code": "Introduce tu código",
+    "redeem_code": "Canjear código",
+    "heading": {
+      "subtitle": "Canjea tu código de bono para obtener una oferta especial.",
+      "title": "Canjear código de bono"
+    }
+  }
+}

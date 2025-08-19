@@ -17,10 +17,10 @@ export class OfferLinkComponent extends BaseComponent implements OnInit {
 
     async ngOnInit() {
         const target = this.route.snapshot.queryParamMap.get('target');
-
         if (target) {
-            await this.logUserActivity("Offer", "offerLink", "Click", target);
-            if (this.win) this.win.location.href = target;
+            const decoded = decodeURIComponent(target);
+            await this.logUserActivity("Offer", "offerLink", "Click", decoded);
+            if (this.win) this.win.location.href = decoded;
         } else {
             // fallback
             this.router.navigate(['/app']);

@@ -69,6 +69,11 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'survey', pathMatch: 'full' },
       {
+        path: 'earn',
+        loadChildren: () =>
+          import('./components/home/earn/earn.route').then((m) => m.EarnRoutes),
+      },
+      {
         path: 'survey',
         loadChildren: () =>
           import('./components/home/survey/survey.route').then((m) => m.SurveyRoutes),

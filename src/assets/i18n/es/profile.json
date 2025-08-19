@@ -1,0 +1,40 @@
+{
+    "account": {
+        "heading": {
+            "title": "¿Necesitas ayuda con Profit Piller?",
+            "intro": "Estamos aquí para que tu experiencia sea fluida. Ya sea que necesites ayuda con encuestas, canjes o recompensas, nuestro equipo de soporte te respalda."
+        },
+        "hey_text": "Hola",
+        "earning_text": "Ganancias",
+        "profile": "Perfil",
+        "recent_activity": "Actividad reciente",
+        "setting": "Configuración de la cuenta",
+        "log_out": "Cerrar sesión",
+        "profile_slogen": "Tu perfil es más que simples detalles: es la puerta de entrada a mayores ganancias, coincidencias más rápidas y mejores oportunidades.",
+        "age": "Edad",
+        "gender": "Género",
+        "zip_code": "Código postal",
+        "dateOfBirth": "Fecha de nacimiento",
+        "personal_details": "Datos personales",
+        "Activity": "Actividad",
+        "Points Earned": "Puntos ganados",
+        "Rewards Redeemed": "Recompensas canjeadas",
+        "Survey Completed": "Encuesta completada",
+        "Offer Completed": "Oferta completada",
+        "Achievements Earned": "Logros obtenidos",
+        "Leaderboard Level": "Nivel de la tabla de clasificación",
+        "headings": {
+            "activity_log": "Registro de actividad",
+            "survey_log": "Actividades de la encuesta",
+            "account_setting": "Configuración de la cuenta",
+            "change_basic_setting": "Cambiar información básica",
+            "change_username": "Cambiar nombre de usuario",
+            "change_password": "Cambiar contraseña",
+            "change_email": "Cambiar correo electrónico",
+            "delete_account": "Eliminar cuenta",
+            "reward_transaction": "Recompensas y transacciones",
+            "notification": "Notificaciones",
+            "help_support": "Ayuda y soporte"
+        }
+    }
+}

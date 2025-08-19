@@ -1,0 +1,37 @@
+{
+  "refer": {
+    "heading": {
+      "subtitle": "Partagez votre lien et obtenez une commission à vie de 10 % sur les gains de vos amis.",
+      "title": "Boostez vos gains — Parrainez et gagnez !"
+    },
+    "title": "Comment ça marche",
+    "Earned": "Gagné",
+    "CopyCode": "Copier le code",
+    "uselink": "Utiliser le lien à la place",
+    "referrallink": "Lien de parrainage",
+    "your_referrallink": "Votre lien de parrainage",
+    "instruction": "Vous ne pouvez avoir qu'un seul compte et vous ne pouvez pas vous parrainer vous-même !",
+    "copy_link": "Copier le lien",
+    "step1": {
+      "title": "Invitez vos amis",
+      "description": "Parlez de ProfitPiller à vos amis et partagez votre lien de parrainage sur les réseaux sociaux, les chats ou n'importe où vous le souhaitez."
+    },
+    "step2": {
+      "title": "Partagez votre code bonus",
+      "description": "Lorsque de nouveaux utilisateurs utilisent votre code bonus dans les 24 heures suivant leur inscription, ils deviennent votre parrainage et bénéficient d'un bonus de 10 % pendant leurs premières 24 heures."
+    },
+    "step3": {
+      "title": "Recevez votre commission",
+      "description": "Gagnez une commission de 10 % sur toutes les récompenses d'enquête que vos parrainages gagnent — à vie. Ne vous inquiétez pas, leurs gains restent les mêmes — vos récompenses sont pour nous !"
+    }
+  },
+  "redeem": {
+    "bonus_code": "Code bonus",
+    "enter_code": "Entrez votre code",
+    "redeem_code": "Utiliser le code",
+    "heading": {
+      "subtitle": "Utilisez votre code bonus pour obtenir une offre spéciale.",
+      "title": "Utiliser le code bonus"
+    }
+  }
+}

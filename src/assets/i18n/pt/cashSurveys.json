@@ -1,0 +1,51 @@
+{
+    "cashSurveys": {
+        "banner": {
+            "title": "Seja Pago em Dinheiro por Suas Opiniões",
+            "subtitle": "Quer uma maneira simples de ganhar dinheiro extra no seu tempo livre? Compartilhe seus pensamentos e seja pago diretamente em dinheiro por cada pesquisa que completar.",
+            "description1": "Seja para planejar algo especial ou precisar de um rápido impulso de dinheiro, completar pesquisas por dinheiro é uma maneira inteligente de atingir seus objetivos.",
+            "description2": "Seja para planejar algo especial ou apenas para um rápido reforço de dinheiro, seja recompensado com dinheiro real ao compartilhar suas opiniões.",
+            "signUpButton": "Cadastre-se agora",
+            "signUpNote": "Comece sua primeira pesquisa paga em dinheiro com a Profitpiller hoje."
+        },
+        "section1": {
+            "subtitle": "Pesquisas Rápidas, Dinheiro Instantâneo",
+            "title": "Saque em Dinheiro por Cada Pesquisa que Você Completar",
+            "description1": "Pesquisas reais. Opiniões reais. Dinheiro real na sua conta.",
+            "description2": "As empresas querem seu feedback – e estão dispostas a pagar em dinheiro para obtê-lo. Com a Profitpiller, você pode ganhar dinheiro real por seu tempo e contribuições sobre preferências de marca, ideias de produtos ou hábitos diários.",
+            "description3": "Conectamos você com provedores de pesquisa que pagam mais e que valorizam suas percepções. Complete pesquisas à sua conveniência e saque quando estiver pronto.",
+            "description4": "Sem enrolação, sem pontos – apenas recompensas diretas em dinheiro por compartilhar o que você pensa."
+        },
+        "features": {
+            "subtitle": "Maximize seu Tempo Livre",
+            "title": "Transforme Opiniões em Dinheiro Instantâneo",
+            "description": "Inicie sua primeira pesquisa em dinheiro agora e saque em apenas <span>17 minutos.</span>",
+            "step1": {
+                "label": "Passo 1",
+                "title": "Crie sua conta na Profitpiller para reivindicar seu Bônus de Boas-Vindas e desbloquear o acesso a pesquisas em dinheiro."
+            },
+            "step2": {
+                "label": "Passo 2",
+                "title": "Escolha as pesquisas que pagam mais em dinheiro e complete-as no seu próprio horário.",
+                "description": "Faça quantas pesquisas quiser diariamente – quanto mais você fizer, mais dinheiro você ganha."
+            },
+            "step3": {
+                "label": "Passo 3",
+                "title": "Pronto para sacar? Resgate seus ganhos para o PayPal ou cartões-presente instantaneamente.",
+                "description": "Seja dinheiro real ou gastar em seu varejista favorito, a escolha é sua."
+            }
+        },
+        "rewardsGrid": {
+            "paypalWithdraw": "Saque seu Dinheiro com o PayPal",
+            "amazonPaid": "Seja Pago via Cartões-Presente da Amazon"
+        },
+        "support": {
+            "title": "Junte-se à Profitpiller e Seja Pago em Dinheiro por Pesquisas",
+            "description": "Leva apenas um minuto para se cadastrar – comece a ser pago em dinheiro real hoje por cada pesquisa que você completar.",
+            "joinNow": "Junte-se agora"
+        }
+    },
+    "common": {
+        "learnMore": "Saiba mais"
+    }
+}

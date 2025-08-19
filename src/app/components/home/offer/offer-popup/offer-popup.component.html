@@ -2,8 +2,8 @@
     <div class="dialog-header">
         <span class="title">{{ offer.offerName }}</span>
         <button mat-icon-button mat-dialog-close>
-      <mat-icon>close</mat-icon>
-    </button>
+            <mat-icon>close</mat-icon>
+        </button>
     </div>
 
     <!-- <div class="d-flex align-items-center justify-content-between m-b-16">
@@ -17,7 +17,17 @@
     <div class="offer-header">
         <div class="offer-image-container">
             <img [src]="offer.imageUrl" alt="{{ offer.offerName }}" />
-            <mat-icon class="platform-icon">apple</mat-icon>
+            <div class="platform-icon">
+                @if(offer?.device?.includes('All') || offer?.device?.includes('Desktop')) {
+                <mat-icon>apple</mat-icon>
+                <mat-icon>android</mat-icon>
+                } @else{ @if(offer?.device?.includes('IOS')) {
+                <mat-icon>apple</mat-icon>
+                } @if(offer?.device?.includes('Android')) {
+                <mat-icon>android</mat-icon>
+                } }
+
+            </div>
         </div>
 
         <div class="offer-summary">
@@ -29,7 +39,7 @@
                     </div>
                 </div>
             </div>
-            <div class="description">{{ offer.description }}</div>
+            <div class="description">{{ offer.providerName }}</div>
 
         </div>
 
@@ -45,25 +55,29 @@
         </mat-card>
     </div>
 
-
-    <h3 class="rewards-heading">Requirements</h3>
+    <h3 class="rewards-heading">Description</h3>
     <div class="rewards-list">
+        <span class="reward-desc">{{ offer.description }}</span>
+    </div>
+
+    <h3 class="rewards-heading" *ngIf="!!offer.requirements">Requirements</h3>
+    <div class="rewards-list" *ngIf="!!offer.requirements">
         <span class="reward-desc">{{ offer.requirements }}</span>
     </div>
 
-    <h3 class="rewards-heading">Confirmation Time</h3>
-    <div class="rewards-list">
+    <h3 class="rewards-heading" *ngIf="!!offer.confirmationTime">Confirmation Time</h3>
+    <div class="rewards-list" *ngIf="!!offer.confirmationTime">
         <span class="reward-desc">{{ offer.confirmationTime }}</span>
     </div>
 
-    <h3 class="rewards-heading">Expired On</h3>
-    <div class="rewards-list">
+    <h3 class="rewards-heading" *ngIf="!!offer.expireTime">Expired On</h3>
+    <div class="rewards-list" *ngIf="!!offer.expireTime">
         <span class="reward-desc">{{ offer.expireTime | date:'dd-MM-yyyy HH:MM:SS' }}</span>
     </div>
 </mat-dialog-content>
 
 <mat-dialog-actions align="end" class="footer">
     <button mat-flat-button color="primary" class="earn-button btn-theme" (click)="earn()">
-    Earn {{ offer.points }} Points
-  </button>
+        Earn {{ offer.points }} Points
+    </button>
 </mat-dialog-actions>

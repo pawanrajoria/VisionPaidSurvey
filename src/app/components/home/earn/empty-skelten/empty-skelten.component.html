@@ -1,0 +1,14 @@
+<!-- <h5 class="text-center" *ngIf="hasData==false">{{'NoRecord' | translate}}</h5> -->
+<div class="loading-effect row survey-list g-0" style="flex-wrap: nowrap;">
+    <div class="col" *ngFor="let skeleton of skeletonCards">
+        <div [class]="skeleton.class">
+            <div class="survey-header-skeleton">
+                <div class="survey-image-skeleton"></div>
+            </div>
+            <div class="survey-footer-skeleton">
+                <span class="survey-price-skeleton"></span>
+                <span class="survey-btn-skeleton"></span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,132 @@
+{
+  "termsConditions": {
+    "heading": {
+      "title": "条款与条件 / 使用条款",
+      "effectiveDate": "生效日期：2025年5月6日"
+    },
+    "applicability": {
+      "title": "适用性",
+      "paragraph1": "Profitpiller（“平台”）是由 Cralpk Research Pvt. Ltd. 运营和拥有的数字市场研究平台。",
+      "paragraph2": "作为平台成员，您受邀参与市场研究调查和相关的参与活动。",
+      "paragraph3": "Profitpiller 可自行决定随时修订、更新或删除这些条款和/或我们的隐私政策的部分内容。您有责任定期审查这些条款以保持知情。上述日期反映了最新更新。",
+      "paragraph4": "有关我们如何管理您的数据的详细信息，请参阅我们的隐私政策。",
+      "paragraph5": "这些条款代表您与 Profitpiller 之间具有约束力的法律合同。通过注册、访问或使用我们的服务，您确认您同意这些条款。",
+      "paragraph6": "本协议包括一项集体诉讼豁免。如果您不同意这些条款的任何部分，请不要使用这些服务。"
+    },
+    "eligibility": {
+      "title": "资格",
+      "paragraph1": "会员资格仅适用于年满 18 周岁或在其所在国家或地区达到法定年龄的个人（非组织或法人实体）。",
+      "paragraph2": "平台参与仅供个人、非商业用途。每人只允许一个账户。",
+      "paragraph3": "Profitpiller 保留随时以任何理由或无理由拒绝向任何人提供服务的权利。"
+    },
+    "panelRegistration": {
+      "title": "平台注册",
+      "paragraph1": "要加入平台并获得任何硬币，您必须准确填写注册表并提供有效的电子邮件和密码。",
+      "paragraph2": "您同意保持您的账户信息准确和最新。未能这样做可能导致您的账户被暂停或终止，并损失累积的硬币。",
+      "paragraph3": "您作为独立承包商参与平台。本协议不构成任何雇佣、合伙或代理关系。"
+    },
+    "rewards": {
+      "title": "奖励",
+      "coinsDefinition": {
+        "subtitle": "硬币定义",
+        "description": "Profitpiller 奖励名为“硬币”的数字积分，可根据特定条款兑换现金或其他奖励。"
+      },
+      "earningCoins": {
+        "subtitle": "赚取硬币",
+        "description1": "硬币因注册、完成您的个人资料和完成调查等批准的活动而获得。大多数调查都需要资格。您将不会因被取消资格的调查而获得硬币。",
+        "listTitle": "您可以通过以下方式赚取硬币：",
+        "point1": "欢迎奖金 – 注册后的一次性奖金。",
+        "point2": "完成调查 – 根据每个合格和完成的调查授予硬币。",
+        "point3": "调查尝试 – 有时，即使您未完成调查，也可能会获得部分积分。",
+        "point4": "推荐 – 当被推荐的用户使用您的推荐链接加入和参与时，您将获得硬币。",
+        "description2": "您有责任监控您的硬币余额。争议必须在 30 天内报告。Profitpiller 将进行调查并通知您结果。"
+      },
+      "redeemingCoins": {
+        "subtitle": "兑换硬币",
+        "description1": "您可以从您的平台仪表板兑换硬币。100 枚硬币 = 1.00 美元或等值。硬币也可以兑换礼品卡。",
+        "description2": "礼品卡将发送到您注册的电子邮件地址。必须在发行后 3 个月内报告交付问题。",
+        "description3": "通过 PayPal、UPI 或银行转账付款需要有效的账户详细信息。您有责任保持此信息最新。",
+        "description4": "处理时间可能从 10 分钟到两周不等。由于法律合规性，兑换要求可能会发生变化。"
+      },
+      "taxResponsibility": {
+        "subtitle": "税务责任",
+        "description": "硬币和奖励可能需要纳税。您有责任遵守您所在司法管辖区的税收法规。"
+      },
+      "expirationOfCoins": {
+        "subtitle": "硬币过期",
+        "description": "硬币自赚取之日起 12 个月后过期。删除您的账户也将导致任何未使用的硬币丢失。"
+      },
+      "fraudAccountAdjustments": {
+        "subtitle": "欺诈和账户调整",
+        "description1": "Profitpiller 监控账户活动。欺诈或滥用行为可能导致账户终止和奖励没收。硬币分配中的任何系统错误将由 Profitpiller 自行决定纠正。",
+        "description2": "<strong>可转让性</strong>：硬币在平台之外不具有货币价值，不能转让、质押或继承。"
+      }
+    },
+    "prohibitedActivities": {
+      "title": "禁止活动",
+      "intro": "您同意不：",
+      "point1": "使用机器人、爬虫或未经授权的自动化工具",
+      "point2": "在调查中提交不准确、虚假或相同的答案",
+      "point3": "在您注册的国家/地区之外访问您的账户",
+      "point4": "拥有多个账户",
+      "point5": "使用代理、VPN 或位置伪装服务",
+      "point6": "使用平台违反当地、国家或国际法律",
+      "point7": "滥用或冒充他人，包括员工或会员",
+      "point8": "重新发布、转售或分享机密内容",
+      "conclusion": "违规行为可能导致账户立即终止并损失所有奖励。"
+    },
+    "restrictedContent": {
+      "title": "受限内容",
+      "description": "您在参与 Profitpiller 时可能会访问专有信息。此内容受知识产权法保护。未经书面同意，您不得复制、修改、分发或逆向工程此类内容。"
+    },
+    "emailCommunication": {
+      "title": "电子邮件通信",
+      "description": "我们发送重要和促销电子邮件。您可以通过退订链接或在账户设置中选择退出营销电子邮件。但是，交易性电子邮件（例如，账户活动）仍将发送。要停止所有电子邮件，您必须删除您的账户。"
+    },
+    "cancelingAccount": {
+      "title": "取消您的账户",
+      "description1": "要取消，请转到“设置”并选择“删除账户”。删除后，您的硬币将永久丢失，您的访问权限将被撤销。",
+      "description2": "Profitpiller 可能会停用或暂停不活跃账户（12 个月不活跃）或如果电子邮件反复退回。"
+    },
+    "disclaimer": {
+      "title": "免责声明",
+      "description": "您使用 Profitpiller 的风险自负。我们不保证平台的运营或准确性超出明确声明的范围。"
+    },
+    "limitationsOfLiability": {
+      "title": "责任限制",
+      "description": "在法律允许的最大范围内，Profitpiller 不对间接或后果性损害负责。最高责任限于未兑换硬币或适用奖励的实际价值。"
+    },
+    "indemnification": {
+      "title": "赔偿",
+      "description": "您同意使 Profitpiller、其关联公司和代表免受因您使用平台而产生的任何法律索赔的损害，包括律师费。"
+    },
+    "notices": {
+      "title": "通知",
+      "description": "我们可能会通过电子邮件或您的账户仪表板通知您。您有责任保持您的联系信息最新。您可以通过我们网站上列出的电子邮件与我们联系。"
+    },
+    "arbitration": {
+      "title": "仲裁",
+      "description": "争议将通过在特拉华州的具有约束力的仲裁解决，除非法律另有规定。您放弃陪审团审判或集体诉讼的权利。仲裁规则遵循《联邦仲裁法》。"
+    },
+    "classActionWaiver": {
+      "title": "集体诉讼豁免",
+      "description1": "任何法律索赔必须单独提起。您放弃参与任何集体诉讼的权利。您可以在首次使用网站后的 30 天内通过联系 privacy@profitpiller.com 选择退出。",
+      "address1": "Profitpiller",
+      "address2": "8 The Green Ste R",
+      "address3": "Dover, DE 19902",
+      "address4": "USA"
+    },
+    "severability": {
+      "title": "可分割性",
+      "description": "如果这些条款中的任何规定被视为无效或不可执行，其余规定将继续完全有效。"
+    },
+    "jurisdiction": {
+      "title": "管辖权",
+      "description": "这些条款受美国特拉华州法律管辖。所有争议必须在位于特拉华州的法院提起。"
+    },
+    "miscellaneousTerms": {
+      "title": "杂项条款",
+      "description": "章节标题仅供参考。Profitpiller 未能执行任何规定不构成对其权利的放弃。这些条款和任何引用的政策构成您与 Profitpiller 之间的完整协议。"
+    }
+  }
+}

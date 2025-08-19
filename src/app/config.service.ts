@@ -16,7 +16,7 @@ export class ConfigService {
     }
 
     get baseUrl() {
-        return this.configs?.BaseUrl;
+        return this.configs?.BaseUrl  || "https://apicrtool.azurewebsites.net/api/";
     }
 
     get appUrl() {

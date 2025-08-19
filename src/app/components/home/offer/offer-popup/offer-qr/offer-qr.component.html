@@ -18,16 +18,41 @@
 
     <div class="device-info">
         Available Devices
-        <div><mat-icon fontIcon="apple" class="device-icon"></mat-icon></div>
+        <div class="platform-icon">
+            @if(offer?.device?.includes('All') || offer?.device?.includes('Desktop')) {
+            <mat-icon>apple</mat-icon>
+            <mat-icon>android</mat-icon>
+            } @else{ @if(offer?.device?.includes('IOS')) {
+            <mat-icon>apple</mat-icon>
+            } @if(offer?.device?.includes('Android')) {
+            <mat-icon>android</mat-icon>
+            } }
+
+        </div>
+        <!-- <div><mat-icon fontIcon="apple" class="device-icon"></mat-icon></div> -->
+    </div>
+
+    <div class="app-footer">
+        <img [src]="offer.imageUrl" alt="{{ offer.offerName }}" class="app-icon" />
+        <div class="app-details">
+            <div class="app-name">{{ offer.offerName }}
+                <span class="points-value text-right">{{ offer.points }}</span> Points
+            </div>
+            <div class="app-desc">{{ offer.description }}</div>
+        </div>
     </div>
 </div>
 
-<div mat-dialog-actions class="app-footer">
-    <img [src]="offer.imageUrl" alt="{{ offer.offerName }}" class="app-icon" />
-    <div class="app-details">
-        <div class="app-name">{{ offer.offerName }}
-            <span class="points-value text-right">{{ offer.points }}</span> Points
-        </div>
-        <div class="app-desc">{{ offer.description }}</div>
+<div class="alt-url-box" mat-dialog-actions>
+    <mat-icon class="info-icon">info</mat-icon>
+    <span>Alternatively, copy the URL into your mobile browser</span>
+
+    <div class="link" title="{{ offer.clickUrl }}">
+        <a [href]="offer.clickUrl" target="_blank">{{ offer.clickUrl | slice:0:30 }}...</a>
+    </div>
+
+    <div class="copy-container">
+        <input type="text" [value]="offer.clickUrl" readonly>
+        <button mat-raised-button color="primary" (click)="copyToClipboard(offer.clickUrl)">Copy</button>
     </div>
 </div>

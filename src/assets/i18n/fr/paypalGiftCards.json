@@ -1,45 +1,42 @@
 {
   "paypalGiftCards": {
     "banner": {
-      "title": "Gagnez des cartes cadeaux PayPal avec des sondages rapides",
+      "title": "Gagnez des cartes-cadeaux PayPal avec des sondages rapides",
       "subtitle": "Vous aimez utiliser PayPal pour vos achats en ligne ? Commencez à économiser davantage sur chaque achat.",
-      "description": "Rejoignez Profitpiller et soyez récompensé pour vos opinions ! Répondez à des sondages rapides et engageants sur des sujets quotidiens — des marques que vous connaissez aux produits que vous aimez — et gagnez des cartes cadeaux PayPal en retour. C'est simple, sécurisé et 100 % gratuit.",
+      "description": "Rejoignez Profitpiller et soyez récompensé pour vos opinions ! Répondez à des sondages rapides et intéressants sur des sujets du quotidien, des marques que vous connaissez aux produits que vous aimez, et gagnez des cartes-cadeaux PayPal en retour. C'est simple, sécurisé et 100% gratuit.",
       "startButton": "Commencer maintenant",
       "startNote": "Complétez votre premier sondage et commencez à gagner instantanément."
     },
     "section1": {
       "subtitle": "Récompenses instantanées, valeur réelle",
-      "title": "Soyez payé via PayPal — simplement en partageant vos pensées",
-      "description1": "Que vous fassiez des achats en ligne ou que vous souteniez des vendeurs locaux, Profitpiller vous aide à gagner de l'argent réel grâce aux cartes cadeaux PayPal — plus rapidement que vous ne l'imaginez.",
-      "description2": "Échangez vos récompenses facilement, sans expiration ni minimum de retrait requis. Économisez pour de grandes réductions ou utilisez vos cartes cadeaux pour de petits achats — c'est entièrement à vous de décider.",
+      "title": "Soyez payé via PayPal — simplement en partageant vos opinions",
+      "description1": "Que vous fassiez des achats en ligne ou que vous souteniez des vendeurs locaux, Profitpiller vous aide à gagner de l'argent réel grâce aux cartes-cadeaux PayPal — plus rapidement que vous ne le pensez.",
+      "description2": "Échangez vos récompenses facilement, sans expiration ni minimum de retrait requis. Économisez pour de grosses réductions ou utilisez vos cartes-cadeaux pour de petits achats — c'est entièrement à vous de décider.",
       "description3": "Des vêtements et de l'électronique aux plats à emporter et aux services, Profitpiller vous permet d'utiliser vos récompenses PayPal comme bon vous semble.",
       "description4": "Inscrivez-vous et encaissez en aussi peu que 17 minutes. Commencez à gagner des récompenses PayPal dès votre premier sondage — uniquement avec Profitpiller."
     },
     "features": {
-      "subtitle": "Faites en sorte que chaque minute compte",
+      "subtitle": "Chaque minute compte",
       "title": "Complétez des sondages, gagnez des récompenses PayPal instantanément",
-      "description": "Profitpiller facilite l'obtention de récompenses numériques tout en aidant les grandes marques à s'améliorer. Vos commentaires comptent — et ils rapportent. Participez à des sondages à tout moment depuis chez vous, votre téléphone ou où que vous soyez.",
+      "description": "Profitpiller vous permet de gagner facilement des récompenses numériques tout en aidant les grandes marques à s'améliorer. Votre avis compte, et il rapporte. Participez à des sondages à tout moment, depuis chez vous, votre téléphone, ou n'importe où.",
       "step1": {
         "label": "Étape 1",
-        "title": "Créez votre compte Profitpiller gratuit et choisissez un sondage qui vous convient."
+        "title": "Créez votre compte Profitpiller gratuit et choisissez un sondage qui vous correspond."
       },
       "step2": {
         "label": "Étape 2",
         "title": "Gagnez des points pour chaque sondage complété — échangez-les à tout moment.",
-        "description": "Échangez vos points contre des cartes cadeaux PayPal instantanément. Vous préférez les récompenses Amazon ou Visa ? Nous les avons aussi. Avec Profitpiller, vous choisissez comment être récompensé."
+        "description": "Échangez instantanément vos points contre des cartes-cadeaux PayPal. Vous préférez des récompenses Amazon ou Visa ? Nous les avons aussi. Avec Profitpiller, c'est vous qui choisissez comment être récompensé."
       }
     },
     "rewardsGrid": {
-      "paypalSurveys": "Sondages pour cartes cadeaux PayPal",
-      "amazonSurveys": "Sondages pour cartes cadeaux Amazon"
+      "paypalSurveys": "Sondages pour les cartes-cadeaux PayPal",
+      "amazonSurveys": "Sondages pour les cartes-cadeaux Amazon"
     },
     "support": {
-      "title": "Commencez à gagner des récompenses PayPal dès aujourd'hui avec Profitpiller",
-      "description": "Inscrivez-vous maintenant et transformez votre temps libre en de vraies récompenses en espèces. C'est rapide, gratuit et facile à commencer. Partagez vos pensées, complétez des sondages et soyez payé via PayPal — uniquement sur Profitpiller.",
-      "joinNow": "Adhérer maintenant"
+      "title": "Commencez à gagner des récompenses PayPal aujourd'hui avec Profitpiller",
+      "description": "Inscrivez-vous maintenant et transformez votre temps libre en argent comptant réel. C'est rapide, gratuit et facile de commencer. Partagez vos opinions, complétez des sondages et soyez payé via PayPal — uniquement sur Profitpiller.",
+      "joinNow": "S'inscrire maintenant"
     }
-  },
-  "common": {
-    "arrowForward": "arrow_forward"
   }
 }

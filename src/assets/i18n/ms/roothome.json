@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "title": "Wang Tunai Mudah untuk Pendapat Harian!",
+    "description": "Pendapat anda membantu jenama bertambah baik — dan mereka bersedia untuk membayarnya. Jawab tinjauan, selesaikan tawaran mudah, dan dapatkan ganjaran sebenar tanpa usaha.",
+    "offer1": {
+      "title": "Dapatkan ${{amount}} untuk Pendapat Anda — Tiada Pengalaman Diperlukan!",
+      "subtitle": "{{surveys}} tinjauan menunggu anda."
+    },
+    "offer2": {
+      "title": "${{amount}} diperoleh semalam oleh pengguna purata",
+      "subtitle": "Anda boleh menjadi yang seterusnya! Tunai keluar dari ${{minPayout}}"
+    },
+    "login": {
+      "title": "Dapatkan Wang Tunai dengan Berkongsi Pendapat Anda",
+      "signIn": "Log Masuk ke Akaun Anda",
+      "emailLabel": "ID E-mel",
+      "emailPlaceholder": "ID E-mel",
+      "passwordLabel": "Kata Laluan",
+      "continueButton": "Teruskan",
+      "orLoginWith": "Atau Log Masuk Dengan",
+      "googleButton": "Google"
+    },
+    "loggedIn": {
+      "title": "Dapatkan Wang Tunai dengan Berkongsi Pendapat Anda",
+      "message": "Anda sudah log masuk",
+      "goToAppButton": "Pergi ke aplikasi"
+    }
+  },
+  "brandStrip": {
+    "description": "Dengan berkongsi pendapat anda tentang topik tren, jenama pembersihan yang dipercayai, atau rancangan kegemaran anda, anda boleh mengubah pendapat menjadi pendapatan dengan aplikasi tinjauan dan tawaran Profit Piller."
+  },
+  "choose": {
+    "title": "Ada pendapat? Ubah ia menjadi wang-betul-betul di sini.",
+    "description": "Jawab tinjauan yang menarik di Profit Piller dan keluarkan pendapatan anda serta-merta — sebagai wang tunai atau kad hadiah.",
+    "step1": {
+      "title": "Daftar",
+      "subtitle": "Sertai Sekarang – Ia Percuma"
+    },
+    "step2": {
+      "title": "Lengkapkan Tinjauan dan Buka Kunci Tawaran",
+      "subtitle": "Pilih mana-mana tinjauan atau tawaran untuk mula mendapatkan ganjaran."
+    },
+    "step3": {
+      "title": "Tunai Keluar Sekarang",
+      "subtitle": "Tunai keluar atau pilih daripada 1000+ ganjaran yang menarik."
+    }
+  },
+  "rewards": {
+    "banner": {
+      "title": "Pilih kegemaran anda daripada 1000+ ganjaran",
+      "description": "Dapatkan bayaran melalui PayPal atau pilih daripada pelbagai jenis <br>kad hadiah."
+    }
+  },
+  "howItWorks": {
+    "title": "Dapatkan wang secara dalam talian dengan tinjauan dan tawaran – tersedia di <span class=\"highlight f-w-900\">seluruh dunia.</span>",
+    "subtitle": "Jawab tinjauan yang menarik, dapatkan ganjaran dengan pantas. Tunai keluar atau tebus kad hadiah dengan segera dengan Profit Piller.",
+    "playGames": {
+      "title": "Main permainan",
+      "subtitle": "Dapatkan per permainan",
+      "price": "$0.80 - $100"
+    },
+    "takeSurveys": {
+      "title": "Ambil tinjauan",
+      "subtitle": "Dapatkan per tinjauan 2-10 min",
+      "price": "$1.80 - $100"
+    },
+    "completeOffers": {
+      "title": "Selesaikan tawaran",
+      "subtitle": "Dapatkan per aplikasi",
+      "price": "$1.80 - $100"
+    }
+  },
+  "landing": {
+    "title": "Aplikasi Tinjauan dan Tawaran Dalam Talian dengan Pembayaran Pantas & Pengeluaran Minimum Rendah",
+    "subtitle": "Setiap tinjauan dan tawaran yang anda selesaikan boleh meletakkan wang di dalam poket anda — bayangkan!",
+    "valueTime": {
+      "title": "Kami menghargai masa anda — dan di <span class=\"highlight\">Profit Piller</span>, kami memberikannya ganjaran.",
+      "description": "Dengan pembayaran minimum kami yang rendah, anda boleh mengeluarkan wang pada hari yang sama — tanpa menunggu. Ganjaran anda, cara anda."
+    },
+    "infoBadge": "Secara purata, ia hanya mengambil masa {{minutes}} minit untuk mendapatkan pembayaran pertama anda!",
+    "step1": {
+      "strong": "Mulakan dengan mendaftar, kemudian pilih tinjauan berbayar dan tawaran yang anda ingin ambil.",
+      "paragraph": "Dengan ratusan tinjauan dan tawaran yang tersedia, anda boleh mendapatkan wang dengan bermain permainan, berkongsi apa yang anda beli, atau bercakap tentang pasukan yang anda suka."
+    },
+    "step2": {
+      "strong": "Dapatkan mata setiap kali anda melengkapkan tinjauan — semudah itu!",
+      "paragraph": "Lawati halaman ganjaran untuk menukar mata anda menjadi wang tunai atau kad hadiah."
+    }
+  },
+  "rewardsGrid": {
+    "paypal": {
+      "description": "Tebus Mata untuk Kad Hadiah PayPal"
+    },
+    "amazon": {
+      "description": "Tebus untuk Kad Hadiah Amazon"
+    },
+    "visa": {
+      "description": "Atau hanya keluarkan wang tunai — terpulang kepada anda."
+    }
+  },
+  "common": {
+    "learnMore": "Ketahui Lebih Lanjut"
+  }
+}

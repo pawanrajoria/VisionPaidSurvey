@@ -1,0 +1,51 @@
+{
+    "cashSurveys": {
+        "banner": {
+            "title": "Dapatkan Bayaran Tunai untuk Pendapat Anda",
+            "subtitle": "Ingin cara mudah untuk mendapatkan wang tunai tambahan pada masa lapang anda? Kongsi pendapat anda dan dapatkan bayaran terus dalam bentuk tunai untuk setiap tinjauan yang anda lengkapkan.",
+            "description1": "Sama ada anda merancang sesuatu yang istimewa atau memerlukan rangsangan tunai yang cepat, melengkapkan tinjauan untuk mendapatkan wang tunai adalah cara yang bijak untuk mencapai matlamat anda.",
+            "description2": "Sama ada anda merancang sesuatu yang istimewa atau hanya mahu penambahan tunai yang cepat, dapatkan ganjaran dalam bentuk wang tunai sebenar dengan berkongsi pandangan anda.",
+            "signUpButton": "Daftar Sekarang",
+            "signUpNote": "Mulakan tinjauan tunai berbayar pertama anda dengan Profitpiller hari ini."
+        },
+        "section1": {
+            "subtitle": "Tinjauan Pantas, Tunai Segera",
+            "title": "Tebus Tunai untuk Setiap Tinjauan yang Anda Lengkapkan",
+            "description1": "Tinjauan sebenar. Pendapat sebenar. Tunai sebenar dalam akaun anda.",
+            "description2": "Syarikat mahukan maklum balas anda - dan mereka sanggup membayar tunai untuk mendapatkannya. Dengan Profitpiller, anda boleh mendapatkan wang sebenar untuk masa dan input anda mengenai pilihan jenama, idea produk atau tabiat harian.",
+            "description3": "Kami menghubungkan anda dengan penyedia tinjauan yang membayar tertinggi yang menghargai pandangan anda. Lengkapkan tinjauan mengikut keselesaan anda dan tebus tunai bila-bila masa anda bersedia.",
+            "description4": "Tiada omong kosong, tiada mata - hanya ganjaran tunai terus untuk berkongsi apa yang anda fikirkan."
+        },
+        "features": {
+            "subtitle": "Maksimakan Masa Lapang Anda",
+            "title": "Tukarkan Pendapat kepada Tunai Segera",
+            "description": "Mulakan tinjauan tunai pertama anda sekarang dan tebus tunai dalam masa <span>17 minit</span>.",
+            "step1": {
+                "label": "Langkah 1",
+                "title": "Buat akaun Profitpiller anda untuk menuntut Bonus Selamat Datang anda dan membuka akses kepada tinjauan tunai."
+            },
+            "step2": {
+                "label": "Langkah 2",
+                "title": "Pilih tinjauan yang membayar tunai paling banyak dan lengkapkannya mengikut jadual anda sendiri.",
+                "description": "Ambil seberapa banyak tinjauan yang anda mahu setiap hari - lebih banyak anda lakukan, lebih banyak wang tunai yang anda peroleh."
+            },
+            "step3": {
+                "label": "Langkah 3",
+                "title": "Bersedia untuk menebus tunai? Tebus pendapatan anda untuk PayPal atau kad hadiah dengan serta-merta.",
+                "description": "Sama ada wang tunai sebenar atau perbelanjaan di peruncit kegemaran anda, pilihan di tangan anda."
+            }
+        },
+        "rewardsGrid": {
+            "paypalWithdraw": "Keluarkan Tunai Anda dengan PayPal",
+            "amazonPaid": "Dapatkan Bayaran melalui Kad Hadiah Amazon"
+        },
+        "support": {
+            "title": "Sertai Profitpiller & Dapatkan Bayaran Tunai untuk Tinjauan",
+            "description": "Ia hanya mengambil masa seminit untuk mendaftar - mula dapatkan bayaran dalam bentuk wang tunai sebenar hari ini untuk setiap tinjauan yang anda lengkapkan.",
+            "joinNow": "Sertai Sekarang"
+        }
+    },
+    "common": {
+        "learnMore": "Ketahui Lebih Lanjut"
+    }
+}

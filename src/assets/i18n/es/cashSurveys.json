@@ -1,51 +1,51 @@
 {
     "cashSurveys": {
         "banner": {
-            "title": "Gana Dinero en Efectivo por tus Opiniones",
-            "subtitle": "¿Quieres una forma sencilla de ganar dinero extra en tu tiempo libre? Comparte tus pensamientos y recibe pagos directos en efectivo por cada encuesta que completes.",
-            "description1": "Ya sea que estés planeando algo especial o necesites un rápido impulso de efectivo, completar encuestas por dinero en efectivo es una forma inteligente de alcanzar tus metas.",
-            "description2": "Ya sea que estés planeando algo especial o simplemente quieras un rápido aumento de efectivo, obtén recompensas en dinero real compartiendo tus puntos de vista.",
-            "signUpButton": "Regístrate Ahora",
-            "signUpNote": "Comienza tu primera encuesta pagada en efectivo con Profitpiller hoy."
+            "title": "Cobra por tus opiniones",
+            "subtitle": "¿Quieres una forma sencilla de ganar dinero extra en tu tiempo libre? Comparte tus pensamientos y recibe un pago directo en efectivo por cada encuesta que completes.",
+            "description1": "Ya sea que estés planeando algo especial o necesites un rápido impulso de efectivo, completar encuestas por dinero es una forma inteligente de alcanzar tus metas.",
+            "description2": "Ya sea que estés planeando algo especial o simplemente quieras un rápido reabastecimiento de efectivo, obtén recompensas en dinero real al compartir tus puntos de vista.",
+            "signUpButton": "Regístrate ahora",
+            "signUpNote": "Empieza hoy tu primera encuesta pagada con Profitpiller."
         },
         "section1": {
-            "subtitle": "Encuestas Rápidas, Efectivo Instantáneo",
-            "title": "Cobra por Cada Encuesta que Completes",
+            "subtitle": "Encuestas rápidas, dinero instantáneo",
+            "title": "Cobra por cada encuesta que completes",
             "description1": "Encuestas reales. Opiniones reales. Dinero real en tu cuenta.",
-            "description2": "Las empresas quieren tus comentarios, y están dispuestas a pagar en efectivo para obtenerlos. Con Profitpiller, puedes ganar dinero real por tu tiempo y tus aportes sobre preferencias de marca, ideas de productos o hábitos diarios.",
+            "description2": "Las empresas quieren tu opinión y están dispuestas a pagar en efectivo para obtenerla. Con Profitpiller, puedes ganar dinero real por tu tiempo y aportes sobre preferencias de marca, ideas de productos o hábitos diarios.",
             "description3": "Te conectamos con los proveedores de encuestas mejor pagados que valoran tus conocimientos. Completa encuestas a tu conveniencia y cobra cuando estés listo.",
-            "description4": "Sin rodeos, sin puntos, solo recompensas directas en efectivo por compartir lo que piensas."
+            "description4": "Sin tonterías, sin puntos: solo recompensas directas en efectivo por compartir lo que piensas."
         },
         "features": {
-            "subtitle": "Maximiza tu Tiempo Libre",
-            "title": "Convierte Opiniones en Efectivo Instantáneo",
-            "description": "Comienza tu primera encuesta en efectivo ahora y cobra en tan solo <span>17 minutos.</span>",
+            "subtitle": "Maximiza tu tiempo libre",
+            "title": "Convierte opiniones en dinero instantáneo",
+            "description": "Inicia tu primera encuesta de pago ahora y cobra en tan solo <span>17 minutos.</span>",
             "step1": {
                 "label": "Paso 1",
-                "title": "Crea tu cuenta de Profitpiller para reclamar tu Bono de Bienvenida y desbloquear el acceso a encuestas en efectivo."
+                "title": "Crea tu cuenta de Profitpiller para reclamar tu bono de bienvenida y desbloquear el acceso a encuestas de pago."
             },
             "step2": {
                 "label": "Paso 2",
-                "title": "Elige las encuestas que paguen más en efectivo y complétalas según tu propio horario.",
-                "description": "Haz tantas encuestas como quieras al día; cuanto más hagas, más dinero en efectivo ganarás."
+                "title": "Elige las encuestas que paguen más en efectivo y complétalas en tu propio horario.",
+                "description": "Realiza tantas encuestas como quieras diariamente: cuanto más hagas, más dinero ganarás."
             },
             "step3": {
                 "label": "Paso 3",
                 "title": "¿Listo para cobrar? Canjea tus ganancias por PayPal o tarjetas de regalo al instante.",
-                "description": "Ya sea dinero real o gastos en tu minorista favorito, la elección es tuya."
+                "description": "Ya sea dinero real o gastar en tu minorista favorito, la elección es tuya."
             }
         },
         "rewardsGrid": {
-            "paypalWithdraw": "Retira tu Efectivo con PayPal",
-            "amazonPaid": "Recibe Pagos a través de Tarjetas de Regalo de Amazon"
+            "paypalWithdraw": "Retira tu dinero con PayPal",
+            "amazonPaid": "Recibe un pago a través de tarjetas de regalo de Amazon"
         },
         "support": {
-            "title": "Únete a Profitpiller y Recibe Pagos en Efectivo por Encuestas",
-            "description": "Solo toma un minuto registrarse; comienza a recibir pagos en dinero real hoy por cada encuesta que completes.",
-            "joinNow": "Únete Ahora"
+            "title": "Únete a Profitpiller y cobra por encuestas",
+            "description": "Solo toma un minuto registrarse: comienza a recibir pagos en dinero real hoy por cada encuesta que completes.",
+            "joinNow": "Únete ahora"
         }
     },
     "common": {
-        "learnMore": "Saber más"
+        "learnMore": "Aprende más"
     }
 }

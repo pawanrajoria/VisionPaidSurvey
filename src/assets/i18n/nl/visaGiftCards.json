@@ -1,0 +1,45 @@
+{
+  "visaGiftCards": {
+    "banner": {
+      "title": "Verdien Visa-cadeaubonnen voor het delen van je mening",
+      "subtitle": "Betaal je liever met Visa? Wil je beloningen verdienen die je bijna overal kunt uitgeven?",
+      "description": "Met Profitpiller kun je Visa-cadeaubonnen verdienen door simpelweg eenvoudige enquêtes in te vullen. Of je nu spaart voor een nieuwe gadget of je wekelijkse uitgaven wilt verlagen, Visa-cadeaubonbeloningen geven je de flexibiliteit om te besteden zoals jij wilt.",
+      "startButton": "Begin nu met verdienen",
+      "startNote": "Meld je vandaag nog aan en begin met het verdienen van Visa-beloningen met Profitpiller."
+    },
+    "section1": {
+      "subtitle": "Echte beloningen, snelle enquêtes",
+      "title": "Word direct beloond met Visa-cadeaubonnen",
+      "description1": "Visa-cadeaubonnen kunnen bijna overal worden gebruikt. Verdien de jouwe online en geniet van de vrijheid om in de winkel, online of overal ter wereld waar Visa wordt geaccepteerd, te winkelen.",
+      "description2": "Gebruik je Visa-beloning om je favoriete mode te betalen, een vakantie te boeken of zelfs dagelijkse benodigdheden te dekken. Of het nu gaat om boodschappen of gadgets, jij kiest hoe je je beloningen besteedt.",
+      "description3": "Beginnen is eenvoudig. Word lid van Profitpiller en vul snelle enquêtes in over je favoriete programma's, producten of recente aankopen. Jouw meningen helpen bedrijven te verbeteren - en jij wordt in ruil daarvoor beloond.",
+      "description4": "Meld je nu aan en claim je eerste Visa-cadeaubon door simpelweg je eerste enquête op Profitpiller in te vullen."
+    },
+    "features": {
+      "subtitle": "Verander je vrije tijd in cadeaubonnen",
+      "title": "Word betaald met Visa-cadeaubonnen voor elke enquête",
+      "description": "Word lid van Profitpiller en begin direct met verdienen. Het is helemaal gratis en de enquêtes zijn kort, eenvoudig en leuk. Wissel je punten in voor Visa-cadeaubonnen die bijna overal werken waar je winkelt.",
+      "step1": {
+        "label": "Stap 1",
+        "title": "Meld je aan voor je gratis Profitpiller-account en claim direct je welkomstbonus."
+      },
+      "step2": {
+        "label": "Stap 2",
+        "title": "Vul enquêtes in en zie je saldo groeien.",
+        "description": "Na slechts één enquête kun je je punten inwisselen voor een Visa-cadeaubon - of blijven verdienen voor grotere beloningen. Geniet van flexibele beloningsopties, waaronder Amazon-cadeaubonnen van $5 of PayPal-cadeaubonnen. Profitpiller maakt het gemakkelijk om te krijgen wat je wilt."
+      }
+    },
+    "rewardsGrid": {
+      "paypalSurveys": "Enquêtes voor PayPal-cadeaubonnen",
+      "amazonSurveys": "Enquêtes voor Amazon-cadeaubonnen"
+    },
+    "support": {
+      "title": "Begin direct met het verdienen van Visa-beloningen",
+      "description": "Word vandaag nog lid van Profitpiller en verander je feedback in echte waarde. Deel je mening, verdien punten en wissel Visa-cadeaubonnen in die je overal kunt gebruiken. Het is snel, veilig en altijd gratis om te beginnen.",
+      "joinNow": "Word nu lid"
+    }
+  },
+  "common": {
+    "arrowForward": "pijl naar voren"
+  }
+}

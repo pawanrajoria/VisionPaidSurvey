@@ -1,0 +1,47 @@
+{
+  "giftCardSurveys": {
+    "banner": {
+      "title": "Sondaggi che pagano con buoni regalo",
+      "subtitle": "Vuoi sbloccare la tua lista dei desideri di Amazon o risparmiare sul tuo prossimo ordine online?",
+      "description": "Completa sondaggi e guadagna buoni regalo per i tuoi rivenditori preferiti. Con Profitpiller, puoi trasformare il tuo tempo libero in ricompense reali da PayPal, Visa, Amazon e altro ancora.",
+      "startButton": "Inizia a guadagnare",
+      "startNote": "Crea il tuo account Profitpiller gratuito per iniziare a guadagnare buoni regalo ora."
+    },
+    "section1": {
+      "subtitle": "Sondaggi Semplici, Ricompense Istantanee",
+      "title": "Ottieni buoni regalo gratuiti condividendo le tue opinioni",
+      "description1": "Completa sondaggi veloci e riscatta buoni regalo da marchi popolari.",
+      "description2": "Il tuo feedback aiuta le aziende a migliorare e loro sono pronte a premiarti. Dalle abitudini quotidiane alle scelte di prodotto, le tue opinioni contano — e Profitpiller si assicura che tu sia ricompensato con buoni regalo che userai davvero.",
+      "description3": "Profitpiller ti connette a marchi reali che cercano risposte reali — e tu guadagni buoni regalo reali in cambio. È un vantaggio per tutti.",
+      "description4": "Nessuna registrazione complessa, nessuna soglia di pagamento minima, nessun sondaggio noioso. Unisciti a Profitpiller e inizia a guadagnare buoni regalo in pochi minuti — alcuni utenti ottengono la loro prima ricompensa in soli 17 minuti!",
+      "strongConclusion": "Inizia ora e scambia le tue risposte con <a routerLink=\"#\">buoni regalo gratuiti</a> istantaneamente!"
+    },
+    "features": {
+      "subtitle": "Il Tuo Tempo, Le Tue Ricompense",
+      "title": "Sondaggi Profitpiller che ti premiano con buoni regalo",
+      "description": "Unisciti a Profitpiller, completa i sondaggi e sblocca i buoni regalo dei tuoi negozi preferiti.",
+      "step1": {
+        "label": "Passaggio 1",
+        "title": "Crea il tuo account Profitpiller e preparati a guadagnare buoni regalo gratuiti completando i sondaggi."
+      },
+      "step2": {
+        "label": "Passaggio 2",
+        "title": "Scegli i sondaggi che più ti piacciono e guadagna punti per ogni risposta.",
+        "description": "Non c'è limite — più partecipi, più buoni regalo puoi guadagnare. Guarda il tuo saldo crescere con ogni sondaggio."
+      },
+      "step3": {
+        "label": "Passaggio 3",
+        "title": "Riscatta i tuoi punti per buoni regalo da Visa, Amazon, PayPal e altro ancora.",
+        "description": "Usa le tue ricompense come preferisci — spendi online, concediti un piccolo piacere o risparmiali per qualcosa di grande. Senza un minimo di incasso e con opzioni flessibili, Profitpiller ti mette al comando dei tuoi guadagni."
+      }
+    },
+    "support": {
+      "title": "Inizia a guadagnare buoni regalo con Profitpiller oggi stesso",
+      "description": "Non perdere l'occasione — crea il tuo account ora e trasforma la tua voce in veri buoni regalo. Rispondi a sondaggi veloci, condividi le tue opinioni e scegli la tua ricompensa tra decine di marchi popolari. È semplice, gratificante e totalmente gratuito.",
+      "joinNow": "Unisciti ora"
+    }
+  },
+  "common": {
+    "arrowForward": "arrow_forward"
+  }
+}

@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
 
         if (!self.isEmailValidCheck) {
             const response = await self.authService.loginbyemail({ email: self.loginForm.get('email')?.value });
-            if (!!response && response) {
+            if (!!response && response.isSuccess) {
                 self.isEmailValidCheck = true;
             }
             else {

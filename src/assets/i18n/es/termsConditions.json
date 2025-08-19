@@ -2,131 +2,131 @@
   "termsConditions": {
     "heading": {
       "title": "Términos y Condiciones / Términos de Uso",
-      "effectiveDate": "Fecha de Vigencia: 6 de mayo de 2025"
+      "effectiveDate": "Fecha de entrada en vigor: 6 de mayo de 2025"
     },
     "applicability": {
       "title": "Aplicabilidad",
       "paragraph1": "Profitpiller (el \"Panel\") es una plataforma de investigación de mercado digital operada y propiedad de Cralpk Research Pvt. Ltd.",
       "paragraph2": "Como miembro del panel, se le invita a participar en estudios de investigación de mercado y actividades de participación relacionadas.",
-      "paragraph3": "Partes de estos Términos y/o nuestra Política de Privacidad pueden ser modificadas, actualizadas o eliminadas en cualquier momento a discreción exclusiva de Profitpiller. Es su responsabilidad mantenerse informado revisando estos Términos periódicamente. La fecha anterior refleja la última actualización.",
+      "paragraph3": "Partes de estos Términos y/o nuestra Política de Privacidad pueden ser enmendadas, actualizadas o eliminadas en cualquier momento a la entera discreción de Profitpiller. Es su responsabilidad mantenerse informado revisando estos Términos periódicamente. La fecha anterior refleja la última actualización.",
       "paragraph4": "Para obtener detalles sobre cómo gestionamos sus datos, consulte nuestra Política de Privacidad.",
       "paragraph5": "Estos Términos representan un contrato legal vinculante entre usted y Profitpiller. Al registrarse, acceder o utilizar nuestros servicios, usted confirma su acuerdo con estos Términos.",
-      "paragraph6": "Este acuerdo incluye una renuncia a acciones colectivas. Si no está de acuerdo con alguna parte de estos términos, no utilice los servicios."
+      "paragraph6": "Este acuerdo incluye una renuncia a las demandas colectivas. Si no está de acuerdo con alguna parte de estos términos, no utilice los servicios."
     },
     "eligibility": {
       "title": "Elegibilidad",
-      "paragraph1": "La membresía está disponible solo para individuos (no organizaciones o entidades legales) que tengan al menos 18 años de edad o la edad requerida en su país o región.",
-      "paragraph2": "La participación en el panel es para uso personal y no comercial. Solo se permite una cuenta por persona.",
-      "paragraph3": "Profitpiller se reserva el derecho de denegar servicios a cualquier persona en cualquier momento, con o sin motivo."
+      "paragraph1": "La membresía está disponible solo para personas (no organizaciones o entidades legales) que tengan al menos 18 años de edad o la edad requerida en su país o región.",
+      "paragraph2": "La participación en el panel es para uso personal, no comercial. Solo se permite una cuenta por persona.",
+      "paragraph3": "Profitpiller se reserva el derecho de negar servicios a cualquier persona en cualquier momento, con o sin motivo."
     },
     "panelRegistration": {
       "title": "Registro en el Panel",
-      "paragraph1": "Para unirse al Panel y recibir Monedas, debe completar el formulario de registro con precisión y proporcionar un correo electrónico y una contraseña válidos.",
-      "paragraph2": "Usted acepta mantener la información de su cuenta precisa y actualizada. El no hacerlo puede resultar en la suspensión o terminación de su cuenta y la pérdida de las Monedas acumuladas.",
-      "paragraph3": "Su participación en el Panel es como contratista independiente. No se crea ninguna relación de empleo, sociedad o agencia a través de este acuerdo."
+      "paragraph1": "Para unirse al Panel y recibir Coins, debe completar el formulario de registro con precisión y proporcionar un correo electrónico y una contraseña válidos.",
+      "paragraph2": "Usted acepta mantener la información de su cuenta precisa y actualizada. El no hacerlo puede resultar en la suspensión o terminación de su cuenta y la pérdida de las Coins acumuladas.",
+      "paragraph3": "Su participación en el Panel es como contratista independiente. Ninguna relación de empleo, sociedad o agencia se crea a través de este acuerdo."
     },
     "rewards": {
       "title": "Recompensas",
       "coinsDefinition": {
-        "subtitle": "Definición de Monedas",
-        "description": "Profitpiller otorga créditos digitales llamados “Monedas” que se pueden canjear por efectivo u otras recompensas según términos específicos."
+        "subtitle": "Definición de Coins",
+        "description": "Profitpiller otorga créditos digitales llamados “Coins” que se pueden canjear por dinero en efectivo u otras recompensas según términos específicos."
       },
       "earningCoins": {
-        "subtitle": "Ganar Monedas",
-        "description1": "Las Monedas se otorgan por actividades aprobadas como registrarse, completar su perfil y finalizar encuestas. Se requiere calificación para la mayoría de las encuestas. No ganará Monedas por las encuestas para las que sea descalificado.",
-        "listTitle": "Puede ganar Monedas por:",
-        "point1": "Bono de Bienvenida – bono único después del registro.",
-        "point2": "Finalización de Encuesta – Monedas otorgadas en función de cada encuesta calificada y completada.",
-        "point3": "Intento de Encuesta – A veces, se puede otorgar crédito parcial incluso si no completa una encuesta.",
-        "point4": "Referencias – Gane Monedas cuando los usuarios referidos se unan y participen utilizando su enlace de referencia.",
-        "description2": "Usted es responsable de monitorear su saldo de Monedas. Las disputas deben informarse dentro de los 30 días. Profitpiller investigará y le notificará el resultado."
+        "subtitle": "Ganar Coins",
+        "description1": "Las Coins se otorgan por actividades aprobadas como registrarse, completar su perfil y finalizar encuestas. Se requiere calificación para la mayoría de las encuestas. No ganará Coins por las encuestas para las que sea descalificado.",
+        "listTitle": "Puede ganar Coins por:",
+        "point1": "Bono de bienvenida – un bono único después del registro.",
+        "point2": "Finalización de encuestas – Coins otorgadas en función de cada encuesta calificada y completada.",
+        "point3": "Intento de encuesta – En ocasiones, se puede otorgar un crédito parcial incluso si no completa una encuesta.",
+        "point4": "Referencias – Gane Coins cuando los usuarios referidos se unan y participen utilizando su enlace de referencia.",
+        "description2": "Usted es responsable de monitorear su saldo de Coins. Las disputas deben ser reportadas dentro de los 30 días. Profitpiller investigará y le notificará el resultado."
       },
       "redeemingCoins": {
-        "subtitle": "Canjear Monedas",
-        "description1": "Puede canjear Monedas desde el panel de su cuenta. 100 Monedas = $1.00 o equivalente. Las Monedas también se pueden canjear por tarjetas de regalo.",
-        "description2": "Las tarjetas de regalo se envían a su correo electrónico registrado. Los problemas de entrega deben informarse dentro de los 3 meses posteriores a la emisión.",
+        "subtitle": "Canjear Coins",
+        "description1": "Puede canjear Coins desde el panel de control de su panel. 100 Coins = $1.00 o equivalente. Las Coins también se pueden canjear por tarjetas de regalo.",
+        "description2": "Las tarjetas de regalo se envían a su correo electrónico registrado. Los problemas de entrega deben ser reportados dentro de los 3 meses posteriores a la emisión.",
         "description3": "Los pagos a través de PayPal, UPI o transferencia bancaria requieren datos de cuenta válidos. Es su responsabilidad mantener esta información actualizada.",
         "description4": "El tiempo de procesamiento puede variar de 10 minutos a dos semanas. Los requisitos de canje pueden cambiar debido al cumplimiento legal."
       },
       "taxResponsibility": {
         "subtitle": "Responsabilidad Fiscal",
-        "description": "Las Monedas y recompensas pueden estar sujetas a impuestos. Usted es responsable de cumplir con las regulaciones fiscales en su jurisdicción."
+        "description": "Las Coins y las recompensas pueden estar sujetas a impuestos. Usted es responsable de cumplir con las regulaciones fiscales en su jurisdicción."
       },
       "expirationOfCoins": {
-        "subtitle": "Caducidad de las Monedas",
-        "description": "Las Monedas caducan 12 meses después de la fecha en que se ganaron. La eliminación de su cuenta también resultará en la pérdida de cualquier Moneda no utilizada."
+        "subtitle": "Caducidad de las Coins",
+        "description": "Las Coins caducan 12 meses después de la fecha en que se ganaron. La eliminación de su cuenta también resultará en la pérdida de las Coins no utilizadas."
       },
       "fraudAccountAdjustments": {
         "subtitle": "Fraude y Ajustes de Cuenta",
-        "description1": "Profitpiller monitorea la actividad de la cuenta. El comportamiento fraudulento o abusivo puede resultar en la terminación de la cuenta y la pérdida de las recompensas. Cualquier error del sistema en la asignación de Monedas se corregirá a discreción de Profitpiller.",
-        "description2": "<strong>Transferibilidad</strong>: Las Monedas no tienen valor monetario fuera del panel y no pueden transferirse, pignorarse ni heredarse."
+        "description1": "Profitpiller monitorea la actividad de la cuenta. El comportamiento fraudulento o abusivo puede resultar en la terminación de la cuenta y la confiscación de las recompensas. Cualquier error del sistema en la asignación de Coins se corregirá a discreción de Profitpiller.",
+        "description2": "<strong>Transferibilidad</strong>: Las Coins no tienen valor monetario fuera del panel y no se pueden transferir, pignorar o heredar."
       }
     },
     "prohibitedActivities": {
       "title": "Actividades Prohibidas",
-      "intro": "Usted acepta no:",
-      "point1": "Usar bots, raspadores o herramientas de automatización no autorizadas",
-      "point2": "Enviar respuestas inexactas, falsas o idénticas en encuestas",
-      "point3": "Acceder a su cuenta fuera de su país registrado",
+      "intro": "Usted se compromete a no:",
+      "point1": "Usar bots, scrapers o herramientas de automatización no autorizadas",
+      "point2": "Enviar respuestas inexactas, falsas o idénticas en las encuestas",
+      "point3": "Acceder a su cuenta fuera de su país de registro",
       "point4": "Tener más de una cuenta",
       "point5": "Usar proxies, VPN o servicios de enmascaramiento de ubicación",
-      "point6": "Violar leyes locales, nacionales o internacionales utilizando la plataforma",
+      "point6": "Violar las leyes locales, nacionales o internacionales utilizando la plataforma",
       "point7": "Hacer un uso indebido o suplantar a otros, incluido el personal o los miembros",
       "point8": "Volver a publicar, revender o compartir contenido confidencial",
       "conclusion": "Las violaciones pueden llevar a la terminación inmediata de la cuenta y la pérdida de todas las recompensas."
     },
     "restrictedContent": {
       "title": "Contenido Restringido",
-      "description": "Puede acceder a información propietaria mientras participa en Profitpiller. Este contenido está protegido por leyes de propiedad intelectual. Se le prohíbe copiar, modificar, distribuir o realizar ingeniería inversa de dicho contenido sin consentimiento por escrito."
+      "description": "Usted puede acceder a información propietaria mientras participa en Profitpiller. Este contenido está protegido por las leyes de propiedad intelectual. Tiene prohibido copiar, modificar, distribuir o realizar ingeniería inversa de dicho contenido sin el consentimiento por escrito."
     },
     "emailCommunication": {
       "title": "Comunicación por Correo Electrónico",
-      "description": "Enviamos correos electrónicos esenciales y promocionales. Puede optar por no recibir correos electrónicos de marketing a través del enlace para darse de baja o en la configuración de la cuenta. Sin embargo, los correos electrónicos transaccionales (por ejemplo, actividad de la cuenta) se seguirán enviando. Para detener todos los correos electrónicos, debe eliminar su cuenta."
+      "description": "Enviamos correos electrónicos esenciales y promocionales. Puede optar por no recibir correos electrónicos de marketing a través del enlace para cancelar la suscripción o en la configuración de la cuenta. Sin embargo, los correos electrónicos transaccionales (por ejemplo, actividad de la cuenta) seguirán siendo enviados. Para detener todos los correos electrónicos, debe eliminar su cuenta."
     },
     "cancelingAccount": {
-      "title": "Cancelar Su Cuenta",
-      "description1": "Para cancelar, vaya a “Configuración” y seleccione “Eliminar Cuenta”. Al eliminarla, sus Monedas se perderán permanentemente y su acceso será revocado.",
+      "title": "Cancelar su Cuenta",
+      "description1": "Para cancelar, vaya a \"Configuración\" y seleccione \"Eliminar cuenta\". Al eliminarla, sus Coins se perderán permanentemente y su acceso será revocado.",
       "description2": "Profitpiller puede desactivar o suspender cuentas inactivas (12 meses de inactividad) o si los correos electrónicos rebotan repetidamente."
     },
     "disclaimer": {
       "title": "Descargo de Responsabilidad",
-      "description": "El uso de Profitpiller es bajo su propio riesgo. No ofrecemos garantías con respecto al funcionamiento o la precisión de la plataforma más allá de lo expresamente establecido."
+      "description": "El uso de Profitpiller es bajo su propio riesgo. No ofrecemos garantías sobre el funcionamiento o la precisión de la plataforma más allá de lo que se establece expresamente."
     },
     "limitationsOfLiability": {
-      "title": "Limitaciones de Responsabilidad",
-      "description": "En la máxima medida permitida por la ley, Profitpiller no es responsable de daños indirectos o consecuentes. La responsabilidad máxima se limita al valor real de las Monedas no canjeadas o la recompensa aplicable."
+      "title": "Limitación de Responsabilidad",
+      "description": "En la máxima medida permitida por la ley, Profitpiller no es responsable de daños indirectos o consecuentes. La responsabilidad máxima se limita al valor real de las Coins no canjeadas o la recompensa aplicable."
     },
     "indemnification": {
       "title": "Indemnización",
-      "description": "Usted acepta eximir de responsabilidad a Profitpiller, sus afiliados y representantes de cualquier reclamo legal que resulte de su uso de la plataforma, incluidos los honorarios de abogados."
+      "description": "Usted acepta eximir de responsabilidad a Profitpiller, sus afiliados y representantes de cualquier reclamación legal que resulte de su uso de la plataforma, incluidos los honorarios de abogados."
     },
     "notices": {
       "title": "Avisos",
-      "description": "Podemos notificarle por correo electrónico o a través del panel de su cuenta. Usted es responsable de mantener su información de contacto actualizada. Puede contactarnos a través del correo electrónico que figura en nuestro sitio web."
+      "description": "Podemos notificarle por correo electrónico o a través del panel de control de su cuenta. Usted es responsable de mantener su información de contacto actualizada. Puede contactarnos a través del correo electrónico que figura en nuestro sitio web."
     },
     "arbitration": {
       "title": "Arbitraje",
-      "description": "Las disputas se resolverán mediante arbitraje vinculante en Delaware, a menos que la ley lo permita de otra manera. Usted renuncia a su derecho a un juicio con jurado o a una demanda colectiva. Las reglas de arbitraje siguen la Ley Federal de Arbitraje."
+      "description": "Las disputas se resolverán mediante arbitraje vinculante en Delaware, a menos que la ley lo permita de otro modo. Usted renuncia a su derecho a un juicio con jurado o a una demanda colectiva. Las reglas de arbitraje siguen la Ley Federal de Arbitraje."
     },
     "classActionWaiver": {
-      "title": "Renuncia a Acción Colectiva",
-      "description1": "Cualquier reclamo legal debe presentarse individualmente. Usted renuncia a su derecho a participar en cualquier acción colectiva. Puede optar por no participar dentro de los 30 días posteriores al primer uso del sitio web contactando a privacy@profitpiller.com.",
+      "title": "Renuncia a la Demanda Colectiva",
+      "description1": "Cualquier reclamo legal debe presentarse individualmente. Usted renuncia a su derecho a participar en cualquier demanda colectiva. Puede optar por no participar dentro de los 30 días posteriores al primer uso del sitio web contactando a privacy@profitpiller.com.",
       "address1": "Profitpiller",
       "address2": "8 The Green Ste R",
       "address3": "Dover, DE 19902",
-      "address4": "EE. UU."
+      "address4": "USA"
     },
     "severability": {
       "title": "Divisibilidad",
-      "description": "Si alguna disposición de estos Términos se considera inválida o inaplicable, las disposiciones restantes permanecerán en pleno vigor."
+      "description": "Si alguna disposición de estos Términos se considera inválida o inaplicable, las disposiciones restantes permanecerán en pleno efecto."
     },
     "jurisdiction": {
       "title": "Jurisdicción",
-      "description": "Estos Términos se rigen por las leyes de Delaware, EE. UU. Todas las disputas deben presentarse ante los tribunales ubicados en Delaware."
+      "description": "Estos Términos se rigen por las leyes de Delaware, EE. UU. Todas las disputas deben ser presentadas ante los tribunales ubicados en Delaware."
     },
     "miscellaneousTerms": {
-      "title": "Términos Varios",
-      "description": "Los títulos de las secciones son solo de referencia. El hecho de que Profitpiller no haga cumplir alguna disposición no renuncia a sus derechos. Estos Términos y cualquier política a la que se haga referencia constituyen el acuerdo completo entre usted y Profitpiller."
+      "title": "Disposiciones Varias",
+      "description": "Los títulos de las secciones son solo para referencia. El hecho de que Profitpiller no haga cumplir alguna disposición no renuncia a sus derechos. Estos Términos y cualquier política a la que se haga referencia constituyen el acuerdo completo entre usted y Profitpiller."
     }
   }
 }

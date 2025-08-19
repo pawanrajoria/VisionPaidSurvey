@@ -1,0 +1,132 @@
+{
+  "termsConditions": {
+    "heading": {
+      "title": "Algemene Voorwaarden / Gebruiksvoorwaarden",
+      "effectiveDate": "Ingangsdatum: 6 mei 2025"
+    },
+    "applicability": {
+      "title": "Toepasselijkheid",
+      "paragraph1": "Profitpiller (het \"Panel\") is een digitaal marktonderzoeksplatform dat wordt beheerd en eigendom is van Cralpk Research Pvt. Ltd.",
+      "paragraph2": "Als panellid wordt u uitgenodigd om deel te nemen aan marktonderzoekstudies en gerelateerde deelnameactiviteiten.",
+      "paragraph3": "Delen van deze Voorwaarden en/of ons Privacybeleid kunnen te allen tijde naar eigen goeddunken van Profitpiller worden gewijzigd, bijgewerkt of verwijderd. Het is uw verantwoordelijkheid om op de hoogte te blijven door deze Voorwaarden regelmatig te herzien. De bovenstaande datum geeft de laatste update weer.",
+      "paragraph4": "Voor details over hoe wij met uw gegevens omgaan, verwijzen wij u naar ons Privacybeleid.",
+      "paragraph5": "Deze Voorwaarden vertegenwoordigen een bindend juridisch contract tussen u en Profitpiller. Door u te registreren, onze diensten te bezoeken of te gebruiken, bevestigt u uw akkoord met deze Voorwaarden.",
+      "paragraph6": "Deze overeenkomst bevat een afstandsverklaring van collectieve actie. Als u het met enig deel van deze voorwaarden oneens bent, gelieve de diensten dan niet te gebruiken."
+    },
+    "eligibility": {
+      "title": "Geschiktheid",
+      "paragraph1": "Lidmaatschap is alleen beschikbaar voor personen (geen organisaties of juridische entiteiten) die ten minste 18 jaar oud zijn of de leeftijd die vereist is in hun land of regio.",
+      "paragraph2": "Deelname aan het panel is voor persoonlijk, niet-commercieel gebruik. Slechts één account per persoon is toegestaan.",
+      "paragraph3": "Profitpiller behoudt zich het recht voor om diensten aan iedereen op elk moment te weigeren, met of zonder reden."
+    },
+    "panelRegistration": {
+      "title": "Panelregistratie",
+      "paragraph1": "Om lid te worden van het Panel en Coins te ontvangen, moet u het registratieformulier nauwkeurig invullen en een geldig e-mailadres en wachtwoord opgeven.",
+      "paragraph2": "U stemt ermee in uw accountinformatie nauwkeurig en up-to-date te houden. Het niet naleven hiervan kan leiden tot opschorting of beëindiging van uw account en verlies van de opgebouwde Coins.",
+      "paragraph3": "Uw deelname aan het Panel is als een onafhankelijke aannemer. Er wordt geen arbeids-, partnerschaps- of agentuursrelatie gecreëerd door middel van deze overeenkomst."
+    },
+    "rewards": {
+      "title": "Beloningen",
+      "coinsDefinition": {
+        "subtitle": "Definitie van Coins",
+        "description": "Profitpiller kent digitale credits toe, genaamd “Coins”, die kunnen worden ingewisseld voor contant geld of andere beloningen op basis van specifieke voorwaarden."
+      },
+      "earningCoins": {
+        "subtitle": "Coins verdienen",
+        "description1": "Coins worden toegekend voor goedgekeurde activiteiten zoals aanmelden, uw profiel voltooien en enquêtes invullen. Kwalificatie is vereist voor de meeste enquêtes. U verdient geen Coins voor enquêtes waarvoor u wordt gediskwalificeerd.",
+        "listTitle": "U kunt Coins verdienen voor:",
+        "point1": "Welkomstbonus – eenmalige bonus na registratie.",
+        "point2": "Enquête-afsluiting – Coins toegekend op basis van elke kwalificerende en voltooide enquête.",
+        "point3": "Enquêtepoging – Soms kan er een gedeeltelijk tegoed worden gegeven, zelfs als u een enquête niet voltooit.",
+        "point4": "Verwijzingen – Verdien Coins wanneer verwezen gebruikers zich aanmelden en deelnemen via uw verwijzingslink.",
+        "description2": "U bent verantwoordelijk voor het controleren van uw Coins-saldo. Geschillen moeten binnen 30 dagen worden gemeld. Profitpiller zal het onderzoek uitvoeren en u op de hoogte stellen van de uitkomst."
+      },
+      "redeemingCoins": {
+        "subtitle": "Coins inwisselen",
+        "description1": "U kunt Coins inwisselen vanuit uw paneldashboard. 100 Coins = $1,00 of het equivalent. Coins kunnen ook worden ingewisseld voor cadeaubonnen.",
+        "description2": "Cadeaubonnen worden naar uw geregistreerde e-mailadres gestuurd. Leveringsproblemen moeten binnen 3 maanden na uitgifte worden gemeld.",
+        "description3": "Betalingen via PayPal, UPI of bankoverschrijving vereisen geldige accountgegevens. Het is uw verantwoordelijkheid om deze informatie up-to-date te houden.",
+        "description4": "De verwerkingstijd kan variëren van 10 minuten tot twee weken. De inwisselvereisten kunnen veranderen als gevolg van wettelijke naleving."
+      },
+      "taxResponsibility": {
+        "subtitle": "Belastingverantwoordelijkheid",
+        "description": "Coins en beloningen kunnen onderworpen zijn aan belastingheffing. U bent verantwoordelijk voor het naleven van de belastingregels in uw jurisdictie."
+      },
+      "expirationOfCoins": {
+        "subtitle": "Verval van Coins",
+        "description": "Coins vervallen 12 maanden na de datum waarop ze zijn verdiend. Het verwijderen van uw account zal ook resulteren in het verlies van ongebruikte Coins."
+      },
+      "fraudAccountAdjustments": {
+        "subtitle": "Fraude & Accountaanpassingen",
+        "description1": "Profitpiller controleert de accountactiviteit. Frauduleus of misbruikend gedrag kan leiden tot beëindiging van het account en verbeurdverklaring van beloningen. Eventuele systeemfouten in de toewijzing van Coins worden naar eigen goeddunken van Profitpiller gecorrigeerd.",
+        "description2": "<strong>Overdraagbaarheid</strong>: Coins hebben geen geldwaarde buiten het panel en kunnen niet worden overgedragen, verpand of geërfd."
+      }
+    },
+    "prohibitedActivities": {
+      "title": "Verboden Activiteiten",
+      "intro": "U stemt ermee in om niet:",
+      "point1": "Bots, scrapers of onbevoegde automatiseringstools te gebruiken",
+      "point2": "Onnauwkeurige, valse of identieke antwoorden in enquêtes in te dienen",
+      "point3": "Toegang tot uw account te krijgen buiten uw geregistreerde land",
+      "point4": "Meer dan één account te hebben",
+      "point5": "Proxies, VPN's of locatiemaskeringsdiensten te gebruiken",
+      "point6": "Lokale, nationale of internationale wetten te overtreden door gebruik te maken van het platform",
+      "point7": "Anderen, inclusief personeel of leden, te misbruiken of zich als hen voor te doen",
+      "point8": "Vertrouwelijke inhoud opnieuw te plaatsen, door te verkopen of te delen",
+      "conclusion": "Overtredingen kunnen leiden tot onmiddellijke beëindiging van het account en verlies van alle beloningen."
+    },
+    "restrictedContent": {
+      "title": "Beperkte Inhoud",
+      "description": "Tijdens uw deelname aan Profitpiller kunt u toegang krijgen tot bedrijfseigen informatie. Deze inhoud is beschermd door intellectuele-eigendomswetten. Het is u verboden om dergelijke inhoud te kopiëren, te wijzigen, te verspreiden of te reverse-engineeren zonder schriftelijke toestemming."
+    },
+    "emailCommunication": {
+      "title": "E-mailcommunicatie",
+      "description": "Wij sturen essentiële en promotionele e-mails. U kunt zich afmelden voor marketing-e-mails via de afmeldlink of in de accountinstellingen. Transactionele e-mails (bijv. accountactiviteit) worden echter nog steeds verzonden. Om alle e-mails te stoppen, moet u uw account verwijderen."
+    },
+    "cancelingAccount": {
+      "title": "Uw Account Annuleren",
+      "description1": "Om te annuleren, gaat u naar “Instellingen” en selecteert u “Account verwijderen”. Bij verwijdering gaan uw Coins permanent verloren en wordt uw toegang ingetrokken.",
+      "description2": "Profitpiller kan inactieve accounts (12 maanden inactiviteit) deactiveren of opschorten of als e-mails herhaaldelijk bouncen."
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "description": "Uw gebruik van Profitpiller is op eigen risico. Wij geven geen garanties met betrekking tot de werking of nauwkeurigheid van het platform, behalve wat uitdrukkelijk is vermeld."
+    },
+    "limitationsOfLiability": {
+      "title": "Beperkingen van Aansprakelijkheid",
+      "description": "Voor zover wettelijk toegestaan, is Profitpiller niet aansprakelijk voor indirecte of gevolgschade. De maximale aansprakelijkheid is beperkt tot de werkelijke waarde van niet-ingewisselde Coins of de toepasselijke beloning."
+    },
+    "indemnification": {
+      "title": "Vrijwaring",
+      "description": "U stemt ermee in om Profitpiller, zijn aangesloten bedrijven en vertegenwoordigers te vrijwaren van alle juridische claims die voortvloeien uit uw gebruik van het platform, inclusief advocaatkosten."
+    },
+    "notices": {
+      "title": "Mededelingen",
+      "description": "Wij kunnen u op de hoogte stellen via e-mail of via het dashboard van uw account. U bent verantwoordelijk voor het up-to-date houden van uw contactgegevens. U kunt contact met ons opnemen via het e-mailadres op onze website."
+    },
+    "arbitration": {
+      "title": "Arbitrage",
+      "description": "Geschillen worden opgelost door bindende arbitrage in Delaware, tenzij anders toegestaan door de wet. U doet afstand van uw recht op een juryrechtspraak of een collectieve actie. De arbitrageregels volgen de Federal Arbitration Act."
+    },
+    "classActionWaiver": {
+      "title": "Afstand van Collectieve Actie",
+      "description1": "Alle juridische claims moeten individueel worden ingediend. U doet afstand van uw recht om deel te nemen aan een collectieve actie. U kunt zich binnen 30 dagen na het eerste gebruik van de website afmelden door contact op te nemen met privacy@profitpiller.com.",
+      "address1": "Profitpiller",
+      "address2": "8 The Green Ste R",
+      "address3": "Dover, DE 19902",
+      "address4": "USA"
+    },
+    "severability": {
+      "title": "Scheidbaarheid",
+      "description": "Indien een bepaling in deze Voorwaarden ongeldig of onuitvoerbaar wordt geacht, blijven de overige bepalingen volledig van kracht."
+    },
+    "jurisdiction": {
+      "title": "Jurisdictie",
+      "description": "Deze Voorwaarden worden beheerst door de wetten van Delaware, VS. Alle geschillen moeten worden voorgelegd aan de rechtbanken in Delaware."
+    },
+    "miscellaneousTerms": {
+      "title": "Diverse Voorwaarden",
+      "description": "Sectiekopjes zijn alleen ter referentie. Het nalaten van Profitpiller om een bepaling af te dwingen, doet geen afstand van zijn rechten. Deze Voorwaarden en eventuele genoemde beleidsregels vormen de volledige overeenkomst tussen u en Profitpiller."
+    }
+  }
+}

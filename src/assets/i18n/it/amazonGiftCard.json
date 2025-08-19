@@ -1,0 +1,51 @@
+{
+    "amazonGiftCard": {
+        "banner": {
+            "title": "Sondaggi per Carte Regalo Amazon",
+            "subtitle": "Ami fare shopping su Amazon? Rendi la tua lista dei desideri una realtà guadagnando carte regalo gratuite tramite sondaggi.",
+            "description": "Condividi le tue opinioni e ottieni una ricompensa! Profitpiller offre sondaggi online entusiasmanti che ti fanno guadagnare carte regalo Amazon. Inizia ora e spendi per tutto ciò che ami.",
+            "signUpButton": "Iscriviti ora",
+            "signUpNote": "Non è mai stato così facile guadagnare carte regalo Amazon. Inizia il tuo primo sondaggio oggi!"
+        },
+        "section1": {
+            "subtitle": "Sondaggi con ricompense Amazon istantanee",
+            "title": "Ottieni carte regalo Amazon partecipando a sondaggi",
+            "description1": "Riscatta i tuoi punti Profitpiller per ricompense Amazon in modo rapido e semplice.",
+            "description2": "Le carte regalo Amazon sono versatili e non scadono mai. Usale per acquistare qualsiasi cosa, da gadget e libri a generi alimentari e regali, direttamente tramite il tuo account Amazon.",
+            "description3": "Partecipa a un sondaggio rapido per una carta regalo Amazon da $5 o accumula più sondaggi per sbloccare carte di valore superiore. Spendi i tuoi guadagni per ciò che conta di più per te.",
+            "description4": "Nessuna lunga attesa, nessun pagamento minimo. La maggior parte degli utenti vede la sua prima ricompensa Amazon entro 17 minuti dall'iscrizione.",
+            "strongConclusion": "Unisciti a Profitpiller e inizia a guadagnare la tua carta regalo Amazon oggi stesso."
+        },
+        "features": {
+            "subtitle": "Guadagna mentre condividi opinioni",
+            "title": "Ottieni carte regalo Amazon dai sondaggi",
+            "description": "Il tuo feedback aiuta a dare forma ai prodotti: ottieni una ricompensa con carte regalo Amazon per il tuo tempo.",
+            "step1": {
+                "label": "Passaggio 1",
+                "title": "Crea un account Profitpiller per iniziare a guadagnare carte regalo Amazon per le tue opinioni."
+            },
+            "step2": {
+                "label": "Passaggio 2",
+                "title": "Scegli e completa i sondaggi che ti interessano di più.",
+                "description": "Ogni sondaggio completato ti fa guadagnare punti che puoi riscattare per carte regalo Amazon e altro ancora."
+            },
+            "step3": {
+                "label": "Passaggio 3",
+                "title": "Riscatta i tuoi punti per carte regalo Amazon e acquista i tuoi preferiti.",
+                "description": "Partecipa a quanti sondaggi vuoi. Hai sempre il controllo delle tue ricompense. Riscuoti istantaneamente o risparmia per carte regalo di valore più alto: la scelta è tua."
+            }
+        },
+        "rewardsGrid": {
+            "visaCard": "Ottieni carte regalo Visa",
+            "paypalRewards": "Riscatta per ricompense PayPal"
+        },
+        "support": {
+            "title": "Pronto a guadagnare la tua prima carta regalo Amazon?",
+            "description": "Unisciti a Profitpiller ora e inizia a completare sondaggi. Il nostro utente medio riceve la sua prima ricompensa Amazon in meno di 20 minuti. Nessuna lunga attesa, solo sondaggi facili e gratificanti!",
+            "joinNow": "Iscriviti ora"
+        }
+    },
+    "common": {
+        "learnMore": "Scopri di più"
+    }
+}

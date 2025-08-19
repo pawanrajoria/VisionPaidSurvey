@@ -134,270 +134,30 @@
             </div>
             <div class="translate-box m-t-24">
                 <mat-accordion class="accordion">
-                    <mat-expansion-panel class="accordion-item" (opened)="panelOpenState.set(true)"
-                        (closed)="panelOpenState.set(false)">
+                    <mat-expansion-panel class="accordion-item" *ngFor="let country of countryLanguages"
+                        (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
                         <mat-expansion-panel-header class="accordion-header">
                             <div class="accordion-button">
                                 <div class="flag-icon">
-                                    <img src="https://flagcdn.com/24x18/in.png">
+                                    <img [src]="country.flagUrl" />
                                 </div>
-                                <span>भारत</span>
+                                <span>{{ country.countryName }}</span>
                             </div>
                         </mat-expansion-panel-header>
                         <div class="accordion-collapse">
                             <p>Select Language</p>
-                            <mat-radio-group aria-label="Select an option" class="form-radio">
-                                <mat-radio-button value="4" checked="checked">English</mat-radio-button>
-                            </mat-radio-group>
-                        </div>
-                    </mat-expansion-panel>
-                    <mat-expansion-panel class="accordion-item" (opened)="panelOpenState.set(true)"
-                        (closed)="panelOpenState.set(false)">
-                        <mat-expansion-panel-header class="accordion-header">
-                            <div class="accordion-button">
-                                <div class="flag-icon">
-                                    <img src="https://flagcdn.com/24x18/us.png">
-                                </div>
-                                <span>United States</span>
-                            </div>
-                        </mat-expansion-panel-header>
-                        <div class="accordion-collapse">
-                            <p>Select Language</p>
-                            <mat-radio-group aria-label="Select an option" class="form-radio">
-                                <mat-radio-button value="1">English</mat-radio-button>
-                                <mat-radio-button value="2">Español</mat-radio-button>
-                            </mat-radio-group>
-                        </div>
-                    </mat-expansion-panel>
-                    <mat-expansion-panel class="accordion-item" (opened)="panelOpenState.set(true)"
-                        (closed)="panelOpenState.set(false)">
-                        <mat-expansion-panel-header class="accordion-header">
-                            <div class="accordion-button">
-                                <div class="flag-icon">
-                                    <img src="https://flagcdn.com/24x18/gb.png">
-                                </div>
-                                <span>United Kingdom</span>
-                            </div>
-                        </mat-expansion-panel-header>
-                        <div class="accordion-collapse">
-                            <p>Select Language</p>
-                            <mat-radio-group aria-label="Select an option" class="form-radio">
-                                <mat-radio-button value="1">English</mat-radio-button>
-                            </mat-radio-group>
-                        </div>
-                    </mat-expansion-panel>
-                    <mat-expansion-panel class="accordion-item" (opened)="panelOpenState.set(true)"
-                        (closed)="panelOpenState.set(false)">
-                        <mat-expansion-panel-header class="accordion-header">
-                            <div class="accordion-button">
-                                <div class="flag-icon">
-                                    <img src="https://flagcdn.com/24x18/ca.png">
-                                </div>
-                                <span>Canada</span>
-                            </div>
-                        </mat-expansion-panel-header>
-                        <div class="accordion-collapse">
-                            <p>Select Language</p>
-                            <mat-radio-group aria-label="Select an option" class="form-radio">
-                                <mat-radio-button value="1">English</mat-radio-button>
-                                <mat-radio-button value="2"> Français</mat-radio-button>
-                            </mat-radio-group>
-                        </div>
-                    </mat-expansion-panel>
-                    <mat-expansion-panel class="accordion-item" (opened)="panelOpenState.set(true)"
-                        (closed)="panelOpenState.set(false)">
-                        <mat-expansion-panel-header class="accordion-header">
-                            <div class="accordion-button">
-                                <div class="flag-icon">
-                                    <img src="https://flagcdn.com/24x18/au.png">
-                                </div>
-                                <span>Australia</span>
-                            </div>
-                        </mat-expansion-panel-header>
-                        <div class="accordion-collapse">
-                            <p>Select Language</p>
-                            <mat-radio-group aria-label="Select an option" class="form-radio">
-                                <mat-radio-button value="1">English</mat-radio-button>
-                            </mat-radio-group>
-                        </div>
-                    </mat-expansion-panel>
-                    <mat-expansion-panel class="accordion-item" (opened)="panelOpenState.set(true)"
-                        (closed)="panelOpenState.set(false)">
-                        <mat-expansion-panel-header class="accordion-header">
-                            <div class="accordion-button">
-                                <div class="flag-icon">
-                                    <img src="https://flagcdn.com/24x18/sg.png">
-                                </div>
-                                <span>Singapore</span>
-                            </div>
-                        </mat-expansion-panel-header>
-                        <div class="accordion-collapse">
-                            <p>Select Language</p>
-                            <mat-radio-group aria-label="Select an option" class="form-radio">
-                                <mat-radio-button value="1">English</mat-radio-button>
-                                <mat-radio-button value="1"> 中文</mat-radio-button>
-                            </mat-radio-group>
-                        </div>
-                    </mat-expansion-panel>
-                    <mat-expansion-panel class="accordion-item" (opened)="panelOpenState.set(true)"
-                        (closed)="panelOpenState.set(false)">
-                        <mat-expansion-panel-header class="accordion-header">
-                            <div class="accordion-button">
-                                <div class="flag-icon">
-                                    <img src="https://flagcdn.com/24x18/fr.png">
-                                </div>
-                                <span>France</span>
-                            </div>
-                        </mat-expansion-panel-header>
-                        <div class="accordion-collapse">
-                            <p>Select Language</p>
-                            <mat-radio-group aria-label="Select an option" class="form-radio">
-                                <mat-radio-button value="1"> Français</mat-radio-button>
-                            </mat-radio-group>
-                        </div>
-                    </mat-expansion-panel>
-                    <mat-expansion-panel class="accordion-item" (opened)="panelOpenState.set(true)"
-                        (closed)="panelOpenState.set(false)">
-                        <mat-expansion-panel-header class="accordion-header">
-                            <div class="accordion-button">
-                                <div class="flag-icon">
-                                    <img src="https://flagcdn.com/24x18/ge.png">
-                                </div>
-                                <span>Georgia</span>
-                            </div>
-                        </mat-expansion-panel-header>
-                        <div class="accordion-collapse">
-                            <p>Select Language</p>
-                            <mat-radio-group aria-label="Select an option" class="form-radio">
-                                <mat-radio-button value="1"> English </mat-radio-button>
-                                <mat-radio-button value="1"> Georgia </mat-radio-button>
-                            </mat-radio-group>
-                        </div>
-                    </mat-expansion-panel>
-                    <mat-expansion-panel class="accordion-item" (opened)="panelOpenState.set(true)"
-                        (closed)="panelOpenState.set(false)">
-                        <mat-expansion-panel-header class="accordion-header">
-                            <div class="accordion-button">
-                                <div class="flag-icon">
-                                    <img src="https://flagcdn.com/24x18/es.png">
-                                </div>
-                                <span>España</span>
-                            </div>
-                        </mat-expansion-panel-header>
-                        <div class="accordion-collapse">
-                            <p>Select Language</p>
-                            <mat-radio-group aria-label="Select an option" class="form-radio">
-                                <mat-radio-button value="1"> Español</mat-radio-button>
-                            </mat-radio-group>
-                        </div>
-                    </mat-expansion-panel>
-                    <mat-expansion-panel class="accordion-item" (opened)="panelOpenState.set(true)"
-                        (closed)="panelOpenState.set(false)">
-                        <mat-expansion-panel-header class="accordion-header">
-                            <div class="accordion-button">
-                                <div class="flag-icon">
-                                    <img src="https://flagcdn.com/24x18/it.png">
-                                </div>
-                                <span>Italia</span>
-                            </div>
-                        </mat-expansion-panel-header>
-                        <div class="accordion-collapse">
-                            <p>Select Language</p>
-                            <mat-radio-group aria-label="Select an option" class="form-radio">
-                                <mat-radio-button value="1"> Italiano</mat-radio-button>
-                            </mat-radio-group>
-                        </div>
-                    </mat-expansion-panel>
-                    <mat-expansion-panel class="accordion-item" (opened)="panelOpenState.set(true)"
-                        (closed)="panelOpenState.set(false)">
-                        <mat-expansion-panel-header class="accordion-header">
-                            <div class="accordion-button">
-                                <div class="flag-icon">
-                                    <img src="https://flagcdn.com/24x18/be.png">
-                                </div>
-                                <span>België</span>
-                            </div>
-                        </mat-expansion-panel-header>
-                        <div class="accordion-collapse">
-                            <p>Select Language</p>
-                            <mat-radio-group aria-label="Select an option" class="form-radio">
-                                <mat-radio-button value="1"> Nederlands</mat-radio-button>
-                                <mat-radio-button value="1"> Français</mat-radio-button>
-                            </mat-radio-group>
-                        </div>
-                    </mat-expansion-panel>
-                    <mat-expansion-panel class="accordion-item" (opened)="panelOpenState.set(true)"
-                        (closed)="panelOpenState.set(false)">
-                        <mat-expansion-panel-header class="accordion-header">
-                            <div class="accordion-button">
-                                <div class="flag-icon">
-                                    <img src="https://flagcdn.com/24x18/mx.png">
-                                </div>
-                                <span>México</span>
-                            </div>
-                        </mat-expansion-panel-header>
-                        <div class="accordion-collapse">
-                            <p>Select Language</p>
-                            <mat-radio-group aria-label="Select an option" class="form-radio">
-                                <mat-radio-button value="1"> Español</mat-radio-button>
-                            </mat-radio-group>
-                        </div>
-                    </mat-expansion-panel>
-                    <mat-expansion-panel class="accordion-item" (opened)="panelOpenState.set(true)"
-                        (closed)="panelOpenState.set(false)">
-                        <mat-expansion-panel-header class="accordion-header">
-                            <div class="accordion-button">
-                                <div class="flag-icon">
-                                    <img src="https://flagcdn.com/24x18/br.png">
-                                </div>
-                                <span>Brasil</span>
-                            </div>
-                        </mat-expansion-panel-header>
-                        <div class="accordion-collapse">
-                            <p>Select Language</p>
-                            <mat-radio-group aria-label="Select an option" class="form-radio">
-                                <mat-radio-button value="1"> Português</mat-radio-button>
-                            </mat-radio-group>
-                        </div>
-                    </mat-expansion-panel>
-                    <mat-expansion-panel class="accordion-item" (opened)="panelOpenState.set(true)"
-                        (closed)="panelOpenState.set(false)">
-                        <mat-expansion-panel-header class="accordion-header">
-                            <div class="accordion-button">
-                                <div class="flag-icon">
-                                    <img src="https://flagcdn.com/24x18/nz.png">
-                                </div>
-                                <span>New Zealand</span>
-                            </div>
-                        </mat-expansion-panel-header>
-                        <div class="accordion-collapse">
-                            <p>Select Language</p>
-                            <mat-radio-group aria-label="Select an option" class="form-radio">
-                                <mat-radio-button value="1">English</mat-radio-button>
-                            </mat-radio-group>
-                        </div>
-                    </mat-expansion-panel>
-                    <mat-expansion-panel class="accordion-item" (opened)="panelOpenState.set(true)"
-                        (closed)="panelOpenState.set(false)">
-                        <mat-expansion-panel-header class="accordion-header">
-                            <div class="accordion-button">
-                                <div class="flag-icon">
-                                    <img src="https://flagcdn.com/24x18/my.png">
-                                </div>
-                                <span>Malaysia</span>
-                            </div>
-                        </mat-expansion-panel-header>
-                        <div class="accordion-collapse">
-                            <p>Select Language</p>
-                            <mat-radio-group aria-label="Select an option" class="form-radio">
-                                <mat-radio-button value="1">English</mat-radio-button>
-                                <mat-radio-button value="1"> Bahasa Melayu</mat-radio-button>
+                            <mat-radio-group class="form-radio" aria-label="Select a language">
+                                <mat-radio-button *ngFor="let lang of country.languages" [value]="lang.id"
+                                    (change)="onLanguageSelect(lang.code, lang.id)">
+                                    {{ lang.name }}
+                                </mat-radio-button>
                             </mat-radio-group>
                         </div>
                     </mat-expansion-panel>
                 </mat-accordion>
+
             </div>
-            <button matButton class="btn-theme">Select</button>
+            <button matButton class="btn-theme" (click)="changeLanguage()">Select</button>
         </mat-card-content>
     </mat-card>
 </ng-template>

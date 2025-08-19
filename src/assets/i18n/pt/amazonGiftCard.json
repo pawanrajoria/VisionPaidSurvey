@@ -1,0 +1,51 @@
+{
+    "amazonGiftCard": {
+        "banner": {
+            "title": "Pesquisas de Cartão-Presente da Amazon",
+            "subtitle": "Adora fazer compras na Amazon? Torne sua lista de desejos uma realidade ganhando cartões-presente gratuitos através de pesquisas.",
+            "description": "Compartilhe suas opiniões e seja recompensado! A Profitpiller oferece pesquisas online empolgantes que lhe rendem cartões-presente da Amazon. Comece agora e gaste com o que você ama.",
+            "signUpButton": "Cadastre-se agora",
+            "signUpNote": "Nunca foi tão fácil ganhar cartões-presente da Amazon. Comece sua primeira pesquisa hoje!"
+        },
+        "section1": {
+            "subtitle": "Pesquisas com Recompensas Instantâneas da Amazon",
+            "title": "Reivindique Cartões-Presente da Amazon Respondendo a Pesquisas",
+            "description1": "Resgate seus pontos Profitpiller por recompensas da Amazon de forma rápida e fácil.",
+            "description2": "Os cartões-presente da Amazon são versáteis e nunca expiram. Use-os para comprar qualquer coisa — de gadgets e livros a mantimentos e presentes — diretamente através de sua conta da Amazon.",
+            "description3": "Responda a uma pesquisa rápida para um cartão-presente da Amazon de US$ 5 ou acumule várias pesquisas para desbloquear cartões de maior valor. Gaste seus ganhos no que mais importa para você.",
+            "description4": "Sem longas esperas, sem pagamento mínimo. A maioria dos usuários vê sua primeira recompensa da Amazon em 17 minutos após o cadastro.",
+            "strongConclusion": "Junte-se à Profitpiller e comece a ganhar seu cartão-presente da Amazon hoje."
+        },
+        "features": {
+            "subtitle": "Ganhe Enquanto Compartilha Opiniões",
+            "title": "Ganhe Cartões-Presente da Amazon com Pesquisas",
+            "description": "Seu feedback ajuda a moldar produtos — seja recompensado com cartões-presente da Amazon pelo seu tempo.",
+            "step1": {
+                "label": "Passo 1",
+                "title": "Crie uma conta Profitpiller para começar a ganhar cartões-presente da Amazon por suas opiniões."
+            },
+            "step2": {
+                "label": "Passo 2",
+                "title": "Escolha e complete as pesquisas que mais lhe interessam.",
+                "description": "Cada pesquisa concluída lhe rende pontos que você pode resgatar por cartões-presente da Amazon e muito mais."
+            },
+            "step3": {
+                "label": "Passo 3",
+                "title": "Resgate seus pontos por cartões-presente da Amazon e compre seus favoritos.",
+                "description": "Responda a quantas pesquisas quiser. Você está sempre no controle de suas recompensas. Saque instantaneamente ou economize para cartões-presente de maior valor — a escolha é sua."
+            }
+        },
+        "rewardsGrid": {
+            "visaCard": "Ganhe Cartões-Presente Visa",
+            "paypalRewards": "Resgate por Recompensas do PayPal"
+        },
+        "support": {
+            "title": "Pronto para ganhar seu primeiro cartão-presente da Amazon?",
+            "description": "Junte-se à Profitpiller agora e comece a completar pesquisas. Nosso usuário médio recebe sua primeira recompensa da Amazon em menos de 20 minutos. Sem longas esperas — apenas pesquisas fáceis e recompensadoras!",
+            "joinNow": "Junte-se agora"
+        }
+    },
+    "common": {
+        "learnMore": "Saiba mais"
+    }
+}

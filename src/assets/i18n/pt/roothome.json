@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "title": "Dinheiro fácil por opiniões diárias!",
+    "description": "Suas opiniões ajudam as marcas a melhorar — e elas estão prontas para pagar por elas. Responda a pesquisas, complete ofertas simples e ganhe recompensas reais sem esforço.",
+    "offer1": {
+      "title": "Ganhe ${{amount}} pela sua opinião — Não é necessária experiência!",
+      "subtitle": "{{surveys}} pesquisas esperando por você."
+    },
+    "offer2": {
+      "title": "${{amount}} ganhos ontem por usuários médios",
+      "subtitle": "Você pode ser o próximo! Retire a partir de ${{minPayout}}"
+    },
+    "login": {
+      "title": "Ganhe dinheiro compartilhando sua opinião",
+      "signIn": "Entre na sua conta",
+      "emailLabel": "ID de e-mail",
+      "emailPlaceholder": "ID de e-mail",
+      "passwordLabel": "Senha",
+      "continueButton": "Continuar",
+      "orLoginWith": "Ou entre com",
+      "googleButton": "Google"
+    },
+    "loggedIn": {
+      "title": "Ganhe dinheiro compartilhando sua opinião",
+      "message": "Você já está logado",
+      "goToAppButton": "Ir para o aplicativo"
+    }
+  },
+  "brandStrip": {
+    "description": "Ao compartilhar suas opiniões sobre tópicos em alta, marcas de limpeza confiáveis ou seus programas favoritos, você pode transformar opiniões em renda com o aplicativo de pesquisas e ofertas Profit Piller."
+  },
+  "choose": {
+    "title": "Tem opiniões? Transforme-as em dinheiro-aqui mesmo.",
+    "description": "Responda a pesquisas empolgantes no Profit Piller e retire seus ganhos instantaneamente — como dinheiro em espécie ou cartões-presente.",
+    "step1": {
+      "title": "Cadastre-se",
+      "subtitle": "Junte-se agora – É grátis"
+    },
+    "step2": {
+      "title": "Complete pesquisas e desbloqueie ofertas",
+      "subtitle": "Escolha qualquer pesquisa ou oferta para começar a ganhar recompensas."
+    },
+    "step3": {
+      "title": "Retire agora",
+      "subtitle": "Retire ou escolha entre mais de 1000 recompensas empolgantes."
+    }
+  },
+  "rewards": {
+    "banner": {
+      "title": "Escolha o seu favorito entre mais de 1000 recompensas",
+      "description": "Receba pagamentos via PayPal ou escolha entre uma ampla variedade de <br>cartões-presente."
+    }
+  },
+  "howItWorks": {
+    "title": "Ganhe dinheiro online com pesquisas e ofertas – disponível em <span class=\"highlight f-w-900\">todo o mundo.</span>",
+    "subtitle": "Responda a pesquisas empolgantes, seja recompensado rapidamente. Retire dinheiro ou resgate cartões-presente imediatamente com Profit Piller.",
+    "playGames": {
+      "title": "Jogar jogos",
+      "subtitle": "Ganhe por jogo",
+      "price": "$0.80 - $100"
+    },
+    "takeSurveys": {
+      "title": "Fazer pesquisas",
+      "subtitle": "Ganhe por pesquisa de 2-10 min",
+      "price": "$1.80 - $100"
+    },
+    "completeOffers": {
+      "title": "Completar ofertas",
+      "subtitle": "Ganhe por aplicativo",
+      "price": "$1.80 - $100"
+    }
+  },
+  "landing": {
+    "title": "Aplicativo de Pesquisas e Ofertas Online com Pagamentos Rápidos e Saque Mínimo Baixo",
+    "subtitle": "Cada pesquisa e oferta que você completa pode colocar dinheiro no seu bolso — apenas imagine!",
+    "valueTime": {
+      "title": "Nós valorizamos seu tempo — e na <span class=\"highlight\">Profit Piller</span>, nós o recompensamos.",
+      "description": "Com nosso baixo pagamento mínimo, você pode sacar no mesmo dia — sem espera. Suas recompensas, do seu jeito."
+    },
+    "infoBadge": "Em média, leva apenas {{minutes}} minutos para ganhar seu primeiro pagamento!",
+    "step1": {
+      "strong": "Comece se inscrevendo, depois escolha as pesquisas pagas e ofertas que você gostaria de fazer.",
+      "paragraph": "Com centenas de pesquisas e ofertas disponíveis, você pode ganhar jogando, compartilhando o que você compra ou falando sobre os times que você ama."
+    },
+    "step2": {
+      "strong": "Ganhe pontos toda vez que completar uma pesquisa — é simples assim!",
+      "paragraph": "Visite a página de recompensas para transformar seus pontos em dinheiro ou cartões-presente."
+    }
+  },
+  "rewardsGrid": {
+    "paypal": {
+      "description": "Resgatar pontos por cartões-presente do PayPal"
+    },
+    "amazon": {
+      "description": "Resgatar por um cartão-presente da Amazon"
+    },
+    "visa": {
+      "description": "Ou simplesmente retire o dinheiro — a escolha é sua."
+    }
+  },
+  "common": {
+    "learnMore": "Saiba mais"
+  }
+}

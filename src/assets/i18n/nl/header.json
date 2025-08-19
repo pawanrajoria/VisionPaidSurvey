@@ -1,0 +1,40 @@
+{
+  "header": {
+    "loginOrSignUp": "Inloggen of aanmelden",
+    "earnRewards": "Beloningen verdienen",
+    "surveysOffers": "Enquêtes & Aanbiedingen",
+    "redeemPoint": "Punten inwisselen",
+    "language": "Nederlands",
+    "goToApp": "Ga naar de app",
+    "livePayouts": "Live uitbetalingen",
+    "Levels": "Niveaus",
+    "blue_level": "🔹 Blauw niveau bereikt! 💙",
+    "motivated_message": "Blijf actief en stijg sneller in niveau!",
+    "left_headline": "Niveau/Bonus",
+    "right_headline": "Niveaus",
+    "payoutItem": {
+      "paypal": "PayPal"
+    },
+    "levels": {
+      "l1": {
+        "title": "Blauw niveau",
+        "description": "De reis begint hier. Verdien meer om op te klimmen!",
+        "range": "1-20"
+      },
+      "l2": {
+        "title": "Zilveren niveau",
+        "description": "Elke maand, één dag. Grote bonussen. Onbeperkt verdienen!",
+        "range": "21-30"
+      },
+      "l3": {
+        "title": "Gouden niveau",
+        "description": "Geniet van VIP-toegang tot beloningen met korting!",
+        "range": "21-30"
+      },
+      "l4": {
+        "title": "Platina niveau",
+        "description": "Ontgrendel vroege toegang &..."
+      }
+    }
+  }
+}

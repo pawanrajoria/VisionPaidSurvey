@@ -1,0 +1,40 @@
+{
+  "header": {
+    "loginOrSignUp": "登录或注册",
+    "earnRewards": "赚取奖励",
+    "surveysOffers": "调查与优惠",
+    "redeemPoint": "兑换积分",
+    "language": "中文",
+    "goToApp": "前往应用",
+    "livePayouts": "实时支付",
+    "Levels": "等级",
+    "blue_level": "🔹 达到蓝色等级！💙",
+    "motivated_message": "保持活跃，更快升级！",
+    "left_headline": "等级/奖励",
+    "right_headline": "等级",
+    "payoutItem": {
+      "paypal": "PayPal"
+    },
+    "levels": {
+      "l1": {
+        "title": "蓝色等级",
+        "description": "旅程从这里开始。赚取更多，提升排名！",
+        "range": "1-20"
+      },
+      "l2": {
+        "title": "银色等级",
+        "description": "每月，有一天。巨额奖励。无限赚取！",
+        "range": "21-30"
+      },
+      "l3": {
+        "title": "金色等级",
+        "description": "享受折扣奖励的 VIP 通行证！",
+        "range": "21-30"
+      },
+      "l4": {
+        "title": "铂金等级",
+        "description": "解锁抢先体验 &..."
+      }
+    }
+  }
+}

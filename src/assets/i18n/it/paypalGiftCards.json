@@ -1,0 +1,42 @@
+{
+  "paypalGiftCards": {
+    "banner": {
+      "title": "Guadagna buoni regalo PayPal con sondaggi veloci",
+      "subtitle": "Ti piace usare PayPal per i tuoi acquisti online? Inizia a risparmiare di più su ogni acquisto.",
+      "description": "Unisciti a Profitpiller e ottieni ricompense per le tue opinioni! Partecipa a sondaggi veloci e coinvolgenti su argomenti quotidiani, dai marchi che conosci ai prodotti che ami, e guadagna buoni regalo PayPal in cambio. È semplice, sicuro e al 100% gratuito.",
+      "startButton": "Inizia ora",
+      "startNote": "Completa il tuo primo sondaggio e inizia a guadagnare istantaneamente."
+    },
+    "section1": {
+      "subtitle": "Ricompense istantanee, valore reale",
+      "title": "Fatti pagare tramite PayPal — semplicemente condividendo le tue opinioni",
+      "description1": "Che tu stia facendo acquisti online o supportando venditori locali, Profitpiller ti aiuta a guadagnare denaro reale tramite buoni regalo PayPal — più velocemente di quanto ti aspetteresti.",
+      "description2": "Riscatta le ricompense facilmente, senza scadenza o minimo di incasso richiesto. Risparmia per grandi sconti o usa i tuoi buoni regalo per piccoli acquisti — sta completamente a te decidere.",
+      "description3": "Da abbigliamento ed elettronica a cibo da asporto e servizi, Profitpiller ti consente di usare le tue ricompense PayPal come preferisci.",
+      "description4": "Iscriviti e incassa in appena 17 minuti. Inizia a guadagnare ricompense PayPal dal tuo primo sondaggio — solo con Profitpiller."
+    },
+    "features": {
+      "subtitle": "Fai valere ogni minuto",
+      "title": "Completa sondaggi, guadagna ricompense PayPal istantaneamente",
+      "description": "Profitpiller rende facile guadagnare ricompense digitali aiutando i marchi più importanti a migliorare. Le tue opinioni contano e pagano. Partecipa ai sondaggi in qualsiasi momento da casa, dal tuo telefono o ovunque tu sia.",
+      "step1": {
+        "label": "Passaggio 1",
+        "title": "Crea il tuo account Profitpiller gratuito e scegli un sondaggio che fa per te."
+      },
+      "step2": {
+        "label": "Passaggio 2",
+        "title": "Guadagna punti per ogni sondaggio completato — riscattali in qualsiasi momento.",
+        "description": "Riscatta i tuoi punti per buoni regalo PayPal istantaneamente. Preferisci ricompense Amazon o Visa? Le abbiamo anche noi. Con Profitpiller, sei tu a scegliere come essere ricompensato."
+      }
+    },
+    "rewardsGrid": {
+      "paypalSurveys": "Sondaggi per buoni regalo PayPal",
+      "amazonSurveys": "Sondaggi per buoni regalo Amazon"
+    },
+    "support": {
+      "title": "Inizia a guadagnare ricompense PayPal oggi stesso con Profitpiller",
+      "description": "Iscriviti ora e trasforma il tuo tempo libero in ricompense in denaro reale. È veloce, gratuito e facile da iniziare. Condividi le tue opinioni, completa sondaggi e fatti pagare tramite PayPal — solo su Profitpiller.",
+      "joinNow": "Unisciti ora"
+    }
+  }
+}

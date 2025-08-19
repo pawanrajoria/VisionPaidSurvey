@@ -2,16 +2,16 @@
   "help": {
     "heading": {
       "title": "Besoin d'aide avec Profit Piller ?",
-      "intro": "Nous sommes là pour rendre votre expérience fluide. Que vous ayez besoin d'aide pour les sondages, les échanges ou les récompenses, notre équipe de support est là pour vous."
+      "intro": "Nous sommes là pour rendre votre expérience fluide. Que vous ayez besoin d'aide avec les sondages, les échanges ou les récompenses, notre équipe de support est là pour vous."
     },
     "faqs": {
       "q1": {
         "question": "Comment commencer à gagner sur Profit Piller ?",
-        "answer": "Il suffit de créer un compte gratuit, de compléter votre profil et d'accéder aux sondages et offres. Vos gains commencent à s'accumuler immédiatement !"
+        "answer": "Il suffit de créer un compte gratuit, de compléter votre profil, et d'accéder aux sondages et aux offres. Vos gains s'additionnent immédiatement !"
       },
       "q2": {
         "question": "Quand puis-je échanger mes récompenses ?",
-        "answer": "Une fois que vous atteignez le seuil de rachat minimum (par exemple, 425 ₹ pour PayPal ou les cartes cadeaux), vous pouvez échanger vos points instantanément."
+        "answer": "Dès que vous atteignez le seuil de rachat minimum (par exemple, 425 ₹ pour PayPal ou des cartes-cadeaux), vous pouvez échanger vos points instantanément."
       },
       "q3": {
         "question": "Pourquoi n'ai-je pas reçu de crédit pour un sondage ?",
@@ -19,36 +19,43 @@
       },
       "q4": {
         "question": "Comment puis-je contacter le support de Profit Piller ?",
-        "answer": "Envoyez-nous un e-mail à <a href=\"mailto:support@profitpiller.com\">support@profitpiller.com</a> ou utilisez le formulaire de contact sur notre site Web."
+        "answer": "Envoyez-nous un e-mail à <a href=\"mailto:support@profitpiller.com\">support@profitpiller.com</a> ou utilisez le formulaire de contact sur notre site web."
       },
       "q5": {
-        "question": "Y a-t-il des limites de gains quotidiens ou hebdomadaires ?",
-        "answer": "Pas de limites strictes ! Vous pouvez compléter autant de sondages et d'offres que disponibles. Plus vous êtes actif, plus vous gagnez."
+        "question": "Y a-t-il des limites de gains journalières ou hebdomadaires ?",
+        "answer": "Non, il n'y a pas de limites. Vous pouvez gagner autant que vous le souhaitez en fonction des sondages et des offres disponibles."
       },
       "q6": {
-        "question": "Puis-je utiliser Profit Piller sur mobile ?",
-        "answer": "Absolument ! Notre plateforme est entièrement adaptée aux mobiles et fonctionne parfaitement sur n'importe quel smartphone ou tablette."
+        "question": {
+          "text": "J'ai été disqualifié d'un sondage. Que puis-je faire ?",
+          "short": "Disqualification d'un sondage"
+        },
+        "answer": "Nous comprenons que c'est frustrant. Les qualifications des sondages sont gérées par des partenaires tiers. Parfois, les réponses initiales peuvent indiquer que vous ne correspondez pas au profil cible. Continuez à essayer les sondages et vous en trouverez un qui vous convient. En général, vous recevrez une petite récompense pour le temps que vous avez passé à vous qualifier pour un sondage. Vous ne recevrez pas le crédit complet, mais cela nous aide à mieux vous faire correspondre la prochaine fois."
       },
       "q7": {
-        "question": "Mes données sont-elles en sécurité avec Profit Piller ?",
-        "answer": "Oui. Nous suivons des protocoles stricts de confidentialité des données et ne partageons jamais vos informations personnelles avec des tiers sans consentement."
+        "question": "Pourquoi n'ai-je pas reçu la récompense complète pour le sondage ?",
+        "answer": "Certains sondages offrent des récompenses partielles pour les complétions partielles ou les disqualifications. Assurez-vous toujours de donner des réponses précises et d'avoir une connexion internet stable."
       },
       "q8": {
+        "question": "Puis-je utiliser un VPN ou un proxy pour répondre à des sondages ?",
+        "answer": "Non. L'utilisation de VPN ou de proxies est strictement interdite et peut entraîner la suspension de votre compte ou la disqualification des sondages."
+      },
+      "q9": {
+        "question": "Quand puis-je échanger mes récompenses ?",
+        "answer": "Dès que vous atteignez le seuil minimum (par exemple, 425 ₹), vous pouvez échanger instantanément via PayPal, des cartes-cadeaux ou d'autres méthodes disponibles."
+      },
+      "q10": {
         "question": "Puis-je parrainer d'autres personnes et gagner des bonus ?",
-        "answer": "Oui ! Vous pouvez inviter des amis et gagner des bonus de parrainage une fois qu'ils commencent à gagner sur la plateforme. Consultez votre tableau de bord de compte pour les options de parrainage."
+        "answer": "Oui ! Partagez votre lien de parrainage. Vous gagnerez une commission de 10 % sur ce que vos filleuls gagnent grâce aux sondages — à vie !"
+      },
+      "q11": {
+        "question": "Mes données sont-elles en sécurité avec Profit Piller ?",
+        "answer": "Oui, vos données sont sécurisées par des protocoles de confidentialité stricts et ne sont jamais partagées sans votre consentement."
+      },
+      "q12": {
+        "question": "Comment puis-je contacter le support ?",
+        "answer": "Contactez-nous à tout moment à <a href='mailto:support@profitpiller.com'>support@profitpiller.com</a> ou via le formulaire de contact de l'application."
       }
-    },
-    "supportSection": {
-      "title": "Toujours besoin d'aide ou avez des questions ?",
-      "point1": "Nouveau sur la plateforme ou avez du mal à accéder aux fonctionnalités ?",
-      "point2": "Ne vous inquiétez pas — nous sommes là pour vous guider.",
-      "point3": "Attendez-vous à un support rapide, amical et utile de notre équipe.",
-      "point4": "Qu'il s'agisse d'une simple question ou d'un problème technique,",
-      "point5": "contactez-nous à tout moment — nous ne sommes qu'à un clic.",
-      "contactButton": "Contacter notre équipe de support"
     }
-  },
-  "common": {
-    "arrowForward": "arrow_forward"
   }
 }

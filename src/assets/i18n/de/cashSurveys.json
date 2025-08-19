@@ -1,47 +1,47 @@
 {
     "cashSurveys": {
         "banner": {
-            "title": "Werden Sie für Ihre Meinungen in bar bezahlt",
-            "subtitle": "Möchten Sie in Ihrer Freizeit einfach zusätzliches Geld verdienen? Teilen Sie Ihre Gedanken und lassen Sie sich für jede abgeschlossene Umfrage direkt in bar bezahlen.",
-            "description1": "Egal, ob Sie etwas Besonderes planen oder einen schnellen Geldsegen benötigen, Umfragen für Bargeld sind eine clevere Möglichkeit, Ihre Ziele zu erreichen.",
-            "description2": "Egal, ob Sie etwas Besonderes planen oder einfach nur einen schnellen Geldsegen wünschen, lassen Sie sich mit echtem Geld belohnen, indem Sie Ihre Ansichten teilen.",
+            "title": "Lassen Sie sich Ihre Meinung in bar bezahlen",
+            "subtitle": "Sie möchten in Ihrer Freizeit einfach zusätzliches Geld verdienen? Teilen Sie Ihre Gedanken und erhalten Sie für jede abgeschlossene Umfrage eine direkte Bezahlung in bar.",
+            "description1": "Egal, ob Sie etwas Besonderes planen oder einen schnellen Geldschub benötigen, das Ausfüllen von Umfragen gegen Bargeld ist eine intelligente Möglichkeit, Ihre Ziele zu erreichen.",
+            "description2": "Egal, ob Sie etwas Besonderes planen oder einfach nur eine schnelle Aufstockung Ihres Geldes wünschen, werden Sie mit echtem Bargeld belohnt, indem Sie Ihre Ansichten teilen.",
             "signUpButton": "Jetzt anmelden",
-            "signUpNote": "Starten Sie noch heute Ihre erste bezahlte Bargeldumfrage mit Profitpiller."
+            "signUpNote": "Starten Sie noch heute Ihre erste bezahlte Bar-Umfrage mit Profitpiller."
         },
         "section1": {
             "subtitle": "Schnelle Umfragen, sofortiges Bargeld",
-            "title": "Auszahlung für jede abgeschlossene Umfrage",
-            "description1": "Echte Umfragen. Echte Meinungen. Echtes Geld auf Ihrem Konto.",
-            "description2": "Unternehmen wollen Ihr Feedback – und sie sind bereit, dafür in bar zu bezahlen. Mit Profitpiller können Sie echtes Geld für Ihre Zeit und Ihren Input zu Markenpräferenzen, Produktideen oder täglichen Gewohnheiten verdienen.",
-            "description3": "Wir verbinden Sie mit top-bezahlten Umfrageanbietern, die Ihre Erkenntnisse schätzen. Füllen Sie Umfragen nach Belieben aus und zahlen Sie aus, wann immer Sie bereit sind.",
+            "title": "Lassen Sie sich für jede abgeschlossene Umfrage auszahlen",
+            "description1": "Echte Umfragen. Echte Meinungen. Echtes Bargeld auf Ihrem Konto.",
+            "description2": "Unternehmen möchten Ihr Feedback – und sind bereit, in bar dafür zu bezahlen. Mit Profitpiller können Sie echtes Geld für Ihre Zeit und Ihren Input zu Markenpräferenzen, Produktideen oder täglichen Gewohnheiten verdienen.",
+            "description3": "Wir verbinden Sie mit bestbezahlten Umfrageanbietern, die Ihre Erkenntnisse schätzen. Füllen Sie Umfragen bequem aus und lassen Sie sich auszahlen, wann immer Sie bereit sind.",
             "description4": "Kein Schnickschnack, keine Punkte – nur direkte Bargeldprämien für das, was Sie denken."
         },
         "features": {
             "subtitle": "Maximieren Sie Ihre Freizeit",
             "title": "Verwandeln Sie Meinungen in sofortiges Bargeld",
-            "description": "Starten Sie jetzt Ihre erste Bargeldumfrage und zahlen Sie in nur <span>17 Minuten</span> aus.",
+            "description": "Starten Sie jetzt Ihre erste Bargeld-Umfrage und lassen Sie sich in nur <span>17 Minuten</span> auszahlen.",
             "step1": {
                 "label": "Schritt 1",
-                "title": "Erstellen Sie Ihr Profitpiller-Konto, um Ihren Willkommensbonus zu beanspruchen und Zugang zu Bargeldumfragen zu erhalten."
+                "title": "Erstellen Sie Ihr Profitpiller-Konto, um Ihren Willkommensbonus zu beanspruchen und Zugang zu Bargeld-Umfragen zu erhalten."
             },
             "step2": {
                 "label": "Schritt 2",
-                "title": "Wählen Sie die Umfragen aus, die am meisten Geld zahlen, und füllen Sie diese nach Ihrem eigenen Zeitplan aus.",
-                "description": "Nehmen Sie täglich an so vielen Umfragen teil, wie Sie möchten – je mehr Sie tun, desto mehr Geld verdienen Sie."
+                "title": "Wählen Sie Umfragen aus, die das meiste Bargeld bezahlen, und füllen Sie sie nach Ihrem eigenen Zeitplan aus.",
+                "description": "Nehmen Sie täglich an so vielen Umfragen teil, wie Sie möchten – je mehr Sie tun, desto mehr Bargeld verdienen Sie."
             },
             "step3": {
                 "label": "Schritt 3",
-                "title": "Bereit zur Auszahlung? Lösen Sie Ihre Einnahmen sofort gegen PayPal oder Geschenkkarten ein.",
-                "description": "Ob es sich um echtes Bargeld oder Ausgaben bei Ihrem Lieblingshändler handelt, die Wahl liegt bei Ihnen."
+                "title": "Bereit zur Auszahlung? Lösen Sie Ihre Einnahmen sofort für PayPal oder Geschenkkarten ein.",
+                "description": "Ob echtes Geld oder Einkäufe bei Ihrem Lieblingshändler, die Wahl liegt bei Ihnen."
             }
         },
         "rewardsGrid": {
-            "paypalWithdraw": "Ihr Bargeld mit PayPal abheben",
-            "amazonPaid": "Zahlung über Amazon-Geschenkkarten erhalten"
+            "paypalWithdraw": "Heben Sie Ihr Geld mit PayPal ab",
+            "amazonPaid": "Lassen Sie sich über Amazon-Geschenkkarten bezahlen"
         },
         "support": {
-            "title": "Treten Sie Profitpiller bei und werden Sie für Umfragen in bar bezahlt",
-            "description": "Die Anmeldung dauert nur eine Minute – beginnen Sie noch heute, für jede abgeschlossene Umfrage in echtem Geld bezahlt zu werden.",
+            "title": "Treten Sie Profitpiller bei und lassen Sie sich für Umfragen in bar bezahlen",
+            "description": "Die Anmeldung dauert nur eine Minute – lassen Sie sich noch heute für jede abgeschlossene Umfrage in echtem Bargeld bezahlen.",
             "joinNow": "Jetzt beitreten"
         }
     },

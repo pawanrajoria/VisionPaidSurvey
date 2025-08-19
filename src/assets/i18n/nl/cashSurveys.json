@@ -1,0 +1,51 @@
+{
+    "cashSurveys": {
+        "banner": {
+            "title": "Word contant betaald voor uw mening",
+            "subtitle": "Wilt u een eenvoudige manier om extra geld te verdienen in uw vrije tijd? Deel uw gedachten en word direct contant betaald voor elke enquête die u invult.",
+            "description1": "Of u nu iets speciaals plant of een snelle geldschot nodig heeft, het invullen van enquêtes voor contant geld is een slimme manier om uw doelen te bereiken.",
+            "description2": "Of u nu iets speciaals plant of gewoon een snelle aanvulling van contant geld wilt, word beloond met echt geld door uw mening te delen.",
+            "signUpButton": "Nu aanmelden",
+            "signUpNote": "Start vandaag nog uw eerste betaalde enquête met Profitpiller."
+        },
+        "section1": {
+            "subtitle": "Snelle enquêtes, direct contant geld",
+            "title": "Kassa voor elke enquête die u invult",
+            "description1": "Echte enquêtes. Echte meningen. Echt contant geld op uw rekening.",
+            "description2": "Bedrijven willen uw feedback – en ze zijn bereid om daar contant voor te betalen. Met Profitpiller kunt u echt geld verdienen voor uw tijd en input over merkvoorkeuren, productideeën of dagelijkse gewoonten.",
+            "description3": "Wij verbinden u met de best betalende enquêteproviders die uw inzichten waarderen. Voltooi enquêtes wanneer het u uitkomt en laat u uitbetalen wanneer u er klaar voor bent.",
+            "description4": "Geen poespas, geen punten – alleen directe contante beloningen voor het delen van wat u denkt."
+        },
+        "features": {
+            "subtitle": "Maximaliseer uw vrije tijd",
+            "title": "Zet meningen om in direct contant geld",
+            "description": "Start nu uw eerste contante enquête en laat u in slechts <span>17 minuten</span> uitbetalen.",
+            "step1": {
+                "label": "Stap 1",
+                "title": "Maak uw Profitpiller-account aan om uw welkomstbonus te claimen en toegang tot contante enquêtes te ontgrendelen."
+            },
+            "step2": {
+                "label": "Stap 2",
+                "title": "Kies enquêtes die het meeste contant geld betalen en voltooi ze volgens uw eigen schema.",
+                "description": "Neem dagelijks zoveel enquêtes als u wilt – hoe meer u doet, hoe meer contant geld u verdient."
+            },
+            "step3": {
+                "label": "Stap 3",
+                "title": "Klaar om uit te betalen? Wissel uw verdiensten direct in voor PayPal of cadeaubonnen.",
+                "description": "Of het nu gaat om echt geld of om uitgaven bij uw favoriete winkel, de keuze is aan u."
+            }
+        },
+        "rewardsGrid": {
+            "paypalWithdraw": "Neem uw geld op met PayPal",
+            "amazonPaid": "Word betaald via Amazon-cadeaubonnen"
+        },
+        "support": {
+            "title": "Word lid van Profitpiller & word contant betaald voor enquêtes",
+            "description": "Het duurt slechts een minuut om u aan te melden – begin vandaag nog met het verdienen van echt geld voor elke enquête die u invult.",
+            "joinNow": "Nu lid worden"
+        }
+    },
+    "common": {
+        "learnMore": "Meer informatie"
+    }
+}

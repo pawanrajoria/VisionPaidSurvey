@@ -1,0 +1,40 @@
+{
+    "account": {
+        "heading": {
+            "title": "Hai bisogno di aiuto con Profit Piller?",
+            "intro": "Siamo qui per rendere la tua esperienza fluida. Che tu abbia bisogno di aiuto con sondaggi, riscatti o premi, il nostro team di supporto è a tua disposizione."
+        },
+        "hey_text": "Ciao",
+        "earning_text": "Guadagni",
+        "profile": "Profilo",
+        "recent_activity": "Attività recente",
+        "setting": "Impostazioni account",
+        "log_out": "Esci",
+        "profile_slogen": "Il tuo profilo è più che semplici dettagli: è la porta d'accesso a guadagni più elevati, abbinamenti più rapidi e migliori opportunità.",
+        "age": "Età",
+        "gender": "Genere",
+        "zip_code": "Codice postale",
+        "dateOfBirth": "Data di nascita",
+        "personal_details": "Dettagli personali",
+        "Activity": "Attività",
+        "Points Earned": "Punti guadagnati",
+        "Rewards Redeemed": "Premi riscattati",
+        "Survey Completed": "Sondaggio completato",
+        "Offer Completed": "Offerta completata",
+        "Achievements Earned": "Risultati ottenuti",
+        "Leaderboard Level": "Livello classifica",
+        "headings": {
+            "activity_log": "Registro attività",
+            "survey_log": "Attività dei sondaggi",
+            "account_setting": "Impostazioni account",
+            "change_basic_setting": "Cambia informazioni di base",
+            "change_username": "Cambia nome utente",
+            "change_password": "Cambia password",
+            "change_email": "Cambia email",
+            "delete_account": "Elimina account",
+            "reward_transaction": "Premi e transazioni",
+            "notification": "Notifiche",
+            "help_support": "Aiuto e supporto"
+        }
+    }
+}

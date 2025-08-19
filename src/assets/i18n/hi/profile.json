@@ -1,0 +1,40 @@
+{
+    "account": {
+        "heading": {
+            "title": "प्रॉफिट पिलर के साथ मदद चाहिए?",
+            "intro": "हम आपके अनुभव को सहज बनाने के लिए यहां हैं। चाहे आपको सर्वेक्षण, मोचन, या पुरस्कारों के साथ मदद की आवश्यकता हो - हमारी सहायता टीम आपके साथ है।"
+        },
+        "hey_text": "नमस्ते",
+        "earning_text": "कमाई",
+        "profile": "प्रोफ़ाइल",
+        "recent_activity": "हाल की गतिविधि",
+        "setting": "खाता सेटिंग",
+        "log_out": "लॉग आउट",
+        "profile_slogen": "आपकी प्रोफ़ाइल सिर्फ़ विवरणों से कहीं ज़्यादा है - यह उच्च कमाई, तेज़ मिलान, और बेहतर अवसरों का प्रवेश द्वार है।",
+        "age": "आयु",
+        "gender": "लिंग",
+        "zip_code": "डाक कोड",
+        "dateOfBirth": "जन्म तिथि",
+        "personal_details": "व्यक्तिगत विवरण",
+        "Activity": "गतिविधि",
+        "Points Earned": "अर्जित अंक",
+        "Rewards Redeemed": "भुनाए गए पुरस्कार",
+        "Survey Completed": "सर्वेक्षण पूरा हुआ",
+        "Offer Completed": "ऑफ़र पूरा हुआ",
+        "Achievements Earned": "अर्जित उपलब्धियाँ",
+        "Leaderboard Level": "लीडरबोर्ड स्तर",
+        "headings": {
+            "activity_log": "गतिविधि लॉग",
+            "survey_log": "सर्वेक्षण की गतिविधियाँ",
+            "account_setting": "खाता सेटिंग्स",
+            "change_basic_setting": "मूल जानकारी बदलें",
+            "change_username": "उपयोगकर्ता नाम बदलें",
+            "change_password": "पासवर्ड बदलें",
+            "change_email": "ईमेल बदलें",
+            "delete_account": "खाता हटाएँ",
+            "reward_transaction": "पुरस्कार और लेन-देन",
+            "notification": "सूचनाएँ",
+            "help_support": "सहायता और समर्थन"
+        }
+    }
+}

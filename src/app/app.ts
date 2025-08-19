@@ -25,6 +25,7 @@ import { BaseComponent } from './base.component';
 export class AppComponent extends BaseComponent implements OnInit {
   title = 'VisionPaidSurvey';
   isLoading$!: Observable<boolean>;
+  translationsLoaded = false;
 
   constructor(
     private loader: LoaderService,
@@ -40,11 +41,21 @@ export class AppComponent extends BaseComponent implements OnInit {
   ) {
     super();
     this.isLoading$ = this.loader.loading$;
-
     // ✅ SSR-safe language preference setup
     const browserLang = this.isBrowser ? this.translate.getBrowserLang() : 'en';
     this.translate.setDefaultLang('en');
-    this.translate.use(browserLang?.match(/en|es|fr/) ? browserLang : 'en');
+    this.translate.use(browserLang?.match(/en|es|fr/) ? browserLang : 'en').subscribe(() => {
+      if (this.isBrowser && this.win) {
+        setTimeout(() => {
+          this.translationsLoaded = true;
+        }, 100);
+      }
+    });
+
+  }
+
+  get translationsLoadedInfo() {
+    return this.translationsLoaded;
   }
 
   ngOnInit() {

@@ -8,9 +8,10 @@
         ]
     },
     "files": [
-        "src/main.server.ts"
+        "src/main.server.ts",
+        "server/multilanguagetranslator.server.ts"
     ],
     "angularCompilerOptions": {
-        "entryModule": "./app/app.server.module#AppServerModule"
+        "entryModule": "src/app/app.server.module#AppServerModule"
     }
 }

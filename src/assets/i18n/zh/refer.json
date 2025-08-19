@@ -1,0 +1,37 @@
+{
+  "refer": {
+    "heading": {
+      "subtitle": "分享您的链接，并从您朋友的收入中获得 10% 的终身佣金。",
+      "title": "提高您的收入 — 推荐并赚取！"
+    },
+    "title": "工作原理",
+    "Earned": "已赚取",
+    "CopyCode": "复制代码",
+    "uselink": "改用链接",
+    "referrallink": "推荐链接",
+    "your_referrallink": "您的推荐链接",
+    "instruction": "您只能拥有一个帐户，并且不能推荐自己！",
+    "copy_link": "复制链接",
+    "step1": {
+      "title": "邀请您的朋友",
+      "description": "向您的朋友介绍 ProfitPiller，并在社交媒体、聊天或其他任何您喜欢的地方分享您的推荐链接。"
+    },
+    "step2": {
+      "title": "分享您的奖励代码",
+      "description": "当新用户在注册后 24 小时内兑换您的奖励代码时，他们将成为您的推荐人，并在最初的 24 小时内享受 10% 的奖励。"
+    },
+    "step3": {
+      "title": "领取您的佣金",
+      "description": "对您的推荐人获得的所有调查奖励赚取 10% 的佣金 — 终身有效。别担心，他们的收入保持不变 — 您的奖励由我们支付！"
+    }
+  },
+  "redeem": {
+    "bonus_code": "奖励代码",
+    "enter_code": "输入您的代码",
+    "redeem_code": "兑换代码",
+    "heading": {
+      "subtitle": "兑换您的奖励代码以获得特别优惠。",
+      "title": "兑换奖励代码"
+    }
+  }
+}

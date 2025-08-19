@@ -1,0 +1,25 @@
+{
+  "personalInformation": {
+    "heading": {
+      "title": "不要出售我的信息"
+    },
+    "intro": {
+      "paragraph": "在 <strong>Profitpiller</strong>，我们优先考虑您的隐私，并尊重您对个人信息的控制权。根据《加州消费者隐私法案》(CCPA) 等隐私法规，您有权要求不出售您的个人数据。"
+    },
+    "whatItMeans": {
+      "title": "这是什么意思？",
+      "paragraph": "我们可能会收集某些数据以增强您的用户体验并支持我们服务的功能。虽然我们不会以传统意义上的方式“出售”您的数据，但根据某些隐私法律，与合作伙伴共享数据的某些形式可能被视为“出售”。"
+    },
+    "optOutForm": {
+      "title": "选择退出表",
+      "fullNameLabel": "您的全名",
+      "emailLabel": "电子邮件地址",
+      "commentsLabel": "其他评论（可选）",
+      "submitButton": "提交请求"
+    },
+    "questions": {
+      "title": "有疑问？",
+      "paragraph": "对于我们如何管理您的个人数据的任何疑问或需要额外信息，请随时通过 <a href=\"mailto:privacy@profitpiller.com\">privacy@profitpiller.com</a> 联系我们。"
+    }
+  }
+}

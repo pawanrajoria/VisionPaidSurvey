@@ -1,47 +1,47 @@
 {
     "cashSurveys": {
         "banner": {
-            "title": "Soyez Payé en Espèces pour Vos Opinions",
-            "subtitle": "Vous voulez un moyen simple de gagner de l'argent supplémentaire pendant votre temps libre ? Partagez vos pensées et soyez directement payé en espèces pour chaque sondage que vous complétez.",
-            "description1": "Que vous planifiez quelque chose de spécial ou que vous ayez besoin d'un coup de pouce rapide en espèces, répondre à des sondages rémunérés est un moyen intelligent d'atteindre vos objectifs.",
-            "description2": "Que vous planifiez quelque chose de spécial ou que vous souhaitiez simplement un petit complément d'argent rapide, soyez récompensé en argent réel en partageant vos opinions.",
-            "signUpButton": "S'inscrire maintenant",
-            "signUpNote": "Commencez votre premier sondage rémunéré en espèces avec Profitpiller dès aujourd'hui."
+            "title": "Soyez payé en espèces pour vos opinions",
+            "subtitle": "Vous voulez un moyen simple de gagner de l'argent supplémentaire pendant votre temps libre ? Partagez vos pensées et soyez payé directement en espèces pour chaque sondage que vous remplissez.",
+            "description1": "Que vous planifiiez quelque chose de spécial ou que vous ayez besoin d'une injection d'argent rapide, remplir des sondages pour de l'argent est un moyen intelligent d'atteindre vos objectifs.",
+            "description2": "Que vous planifiez quelque chose de spécial ou que vous vouliez juste une petite somme d'argent, soyez récompensé en espèces réelles en partageant vos opinions.",
+            "signUpButton": "Inscrivez-vous maintenant",
+            "signUpNote": "Commencez votre premier sondage rémunéré en espèces avec Profitpiller aujourd'hui."
         },
         "section1": {
-            "subtitle": "Sondages Rapides, Argent Instantané",
-            "title": "Encaissez pour Chaque Sondage que Vous Complétez",
+            "subtitle": "Sondages rapides, argent instantané",
+            "title": "Encaissez pour chaque sondage que vous remplissez",
             "description1": "De vrais sondages. De vraies opinions. De l'argent réel sur votre compte.",
-            "description2": "Les entreprises veulent vos commentaires — et elles sont prêtes à payer en espèces pour les obtenir. Avec Profitpiller, vous pouvez gagner de l'argent réel pour votre temps et vos commentaires sur les préférences de marque, les idées de produits ou les habitudes quotidiennes.",
-            "description3": "Nous vous connectons avec les fournisseurs de sondages les mieux rémunérés qui valorisent vos idées. Complétez les sondages à votre convenance et encaissez quand vous êtes prêt.",
+            "description2": "Les entreprises veulent votre avis – et elles sont prêtes à payer en espèces pour l'obtenir. Avec Profitpiller, vous pouvez gagner de l'argent réel pour votre temps et vos commentaires sur les préférences de marque, les idées de produits ou les habitudes quotidiennes.",
+            "description3": "Nous vous mettons en contact avec les fournisseurs de sondages les mieux rémunérés qui valorisent vos opinions. Remplissez des sondages à votre convenance et encaissez quand vous le souhaitez.",
             "description4": "Pas de fioritures, pas de points — juste des récompenses en espèces directes pour partager ce que vous pensez."
         },
         "features": {
-            "subtitle": "Maximisez Votre Temps Libre",
-            "title": "Transformez Vos Opinions en Argent Instantané",
-            "description": "Lancez votre premier sondage rémunéré en espèces dès maintenant et encaissez en aussi peu que <span>17 minutes.</span>",
+            "subtitle": "Maximisez votre temps libre",
+            "title": "Transformez vos opinions en argent instantané",
+            "description": "Commencez votre premier sondage en espèces maintenant et encaissez en seulement <span>17 minutes.</span>",
             "step1": {
                 "label": "Étape 1",
-                "title": "Créez votre compte Profitpiller pour réclamer votre bonus de bienvenue et débloquer l'accès aux sondages rémunérés en espèces."
+                "title": "Créez votre compte Profitpiller pour réclamer votre bonus de bienvenue et débloquer l'accès aux sondages en espèces."
             },
             "step2": {
                 "label": "Étape 2",
-                "title": "Choisissez les sondages qui rapportent le plus d'argent et complétez-les selon votre propre emploi du temps.",
+                "title": "Choisissez les sondages qui rapportent le plus d'argent et remplissez-les à votre rythme.",
                 "description": "Répondez à autant de sondages que vous le souhaitez chaque jour — plus vous en faites, plus vous gagnez d'argent."
             },
             "step3": {
                 "label": "Étape 3",
-                "title": "Prêt à encaisser ? Échangez vos gains contre PayPal ou des cartes cadeaux instantanément.",
+                "title": "Prêt à encaisser ? Échangez vos gains contre de l'argent PayPal ou des cartes-cadeaux instantanément.",
                 "description": "Que ce soit de l'argent réel ou des dépenses chez votre détaillant préféré, le choix vous appartient."
             }
         },
         "rewardsGrid": {
             "paypalWithdraw": "Retirez votre argent avec PayPal",
-            "amazonPaid": "Soyez payé via des cartes cadeaux Amazon"
+            "amazonPaid": "Soyez payé via des cartes-cadeaux Amazon"
         },
         "support": {
             "title": "Rejoignez Profitpiller et soyez payé en espèces pour les sondages",
-            "description": "L'inscription ne prend qu'une minute — commencez à être payé en argent réel dès aujourd'hui pour chaque sondage que vous complétez.",
+            "description": "Il ne faut qu'une minute pour s'inscrire — commencez à être payé en argent réel dès aujourd'hui pour chaque sondage que vous remplissez.",
             "joinNow": "Adhérer maintenant"
         }
     },

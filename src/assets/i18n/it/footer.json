@@ -1,0 +1,28 @@
+{
+    "footer": {
+        "copyright": "© 2025 Profit Piller - Tutti i diritti riservati.",
+        "productOf": "Un prodotto di",
+        "cralpkResearchGroup": "Cralpk Research Group",
+        "platform": {
+            "title": "Piattaforma",
+            "loginOrSignUp": "Accedi o registrati",
+            "aboutProfitpiller": "Informazioni su Profitpiller",
+            "contactUs": "Contattaci",
+            "help": "Aiuto"
+        },
+        "legal": {
+            "title": "Legale",
+            "privacyPolicy": "Informativa sulla privacy",
+            "termsConditions": "Termini e condizioni",
+            "doNotSell": "Non vendere le mie informazioni personali"
+        },
+        "exploreMore": {
+            "title": "Esplora di più",
+            "earnCash": "Guadagna denaro con sondaggi a pagamento",
+            "getRewarded": "Ottieni ricompense con carte regalo",
+            "redeemAmazon": "Riscatta carte regalo Amazon",
+            "getPaiyPal": "Ricevi pagamenti tramite PayPal",
+            "visaGiftCards": "Carte regalo Visa e altro"
+        }
+    }
+}

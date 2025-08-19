@@ -1,0 +1,47 @@
+{
+  "giftCardSurveys": {
+    "banner": {
+      "title": "Enquêtes die cadeaubonnen opleveren",
+      "subtitle": "Wilt u uw Amazon-verlanglijstje ontgrendelen of besparen op uw volgende online bestelling?",
+      "description": "Voltooi enquêtes en verdien cadeaubonnen van uw favoriete winkels. Met Profitpiller kunt u uw vrije tijd omzetten in echte beloningen van PayPal, Visa, Amazon en meer.",
+      "startButton": "Begin met verdienen",
+      "startNote": "Maak uw gratis Profitpiller-account aan om nu cadeaubonnen te verdienen."
+    },
+    "section1": {
+      "subtitle": "Eenvoudige Enquêtes, Directe Beloningen",
+      "title": "Ontvang gratis cadeaubonnen voor het delen van uw mening",
+      "description1": "Voltooi snelle enquêtes en wissel cadeaubonnen in van populaire merken.",
+      "description2": "Uw feedback helpt bedrijven te verbeteren, en zij zijn bereid u te belonen. Van dagelijkse gewoonten tot productkeuzes, uw mening telt — en Profitpiller zorgt ervoor dat u wordt gecompenseerd met cadeaubonnen die u ook daadwerkelijk zult gebruiken.",
+      "description3": "Profitpiller verbindt u met echte merken die op zoek zijn naar echte antwoorden — en u verdient in ruil daarvoor echte cadeaubonnen. Het is een win-win situatie voor iedereen.",
+      "description4": "Geen complexe aanmeldingen, geen minimale uitbetalingsdrempels, geen saaie enquêtes. Word gewoon lid van Profitpiller en begin binnen enkele minuten met het verdienen van cadeaubonnen — sommige gebruikers ontvangen hun eerste beloning in slechts 17 minuten!",
+      "strongConclusion": "Begin nu en wissel uw antwoorden direct in voor <a routerLink=\"#\">gratis cadeaubonnen</a>!"
+    },
+    "features": {
+      "subtitle": "Uw Tijd, Uw Beloningen",
+      "title": "Profitpiller Enquêtes die u met cadeaubonnen belonen",
+      "description": "Word lid van Profitpiller, voltooi enquêtes en ontgrendel cadeaubonnen van uw favoriete winkels.",
+      "step1": {
+        "label": "Stap 1",
+        "title": "Maak uw Profitpiller-account aan en maak u klaar om gratis cadeaubonnen te verdienen door enquêtes in te vullen."
+      },
+      "step2": {
+        "label": "Stap 2",
+        "title": "Kies de enquêtes die het beste bij u passen en verdien punten voor elk antwoord.",
+        "description": "Er is geen limiet — hoe meer u deelneemt, hoe meer cadeaubonnen u kunt verdienen. Kijk hoe uw saldo groeit met elke enquête."
+      },
+      "step3": {
+        "label": "Stap 3",
+        "title": "Wissel uw punten in voor cadeaubonnen van Visa, Amazon, PayPal en meer.",
+        "description": "Gebruik uw beloningen zoals u wilt — besteed ze online, trakteer uzelf of spaar ze op voor iets groots. Zonder een uitbetalingsminimum en met flexibele opties, geeft Profitpiller u de controle over uw inkomsten."
+      }
+    },
+    "support": {
+      "title": "Begin vandaag nog met het verdienen van cadeaubonnen met Profitpiller",
+      "description": "Mis het niet — maak nu uw account aan en verander uw stem in echte cadeaubonnen. Beantwoord snelle enquêtes, deel uw mening en kies uw beloning uit tientallen populaire merken. Het is eenvoudig, lonend en helemaal gratis.",
+      "joinNow": "Word nu lid"
+    }
+  },
+  "common": {
+    "arrowForward": "arrow_forward"
+  }
+}

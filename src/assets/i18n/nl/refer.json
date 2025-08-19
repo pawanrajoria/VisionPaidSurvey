@@ -1,0 +1,37 @@
+{
+  "refer": {
+    "heading": {
+      "subtitle": "Deel uw link en krijg 10% levenslange commissie op de inkomsten van uw vrienden.",
+      "title": "Verhoog uw inkomsten — Verwijs & Verdien!"
+    },
+    "title": "Hoe het werkt",
+    "Earned": "Verdiend",
+    "CopyCode": "Code kopiëren",
+    "uselink": "Gebruik in plaats daarvan een link",
+    "referrallink": "Verwijzingslink",
+    "your_referrallink": "Uw verwijzingslink",
+    "instruction": "U kunt slechts één account hebben en u kunt uzelf niet doorverwijzen!",
+    "copy_link": "Link kopiëren",
+    "step1": {
+      "title": "Nodig uw vrienden uit",
+      "description": "Vertel uw vrienden over ProfitPiller en deel uw verwijzingslink op sociale media, in chats of waar u maar wilt."
+    },
+    "step2": {
+      "title": "Deel uw Bonuscode",
+      "description": "Wanneer nieuwe gebruikers uw bonuscode binnen 24 uur na aanmelding inwisselen, worden ze uw doorverwijzing en genieten ze van een bonus van 10% voor hun eerste 24 uur."
+    },
+    "step3": {
+      "title": "Ontvang uw Commissie",
+      "description": "Verdien een commissie van 10% op alle enqu beloningen die uw doorverwijzingen verdienen — voor het leven. Maak u geen zorgen, hun inkomsten blijven hetzelfde — uw beloningen zijn van ons!"
+    }
+  },
+  "redeem": {
+    "bonus_code": "Bonuscode",
+    "enter_code": "Voer uw code in",
+    "redeem_code": "Code inwisselen",
+    "heading": {
+      "subtitle": "Wissel uw bonuscode in om een speciale aanbieding te ontvangen.",
+      "title": "Bonuscode inwisselen"
+    }
+  }
+}

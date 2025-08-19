@@ -1,3 +1,5 @@
+// src/app/app.config.ts
+
 import {
   ApplicationConfig,
   provideZoneChangeDetection,
@@ -28,7 +30,7 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 import { isPlatformBrowser } from '@angular/common';
 
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
-import { MultiTranslateHttpLoader } from './multilanguagetranslator';
+import { MultiTranslateClientHttpLoader } from './multilanguagetranslator';
 
 import { TablerIconsModule } from 'angular-tabler-icons';
 import * as TablerIcons from 'angular-tabler-icons/icons';
@@ -62,9 +64,8 @@ function initConfigService() {
   return configService.loadConfigs();
 }
 
-// ✅ Multi-Language Loader (FIXED ./ → / for SSR)
 export function multiHttpLoaderFactory(http: HttpClient) {
-  return new MultiTranslateHttpLoader(http, [
+  return new MultiTranslateClientHttpLoader(http, [
     { prefix: '/assets/i18n/', suffix: '/common.json' },
     { prefix: '/assets/i18n/', suffix: '/roothome.json' },
     { prefix: '/assets/i18n/', suffix: '/about.json' },
@@ -85,6 +86,13 @@ export function multiHttpLoaderFactory(http: HttpClient) {
     { prefix: '/assets/i18n/', suffix: '/refer.json' },
     { prefix: '/assets/i18n/', suffix: '/profile.json' },
   ]);
+};
+
+// ✅ APP_INITIALIZER to preload translations
+function initTranslateService(): () => Promise<void> {
+  const translate = inject(TranslateService);
+  translate.setDefaultLang('en');
+  return () => translate.use('en').toPromise().then(() => {});
 }
 
 export const appConfig: ApplicationConfig = {
@@ -92,6 +100,7 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideAppInitializer(initConfigService),
     provideZoneChangeDetection({ eventCoalescing: true }),
+
     provideRouter(
       routes,
       withInMemoryScrolling({
@@ -100,7 +109,13 @@ export const appConfig: ApplicationConfig = {
       }),
       withComponentInputBinding()
     ),
-    provideHttpClient(withFetch(), withInterceptorsFromDi(), withInterceptors([authInterceptor])),
+
+    provideHttpClient(
+      withFetch(),
+      withInterceptorsFromDi(),
+      withInterceptors([authInterceptor])
+    ),
+
     provideClientHydration(withEventReplay()),
     provideAnimationsAsync(),
 
@@ -116,13 +131,18 @@ export const appConfig: ApplicationConfig = {
         loader: {
           provide: TranslateLoader,
           useFactory: multiHttpLoaderFactory,
-          deps: [HttpClient]
+          deps: [HttpClient, PLATFORM_ID],
         },
         defaultLanguage: 'en'
       })
     ),
 
-    // ✅ Conditionally initialize Firebase Analytics (browser only)
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initTranslateService,
+      multi: true
+    },
+
     {
       provide: APP_INITIALIZER,
       useFactory: (platformId: Object) => {

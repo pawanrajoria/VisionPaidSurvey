@@ -1,0 +1,45 @@
+{
+  "visaGiftCards": {
+    "banner": {
+      "title": "Ganhe vales-presente Visa por compartilhar sua opinião",
+      "subtitle": "Prefere pagar com Visa? Quer ganhar recompensas que você pode gastar em quase qualquer lugar?",
+      "description": "Com o Profitpiller, você pode ganhar vales-presente Visa apenas completando pesquisas simples. Se você está economizando para um novo gadget ou quer reduzir suas despesas semanais, as recompensas de vales-presente Visa lhe dão a flexibilidade para gastar como quiser.",
+      "startButton": "Comece a ganhar agora",
+      "startNote": "Cadastre-se hoje e comece a ganhar recompensas Visa com o Profitpiller."
+    },
+    "section1": {
+      "subtitle": "Recompensas reais, pesquisas rápidas",
+      "title": "Seja recompensado instantaneamente com vales-presente Visa",
+      "description1": "Vales-presente Visa podem ser usados em quase qualquer lugar. Ganhe o seu online e desfrute da liberdade de comprar em lojas físicas, online ou onde quer que Visa seja aceito – em todo o mundo.",
+      "description2": "Use sua recompensa Visa para pagar sua moda favorita, reservar uma viagem ou até mesmo cobrir despesas essenciais do dia a dia. Sejam mantimentos ou gadgets, você escolhe como gastar suas recompensas.",
+      "description3": "Começar é simples. Junte-se ao Profitpiller e complete pesquisas rápidas sobre seus programas favoritos, produtos ou compras recentes. Suas opiniões ajudam as empresas a melhorar – e você é recompensado em troca.",
+      "description4": "Cadastre-se agora e resgate seu primeiro vale-presente Visa simplesmente completando sua primeira pesquisa no Profitpiller."
+    },
+    "features": {
+      "subtitle": "Transforme seu tempo livre em vales-presente",
+      "title": "Seja pago com vales-presente Visa por cada pesquisa",
+      "description": "Junte-se ao Profitpiller e comece a ganhar instantaneamente. É completamente grátis, e as pesquisas são curtas, simples e divertidas. Resgate seus pontos por vales-presente Visa que funcionam em quase todos os lugares que você compra.",
+      "step1": {
+        "label": "Passo 1",
+        "title": "Cadastre-se para sua conta gratuita do Profitpiller e resgate seu bônus de boas-vindas instantaneamente."
+      },
+      "step2": {
+        "label": "Passo 2",
+        "title": "Complete pesquisas e veja seu saldo crescer.",
+        "description": "Depois de apenas uma pesquisa, você pode resgatar seus pontos por um vale-presente Visa – ou continuar ganhando para recompensas maiores. Desfrute de opções de recompensa flexíveis, incluindo vales-presente da Amazon de US$ 5 ou vales-presente do PayPal. O Profitpiller torna fácil conseguir o que você quer."
+      }
+    },
+    "rewardsGrid": {
+      "paypalSurveys": "Pesquisas para vales-presente do PayPal",
+      "amazonSurveys": "Pesquisas para vales-presente da Amazon"
+    },
+    "support": {
+      "title": "Comece a ganhar recompensas Visa instantaneamente",
+      "description": "Junte-se ao Profitpiller hoje e transforme seu feedback em valor real. Compartilhe sua opinião, ganhe pontos e resgate vales-presente Visa que você pode usar em qualquer lugar. É rápido, seguro e sempre gratuito para começar.",
+      "joinNow": "Junte-se agora"
+    }
+  },
+  "common": {
+    "arrowForward": "seta para a frente"
+  }
+}

@@ -1,0 +1,17 @@
+{
+    "faq": {
+        "heading": {
+            "subtitle": "FAQ",
+            "title": "Soalan Lazim (FAQs)",
+            "description": "Lihat soalan paling biasa yang ditanya oleh pengguna tentang cara menggunakan <strong>ProfitPiller</strong> dan cara untuk mula menjana pendapatan."
+        },
+        "checkAllQuestions": "Lihat Semua Soalan",
+        "needHelp": {
+            "title": "Perlukan bantuan? Jawapan anda hanya satu klik sahaja.",
+            "description": "Perlukan bantuan lanjut? Pasukan kami sedia membantu. Jika anda tidak menemui jawapan yang anda cari, hubungi kami — kami akan memastikan anda mendapat kejelasan yang anda perlukan."
+        }
+    },
+    "common": {
+        "arrowForward": "arrow_forward"
+    }
+}

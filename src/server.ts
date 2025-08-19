@@ -50,6 +50,40 @@ app.use(express.static(browserDistFolder, {
   redirect: false // Prevents express from redirecting trailing slashes
 }));
 
+
+// ✅ Sitemap route – generate XML dynamically
+app.get('/sitemap.xml', (_req, res) => {
+  const hostname = 'https://www.profitpiller.com';
+  const staticRoutes = [
+    '', 'aboutus', 'amazongiftcard', 'cashout', 'contactus', 'do-not-sell',
+    'giftcard', 'help', 'paypal', 'privacy-policy', 'terms-conditions', 'visa',
+    'auth/login', 'auth/forgot-password',
+    'app/survey', 'app/offers', 'app/offerwall', 'app/cashout', 'app/leaderboard',
+    'app/account', 'app/help', 'app/refer', 'app/redeem',
+    'survey/completesurvey', 'survey/getSurveyInventory', 'survey/takeSurvey',
+    'admin/user-admin-dashboard'
+  ];
+
+  const dynamicRoutes = [
+    'auth'
+  ];
+
+  const allRoutes = [...staticRoutes, ...dynamicRoutes];
+
+  const urls = allRoutes.map(route => `
+    <url>
+      <loc>${hostname}/${route}</loc>
+    </url>`).join('');
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    ${urls}
+  </urlset>`;
+
+  res.header('Content-Type', 'application/xml');
+  res.send(sitemap.trim());
+});
+
 app.use((req, res, next) => {
   angularApp
     .handle(req)
@@ -66,12 +100,12 @@ app.use((req, res, next) => {
 
 // IMPORTANT: REMOVE THIS app.listen() BLOCK FOR FIREBASE FUNCTIONS!
 // Firebase Functions will handle the listening on the correct port internally.
-/*
-const port = Number(process.env['PORT'] || 8080);
-app.listen(port, () => {
-  console.log(`✅ SSR server is listening on http://localhost:${port}`);
-});
-*/
+
+// const port = Number(process.env['PORT'] || 8080);
+// app.listen(port, () => {
+//   console.log(`✅ SSR server is listening on http://localhost:${port}`);
+// });
+
 
 // Export the Express app instance. This is what Firebase Functions (functions/src/index.ts)
 // will import and use with `functions.https.onRequest(server.app)`.

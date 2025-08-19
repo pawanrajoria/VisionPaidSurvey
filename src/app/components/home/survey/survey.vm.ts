@@ -7,4 +7,5 @@ export interface ISurveyVM {
     rating: string;
     ratingCount: number;
     conversion:string;
+    isHot:boolean;
 }

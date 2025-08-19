@@ -8,16 +8,16 @@
       "startNote": "Crea tu cuenta gratuita de Profitpiller para empezar a ganar tarjetas de regalo ahora."
     },
     "section1": {
-      "subtitle": "Encuestas simples, recompensas instantáneas",
-      "title": "Obtén tarjetas de regalo gratis por compartir tus pensamientos",
+      "subtitle": "Encuestas Sencillas, Recompensas Instantáneas",
+      "title": "Obtén tarjetas de regalo gratis por compartir tus opiniones",
       "description1": "Completa encuestas rápidas y canjea tarjetas de regalo de marcas populares.",
-      "description2": "Tus comentarios ayudan a las empresas a mejorar, y están listas para recompensarte. Desde hábitos diarios hasta elecciones de productos, tus opiniones importan, y Profitpiller se asegura de que seas compensado con tarjetas de regalo que realmente usarás.",
-      "description3": "Profitpiller te conecta con marcas reales que buscan respuestas reales, y tú ganas tarjetas de regalo reales a cambio. Es una situación en la que todos ganan.",
-      "description4": "Sin registros complejos, sin obstáculos de pago mínimo, sin encuestas aburridas. Simplemente únete a Profitpiller y comienza a ganar tarjetas de regalo en cuestión de minutos. ¡Algunos usuarios obtienen su primera recompensa en solo 17 minutos!",
-      "strongConclusion": "¡Empieza ahora y canjea tus respuestas por <a routerLink=\"#\">tarjetas de regalo gratis</a> al instante!"
+      "description2": "Tus comentarios ayudan a las empresas a mejorar, y están listas para recompensarte. Desde hábitos diarios hasta elecciones de productos, tus opiniones importan — y Profitpiller se asegura de que seas compensado con tarjetas de regalo que realmente usarás.",
+      "description3": "Profitpiller te conecta con marcas reales que buscan respuestas reales — y tú ganas tarjetas de regalo reales a cambio. Es una situación beneficiosa para todos.",
+      "description4": "Sin registros complejos, sin umbrales de pago mínimos, sin encuestas aburridas. Simplemente únete a Profitpiller y empieza a ganar tarjetas de regalo en cuestión de minutos — ¡algunos usuarios obtienen su primera recompensa en solo 17 minutos!",
+      "strongConclusion": "¡Empieza ahora e intercambia tus respuestas por <a routerLink=\"#\">tarjetas de regalo gratis</a> al instante!"
     },
     "features": {
-      "subtitle": "Tu tiempo, tus recompensas",
+      "subtitle": "Tu Tiempo, Tus Recompensas",
       "title": "Encuestas de Profitpiller que te recompensan con tarjetas de regalo",
       "description": "Únete a Profitpiller, completa encuestas y desbloquea tarjetas de regalo de tus tiendas favoritas.",
       "step1": {
@@ -27,17 +27,17 @@
       "step2": {
         "label": "Paso 2",
         "title": "Elige las encuestas que mejor se adapten a ti y gana puntos por cada respuesta.",
-        "description": "No hay límite: cuanto más participes, más tarjetas de regalo podrás ganar. Observa cómo crece tu saldo con cada encuesta."
+        "description": "No hay límite — cuanto más participes, más tarjetas de regalo podrás ganar. Observa cómo tu saldo crece con cada encuesta."
       },
       "step3": {
         "label": "Paso 3",
         "title": "Canjea tus puntos por tarjetas de regalo de Visa, Amazon, PayPal y más.",
-        "description": "Usa tus recompensas como quieras: gasta en línea, compra un capricho o guárdalas para algo grande. Sin mínimo de cobro y con opciones flexibles, Profitpiller te pone a cargo de tus ganancias."
+        "description": "Usa tus recompensas como quieras — gástalas en línea, date un capricho o ahórralas para algo grande. Sin mínimo de cobro y con opciones flexibles, Profitpiller te da el control de tus ganancias."
       }
     },
     "support": {
-      "title": "Empieza a ganar tarjetas de regalo con Profitpiller hoy",
-      "description": "No te lo pierdas: crea tu cuenta ahora y convierte tu voz en tarjetas de regalo reales. Responde encuestas rápidas, comparte tus opiniones y elige entre docenas de marcas populares para tu recompensa. Es simple, gratificante y totalmente gratis.",
+      "title": "Empieza a ganar tarjetas de regalo con Profitpiller hoy mismo",
+      "description": "No te lo pierdas — crea tu cuenta ahora y convierte tu voz en tarjetas de regalo reales. Responde encuestas rápidas, comparte tus opiniones y elige entre docenas de marcas populares para tu recompensa. Es simple, gratificante y totalmente gratis.",
       "joinNow": "Únete ahora"
     }
   },

@@ -1,0 +1,37 @@
+{
+  "refer": {
+    "heading": {
+      "subtitle": "Kongsi pautan anda dan dapatkan komisen seumur hidup 10% atas pendapatan rakan anda.",
+      "title": "Tingkatkan Pendapatan Anda — Rujuk & Dapatkan!"
+    },
+    "title": "Bagaimana Ia Berfungsi",
+    "Earned": "Diperolehi",
+    "CopyCode": "Salin Kod",
+    "uselink": "Guna Pautan Sebaliknya",
+    "referrallink": "Pautan Rujukan",
+    "your_referrallink": "Pautan rujukan anda",
+    "instruction": "Anda hanya boleh mempunyai satu akaun dan anda tidak boleh merujuk diri anda sendiri!",
+    "copy_link": "Salin Pautan",
+    "step1": {
+      "title": "Jemput Rakan-rakan Anda",
+      "description": "Beritahu rakan anda tentang ProfitPiller dan kongsi pautan rujukan anda di media sosial, sembang, atau di mana-mana sahaja anda suka."
+    },
+    "step2": {
+      "title": "Kongsi Kod Bonus Anda",
+      "description": "Apabila pengguna baharu menebus kod bonus anda dalam masa 24 jam selepas mendaftar, mereka akan menjadi rujukan anda dan menikmati bonus 10% untuk 24 jam pertama mereka."
+    },
+    "step3": {
+      "title": "Terima Komisen Anda",
+      "description": "Dapatkan komisen 10% atas semua ganjaran tinjauan yang diperoleh oleh rujukan anda — seumur hidup. Jangan bimbang, pendapatan mereka kekal sama — ganjaran anda adalah dari kami!"
+    }
+  },
+  "redeem": {
+    "bonus_code": "Kod Bonus",
+    "enter_code": "Masukkan kod anda",
+    "redeem_code": "Tebus Kod",
+    "heading": {
+      "subtitle": "Tebus kod bonus anda untuk mendapatkan tawaran istimewa.",
+      "title": "Tebus Kod Bonus"
+    }
+  }
+}

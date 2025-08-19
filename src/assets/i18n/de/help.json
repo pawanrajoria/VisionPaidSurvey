@@ -1,21 +1,21 @@
 {
   "help": {
     "heading": {
-      "title": "Benötigen Sie Hilfe mit Profit Piller?",
-      "intro": "Wir sind hier, um Ihre Erfahrung reibungslos zu gestalten. Egal, ob Sie Hilfe bei Umfragen, Einlösungen oder Belohnungen benötigen – unser Support-Team steht Ihnen zur Seite."
+      "title": "Brauchen Sie Hilfe mit Profit Piller?",
+      "intro": "Wir sind hier, um Ihre Erfahrung reibungslos zu gestalten. Egal, ob Sie Hilfe bei Umfragen, Einlösungen oder Belohnungen benötigen — unser Support-Team steht Ihnen zur Seite."
     },
     "faqs": {
       "q1": {
-        "question": "Wie fange ich an, auf Profit Piller zu verdienen?",
-        "answer": "Melden Sie sich einfach für ein kostenloses Konto an, vervollständigen Sie Ihr Profil und greifen Sie auf Umfragen und Angebote zu. Ihre Einnahmen beginnen sofort zu steigen!"
+        "question": "Wie fange ich an, bei Profit Piller zu verdienen?",
+        "answer": "Melden Sie sich einfach für ein kostenloses Konto an, vervollständigen Sie Ihr Profil und greifen Sie auf Umfragen und Angebote zu. Ihre Einnahmen summieren sich sofort!"
       },
       "q2": {
         "question": "Wann kann ich meine Belohnungen einlösen?",
-        "answer": "Sobald Sie den Mindesteinlöseschwellenwert (z. B. 425 ₹ für PayPal oder Geschenkkarten) erreicht haben, können Sie Ihre Punkte sofort einlösen."
+        "answer": "Sobald Sie den Mindestschwellenwert für die Einlösung erreicht haben (z. B. ₹425 für PayPal oder Geschenkkarten), können Sie Ihre Punkte sofort einlösen."
       },
       "q3": {
         "question": "Warum habe ich für eine Umfrage keine Gutschrift erhalten?",
-        "answer": "Möglicherweise wurden Sie aufgrund von Umfrageanforderungen oder unvollständigen Antworten disqualifiziert. Wenn Sie der Meinung sind, dass dies ein Fehler war, <a href=\"mailto:support@profitpiller.com\">kontaktieren Sie unser Support-Team</a>."
+        "answer": "Möglicherweise wurden Sie aufgrund der Umfrageanforderungen oder unvollständiger Antworten disqualifiziert. Wenn Sie glauben, dass dies ein Fehler war, <a href=\"mailto:support@profitpiller.com\">wenden Sie sich an unser Support-Team</a>."
       },
       "q4": {
         "question": "Wie kann ich den Profit Piller Support kontaktieren?",
@@ -23,32 +23,39 @@
       },
       "q5": {
         "question": "Gibt es tägliche oder wöchentliche Verdienstgrenzen?",
-        "answer": "Keine strengen Grenzen! Sie können so viele Umfragen und Angebote abschließen, wie verfügbar sind. Je aktiver Sie sind, desto mehr verdienen Sie."
+        "answer": "Nein, es gibt keine Grenzen. Sie können so viel verdienen, wie Sie möchten, basierend auf den verfügbaren Umfragen und Angeboten."
       },
       "q6": {
-        "question": "Kann ich Profit Piller auf dem Handy nutzen?",
-        "answer": "Absolut! Unsere Plattform ist vollständig mobilfreundlich und funktioniert nahtlos auf jedem Smartphone oder Tablet."
+        "question": {
+          "text": "Ich wurde von einer Umfrage disqualifiziert. Was kann ich tun?",
+          "short": "Disqualifikation bei einer Umfrage"
+        },
+        "answer": "Wir verstehen, dass das frustrierend ist. Die Umfragequalifikationen werden von Drittpartnern verwaltet. Manchmal können erste Antworten darauf hinweisen, dass Sie nicht in das Zielprofil passen. Versuchen Sie es weiter mit den Umfragen und Sie werden eine finden, die zu Ihnen passt. In der Regel erhalten Sie eine kleine Belohnung für die Zeit, die Sie mit dem Versuch der Qualifizierung für eine Umfrage verbracht haben. Sie erhalten nicht die volle Gutschrift, aber es hilft uns, Sie beim nächsten Mal besser zuzuordnen."
       },
       "q7": {
-        "question": "Sind meine Daten bei Profit Piller sicher?",
-        "answer": "Ja. Wir befolgen strenge Datenschutzprotokolle und geben Ihre persönlichen Daten niemals ohne Zustimmung an Dritte weiter."
+        "question": "Warum habe ich nicht die volle Belohnung für die Umfrage erhalten?",
+        "answer": "Einige Umfragen bieten Teilbelohnungen für teilweise ausgefüllte oder disqualifizierte Umfragen. Stellen Sie immer sicher, dass Sie genaue Antworten geben und eine stabile Internetverbindung haben."
       },
       "q8": {
+        "question": "Kann ich ein VPN oder einen Proxy verwenden, um an Umfragen teilzunehmen?",
+        "answer": "Nein. Die Verwendung von VPNs oder Proxys ist strengstens untersagt und kann zur Sperrung Ihres Kontos oder zur Disqualifizierung von Umfragen führen."
+      },
+      "q9": {
+        "question": "Wann kann ich meine Belohnungen einlösen?",
+        "answer": "Sobald Sie den Mindestschwellenwert erreicht haben (z. B. ₹425), können Sie sofort über PayPal, Geschenkkarten oder andere verfügbare Methoden einlösen."
+      },
+      "q10": {
         "question": "Kann ich andere werben und Boni verdienen?",
-        "answer": "Ja! Sie können Freunde einladen und Empfehlungsboni verdienen, sobald diese auf der Plattform mit dem Verdienen beginnen. Überprüfen Sie Ihr Kontodashboard auf Empfehlungsoptionen."
+        "answer": "Ja! Teilen Sie Ihren Empfehlungslink. Sie erhalten eine Provision von 10 % auf das, was Ihre Empfehlungen durch Umfragen verdienen — und das lebenslang!"
+      },
+      "q11": {
+        "question": "Sind meine Daten bei Profit Piller sicher?",
+        "answer": "Ja, Ihre Daten werden durch strenge Datenschutzprotokolle gesichert und niemals ohne Ihre Zustimmung weitergegeben."
+      },
+      "q12": {
+        "question": "Wie kann ich den Support kontaktieren?",
+        "answer": "Sie erreichen uns jederzeit unter <a href='mailto:support@profitpiller.com'>support@profitpiller.com</a> oder über das Kontaktformular in der App."
       }
-    },
-    "supportSection": {
-      "title": "Brauchen Sie noch Hilfe oder haben Sie Fragen?",
-      "point1": "Neu auf der Plattform oder Probleme beim Zugriff auf Funktionen?",
-      "point2": "Keine Sorge – wir sind hier, um Sie zu führen.",
-      "point3": "Erwarten Sie schnellen, freundlichen und hilfreichen Support von unserem Team.",
-      "point4": "Ob es sich um eine einfache Anfrage oder ein technisches Problem handelt,",
-      "point5": "kontaktieren Sie uns jederzeit – wir sind nur einen Klick entfernt.",
-      "contactButton": "Kontaktieren Sie unser Support-Team"
     }
-  },
-  "common": {
-    "arrowForward": "arrow_forward"
   }
 }

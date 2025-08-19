@@ -12,16 +12,16 @@
         },
         "legal": {
             "title": "Rechtliches",
-            "privacyPolicy": "Datenschutzrichtlinie",
+            "privacyPolicy": "Datenschutzerklärung",
             "termsConditions": "Allgemeine Geschäftsbedingungen",
-            "doNotSell": "Meine persönlichen Daten nicht verkaufen"
+            "doNotSell": "Meine persönlichen Informationen nicht verkaufen"
         },
         "exploreMore": {
             "title": "Mehr entdecken",
-            "earnCash": "Bargeld mit bezahlten Umfragen verdienen",
+            "earnCash": "Mit bezahlten Umfragen Geld verdienen",
             "getRewarded": "Mit Geschenkkarten belohnt werden",
             "redeemAmazon": "Amazon-Geschenkkarten einlösen",
-            "getPaiyPal": "Per PayPal bezahlt werden",
+            "getPaiyPal": "Über PayPal bezahlt werden",
             "visaGiftCards": "Visa-Geschenkkarten & mehr"
         }
     }

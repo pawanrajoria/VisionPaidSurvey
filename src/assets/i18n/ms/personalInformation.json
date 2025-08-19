@@ -1,0 +1,25 @@
+{
+  "personalInformation": {
+    "heading": {
+      "title": "Jangan Jual Maklumat Saya"
+    },
+    "intro": {
+      "paragraph": "Di <strong>Profitpiller</strong>, kami mengutamakan privasi anda dan menghormati kawalan anda ke atas maklumat peribadi anda. Selaras dengan peraturan privasi seperti Akta Privasi Pengguna California (CCPA), anda mempunyai hak untuk meminta agar data peribadi anda tidak dijual."
+    },
+    "whatItMeans": {
+      "title": "Apakah maksudnya?",
+      "paragraph": "Kami mungkin mengumpul data tertentu untuk meningkatkan pengalaman pengguna anda dan menyokong kefungsian perkhidmatan kami. Walaupun kami tidak 'menjual' data anda dalam erti kata tradisional, beberapa bentuk perkongsian data dengan rakan kongsi mungkin dianggap sebagai 'jualan' di bawah undang-undang privasi tertentu."
+    },
+    "optOutForm": {
+      "title": "Borang Tolak",
+      "fullNameLabel": "Nama Penuh Anda",
+      "emailLabel": "Alamat E-mel",
+      "commentsLabel": "Komen Tambahan (Pilihan)",
+      "submitButton": "Hantar Permintaan"
+    },
+    "questions": {
+      "title": "Soalan?",
+      "paragraph": "Untuk sebarang soalan atau maklumat tambahan tentang cara kami menguruskan data peribadi anda, jangan ragu untuk menghubungi kami di <a href=\"mailto:privacy@profitpiller.com\">privacy@profitpiller.com</a>."
+    }
+  }
+}

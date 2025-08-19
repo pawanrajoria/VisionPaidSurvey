@@ -4,11 +4,37 @@
     "earnRewards": "Ganar Recompensas",
     "surveysOffers": "Encuestas y Ofertas",
     "redeemPoint": "Canjear Puntos",
-    "language": "Español (España)",
-    "goToApp": "Ir a la Aplicación",
-    "livePayouts": "Pagos en Vivo",
+    "language": "Español",
+    "goToApp": "Ir a la aplicación",
+    "livePayouts": "Pagos en vivo",
+    "Levels": "Niveles",
+    "blue_level": "🔹 Nivel Azul Alcanzado! 💙",
+    "motivated_message": "¡Mantente activo y sube de nivel más rápido!",
+    "left_headline": "Nivel/Bono",
+    "right_headline": "Niveles",
     "payoutItem": {
       "paypal": "PayPal"
+    },
+    "levels": {
+      "l1": {
+        "title": "Nivel Azul",
+        "description": "El viaje comienza aquí. ¡Gana más para ascender de rango!",
+        "range": "1-20"
+      },
+      "l2": {
+        "title": "Nivel Plata",
+        "description": "Cada mes, un día. Grandes bonos. ¡Ganancias ilimitadas!",
+        "range": "21-30"
+      },
+      "l3": {
+        "title": "Nivel Oro",
+        "description": "¡Disfruta de acceso VIP a recompensas con descuento!",
+        "range": "21-30"
+      },
+      "l4": {
+        "title": "Nivel Platino",
+        "description": "Desbloquea acceso anticipado &..."
+      }
     }
   }
 }

@@ -1,14 +1,40 @@
 {
   "header": {
-    "loginOrSignUp": "Se connecter ou S'inscrire",
+    "loginOrSignUp": "Se connecter ou s'inscrire",
     "earnRewards": "Gagner des récompenses",
-    "surveysOffers": "Sondages et Offres",
+    "surveysOffers": "Sondages & Offres",
     "redeemPoint": "Échanger des points",
-    "language": "Français (France)",
+    "language": "Français",
     "goToApp": "Aller à l'application",
     "livePayouts": "Paiements en direct",
+    "Levels": "Niveaux",
+    "blue_level": "🔹 Niveau Bleu Atteint ! 💙",
+    "motivated_message": "Restez actif et montez de niveau plus vite !",
+    "left_headline": "Niveau/Bonus",
+    "right_headline": "Niveaux",
     "payoutItem": {
       "paypal": "PayPal"
+    },
+    "levels": {
+      "l1": {
+        "title": "Niveau Bleu",
+        "description": "Le voyage commence ici. Gagnez plus pour monter en grade !",
+        "range": "1-20"
+      },
+      "l2": {
+        "title": "Niveau Argent",
+        "description": "Chaque mois, un jour. Gros bonus. Gains illimités !",
+        "range": "21-30"
+      },
+      "l3": {
+        "title": "Niveau Or",
+        "description": "Profitez d'un accès VIP aux récompenses à prix réduit !",
+        "range": "21-30"
+      },
+      "l4": {
+        "title": "Niveau Platine",
+        "description": "Débloquez l'accès anticipé &..."
+      }
     }
   }
 }

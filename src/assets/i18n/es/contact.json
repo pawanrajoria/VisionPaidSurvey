@@ -1,28 +1,64 @@
 {
-    "contact": {
-        "heading": {
-            "subtitle": "¿Preguntas? ¡Estamos aquí para ayudar!",
-            "title": "Conéctese con Profit Piller hoy"
-        },
-        "emailUs": {
-            "title": "Envíanos un correo electrónico",
-            "address": "support@profitpiller.com"
-        },
-        "callUs": {
-            "title": "Llámanos",
-            "number": "+91-8876654356"
-        },
-        "headOffice": {
-            "title": "Oficina Central",
-            "address": "Parque Tecnológico Spaze, Sector 49, Gurgaon, Haryana – 122001, India"
-        },
-        "form": {
-            "title": "Póngase en contacto con nosotros",
-            "nameLabel": "Nombre",
-            "emailLabel": "Correo electrónico",
-            "phoneLabel": "Número de teléfono",
-            "messageLabel": "Mensaje",
-            "submitButton": "Enviar mensaje"
-        }
+    "app.title": "Mi Impresionante Aplicación",
+    "buttons.save": "Guardar",
+    "buttons.cancel": "Cancelar",
+    "buttons.continue": "Continuar",
+    "buttons.resend": "Reenviar",
+    "buttons.google": "Google",
+    "buttons.back": "Atrás",
+    "buttons.submit": "Enviar",
+    "buttons.redeem": "Canjear",
+    "buttons.soundgreat": "¡Suena Genial!",
+    "text.username": "Nombre de Usuario",
+    "text.emailid": "ID de Correo Electrónico",
+    "text.password": "Contraseña",
+    "text.confirmpassword": "Confirmar Contraseña",
+    "text.oldpassword": "Contraseña Antigua",
+    "text.newpassword": "Nueva Contraseña",
+    "text.confirmnewpassword": "Confirmar Nueva Contraseña",
+    "Surveys": "Encuestas",
+    "Offers": "Ofertas",
+    "Offerwalls": "Muros de Ofertas",
+    "Leaderboard": "Clasificación",
+    "Cashout": "Retiro de Efectivo",
+    "Account": "Cuenta",
+    "More": "Más",
+    "Help": "Ayuda",
+    "Refer A Friend": "Recomendar a un Amigo",
+    "Redeem Bonus Code": "Canjear Código de Bono",
+    "Cashout Reward": "Recompensa de Retiro de Efectivo",
+    "My Account": "Mi Cuenta",
+    "Earning": "Ganancias",
+    "Logout": "Cerrar Sesión",
+    "How Levels Work": "Cómo Funcionan los Niveles",
+    "Next LVL Reward": "Recompensa del Siguiente Nivel",
+    "Redeem Points": "Canjear Puntos",
+    "Transfer": "Transferir",
+    "From": "De",
+    "Gift Cards": "Tarjetas de Regalo",
+    "search_reward": "Buscar tarjeta de regalo...",
+    "View": "Ver",
+    "more_giftcard": "más tarjetas de regalo",
+    "Offerwall": "Muro de Ofertas",
+    "Survey Partners": "Socios de Encuestas",
+    "messages": {
+        "email.required": "El correo electrónico es obligatorio.",
+        "username.required": "El nombre de usuario es obligatorio.",
+        "email.invalid": "Por favor, introduce una dirección de correo electrónico válida.",
+        "password.required": "La contraseña es obligatoria.",
+        "oldpassword.required": "La contraseña antigua es obligatoria.",
+        "newpassword.required": "La nueva contraseña es obligatoria.",
+        "confirmnewpassword.required": "La confirmación de la nueva contraseña es obligatoria.",
+        "confirmpassword.required": "La confirmación de la contraseña es obligatoria.",
+        "password.minlength": "La contraseña debe tener al menos 6 caracteres.",
+        "confirmpassword.notmatching": "La confirmación de la contraseña no coincide.",
+        "login.success": "¡Inicio de sesión exitoso!",
+        "login.error": "Error al iniciar sesión. Por favor, inténtalo de nuevo.",
+        "signup.success": "¡Registro exitoso! ¡Bienvenido a bordo.",
+        "signup.error": "Error al registrarse. Por favor, revisa tus datos e inténtalo de nuevo.",
+        "norecord_found": "No se encontraron registros",
+        "dateofbirth.required": "La fecha de nacimiento es obligatoria.",
+        "gender.required": "El género es obligatorio.",
+        "zip_code.required": "El código postal es obligatorio."
     }
 }

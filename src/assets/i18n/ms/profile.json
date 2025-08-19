@@ -1,0 +1,40 @@
+{
+    "account": {
+        "heading": {
+            "title": "Perlukan Bantuan dengan Profit Piller?",
+            "intro": "Kami sedia membantu untuk melancarkan pengalaman anda. Sama ada anda memerlukan bantuan dengan tinjauan, penebusan, atau ganjaran — pasukan sokongan kami sedia membantu anda."
+        },
+        "hey_text": "Hai",
+        "earning_text": "Pendapatan",
+        "profile": "Profil",
+        "recent_activity": "Aktiviti Terkini",
+        "setting": "Tetapan Akaun",
+        "log_out": "Log Keluar",
+        "profile_slogen": "Profil anda lebih daripada sekadar butiran — ia adalah pintu masuk kepada pendapatan yang lebih tinggi, padanan yang lebih pantas, dan peluang yang lebih baik.",
+        "age": "Umur",
+        "gender": "Jantina",
+        "zip_code": "Poskod",
+        "dateOfBirth": "Tarikh Lahir",
+        "personal_details": "Butiran Peribadi",
+        "Activity": "Aktiviti",
+        "Points Earned": "Mata Diperoleh",
+        "Rewards Redeemed": "Ganjaran Ditebus",
+        "Survey Completed": "Tinjauan Selesai",
+        "Offer Completed": "Tawaran Selesai",
+        "Achievements Earned": "Pencapaian Diperoleh",
+        "Leaderboard Level": "Tahap Papan Pendahulu",
+        "headings": {
+            "activity_log": "Log Aktiviti",
+            "survey_log": "Aktiviti Tinjauan",
+            "account_setting": "Tetapan Akaun",
+            "change_basic_setting": "Tukar Info Asas",
+            "change_username": "Tukar Nama Pengguna",
+            "change_password": "Tukar Kata Laluan",
+            "change_email": "Tukar E-mel",
+            "delete_account": "Padam Akaun",
+            "reward_transaction": "Ganjaran & Transaksi",
+            "notification": "Pemberitahuan",
+            "help_support": "Bantuan & Sokongan"
+        }
+    }
+}

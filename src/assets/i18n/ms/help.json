@@ -1,0 +1,61 @@
+{
+  "help": {
+    "heading": {
+      "title": "Perlukan Bantuan dengan Profit Piller?",
+      "intro": "Kami sedia membantu untuk menjadikan pengalaman anda lancar. Sama ada anda memerlukan bantuan dengan tinjauan, penebusan, atau ganjaran — pasukan sokongan kami sedia membantu anda."
+    },
+    "faqs": {
+      "q1": {
+        "question": "Bagaimana saya mula menjana pendapatan di Profit Piller?",
+        "answer": "Hanya daftar untuk akaun percuma, lengkapkan profil anda, dan akses tinjauan serta tawaran. Pendapatan anda mula terkumpul serta-merta!"
+      },
+      "q2": {
+        "question": "Bilakah saya boleh menebus ganjaran saya?",
+        "answer": "Sebaik sahaja anda mencapai ambang penebusan minimum (cth., ₹425 untuk PayPal atau kad hadiah), anda boleh menebus mata anda dengan serta-merta."
+      },
+      "q3": {
+        "question": "Mengapa saya tidak menerima kredit untuk tinjauan?",
+        "answer": "Anda mungkin telah hilang kelayakan disebabkan oleh keperluan tinjauan atau maklum balas yang tidak lengkap. Jika anda percaya ini adalah satu kesilapan, <a href=\"mailto:support@profitpiller.com\">hubungi pasukan sokongan kami</a>."
+      },
+      "q4": {
+        "question": "Bagaimana saya boleh menghubungi sokongan Profit Piller?",
+        "answer": "E-mel kami di <a href=\"mailto:support@profitpiller.com\">support@profitpiller.com</a> atau gunakan borang Hubungi Kami di laman web kami."
+      },
+      "q5": {
+        "question": "Adakah terdapat had pendapatan harian atau mingguan?",
+        "answer": "Tidak, tiada had. Anda boleh menjana pendapatan sebanyak yang anda mahu berdasarkan tinjauan dan tawaran yang tersedia."
+      },
+      "q6": {
+        "question": {
+          "text": "Saya telah hilang kelayakan daripada tinjauan. Apa yang boleh saya lakukan?",
+          "short": "Kehilangan kelayakan tinjauan"
+        },
+        "answer": "Kami faham ia mengecewakan. Kelayakan tinjauan diuruskan oleh rakan kongsi pihak ketiga. Kadang-kadang, respons awal mungkin menunjukkan anda tidak sesuai dengan profil sasaran. Teruskan mencuba tinjauan dan anda akan menemui yang sesuai untuk anda. Lazimnya, anda akan menerima ganjaran kecil untuk masa yang anda luangkan untuk cuba melayakkan diri bagi tinjauan. Anda tidak akan menerima kredit penuh, tetapi ia membantu kami memadankan anda dengan lebih baik pada masa akan datang."
+      },
+      "q7": {
+        "question": "Mengapa saya tidak menerima ganjaran penuh untuk tinjauan itu?",
+        "answer": "Beberapa tinjauan menawarkan ganjaran separa untuk penyelesaian separa atau kehilangan kelayakan. Sentiasa pastikan jawapan yang tepat dan sambungan internet yang stabil."
+      },
+      "q8": {
+        "question": "Bolehkah saya menggunakan VPN atau Proksi untuk mengambil tinjauan?",
+        "answer": "Tidak. Penggunaan VPN atau proksi dilarang sama sekali dan boleh mengakibatkan penggantungan akaun atau kehilangan kelayakan daripada tinjauan."
+      },
+      "q9": {
+        "question": "Bilakah saya boleh menebus ganjaran saya?",
+        "answer": "Sebaik sahaja anda mencapai ambang minimum (cth., ₹425), anda boleh menebus serta-merta melalui PayPal, kad hadiah, atau kaedah lain yang tersedia."
+      },
+      "q10": {
+        "question": "Bolehkah saya merujuk orang lain dan menjana bonus?",
+        "answer": "Ya! Kongsi pautan rujukan anda. Anda akan mendapat komisen 10% daripada apa yang rujukan anda peroleh daripada tinjauan — seumur hidup!"
+      },
+      "q11": {
+        "question": "Adakah data saya selamat dengan Profit Piller?",
+        "answer": "Ya, data anda dilindungi dengan protokol privasi yang ketat dan tidak akan dikongsi tanpa persetujuan anda."
+      },
+      "q12": {
+        "question": "Bagaimana saya boleh menghubungi sokongan?",
+        "answer": "Hubungi kami pada bila-bila masa di <a href='mailto:support@profitpiller.com'>support@profitpiller.com</a> atau melalui borang Hubungi Kami di dalam aplikasi."
+      }
+    }
+  }
+}

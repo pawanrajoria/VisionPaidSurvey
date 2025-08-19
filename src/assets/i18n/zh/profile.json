@@ -1,0 +1,40 @@
+{
+    "account": {
+        "heading": {
+            "title": "需要 Profit Piller 的帮助吗？",
+            "intro": "我们在这里让您的体验顺畅。无论您需要有关调查、兑换还是奖励的帮助，我们的支持团队都会为您提供支持。"
+        },
+        "hey_text": "嗨",
+        "earning_text": "收入",
+        "profile": "个人资料",
+        "recent_activity": "最近活动",
+        "setting": "账户设置",
+        "log_out": "注销",
+        "profile_slogen": "您的个人资料不仅仅是详细信息，它还是通往更高收入、更快匹配和更好机会的门户。",
+        "age": "年龄",
+        "gender": "性别",
+        "zip_code": "邮政编码",
+        "dateOfBirth": "出生日期",
+        "personal_details": "个人资料",
+        "Activity": "活动",
+        "Points Earned": "赚取的积分",
+        "Rewards Redeemed": "兑换的奖励",
+        "Survey Completed": "完成的调查",
+        "Offer Completed": "完成的优惠",
+        "Achievements Earned": "获得的成就",
+        "Leaderboard Level": "排行榜等级",
+        "headings": {
+            "activity_log": "活动日志",
+            "survey_log": "调查活动",
+            "account_setting": "账户设置",
+            "change_basic_setting": "更改基本信息",
+            "change_username": "更改用户名",
+            "change_password": "更改密码",
+            "change_email": "更改电子邮件",
+            "delete_account": "删除账户",
+            "reward_transaction": "奖励与交易",
+            "notification": "通知",
+            "help_support": "帮助与支持"
+        }
+    }
+}

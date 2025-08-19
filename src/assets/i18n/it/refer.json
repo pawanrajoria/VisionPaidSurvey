@@ -1,0 +1,37 @@
+{
+  "refer": {
+    "heading": {
+      "subtitle": "Condividi il tuo link e ottieni una commissione a vita del 10% sui guadagni dei tuoi amici.",
+      "title": "Aumenta i tuoi guadagni — Segnala e Guadagna!"
+    },
+    "title": "Come funziona",
+    "Earned": "Guadagnato",
+    "CopyCode": "Copia codice",
+    "uselink": "Usa il link invece",
+    "referrallink": "Link di riferimento",
+    "your_referrallink": "Il tuo link di riferimento",
+    "instruction": "Puoi avere solo un account e non puoi fare riferimento a te stesso!",
+    "copy_link": "Copia link",
+    "step1": {
+      "title": "Invita i tuoi amici",
+      "description": "Parla ai tuoi amici di ProfitPiller e condividi il tuo link di riferimento sui social media, nelle chat o ovunque tu voglia."
+    },
+    "step2": {
+      "title": "Condividi il tuo codice bonus",
+      "description": "Quando i nuovi utenti riscattano il tuo codice bonus entro 24 ore dalla registrazione, diventano un tuo riferimento e godono di un bonus del 10% per le loro prime 24 ore."
+    },
+    "step3": {
+      "title": "Ricevi la tua commissione",
+      "description": "Guadagna una commissione del 10% su tutte le ricompense dei sondaggi che i tuoi riferimenti guadagnano — per tutta la vita. Non preoccuparti, i loro guadagni rimangono gli stessi — le tue ricompense sono a carico nostro!"
+    }
+  },
+  "redeem": {
+    "bonus_code": "Codice bonus",
+    "enter_code": "Inserisci il tuo codice",
+    "redeem_code": "Riscatta codice",
+    "heading": {
+      "subtitle": "Riscatta il tuo codice bonus per ottenere un'offerta speciale.",
+      "title": "Riscatta codice bonus"
+    }
+  }
+}

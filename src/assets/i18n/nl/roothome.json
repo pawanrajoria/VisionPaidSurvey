@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "title": "Gemakkelijk geld voor alledaagse meningen!",
+    "description": "Uw gedachten helpen merken te verbeteren - en ze staan klaar om ervoor te betalen. Neem deel aan enquêtes, voltooi eenvoudige aanbiedingen en verdien moeiteloos echte beloningen.",
+    "offer1": {
+      "title": "Verdien ${{amount}} voor uw mening - Geen ervaring nodig!",
+      "subtitle": "{{surveys}} enquêtes wachten op u."
+    },
+    "offer2": {
+      "title": "${{amount}} gisteren verdiend door gemiddelde gebruikers",
+      "subtitle": "U kunt de volgende zijn! Uitbetalen vanaf ${{minPayout}}"
+    },
+    "login": {
+      "title": "Verdien geld door uw mening te delen",
+      "signIn": "Meld u aan bij uw account",
+      "emailLabel": "E-mailadres",
+      "emailPlaceholder": "E-mailadres",
+      "passwordLabel": "Wachtwoord",
+      "continueButton": "Doorgaan",
+      "orLoginWith": "Of log in met",
+      "googleButton": "Google"
+    },
+    "loggedIn": {
+      "title": "Verdien geld door uw mening te delen",
+      "message": "U bent al ingelogd",
+      "goToAppButton": "Ga naar de app"
+    }
+  },
+  "brandStrip": {
+    "description": "Door uw gedachten te delen over trending topics, vertrouwde schoonmaakmerken of uw favoriete shows, kunt u meningen inkomsten laten worden met de Profit Piller enquête- en aanbiedingen-app."
+  },
+  "choose": {
+    "title": "Heeft u meningen? Verander ze in geld-precies hier.",
+    "description": "Neem deel aan spannende enquêtes op Profit Piller en neem uw verdiensten direct op — als contant geld of cadeaubonnen.",
+    "step1": {
+      "title": "Aanmelden",
+      "subtitle": "Word nu lid – Het is gratis"
+    },
+    "step2": {
+      "title": "Voltooi enquêtes en ontgrendel aanbiedingen",
+      "subtitle": "Kies een enquête of aanbieding om te beginnen met het verdienen van beloningen."
+    },
+    "step3": {
+      "title": "Nu uitbetalen",
+      "subtitle": "Laat u uitbetalen of kies uit meer dan 1000 spannende beloningen."
+    }
+  },
+  "rewards": {
+    "banner": {
+      "title": "Kies uw favoriet uit meer dan 1000 beloningen",
+      "description": "Word betaald via PayPal of kies uit een breed scala aan <br>cadeaubonnen."
+    }
+  },
+  "howItWorks": {
+    "title": "Verdien online geld met enquêtes en aanbiedingen – beschikbaar over <span class=\"highlight f-w-900\">de hele wereld.</span>",
+    "subtitle": "Neem deel aan spannende enquêtes, word snel beloond. Betaal direct uit of wissel cadeaubonnen in met Profit Piller.",
+    "playGames": {
+      "title": "Spelletjes spelen",
+      "subtitle": "Verdien per spel",
+      "price": "$0.80 - $100"
+    },
+    "takeSurveys": {
+      "title": "Enquêtes invullen",
+      "subtitle": "Verdien per 2-10 min enquête",
+      "price": "$1.80 - $100"
+    },
+    "completeOffers": {
+      "title": "Aanbiedingen voltooien",
+      "subtitle": "Verdien per app",
+      "price": "$1.80 - $100"
+    }
+  },
+  "landing": {
+    "title": "Online enquête- en aanbiedingen-app met snelle uitbetalingen en lage minimale opname",
+    "subtitle": "Elke enquête en aanbieding die u voltooit, kan geld in uw zak steken — stel u eens voor!",
+    "valueTime": {
+      "title": "Wij waarderen uw tijd — en bij <span class=\"highlight\">Profit Piller</span>, belonen we die.",
+      "description": "Met onze lage minimale uitbetaling kunt u dezelfde dag nog uitbetalen — geen wachttijd. Uw beloningen, op uw manier."
+    },
+    "infoBadge": "Gemiddeld duurt het slechts {{minutes}} minuten om uw eerste uitbetaling te verdienen!",
+    "step1": {
+      "strong": "Begin met aanmelden, vervolgens kiest u de betaalde enquêtes en aanbiedingen die u wilt aannemen.",
+      "paragraph": "Met honderden enquêtes en aanbiedingen beschikbaar, kunt u verdienen door games te spelen, te delen wat u koopt, of te praten over de teams waar u van houdt."
+    },
+    "step2": {
+      "strong": "Verdien punten elke keer dat u een enquête voltooit — zo eenvoudig is het!",
+      "paragraph": "Bezoek de beloningspagina om uw punten om te zetten in contant geld of cadeaubonnen."
+    }
+  },
+  "rewardsGrid": {
+    "paypal": {
+      "description": "Wissel punten in voor PayPal cadeaubonnen"
+    },
+    "amazon": {
+      "description": "Wissel in voor een Amazon cadeaubon"
+    },
+    "visa": {
+      "description": "Of neem gewoon het contant geld op — het is aan u."
+    }
+  },
+  "common": {
+    "learnMore": "Meer informatie"
+  }
+}

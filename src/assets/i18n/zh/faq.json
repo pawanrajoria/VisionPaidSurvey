@@ -1,0 +1,17 @@
+{
+    "faq": {
+        "heading": {
+            "subtitle": "常见问题",
+            "title": "常见问题 (FAQs)",
+            "description": "查看用户关于使用 <strong>ProfitPiller</strong> 以及如何开始赚钱的最常见问题。"
+        },
+        "checkAllQuestions": "查看所有问题",
+        "needHelp": {
+            "title": "需要帮助？只需单击即可获得答案。",
+            "description": "需要进一步的帮助？我们的团队随时为您服务。如果您没有找到您想要的答案，只需联系我们——我们将确保您获得所需的清晰度。"
+        }
+    },
+    "common": {
+        "arrowForward": "arrow_forward"
+    }
+}

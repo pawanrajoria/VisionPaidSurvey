@@ -13,10 +13,10 @@
             <mat-button-toggle value="Android">
                 <i-tabler name="brand-android" class="fill-black"></i-tabler>
             </mat-button-toggle>
-            <mat-button-toggle value="IPhone">
+            <mat-button-toggle value="IOS">
                 <i-tabler name="brand-apple" class="fill-black"></i-tabler>
             </mat-button-toggle>
-            <mat-button-toggle value="All">
+            <mat-button-toggle value="Desktop">
                 <i-tabler name="device-imac" class="fill-black"></i-tabler>
             </mat-button-toggle>
         </mat-button-toggle-group>
@@ -29,10 +29,10 @@
                         <img [src]="offer.imageUrl" alt="Offer" />
 
                         <div class="platform-icon">
-                            @if(offer?.device?.includes('All')) {
+                            @if(offer?.device?.includes('All') || offer?.device?.includes('Desktop')) {
                             <mat-icon>apple</mat-icon>
                             <mat-icon>android</mat-icon>
-                            } @else{ @if(offer?.device?.includes('IPhone') || offer?.device?.includes('IPad')) {
+                            } @else{ @if(offer?.device?.includes('IOS')) {
                             <mat-icon>apple</mat-icon>
                             } @if(offer?.device?.includes('Android')) {
                             <mat-icon>android</mat-icon>

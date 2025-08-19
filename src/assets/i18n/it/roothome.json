@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "title": "Denaro facile per le opinioni di tutti i giorni!",
+    "description": "Le tue opinioni aiutano i marchi a migliorare — e sono pronti a pagarle. Partecipa a sondaggi, completa offerte semplici e guadagna ricompense reali senza sforzo.",
+    "offer1": {
+      "title": "Guadagna ${{amount}} per la tua opinione — Nessuna esperienza richiesta!",
+      "subtitle": "{{surveys}} sondaggi ti aspettano."
+    },
+    "offer2": {
+      "title": "${{amount}} guadagnati ieri dagli utenti medi",
+      "subtitle": "Potresti essere il prossimo! Incassa a partire da ${{minPayout}}"
+    },
+    "login": {
+      "title": "Guadagna condividendo la tua opinione",
+      "signIn": "Accedi al tuo account",
+      "emailLabel": "ID e-mail",
+      "emailPlaceholder": "ID e-mail",
+      "passwordLabel": "Password",
+      "continueButton": "Continua",
+      "orLoginWith": "O accedi con",
+      "googleButton": "Google"
+    },
+    "loggedIn": {
+      "title": "Guadagna condividendo la tua opinione",
+      "message": "Hai già effettuato l'accesso",
+      "goToAppButton": "Vai all'app"
+    }
+  },
+  "brandStrip": {
+    "description": "Condividendo i tuoi pensieri su argomenti di tendenza, marchi di pulizia affidabili o i tuoi programmi preferiti, puoi trasformare le tue opinioni in guadagni con l'app di sondaggi e offerte Profit Piller."
+  },
+  "choose": {
+    "title": "Hai delle opinioni? Trasformale in denaro-proprio qui.",
+    "description": "Partecipa a sondaggi entusiasmanti su Profit Piller e ritira i tuoi guadagni all'istante — come contanti o carte regalo.",
+    "step1": {
+      "title": "Iscriviti",
+      "subtitle": "Iscriviti ora – È gratis"
+    },
+    "step2": {
+      "title": "Completa sondaggi e sblocca offerte",
+      "subtitle": "Scegli un sondaggio o un'offerta per iniziare a guadagnare ricompense."
+    },
+    "step3": {
+      "title": "Incassa ora",
+      "subtitle": "Incassa o scegli tra oltre 1000 ricompense entusiasmanti."
+    }
+  },
+  "rewards": {
+    "banner": {
+      "title": "Scegli il tuo preferito tra oltre 1000 ricompense",
+      "description": "Fatti pagare tramite PayPal o scegli tra una vasta gamma di <br>carte regalo."
+    }
+  },
+  "howItWorks": {
+    "title": "Guadagna online con sondaggi e offerte – disponibili in <span class=\"highlight f-w-900\">tutto il mondo.</span>",
+    "subtitle": "Partecipa a sondaggi entusiasmanti, ricevi ricompense velocemente. Incassa o riscatta carte regalo immediatamente con Profit Piller.",
+    "playGames": {
+      "title": "Giocare a giochi",
+      "subtitle": "Guadagna per gioco",
+      "price": "$0.80 - $100"
+    },
+    "takeSurveys": {
+      "title": "Partecipa a sondaggi",
+      "subtitle": "Guadagna per sondaggio di 2-10 min",
+      "price": "$1.80 - $100"
+    },
+    "completeOffers": {
+      "title": "Completa offerte",
+      "subtitle": "Guadagna per app",
+      "price": "$1.80 - $100"
+    }
+  },
+  "landing": {
+    "title": "App di sondaggi e offerte online con pagamenti veloci e prelievo minimo basso",
+    "subtitle": "Ogni sondaggio e offerta che completi potrebbe mettere denaro nelle tue tasche — immagina un po'!",
+    "valueTime": {
+      "title": "Valorizziamo il tuo tempo — e su <span class=\"highlight\">Profit Piller</span>, lo ricompensiamo.",
+      "description": "Con il nostro basso pagamento minimo, puoi incassare lo stesso giorno — senza aspettare. Le tue ricompense, a modo tuo."
+    },
+    "infoBadge": "In media, ci vogliono solo {{minutes}} minuti per guadagnare il tuo primo pagamento!",
+    "step1": {
+      "strong": "Inizia iscrivendoti, poi scegli i sondaggi a pagamento e le offerte che desideri prendere.",
+      "paragraph": "Con centinaia di sondaggi e offerte disponibili, puoi guadagnare giocando, condividendo i tuoi acquisti o parlando delle squadre che ami."
+    },
+    "step2": {
+      "strong": "Guadagna punti ogni volta che completi un sondaggio — è così semplice!",
+      "paragraph": "Visita la pagina delle ricompense per trasformare i tuoi punti in denaro o carte regalo."
+    }
+  },
+  "rewardsGrid": {
+    "paypal": {
+      "description": "Riscatta i punti per carte regalo PayPal"
+    },
+    "amazon": {
+      "description": "Riscatta per una carta regalo Amazon"
+    },
+    "visa": {
+      "description": "O semplicemente ritira i contanti — sta a te."
+    }
+  },
+  "common": {
+    "learnMore": "Scopri di più"
+  }
+}
