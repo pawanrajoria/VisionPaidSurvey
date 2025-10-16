@@ -44,6 +44,8 @@ export class EarnComponent extends BaseComponent implements OnInit {
     offers: IOfferResponseDto[] = [];
     filteredOffers: IOfferResponseDto[] = [];
 
+    searchTxt = '';
+
 
     readonly offerService = inject(OfferService);
     readonly surveyService = inject(SurveyService);
@@ -79,16 +81,19 @@ export class EarnComponent extends BaseComponent implements OnInit {
     }
 
     filterItems() {
+        const text = this.searchTxt.toLowerCase();
+
         this.filteredOffers = this.offers
             .filter(item => {
                 const matchesCategory =
                     this.selectedDeviceType.length === 0 ||
                     item.device.some((cat: any) => this.selectedDeviceType.includes(cat));
 
-                return matchesCategory;
+                const matchesText = item.offerName?.toLowerCase().includes(text);
+                return matchesCategory && matchesText;
             });
-        this.gamingOffers = this.filteredOffers.filter(offer => offer.providerName == 'Lootably');
-        this.otherOffers = this.filteredOffers.filter(offer => offer.providerName == 'Bitlab');
+        this.gamingOffers = this.filteredOffers;
+        this.otherOffers = this.filteredOffers.filter(offer => offer?.payoutType?.toLowerCase() == 'cpi' || offer?.payoutType?.toLowerCase() == 'survey');
     }
 
     scrollLeft(sliderId: string) {

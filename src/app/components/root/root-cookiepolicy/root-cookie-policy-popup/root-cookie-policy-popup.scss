@@ -1,0 +1,47 @@
+.cookie-consent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.cookie-text {
+  p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 8px;
+
+  button {
+    min-width: 120px;
+  }
+}
+
+::ng-deep .mat-mdc-snack-bar-container.cookie-snackbar {
+  background: #323232;
+  color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.setting-button {
+  color: white;
+  float: right;
+}
+
+.close-button {
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: -22px;
+  padding: 0;
+}

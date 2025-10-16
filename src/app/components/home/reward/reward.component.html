@@ -15,7 +15,7 @@
             <mat-card class="giftcard" [ngClass]="{ 'active': selectedCard?.productId === card.productId }"
                 (click)="toggleCard(card)" [class.expanded]="selectedCard?.productId === card.productId">
                 <div class="card-header">
-                    <img [src]="card.imageUrl" alt="{{ card.name }}" />
+                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_74x46.jpg" />
                     <div class="card-info">
                         <h3>{{ card.name }}</h3>
                         <p>{{ 'From' | translate }} {{ card.minPoints }} points</p>
@@ -70,7 +70,7 @@
             <input matInput [(ngModel)]="searchText" />
         </mat-form-field>
         <div class="giftcard-grid">
-            @for  (card of filteredGiftCards; track card.productId) {
+            @for (card of filteredGiftCards; track card.productId) {
             <mat-card class="giftcard" [ngClass]="{ 'active': selectedCard?.productId === card.productId }"
                 (click)="toggleCard(card)" [class.expanded]="selectedCard?.productId === card.productId">
                 <div class="card-header">

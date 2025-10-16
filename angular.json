@@ -27,6 +27,11 @@
               "src/favicon.ico",
               "src/assets",
               {
+                "glob": "ads.txt",
+                "input": "./",
+                "output": "./"
+              },
+              {
                 "glob": "config.json",
                 "input": "src/assets",
                 "output": "assets"
@@ -59,7 +64,8 @@
                   "maximumError": "10mb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "serviceWorker": "ngsw-config.json"
             },
             "development": {
               "optimization": false,
@@ -96,6 +102,11 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              {
+                "glob": "ads.txt",
+                "input": "./",
+                "output": "./"
+              },
               {
                 "glob": "config.json",
                 "input": "src/assets",

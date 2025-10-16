@@ -3,6 +3,7 @@
   align-items: center;
   gap: 12px;
   margin-bottom: 20px;
+  margin: 0 auto;
 
   mat-chip {
     background: #105749;
@@ -151,6 +152,7 @@
         color: #ffffff;
         font-size: 13px;
         height: 15px;
+        display: inline-flex;
       }
     }
 
@@ -494,4 +496,9 @@
     border: 0;
     filter: brightness(5);
   }
+}
+
+.logocoin {
+  width: 15px !important;
+  height: 15px !important;
 }

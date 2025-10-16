@@ -1,0 +1,61 @@
+{
+    "cookiePolicy": {
+        "text1": "Ce site web utilise des cookies pour améliorer l'expérience utilisateur et analyser le trafic sur notre site.",
+        "text2": "Vous pouvez choisir d'accepter les cookies ou de gérer vos paramètres de cookies.",
+        "accept": "Accepter les cookies",
+        "reject": "Refuser",
+        "settings": "Paramètres des cookies",
+        "title": "Politique de cookies",
+        "effectiveDate": {
+            "label": "Date d'entrée en vigueur",
+            "value": "6 mai 2025"
+        },
+        "introduction": {
+            "title": "Introduction",
+            "text": "Cette politique de cookies explique comment Profitpiller utilise les cookies et les technologies similaires pour vous reconnaître lorsque vous visitez notre site web. Elle fournit des détails sur ce que sont ces technologies, pourquoi nous les utilisons et vos droits pour contrôler leur utilisation."
+        },
+        "whatAreCookies": {
+            "title": "Que sont les cookies?",
+            "text": "Les cookies sont de petits fichiers texte placés sur votre appareil par les sites web que vous visitez. Ils sont largement utilisés pour faire fonctionner les sites web, améliorer leur efficacité et fournir des informations de rapport."
+        },
+        "typesOfCookies": {
+            "title": "Types de cookies que nous utilisons"
+        },
+        "necessaryCookies": {
+            "title": "Cookies strictement nécessaires",
+            "text": "Ces cookies sont essentiels pour que vous puissiez naviguer sur notre site web et utiliser ses fonctionnalités, comme l'accès sécurisé à certaines zones."
+        },
+        "performanceCookies": {
+            "title": "Cookies de performance et d'analyse",
+            "text": "Ces cookies collectent des informations sur la façon dont les visiteurs utilisent notre site, telles que les pages les plus souvent visitées. Ces données nous aident à améliorer les performances de notre site web."
+        },
+        "functionalCookies": {
+            "title": "Cookies de fonctionnalité",
+            "text": "Ces cookies permettent à notre site web de se souvenir des choix que vous faites, tels que les préférences de langue, afin de fournir une expérience plus personnalisée."
+        },
+        "targetingCookies": {
+            "title": "Cookies de ciblage et de publicité",
+            "text": "Ces cookies sont utilisés pour diffuser des publicités plus pertinentes pour vous et vos intérêts. Ils aident également à mesurer l'efficacité des campagnes publicitaires."
+        },
+        "thirdPartyCookies": {
+            "title": "Cookies tiers",
+            "text": "Dans certains cas, nous pouvons autoriser des tiers à placer des cookies sur votre appareil pour fournir des services d'analyse, diffuser de la publicité ciblée et permettre du contenu interactif."
+        },
+        "howWeUseCookies": {
+            "title": "Comment nous utilisons les cookies",
+            "text": "Profitpiller utilise des cookies pour améliorer votre expérience de navigation, analyser le trafic, personnaliser le contenu et diffuser de la publicité ciblée."
+        },
+        "cookieManagement": {
+            "title": "Gestion des cookies",
+            "text": "Vous avez le droit de décider d'accepter ou de rejeter les cookies. Vous pouvez ajuster les paramètres de votre navigateur pour refuser les cookies ou vous alerter lorsque des cookies sont utilisés. Veuillez noter que la désactivation des cookies peut affecter la fonctionnalité de notre site web."
+        },
+        "changesToPolicy": {
+            "title": "Modifications de cette politique de cookies",
+            "text": "Nous pouvons mettre à jour cette politique de cookies de temps en temps pour refléter les changements technologiques, législatifs ou nos pratiques. Les mises à jour seront publiées sur cette page avec une 'Date d'entrée en vigueur' révisée."
+        },
+        "contactUs": {
+            "title": "Contactez-nous",
+            "text": "Si vous avez des questions concernant notre utilisation des cookies ou cette politique de cookies, veuillez nous contacter à privacy@profitpiller.com."
+        }
+    }
+}

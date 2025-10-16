@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+    <span>TapResearch</span>
+    <span class="spacer"></span>
+    <button mat-icon-button>
+        <mat-icon>menu</mat-icon>
+    </button>
+</mat-toolbar>
+
+<div class="coins-balance">
+    <span class="balance">0 coins</span>
+</div>
+
+<div class="survey-grid">
+    <mat-card *ngFor="let survey of surveys" class="survey-card mat-elevation-z3">
+        <div class="card-header">
+            <span class="time">
+                <mat-icon>schedule</mat-icon> {{survey.time}} min
+            </span>
+            <span class="tag" *ngIf="survey.tag">{{survey.tag}}</span>
+        </div>
+
+        <div class="coin-circle" [ngStyle]="{'background': survey.color}">
+            <h2>{{survey.coins}}</h2>
+            <p>coins</p>
+        </div>
+    </mat-card>
+</div>

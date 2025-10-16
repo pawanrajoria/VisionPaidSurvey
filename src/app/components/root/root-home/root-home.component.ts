@@ -5,6 +5,7 @@ import { SharedModule } from "../../../shared.module";
 import { FaqRootComponent } from "../root-faq/root-faq.component";
 import { AuthService } from "../../auth/auth.service";
 import { GoogleLoginDirective } from "../../auth/google.directive";
+import { GoogleService } from "../../auth/google.service";
 
 @Component({
     selector: 'app-root-home',
@@ -85,7 +86,11 @@ export class RootHomeComponent implements OnInit {
     ];
 
 
-    constructor(private router: Router, private authService: AuthService) {
+    constructor(private router: Router, private authService: AuthService, private googleAuth: GoogleService) {
+    }
+
+    async googleLogin(){
+        await this.googleAuth.googleSignIn();
     }
 
 

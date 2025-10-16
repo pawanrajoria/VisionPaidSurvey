@@ -1,0 +1,50 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.coins-balance {
+  padding: 1rem;
+  .balance {
+    background: #f5f5f5;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+}
+
+.rewards-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .stats-card {
+    margin-bottom: 2rem;
+    mat-list-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1rem;
+      .value {
+        font-weight: 500;
+        color: #009688;
+      }
+      .highlight {
+        font-weight: 600;
+        color: #00796b;
+      }
+    }
+  }
+
+  .history-card {
+    padding: 1rem;
+    p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #555;
+    }
+  }
+}

@@ -2,10 +2,15 @@ export interface AdminEarningResponseDto {
     totalEarning: number;
     todayEarning: number;
     totalUsers: number;
+    todayUsers: number;
     totalRejection: number;
+    todayRejection: number;
     totalWithdrawalAmount: number;
+    todayWithdrawalAmount:number;
     totalRefrelEarn: number;
     totalLevelBonusEarn: number;
+    todayClicks: number;
+    todayPostbacks: number;
     earning: AdminTodayEarningResponseDto[];
     withdrawalRequests: AdminWithdrawalResponseDto[];
     topEarningUsers: AdminTopEarningUserResponseDto[];

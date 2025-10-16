@@ -1,0 +1,21 @@
+{
+  "name": "ProfitPiller",
+  "short_name": "ProfitPiller",
+  "id": "/",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2E7D32",
+  "icons": [
+    {
+      "src": "icons/196.png",
+      "sizes": "196x196",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

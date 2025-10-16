@@ -16,6 +16,7 @@ export interface IOfferResponseDto {
     rating: number;
     currentDevice?: string;
     providerName: string;
+    payoutType:string;
 }
 
 export interface IOfferTaskResponseDto {

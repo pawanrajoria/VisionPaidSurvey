@@ -1,0 +1,61 @@
+{
+    "cookiePolicy": {
+        "text1": "本网站使用cookies来增强用户体验并分析我们网站的流量。",
+        "text2": "您可以选择接受cookies或管理您的cookie设置。",
+        "accept": "接受Cookies",
+        "reject": "拒绝",
+        "settings": "Cookie设置",
+        "title": "Cookie政策",
+        "effectiveDate": {
+            "label": "生效日期",
+            "value": "2025年5月6日"
+        },
+        "introduction": {
+            "title": "引言",
+            "text": "本Cookie政策解释了Profitpiller如何使用cookies和类似技术来识别您访问我们的网站。它提供了关于这些技术是什么、我们为什么使用它们以及您控制其使用的权利的详细信息。"
+        },
+        "whatAreCookies": {
+            "title": "什么是Cookies？",
+            "text": "Cookies是您访问的网站放置在您的设备上的小型文本文件。它们被广泛用于使网站正常工作、提高效率和提供报告信息。"
+        },
+        "typesOfCookies": {
+            "title": "我们使用的Cookies类型"
+        },
+        "necessaryCookies": {
+            "title": "绝对必要的Cookies",
+            "text": "这些cookies对于您浏览我们的网站和使用其功能至关重要，例如安全访问某些区域。"
+        },
+        "performanceCookies": {
+            "title": "性能和分析Cookies",
+            "text": "这些cookies收集有关访客如何使用我们网站的信息，例如哪些页面访问频率最高。这些数据帮助我们改善我们网站的性能。"
+        },
+        "functionalCookies": {
+            "title": "功能性Cookies",
+            "text": "这些cookies使我们的网站能够记住您所做的选择，例如语言偏好，以提供更个性化的体验。"
+        },
+        "targetingCookies": {
+            "title": "定向和广告Cookies",
+            "text": "这些cookies用于提供与您和您的兴趣更相关的广告。它们还有助于衡量广告活动的有效性。"
+        },
+        "thirdPartyCookies": {
+            "title": "第三方Cookies",
+            "text": "在某些情况下，我们可能允许第三方在您的设备上放置cookies，以提供分析服务、传递定向广告和启用交互式内容。"
+        },
+        "howWeUseCookies": {
+            "title": "我们如何使用Cookies",
+            "text": "Profitpiller使用cookies来改善您的浏览体验、分析流量、个性化内容和传递定向广告。"
+        },
+        "cookieManagement": {
+            "title": "管理Cookies",
+            "text": "您有权决定是否接受或拒绝cookies。您可以调整浏览器设置以拒绝cookies或在使用cookies时提醒您。请注意，禁用cookies可能会影响我们网站的功能。"
+        },
+        "changesToPolicy": {
+            "title": "本Cookie政策的变更",
+            "text": "我们可能会不时更新本Cookie政策，以反映技术、法律或我们实践的变化。更新将在此页面上发布，并附上修订的“生效日期”。"
+        },
+        "contactUs": {
+            "title": "联系我们",
+            "text": "如果您对我们使用cookies或本Cookie政策有任何疑问，请通过privacy@profitpiller.com与我们联系。"
+        }
+    }
+}

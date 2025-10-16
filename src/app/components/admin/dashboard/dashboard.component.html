@@ -1,86 +1,212 @@
-<div class="row">
-    <div class="col-lg-4">
-        <mat-card class=" cardWithShadow earnings-bg">
-            <mat-card-content>
-                <div class="d-flex justify-content-between align-items-center p-b-12">
-                    <div>
-                        <span class="f-s-18 mat-subtitle-2">Earnings</span>
-                        <h3 class="f-s-24 f-w-500 m-t-6 m-b-0">${{adminData.totalEarning}}</h3>
-                    </div>
+<button mat-mini-fab color="accent" (click)="refresh()">
+    <mat-icon>attach_money</mat-icon>
+</button>
 
-                    <button mat-mini-fab color="accent" (click)="refresh()">
-                        <mat-icon>attach_money</mat-icon>
-                    </button>
-                </div>
+<mat-card-title>Total Stats</mat-card-title>
+<div class="row">
+    <div >
+        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #0f100f76;">
+            <mat-card-content style="padding: 16px !important;">
                 <div>
-                    <span class="f-s-18 mat-subtitle-2"></span>
-                    <span class="f-s-18 mat-subtitle-2">Today Earnings</span>
-                    <h3 class="f-s-24 f-w-500 m-t-6 m-b-0">${{adminData.todayEarning}}</h3>
+                    <div>
+                        <span class=" mat-subtitle-2">Earning</span>
+                        <h4 class="f-w-500 m-t-6 m-b-0">${{adminData.totalEarning}}
+                        </h4>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div >
+        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #2701fd76;">
+            <mat-card-content style="padding: 16px !important;">
+                <div>
+                    <div>
+                        <span class="f-s-18 mat-subtitle-2">User</span>
+                        <h4 class="f-w-500 m-t-6 m-b-0">{{adminData.totalUsers}}
+                        </h4>
+                    </div>
                 </div>
             </mat-card-content>
         </mat-card>
     </div>
 
-    <div class="col-lg-8">
-        <mat-card class=" cardWithShadow">
-            <div class="row">
-                <div class="col-lg-3 col-sm-6 col-6 b-r-1">
-                    <div class="p-24">
-                        <button mat-mini-fab color="primary">
-                            <mat-icon>group</mat-icon>
-                        </button>
-                        <h4 class="mat-title m-b-0 m-t-30 f-s-24 f-w-500">{{adminData.totalUsers}}&nbsp;
-                            <span class="f-s-14 text-error">-9%</span>
+    <div >
+        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #fd01cb76;">
+            <mat-card-content style="padding: 16px !important;">
+                <div>
+                    <div>
+                        <span class="f-s-18 mat-subtitle-2">W-Amount</span>
+                        <h4 class="f-w-500 m-t-6 m-b-0">{{adminData.totalWithdrawalAmount}}
                         </h4>
-                        <small class="text-muted">Users </small>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 col-6 b-r-1">
-                    <div class="p-24">
-                        <button mat-mini-fab color="warn">
-                            <mat-icon>inventory</mat-icon>
-                        </button>
-                        <h4 class="mat-title m-b-0 m-t-30 f-s-24 f-w-500"> ${{adminData.totalWithdrawalAmount}}&nbsp;
-                            <span class="f-s-14 text-success">+23%</span>
-                        </h4>
-                        <small class="text-muted"> Withdrawal </small>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 col-6 b-r-1">
-                    <div class="p-24">
-                        <button mat-mini-fab color="warn">
-                            <mat-icon>inventory</mat-icon>
-                        </button>
-                        <h4 class="mat-title m-b-0 m-t-30 f-s-24 f-w-500"> ${{adminData.totalRejection}}&nbsp;
-                            <span class="f-s-14 text-success">+23%</span>
-                        </h4>
-                        <small class="text-muted"> Rejection </small>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 col-6 b-r-1">
-                    <div class="p-24">
-                        <button mat-mini-fab color="accent">
-                            <mat-icon>bar_chart</mat-icon>
-                        </button>
-                        <h4 class="mat-title m-b-0 m-t-30 f-s-24 f-w-500">
-                            ${{adminData.totalRefrelEarn+adminData.totalLevelBonusEarn}}&nbsp;
-                            <span class="f-s-14 text-success">+38%</span>
-                        </h4>
-                        <small class="text-muted"> Bonus </small>
-                    </div>
-                </div>
-            </div>
+            </mat-card-content>
         </mat-card>
     </div>
+    <div >
+        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #f5fd0176;">
+            <mat-card-content style="padding: 16px !important;">
+                <div>
+                    <div>
+                        <span class="f-s-18 mat-subtitle-2">TWA</span>
+                        <h4 class="f-w-500 m-t-6 m-b-0">{{adminData.totalWithdrawalAmount}}
+                        </h4>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div >
+        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #fd010976;">
+            <mat-card-content style="padding: 16px !important;">
+                <div>
+                    <div>
+                        <span class="f-s-18 mat-subtitle-2">R-Amount</span>
+                        <h4 class="f-w-500 m-t-6 m-b-0">${{adminData.totalRejection}}
+                        </h4>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div >
+        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #0efd0176;">
+            <mat-card-content style="padding: 16px !important;">
+                <div>
+                    <div>
+                        <span class="f-s-18 mat-subtitle-2">R/B-Amount</span>
+                        <h4 class="f-w-500 m-t-6 m-b-0">
+                            ${{adminData.totalRefrelEarn+adminData.totalLevelBonusEarn}}
+                        </h4>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<mat-card-title>Today Stats</mat-card-title>
+<div class="row">
+    <div >
+        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #0f100f76;">
+            <mat-card-content style="padding: 16px !important;">
+                <div>
+                    <div>
+                        <span class=" mat-subtitle-2">TE</span>
+                        <h4 class="f-w-500 m-t-6 m-b-0">${{adminData.todayEarning}}
+                        </h4>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div >
+        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #2701fd76;">
+            <mat-card-content style="padding: 16px !important;">
+                <div>
+                    <div>
+                        <span class="f-s-18 mat-subtitle-2">TU</span>
+                        <h4 class="f-w-500 m-t-6 m-b-0">{{adminData.todayUsers}}
+                        </h4>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div >
+        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #fd01cb76;">
+            <mat-card-content style="padding: 16px !important;">
+                <div>
+                    <div>
+                        <span class="f-s-18 mat-subtitle-2">TWC</span>
+                        <h4 class="f-w-500 m-t-6 m-b-0">{{adminData.todayWithdrawalAmount}}
+                        </h4>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div >
+        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #f5fd0176;">
+            <mat-card-content style="padding: 16px !important;">
+                <div>
+                    <div>
+                        <span class="f-s-18 mat-subtitle-2">TWA</span>
+                        <h4 class="f-w-500 m-t-6 m-b-0"> {{adminData.todayWithdrawalAmount}}
+                        </h4>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div >
+        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #fd010976;">
+            <mat-card-content style="padding: 16px !important;">
+                <div>
+                    <div>
+                        <span class="f-s-18 mat-subtitle-2">TRA</span>
+                        <h4 class="f-w-500 m-t-6 m-b-0">${{adminData.todayRejection}}
+                        </h4>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div >
+        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #0efd0176;">
+            <mat-card-content style="padding: 16px !important;">
+                <div>
+                    <div>
+                        <span class="f-s-18 mat-subtitle-2">Clicks</span>
+                        <h4 class="f-w-500 m-t-6 m-b-0">
+                            ${{adminData.todayClicks}}
+                        </h4>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div >
+        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #0efd0176;">
+            <mat-card-content style="padding: 16px !important;">
+                <div>
+                    <div>
+                        <span class="f-s-18 mat-subtitle-2">Postback</span>
+                        <h4 class="f-w-500 m-t-6 m-b-0">
+                            ${{adminData.todayPostbacks}}
+                        </h4>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <!-- <div >
+        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #0efd0176;">
+            <mat-card-content style="padding: 16px !important;">
+                <div>
+                    <div>
+                        <span class="f-s-18 mat-subtitle-2">Postback</span>
+                        <h4 class="f-w-500 m-t-6 m-b-0">
+                            ${{adminData.todayVendorClicks}}
+                        </h4>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div> -->
 </div>
 
 <!-- Recent Transaction-->
 <div class="row">
     <div class="col-lg-4">
         <mat-card class="cardWithShadow">
-            <mat-card-content>
+            <mat-card-content style="padding: 16px !important;">
                 <mat-card-title>Recent User Earnings</mat-card-title>
-                <div class="m-t-10">
+                <div class="m-t-10" style="max-height: 300px; overflow-y: auto;">
                     @for (item of adminData.earning; track $index) {
                     <div class="d-flex align-items-center p-t-10 p-b-10">
                         <button mat-mini-fab [style.background-color]="item.source=='Survey'?'#00968821':'#9e9e9e33'">
@@ -112,7 +238,7 @@
 
             <mat-card-content class="p-32">
                 <mat-card-title>Top Earner History</mat-card-title>
-                <div class="m-t-10 table-responsive">
+                <div class="m-t-10 table-responsive" style="max-height: 300px; overflow-y: auto;">
                     <table mat-table [dataSource]="adminData.topEarningUsers" class="mat-elevation-z8 demo-table">
 
                         <!-- Position Column -->
@@ -137,9 +263,11 @@
                             <th mat-header-cell *matHeaderCellDef></th>
                             <td mat-cell *matCellDef="let element">
                                 <h6 class="m-t-0 m-b-6 f-s-14 f-w-500"> RR<span
-                                        class="f-s-10">({{element.rejectionCount*100/element.earningCount | number:'1.2-2'}}%) </span>
+                                        class="f-s-10">({{element.rejectionCount*100/element.earningCount |
+                                        number:'1.2-2'}}%) </span>
                                 </h6>
-                                <small class="f-s-14">T/$ -<strong>{{element.rejectionCount}}/${{element.rejectionAmount}}</strong></small>
+                                <small class="f-s-14">T/$
+                                    -<strong>{{element.rejectionCount}}/${{element.rejectionAmount}}</strong></small>
                             </td>
                         </ng-container>
 
@@ -154,7 +282,7 @@
         <mat-card class="cardWithShadow">
             <mat-card-content class="p-32">
                 <mat-card-title>Withdrawal History</mat-card-title>
-                <div class="m-t-10 table-responsive">
+                <div class="m-t-10 table-responsive" style="height: 300px; overflow-y: auto;">
                     <table mat-table [dataSource]="adminData.withdrawalRequests" class="mat-elevation-z8 demo-table">
                         <!-- Position Column -->
                         <ng-container matColumnDef="demo-position">
@@ -213,6 +341,7 @@
 
         </mat-card>
     </div>
+
 </div>
 
 <!-----   Product Performance -->
@@ -234,7 +363,7 @@
                     <span class="fs-14">Budget</span>
                 </div>
             </mat-card-header>
-            <mat-card-content>
+            <mat-card-content style="padding: 16px !important;">
                 <div class="row">
                     <div class="col-sm-4">
                         <h4 class="f-s-24 m-b-6 m-t-30">$93,438.78</h4>
@@ -255,9 +384,9 @@
     </div>
     <div class="col-lg-4">
         <div class="row">
-            <div class="col-lg-12 col-sm-6">
+            <div class="col-lg-22 col-sm-6">
                 <mat-card class="cardWithShadow bg-primary text-white">
-                    <mat-card-content>
+                    <mat-card-content style="padding: 16px !important;">
                         <div class="d-flex justify-content-between">
                             <mat-card-title>Earnings</mat-card-title>
                             <button mat-mini-fab color="primary">
@@ -268,7 +397,7 @@
                         <h6 class="op-5 f-s-14 text-white">Monthly Revenue</h6>
                     </mat-card-content></mat-card>
             </div>
-            <div class="col-lg-12 col-sm-6">
+            <div class="col-lg-22 col-sm-6">
                 <mat-card class="cardWithShadow">
                     <mat-card-content class="p-32">
                         <div class="row">

@@ -4,3 +4,13 @@
     text-align: center;
     //margin-top: 65px;
 }
+
+.cookie-button {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    // background-color: #2f6f4e;
+    /* green background like your example */
+    color: white;
+    z-index: 1000;
+}

@@ -1,0 +1,74 @@
+<mat-dialog-content class="translate-sec">
+    <div class="header">
+        <img src="/assets/images/icon/world-map.png">
+        <h2>Select Country and Language</h2>
+    </div>
+    <div class="translate-box m-t-24">
+        <mat-accordion class="accordion">
+            <mat-expansion-panel class="accordion-item" *ngFor="let country of countryLanguages"
+                (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                <mat-expansion-panel-header class="accordion-header">
+                    <div class="accordion-button">
+                        <div class="flag-icon">
+                            <img [src]="country.flagUrl" />
+                        </div>
+                        <span>{{ country.countryName }}</span>
+                    </div>
+                </mat-expansion-panel-header>
+                <div class="accordion-collapse">
+                    <p>Select Language</p>
+                    <mat-radio-group class="form-radio" aria-label="Select a language">
+                        <mat-radio-button *ngFor="let lang of country.languages" [value]="lang.id"
+                            (change)="onLanguageSelect(lang.code, lang.id)">
+                            {{ lang.name }}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="dialog-footer">
+    <button mat-raised-button class="btn-theme" (click)="changeLanguage()">
+        Select
+    </button>
+</mat-dialog-actions>
+
+<!-- <ng-template #Translate class="happen-modal"><button (click)="closeTranslate()" class="close">X</button>
+    <mat-card appearance="outlined" class="custom-card box-shadow text-center">
+        <mat-card-content class="translate-sec">
+            <div class="header">
+                <img src="/assets/images/icon/world-map.png">
+                <h2>Select Country and Language</h2>
+            </div>
+            <div class="translate-box m-t-24">
+                <mat-accordion class="accordion">
+                    <mat-expansion-panel class="accordion-item" *ngFor="let country of countryLanguages"
+                        (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                        <mat-expansion-panel-header class="accordion-header">
+                            <div class="accordion-button">
+                                <div class="flag-icon">
+                                    <img [src]="country.flagUrl" />
+                                </div>
+                                <span>{{ country.countryName }}</span>
+                            </div>
+                        </mat-expansion-panel-header>
+                        <div class="accordion-collapse">
+                            <p>Select Language</p>
+                            <mat-radio-group class="form-radio" aria-label="Select a language">
+                                <mat-radio-button *ngFor="let lang of country.languages" [value]="lang.id"
+                                    (change)="onLanguageSelect(lang.code, lang.id)">
+                                    {{ lang.name }}
+                                </mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+
+            </div>
+            <button matButton class="btn-theme" (click)="changeLanguage()">Select</button>
+        </mat-card-content>
+    </mat-card>
+</ng-template> -->

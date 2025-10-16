@@ -16,8 +16,13 @@ export class AdminDashboardComponent implements OnInit {
         totalUsers: 0,
         totalRejection: 0,
         totalWithdrawalAmount: 0,
+        todayRejection: 0,
+        todayUsers: 0,
+        todayWithdrawalAmount:0,
         totalRefrelEarn: 0,
         totalLevelBonusEarn: 0,
+        todayClicks: 0,
+        todayPostbacks: 0,
         earning: [],
         withdrawalRequests: [],
         topEarningUsers: []

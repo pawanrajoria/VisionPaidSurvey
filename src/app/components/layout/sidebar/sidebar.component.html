@@ -7,4 +7,10 @@
     <i-tabler name="x" class="icon-20 d-flex"></i-tabler>
   </a>
   }
+  @else {
+  <button mat-button class="language my-custom-button" (click)="openTranslate()">
+    <mat-icon>public</mat-icon>
+    <!-- {{ 'header.language' | translate }} -->
+  </button>
+  }
 </div>

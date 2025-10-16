@@ -8,7 +8,7 @@ import {
   inject,
   PLATFORM_ID,
   provideAppInitializer,
-  provideBrowserGlobalErrorListeners,
+  provideBrowserGlobalErrorListeners, isDevMode,
 } from '@angular/core';
 
 import {
@@ -46,6 +46,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { routes } from './app.routes';
 import { ConfigService } from './config.service';
 import { authInterceptor } from './components/auth/auth.interceptor';
+import { provideServiceWorker } from '@angular/service-worker';
 
 // ✅ Firebase Config
 const firebaseConfig = {
@@ -85,6 +86,7 @@ export function multiHttpLoaderFactory(http: HttpClient) {
     { prefix: '/assets/i18n/', suffix: '/auth.json' },
     { prefix: '/assets/i18n/', suffix: '/refer.json' },
     { prefix: '/assets/i18n/', suffix: '/profile.json' },
+    { prefix: '/assets/i18n/', suffix: '/cookiepolicy.json' },
   ]);
 };
 
@@ -92,7 +94,7 @@ export function multiHttpLoaderFactory(http: HttpClient) {
 function initTranslateService(): () => Promise<void> {
   const translate = inject(TranslateService);
   translate.setDefaultLang('en');
-  return () => translate.use('en').toPromise().then(() => {});
+  return () => translate.use('en').toPromise().then(() => { });
 }
 
 export const appConfig: ApplicationConfig = {
@@ -155,6 +157,12 @@ export const appConfig: ApplicationConfig = {
       },
       deps: [PLATFORM_ID],
       multi: true
-    }
+    }, provideServiceWorker('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      registrationStrategy: 'registerWhenStable:30000'
+    }), provideServiceWorker('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ]
 };

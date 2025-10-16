@@ -1,0 +1,61 @@
+{
+    "cookiePolicy": {
+        "text1": "Deze website gebruikt cookies om de gebruikerservaring te verbeteren en het verkeer op onze website te analyseren.",
+        "text2": "U kunt ervoor kiezen om cookies te accepteren of uw cookie-instellingen te beheren.",
+        "accept": "Cookies Accepteren",
+        "reject": "Weigeren",
+        "settings": "Cookie-instellingen",
+        "title": "Cookiebeleid",
+        "effectiveDate": {
+            "label": "Ingangsdatum",
+            "value": "6 mei 2025"
+        },
+        "introduction": {
+            "title": "Inleiding",
+            "text": "Dit Cookiebeleid legt uit hoe Profitpiller cookies en vergelijkbare technologieën gebruikt om u te herkennen wanneer u onze website bezoekt. Het geeft details over wat deze technologieën zijn, waarom we ze gebruiken en uw rechten om het gebruik ervan te controleren."
+        },
+        "whatAreCookies": {
+            "title": "Wat Zijn Cookies?",
+            "text": "Cookies zijn kleine tekstbestanden die door websites die u bezoekt op uw apparaat worden geplaatst. Ze worden veel gebruikt om websites te laten werken, de efficiëntie te verhogen en rapportage-informatie te verstrekken."
+        },
+        "typesOfCookies": {
+            "title": "Soorten Cookies die We Gebruiken"
+        },
+        "necessaryCookies": {
+            "title": "Strikt Noodzakelijke Cookies",
+            "text": "Deze cookies zijn essentieel om door onze website te navigeren en de functies ervan te gebruiken, zoals veilige toegang tot bepaalde gebieden."
+        },
+        "performanceCookies": {
+            "title": "Prestatie- en Analysecookies",
+            "text": "Deze cookies verzamelen informatie over hoe bezoekers onze site gebruiken, zoals welke pagina's het meest worden bezocht. Deze gegevens helpen ons de prestaties van onze website te verbeteren."
+        },
+        "functionalCookies": {
+            "title": "Functionaliteitscookies",
+            "text": "Deze cookies stellen onze website in staat om keuzes die u maakt te onthouden, zoals taalvoorkeuren, om een meer gepersonaliseerde ervaring te bieden."
+        },
+        "targetingCookies": {
+            "title": "Targeting- en Advertentiecookies",
+            "text": "Deze cookies worden gebruikt om advertenties te tonen die relevanter zijn voor u en uw interesses. Ze helpen ook de effectiviteit van advertentiecampagnes te meten."
+        },
+        "thirdPartyCookies": {
+            "title": "Cookies van Derden",
+            "text": "In sommige gevallen kunnen we derden toestaan om cookies op uw apparaat te plaatsen om analysediensten te leveren, gerichte advertenties te tonen en interactieve inhoud mogelijk te maken."
+        },
+        "howWeUseCookies": {
+            "title": "Hoe We Cookies Gebruiken",
+            "text": "Profitpiller gebruikt cookies om uw browse-ervaring te verbeteren, verkeer te analyseren, inhoud te personaliseren en gerichte advertenties te tonen."
+        },
+        "cookieManagement": {
+            "title": "Cookies Beheren",
+            "text": "U hebt het recht om te beslissen of u cookies accepteert of weigert. U kunt uw browserinstellingen aanpassen om cookies te weigeren of u te waarschuwen wanneer cookies worden gebruikt. Houd er rekening mee dat het uitschakelen van cookies de functionaliteit van onze website kan beïnvloeden."
+        },
+        "changesToPolicy": {
+            "title": "Wijzigingen in Dit Cookiebeleid",
+            "text": "We kunnen dit Cookiebeleid van tijd tot tijd bijwerken om veranderingen in technologie, wetgeving of onze praktijken te weerspiegelen. Updates worden op deze pagina geplaatst met een herziene 'Ingangsdatum'."
+        },
+        "contactUs": {
+            "title": "Neem Contact Met Ons Op",
+            "text": "Als u vragen hebt over ons gebruik van cookies of dit Cookiebeleid, neem dan contact met ons op via privacy@profitpiller.com."
+        }
+    }
+}

@@ -1,0 +1,60 @@
+/* Assumes a custom component stylesheet (e.g., profile.component.scss) */
+
+
+/* 2. Content Styling */
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.profile-card {
+  width: 100%;
+  max-width: 800px;
+  /* Limits the width for a better reading experience on large screens */
+  margin-top: 20px;
+}
+
+mat-card-header {
+  padding-bottom: 20px;
+}
+
+mat-card-title {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+/* 3. Item List Styling (The core of the profile view) */
+.profile-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  /* The separator line */
+}
+
+.profile-item:last-child {
+  border-bottom: none;
+  /* No separator line on the last item */
+}
+
+.question-answer-group {
+  flex-grow: 1;
+  margin-right: 16px;
+  /* Space before the button */
+}
+
+.question {
+  margin: 0;
+  font-size: 0.95em;
+  color: #555;
+  /* Slightly lighter than the answer */
+}
+
+.answer {
+  margin: 4px 0 0 0;
+  font-weight: 600;
+  /* Bold the answer to make it stand out */
+  font-size: 1.05em;
+}

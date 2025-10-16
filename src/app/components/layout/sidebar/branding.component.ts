@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-branding',
   imports: [],
   template: `
-    <a href="/" class="logodark">
+    <a routerLink="/app/earn" class="logodark">
       <img
         src="./assets/images/logo.png"
         class="align-middle m-2"

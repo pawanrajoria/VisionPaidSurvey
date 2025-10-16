@@ -1,0 +1,61 @@
+{
+    "cookiePolicy": {
+        "text1": "This website uses cookies to enhance user experience and to analyze traffic on our website.",
+        "text2": "You can choose to accept cookies or manage your cookie settings.",
+        "accept": "Accept Cookies",
+        "reject": "Reject",
+        "settings": "Cookie Settings",
+        "title": "Cookie Policy",
+        "effectiveDate": {
+            "label": "Effective Date",
+            "value": "May 6, 2025"
+        },
+        "introduction": {
+            "title": "Introduction",
+            "text": "This Cookie Policy explains how Profitpiller uses cookies and similar technologies to recognize you when you visit our website. It provides details on what these technologies are, why we use them, and your rights to control their use."
+        },
+        "whatAreCookies": {
+            "title": "What Are Cookies?",
+            "text": "Cookies are small text files placed on your device by websites you visit. They are widely used to make websites work, enhance efficiency, and provide reporting information."
+        },
+        "typesOfCookies": {
+            "title": "Types of Cookies We Use"
+        },
+        "necessaryCookies": {
+            "title": "Strictly Necessary Cookies",
+            "text": "These cookies are essential for you to navigate our website and use its features, such as secure access to certain areas."
+        },
+        "performanceCookies": {
+            "title": "Performance and Analytics Cookies",
+            "text": "These cookies collect information about how visitors use our site, such as which pages are visited most often. This data helps us improve the performance of our website."
+        },
+        "functionalCookies": {
+            "title": "Functionality Cookies",
+            "text": "These cookies allow our website to remember choices you make, such as language preferences, to provide a more personalized experience."
+        },
+        "targetingCookies": {
+            "title": "Targeting and Advertising Cookies",
+            "text": "These cookies are used to deliver advertisements more relevant to you and your interests. They also help measure the effectiveness of advertising campaigns."
+        },
+        "thirdPartyCookies": {
+            "title": "Third-Party Cookies",
+            "text": "In some cases, we may allow third parties to place cookies on your device to provide analytics services, deliver targeted advertising, and enable interactive content."
+        },
+        "howWeUseCookies": {
+            "title": "How We Use Cookies",
+            "text": "Profitpiller uses cookies to improve your browsing experience, analyze traffic, personalize content, and deliver targeted advertising."
+        },
+        "cookieManagement": {
+            "title": "Managing Cookies",
+            "text": "You have the right to decide whether to accept or reject cookies. You can adjust your browser settings to refuse cookies or alert you when cookies are being used. Please note that disabling cookies may affect the functionality of our website."
+        },
+        "changesToPolicy": {
+            "title": "Changes to This Cookie Policy",
+            "text": "We may update this Cookie Policy from time to time to reflect changes in technology, law, or our practices. Updates will be posted on this page with a revised 'Effective Date.'"
+        },
+        "contactUs": {
+            "title": "Contact Us",
+            "text": "If you have any questions about our use of cookies or this Cookie Policy, please contact us at privacy@profitpiller.com."
+        }
+    }
+}

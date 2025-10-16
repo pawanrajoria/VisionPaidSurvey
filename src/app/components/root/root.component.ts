@@ -4,6 +4,8 @@ import { animate, query, stagger, style, transition, trigger } from "@angular/an
 import { RootFooterComponent } from "./root-footer/root-footer.component";
 import { RootHeaderComponent } from "./root-header/root-header.component";
 import { Router } from "@angular/router";
+import { CookiePolicyPopupComponent } from "./root-cookiepolicy/root-cookie-policy-popup/root-cookie-policy-popup";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
     selector: 'app-root',
@@ -38,19 +40,19 @@ export class RootComponent implements OnInit {
 
     rewards: Record<string, { amount: string; label: string; logo: string }[]> = {
         Cash: [
-            { amount: '₹5 – ₹100', label: 'PayPal', logo: '/assets/paypal.png' },
+            { amount: '$5 – $100', label: 'PayPal', logo: '/assets/paypal.png' },
             {
-                amount: '₹5 – ₹100',
+                amount: '$5 – $100',
                 label: 'PayPal International',
                 logo: '/assets/paypal.png',
             },
         ],
         'Gift Cards': [
-            { amount: '₹10 – ₹100', label: 'Amazon', logo: '/assets/amazon.png' },
+            { amount: '$10 – $100', label: 'Amazon', logo: '/assets/amazon.png' },
         ],
         Donations: [
             {
-                amount: '₹5 – ₹50',
+                amount: '$5 – $50',
                 label: 'Red Cross',
                 logo: '/assets/donation.png',
             },
@@ -76,11 +78,12 @@ export class RootComponent implements OnInit {
     ];
 
 
-    constructor(private router: Router) {
+    constructor(private router: Router, private snackBar: MatSnackBar) {
     }
 
 
     ngOnInit(): void {
+        this.showConsent();
     }
 
 
@@ -95,4 +98,29 @@ export class RootComponent implements OnInit {
     goToApp() {
         this.router.navigate(['/auth/login']);
     }
+
+
+    showConsent(isfrompageLoad: boolean = true) {
+        if (!isfrompageLoad) {
+            this.snackBar.openFromComponent(CookiePolicyPopupComponent, {
+                duration: 0, // stays open until action
+                horizontalPosition: 'center',
+                verticalPosition: 'bottom',
+                panelClass: ['cookie-snackbar']
+            });
+        }
+        else {
+            const consent = localStorage.getItem('cookiesAccepted');
+            if (consent === null) {
+                this.snackBar.openFromComponent(CookiePolicyPopupComponent, {
+                    duration: 0, // stays open until action
+                    horizontalPosition: 'center',
+                    verticalPosition: 'bottom',
+                    panelClass: ['cookie-snackbar']
+                });
+            }
+        }
+    }
+
+
 }

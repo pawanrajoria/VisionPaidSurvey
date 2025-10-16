@@ -6,17 +6,23 @@
     overflow: hidden;
 }
 
-.earnings-bg:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform: unset;
-    background: url(../../../../assets/images/download.png) left 70px center / cover no-repeat;
-}
+// .earnings-bg:before {
+//     content: "";
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     transform: unset;
+//     background: url(../../../../assets/images/download.png) left 70px center / cover no-repeat;
+// }
 
-.spanearningtag{
+.spanearningtag {
     text-align: center;
     margin: 0 auto;
     font-size: small;
+}
+
+.cardWithShadow {
+    margin: 10px;
+    min-width: 100px;
+    min-height: 80px;
 }

@@ -10,6 +10,7 @@ import { CompleteSurveyComponent } from './components/userflow/complete-survey/c
 import { SurveyStatusComponent } from './components/userflow/survey-status/survey-status.component';
 import { TakeSurveyComponent } from './components/userflow/take-survey/take-survey.component';
 import { UserflowComponent } from './components/userflow/userflow.component';
+import { OfferwallComponent } from './components/offerwall/offerwall.component';
 
 export const routes: Routes = [
   {
@@ -67,7 +68,7 @@ export const routes: Routes = [
     canActivate: [authGuard],
     canLoad: [authGuard],
     children: [
-      { path: '', redirectTo: 'survey', pathMatch: 'full' },
+      { path: '', redirectTo: 'earn', pathMatch: 'full' },
       {
         path: 'earn',
         loadChildren: () =>
@@ -183,7 +184,14 @@ export const routes: Routes = [
         path: 'visa',
         loadChildren: () =>
           import('./components/root/root-visa/root-visa.route').then((m) => m.rootVisaRoutes),
-      }
+      },
+      {
+        path: 'cookie-policy',
+        loadChildren: () =>
+          import('./components/root/root-cookiepolicy/root-cookiepolicy.route').then((m) => m.rootCookiePolicyRoutes),
+      },
+
+
     ],
   },
   {
@@ -207,9 +215,72 @@ export const routes: Routes = [
       }
     ],
   },
+  {
+    path: 'offerwall',
+    component: OfferwallComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./components/offerwall/offerwall-home/offerwall-home.route').then((m) => m.offerwallHomeRoutes),
+      },
+      {
+        path: 'profile',
+        loadChildren: () =>
+          import('./components/offerwall/offerwall-profile/offerwall-profile.route').then((m) => m.offerwallProfileRoutes),
+      },
+      {
+        path: 'survey',
+        loadChildren: () =>
+          import('./components/offerwall/offerwall-survey/offerwall-survey.route').then((m) => m.offerwallSurveyRoutes),
+      },
+      {
+        path: 'reward',
+        loadChildren: () =>
+          import('./components/offerwall/offerwall-reward/offerwall-reward.route').then((m) => m.offerwallRewardRoutes),
+      }
+    ],
+  },
   // {
   //   path: '**',
   //   redirectTo: '/auth/login',
   //   pathMatch: 'full',
   // },
 ];
+
+
+
+
+
+// // src/app/app.routes.ts
+
+// import { inject } from '@angular/core';
+// import { Auth, user } from '@angular/fire/auth';
+// import { map } from 'rxjs/operators';
+// import { Router, type Routes } from '@angular/router';
+
+// // The AuthGuard function
+// const isAuthenticatedGuard = () => {
+//   const auth = inject(Auth); // **The injector needs the provider from app.config.ts**
+//   const router = inject(Router);
+
+//   return user(auth).pipe(
+//     map(firebaseUser => {
+//       // Check if the user object exists
+//       if (firebaseUser) {
+//         return true;
+//       }
+//       // Redirect to login if not authenticated
+//       return router.createUrlTree(['/login']); 
+//     })
+//   );
+// };
+
+// export const routes: Routes = [
+//   // ... other routes
+//   {
+//     path: 'dashboard',
+//     canActivate: [isAuthenticatedGuard], // Guard uses the Auth service
+//     loadComponent: () => import('./dashboard/dashboard.component')
+//   }
+// ];

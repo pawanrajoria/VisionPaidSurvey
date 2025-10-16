@@ -1,0 +1,61 @@
+{
+    "cookiePolicy": {
+        "text1": "Questo sito web utilizza i cookie per migliorare l'esperienza dell'utente e per analizzare il traffico sul nostro sito web.",
+        "text2": "È possibile scegliere di accettare i cookie o di gestire le impostazioni dei cookie.",
+        "accept": "Accetta i cookie",
+        "reject": "Rifiuta",
+        "settings": "Impostazioni dei cookie",
+        "title": "Informativa sui cookie",
+        "effectiveDate": {
+            "label": "Data di entrata in vigore",
+            "value": "6 maggio 2025"
+        },
+        "introduction": {
+            "title": "Introduzione",
+            "text": "Questa Informativa sui cookie spiega come Profitpiller utilizza i cookie e tecnologie simili per riconoscerti quando visiti il nostro sito web. Fornisce dettagli su cosa sono queste tecnologie, perché le usiamo e i tuoi diritti per controllarne l'uso."
+        },
+        "whatAreCookies": {
+            "title": "Cosa sono i cookie?",
+            "text": "I cookie sono piccoli file di testo che i siti web che visiti posizionano sul tuo dispositivo. Sono ampiamente utilizzati per far funzionare i siti web, migliorarne l'efficienza e fornire informazioni di reporting."
+        },
+        "typesOfCookies": {
+            "title": "Tipi di cookie che utilizziamo"
+        },
+        "necessaryCookies": {
+            "title": "Cookie strettamente necessari",
+            "text": "Questi cookie sono essenziali per navigare nel nostro sito web e utilizzare le sue funzionalità, come l'accesso sicuro a determinate aree."
+        },
+        "performanceCookies": {
+            "title": "Cookie di performance e analisi",
+            "text": "Questi cookie raccolgono informazioni su come i visitatori utilizzano il nostro sito, ad esempio quali pagine vengono visitate più spesso. Questi dati ci aiutano a migliorare le prestazioni del nostro sito web."
+        },
+        "functionalCookies": {
+            "title": "Cookie di funzionalità",
+            "text": "Questi cookie consentono al nostro sito web di ricordare le scelte che fai, come le preferenze di lingua, per fornire un'esperienza più personalizzata."
+        },
+        "targetingCookies": {
+            "title": "Cookie di targeting e pubblicità",
+            "text": "Questi cookie vengono utilizzati per fornire annunci più pertinenti a te e ai tuoi interessi. Aiutano anche a misurare l'efficacia delle campagne pubblicitarie."
+        },
+        "thirdPartyCookies": {
+            "title": "Cookie di terze parti",
+            "text": "In alcuni casi, potremmo consentire a terze parti di posizionare cookie sul tuo dispositivo per fornire servizi di analisi, fornire pubblicità mirata e abilitare contenuti interattivi."
+        },
+        "howWeUseCookies": {
+            "title": "Come utilizziamo i cookie",
+            "text": "Profitpiller utilizza i cookie per migliorare la tua esperienza di navigazione, analizzare il traffico, personalizzare i contenuti e fornire pubblicità mirata."
+        },
+        "cookieManagement": {
+            "title": "Gestione dei cookie",
+            "text": "Hai il diritto di decidere se accettare o rifiutare i cookie. Puoi regolare le impostazioni del tuo browser per rifiutare i cookie o avvisarti quando vengono utilizzati. Tieni presente che la disabilitazione dei cookie potrebbe influire sulla funzionalità del nostro sito web."
+        },
+        "changesToPolicy": {
+            "title": "Modifiche a questa Informativa sui cookie",
+            "text": "Potremmo aggiornare questa Informativa sui cookie di tanto in tanto per riflettere i cambiamenti nella tecnologia, nella legge o nelle nostre pratiche. Gli aggiornamenti verranno pubblicati su questa pagina con una 'Data di entrata in vigore' rivista."
+        },
+        "contactUs": {
+            "title": "Contattaci",
+            "text": "Se hai domande sul nostro uso dei cookie o su questa Informativa sui cookie, ti preghiamo di contattarci all'indirizzo privacy@profitpiller.com."
+        }
+    }
+}

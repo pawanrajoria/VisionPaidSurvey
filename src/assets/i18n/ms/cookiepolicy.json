@@ -1,0 +1,61 @@
+{
+    "cookiePolicy": {
+        "text1": "Laman web ini menggunakan kuki untuk meningkatkan pengalaman pengguna dan menganalisis trafik di laman web kami.",
+        "text2": "Anda boleh memilih untuk menerima kuki atau menguruskan tetapan kuki anda.",
+        "accept": "Terima Kuki",
+        "reject": "Tolak",
+        "settings": "Tetapan Kuki",
+        "title": "Dasar Kuki",
+        "effectiveDate": {
+            "label": "Tarikh Kuat Kuasa",
+            "value": "6 Mei 2025"
+        },
+        "introduction": {
+            "title": "Pengenalan",
+            "text": "Dasar Kuki ini menerangkan cara Profitpiller menggunakan kuki dan teknologi serupa untuk mengenali anda semasa anda melawat laman web kami. Ia memberikan butiran tentang apakah teknologi ini, mengapa kami menggunakannya, dan hak anda untuk mengawal penggunaannya."
+        },
+        "whatAreCookies": {
+            "title": "Apakah Itu Kuki?",
+            "text": "Kuki adalah fail teks kecil yang diletakkan pada peranti anda oleh laman web yang anda lawati. Ia digunakan secara meluas untuk memastikan laman web berfungsi, meningkatkan kecekapan, dan menyediakan maklumat pelaporan."
+        },
+        "typesOfCookies": {
+            "title": "Jenis-jenis Kuki yang Kami Gunakan"
+        },
+        "necessaryCookies": {
+            "title": "Kuki Sangat Diperlukan",
+            "text": "Kuki ini adalah penting untuk anda melayari laman web kami dan menggunakan ciri-cirinya, seperti akses selamat ke kawasan tertentu."
+        },
+        "performanceCookies": {
+            "title": "Kuki Prestasi dan Analitik",
+            "text": "Kuki ini mengumpul maklumat tentang cara pelawat menggunakan laman kami, seperti halaman mana yang paling kerap dilawati. Data ini membantu kami meningkatkan prestasi laman web kami."
+        },
+        "functionalCookies": {
+            "title": "Kuki Fungsionaliti",
+            "text": "Kuki ini membolehkan laman web kami mengingati pilihan yang anda buat, seperti pilihan bahasa, untuk memberikan pengalaman yang lebih peribadi."
+        },
+        "targetingCookies": {
+            "title": "Kuki Sasaran dan Pengiklanan",
+            "text": "Kuki ini digunakan untuk menyampaikan iklan yang lebih relevan dengan anda dan minat anda. Ia juga membantu mengukur keberkesanan kempen pengiklanan."
+        },
+        "thirdPartyCookies": {
+            "title": "Kuki Pihak Ketiga",
+            "text": "Dalam beberapa kes, kami mungkin membenarkan pihak ketiga meletakkan kuki pada peranti anda untuk menyediakan perkhidmatan analitik, menyampaikan pengiklanan yang disasarkan, dan membolehkan kandungan interaktif."
+        },
+        "howWeUseCookies": {
+            "title": "Cara Kami Menggunakan Kuki",
+            "text": "Profitpiller menggunakan kuki untuk meningkatkan pengalaman melayari anda, menganalisis trafik, memperibadikan kandungan, dan menyampaikan pengiklanan yang disasarkan."
+        },
+        "cookieManagement": {
+            "title": "Mengurus Kuki",
+            "text": "Anda mempunyai hak untuk memutuskan sama ada untuk menerima atau menolak kuki. Anda boleh melaraskan tetapan pelayar anda untuk menolak kuki atau memberi amaran kepada anda apabila kuki sedang digunakan. Sila ambil perhatian bahawa melumpuhkan kuki boleh menjejaskan fungsi laman web kami."
+        },
+        "changesToPolicy": {
+            "title": "Perubahan pada Dasar Kuki Ini",
+            "text": "Kami mungkin mengemas kini Dasar Kuki ini dari semasa ke semasa untuk mencerminkan perubahan dalam teknologi, undang-undang, atau amalan kami. Kemas kini akan disiarkan di halaman ini dengan 'Tarikh Kuat Kuasa' yang disemak semula."
+        },
+        "contactUs": {
+            "title": "Hubungi Kami",
+            "text": "Jika anda mempunyai sebarang soalan tentang penggunaan kuki kami atau Dasar Kuki ini, sila hubungi kami di privacy@profitpiller.com."
+        }
+    }
+}
