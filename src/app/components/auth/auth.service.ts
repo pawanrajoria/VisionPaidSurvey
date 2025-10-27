@@ -18,10 +18,20 @@ export class AuthService {
     constructor(private http: HttpClient, public angularFireAuth: AngularFireAuth,
         private config: ConfigService, private router: Router, private accountService: AccountService,
         private localStorageService: LocalStorageService) {
+
+        this.angularFireAuth.authState.subscribe((user) => {
+            if (user) {
+                   console.log('User found.');
+                // User is signed in. You can store user data here.
+            } else {
+                // User is signed out.
+                 console.log('No User found.');
+            }
+        });
     }
 
     async logOut(): Promise<void> {
-        await this.angularFireAuth.signOut();
+        // await this.angularFireAuth.signOut();
         this.localStorageService.removeItem('google-token');
         this.localStorageService.removeItem('token');
         this.router.navigate(['/auth/login']);

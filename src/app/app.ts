@@ -14,6 +14,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { HelperService } from './components/userflow/helper.service';
 import { LocalStorageService } from './localstorage.service';
 import { BaseComponent } from './base.component';
+import { GoogleService } from './components/auth/google.service';
 
 @Component({
   selector: 'app-root',
@@ -37,6 +38,7 @@ export class AppComponent extends BaseComponent implements OnInit {
     private translate: TranslateService,
     private helperService: HelperService,
     private localStorageService: LocalStorageService,
+    private googleService: GoogleService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     super();
@@ -59,6 +61,14 @@ export class AppComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.googleService.checkRedirect();
+
+
+    if (this.isBrowser) {
+
+      this.googleService.observeUser();
+    }
+
     // ✅ SSR-safe check before using `window`
     if (this.isBrowser && this.win) {
       this.localStorageService.setItem('LandedUrl', this.win.location.href);

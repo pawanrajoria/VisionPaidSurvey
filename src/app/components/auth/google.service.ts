@@ -1,47 +1,47 @@
-import { Injectable, OnInit } from "@angular/core";
-import { Auth, getRedirectResult, GoogleAuthProvider, signInWithRedirect } from "@angular/fire/auth";
-import { AngularFireAuth } from "@angular/fire/compat/auth";
+import { Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import firebase from 'firebase/compat/app'; // ✅ Required for compat
 
 @Injectable({ providedIn: 'root' })
-export class GoogleService implements OnInit {
+export class GoogleService {
+  constructor(private afAuth: AngularFireAuth) {}
 
-
-    constructor( public angularFireAuth: AngularFireAuth,private auth: Auth) {
-
+  // 🔹 Set Firebase persistence
+  async setPersistence() {
+    try {
+      await this.afAuth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+      console.log('Persistence set to LOCAL');
+    } catch (error) {
+      console.error('Error setting persistence:', error);
     }
+  }
 
-    ngOnInit() {
-        // 1. Check for the redirect result immediately on app load
-        this.checkRedirectStatus();
-    }
+  // 🔹 Start Google Sign-In via redirect
+  googleSignIn() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    return this.afAuth.signInWithRedirect(provider);
+  }
 
-    async checkRedirectStatus(): Promise<any | null> {
-        try {
-            const result = await getRedirectResult(this.auth);
-            debugger;
-            if (result) {
-                // User successfully signed in via redirect
-                const user = result.user;
-                console.log('Redirect Sign-In Success:', user);
-                // Navigate to your protected route here
-                // this.router.navigate(['/dashboard']); 
-                return user;
-            }
-            return null;
-        } catch (error) {
-            console.error('Error handling redirect result:', error);
-            return null;
-        }
+  // 🔹 Handle redirect result after returning from Google
+  async checkRedirect() {
+    try {
+      const result = await this.afAuth.getRedirectResult();
+      if (result.user) {
+        console.log('Redirect Sign-In Success:', result.user);
+        // You can store this in localStorage if needed
+      } else {
+        console.log('No redirect result found.');
+      }
+    } catch (error) {
+      console.error('Redirect error:', error);
     }
+  }
 
-    async googleSignIn() {
-        const provider = new GoogleAuthProvider();
-        try {
-            // Start the redirect (this leaves your app)
-            await signInWithRedirect(this.auth, provider);
-            // NOTE: Code after this line will not execute until the app reloads/redirects back.
-        } catch (error) {
-            console.error('Google sign-in redirect error:', error);
-        }
-    }
+  // 🔹 Observe the currently logged-in user
+  observeUser() {
+    this.afAuth.authState.subscribe(user => {
+      console.log('Auth state changed:', user);
+      // You can also store user in a shared service or localStorage here
+    });
+  }
 }

@@ -86,7 +86,7 @@ export class RootHomeComponent implements OnInit {
     ];
 
 
-    constructor(private router: Router, private authService: AuthService, private googleAuth: GoogleService) {
+    constructor(private router: Router, private authService: AuthService,private googleAuth:GoogleService) {
     }
 
     async googleLogin(){

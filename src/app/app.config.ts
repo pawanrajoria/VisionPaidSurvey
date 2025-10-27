@@ -41,7 +41,7 @@ import { SharedModule } from './shared.module';
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireAuthModule, SETTINGS as AUTH_SETTINGS } from '@angular/fire/compat/auth';
 
 import { routes } from './app.routes';
 import { ConfigService } from './config.service';
@@ -163,6 +163,17 @@ export const appConfig: ApplicationConfig = {
     }), provideServiceWorker('ngsw-worker.js', {
       enabled: !isDevMode(),
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    {
+      provide: AUTH_SETTINGS,
+      useFactory: (platformId: Object) => {
+        if (isPlatformBrowser(platformId)) {
+          return {};
+        }
+        // return null to skip auth on SSR
+        return null;
+      },
+      deps: [PLATFORM_ID],
+    },
   ]
 };
