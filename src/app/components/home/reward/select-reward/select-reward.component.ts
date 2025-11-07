@@ -2,10 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { MatDialogRef } from "@angular/material/dialog";
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { SharedModule } from "../../../../shared.module";
-import { IRewardInfoVM, UserWithdrawalRequestVM } from "../reward.vm";
+import { IGiftCardVM, IRewardInfoVM, UserWithdrawalRequestVM } from "../reward.vm";
 import { RewardService } from "../reward.service";
 import { MessageService } from "../../../layout/message/message.service";
 import { MessageVM } from "../../../layout/message/message.vm";
+import { PayoutMethodEnum } from "../reward.enum";
 
 @Component({
     selector: 'app-select-reward',
@@ -22,38 +23,106 @@ import { MessageVM } from "../../../layout/message/message.vm";
     ]
 })
 export class SelectRewardComponent implements OnInit {
-    searchText = '';
-    selectedAmount: any = null;
-    selectedData: any = null;
+    pagedGiftCards: IGiftCardVM[] = [];
+    pageSize = 12; // 5 items per row * 3 rows
+    pageIndex = 0;
+    searchText = "";
+
+    selectedCard: any = null;
+    selectedChildOptionCard: any = null;
+    selectedType: number = 0;
+    showAllGiftCards = false;
 
     rewardInfo: IRewardInfoVM = { giftCards: [], transferCards: [] };
+
 
     constructor(private rewardService: RewardService, private messageService: MessageService) {
     }
 
+    async applyFilter() {
+        await this.ngOnInit();
+    }
+
     async ngOnInit() {
-        const response = await this.rewardService.bindRewardInfo({});
+        const response = await this.rewardService.bindRewardInfo({ productName: this.searchText });
         if (!!response && response.isSuccess) {
             this.rewardInfo.giftCards = response.data.filter((p: any) => p.typeId == 2);
             this.rewardInfo.transferCards = response.data.filter((p: any) => p.typeId == 1);
+            this.updatePagedGiftCards();
         }
     }
 
-    selectAmount(data: any, mainData: any) {
-        this.selectedData = mainData;
-        this.selectedAmount = data.amount;
+    viewMoreGiftCards() {
+        this.showAllGiftCards = true;
+        this.pageSize = this.rewardInfo.giftCards.length;
+        this.pageIndex = 0;
+        this.updatePagedGiftCards();
     }
 
+    selectChilOption(option: any, event: MouseEvent, card: any, type: number) {
+        event.stopPropagation();
+        this.selectedChildOptionCard = option;
+        this.selectedCard = card;
+        this.selectedType = type;
+    }
+
+    get filteredGiftCards() {
+        return this.pagedGiftCards?.filter(card =>
+            !this.searchText || card.name?.toLowerCase().includes(this.searchText.toLowerCase())
+        );
+    }
+
+    updatePagedGiftCards() {
+        if (this.showAllGiftCards) {
+            this.pagedGiftCards = this.rewardInfo.giftCards;
+        }
+
+        const start = this.pageIndex * this.pageSize;
+        const end = start + this.pageSize;
+        this.pagedGiftCards = this.rewardInfo.giftCards.slice(start, end);
+    }
+
+
     async onSelectReward() {
+        if (this.selectedType == 1) {
+            this.redeemPayPal(this.selectedChildOptionCard, this.selectedCard);
+        }
+        else if (this.selectedType == 2) {
+            this.redeemGift(this.selectedChildOptionCard, this.selectedCard);
+        }
+    }
+
+
+    async redeemGift(option: any, giftCard: any) {
         const self = this;
 
         const request: UserWithdrawalRequestVM = {
-            method: self.selectedData.typeId,
-            point: self.selectedAmount,
-            giftCardId: self.selectedData.productId,
-            giftCardName: self.selectedData.Name,
+            method: PayoutMethodEnum.GiftCard,
+            point: option.points,
+            giftCardId: giftCard.productId,
+            giftCardName: giftCard.name,
             emailId: "",
-            giftCardImage: self.selectedData.imageUrl,
+            giftCardImage: giftCard.imageUrl,
+        };
+        const response = await self.rewardService.requestUserWithdrawal(request);
+        if (!!response && !!response.isSuccess) {
+            self.messageService.showMessage(new MessageVM(response.message, "success"));
+        }
+        else {
+            self.messageService.showMessage(new MessageVM(response.message, "error"));
+        }
+    }
+
+    async redeemPayPal(option: any, card: any) {
+        const self = this;
+
+        const request: UserWithdrawalRequestVM = {
+            method: PayoutMethodEnum.PayPal,
+            point: option.points,
+            giftCardId: 0,
+            giftCardName: card.name,
+            emailId: "",
+            giftCardImage: ""
         };
         const response = await self.rewardService.requestUserWithdrawal(request);
         if (!!response && !!response.isSuccess) {

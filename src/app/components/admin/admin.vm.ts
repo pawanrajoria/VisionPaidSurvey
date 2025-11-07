@@ -1,19 +1,14 @@
 export interface AdminEarningResponseDto {
-    totalEarning: number;
-    todayEarning: number;
+    earning: number;
     totalUsers: number;
-    todayUsers: number;
-    totalRejection: number;
-    todayRejection: number;
-    totalWithdrawalAmount: number;
-    todayWithdrawalAmount:number;
-    totalRefrelEarn: number;
-    totalLevelBonusEarn: number;
-    todayClicks: number;
-    todayPostbacks: number;
-    earning: AdminTodayEarningResponseDto[];
+    rejection: number;
+    refrelEarn: number;
+    levelBonusEarn: number;
+
+    earnings: AdminTodayEarningResponseDto[];
     withdrawalRequests: AdminWithdrawalResponseDto[];
     topEarningUsers: AdminTopEarningUserResponseDto[];
+    userActivityLog: UserActivityLogDashboardResponseDto[];
 }
 
 export interface AdminTodayEarningResponseDto {
@@ -22,7 +17,9 @@ export interface AdminTodayEarningResponseDto {
     userName: string;
     country: string;
     amount: string;
-    earnDate:Date; 
+    earnDate: Date;
+    clientName: string;
+    userBalance: number;
 }
 
 export interface AdminWithdrawalResponseDto {
@@ -48,4 +45,17 @@ export interface AdminTopEarningUserResponseDto {
     todayEarning: number;
     rejectionCount: number;
     rejectionAmount: number;
+}
+
+export interface UserActivityLogDashboardResponseDto {
+    userId: number;
+    userName: string;
+    country: string;
+    earning: number;
+    rejection: number;
+    earningCount: number;
+    rejectionCount: number;
+    postbackLogCount: number;
+    activityCount: number;
+    userBalance: number;
 }

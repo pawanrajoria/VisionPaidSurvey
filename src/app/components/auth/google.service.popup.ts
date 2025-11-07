@@ -2,7 +2,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
-export class GoogleService {
+export class GooglePopupService {
   private readonly clientId =
     '988754056043-d8vthsu4cl5a5ieb4udssagp5076t6ht.apps.googleusercontent.com';
 
@@ -64,39 +64,6 @@ export class GoogleService {
           reject('Popup closed before authentication');
         }
       }, 400);
-    });
-  }
-
-  loginWithGoogleTab(openInNewTab: boolean = true): Promise<string> {
-    if (!this.isBrowser) return Promise.reject('Not in browser');
-
-    const redirectUri = window.location.origin + '/auth/callback';
-
-    const googleAuthUrl =
-      'https://accounts.google.com/o/oauth2/v2/auth' +
-      `?client_id=${this.clientId}` +
-      `&redirect_uri=${encodeURIComponent(redirectUri)}` +
-      '&response_type=token' +
-      '&scope=' + encodeURIComponent('openid email profile') +
-      '&prompt=select_account';
-
-    const popup = openInNewTab
-      ? window.open(googleAuthUrl, '_blank') // ✅ new tab
-      : window.open(googleAuthUrl, 'googleLogin', 'width=500,height=600');
-
-    if (!popup) return Promise.reject('Popup blocked!');
-
-    return new Promise((resolve, reject) => {
-      const listener = (event: MessageEvent) => {
-        if (event.data?.token) {
-          resolve(event.data.token);
-          cleanup();
-        }
-      };
-
-      const cleanup = () => window.removeEventListener('message', listener);
-
-      window.addEventListener('message', listener);
     });
   }
 }

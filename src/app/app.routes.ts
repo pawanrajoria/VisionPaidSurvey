@@ -11,6 +11,7 @@ import { SurveyStatusComponent } from './components/userflow/survey-status/surve
 import { TakeSurveyComponent } from './components/userflow/take-survey/take-survey.component';
 import { UserflowComponent } from './components/userflow/userflow.component';
 import { OfferwallComponent } from './components/offerwall/offerwall.component';
+import { AuthCallbackComponent } from './components/auth/AuthCallbackComponent';
 
 export const routes: Routes = [
   {
@@ -60,6 +61,7 @@ export const routes: Routes = [
         component: OfferLinkComponent,
         data: { title: 'Redirecting to Offer Link | Profitpiller' },
       },
+      { path: 'callback', component: AuthCallbackComponent }
     ],
   },
   {

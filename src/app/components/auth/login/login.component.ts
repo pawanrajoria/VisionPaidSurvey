@@ -5,11 +5,15 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { GoogleLoginDirective } from "../google.directive";
 import { AuthService } from "../auth.service";
 import { SharedDataService } from "../../../shared.data.service";
+import { AngularFireAuth } from "@angular/fire/compat/auth";
+import { LocalStorageService } from "../../../localstorage.service";
+import { GoogleService } from "../google.service";
+import { GoogleAuthProvider } from "@firebase/auth";
 
 
 @Component({
     selector: 'app-login',
-    imports: [SharedModule, GoogleLoginDirective],
+    imports: [SharedModule],
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss']
 })
@@ -21,7 +25,9 @@ export class LoginComponent implements OnInit {
     loginForm!: FormGroup;
 
     constructor(private fb: FormBuilder, private router: Router, private authService: AuthService,
-        private sharedDataService: SharedDataService, private activatedRoute: ActivatedRoute) {
+        private sharedDataService: SharedDataService, private activatedRoute: ActivatedRoute,
+        private googleAuth: GoogleService, private localStorageService: LocalStorageService,
+        private angularFireAuth: AngularFireAuth) {
         this.loginForm = this.fb.group({
             email: ['', [Validators.required, Validators.email]],
             password: ['', Validators.required]
@@ -38,6 +44,33 @@ export class LoginComponent implements OnInit {
 
 
     ngOnInit(): void {
+    }
+
+    async googleLogin() {
+        const googleToken = await this.googleAuth.loginWithGoogleTab();
+        if (googleToken) {
+            this.localStorageService.removeItem('token');
+            const credential = GoogleAuthProvider.credential(null, googleToken);
+            const userCredential = await this.angularFireAuth.signInWithCredential(credential);
+
+            if (userCredential != null && userCredential.user != null) {
+                const idToken = await userCredential.user.getIdToken();
+
+                const response = await this.authService.firebaseLogin({
+                    idToken: idToken,
+                    fullName: userCredential.user?.displayName,
+                    userId: userCredential.user?.uid,
+                    imageSrc: userCredential.user?.photoURL,
+                    emailVerified: userCredential.user?.emailVerified,
+                    phoneNumber: userCredential.user?.phoneNumber,
+                    bonusCode: this.bonusCode
+                });
+                if (!!response && !!response.token) {
+                    this.localStorageService.setItem("token", response.token);
+                    this.router.navigate(['/app']);
+                }
+            }
+        }
     }
 
     async submit() {

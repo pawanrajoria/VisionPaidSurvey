@@ -86,7 +86,6 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
               "error"
             ));
             authService.logOut();
-            router.navigate(['/auth/login']);
           } else if (error.error && typeof error.error === 'object' && 'message' in error.error) {
             messageService.showMessage(new MessageVM(error.error.message, "error"));
           } else {

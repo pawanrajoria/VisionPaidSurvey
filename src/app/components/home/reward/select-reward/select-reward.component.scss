@@ -1,4 +1,5 @@
 @use "../../../../../assets/styles/variables" as *;
+
 .title {
     font-size: 1.5rem;
     font-weight: 600;
@@ -8,9 +9,11 @@
 .search-field {
     width: 100%;
     border-radius: 9999px;
+
     .mat-form-field-outline {
         border-radius: 9999px;
     }
+
     input {
         padding: 10px 16px;
     }
@@ -44,10 +47,12 @@
     .mat-expansion-panel-header {
         height: auto;
     }
+
     .mat-expansion-panel-content-wrapper {
         position: relative;
         background: radial-gradient(circle, rgb(135, 190, 119) 0%, rgb(25, 97, 69) 100%);
         z-index: 0;
+
         &::before {
             content: "";
             position: absolute;
@@ -61,18 +66,21 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+
         .elements46 {
             position: absolute;
             right: 0;
             bottom: 0;
             width: 150px;
         }
+
         .stars {
             position: absolute;
             left: 0;
             bottom: 0;
             max-width: 100px;
         }
+
         .elements4 {
             position: absolute;
             right: 10%;
@@ -88,6 +96,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
+
     img {
         height: 40px;
         width: 40px;
@@ -99,6 +108,8 @@
 .reward-title {
     font-weight: 600;
     font-size: 15px;
+    height: 20px;
+    overflow: clip;
 }
 
 .reward-subtitle {
@@ -116,41 +127,42 @@
 .gift-point {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem !important;
+    gap: 0.5rem !important;
     margin-bottom: 1rem;
     justify-content: center;
     margin-top: 20px;
+
     .amount-card {
         position: relative;
-        border: 2px solid transparent;
-        padding: 1rem;
         text-align: center;
-        border-radius: 12px;
-        transition: all 0.2s ease;
         background: #fff;
-        border: 1px solid #ccc;
+        border: 1px solid #3a7b56;
         padding: 0.75rem;
         border-radius: 0.75rem;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100px;
-        cursor: pointer;
         transition: all 0.2s ease;
         cursor: pointer;
+        font-size: 12px;
+        font-weight: 500;
+
         &:hover {
             border-color: #296e4f;
             box-shadow: 0 0 6px rgba(63, 81, 181, 0.2);
         }
+
         &.selected {
             border-color: #296e4f;
             color: #296e4f;
             box-shadow: 0 0 6px rgba(63, 81, 181, 0.3);
         }
+
         .text {
             font-weight: 600;
             font-size: 1rem;
         }
+
         .points {
             font-size: 0.85rem;
             color: #6b7280;
@@ -201,9 +213,17 @@
 }
 
 @media (max-width:767px) {
-     ::ng-deep {
+    ::ng-deep {
         .mat-expansion-panel-header {
             height: auto;
         }
+    }
+}
+
+.view-more-container {
+    text-align: center;
+    margin-top: 1rem;
+    .view-more-link {
+        color: #105749;
     }
 }

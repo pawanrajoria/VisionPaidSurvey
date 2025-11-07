@@ -1,15 +1,18 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { animate, query, stagger, style, transition, trigger } from "@angular/animations";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { SharedModule } from "../../../shared.module";
 import { FaqRootComponent } from "../root-faq/root-faq.component";
 import { AuthService } from "../../auth/auth.service";
 import { GoogleLoginDirective } from "../../auth/google.directive";
 import { GoogleService } from "../../auth/google.service";
+import { AngularFireAuth } from "@angular/fire/compat/auth";
+import { GoogleAuthProvider, signInWithCredential } from "@firebase/auth";
+import { LocalStorageService } from "../../../localstorage.service";
 
 @Component({
     selector: 'app-root-home',
-    imports: [SharedModule, FaqRootComponent, GoogleLoginDirective],
+    imports: [SharedModule, FaqRootComponent],
     templateUrl: './root-home.component.html',
     styleUrls: ['./root-home.component.scss'],
     animations: [
@@ -85,12 +88,46 @@ export class RootHomeComponent implements OnInit {
         },
     ];
 
+    bonusCode: string = "";
+    constructor(private router: Router, private authService: AuthService,
+        private googleAuth: GoogleService, private angularFireAuth: AngularFireAuth,
+        private route: ActivatedRoute, private localStorageService: LocalStorageService) {
 
-    constructor(private router: Router, private authService: AuthService,private googleAuth:GoogleService) {
+        this.route.queryParams.subscribe(params => {
+            const ref = params['referralCode'];
+            if (ref) {
+                this.bonusCode = ref;
+            }
+        });
     }
 
-    async googleLogin(){
-        await this.googleAuth.googleSignIn();
+    async googleLogin() {
+        const googleToken = await this.googleAuth.loginWithGoogleTab();
+        if (googleToken) {
+            this.localStorageService.removeItem('token');
+            const credential = GoogleAuthProvider.credential(null, googleToken);
+            const userCredential = await this.angularFireAuth.signInWithCredential(credential);
+
+             
+
+            if (userCredential != null && userCredential.user != null) {
+                const idToken = await userCredential.user.getIdToken();
+
+                const response = await this.authService.firebaseLogin({
+                    idToken: idToken,
+                    fullName: userCredential.user?.displayName,
+                    userId: userCredential.user?.uid,
+                    imageSrc: userCredential.user?.photoURL,
+                    emailVerified: userCredential.user?.emailVerified,
+                    phoneNumber: userCredential.user?.phoneNumber,
+                    bonusCode: this.bonusCode
+                });
+                if (!!response && !!response.token) {
+                    this.localStorageService.setItem("token", response.token);
+                    this.router.navigate(['/app']);
+                }
+            }
+        }
     }
 
 

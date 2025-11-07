@@ -9,7 +9,7 @@ export class AdminService {
     }
 
 
-    async getDashboardHistory(): Promise<any> {
-        return await this.http.get<any>(this.config.baseUrl + "admin/get-dashboard-history").toPromise();
+    async getDashboardHistory(timeperiod: string): Promise<any> {
+        return await this.http.get<any>(this.config.baseUrl + "admin/get-dashboard-history?timeperiod="+timeperiod).toPromise();
     }
 }

@@ -1,435 +1,239 @@
-<button mat-mini-fab color="accent" (click)="refresh()">
-    <mat-icon>attach_money</mat-icon>
-</button>
+<main class="dashboard-container">
+    <div class="dashboard-header">
+        <h2>Dashboard</h2>
+        <p>Check the sales, value, and bounce rate by country.</p>
+        <mat-tab-group color="warn" class="dashboard-mat-tab" [(selectedIndex)]="selectedTabIndex"
+            (selectedTabChange)="onTabChange($event)">
+            <mat-tab label="Today">
+                <div class="empty-block">
+                    <!-- Add your 'Today' content here -->
+                </div>
+            </mat-tab>
 
-<mat-card-title>Total Stats</mat-card-title>
-<div class="row">
-    <div >
-        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #0f100f76;">
-            <mat-card-content style="padding: 16px !important;">
-                <div>
-                    <div>
-                        <span class=" mat-subtitle-2">Earning</span>
-                        <h4 class="f-w-500 m-t-6 m-b-0">${{adminData.totalEarning}}
-                        </h4>
-                    </div>
+            <mat-tab label="This Week">
+                <div class="empty-block">
+                    <!-- Add your 'This Week' content here -->
                 </div>
-            </mat-card-content>
-        </mat-card>
-    </div>
-    <div >
-        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #2701fd76;">
-            <mat-card-content style="padding: 16px !important;">
-                <div>
-                    <div>
-                        <span class="f-s-18 mat-subtitle-2">User</span>
-                        <h4 class="f-w-500 m-t-6 m-b-0">{{adminData.totalUsers}}
-                        </h4>
-                    </div>
-                </div>
-            </mat-card-content>
-        </mat-card>
-    </div>
+            </mat-tab>
 
-    <div >
-        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #fd01cb76;">
-            <mat-card-content style="padding: 16px !important;">
-                <div>
-                    <div>
-                        <span class="f-s-18 mat-subtitle-2">W-Amount</span>
-                        <h4 class="f-w-500 m-t-6 m-b-0">{{adminData.totalWithdrawalAmount}}
-                        </h4>
-                    </div>
+            <mat-tab label="This Month">
+                <div class="empty-block">
+                    <!-- Add your 'This Month' content here -->
                 </div>
-            </mat-card-content>
-        </mat-card>
+            </mat-tab>
+
+            <mat-tab label="This Year">
+                <div class="empty-block">
+                    <!-- Add your 'This Year' content here -->
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+
     </div>
-    <div >
-        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #f5fd0176;">
-            <mat-card-content style="padding: 16px !important;">
+    <!-- === Stat Cards Row === -->
+    <div class="stat-grid">
+        <mat-card class="stat-card" *ngFor="let item of stats" (click)="selectedValueTabIndex=item.id">
+            <div class="stat-header">
                 <div>
-                    <div>
-                        <span class="f-s-18 mat-subtitle-2">TWA</span>
-                        <h4 class="f-w-500 m-t-6 m-b-0">{{adminData.totalWithdrawalAmount}}
-                        </h4>
-                    </div>
+                    <p class="label">{{ item.label }}</p>
+                    <h3>{{ item.value }}</h3>
                 </div>
-            </mat-card-content>
+                <mat-icon class="stat-icon">{{ item.icon }}</mat-icon>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="stat-footer">
+                <span [ngClass]="{'positive': item.change > 0, 'negative': item.change < 0}">
+                    {{ item.change > 0 ? '+' : '' }}{{ item.change }}%
+                </span>
+                <span class="subtext">than last {{ item.period }}</span>
+            </div>
         </mat-card>
     </div>
 
-    <div >
-        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #fd010976;">
-            <mat-card-content style="padding: 16px !important;">
-                <div>
-                    <div>
-                        <span class="f-s-18 mat-subtitle-2">R-Amount</span>
-                        <h4 class="f-w-500 m-t-6 m-b-0">${{adminData.totalRejection}}
-                        </h4>
-                    </div>
-                </div>
-            </mat-card-content>
-        </mat-card>
-    </div>
-    <div >
-        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #0efd0176;">
-            <mat-card-content style="padding: 16px !important;">
-                <div>
-                    <div>
-                        <span class="f-s-18 mat-subtitle-2">R/B-Amount</span>
-                        <h4 class="f-w-500 m-t-6 m-b-0">
-                            ${{adminData.totalRefrelEarn+adminData.totalLevelBonusEarn}}
-                        </h4>
-                    </div>
-                </div>
-            </mat-card-content>
-        </mat-card>
-    </div>
-</div>
-
-<mat-card-title>Today Stats</mat-card-title>
-<div class="row">
-    <div >
-        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #0f100f76;">
-            <mat-card-content style="padding: 16px !important;">
-                <div>
-                    <div>
-                        <span class=" mat-subtitle-2">TE</span>
-                        <h4 class="f-w-500 m-t-6 m-b-0">${{adminData.todayEarning}}
-                        </h4>
-                    </div>
-                </div>
-            </mat-card-content>
-        </mat-card>
-    </div>
-    <div >
-        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #2701fd76;">
-            <mat-card-content style="padding: 16px !important;">
-                <div>
-                    <div>
-                        <span class="f-s-18 mat-subtitle-2">TU</span>
-                        <h4 class="f-w-500 m-t-6 m-b-0">{{adminData.todayUsers}}
-                        </h4>
-                    </div>
-                </div>
-            </mat-card-content>
-        </mat-card>
-    </div>
-
-    <div >
-        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #fd01cb76;">
-            <mat-card-content style="padding: 16px !important;">
-                <div>
-                    <div>
-                        <span class="f-s-18 mat-subtitle-2">TWC</span>
-                        <h4 class="f-w-500 m-t-6 m-b-0">{{adminData.todayWithdrawalAmount}}
-                        </h4>
-                    </div>
-                </div>
-            </mat-card-content>
-        </mat-card>
-    </div>
-    <div >
-        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #f5fd0176;">
-            <mat-card-content style="padding: 16px !important;">
-                <div>
-                    <div>
-                        <span class="f-s-18 mat-subtitle-2">TWA</span>
-                        <h4 class="f-w-500 m-t-6 m-b-0"> {{adminData.todayWithdrawalAmount}}
-                        </h4>
-                    </div>
-                </div>
-            </mat-card-content>
-        </mat-card>
-    </div>
-
-    <div >
-        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #fd010976;">
-            <mat-card-content style="padding: 16px !important;">
-                <div>
-                    <div>
-                        <span class="f-s-18 mat-subtitle-2">TRA</span>
-                        <h4 class="f-w-500 m-t-6 m-b-0">${{adminData.todayRejection}}
-                        </h4>
-                    </div>
-                </div>
-            </mat-card-content>
-        </mat-card>
-    </div>
-    <div >
-        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #0efd0176;">
-            <mat-card-content style="padding: 16px !important;">
-                <div>
-                    <div>
-                        <span class="f-s-18 mat-subtitle-2">Clicks</span>
-                        <h4 class="f-w-500 m-t-6 m-b-0">
-                            ${{adminData.todayClicks}}
-                        </h4>
-                    </div>
-                </div>
-            </mat-card-content>
-        </mat-card>
-    </div>
-    <div >
-        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #0efd0176;">
-            <mat-card-content style="padding: 16px !important;">
-                <div>
-                    <div>
-                        <span class="f-s-18 mat-subtitle-2">Postback</span>
-                        <h4 class="f-w-500 m-t-6 m-b-0">
-                            ${{adminData.todayPostbacks}}
-                        </h4>
-                    </div>
-                </div>
-            </mat-card-content>
-        </mat-card>
-    </div>
-    <!-- <div >
-        <mat-card class=" cardWithShadow earnings-bg" style="background-color: #0efd0176;">
-            <mat-card-content style="padding: 16px !important;">
-                <div>
-                    <div>
-                        <span class="f-s-18 mat-subtitle-2">Postback</span>
-                        <h4 class="f-w-500 m-t-6 m-b-0">
-                            ${{adminData.todayVendorClicks}}
-                        </h4>
-                    </div>
-                </div>
-            </mat-card-content>
+    <!-- === Charts Row === -->
+    <!-- <div class="chart-grid">
+        <mat-card class="chart-card" *ngFor="let chart of charts">
+            <h4>{{ chart.title }}</h4>
+            <p class="text-sm">{{ chart.subtitle }}</p>
+            <div class="chart-placeholder">
+                <img [src]="chart.image" alt="{{ chart.title }}">
+            </div>
+            <mat-divider></mat-divider>
+            <div class="update-info">
+                <mat-icon>schedule</mat-icon>
+                <span>{{ chart.update }}</span>
+            </div>
         </mat-card>
     </div> -->
-</div>
 
-<!-- Recent Transaction-->
-<div class="row">
-    <div class="col-lg-4">
-        <mat-card class="cardWithShadow">
-            <mat-card-content style="padding: 16px !important;">
-                <mat-card-title>Recent User Earnings</mat-card-title>
-                <div class="m-t-10" style="max-height: 300px; overflow-y: auto;">
-                    @for (item of adminData.earning; track $index) {
-                    <div class="d-flex align-items-center p-t-10 p-b-10">
-                        <button mat-mini-fab [style.background-color]="item.source=='Survey'?'#00968821':'#9e9e9e33'">
-                            <mat-icon>attach_money</mat-icon>
-                        </button>
-                        <div class="m-l-15">
-                            <h5 class="f-s-16 f-w-500 m-t-0 m-b-0">
-                                {{item.country}}
-                                {{item.source}} <span class="spanearningtag"
-                                    [style.color]="item.status=='Completed'?'green':'red'">| {{item.status}}</span></h5>
-                            <h6 class="f-s-14 m-0 f-w-400">{{item.userName}}</h6>
-                        </div>
-                        <div class="m-l-auto">
-                            <h6 class="f-w-400 m-0 text-success"> +${{item.amount}} </h6>
-                        </div>
-                    </div>
-                    }
-                </div>
-                <div class="position-relative m-t-20">
-                    <mat-divider></mat-divider>
-                </div>
-                <div class="d-flex align-items-center justify-content-between p-t-15">
-                    <p class="m-0 f-s-14">36 Recent Transactions</p>
-                </div>
-            </mat-card-content></mat-card>
-    </div>
-    <div class="col-lg-4">
-        <mat-card class="cardWithShadow">
-
-            <mat-card-content class="p-32">
-                <mat-card-title>Top Earner History</mat-card-title>
-                <div class="m-t-10 table-responsive" style="max-height: 300px; overflow-y: auto;">
-                    <table mat-table [dataSource]="adminData.topEarningUsers" class="mat-elevation-z8 demo-table">
-
-                        <!-- Position Column -->
-                        <ng-container matColumnDef="demo-name">
-                            <th mat-header-cell *matHeaderCellDef></th>
-                            <td mat-cell *matCellDef="let element">
-                                <div class="d-flex align-items-center gap-15"
-                                    style="width: 165px !important;    overflow: auto;">
-                                    <div>
-                                        <h6 class="f-s-16 f-w-500 m-t-0 m-b-0"> {{element.userName}}<span
-                                                class="f-s-10">({{element.country}}) - {{element.earningCount}}</span>
-                                        </h6>
-                                        <small class="f-s-14">Today / All -<strong>$
-                                                {{element.todayEarning}}/{{element.totalEarning}}</strong></small>
-                                    </div>
-                                </div>
-                            </td>
-                        </ng-container>
-
-                        <!-- Weight Column -->
-                        <ng-container matColumnDef="demo-weight">
-                            <th mat-header-cell *matHeaderCellDef></th>
-                            <td mat-cell *matCellDef="let element">
-                                <h6 class="m-t-0 m-b-6 f-s-14 f-w-500"> RR<span
-                                        class="f-s-10">({{element.rejectionCount*100/element.earningCount |
-                                        number:'1.2-2'}}%) </span>
-                                </h6>
-                                <small class="f-s-14">T/$
-                                    -<strong>{{element.rejectionCount}}/${{element.rejectionAmount}}</strong></small>
-                            </td>
-                        </ng-container>
-
-                        <!-- <tr mat-header-row  *matHeaderRowDef="displayedColumns"></tr> -->
-                        <tr mat-row *matRowDef="let row; columns: displayedEarnerColumns;"></tr>
-                    </table>
-                </div>
-            </mat-card-content>
-        </mat-card>
-    </div>
-    <div class="col-lg-4">
-        <mat-card class="cardWithShadow">
-            <mat-card-content class="p-32">
-                <mat-card-title>Withdrawal History</mat-card-title>
-                <div class="m-t-10 table-responsive" style="height: 300px; overflow-y: auto;">
-                    <table mat-table [dataSource]="adminData.withdrawalRequests" class="mat-elevation-z8 demo-table">
-                        <!-- Position Column -->
-                        <ng-container matColumnDef="demo-position">
-                            <th mat-header-cell *matHeaderCellDef></th>
-                            <td mat-cell *matCellDef="let element">
-                                <div class="d-flex align-items-center gap-15">
-                                    <img alt="products" width="90" height="70" class="rounded"
-                                        [src]="element.sourceByImage">
-                                    <div>
-                                        <h6 class="f-s-16 f-w-500 m-t-0 m-b-0"> {{element.sourceByName}}<span
-                                                class="f-s-10">({{element.source}}) - {{element.country}}</span> </h6>
-                                        <small
-                                            class="f-s-14">{{element.userName}}-<strong>${{element.userTotalEarning}}</strong></small>
-                                    </div>
-                                </div>
-                            </td>
-                        </ng-container>
-
-                        <!-- Name Column -->
-                        <ng-container matColumnDef="demo-name">
-                            <th mat-header-cell *matHeaderCellDef></th>
-                            <td mat-cell *matCellDef="let element">
-                                <h6 class="m-t-0 m-b-6 f-s-14 f-w-500"> RR<span
-                                        class="f-s-10">({{element.rejectionRate}}%)</span></h6>
-                                <mat-progress-bar value="{{element.rejectionRate}}"> </mat-progress-bar>
-                                <span class="f-s-14 m-t-6 d-block">${{element.userTotalRejection}}</span>
-                            </td>
-                        </ng-container>
-
-                        <!-- Weight Column -->
-                        <ng-container matColumnDef="demo-weight">
-                            <th mat-header-cell *matHeaderCellDef></th>
-                            <td mat-cell *matCellDef="let element">
-                                <span class="f-s-14">Requested</span>
-                                <h6 class="f-w-500 f-s-16 m-b-0 m-t-0 lh-sm"> ${{element.requestedAmount}} </h6>
-                                <h6 class="f-w-500 f-s-10 m-b-0 m-t-0 lh-sm"> {{element.requestRaiseDate |
-                                    date:'dd-MM-yyyy HH:MM'}} </h6>
-                            </td>
-                        </ng-container>
-
-                        <!-- Symbol Column -->
-                        <ng-container matColumnDef="demo-symbol">
-                            <th mat-header-cell *matHeaderCellDef></th>
-                            <td mat-cell *matCellDef="let element">
-                                <a class="m-r-10 cursor-pointer">
-                                    <i-tabler name="trash"></i-tabler>
-                                </a>
-                            </td>
-                        </ng-container>
-
-                        <!-- <tr mat-header-row  *matHeaderRowDef="displayedColumns"></tr> -->
-                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                    </table>
-                </div>
-            </mat-card-content>
-
-        </mat-card>
-    </div>
-
-</div>
-
-<!-----   Product Performance -->
-<!-- <div class="row">
-    <div class="col-lg-8">
-        <mat-card class="cardWithShadow">
-            <mat-card-header class=" d-sm-flex m-b-30">
-                <div class="m-r-auto">
-                    <mat-card-title>Products Performance</mat-card-title>
-                </div>
-                <div class="d-flex align-items-center gap-3">
-                    <div class="d-flex align-items-center text-primary gap-12">
-                        <mat-icon class="icon-12">lens</mat-icon>
-                        <span class="fs-14">Expense</span>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center text-secondary gap-12">
-                    <mat-icon class="icon-12">lens</mat-icon>
-                    <span class="fs-14">Budget</span>
-                </div>
-            </mat-card-header>
-            <mat-card-content style="padding: 16px !important;">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <h4 class="f-s-24 m-b-6 m-t-30">$93,438.78</h4>
-                        <h6 class="m-b-6 f-s-14">Budget</h6>
-                        <h4 class="f-s-24 m-b-6 m-t-30">$32,839</h4>
-                        <h6 class="m-b-30 f-s-14">Expense</h6>
-                        <div class="m-b-20 d-flex flex-col">
-                        </div>
-                        <button mat-flat-button color="primary" class="text-white">
-                            Download Report
-                        </button>
-                    </div>
-                    <div class="col-sm-8">
-                    </div>
-                </div>
-            </mat-card-content>
-        </mat-card>
-    </div>
-    <div class="col-lg-4">
-        <div class="row">
-            <div class="col-lg-22 col-sm-6">
-                <mat-card class="cardWithShadow bg-primary text-white">
-                    <mat-card-content style="padding: 16px !important;">
-                        <div class="d-flex justify-content-between">
-                            <mat-card-title>Earnings</mat-card-title>
-                            <button mat-mini-fab color="primary">
-                                <mat-icon>group</mat-icon>
-                            </button>
-                        </div>
-                        <h4 class="m-b-6 m-t-30 f-s-30 f-w-500">$93,438.78</h4>
-                        <h6 class="op-5 f-s-14 text-white">Monthly Revenue</h6>
-                    </mat-card-content></mat-card>
-            </div>
-            <div class="col-lg-22 col-sm-6">
-                <mat-card class="cardWithShadow">
-                    <mat-card-content class="p-32">
-                        <div class="row">
-                            <div class="col-5">
-                                <h4 class="f-s-30 m-b-6 m-t-6 f-w-500">43,246</h4>
-                                <h5 mat-card-subtitle class="m-b-10 m-t-0">Yearly Sales</h5>
-                                <div class="d-flex align-items-center gap-10 m-t-30 p-t-4">
-                                    <h5 class="m-0 gap-6 align-items-center d-flex">
-                                        <span><i-tabler name="circle-filled"></i-tabler> </span>2021
-                                    </h5>
-                                    <h5 class="m-0 gap-6 align-items-center d-flex">
-                                        <span><i-tabler name="circle-filled"></i-tabler></span>2020
-                                    </h5>
-                                </div>
-                                <div class="d-flex align-items-center gap-10 m-t-8">
-                                    <h5 class="m-0 gap-6 align-items-center d-flex">
-                                        <span><i-tabler name="circle-filled"></i-tabler></span>2019
-                                    </h5>
-                                    <h5 class="m-0 gap-6 align-items-center d-flex">
-                                        <span><i-tabler name="circle-filled"></i-tabler></span>2018
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="col-7">
-                                <div id="chart" class="d-flex flex-col position-relative">
-                                    <span class="center-icon"><i-tabler name="shopping-cart"></i-tabler></span>
-                                </div>
-                            </div>
-                        </div>
-                    </mat-card-content>
-                </mat-card>
-            </div>
+    <!-- === Projects Table === -->
+    <mat-card class="table-card">
+        <div class="table-header">
+            <h4>Withdrawal's</h4>
+            <p><mat-icon color="primary">check_circle</mat-icon> 30 done this month</p>
         </div>
-    </div>
-</div> -->
+
+        <table mat-table [dataSource]="adminData.withdrawalRequests" class="mat-elevation-z8 demo-table">
+            <!-- Position Column -->
+            <ng-container matColumnDef="demo-position">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+                <td mat-cell *matCellDef="let element">
+                    <div class="d-flex align-items-center gap-15">
+                        <img alt="products" width="90" height="70" class="rounded" [src]="element.sourceByImage">
+                        <div>
+                            <h6 class="f-s-16 f-w-500 m-t-0 m-b-0"> {{element.sourceByName}}<span
+                                    class="f-s-10">({{element.source}}) - {{element.country}}</span> </h6>
+                            <small
+                                class="f-s-14">{{element.userName}}-<strong>${{element.userTotalEarning}}</strong></small>
+                        </div>
+                    </div>
+                </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="demo-name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+                <td mat-cell *matCellDef="let element">
+                    <h6 class="m-t-0 m-b-6 f-s-14 f-w-500"> RR<span class="f-s-10">({{element.rejectionRate}}%)</span>
+                    </h6>
+                    <mat-progress-bar value="{{element.rejectionRate}}"> </mat-progress-bar>
+                    <span class="f-s-14 m-t-6 d-block">${{element.userTotalRejection}}</span>
+                </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="demo-weight">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+                <td mat-cell *matCellDef="let element">
+                    <span class="f-s-14">Requested</span>
+                    <h6 class="f-w-500 f-s-16 m-b-0 m-t-0 lh-sm"> ${{element.requestedAmount}} </h6>
+                    <h6 class="f-w-500 f-s-10 m-b-0 m-t-0 lh-sm"> {{element.requestRaiseDate |
+                        date:'dd-MM-yyyy HH:MM'}} </h6>
+                </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="demo-symbol">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+                <td mat-cell *matCellDef="let element">
+                    <a class="m-r-10 cursor-pointer">
+                        <i-tabler name="trash"></i-tabler>
+                    </a>
+                </td>
+            </ng-container>
+
+            <!-- <tr mat-header-row  *matHeaderRowDef="displayedColumns"></tr> -->
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </mat-card>
+
+    <mat-card class="table-card" *ngIf="selectedValueTabIndex!=0">
+        <div class="table-header">
+            <h4>Earnings</h4>
+            <p><mat-icon color="primary">check_circle</mat-icon> 30 done this month</p>
+        </div>
+
+        <mat-table [dataSource]="adminData.earnings" class="mat-elevation-z1">
+            <ng-container matColumnDef="company">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Company </mat-header-cell>
+                <mat-cell *matCellDef="let project">
+                    <div class="company-cell">
+                        <span>{{ project.clientName }}</span>
+                    </div>
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="member">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Member Name </mat-header-cell>
+                <mat-cell *matCellDef="let project">
+                    <div class="member-avatars">
+                        <span>{{ project.country }} - {{ project.userName }}</span>
+                    </div>
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="amount">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> User Amount </mat-header-cell>
+                <mat-cell *matCellDef="let project"> {{ project.amount }} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
+                <mat-cell *matCellDef="let project"> {{ project.status }} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="earndate">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> DateTime </mat-header-cell>
+                <mat-cell *matCellDef="let project"> {{ project.earnDate }} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="completion">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Completion </mat-header-cell>
+                <mat-cell *matCellDef="let project">
+                    <mat-progress-bar mode="determinate" [value]="project.userBalance"></mat-progress-bar>
+                    <span class="progress-text">{{ project.userBalance }}%</span>
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedEarnerColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedEarnerColumns"></mat-row>
+        </mat-table>
+    </mat-card>
+
+    <mat-card class="table-card" *ngIf="selectedValueTabIndex!=1">
+        <div class="table-header">
+            <h4>User Activity Log</h4>
+            <p><mat-icon color="primary">check_circle</mat-icon> 30 done this month</p>
+        </div>
+
+        <mat-table  matSort [dataSource]="adminData.userActivityLog" class="mat-elevation-z1">
+            <ng-container matColumnDef="member">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Member Name </mat-header-cell>
+                <mat-cell *matCellDef="let activity">
+                    <div class="member-avatars">
+                        <span>{{ activity.country }} - {{ activity.userName }}</span>
+                    </div>
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="earning">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Total Earning </mat-header-cell>
+                <mat-cell *matCellDef="let activity">$ {{ activity.earning }} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="rejection">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Total Rejection </mat-header-cell>
+                <mat-cell *matCellDef="let activity">$ {{ activity.rejection }} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="earningCount">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Earning Count </mat-header-cell>
+                <mat-cell *matCellDef="let activity"> {{ activity.earningCount }} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="rejectionCount">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Rejection Count </mat-header-cell>
+                <mat-cell *matCellDef="let activity"> {{ activity.rejectionCount }} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="postbackLogCount">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> PoctbackLog Count </mat-header-cell>
+                <mat-cell *matCellDef="let activity"> {{ activity.postbackLogCount }} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="activityCount">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> ActivityCount Count </mat-header-cell>
+                <mat-cell *matCellDef="let activity"> {{ activity.activityCount }} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="userBalance">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Running Balance </mat-header-cell>
+                <mat-cell *matCellDef="let activity">$ {{ activity.userBalance }} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedActivityLogColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedActivityLogColumns"></mat-row>
+        </mat-table>
+    </mat-card>
+
+</main>

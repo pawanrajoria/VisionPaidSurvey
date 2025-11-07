@@ -61,14 +61,6 @@ export class AppComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.googleService.checkRedirect();
-
-
-    if (this.isBrowser) {
-
-      this.googleService.observeUser();
-    }
-
     // ✅ SSR-safe check before using `window`
     if (this.isBrowser && this.win) {
       this.localStorageService.setItem('LandedUrl', this.win.location.href);
