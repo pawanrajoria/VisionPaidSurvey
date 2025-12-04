@@ -214,7 +214,12 @@ export const routes: Routes = [
         path: 'takeSurvey',
         loadChildren: () =>
           import('./components/userflow/take-survey/take-survey.route').then((m) => m.takeSurveyRoutes)
-      }
+      },
+      {
+        path: 'endsurvey',
+        loadChildren: () =>
+          import('./components/userflow/end-survey/end-survey.route').then((m) => m.endSurveyRoutes)
+      },
     ],
   },
   {
@@ -273,7 +278,7 @@ export const routes: Routes = [
 //         return true;
 //       }
 //       // Redirect to login if not authenticated
-//       return router.createUrlTree(['/login']); 
+//       return router.createUrlTree(['/login']);
 //     })
 //   );
 // };
