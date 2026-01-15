@@ -50,13 +50,13 @@ import { provideServiceWorker } from '@angular/service-worker';
 
 // ✅ Firebase Config
 const firebaseConfig = {
-  apiKey: "AIzaSyBs6AtPBpCdFwQWRdJC0gWvuz6nFxHL-I4",
-  authDomain: "visionpaidsurvey.firebaseapp.com",
-  projectId: "visionpaidsurvey",
-  storageBucket: "visionpaidsurvey.appspot.com",
-  messagingSenderId: "988754056043",
-  appId: "1:988754056043:web:91671c3ff865fcdc48b22e",
-  measurementId: "G-LE58YJQQHT"
+   apiKey: "AIzaSyBjw9PgPzNBSRZxH3KED1vgkY-H83GMMOc",
+  authDomain: "pofitpiller.firebaseapp.com",
+  projectId: "pofitpiller",
+  storageBucket: "pofitpiller.firebasestorage.app",
+  messagingSenderId: "477614288703",
+  appId: "1:477614288703:web:91432084dc895c7168ed8a",
+  measurementId: "G-82891DBW8D"
 };
 
 // ✅ App Config Initialization

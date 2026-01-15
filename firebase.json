@@ -63,7 +63,10 @@
     "rewrites": [
       {
         "source": "**",
-        "function": "ssr"
+        "run": {
+          "serviceId": "ssr",
+          "region": "us-central1"
+        }
       }
     ]
   }
