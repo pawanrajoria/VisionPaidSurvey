@@ -160,7 +160,7 @@ export const routes: Routes = [
       {
         path: 'giftcard',
         loadChildren: () =>
-          import('./components/root/root-giftcard/root-giftcard.route').then((m) => m.rootGiftCardComponent),
+          import('./components/root/root-giftcard/root-giftcard.route').then((m) => m.rootGiftCardRoutes),
       },
       {
         path: 'help',

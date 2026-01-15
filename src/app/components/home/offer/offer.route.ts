@@ -6,11 +6,11 @@ export const OfferRoutes: Routes = [
     path: '',
     component: OfferComponent,
     data: {
-      title: 'Complete Offers to Earn Cash & Rewards | Profitpiller',
-      description: 'Discover high-paying offers on Profitpiller. Sign up for free trials, apps, and services to earn instant cash or gift card rewards.',
+      title: 'Offers | Profitpiller',
+      description: 'Explore available offers on Profitpiller. Participate in surveys, trials, and other activities to earn points that can be redeemed for rewards safely.',
       urls: [
         { title: 'Home', url: '/' },
-        { title: 'Offers' }
+        { title: 'Offers', url: '/offers' } 
       ]
     }
   }

@@ -6,11 +6,12 @@ export const completeSurveyRoutes: Routes = [
     path: '',
     component: CompleteSurveyComponent,
     data: {
+      // Neutral, policy-compliant metadata
       title: 'Complete Survey | Profitpiller',
-      description: 'Finalizing your survey participation. Redirecting shortly...',
+      description: 'You have completed your survey participation. You may proceed to redeem points or explore other activities on the platform.',
       urls: [
         { title: 'Home', url: '/' },
-        { title: 'Complete Survey' }
+        { title: 'Complete Survey', url: '/complete-survey' } // internal URL
       ]
     }
   }

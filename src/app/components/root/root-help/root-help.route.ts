@@ -6,11 +6,12 @@ export const rootHelpRoutes: Routes = [
     path: '',
     component: RootHelpComponent,
     data: {
-      title: 'Help & FAQ | How Profitpiller Surveys Work',
-      description: 'Find answers to frequently asked questions about Profitpiller. Learn how to earn, redeem rewards, and resolve common survey or account issues.',
+      // Neutral and policy-compliant metadata
+      title: 'Help & FAQ | Profitpiller',
+      description: 'Find answers to frequently asked questions about Profitpiller. Learn how the platform works, how to redeem points safely, and how to resolve common survey or account issues.',
       urls: [
         { title: 'Home', url: '/' },
-        { title: 'Help & FAQ' }
+        { title: 'Help & FAQ', url: '/help' } // internal URL
       ]
     }
   }

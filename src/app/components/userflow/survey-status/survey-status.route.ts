@@ -6,11 +6,12 @@ export const surveyStatusRoutes: Routes = [
     path: '',
     component: SurveyStatusComponent,
     data: {
+      // Neutral, policy-compliant metadata
       title: 'Survey Status | Profitpiller',
-      description: 'Check the status of your survey participation on Profitpiller.',
+      description: 'View the status of your survey participation and any points earned on Profitpiller.',
       urls: [
         { title: 'Home', url: '/' },
-        { title: 'Survey Status' }
+        { title: 'Survey Status', url: '/survey-status' } // internal URL
       ]
     }
   }

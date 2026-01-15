@@ -6,11 +6,11 @@ export const rootAmazonGiftCardRoutes: Routes = [
     path: '',
     component: RootAmazonGiftCardComponent,
     data: {
-      title: 'Earn Amazon Gift Cards with Surveys | Profitpiller',
-      description: 'Complete paid surveys on Profitpiller and earn Amazon Gift Cards easily. Redeem your rewards quickly and shop your favorite products hassle-free.',
+      title: 'Amazon Gift Cards | Profitpiller',
+      description: 'Participate in surveys on Profitpiller to earn points that can be redeemed for Amazon Gift Cards. All redemptions are safe and verified.',
       urls: [
         { title: 'Home', url: '/' },
-        { title: 'Amazon Gift Cards' }
+        { title: 'Amazon Gift Cards', url: '/amazon-gift-cards' } // internal URL
       ]
     }
   }

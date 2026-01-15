@@ -6,11 +6,12 @@ export const verifyLinkRoutes: Routes = [
     path: '',
     component: VerifyLinkComponent,
     data: {
-      title: 'Verify Your Email to Activate Account | Profitpiller',
-      description: 'Confirm your email address to activate your Profitpiller account. This quick verification step helps keep your account secure and ready to earn rewards.',
+      title: 'Email Verification | Profitpiller',
+      description:
+        'Confirm your email address to complete account setup and enable access to platform features.',
       urls: [
-        { title: 'Login', url: '/auth/login' },
-        { title: 'Verify Email' }
+        { title: 'Home', url: '/' },
+        { title: 'Email Verification' }
       ]
     }
   }

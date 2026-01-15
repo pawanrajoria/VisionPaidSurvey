@@ -6,11 +6,12 @@ export const rootTermConditionRoutes: Routes = [
     path: '',
     component: RootTermConditionComponent,
     data: {
+      // Neutral, policy-compliant metadata
       title: 'Terms & Conditions | Profitpiller',
-      description: 'Review the Terms & Conditions for using Profitpiller. Learn about your rights, responsibilities, and how our paid survey platform operates.',
+      description: 'Review the Terms & Conditions for using Profitpiller. Learn about your rights, responsibilities, and how the platform operates.',
       urls: [
         { title: 'Home', url: '/' },
-        { title: 'Terms & Conditions' }
+        { title: 'Terms & Conditions', url: '/terms-conditions' } // internal URL
       ]
     }
   }

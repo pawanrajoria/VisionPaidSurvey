@@ -6,11 +6,12 @@ export const takeSurveyRoutes: Routes = [
     path: '',
     component: TakeSurveyComponent,
     data: {
-      title: 'Take Survey | Earn Rewards for Your Opinions | Profitpiller',
-      description: 'Participate in surveys and get rewarded for sharing your thoughts. Profitpiller offers trusted paid surveys to help you earn real money.',
+      // Neutral, policy-compliant metadata
+      title: 'Take Survey | Profitpiller',
+      description: 'Participate in surveys on Profitpiller and earn points that can be redeemed for verified rewards. All activities are safe and secure.',
       urls: [
         { title: 'Home', url: '/' },
-        { title: 'Take Survey' }
+        { title: 'Take Survey', url: '/take-survey' } // internal URL
       ]
     }
   }

@@ -6,11 +6,11 @@ export const RewardRoutes: Routes = [
     path: '',
     component: RewardComponent,
     data: {
-      title: 'Cash Out Earnings via PayPal, Gift Cards & More | Profitpiller',
-      description: 'Redeem your Profitpiller earnings easily through PayPal, Amazon gift cards, or other popular payout methods. Fast, secure, and reliable cash out options.',
+      title: 'Redeem Rewards | Profitpiller',
+      description: 'Redeem your earned points on Profitpiller for verified rewards such as gift cards or other available options. All redemption methods are safe and secure.',
       urls: [
         { title: 'Home', url: '/' },
-        { title: 'Cash Out' }
+        { title: 'Redeem Rewards', url: '/rewards' } // internal URL
       ]
     }
   }

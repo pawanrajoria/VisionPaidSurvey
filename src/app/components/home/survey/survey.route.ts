@@ -6,11 +6,11 @@ export const SurveyRoutes: Routes = [
     path: '',
     component: SurveyComponent,
     data: {
-      title: 'Take Paid Surveys & Earn Instantly | Profitpiller',
-      description: 'Join Profitpiller and start taking paid surveys to earn cash and rewards instantly. Participate in surveys that match your profile and get paid quickly.',
+      title: 'Surveys | Profitpiller',
+      description: 'Participate in surveys on Profitpiller to share your opinions and earn points safely. Redeem your points for rewards through verified channels.',
       urls: [
         { title: 'Home', url: '/' },
-        { title: 'Surveys' }
+        { title: 'Surveys', url: '/surveys' } 
       ]
     }
   }

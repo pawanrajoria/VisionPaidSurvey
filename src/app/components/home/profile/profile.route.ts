@@ -11,10 +11,10 @@ export const ProfileRoutes: Routes = [
     path: '',
     component: ProfileComponent,
     data: {
-      title: 'My Account Dashboard | Profitpiller',
-      description: 'View your Profitpiller account dashboard including earnings, profile info, and recent activity in one place.',
+      title: 'My Account | Profitpiller',
+      description:
+        'Manage your account information and view your recent platform activity.',
       urls: [
-        { title: 'Dashboard', url: '/account' },
         { title: 'My Account' }
       ]
     }
@@ -23,11 +23,12 @@ export const ProfileRoutes: Routes = [
     path: 'activity',
     component: UserActivityComponent,
     data: {
-      title: 'User Activity | Track Surveys & Offers | Profitpiller',
-      description: 'Track your overall activity on Profitpiller including completed surveys, offers, logins, and point redemptions.',
+      title: 'Account Activity | Profitpiller',
+      description:
+        'View your recent account activity and usage history on Profitpiller.',
       urls: [
         { title: 'My Account', url: '/account' },
-        { title: 'Activity Log' }
+        { title: 'Activity' }
       ]
     }
   },
@@ -35,11 +36,12 @@ export const ProfileRoutes: Routes = [
     path: 'transactions/:id',
     component: PointActivityComponent,
     data: {
-      title: 'Transaction Details | Points Activity | Profitpiller',
-      description: 'View detailed transaction history including points earned and redeemed from various activities.',
+      title: 'Account Records | Profitpiller',
+      description:
+        'View detailed account records related to your participation history.',
       urls: [
         { title: 'My Account', url: '/account' },
-        { title: 'Transactions' }
+        { title: 'Records' }
       ]
     }
   },
@@ -47,11 +49,12 @@ export const ProfileRoutes: Routes = [
     path: 'surveyactivity',
     component: SurveyActivityComponent,
     data: {
-      title: 'Survey Activity | Completed Surveys | Profitpiller',
-      description: 'View a list of all completed surveys, including earnings and status updates for each submission.',
+      title: 'Survey Participation | Profitpiller',
+      description:
+        'Review your survey participation history on Profitpiller.',
       urls: [
         { title: 'My Account', url: '/account' },
-        { title: 'Survey Activity' }
+        { title: 'Surveys' }
       ]
     }
   },
@@ -59,11 +62,12 @@ export const ProfileRoutes: Routes = [
     path: 'offeractivity',
     component: OfferActivityComponent,
     data: {
-      title: 'Offer Activity | Rewards & Tasks | Profitpiller',
-      description: 'Monitor your completed offers and partner tasks along with reward status and payout amounts.',
+      title: 'Task Participation | Profitpiller',
+      description:
+        'Review your participation in available tasks and activities.',
       urls: [
         { title: 'My Account', url: '/account' },
-        { title: 'Offer Activity' }
+        { title: 'Activities' }
       ]
     }
   },
@@ -71,11 +75,12 @@ export const ProfileRoutes: Routes = [
     path: 'accountsettings',
     component: ProfileSettingComponent,
     data: {
-      title: 'Account Settings | Update Profile | Profitpiller',
-      description: 'Manage your Profitpiller account settings including email, password, demographics, and preferences.',
+      title: 'Account Settings | Profitpiller',
+      description:
+        'Update your personal information, preferences, and security settings.',
       urls: [
         { title: 'My Account', url: '/account' },
-        { title: 'Account Settings' }
+        { title: 'Settings' }
       ]
     }
   }

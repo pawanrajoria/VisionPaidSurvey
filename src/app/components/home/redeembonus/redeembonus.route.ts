@@ -6,11 +6,11 @@ export const RedeemBonusRoutes: Routes = [
     path: '',
     component: RedeemBonusComponent,
     data: {
-      title: 'Redeem Bonus Codes & Promo Rewards | Profitpiller',
-      description: 'Enter your Profitpiller bonus code to instantly claim extra rewards, promo points, or special event bonuses. Start boosting your earnings today!',
+      title: 'Redeem Codes | Profitpiller',
+      description: 'Enter your Profitpiller code to claim points or participate in promotional activities. All redemptions are safe and verified.',
       urls: [
         { title: 'Home', url: '/' },
-        { title: 'Redeem Bonus' }
+        { title: 'Redeem Codes', url: '/redeem-bonus' } // internal URL
       ]
     }
   }

@@ -6,11 +6,11 @@ export const rootCashRoutes: Routes = [
     path: '',
     component: RootCashComponent,
     data: {
-      title: 'Cash Out Your Earnings Instantly | Profitpiller',
-      description: 'Withdraw your Profitpiller earnings instantly with secure payout options like PayPal and direct bank transfers. Fast and reliable cash out anytime.',
+      title: 'Redeem Points | Profitpiller',
+      description: 'Redeem your earned points on Profitpiller for verified rewards. All redemptions are secure and processed safely through approved methods.',
       urls: [
         { title: 'Home', url: '/' },
-        { title: 'Cash Out' }
+        { title: 'Redeem Points', url: '/redeem-points' } // internal URL
       ]
     }
   }

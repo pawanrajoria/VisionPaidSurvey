@@ -6,8 +6,9 @@ export const rootHomeRoutes: Routes = [
     path: '',
     component: RootHomeComponent,
     data: {
-      title: 'Earn Rewards with Paid Surveys | Profitpiller',
-      description: 'Join Profitpiller and start earning rewards by completing paid surveys. Sign up for free and get instant access to surveys, offers, and cash-out options.',
+      title: 'Profitpiller | Online Opinion Research Platform',
+      description:
+        'Profitpiller is an online opinion research platform where users can participate in surveys and research studies.',
       urls: [
         { title: 'Home' }
       ]

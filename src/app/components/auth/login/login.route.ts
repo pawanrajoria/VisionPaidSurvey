@@ -6,11 +6,12 @@ export const loginRoutes: Routes = [
     path: '',
     component: LoginComponent,
     data: {
-      title: 'Login to Your Account | Profitpiller',
-      description: 'Access your Profitpiller account to continue earning from paid surveys. Secure login for members to view earnings, redeem rewards, and manage profiles.',
+      title: 'Sign in | Profitpiller',
+      description:
+        'Sign in to your Profitpiller account to access platform features and manage your account settings.',
       urls: [
         { title: 'Home', url: '/' },
-        { title: 'Login' },
+        { title: 'Sign In' },
       ],
     },
   },

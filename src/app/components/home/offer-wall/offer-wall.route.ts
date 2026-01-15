@@ -6,11 +6,11 @@ export const OfferWallRoutes: Routes = [
     path: '',
     component: OfferWallComponent,
     data: {
-      title: 'Offerwall Tasks – Earn More with Partner Offers | Profitpiller',
-      description: 'Boost your earnings with Profitpiller’s Offerwall. Complete partner tasks like app installs, surveys, and sign-ups to earn extra rewards quickly.',
+      title: 'Offerwall | Profitpiller',
+      description: 'Explore tasks and activities available on Profitpiller’s Offerwall. Participate in app installs, surveys, and other partner activities to earn points safely, which can be redeemed for rewards.',
       urls: [
         { title: 'Home', url: '/' },
-        { title: 'Offerwall' }
+        { title: 'Offerwall', url: '/offerwall' } 
       ]
     }
   }

@@ -6,11 +6,11 @@ export const ReferalRoutes: Routes = [
     path: '',
     component: ReferalComponent,
     data: {
-      title: 'Refer Friends & Earn Bonus Rewards | Profitpiller',
-      description: 'Invite friends to join Profitpiller and earn bonus rewards for every successful referral. Share your unique link and start earning today!',
+      title: 'Referral Program | Profitpiller',
+      description: 'Share Profitpiller with friends using your unique link. Earn points when friends participate in surveys and activities safely through your referral link.',
       urls: [
         { title: 'Home', url: '/' },
-        { title: 'Refer & Earn' }
+        { title: 'Referral Program', url: '/referral' } // internal URL
       ]
     }
   }

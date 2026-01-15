@@ -6,11 +6,12 @@ export const offerwallHomeRoutes: Routes = [
     path: '',
     component: OfferwallHomeComponent,
     data: {
-      title: 'Help Center – Get Support for Your Account | Profitpiller',
-      description: 'Need assistance? Visit the Profitpiller Help Center to find answers to common questions about surveys, payments, account access, and more.',
+      // Neutral, policy-compliant metadata
+      title: 'Offerwall | Profitpiller',
+      description: 'Explore available tasks and activities on the Profitpiller Offerwall. Earn points safely through verified partner tasks and surveys.',
       urls: [
         { title: 'Home', url: '/' },
-        { title: 'Help Center' }
+        { title: 'Offerwall', url: '/offerwall' } // internal URL
       ]
     }
   }

@@ -6,11 +6,12 @@ export const rootPaypalRoutes: Routes = [
     path: '',
     component: RootPaypalComponent,
     data: {
-      title: 'Earn PayPal Cash from Paid Surveys | Profitpiller',
-      description: 'Complete online surveys and get paid directly to your PayPal account. Join Profitpiller for fast, secure PayPal cash rewards with every survey you complete.',
+      // Neutral and policy-compliant metadata
+      title: 'PayPal Rewards | Profitpiller',
+      description: 'Participate in surveys on Profitpiller to earn points that can be redeemed for verified PayPal rewards safely. All redemptions are processed securely.',
       urls: [
         { title: 'Home', url: '/' },
-        { title: 'PayPal Surveys' }
+        { title: 'PayPal Rewards', url: '/paypal-rewards' } // internal URL
       ]
     }
   }

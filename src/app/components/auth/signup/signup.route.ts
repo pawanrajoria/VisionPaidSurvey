@@ -6,11 +6,12 @@ export const SignupRoutes: Routes = [
     path: '',
     component: SignUpComponent,
     data: {
-      title: 'Create Your Account & Start Earning | Profitpiller',
-      description: 'Sign up with Profitpiller to earn real rewards by completing paid surveys. Join today for free and start redeeming PayPal or gift card payouts instantly.',
+      title: 'Create an Account | Profitpiller',
+      description:
+        'Create a Profitpiller account to access the platform and participate in available research activities.',
       urls: [
-        { title: 'Login', url: '/auth/login' },
-        { title: 'Sign Up' }
+        { title: 'Home', url: '/' },
+        { title: 'Create Account' }
       ]
     }
   }

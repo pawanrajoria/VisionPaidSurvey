@@ -6,10 +6,11 @@ export const resetPasswordRoutes: Routes = [
     path: '',
     component: ResetPasswordComponent,
     data: {
-      title: 'Reset Your Password Securely | Profitpiller',
-      description: 'Create a new password for your Profitpiller account. Follow the secure reset link to regain access and continue earning through paid surveys.',
+      title: 'Reset Password | Profitpiller',
+      description:
+        'Create a new password to regain access to your Profitpiller account securely.',
       urls: [
-        { title: 'Login', url: '/auth/login' },
+        { title: 'Home', url: '/' },
         { title: 'Reset Password' }
       ]
     }

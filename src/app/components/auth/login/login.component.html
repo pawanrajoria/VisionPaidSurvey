@@ -1,64 +1,133 @@
-<div class="text-center top-head">
-    <p>{{ 'login.headline' | translate }} </p>
+<div class="text-center top-head m-b-24">
+    <p class="f-s-16 f-w-500 text-muted">
+        {{ 'login.headline' | translate }}
+    </p>
 </div>
 
 <div class="rh-hero-right-part">
     <div class="bg-trans">
 
-        <div class="rh-hr-rgt-top">
-            <i class="fa"><img src="assets/images/icon/trophy-star.png"></i>
-            <h3>{{ defaultAmount | currency: 'USD' : 'symbol' }} million <span>{{ 'login.earn_members' | translate
-                    }}</span></h3>
+        <!-- Earnings Highlight -->
+        <div class="rh-hr-rgt-top m-b-24">
+            <div class="d-flex align-items-center justify-content-center gap-10">
+                <img
+                    src="assets/images/icon/trophy-star.png"
+                    alt="Earnings"
+                    class="icon-md">
+                <h3 class="m-0 f-w-700">
+                    {{ defaultAmount | currency: 'USD' : 'symbol' }} million
+                    <span class="text-muted f-w-500">
+                        {{ 'login.earn_members' | translate }}
+                    </span>
+                </h3>
+            </div>
         </div>
-        <div class="rh-hr-rgt-form">
-            <h3>{{ 'login.logintext' | translate }}</h3>
-            <form [formGroup]="loginForm" (submit)="submit()">
-                <mat-form-field appearance="outline" color="primary" class="w-100">
-                    <mat-label>{{ 'text.emailid' | translate }}</mat-label>
-                    <input matInput formControlName="email"> @if (loginForm.get('email')?.hasError('required')) {
-                    <mat-error class="text-right">{{ 'messages.email.required' | translate }}</mat-error>
-                    } @else if (loginForm.get('email')?.hasError('email')) {
-                    <mat-error class="text-right">{{ 'messages.email.invalid' | translate }}</mat-error>
-                    }
 
+        <!-- Login Card -->
+        <div class="rh-hr-rgt-form card-elevated">
+            <h3 class="text-center m-b-16">
+                {{ 'login.logintext' | translate }}
+            </h3>
+
+            <form [formGroup]="loginForm" (submit)="submit()">
+
+                <!-- Email -->
+                <mat-form-field appearance="outline" color="primary" class="w-100 m-b-12">
+                    <mat-label>{{ 'text.emailid' | translate }}</mat-label>
+                    <input matInput formControlName="email">
+
+                    @if (loginForm.get('email')?.hasError('required')) {
+                        <mat-error>{{ 'messages.email.required' | translate }}</mat-error>
+                    }
+                    @else if (loginForm.get('email')?.hasError('email')) {
+                        <mat-error>{{ 'messages.email.invalid' | translate }}</mat-error>
+                    }
                 </mat-form-field>
 
-                <mat-form-field appearance="outline" color="primary" class="w-100" *ngIf="isEmailValidCheck">
+                <!-- Password -->
+                <mat-form-field
+                    appearance="outline"
+                    color="primary"
+                    class="w-100 m-b-8"
+                    *ngIf="isEmailValidCheck">
+
                     <mat-label>{{ 'text.password' | translate }}</mat-label>
                     <input matInput type="password" formControlName="password">
+
                     @if (loginForm.get('password')?.hasError('required')) {
-                    <mat-error class="text-right">{{ 'messages.password.required' | translate }}</mat-error>
+                        <mat-error>{{ 'messages.password.required' | translate }}</mat-error>
                     }
                 </mat-form-field>
 
-                <div class="d-flex align-items-center m-b-12">
-                    <mat-checkbox color="primary">{{ 'login.remember_me' | translate }}</mat-checkbox>
-                    <a class="text-secondary f-w-600 text-decoration-none m-l-auto f-s-14" (click)="forgotPassword()"
-                        href="javascript://">{{ 'login.forgotpassword' | translate }}</a>
+                <!-- Remember / Forgot -->
+                <div class="d-flex align-items-center justify-content-between m-b-16">
+                    <mat-checkbox color="primary" class="f-s-14">
+                        {{ 'login.remember_me' | translate }}
+                    </mat-checkbox>
+
+                    <a
+                        class="text-secondary f-w-600 text-decoration-none f-s-14"
+                        (click)="forgotPassword()"
+                        href="javascript://">
+                        {{ 'login.forgotpassword' | translate }}
+                    </a>
                 </div>
 
-                <button type="submit" mat-flat-button color="primary" class="w-100 btn-theme">{{ 'buttons.continue' |
-                    translate }}</button>
+                <!-- Terms -->
+                <div class="terms-container text-center m-b-16">
+                    <small class="text-muted">
+                        <a href="/privacy-policy" target="_blank">
+                            {{ 'signup.privacy_policy' | translate }}
+                        </a>
+                        {{ 'signup.andText' | translate }}
+                        <a href="/terms-conditions" target="_blank">
+                            {{ 'signup.terms_conditions' | translate }}
+                        </a>
+                    </small>
+                </div>
+
+                <!-- Info Box -->
+                <div class="info-box subtle m-b-16">
+                    <p class="m-0 text-muted f-s-13">
+                        {{ 'signup.singup_instraction' | translate }}
+                    </p>
+                </div>
+
+                <!-- Submit -->
+                <button
+                    type="submit"
+                    mat-flat-button
+                    color="primary"
+                    class="w-100 btn-theme btn-lg">
+                    {{ 'buttons.continue' | translate }}
+                </button>
+
             </form>
         </div>
-        <div class="extra">
-            <div class="extra-login clearfix">
-                <span>{{ 'login.login_with' | translate }}</span>
-            </div>
-            <div class="rh-hr-rgt-social-part">
-                <div class="row">
-                    <div class="col-12">
-                        <button type="button" mat-stroked-button color="primary" (click)="googleLogin()"
-                            class="w-100 rh-hr-form-social-btn">
-                            <div class="d-flex align-items-center gap-6">
-                                <img src="/assets/images/icon/rh-google.svg" alt="google"> {{ 'buttons.google' |
-                                translate }}
-                            </div>
-                        </button>
 
+        <!-- Social Login -->
+        <div class="extra m-t-24">
+            <div class="extra-login text-center m-b-12">
+                <span class="text-muted f-s-14">
+                    {{ 'login.login_with' | translate }}
+                </span>
+            </div>
+
+            <div class="rh-hr-rgt-social-part">
+                <button
+                    type="button"
+                    mat-stroked-button
+                    color="primary"
+                    (click)="googleLogin()"
+                    class="w-100 rh-hr-form-social-btn">
+
+                    <div class="d-flex align-items-center justify-content-center gap-10">
+                        <img src="/assets/images/icon/rh-google.svg" alt="Google">
+                        {{ 'buttons.google' | translate }}
                     </div>
-                </div>
+                </button>
             </div>
         </div>
+
     </div>
 </div>
