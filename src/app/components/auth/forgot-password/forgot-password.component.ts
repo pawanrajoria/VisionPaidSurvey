@@ -6,10 +6,11 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { MessageService } from "../../layout/message/message.service";
 import { MessageVM } from "../../layout/message/message.vm";
 import { SharedDataService } from "../../../shared.data.service";
+import { IonItem, IonButton, IonIcon, IonContent } from "@ionic/angular/standalone";
 
 @Component({
     selector: 'app-forgot-password',
-    imports: [SharedModule],
+    imports: [IonContent, IonIcon, IonButton, IonItem, SharedModule],
     templateUrl: './forgot-password.component.html',
     styleUrls: ['./forgot-password.component.scss']
 })
