@@ -1,6 +1,55 @@
-<div class="offerwall-iframe-wrapper">
-    <iframe [src]="iframeUrl" title="Offerwall Surveys" loading="lazy" allowfullscreen></iframe>
+<div class="page-bg">
+  <div class="header-teal">
+    <mat-button-toggle-group class="custom-toggle-group" value="surveys">
+      <mat-button-toggle value="surveys">
+        <mat-icon>grid_view</mat-icon>
+        <div class="label">Surveys</div>
+      </mat-button-toggle>
+      <mat-button-toggle value="offers">
+        <mat-icon>percent</mat-icon>
+        <div class="label">Offers</div>
+      </mat-button-toggle>
+      <mat-button-toggle value="rewards">
+        <mat-icon>savings</mat-icon>
+        <div class="label">Rewards</div>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <div class="content-container">
+    <div class="title-block">
+      <h2>Surveys - Top Rated</h2>
+      <p>Brands are willing to reward you with USD when you give them your opinion!</p>
+    </div>
+
+    <div class="survey-grid">
+      @for (s of surveys; track s.id) {
+      <mat-card class="styled-card">
+        <mat-card-content>
+          <div class="price-container">
+            <h1 class="price-text">${{ s.amount }}</h1>
+          </div>
+
+          <div class="meta-row">
+            <div class="stars-group">
+              @for (star of [1,2,3,4,5]; track star) {
+              <mat-icon [class.active]="star <= s.rating">star</mat-icon>
+              }
+            </div>
+            <div class="time-group">
+              <mat-icon>schedule</mat-icon>
+              <span>{{ s.duration }} min</span>
+            </div>
+          </div>
+
+          <div class="button-wrapper">
+            <button mat-flat-button class="custom-start-btn">
+              Start Survey
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      }
+    </div>
+  </div>
 </div>
-
-
-<!-- 256C0D01-C8C7-4368-9871-44E1E1693B34 -->

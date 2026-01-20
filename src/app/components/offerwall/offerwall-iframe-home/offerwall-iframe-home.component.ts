@@ -10,19 +10,19 @@ import { LocalStorageService } from '../../../localstorage.service';
 // let nodeCrypto: typeof import('crypto') | undefined;
 
 @Component({
-    selector: 'app-offerwall-home',
+    selector: 'app-iframe-offerwall-home',
     standalone: true,
-    templateUrl: './offerwall-home.component.html',
-    styleUrls: ['./offerwall-home.component.scss'],
+    templateUrl: './offerwall-iframe-home.component.html',
+    styleUrls: ['./offerwall-iframe-home.component.scss'],
     imports: [SharedModule]
 })
-export class OfferwallHomeComponent extends BaseComponent implements OnInit {
+export class OfferwallIframeHomeComponent extends BaseComponent implements OnInit {
     accepted = false;
     iframeUrl: SafeResourceUrl | null = null;
     constructor(
         private offerwallService: OfferwallService,
         private helperService: HelperService,
-        private localStorageService: LocalStorageService,
+        private localStorageService: LocalStorageService,        
         private sanitizer: DomSanitizer
     ) {
         super();
@@ -56,13 +56,4 @@ export class OfferwallHomeComponent extends BaseComponent implements OnInit {
         }
     }
 
-
-    activeTab = 'Surveys';
-
-    surveys = [
-        { id: 1, amount: '0.14', rating: 5, duration: 10 },
-        { id: 2, amount: '0.35', rating: 5, duration: 26 },
-        { id: 3, amount: '0.20', rating: 4, duration: 45 },
-        { id: 4, amount: '0.62', rating: 5, duration: 15 },
-    ];
 }

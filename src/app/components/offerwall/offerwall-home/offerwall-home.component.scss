@@ -1,48 +1,124 @@
-.offerwall-iframe-wrapper {
-   flex: 1;
-  width: 100%;
+// Brand Colors
+$primary-dark: #125d44;
+$accent-green: #0d533f;
+$text-grey: #a0aab4;
+// The secret to the "good look": A high-blur shadow with a hint of blue
+$soft-shadow: 0 12px 30px -5px rgba(20, 80, 100, 0.15);
+
+.page-bg { background: #fff; min-height: 100vh; }
+
+.header-teal {
+  background-color: $primary-dark;
+  padding: 30px 15px;
   display: flex;
   justify-content: center;
-  align-items: stretch;
+
+  .custom-toggle-group {
+    border: none;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 5px;
+    gap: 8px;
+
+    ::ng-deep .mat-button-toggle {
+      border: none;
+      background: transparent;
+      color: #e0e0e0;
+      border-radius: 10px !important;
+
+      .mat-button-toggle-label-content {
+        line-height: 1.2;
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      &.mat-button-toggle-checked {
+        background: white !important;
+        color: $primary-dark !important;
+      }
+    }
+  }
+}
+
+.content-container {
+  padding: 24px 16px;
+  max-width: 500px;
+  margin: 0 auto;
+
+  .title-block {
+    margin-bottom: 25px;
+    h2 { font-weight: 800; font-size: 1.15rem; color: #2c3e50; margin: 0; }
+    p { color: $text-grey; font-size: 0.85rem; line-height: 1.4; margin-top: 5px; }
+  }
+}
+
+.survey-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  // gap: 16px;
+  // This ensures the height is calculated before the scroll starts
+  // grid-auto-rows: min-content; 
+}
+.styled-card {
+  border-radius: 24px !important;
+  border: 1px solid #f2f4f6;
+  // Soft teal-tinted shadow for depth
+  box-shadow: 0 15px 35px -5px rgba(20, 80, 100, 0.12) !important;
+  text-align: center;
   overflow: hidden;
 
-    iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-        border-radius: 0;
+  mat-card-content {
+    // Override the 30px padding that was breaking your layout
+    padding: 20px 12px !important; 
+  }
+
+  .price-text {
+    color: #125d44;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 10px 0;
+  }
+
+  .meta-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;      // Spacing between stars and timer
+    margin-bottom: 20px;
+    white-space: nowrap; // Prevents stacking
+
+    .stars-group {
+      display: flex;
+      mat-icon { 
+        font-size: 14px; width: 14px; height: 14px; color: #e5e7eb; 
+        &.active { color: #facc15; }
+      }
     }
-}
 
-/* Desktop fix — full height minus sticky header */
-@media (min-width: 769px) {
-  .offerwall-home-container {
-    padding-top: 0;
+    .time-group {
+      display: flex;
+      align-items: center;
+      color: #a0aab4;
+      font-size: 11px;
+      mat-icon { font-size: 14px; width: 14px; height: 14px; margin-right: 2px; }
+    }
   }
 
-  app-offerwall-header {
-    flex-shrink: 0;
+  .button-wrapper {
+    padding: 0 5px;
   }
 
-  .offerwall-iframe-wrapper {
-    height: calc(100vh - 70px); // adjust if your header is taller or shorter
-  }
-}
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .offerwall-iframe-wrapper {
-    height: calc(100vh - 60px);
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .offerwall-home-container {
-    padding-top: 0;
-  }
-
-  .offerwall-iframe-wrapper {
-    height: calc(100vh - 50px);
+  .custom-start-btn {
+    background-color: #0d533f !important;
+    color: white !important;
+    border-radius: 12px;
+    width: 100%;
+    height: 48px;     // Explicit height for a modern look
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(13, 83, 63, 0.2);
   }
 }
