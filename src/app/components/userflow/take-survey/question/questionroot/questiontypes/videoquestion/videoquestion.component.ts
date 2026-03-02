@@ -22,7 +22,7 @@ export class VideoQuestionComponent implements OnInit, AfterViewInit {
   setProgress(data: any) {
     const status: number = (data.target.currentTime / data.target.duration) * 100;
     this.progress = `${parseInt(status.toString())}%`;
-    console.log(this.progress);
+    // console.log(this.progress);
   }
 
   ngOnInit(): void {

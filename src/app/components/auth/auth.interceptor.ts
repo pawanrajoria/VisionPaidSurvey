@@ -78,7 +78,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
           }
         }),
         catchError(error => {
-          console.error('Interceptor Error:', error);
+          // console.error('Interceptor Error:', error);
 
           if (error.status === 401 || error.status === 0) {
             messageService.showMessage(new MessageVM(

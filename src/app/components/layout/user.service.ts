@@ -12,7 +12,7 @@ export class UserService {
     }
 
     async logActivity(request: IUserActivityVM): Promise<any> {
-        console.log("Logging user activity:", this.config.baseUrl + "auth/log-activity");
+        // console.log("Logging user activity:", this.config.baseUrl + "auth/log-activity");
         
         return await this.http.post<any>(this.config.baseUrl + "auth/log-activity", request).toPromise();
     }

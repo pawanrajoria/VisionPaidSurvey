@@ -50,6 +50,42 @@
             </mat-card>
         </mat-menu>
 
+        <button mat-icon-button [matMenuTriggerFor]="notificationMenu">
+            <mat-icon [matBadge]="notificationCount" matBadgeColor="warn" [matBadgeHidden]="notificationCount === 0">
+                notifications
+            </mat-icon>
+        </button>
+
+        <mat-menu #notificationMenu="matMenu" class="notification-dropdown cardWithShadow">
+            <div class="p-16 border-bottom d-flex align-items-center justify-content-between">
+                <h4 class="m-0">Notifications</h4>
+                @if (notificationHistory.length > 0) {
+                <button mat-button color="primary" (click)="clearNotifications($event)">Clear All</button>
+                }
+            </div>
+
+            @if (notificationHistory.length > 0) {
+            <div class="notification-list">
+                @for (msg of notificationHistory; track msg.id) {
+                <button mat-menu-item class="notification-item">
+                    <div class="d-flex align-items-center">
+                        <mat-icon color="primary" class="m-r-12">circle_notifications</mat-icon>
+                        <div>
+                            <span class="d-block font-weight-bold">{{ msg.notification?.title || msg.title }}</span>
+                            <small class="text-muted d-block">{{ msg.notification?.body || msg.body }}</small>
+                        </div>
+                    </div>
+                </button>
+                }
+            </div>
+            } @else {
+            <div class="p-24 text-center">
+                <mat-icon class="icon-40 text-muted">notifications_none</mat-icon>
+                <p class="m-t-8 text-muted">No new notifications</p>
+            </div>
+            }
+        </mat-menu>
+
 
         <button mat-mini-fab [matMenuTriggerFor]="profilemenu" aria-label="Notifications">
             <img src="/assets/images/profile/user-1.jpg" class="rounded-circle object-cover d-block" width="35" />

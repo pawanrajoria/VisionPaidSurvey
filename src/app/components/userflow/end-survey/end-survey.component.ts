@@ -28,7 +28,7 @@ export class EndSurveyComponent extends BaseComponent {
     try {
       return atob(encoded);
     } catch (e) {
-      console.error("Invalid Base64");
+      // console.error("Invalid Base64");
       return '';
     }
   }

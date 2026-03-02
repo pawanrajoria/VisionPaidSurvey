@@ -47,4 +47,8 @@ export class AccountService {
         return await this.http.get<any>(this.config.baseUrl + "account/get-user-info").toPromise();
     }
 
+    get userEmail(): string | null {
+        return "";
+    }
+
 }

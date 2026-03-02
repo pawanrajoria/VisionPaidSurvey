@@ -1,14 +1,9 @@
 <mat-progress-bar *ngIf="isLoading$ | async" mode="indeterminate" color="primary" class="top-loader"></mat-progress-bar>
 <app-message></app-message>
-<div class="loader-overlay" *ngIf="isLoading$ | async">
+<div class="loader-overlay" *ngIf="(isLoading$ | async) && isBrowser">
     <mat-spinner diameter="50" color="primary"></mat-spinner>
 </div>
 
-<ng-container *ngIf="translationsLoadedInfo; else loading">
+<ng-container>
   <router-outlet></router-outlet>
 </ng-container>
-
-
-<ng-template #loading>
-    <div class="splash-screen">Loading...</div>
-</ng-template>

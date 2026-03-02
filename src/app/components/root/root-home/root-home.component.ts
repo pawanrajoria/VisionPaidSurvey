@@ -141,7 +141,7 @@ export class RootHomeComponent implements OnInit {
     }
 
     selectReward(reward: any) {
-        console.log('Selected:', reward);
+        // console.log('Selected:', reward);
     }
 
     goToApp() {

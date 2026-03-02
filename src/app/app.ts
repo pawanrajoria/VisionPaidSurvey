@@ -15,6 +15,7 @@ import { HelperService } from './components/userflow/helper.service';
 import { LocalStorageService } from './localstorage.service';
 import { BaseComponent } from './base.component';
 import { GoogleService } from './components/auth/google.service';
+import { VersionCheckService } from './version-check.service';
 
 @Component({
   selector: 'app-root',
@@ -39,25 +40,27 @@ export class AppComponent extends BaseComponent implements OnInit {
     private helperService: HelperService,
     private localStorageService: LocalStorageService,
     private googleService: GoogleService,
+    private versionCheck: VersionCheckService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     super();
     this.isLoading$ = this.loader.loading$;
-    // ✅ SSR-safe language preference setup
-    const browserLang = this.isBrowser ? this.translate.getBrowserLang() : 'en';
-    this.translate.setDefaultLang('en');
-    this.translate.use(browserLang?.match(/en|es|fr/) ? browserLang : 'en').subscribe(() => {
-      if (this.isBrowser && this.win) {
-        setTimeout(() => {
-          this.translationsLoaded = true;
-        }, 100);
-      }
-    });
+    this.versionCheck.check();
+    // const browserLang = this.isBrowser ? this.translate.getBrowserLang() : 'en';
+    // this.translate.setDefaultLang('en');
 
-  }
-
-  get translationsLoadedInfo() {
-    return this.translationsLoaded;
+    // this.translate.use(browserLang?.match(/en|es|fr/) ? browserLang : 'en').subscribe(() => {
+    //   // // ✅ FIX: If we are on the server, set this to true immediately.
+    //   // // The server doesn't need the 100ms timeout.
+    //   // if (!this.isBrowser) {
+    //   //   this.translationsLoaded = true;
+    //   // } else {
+    //   //   // Browser logic remains the same
+    //   //   setTimeout(() => {
+    //   //     this.translationsLoaded = true;
+    //   //   }, 100);
+    //   // }
+    // });
   }
 
   ngOnInit() {
@@ -67,6 +70,8 @@ export class AppComponent extends BaseComponent implements OnInit {
     }
 
     this.helperService.setDuid();
+
+
 
     this.router.events
       .pipe(

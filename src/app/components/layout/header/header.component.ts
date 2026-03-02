@@ -35,8 +35,11 @@ export class HeaderComponent {
   @Input() level: number = 1;
   @Input() status: string = '';
   @Input() reward?: string;
+  @Input() notificationCount?: number;
+  @Input() notificationHistory: any[] = [];
 
   @Output() toggleMobileNav = new EventEmitter<void>();
+  @Output() removeNotification = new EventEmitter<void>();
   readonly dialog = inject(MatDialog);
   dialogRef: MatDialogRef<any> | null = null;
   @ViewChild('Qualify', { read: TemplateRef }) Qualify!: TemplateRef<any>;
@@ -131,5 +134,10 @@ export class HeaderComponent {
 
   closeQualification() {
     this.dialog.closeAll();
+  }
+
+  clearNotifications(event: MouseEvent) {
+    event.stopPropagation(); // Prevents menu from closing immediately
+    this.removeNotification.emit();
   }
 }

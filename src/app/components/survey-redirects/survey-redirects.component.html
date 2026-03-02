@@ -1,0 +1,79 @@
+<main class="survey-container">
+    <mat-card class="status-card glass-morph">
+
+        <!-- ICON + TIMER -->
+        <div class="timer-icon-container">
+            <svg class="progress-ring" width="120" height="120">
+                <circle class="progress-ring__circle" r="52" cx="60" cy="60" stroke-width="4" fill="transparent" />
+            </svg>
+
+            <div class="status-icon-header">
+                @switch (status) {
+                @case (1) { <mat-icon class="success-icon">check_circle</mat-icon> }
+                @case (7) { <mat-icon class="error-icon">person_off</mat-icon> }
+                @case (11) { <mat-icon class="warning-icon">group</mat-icon> }
+                @case (8) { <mat-icon class="error-icon">gpp_maybe</mat-icon> }
+                @default { <mat-icon class="error-icon">cancel</mat-icon> }
+                }
+            </div>
+        </div>
+
+        <!-- TITLE -->
+        <h2 class="status-title">
+            @switch (status) {
+            @case (1) { Survey Successfully Completed! }
+            @case (11) { Survey Overquota }
+            @case (8) { Security Termination }
+            @case (7) { Not a Match }
+            @default { Survey Terminated }
+            }
+        </h2>
+
+        <!-- CONTENT -->
+        <p class="description">
+            @switch (status) {
+            @case (1) { Thank you! Your reward is being processed. }
+            @case (11) { Sorry, this survey has reached its maximum response limit. }
+            @case (8) { Session terminated due to security protocols. }
+            @case (7) { Unfortunately, you did not meet the specific criteria required for this study. }
+            @default { This survey is no longer available. }
+            }
+        </p>
+
+        <div class="redirect-pill">
+            <span class="pulse"></span>
+            Redirecting in <strong>{{ countdown }}s</strong>
+        </div>
+
+        <!-- DIVIDER -->
+        <div class="soft-divider"></div>
+
+        <!-- PROMO -->
+        <div class="promo-section">
+            <div class="brand-badge">PROFITPILLER EXCLUSIVE</div>
+            <h3>Maximize Your Earnings</h3>
+            <p>Don't stop here. Thousands of users are earning daily with our high-reward tasks.</p>
+
+            <div class="open-note">
+                Opens in a new tab
+            </div>
+
+            <div class="action-buttons">
+                <a mat-flat-button class="btn-glow" href="https://profitpiller.com" target="_blank"
+                    rel="noopener noreferrer">
+                    <mat-icon>language</mat-icon>
+                    Open Web
+                </a>
+
+                <a mat-stroked-button class="btn-outline"
+                    href="https://play.google.com/store/apps/details?id=com.cralpkresearch.profitpiller" target="_blank"
+                    rel="noopener noreferrer">
+                    <mat-icon>phone_android</mat-icon>
+                    App Store
+                </a>
+            </div>
+
+        </div>
+
+    </mat-card>
+</main>

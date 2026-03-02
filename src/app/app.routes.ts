@@ -12,6 +12,7 @@ import { TakeSurveyComponent } from './components/userflow/take-survey/take-surv
 import { UserflowComponent } from './components/userflow/userflow.component';
 import { OfferwallComponent } from './components/offerwall/offerwall.component';
 import { AuthCallbackComponent } from './components/auth/AuthCallbackComponent';
+import { RedirectComponent } from './components/root/apk-toggle/apk.redirect';
 
 export const routes: Routes = [
   {
@@ -192,7 +193,10 @@ export const routes: Routes = [
         loadChildren: () =>
           import('./components/root/root-cookiepolicy/root-cookiepolicy.route').then((m) => m.rootCookiePolicyRoutes),
       },
-
+      {
+        path: 'redirecttoapk',
+        component: RedirectComponent
+      },
 
     ],
   },
@@ -245,6 +249,17 @@ export const routes: Routes = [
         path: 'reward',
         loadChildren: () =>
           import('./components/offerwall/offerwall-reward/offerwall-reward.route').then((m) => m.offerwallRewardRoutes),
+      }
+    ],
+  },
+  {
+    path: 'surveyresult',
+    component: UserflowComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./components/survey-redirects/survey-redirects.route').then((m) => m.SurveyRedirectRoutes)
       }
     ],
   },

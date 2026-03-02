@@ -1,0 +1,76 @@
+.apk-widget {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 260px;
+  border-radius: 22px;
+  overflow: hidden;
+  z-index: 999;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+  background: linear-gradient(90deg, #145c4b 0%, #7ebf76 100%);
+  color: white;
+
+  transition: all 0.3s ease;
+}
+
+/* Header */
+.apk-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    mat-icon {
+      font-size: 20px;
+    }
+
+    span {
+      font-weight: 500;
+      font-size: 15px;
+    }
+  }
+
+  .arrow {
+    transition: transform 0.3s ease;
+  }
+
+  .arrow.rotate {
+    transform: rotate(180deg);
+  }
+}
+
+/* Body */
+.apk-body {
+  background: white;
+  color: #333;
+  padding: 18px;
+  text-align: center;
+  border-radius: 18px 18px 22px 22px;
+}
+
+/* QR Box */
+.qr-container {
+  background: #f4f4f4;
+  padding: 18px;
+  border-radius: 14px;
+
+  img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+  }
+}
+
+.scan-text {
+  margin-top: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 14px;
+}

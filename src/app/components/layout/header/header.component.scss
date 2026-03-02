@@ -9,15 +9,18 @@
 .balance-left {
     display: flex;
     align-items: center;
+
     .wallet-icon {
         font-size: 32px;
         margin-right: 12px;
     }
+
     .balance-text {
         .label {
             font-size: 14px;
             color: #666;
         }
+
         .value {
             font-weight: bold;
             font-size: 18px;
@@ -28,10 +31,12 @@
 .balance-right {
     display: flex;
     gap: 10px;
+
     .streak {
         min-width: 40px;
         font-weight: bold;
     }
+
     .level {
         font-weight: bold;
         display: flex;
@@ -55,6 +60,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
+
     .fab-icon {
         font-size: 20px;
     }
@@ -67,6 +73,7 @@
 
 .hide-on-mobile {
     display: block;
+
     @media screen and (max-width: 768px) {
         display: none !important;
     }
@@ -82,34 +89,41 @@
     gap: 12px;
     font-family: 'Inter', sans-serif;
     margin-bottom: 0px !important;
+
     .level-info {
         display: flex;
         justify-content: space-between;
         font-weight: 600;
         font-size: 14px;
     }
+
     .progress {
         height: 6px;
         border-radius: 5px;
     }
+
     .reward-info {
         display: flex;
         flex-direction: column;
+
         .reward-label {
             font-size: 12px;
             color: #777;
         }
+
         .reward-points {
             font-weight: bold;
             font-size: 15px;
             color: #000;
         }
     }
+
     .how-btn {
         margin-top: auto;
         font-size: 12px;
         font-weight: 500;
         text-transform: none;
+
         mat-icon {
             font-size: 16px;
             margin-right: 4px;
@@ -125,7 +139,7 @@
 
 /*-- Modal CSS HERE --*/
 
- ::ng-deep {
+::ng-deep {
     .mat-mdc-dialog-surface {
         background-color: transparent;
     }
@@ -148,26 +162,31 @@ button {
 .custom-card {
     border: 0px !important;
     margin-bottom: 0 !important;
+
     // position: relative;
     // z-index: 0;
     .icon {
         width: 88px;
         margin: 12px auto;
+
         img {
             width: 100%
         }
     }
+
     h2 {
         color: #105749;
         font-size: 26px;
         font-weight: 600;
         margin-bottom: 10px
     }
+
     p {
         font-size: 14px;
         margin: 0px;
         color: #878585;
     }
+
     .clock {
         color: #105749;
         display: inline-flex;
@@ -179,6 +198,7 @@ button {
         border-radius: .5rem;
         position: relative;
         transition: all .3s ease-in-out;
+
         &::before {
             content: "";
             position: absolute;
@@ -189,14 +209,17 @@ button {
             background: linear-gradient(270deg, rgb(135, 190, 119) 0%, rgb(25, 97, 69) 20%);
             border-radius: 12px 0 0 12px;
         }
+
         mat-icon {
             color: #105749;
         }
+
         &:hover {
             background: #ecfffc;
             border-color: #105749;
         }
     }
+
     .bg {
         // background: #ededed;
         padding: 20px;
@@ -206,6 +229,7 @@ button {
         background-position: center;
         position: relative;
         z-index: 0;
+
         &::before {
             content: '';
             position: absolute;
@@ -219,6 +243,7 @@ button {
             background-repeat: no-repeat;
             background-position: top center;
         }
+
         .card-box {
             display: flex;
             align-items: start;
@@ -226,9 +251,11 @@ button {
             gap: 16px;
             padding-right: 20px;
         }
+
         .icon {
             width: 100px;
             margin: 0px;
+
             mat-icon {
                 width: 60px;
                 height: 60px;
@@ -237,6 +264,7 @@ button {
                 overflow: inherit;
             }
         }
+
         h4 {
             margin: 0;
             font-size: 20px;
@@ -244,12 +272,14 @@ button {
             margin-bottom: 8px;
             color: #fff;
         }
+
         P {
             margin: 0;
             font-size: 16px;
             color: #fff;
         }
     }
+
     .custom-btn {
         background: #196145;
         position: relative;
@@ -269,13 +299,16 @@ button {
         border: 0;
         min-height: 44px;
         z-index: 0;
+
         &:hover {
             color: #000;
+
             &::before {
                 left: 0%;
                 transform: scale(1, 1);
             }
         }
+
         &:before {
             background: linear-gradient(270deg, rgba(252, 246, 166, 1) 0%, rgba(203, 255, 156, 1) 36%);
             position: absolute;
@@ -295,19 +328,23 @@ button {
 .form-field {
     padding: 30px 12px !important;
     border: 4px solid #105749;
+
     h3 {
         font-size: 24px;
         font-weight: 600;
         color: #333;
     }
+
     p {
         font-size: 16px;
         margin-top: 8px;
     }
+
     .form-box {
         min-width: 350px;
         margin-top: 20px;
         text-align: left;
+
         .form-check {
             margin: 12px 0px;
             display: flex;
@@ -316,6 +353,7 @@ button {
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
             padding: 10px 12px;
             border-radius: .3rem;
+
             input[type="radio"] {
                 appearance: none;
                 width: 14px;
@@ -325,6 +363,7 @@ button {
                 border-radius: 2px;
                 transition: all 0.5s ease-in-out;
                 margin: 0;
+
                 &:checked {
                     background: rgb(25 97 69);
                     transform: rotateZ(180deg);
@@ -332,6 +371,7 @@ button {
                 }
             }
         }
+
         .form-control {
             margin: 10px 0px;
             width: 100%;
@@ -340,6 +380,7 @@ button {
             font-size: 16px;
             border-radius: .2rem;
         }
+
         .btn {
             background: #196145;
             position: relative;
@@ -357,13 +398,16 @@ button {
             border: 0;
             min-height: 44px;
             z-index: 0;
+
             &:hover {
                 color: #000;
+
                 &::before {
                     left: 0%;
                     transform: scale(1, 1);
                 }
             }
+
             &:before {
                 background: linear-gradient(270deg, rgba(252, 246, 166, 1) 0%, rgba(203, 255, 156, 1) 36%);
                 position: absolute;
@@ -385,9 +429,11 @@ button {
     min-width: 400px;
     max-width: 100%;
     border: 4px solid #196145;
+
     .icon {
         img {}
     }
+
     h3 {
         font-size: 1.7rem;
         font-weight: 600;
@@ -395,11 +441,13 @@ button {
         line-height: 36px;
         margin-bottom: 16px;
     }
+
     p {
         font-size: 1rem;
         color: #555;
         margin: 0.5rem 0 1.5rem;
     }
+
     .custom-btn {
         background: #196145;
         position: relative;
@@ -423,13 +471,16 @@ button {
         border: 0;
         min-height: 44px;
         z-index: 0;
+
         &:hover {
             color: #000;
+
             &::before {
                 left: 0%;
                 transform: scale(1, 1);
             }
         }
+
         &:before {
             background: linear-gradient(270deg, rgba(252, 246, 166, 1) 0%, rgba(203, 255, 156, 1) 36%);
             position: absolute;
@@ -449,6 +500,7 @@ button {
 .qualification {
     min-width: 400px;
     max-width: 100%;
+
     // border: 4px solid #105749;
     h3 {
         font-size: 1.7rem;
@@ -457,33 +509,40 @@ button {
         line-height: 36px;
         margin-bottom: 16px;
     }
+
     .boxes {
         // margin-top: 30px;
         text-align: left;
+
         h4 {
             font-size: 20px;
             color: #105749;
             font-weight: 700;
         }
+
         p {
             font-size: 1rem;
             color: #555;
             margin: 0.5rem 0 1.5rem;
             margin-top: 4px;
         }
+
         .scroll-box {
             max-height: 270px;
             overflow-y: auto;
             margin-bottom: 14px;
+
             ul {
                 padding: 0;
                 list-style: none;
+
                 li {
                     padding-bottom: 10px;
                     margin: 10px 0px;
                     padding-left: 26px;
                     position: relative;
                     border-bottom: 1px dotted rgba(25, 97, 69, 0.36);
+
                     &::before {
                         content: '';
                         position: absolute;
@@ -495,10 +554,12 @@ button {
                         background-repeat: no-repeat;
                         background-size: cover;
                     }
+
                     h4 {
                         font-size: 15px;
                         font-weight: 600;
                     }
+
                     p {
                         font-size: 14px;
                         margin: 0;
@@ -507,17 +568,21 @@ button {
             }
         }
     }
+
     .bottom {
         p {
             font-size: 16px;
             font-weight: 500;
+
             span {
                 display: block;
                 color: #196145;
             }
+
             margin-bottom: 0px;
             text-align: center;
         }
+
         .custom-btn {
             line-height: 44px;
             text-decoration: none;
@@ -530,6 +595,7 @@ button {
     min-width: 400px;
     max-width: 100%;
     border: 4px solid #105749;
+
     h3 {
         font-size: 1.7rem;
         font-weight: 600;
@@ -537,29 +603,36 @@ button {
         line-height: 36px;
         margin-bottom: 16px;
     }
+
     .boxes {
         .icon {
             width: 60px;
             margin: 0;
+
             img {
                 width: 100%
             }
         }
+
         p {
             text-align: left;
             font-size: 1rem;
             color: #555;
             margin: 0.5rem 0 1.5rem;
+
             small {
                 display: block;
             }
         }
+
         .scroll-box {
             max-height: 240px;
             overflow-y: auto;
+
             ul {
                 list-style: none;
                 padding: 0;
+
                 li {
                     text-align: left;
                     padding-bottom: 10px;
@@ -569,11 +642,13 @@ button {
                     justify-content: space-between;
                     align-items: start;
                     border-bottom: 1px dotted rgba(25, 97, 69, 0.36);
+
                     p {
                         max-width: 230px;
                         font-size: 13px;
                         margin: 0;
                     }
+
                     span {
                         // flex: 1 0 0%;
                         flex: 0 0 auto;
@@ -587,6 +662,7 @@ button {
             }
         }
     }
+
     .custom-btn {
         line-height: 44px;
         text-decoration: none;
@@ -604,41 +680,80 @@ button {
         .icon {
             width: 50px;
         }
+
         h2 {
             font-size: 20px;
         }
+
         .bg {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
             .icon {
                 display: none;
             }
         }
     }
+
     .form-field {
         .form-box {
             min-width: 100%;
         }
     }
+
     .qualify-sec {
         min-width: auto;
         border-width: 2px;
+
         h3 {
             font-size: 1.3rem;
         }
     }
+
     .qualification {
         min-width: inherit;
+
         h3 {
             font-size: 1.4rem;
             margin-bottom: 10px;
         }
     }
+
     .levels {
         min-width: 100%;
         padding: 12px !important;
+
         h3 {
             font-size: 1.4rem;
             margin-bottom: 10px;
+        }
+    }
+}
+
+.notification-dropdown {
+    width: 320px;
+    max-height: 450px;
+
+    .notification-list {
+        max-height: 350px;
+        overflow-y: auto;
+    }
+
+    .notification-item {
+        padding: 12px 16px;
+        line-height: 1.4;
+        height: auto;
+        border-bottom: 1px solid #f0f0f0;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        span {
+            white-space: normal;
+        }
+
+        small {
+            white-space: normal;
         }
     }
 }

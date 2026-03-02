@@ -32,11 +32,11 @@ export class HelperService {
       if (typeof (window as any).getDuid === 'function') { // Example for global function
         const duid = (window as any).getDuid(finalCallback, this.localStorageService);
       } else {
-        console.warn("getDuid function not found in browser environment.");
+        // console.warn("getDuid function not found in browser environment.");
       }
     }
     else {
-      console.log('Running setDuid in server environment (SSR)');
+      // console.log('Running setDuid in server environment (SSR)');
     }
   }
 

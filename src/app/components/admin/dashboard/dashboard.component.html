@@ -1,239 +1,202 @@
-<main class="dashboard-container">
-    <div class="dashboard-header">
-        <h2>Dashboard</h2>
-        <p>Check the sales, value, and bounce rate by country.</p>
-        <mat-tab-group color="warn" class="dashboard-mat-tab" [(selectedIndex)]="selectedTabIndex"
-            (selectedTabChange)="onTabChange($event)">
-            <mat-tab label="Today">
-                <div class="empty-block">
-                    <!-- Add your 'Today' content here -->
-                </div>
-            </mat-tab>
-
-            <mat-tab label="This Week">
-                <div class="empty-block">
-                    <!-- Add your 'This Week' content here -->
-                </div>
-            </mat-tab>
-
-            <mat-tab label="This Month">
-                <div class="empty-block">
-                    <!-- Add your 'This Month' content here -->
-                </div>
-            </mat-tab>
-
-            <mat-tab label="This Year">
-                <div class="empty-block">
-                    <!-- Add your 'This Year' content here -->
-                </div>
-            </mat-tab>
-        </mat-tab-group>
-
-    </div>
-    <!-- === Stat Cards Row === -->
-    <div class="stat-grid">
-        <mat-card class="stat-card" *ngFor="let item of stats" (click)="selectedValueTabIndex=item.id">
-            <div class="stat-header">
-                <div>
-                    <p class="label">{{ item.label }}</p>
-                    <h3>{{ item.value }}</h3>
-                </div>
-                <mat-icon class="stat-icon">{{ item.icon }}</mat-icon>
-            </div>
-            <mat-divider></mat-divider>
-            <div class="stat-footer">
-                <span [ngClass]="{'positive': item.change > 0, 'negative': item.change < 0}">
-                    {{ item.change > 0 ? '+' : '' }}{{ item.change }}%
-                </span>
-                <span class="subtext">than last {{ item.period }}</span>
-            </div>
-        </mat-card>
+<main class="dashboard-wrapper">
+  <header class="dashboard-header">
+    <div class="title-section">
+      <h1>Admin Insights</h1>
+      <p>Real-time performance tracking and user activity</p>
     </div>
 
-    <!-- === Charts Row === -->
-    <!-- <div class="chart-grid">
-        <mat-card class="chart-card" *ngFor="let chart of charts">
-            <h4>{{ chart.title }}</h4>
-            <p class="text-sm">{{ chart.subtitle }}</p>
-            <div class="chart-placeholder">
-                <img [src]="chart.image" alt="{{ chart.title }}">
+    <div class="filter-section">
+      <mat-tab-group 
+        class="custom-tab-nav" 
+        [(selectedIndex)]="selectedTabIndex"
+        (selectedTabChange)="onTabChange($event)">
+        <mat-tab label="Today"></mat-tab>
+        <mat-tab label="Week"></mat-tab>
+        <mat-tab label="Month"></mat-tab>
+        <mat-tab label="Year"></mat-tab>
+      </mat-tab-group>
+    </div>
+  </header>
+
+  <section class="metrics-grid">
+    <div class="metric-card" 
+         *ngFor="let item of stats" 
+         [class.active]="selectedValueTabIndex === item.id"
+         (click)="selectedValueTabIndex = item.id">
+      <div class="metric-icon">
+        <mat-icon>{{ item.icon }}</mat-icon>
+      </div>
+      <div class="metric-info">
+        <span class="label">{{ item.label }}</span>
+        <h2 class="value">{{ item.value }}</h2>
+        <div class="trend" [ngClass]="item.change > 0 ? 'up' : 'down'">
+          <mat-icon>{{ item.change > 0 ? 'arrow_upward' : 'arrow_downward' }}</mat-icon>
+          <span>{{ item.change }}%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <mat-card class="glass-card main-table-container">
+    <div class="card-header">
+      <div class="header-content">
+        <h3>Withdrawal Requests</h3>
+        <span class="status-indicator"><mat-icon>verified</mat-icon> 30 Processed</span>
+      </div>
+    </div>
+
+    <div class="table-container">
+      <table mat-table [dataSource]="adminData.withdrawalRequests" class="modern-table">
+        <ng-container matColumnDef="demo-position">
+          <td mat-cell *matCellDef="let element">
+            <div class="source-cell">
+              <img [src]="element.sourceByImage" alt="source" class="source-img">
+              <div class="source-text">
+                <span class="name">{{element.sourceByName}}</span>
+                <span class="meta">{{element.userName}} • {{element.country}}</span>
+              </div>
             </div>
-            <mat-divider></mat-divider>
-            <div class="update-info">
-                <mat-icon>schedule</mat-icon>
-                <span>{{ chart.update }}</span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="demo-name">
+          <td mat-cell *matCellDef="let element">
+            <div class="progress-cell">
+              <div class="progress-labels">
+                <span>Rejection Rate</span>
+                <span>{{element.rejectionRate}}%</span>
+              </div>
+              <mat-progress-bar mode="determinate" [value]="element.rejectionRate" color="warn"></mat-progress-bar>
             </div>
-        </mat-card>
-    </div> -->
+          </td>
+        </ng-container>
 
-    <!-- === Projects Table === -->
-    <mat-card class="table-card">
-        <div class="table-header">
-            <h4>Withdrawal's</h4>
-            <p><mat-icon color="primary">check_circle</mat-icon> 30 done this month</p>
-        </div>
+        <ng-container matColumnDef="demo-weight">
+          <td mat-cell *matCellDef="let element">
+            <div class="amount-cell">
+              <span class="amount">${{element.requestedAmount}}</span>
+              <span class="date">{{element.requestRaiseDate | date:'dd-MM-yy HH:mm'}}</span>
+            </div>
+          </td>
+        </ng-container>
 
-        <table mat-table [dataSource]="adminData.withdrawalRequests" class="mat-elevation-z8 demo-table">
-            <!-- Position Column -->
-            <ng-container matColumnDef="demo-position">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
-                <td mat-cell *matCellDef="let element">
-                    <div class="d-flex align-items-center gap-15">
-                        <img alt="products" width="90" height="70" class="rounded" [src]="element.sourceByImage">
-                        <div>
-                            <h6 class="f-s-16 f-w-500 m-t-0 m-b-0"> {{element.sourceByName}}<span
-                                    class="f-s-10">({{element.source}}) - {{element.country}}</span> </h6>
-                            <small
-                                class="f-s-14">{{element.userName}}-<strong>${{element.userTotalEarning}}</strong></small>
-                        </div>
-                    </div>
-                </td>
-            </ng-container>
+        <ng-container matColumnDef="demo-symbol">
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button class="action-btn delete"><mat-icon>delete</mat-icon></button>
+          </td>
+        </ng-container>
 
-            <!-- Name Column -->
-            <ng-container matColumnDef="demo-name">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
-                <td mat-cell *matCellDef="let element">
-                    <h6 class="m-t-0 m-b-6 f-s-14 f-w-500"> RR<span class="f-s-10">({{element.rejectionRate}}%)</span>
-                    </h6>
-                    <mat-progress-bar value="{{element.rejectionRate}}"> </mat-progress-bar>
-                    <span class="f-s-14 m-t-6 d-block">${{element.userTotalRejection}}</span>
-                </td>
-            </ng-container>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </mat-card>
 
-            <!-- Weight Column -->
-            <ng-container matColumnDef="demo-weight">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
-                <td mat-cell *matCellDef="let element">
-                    <span class="f-s-14">Requested</span>
-                    <h6 class="f-w-500 f-s-16 m-b-0 m-t-0 lh-sm"> ${{element.requestedAmount}} </h6>
-                    <h6 class="f-w-500 f-s-10 m-b-0 m-t-0 lh-sm"> {{element.requestRaiseDate |
-                        date:'dd-MM-yyyy HH:MM'}} </h6>
-                </td>
-            </ng-container>
+  <div class="secondary-grid">
+    <mat-card class="glass-card">
+      <div class="card-header"><h3>Recent Earnings</h3></div>
+      <div class="table-container">
+        <mat-table [dataSource]="adminData.earnings" class="compact-table">
+          <ng-container matColumnDef="company">
+            <mat-header-cell *matHeaderCellDef>Company</mat-header-cell>
+            <mat-cell *matCellDef="let p">{{ p.clientName }}</mat-cell>
+          </ng-container>
 
-            <!-- Symbol Column -->
-            <ng-container matColumnDef="demo-symbol">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
-                <td mat-cell *matCellDef="let element">
-                    <a class="m-r-10 cursor-pointer">
-                        <i-tabler name="trash"></i-tabler>
-                    </a>
-                </td>
-            </ng-container>
+          <ng-container matColumnDef="member">
+            <mat-header-cell *matHeaderCellDef>Member</mat-header-cell>
+            <mat-cell *matCellDef="let p">
+              <div class="stacked-text">
+                <span class="primary">{{ p.userName }}</span>
+                <span class="secondary">{{ p.country }}</span>
+              </div>
+            </mat-cell>
+          </ng-container>
 
-            <!-- <tr mat-header-row  *matHeaderRowDef="displayedColumns"></tr> -->
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-    </mat-card>
+          <ng-container matColumnDef="amount">
+            <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
+            <mat-cell *matCellDef="let p" class="text-positive">${{ p.amount }}</mat-cell>
+          </ng-container>
 
-    <mat-card class="table-card" *ngIf="selectedValueTabIndex!=0">
-        <div class="table-header">
-            <h4>Earnings</h4>
-            <p><mat-icon color="primary">check_circle</mat-icon> 30 done this month</p>
-        </div>
+          <ng-container matColumnDef="status">
+            <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+            <mat-cell *matCellDef="let p">
+               <span class="badge" [attr.data-status]="p.status">{{p.status}}</span>
+            </mat-cell>
+          </ng-container>
 
-        <mat-table [dataSource]="adminData.earnings" class="mat-elevation-z1">
-            <ng-container matColumnDef="company">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Company </mat-header-cell>
-                <mat-cell *matCellDef="let project">
-                    <div class="company-cell">
-                        <span>{{ project.clientName }}</span>
-                    </div>
-                </mat-cell>
-            </ng-container>
+          <ng-container matColumnDef="earndate">
+            <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+            <mat-cell *matCellDef="let p" class="text-muted">{{ p.earnDate }}</mat-cell>
+          </ng-container>
 
-            <ng-container matColumnDef="member">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Member Name </mat-header-cell>
-                <mat-cell *matCellDef="let project">
-                    <div class="member-avatars">
-                        <span>{{ project.country }} - {{ project.userName }}</span>
-                    </div>
-                </mat-cell>
-            </ng-container>
+          <ng-container matColumnDef="completion">
+            <mat-header-cell *matHeaderCellDef>Balance</mat-header-cell>
+            <mat-cell *matCellDef="let p">
+              <div class="mini-progress">
+                  <mat-progress-bar mode="determinate" [value]="p.userBalance"></mat-progress-bar>
+                  <span>{{p.userBalance}}%</span>
+              </div>
+            </mat-cell>
+          </ng-container>
 
-            <ng-container matColumnDef="amount">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> User Amount </mat-header-cell>
-                <mat-cell *matCellDef="let project"> {{ project.amount }} </mat-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="status">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
-                <mat-cell *matCellDef="let project"> {{ project.status }} </mat-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="earndate">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> DateTime </mat-header-cell>
-                <mat-cell *matCellDef="let project"> {{ project.earnDate }} </mat-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="completion">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Completion </mat-header-cell>
-                <mat-cell *matCellDef="let project">
-                    <mat-progress-bar mode="determinate" [value]="project.userBalance"></mat-progress-bar>
-                    <span class="progress-text">{{ project.userBalance }}%</span>
-                </mat-cell>
-            </ng-container>
-
-            <mat-header-row *matHeaderRowDef="displayedEarnerColumns"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: displayedEarnerColumns"></mat-row>
+          <mat-header-row *matHeaderRowDef="displayedEarnerColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedEarnerColumns"></mat-row>
         </mat-table>
+      </div>
     </mat-card>
 
-    <mat-card class="table-card" *ngIf="selectedValueTabIndex!=1">
-        <div class="table-header">
-            <h4>User Activity Log</h4>
-            <p><mat-icon color="primary">check_circle</mat-icon> 30 done this month</p>
-        </div>
+    <mat-card class="glass-card">
+      <div class="card-header"><h3>User Activity Log</h3></div>
+      <div class="table-container">
+        <mat-table [dataSource]="adminData.userActivityLog" class="compact-table">
+          <ng-container matColumnDef="member">
+            <mat-header-cell *matHeaderCellDef>Member</mat-header-cell>
+            <mat-cell *matCellDef="let a">
+              <div class="stacked-text">
+                  <span class="primary">{{ a.userName }}</span>
+                  <span class="secondary">{{ a.country }}</span>
+              </div>
+            </mat-cell>
+          </ng-container>
 
-        <mat-table  matSort [dataSource]="adminData.userActivityLog" class="mat-elevation-z1">
-            <ng-container matColumnDef="member">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Member Name </mat-header-cell>
-                <mat-cell *matCellDef="let activity">
-                    <div class="member-avatars">
-                        <span>{{ activity.country }} - {{ activity.userName }}</span>
-                    </div>
-                </mat-cell>
-            </ng-container>
+          <ng-container matColumnDef="earning">
+            <mat-header-cell *matHeaderCellDef>Earnings</mat-header-cell>
+            <mat-cell *matCellDef="let a" class="text-positive">${{ a.earning }}</mat-cell>
+          </ng-container>
 
-            <ng-container matColumnDef="earning">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Total Earning </mat-header-cell>
-                <mat-cell *matCellDef="let activity">$ {{ activity.earning }} </mat-cell>
-            </ng-container>
+          <ng-container matColumnDef="rejection">
+            <mat-header-cell *matHeaderCellDef>Rejections</mat-header-cell>
+            <mat-cell *matCellDef="let a" class="text-danger">${{ a.rejection }}</mat-cell>
+          </ng-container>
 
-            <ng-container matColumnDef="rejection">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Total Rejection </mat-header-cell>
-                <mat-cell *matCellDef="let activity">$ {{ activity.rejection }} </mat-cell>
-            </ng-container>
+          <ng-container matColumnDef="earningCount">
+            <mat-header-cell *matHeaderCellDef>Count</mat-header-cell>
+            <mat-cell *matCellDef="let a">{{ a.earningCount }}</mat-cell>
+          </ng-container>
 
-            <ng-container matColumnDef="earningCount">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Earning Count </mat-header-cell>
-                <mat-cell *matCellDef="let activity"> {{ activity.earningCount }} </mat-cell>
-            </ng-container>
+          <ng-container matColumnDef="rejectionCount">
+              <mat-header-cell *matHeaderCellDef>Rej. Cnt</mat-header-cell>
+              <mat-cell *matCellDef="let a">{{ a.rejectionCount }}</mat-cell>
+          </ng-container>
 
-            <ng-container matColumnDef="rejectionCount">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Rejection Count </mat-header-cell>
-                <mat-cell *matCellDef="let activity"> {{ activity.rejectionCount }} </mat-cell>
-            </ng-container>
+          <ng-container matColumnDef="postbackLogCount">
+              <mat-header-cell *matHeaderCellDef>Postback</mat-header-cell>
+              <mat-cell *matCellDef="let a">{{ a.postbackLogCount }}</mat-cell>
+          </ng-container>
 
-            <ng-container matColumnDef="postbackLogCount">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> PoctbackLog Count </mat-header-cell>
-                <mat-cell *matCellDef="let activity"> {{ activity.postbackLogCount }} </mat-cell>
-            </ng-container>
+          <ng-container matColumnDef="activityCount">
+              <mat-header-cell *matHeaderCellDef>Activity</mat-header-cell>
+              <mat-cell *matCellDef="let a">{{ a.activityCount }}</mat-cell>
+          </ng-container>
 
-            <ng-container matColumnDef="activityCount">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> ActivityCount Count </mat-header-cell>
-                <mat-cell *matCellDef="let activity"> {{ activity.activityCount }} </mat-cell>
-            </ng-container>
+          <ng-container matColumnDef="userBalance">
+            <mat-header-cell *matHeaderCellDef>Balance</mat-header-cell>
+            <mat-cell *matCellDef="let a"><strong>${{ a.userBalance }}</strong></mat-cell>
+          </ng-container>
 
-            <ng-container matColumnDef="userBalance">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Running Balance </mat-header-cell>
-                <mat-cell *matCellDef="let activity">$ {{ activity.userBalance }} </mat-cell>
-            </ng-container>
-
-            <mat-header-row *matHeaderRowDef="displayedActivityLogColumns"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: displayedActivityLogColumns"></mat-row>
+          <mat-header-row *matHeaderRowDef="displayedActivityLogColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedActivityLogColumns"></mat-row>
         </mat-table>
+      </div>
     </mat-card>
-
+  </div>
 </main>

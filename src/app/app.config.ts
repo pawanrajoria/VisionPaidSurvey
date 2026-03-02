@@ -1,5 +1,3 @@
-// src/app/app.config.ts
-
 import {
   ApplicationConfig,
   provideZoneChangeDetection,
@@ -8,7 +6,8 @@ import {
   inject,
   PLATFORM_ID,
   provideAppInitializer,
-  provideBrowserGlobalErrorListeners, isDevMode,
+  provideBrowserGlobalErrorListeners,
+  isDevMode,
 } from '@angular/core';
 
 import {
@@ -38,8 +37,11 @@ import * as TablerIcons from 'angular-tabler-icons/icons';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { SharedModule } from './shared.module';
 
-import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
+// ✅ NEW MODULAR FIREBASE IMPORTS
+import { initializeApp as provideInit, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+
+// ✅ COMPAT FIREBASE IMPORTS
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule, SETTINGS as AUTH_SETTINGS } from '@angular/fire/compat/auth';
 
@@ -48,7 +50,6 @@ import { ConfigService } from './config.service';
 import { authInterceptor } from './components/auth/auth.interceptor';
 import { provideServiceWorker } from '@angular/service-worker';
 
-// ✅ Firebase Config
 const firebaseConfig = {
   apiKey: "AIzaSyBs6AtPBpCdFwQWRdJC0gWvuz6nFxHL-I4",
   authDomain: "visionpaidsurvey.firebaseapp.com",
@@ -59,7 +60,6 @@ const firebaseConfig = {
   measurementId: "G-LE58YJQQHT"
 };
 
-// ✅ App Config Initialization
 function initConfigService() {
   const configService = inject(ConfigService);
   return configService.loadConfigs();
@@ -90,7 +90,6 @@ export function multiHttpLoaderFactory(http: HttpClient) {
   ]);
 };
 
-// ✅ APP_INITIALIZER to preload translations
 function initTranslateService(): () => Promise<void> {
   const translate = inject(TranslateService);
   translate.setDefaultLang('en');
@@ -121,14 +120,22 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideAnimationsAsync(),
 
+    // ✅ MODULAR PROVIDERS (Fixes the NG0201 Error)
+    provideFirebaseApp(() => provideInit(firebaseConfig)),
+    provideAuth(() => getAuth()),
+    // provideMessaging(() => getMessaging()),
+
     TranslateService,
 
     importProvidersFrom(
       SharedModule,
       TablerIconsModule.pick(TablerIcons),
       NgScrollbarModule,
-      AngularFireAuthModule,
+      
+      // ✅ COMPAT PROVIDERS (Keeps your existing login working)
       AngularFireModule.initializeApp(firebaseConfig),
+      AngularFireAuthModule,
+
       TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,
@@ -145,32 +152,17 @@ export const appConfig: ApplicationConfig = {
       multi: true
     },
 
-    {
-      provide: APP_INITIALIZER,
-      useFactory: (platformId: Object) => {
-        return () => {
-          if (isPlatformBrowser(platformId)) {
-            const app = initializeApp(firebaseConfig);
-            getAnalytics(app);
-          }
-        };
-      },
-      deps: [PLATFORM_ID],
-      multi: true
-    }, provideServiceWorker('ngsw-worker.js', {
-      enabled: !isDevMode(),
-      registrationStrategy: 'registerWhenStable:30000'
-    }), provideServiceWorker('ngsw-worker.js', {
+    provideServiceWorker('ngsw-worker.js', {
       enabled: !isDevMode(),
       registrationStrategy: 'registerWhenStable:30000'
     }),
+
     {
       provide: AUTH_SETTINGS,
       useFactory: (platformId: Object) => {
         if (isPlatformBrowser(platformId)) {
           return {};
         }
-        // return null to skip auth on SSR
         return null;
       },
       deps: [PLATFORM_ID],

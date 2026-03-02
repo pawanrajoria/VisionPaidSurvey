@@ -5,6 +5,10 @@
     <router-outlet></router-outlet>
     <!-- <app-root-livebanner></app-root-livebanner> -->
 </div>
+
+@if(!isMobile){
+<app-apk-toggle></app-apk-toggle>
+}
 <app-root-footer></app-root-footer>
 
 <button mat-fab class="cookie-button" (click)="showConsent(false)">

@@ -5,27 +5,29 @@
   "projects": {
     "VisionPaidSurvey": {
       "projectType": "application",
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "",
-      "sourceRoot": "src",
-      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/VisionPaidSurvey",
+            "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "server": "src/main.server.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              "src/firebase-messaging-sw.js",
               {
                 "glob": "ads.txt",
                 "input": "./",
@@ -41,7 +43,7 @@
               "src/styles.scss",
               "src/assets/styles/style.scss"
             ],
-            "server": "src/main.server.ts",
+            "scripts": [],
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
@@ -52,19 +54,23 @@
           },
           "configurations": {
             "production": {
+              "outputHashing": "all",
+              "optimization": true,
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "10mb",
-                  "maximumError": "10mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "10mb",
-                  "maximumError": "10mb"
+                  "maximumWarning": "10kb",
+                  "maximumError": "50kb"
                 }
               ],
-              "outputHashing": "all",
               "serviceWorker": "ngsw-config.json"
             },
             "development": {
@@ -78,11 +84,11 @@
         "serve": {
           "builder": "@angular/build:dev-server",
           "configurations": {
-            "production": {
-              "buildTarget": "VisionPaidSurvey:build:production"
-            },
             "development": {
               "buildTarget": "VisionPaidSurvey:build:development"
+            },
+            "production": {
+              "buildTarget": "VisionPaidSurvey:build:production"
             }
           },
           "defaultConfiguration": "development"
@@ -93,57 +99,22 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              {
-                "glob": "ads.txt",
-                "input": "./",
-                "output": "./"
-              },
-              {
-                "glob": "config.json",
-                "input": "src/assets",
-                "output": "assets"
-              }
+              "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/assets/styles/style.scss"
+              "src/styles.scss"
             ]
           }
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/VisionPaidSurvey/server",
-            "main": "src/main.server.ts",
-            "tsConfig": "tsconfig.server.json"
-          },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "sourceMap": false,
-              "extractLicenses": true
-            },
-            "development": {
-              "optimization": false,
-              "sourceMap": true,
-              "extractLicenses": false
-            }
-          },
-          "defaultConfiguration": "production"
         }
       }
     }
   },
   "cli": {
-    "analytics": "5bbe333e-958a-4c2a-8bbf-aeb684423003"
+    "analytics": false
   }
 }

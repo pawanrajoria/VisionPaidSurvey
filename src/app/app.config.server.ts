@@ -13,7 +13,6 @@ function initTranslateServiceServer(): () => Promise<void> {
   translate.setDefaultLang('en');
   return () =>
     translate.use('en').toPromise().then(() => {
-      console.log('✅ Translations loaded on server');
     });
 }
 

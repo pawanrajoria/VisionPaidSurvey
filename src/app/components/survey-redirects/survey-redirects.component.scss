@@ -1,0 +1,262 @@
+/* ===============================
+   COLOR VARIABLES
+================================ */
+$primary: #105749;
+$success: #22c55e;
+$warning: #f59e0b;
+$error: #ef4444;
+$text-dark: #1e293b;
+$text-muted: #64748b;
+
+/* ===============================
+   PAGE WRAPPER
+================================ */
+.page-wrapper {
+  min-height: 100vh;
+  background: radial-gradient(circle at top right, #eef2ff, #f8fafc);
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* ===============================
+   CONTAINER
+================================ */
+.survey-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===============================
+   STATUS CARD (GLASS)
+================================ */
+.status-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 1rem 1rem;
+  border-radius: 32px !important;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08) !important;
+
+  /* prevent translate jitter */
+  overflow: visible;
+}
+
+/* ===============================
+   ICON + TIMER
+================================ */
+.timer-icon-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1.5rem;
+}
+
+.progress-ring {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-90deg);
+  color: $primary;
+
+  &__circle {
+    stroke-dasharray: 326.7;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.35s linear;
+    animation: drain 3s linear forwards;
+  }
+}
+
+@keyframes drain {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: 326.7; }
+}
+
+.status-icon-header {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  mat-icon {
+    font-size: 64px;
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.success-icon { color: $success; }
+.warning-icon { color: $warning; }
+.error-icon   { color: $error; }
+
+/* ===============================
+   TITLE & TEXT
+================================ */
+.status-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: $text-dark;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: $text-muted;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+/* ===============================
+   REDIRECT PILL
+================================ */
+.redirect-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 6px 16px;
+  border-radius: 999px;
+
+  background: #f1f5f9;
+  color: $primary;
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  .pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $primary;
+    animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  }
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(0.33); opacity: 1; }
+  80%,
+  100% { opacity: 0; }
+}
+
+/* ===============================
+   DIVIDER
+================================ */
+.soft-divider {
+  height: 1px;
+  margin: 2rem 0 1.5rem;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #e2e8f0,
+    transparent
+  );
+}
+
+/* ===============================
+   PROMO SECTION
+================================ */
+.promo-section {
+  text-align: center;
+
+  .brand-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: $primary;
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $text-dark;
+    margin-bottom: 0.4rem;
+  }
+
+  p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* ===============================
+   ACTION BUTTONS
+================================ */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 52px;
+    border-radius: 16px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .btn-glow {
+    background: $primary !important;
+    color: white !important;
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.35);
+  }
+
+  .btn-outline {
+    border: 1px solid #e2e8f0 !important;
+    color: #475569 !important;
+    background: white !important;
+  }
+}
+
+/* ===============================
+   DESKTOP BUTTON LAYOUT
+================================ */
+@media (min-width: 480px) {
+  .action-buttons {
+    flex-direction: row;
+
+    a {
+      flex: 1;
+    }
+  }
+}
+
+/* ===============================
+   GOOGLE TRANSLATE FIX
+================================ */
+::ng-deep .goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+::ng-deep body {
+  top: 0 !important;
+}
+
+.open-note {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  &::before {
+    content: "↗";
+    font-size: 0.8rem;
+  }
+}

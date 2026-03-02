@@ -47,7 +47,6 @@ export class ConfigService {
                 this.httpClient.get<Configs>('assets/config.json')
             );
         } catch (error) {
-            console.error('Error loading configuration:', error);
             this.configs = {
                 BaseUrl: '',
                 AppUrl: '',

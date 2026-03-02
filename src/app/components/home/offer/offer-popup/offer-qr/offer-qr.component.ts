@@ -34,7 +34,7 @@ export class OfferQRDialog extends BaseComponent implements AfterViewInit {
     copyToClipboard(text: string) {
         if (!!this.nav) {
             this.nav.clipboard.writeText(text).then(() => {
-                console.log('Copied to clipboard:', text);
+                // console.log('Copied to clipboard:', text);
                 // You can show a snackbar/toast if desired
             });
         }

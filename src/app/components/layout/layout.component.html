@@ -1,36 +1,44 @@
 <mat-sidenav-container class="mainWrapper" autosize autoFocus dir="ltr">
-    <!-- ============================================================== -->
-    <!-- Vertical Sidebar -->
-    <!-- ============================================================== -->
     <mat-sidenav #leftsidenav [mode]="isOver ? 'over' : 'side'" [opened]="!isOver"
         (openedChange)="onSidenavOpenedChange($event)" (closedStart)="onSidenavClosedStart()" class="sidebarNav">
         <div class="flex-layout">
             <app-sidebar (toggleMobileNav)="sidenav.toggle()" [showToggle]="isOver"></app-sidebar>
             <ng-scrollbar class="position-relative" style="height: 100%">
                 <mat-nav-list class="sidebar-list">
-                    @for(item of allowedMenus; track item) {
-                    <app-nav-item [item]="item" (notify)="sidenav.toggle()">
-                    </app-nav-item>
+                    @if(allowedMenus && allowedMenus.length > 0) {
+                    @for(item of allowedMenus; track item.route) {
+                    <app-nav-item [item]="item" (notify)="sidenav.toggle()"></app-nav-item>
+                    }
+                    } @else {
+                    <mat-list-item>Loading...</mat-list-item>
                     }
                 </mat-nav-list>
             </ng-scrollbar>
         </div>
     </mat-sidenav>
 
-    <!-- ============================================================== -->
-    <!-- Main Content -->
-    <!-- ============================================================== -->
     <mat-sidenav-content class="contentWrapper" #content>
-        <!-- ============================================================== -->
-        <!-- VerticalHeader -->
-        <!-- ============================================================== -->
+        @if (activeNotification) {
+        <div class="top-notification-banner" [class.show]="activeNotification">
+            <div class="notification-content">
+                <mat-icon>notifications_active</mat-icon>
+                <div class="text">
+                    <strong>{{ activeNotification.title }}</strong>
+                    <p>{{ activeNotification.body }}</p>
+                </div>
+                <button mat-icon-button (click)="activeNotification = null">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+        </div>
+        }
 
-        <app-header [showToggle]="!isOver" (toggleMobileNav)="sidenav.toggle()"></app-header>
+        <app-header [showToggle]="!isOver" [notificationCount]="notificationHistory.length"
+            [notificationHistory]="notificationHistory" (toggleMobileNav)="sidenav.toggle()"
+            (removeNotification)="clearNotifications()">
+        </app-header>
 
         <main class="pageWrapper maxWidth">
-            <!-- ============================================================== -->
-            <!-- Outlet -->
-            <!-- ============================================================== -->
             <router-outlet></router-outlet>
         </main>
 
@@ -38,7 +46,5 @@
             Design & Developed by <a class="text-decoration-none" href="https://profitpiller.com/"
                 target="_blank">profitpiller.com</a>
         </div>
-
     </mat-sidenav-content>
-
 </mat-sidenav-container>

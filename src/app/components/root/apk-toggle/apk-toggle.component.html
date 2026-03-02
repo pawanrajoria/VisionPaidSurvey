@@ -1,0 +1,31 @@
+<div class="apk-widget" [class.closed]="!isOpen">
+
+    <!-- Header Toggle -->
+    <div class="apk-header" (click)="toggle()">
+
+        <div class="left">
+            <mat-icon>phone_android</mat-icon>
+            <span>Get ProfitPiller App</span>
+        </div>
+
+        <mat-icon class="arrow" [class.rotate]="isOpen">
+            expand_more
+        </mat-icon>
+
+    </div>
+
+    <!-- Body -->
+    <div class="apk-body" *ngIf="isOpen">
+
+        <div class="qr-container">
+            <!-- Replace with your QR -->
+            <img src="assets/images/apk-qr.PNG" alt="Download APK QR">
+        </div>
+
+        <div class="scan-text">
+            SCAN TO DOWNLOAD
+        </div>
+
+    </div>
+
+</div>

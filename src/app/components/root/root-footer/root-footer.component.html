@@ -1,36 +1,96 @@
 <footer class="footer-container">
     <div class="footer-content">
+
+        <!-- LEFT : LOGO + TRUST -->
         <div class="footer-logo">
-            <img src="assets/images/logo.png" alt="Profitpiller logo" class="logo" />
-            <p>{{ 'footer.copyright' | translate }}<br /> {{ 'footer.productOf' | translate }} <a target="_blank" href="https://cralpkresearch.com/">{{ 'footer.cralpkResearchGroup' | translate }}</a>
+            <img src="assets/images/logo.png" alt="ProfitPiller logo" class="logo" />
+
+            <!-- Trustpilot Badge -->
+            <div class="trustpilot-inline">
+                <a href="https://www.trustpilot.com/review/profitpiller.com" target="_blank" rel="noopener">
+
+                    <span class="tp-text">
+                        {{ 'Excellent' | translate }}
+                    </span>
+
+                    <div class="tp-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+
+                    <span class="tp-brand">
+                        <span class="tp-brand-star">★</span>
+                        Trustpilot
+                    </span>
+
+                </a>
+            </div>
+
+            <p class="footer-copy">
+                © 2025 Profit Piller. All rights reserved.<br />
+                A product of
+                <a href="https://cralpkresearch.com/" target="_blank">
+                    Cralpk Research Group
+                </a>
             </p>
         </div>
 
+        <!-- RIGHT : LINKS -->
         <div class="footer-links">
+
             <div class="footer-column">
-                <h4>{{ 'footer.platform.title' | translate }}</h4>
-                <a href="javascript://" routerLink="/auth/login">{{ 'footer.platform.loginOrSignUp' | translate }}</a>
-                <a href="javascript://" routerLink="/aboutus">{{ 'footer.platform.aboutProfitpiller' | translate }}</a>
-                <a href="javascript://" routerLink="/contactus">{{ 'footer.platform.contactUs' | translate }}</a>
-                <a href="javascript://" routerLink="/help">{{ 'footer.platform.help' | translate }}</a>
+                <h4>Platform</h4>
+                <a routerLink="/auth/login">Log In or Sign Up</a>
+                <a routerLink="/aboutus">About ProfitPiller</a>
+                <a routerLink="/contactus">Contact Us</a>
+                <a routerLink="/help">Help</a>
             </div>
 
             <div class="footer-column">
-                <h4>{{ 'footer.legal.title' | translate }}</h4>
-                <a href="javascript://" routerLink="/privacy-policy">{{ 'footer.legal.privacyPolicy' | translate }}</a>
-                <a href="javascript://" routerLink="/terms-conditions">{{ 'footer.legal.termsConditions' | translate }}</a>
-                <a href="javascript://" routerLink="/cookie-policy">{{ 'footer.legal.cookiePolicy' | translate }}</a>
-                <a href="javascript://" routerLink="/do-not-sell">{{ 'footer.legal.doNotSell' | translate }}</a>
+                <h4>Legal</h4>
+                <a routerLink="/privacy-policy">Privacy Policy</a>
+                <a routerLink="/terms-conditions">Terms & Conditions</a>
+                <a routerLink="/cookie-policy">Cookie Policy</a>
+                <a routerLink="/do-not-sell">Do Not Sell My Info</a>
             </div>
 
             <div class="footer-column">
-                <h4>{{ 'footer.exploreMore.title' | translate }}</h4>
-                <a href="javascript://" routerLink="/cashout">{{ 'footer.exploreMore.earnCash' | translate }}</a>
-                <a href="javascript://" routerLink="/giftcard">{{ 'footer.exploreMore.getRewarded' | translate }}</a>
-                <a href="javascript://" routerLink="/amazongiftcard">{{ 'footer.exploreMore.redeemAmazon' | translate }}</a>
-                <a href="javascript://" routerLink="/paypal">{{ 'footer.exploreMore.getPaiyPal' | translate }}</a>
-                <a href="javascript://" routerLink="/visa">{{ 'footer.exploreMore.visaGiftCards' | translate }}</a>
+                <h4>Explore More</h4>
+                <a routerLink="/cashout">Earn Cash from Surveys</a>
+                <a routerLink="/giftcard">Gift Cards</a>
+                <a routerLink="/amazongiftcard">Amazon Gift Cards</a>
+                <a routerLink="/paypal">PayPal Rewards</a>
+                <a routerLink="/visa">Visa Gift Cards</a>
             </div>
+
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+
+                
+                  <div class="social-icons">
+                    <a href="https://www.facebook.com/profitpiller/" target="_blank" aria-label="Facebook">
+                        <mat-icon svgIcon="facebook"></mat-icon>
+                    </a>
+                    <a href="https://x.com/profitpiller" target="_blank" aria-label="Twitter X">
+                        <mat-icon svgIcon="twitterx"></mat-icon>
+                    </a>
+                    <a href="https://www.linkedin.com/company/profitpiller" target="_blank" aria-label="LinkedIn">
+                        <mat-icon svgIcon="linkedin"></mat-icon>
+                    </a>
+                </div>
+
+                <h4 class="download-title">Download Our App</h4>
+
+                <a class="app-badge"
+                    href="https://play.google.com/store/apps/details?id=com.cralpkresearch.profitpiller"
+                    target="_blank">
+                    <img src="assets/images/googleplay.png" alt="Google Play">
+                </a>
+            </div>
+
         </div>
     </div>
 </footer>

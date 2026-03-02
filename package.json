@@ -7,7 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:VisionPaidSurvey": "node dist/VisionPaidSurvey/server/server.mjs"
+    "serve:ssr": "node dist/VisionPaidSurvey/server/server.mjs",
+    "build:ssr": "ng build && rename dist\\VisionPaidSurvey\\browser\\index.html index.csr.html",
+    "copy-dist": "if exist functions\\dist rd /s /q functions\\dist && move dist functions\\dist",
+    "deploy-all": "npm run build:ssr && npm run copy-dist && firebase deploy --only functions,hosting"
   },
   "prettier": {
     "overrides": [

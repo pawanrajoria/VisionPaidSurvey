@@ -20,13 +20,13 @@ export class AuthService {
         private localStorageService: LocalStorageService) {
 
         this.angularFireAuth.authState.subscribe((user) => {
-            if (user) {
-                   console.log('User found.');
-                // User is signed in. You can store user data here.
-            } else {
-                // User is signed out.
-                 console.log('No User found.');
-            }
+            // if (user) {
+            //        console.log('User found.');
+            //     // User is signed in. You can store user data here.
+            // } else {
+            //     // User is signed out.
+            //      console.log('No User found.');
+            // }
         });
     }
 

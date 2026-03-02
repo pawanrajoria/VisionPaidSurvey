@@ -6,22 +6,30 @@ import path from 'node:path';
 import * as fs from 'node:fs';
 
 export class MultiTranslateServerLoader implements TranslateLoader {
-  constructor(
-    private resources: { prefix: string; suffix: string }[] = []
-  ) { }
+  constructor(private resources: { prefix: string; suffix: string }[] = []) { }
+
   public getTranslation(lang: string): Observable<any> {
     const translations: any = {};
-    const projectName = 'visionpaidsurvey';
-    const baseDir = path.join(process.cwd(), 'dist', projectName, 'browser');
+
+    // ✅ Fix: Use __dirname or import.meta.dirname to find the actual location
+    // Typically in Firebase: /functions/dist/projectName/server/
+    // So we go up one level to reach 'browser'
+    const serverDir = import.meta.dirname;
+    const baseDir = path.resolve(serverDir, '..', 'browser');
 
     this.resources.forEach((config) => {
       let filePath: string = '';
       try {
-        filePath = path.join(baseDir, config.prefix, `${lang}${config.suffix}`);
-        const fileContents = fs.readFileSync(filePath, 'utf8');
-        Object.assign(translations, JSON.parse(fileContents));
+        // config.prefix is '/assets/i18n/', but path.join handles slashes
+        filePath = path.join(baseDir, config.prefix, lang, config.suffix);
+
+        // Debugging: If this fails, this log will show up in Firebase Console
+        if (fs.existsSync(filePath)) {
+          const fileContents = fs.readFileSync(filePath, 'utf8');
+          Object.assign(translations, JSON.parse(fileContents));
+        } else {
+        }
       } catch (e) {
-        console.error(`Could not load translation file on server from path: ${filePath}`);
       }
     });
 

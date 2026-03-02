@@ -10,3 +10,34 @@
         }
     }
 }
+.top-notification-banner {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #105749; // Or your primary color
+    color: white;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    animation: slideDown 0.3s ease-out;
+
+    .notification-content {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        mat-icon { margin-right: 15px; }
+        
+        .text {
+            flex: 1;
+            strong { display: block; font-size: 14px; }
+            p { margin: 0; font-size: 12px; opacity: 0.9; }
+        }
+    }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}

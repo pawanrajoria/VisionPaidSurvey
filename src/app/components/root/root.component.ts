@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, Inject, OnInit, PLATFORM_ID, ViewEncapsulation } from "@angular/core";
 import { SharedModule } from "../../shared.module";
 import { animate, query, stagger, style, transition, trigger } from "@angular/animations";
 import { RootFooterComponent } from "./root-footer/root-footer.component";
@@ -6,10 +6,14 @@ import { RootHeaderComponent } from "./root-header/root-header.component";
 import { Router } from "@angular/router";
 import { CookiePolicyPopupComponent } from "./root-cookiepolicy/root-cookie-policy-popup/root-cookie-policy-popup";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { LocalStorageService } from "../../localstorage.service";
+import { isPlatformBrowser } from "@angular/common";
+import { ApkToggleComponent } from "./apk-toggle/apk-toggle.component";
+import { DeviceService } from "../../device.service";
 
 @Component({
     selector: 'app-root',
-    imports: [SharedModule, RootHeaderComponent, RootFooterComponent],
+    imports: [SharedModule, RootHeaderComponent, RootFooterComponent, ApkToggleComponent],
     templateUrl: './root.component.html',
     styleUrls: ['./root.component.scss'],
     animations: [
@@ -31,7 +35,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 })
 export class RootComponent implements OnInit {
     selectedCategory = 'Cash';
-
+    isMobile = false;
     categories = [
         { name: 'Cash', icon: 'account_balance' },
         { name: 'Gift Cards', icon: 'card_giftcard' },
@@ -78,12 +82,19 @@ export class RootComponent implements OnInit {
     ];
 
 
-    constructor(private router: Router, private snackBar: MatSnackBar) {
+    constructor(private router: Router, private snackBar: MatSnackBar,
+        private deviceService: DeviceService,
+        private localStorageService: LocalStorageService, @Inject(PLATFORM_ID) private platformId: Object) {
+        this.isMobile = this.deviceService.isMobile();
     }
 
 
     ngOnInit(): void {
-        this.showConsent();
+        if (isPlatformBrowser(this.platformId)) {
+            setTimeout(() => {
+                this.showConsent();
+            }, 0);
+        }
     }
 
 
@@ -92,7 +103,7 @@ export class RootComponent implements OnInit {
     }
 
     selectReward(reward: any) {
-        console.log('Selected:', reward);
+        // console.log('Selected:', reward);
     }
 
     goToApp() {
@@ -110,7 +121,7 @@ export class RootComponent implements OnInit {
             });
         }
         else {
-            const consent = localStorage.getItem('cookiesAccepted');
+            const consent = this.localStorageService.getItem('cookiesAccepted');
             if (consent === null) {
                 this.snackBar.openFromComponent(CookiePolicyPopupComponent, {
                     duration: 0, // stays open until action
