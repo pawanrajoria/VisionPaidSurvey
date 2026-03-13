@@ -13,7 +13,7 @@ export class RedirectComponent implements OnInit {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     @Optional() @Inject(REQUEST) private request: any
-  ) {}
+  ) { }
 
   ngOnInit() {
     let userAgent = '';
@@ -50,8 +50,8 @@ export class RedirectComponent implements OnInit {
   }
 
   redirect(url: string) {
-    if (isPlatformBrowser(this.platformId)) {
-      window.location.href = url;
-    }
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    window.location.href = url;
   }
 }

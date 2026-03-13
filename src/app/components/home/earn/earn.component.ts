@@ -11,6 +11,7 @@ import { BaseComponent } from "../../../base.component";
 import { ISurveyVM } from "../survey/survey.vm";
 import { SurveyFeedBackPopupComponent } from "../survey/survey-common-popup/survey-feedback-popup/survey-feedback-popup";
 import { OfferPopupDialog } from "../offer/offer-popup/offer-popup.component";
+import { FraudService } from "../../../frauddetection.service";
 
 @Component({
     selector: 'app-earn',
@@ -53,11 +54,15 @@ export class EarnComponent extends BaseComponent implements OnInit {
     readonly dialog = inject(MatDialog);
     dialogRef: MatDialogRef<any> | null = null;
 
-    constructor(private breakpointObserver: BreakpointObserver) {
+    constructor(private breakpointObserver: BreakpointObserver, private fraudService: FraudService) {
         super();
     }
 
     async ngOnInit() {
+
+        this.fraudService.resetTracking();
+        this.fraudService.startTracking();
+
         this.getOffers();
         this.getSurveys();
     }
@@ -170,6 +175,13 @@ export class EarnComponent extends BaseComponent implements OnInit {
     }
 
     async startSurvey(item: ISurveyVM) {
+        const fraudSignals: any = await this.fraudService.collectSignals();
+        if (fraudSignals && fraudSignals.decision === "BLOCK") {
+            await this.logUserActivity("Survey", "StartSurvey", "SurveyScore", fraudSignals.decision);
+            // alert("Suspicious activity detected");
+        }
+
+
         if (this.win) {
             const winNew = this.win.open(item.clickUrl, '_blank');
 

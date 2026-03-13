@@ -9,6 +9,7 @@ import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { LocalStorageService } from "../../../localstorage.service";
 import { GoogleService } from "../google.service";
 import { GoogleAuthProvider } from "@firebase/auth";
+import { FraudService } from "../../../frauddetection.service";
 
 
 @Component({
@@ -27,6 +28,7 @@ export class LoginComponent implements OnInit {
     constructor(private fb: FormBuilder, private router: Router, private authService: AuthService,
         private sharedDataService: SharedDataService, private activatedRoute: ActivatedRoute,
         private googleAuth: GoogleService, private localStorageService: LocalStorageService,
+        private fraudService: FraudService,
         private angularFireAuth: AngularFireAuth) {
         this.loginForm = this.fb.group({
             email: ['', [Validators.required, Validators.email]],
@@ -44,6 +46,8 @@ export class LoginComponent implements OnInit {
 
 
     ngOnInit(): void {
+        this.fraudService.resetTracking();
+        this.fraudService.startTracking();
     }
 
     async googleLogin() {
@@ -56,7 +60,7 @@ export class LoginComponent implements OnInit {
             if (userCredential != null && userCredential.user != null) {
                 const idToken = await userCredential.user.getIdToken();
 
-                const response = await this.authService.firebaseLogin({
+                await this.authService.firebaseLogin({
                     idToken: idToken,
                     fullName: userCredential.user?.displayName,
                     userId: userCredential.user?.uid,
@@ -65,10 +69,6 @@ export class LoginComponent implements OnInit {
                     phoneNumber: userCredential.user?.phoneNumber,
                     bonusCode: this.bonusCode
                 });
-                if (!!response && !!response.token) {
-                    this.localStorageService.setItem("token", response.token);
-                    this.router.navigate(['/app']);
-                }
             }
         }
     }

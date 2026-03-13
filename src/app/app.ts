@@ -16,6 +16,7 @@ import { LocalStorageService } from './localstorage.service';
 import { BaseComponent } from './base.component';
 import { GoogleService } from './components/auth/google.service';
 import { VersionCheckService } from './version-check.service';
+import { RecaptchaV3Module } from 'ng-recaptcha';
 
 @Component({
   selector: 'app-root',
@@ -46,6 +47,7 @@ export class AppComponent extends BaseComponent implements OnInit {
     super();
     this.isLoading$ = this.loader.loading$;
     this.versionCheck.check();
+     this.translate.use('en');
     // const browserLang = this.isBrowser ? this.translate.getBrowserLang() : 'en';
     // this.translate.setDefaultLang('en');
 

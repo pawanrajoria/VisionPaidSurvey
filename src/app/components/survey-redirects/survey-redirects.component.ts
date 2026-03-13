@@ -1,19 +1,24 @@
-import { Component, DOCUMENT, Inject, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { SharedModule } from '../../shared.module';
+import { Component, DOCUMENT, Inject, OnInit, PLATFORM_ID, Renderer2, OnDestroy, inject, DestroyRef } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { SharedModule } from '../../shared.module';
 
 @Component({
     selector: 'app-survey-redirects',
+    standalone: true,
     imports: [SharedModule],
     templateUrl: './survey-redirects.component.html',
     styleUrls: ['./survey-redirects.component.scss']
 })
-export class SurveyRedirectsComponent implements OnInit {
+export class SurveyRedirectsComponent implements OnInit, OnDestroy {
     status: number = 0;
     redirectUrl: string = '';
     countdown: number = 3;
-    private timer: any;
+    private timer: ReturnType<typeof setInterval> | undefined;
+
+    // Injecting DestroyRef for modern cleanup
+    private destroyRef = inject(DestroyRef);
 
     constructor(
         private route: ActivatedRoute,
@@ -23,30 +28,37 @@ export class SurveyRedirectsComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        // 1. Get Status from Query Params
-        this.route.queryParams.subscribe(params => {
-            this.status = +params['status'] || 0;
-            this.redirectUrl = params['redirectUrl'] || '';
-        });
+        // 1. Handle Query Params with auto-cleanup
+        this.route.queryParams
+            .pipe(takeUntilDestroyed(this.destroyRef))
+            .subscribe(params => {
+                this.status = +params['status'] || 0;
+                this.redirectUrl = params['redirectUrl'] || '';
+            });
 
-        // 2. Browser-only Logic (SSR Safety)
+        // 2. Browser-only Execution
         if (isPlatformBrowser(this.platformId)) {
             this.initTranslate();
             this.startRedirectTimer();
         }
     }
 
-    initTranslate(): void {
-        // Define the global callback function for Google Translate
-        (window as any).googleTranslateElementInit = () => {
-            new (window as any).google.translate.TranslateElement({
-                pageLanguage: 'en',
-                layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: false
-            }, 'google_translate_element');
+    private initTranslate(): void {
+        const windowRef = this.document.defaultView as any;
+        if (!windowRef) return;
+
+        // Define global callback safely
+        windowRef.googleTranslateElementInit = () => {
+            if (windowRef.google?.translate) {
+                new windowRef.google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    layout: windowRef.google.translate.TranslateElement.InlineLayout.SIMPLE,
+                    autoDisplay: false
+                }, 'google_translate_element');
+            }
         };
 
-        // Dynamically inject the script
+        // Inject script using Renderer2 (Best Practice)
         const script = this.renderer.createElement('script');
         script.type = 'text/javascript';
         script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
@@ -57,17 +69,15 @@ export class SurveyRedirectsComponent implements OnInit {
 
     openTranslate(): void {
         if (isPlatformBrowser(this.platformId)) {
-            // Find the Google Translate widget trigger (it's injected into a specific class)
             const element = this.document.querySelector('.goog-te-menu-value span') as HTMLElement;
-            if (element) {
-                element.click();
-            } else {
-                // console.log('Translate widget still loading...');
-            }
+            element?.click();
         }
     }
 
-    startRedirectTimer(): void {
+    private startRedirectTimer(): void {
+        // Double check browser platform to prevent SSR hanging
+        if (!isPlatformBrowser(this.platformId)) return;
+
         this.timer = setInterval(() => {
             if (this.countdown > 0) {
                 this.countdown--;
@@ -84,17 +94,20 @@ export class SurveyRedirectsComponent implements OnInit {
         }
     }
 
-    ngOnDestroy(): void {
-        this.stopTimer();
-        // Clean up global callback to prevent memory leaks in SSR/Browser
-        if (isPlatformBrowser(this.platformId)) {
-            delete (window as any).googleTranslateElementInit;
+    goToSurvey(): void {
+        if (isPlatformBrowser(this.platformId) && this.redirectUrl) {
+            this.document.location.href = this.redirectUrl;
         }
     }
 
-    goToSurvey(): void {
-        if (this.redirectUrl && isPlatformBrowser(this.platformId)) {
-            window.location.href = this.redirectUrl;
+    ngOnDestroy(): void {
+        this.stopTimer();
+
+        if (isPlatformBrowser(this.platformId)) {
+            const windowRef = this.document.defaultView as any;
+            if (windowRef) {
+                delete windowRef.googleTranslateElementInit;
+            }
         }
     }
 }

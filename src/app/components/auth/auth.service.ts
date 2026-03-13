@@ -1,5 +1,5 @@
 import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { Inject, Injectable, PLATFORM_ID } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { ConfigService } from "../../config.service";
 import { firstValueFrom } from "rxjs";
@@ -7,6 +7,8 @@ import { Router } from "@angular/router";
 import * as CryptoJS from 'crypto-js';
 import { AccountService } from "../home/account.service";
 import { LocalStorageService } from "../../localstorage.service";
+import { isPlatformBrowser } from "@angular/common";
+import { FraudService } from "../../frauddetection.service";
 
 
 @Injectable({ providedIn: 'root' })
@@ -17,7 +19,8 @@ export class AuthService {
 
     constructor(private http: HttpClient, public angularFireAuth: AngularFireAuth,
         private config: ConfigService, private router: Router, private accountService: AccountService,
-        private localStorageService: LocalStorageService) {
+        private fraudService: FraudService,
+        private localStorageService: LocalStorageService, @Inject(PLATFORM_ID) private platformId: Object) {
 
         this.angularFireAuth.authState.subscribe((user) => {
             // if (user) {
@@ -44,6 +47,10 @@ export class AuthService {
     }
 
     async isAuthenticated(): Promise<boolean> {
+        if (!isPlatformBrowser(this.platformId)) {
+            return false;
+        }
+
         const googleUser = await firstValueFrom(this.angularFireAuth.authState);
         const dbAuth = !!this.localStorageService.getItem('token'); // Check if database token exists
         return (!!googleUser && !!dbAuth) || (!!dbAuth);
@@ -52,8 +59,15 @@ export class AuthService {
     async firebaseLogin(request: any): Promise<any> {
         const response = await this.http.post<any>(this.config.baseUrl + "auth/firebase-login", request).toPromise();
         if (!!response && !!response.token) {
+
             this.localStorageService.setItem("token", response.token);
             this.router.navigate(['/app']);
+
+
+            const fraudSignals: any = await this.fraudService.collectSignals();
+            // if (fraudSignals && fraudSignals.decision === "BLOCK") {
+            //     alert("Suspicious activity detected");
+            // } 
         }
     }
 

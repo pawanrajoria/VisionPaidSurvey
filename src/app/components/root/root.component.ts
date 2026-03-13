@@ -85,12 +85,14 @@ export class RootComponent implements OnInit {
     constructor(private router: Router, private snackBar: MatSnackBar,
         private deviceService: DeviceService,
         private localStorageService: LocalStorageService, @Inject(PLATFORM_ID) private platformId: Object) {
-        this.isMobile = this.deviceService.isMobile();
+
     }
 
 
     ngOnInit(): void {
         if (isPlatformBrowser(this.platformId)) {
+            this.isMobile = this.deviceService.isMobile();
+
             setTimeout(() => {
                 this.showConsent();
             }, 0);

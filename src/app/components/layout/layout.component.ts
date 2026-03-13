@@ -111,6 +111,7 @@ export class LayoutComponent extends BaseComponent implements AfterViewInit, OnD
         } else {
             this.allowedMenus = this.accountService.getAllowedMenus();
         }
+
     }
 
     private initBrowserFlow() {

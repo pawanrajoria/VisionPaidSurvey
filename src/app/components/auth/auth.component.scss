@@ -16,7 +16,7 @@
      background-size: 400% 400%;
      animation: Gradient 55s ease infinite;
      background: #fff;
-     background: url('/assets/images/backgrounds/rh-vps-bg.gif');
+     background: url('/assets/images/backgrounds/rh-vps-bg.webp');
      background-position: center;
      z-index: 0;
      &::after {
@@ -88,7 +88,7 @@
              //      top: 50px;
              //      left: 50px;
              //      border-radius: 100% 0 100% 100%;
-             //      background: url('/assets/images/backgrounds/rh-vps-bg.gif');
+             //      background: url('/assets/images/backgrounds/rh-vps-bg.webp');
              //      background-size: cover;
              //      background-position: center;
              //      background-size: cover;
@@ -101,7 +101,7 @@
                  z-index: -1;
                  -webkit-clip-path: polygon(0 0, 30% 0, 70% 10%);
                  clip-path: polygon(0 0, 100% 50%, 100% 80%);
-                 background: url('/assets/images/backgrounds/rh-vps-bg.gif');
+                 background: url('/assets/images/backgrounds/rh-vps-bg.webp');
                  background-size: cover;
                  background-position: center;
                  background-size: cover;
@@ -120,7 +120,7 @@
                          text-transform: uppercase;
                          font-weight: 700;
                          background-size: cover;
-                         background-image: url('/assets/images/backgrounds/rh-vps-bg.gif');
+                         background-image: url('/assets/images/backgrounds/rh-vps-bg.webp');
                          -webkit-background-clip: text;
                          animation: background-text-animation 15s linear infinite;
                          margin-bottom: 20px;

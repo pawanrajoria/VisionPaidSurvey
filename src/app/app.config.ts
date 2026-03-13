@@ -49,6 +49,8 @@ import { routes } from './app.routes';
 import { ConfigService } from './config.service';
 import { authInterceptor } from './components/auth/auth.interceptor';
 import { provideServiceWorker } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { RECAPTCHA_V3_SITE_KEY } from 'ng-recaptcha';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBs6AtPBpCdFwQWRdJC0gWvuz6nFxHL-I4",
@@ -90,14 +92,15 @@ export function multiHttpLoaderFactory(http: HttpClient) {
   ]);
 };
 
-function initTranslateService(): () => Promise<void> {
+function initTranslateService() {
   const translate = inject(TranslateService);
   translate.setDefaultLang('en');
-  return () => translate.use('en').toPromise().then(() => { });
+  return () => Promise.resolve();
 }
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    { provide: RECAPTCHA_V3_SITE_KEY, useValue: environment.RECAPTCHA_V3_SITE_KEY },
     provideBrowserGlobalErrorListeners(),
     provideAppInitializer(initConfigService),
     provideZoneChangeDetection({ eventCoalescing: true }),
@@ -112,7 +115,7 @@ export const appConfig: ApplicationConfig = {
     ),
 
     provideHttpClient(
-      withFetch(),
+      // withFetch(),
       withInterceptorsFromDi(),
       withInterceptors([authInterceptor])
     ),
@@ -131,7 +134,7 @@ export const appConfig: ApplicationConfig = {
       SharedModule,
       TablerIconsModule.pick(TablerIcons),
       NgScrollbarModule,
-      
+
       // ✅ COMPAT PROVIDERS (Keeps your existing login working)
       AngularFireModule.initializeApp(firebaseConfig),
       AngularFireAuthModule,
@@ -153,7 +156,7 @@ export const appConfig: ApplicationConfig = {
     },
 
     provideServiceWorker('ngsw-worker.js', {
-      enabled: !isDevMode(),
+      enabled: false,
       registrationStrategy: 'registerWhenStable:30000'
     }),
 

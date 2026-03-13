@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, Inject, OnInit, PLATFORM_ID, ViewEncapsulation } from "@angular/core";
 import { animate, query, stagger, style, transition, trigger } from "@angular/animations";
 import { ActivatedRoute, Router } from "@angular/router";
 import { SharedModule } from "../../../shared.module";
@@ -9,6 +9,7 @@ import { GoogleService } from "../../auth/google.service";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { GoogleAuthProvider, signInWithCredential } from "@firebase/auth";
 import { LocalStorageService } from "../../../localstorage.service";
+import { isPlatformBrowser } from "@angular/common";
 
 @Component({
     selector: 'app-root-home',
@@ -91,24 +92,22 @@ export class RootHomeComponent implements OnInit {
     bonusCode: string = "";
     constructor(private router: Router, private authService: AuthService,
         private googleAuth: GoogleService, private angularFireAuth: AngularFireAuth,
-        private route: ActivatedRoute, private localStorageService: LocalStorageService) {
+        private route: ActivatedRoute, private localStorageService: LocalStorageService,
+        @Inject(PLATFORM_ID) private platformId: Object) {
 
-        this.route.queryParams.subscribe(params => {
-            const ref = params['referralCode'];
-            if (ref) {
-                this.bonusCode = ref;
-            }
-        });
+
     }
 
     async googleLogin() {
+        if (!isPlatformBrowser(this.platformId)) return;
+
         const googleToken = await this.googleAuth.loginWithGoogleTab();
         if (googleToken) {
             this.localStorageService.removeItem('token');
             const credential = GoogleAuthProvider.credential(null, googleToken);
             const userCredential = await this.angularFireAuth.signInWithCredential(credential);
 
-             
+
 
             if (userCredential != null && userCredential.user != null) {
                 const idToken = await userCredential.user.getIdToken();
@@ -132,6 +131,16 @@ export class RootHomeComponent implements OnInit {
 
 
     async ngOnInit() {
+
+        if (isPlatformBrowser(this.platformId)) {
+            this.route.queryParams.subscribe(params => {
+                const ref = params['referralCode'];
+                if (ref) {
+                    this.bonusCode = ref;
+                }
+            });
+        }
+
         this.isLoggedIn = await this.authService.isAuthenticated();
     }
 

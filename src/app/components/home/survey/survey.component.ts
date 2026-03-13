@@ -7,6 +7,7 @@ import { SurveyQualifyPopupComponent } from "./survey-common-popup/survey-qualif
 import { SurveyFeedBackPopupComponent } from "./survey-common-popup/survey-feedback-popup/survey-feedback-popup";
 import { SurveyInstructionPopupComponent } from "./survey-common-popup/survey-instruction-popup/survey-instruction-popup";
 import { BaseComponent } from "../../../base.component";
+import { FraudService } from "../../../frauddetection.service";
 
 @Component({
     selector: 'app-survey',
@@ -24,11 +25,15 @@ export class SurveyComponent extends BaseComponent implements OnInit {
     surveyType: string = "Best Match Surveys";
     readonly dialog = inject(MatDialog);
 
-    constructor(private surveyService: SurveyService,) {
+    constructor(private surveyService: SurveyService, private fraudService: FraudService) {
         super();
     }
 
     async ngOnInit() {
+        this.fraudService.resetTracking();
+        this.fraudService.startTracking();
+
+
         await this.getSurveys();
         this.isApiLoaded = true;
         this.filterItems();
@@ -62,6 +67,12 @@ export class SurveyComponent extends BaseComponent implements OnInit {
     }
 
     async startSurvey(item: ISurveyVM) {
+        const fraudSignals: any = await this.fraudService.collectSignals();
+        if (fraudSignals && fraudSignals.decision === "BLOCK") {
+            await this.logUserActivity("Survey", "StartSurvey", "SurveyScore", fraudSignals.decision);
+            // alert("Suspicious activity detected");
+        }
+
         if (this.win) {
             const winNew = this.win.open(item.clickUrl, '_blank');
 
@@ -73,6 +84,7 @@ export class SurveyComponent extends BaseComponent implements OnInit {
 
         await this.logUserActivity("Survey", "StartSurvey", "Click", item.clickUrl);
         await this.feedbackSurvey(item);
+        await this.getSurveys();
     }
 
     getStars(rating: string): string[] {
@@ -115,7 +127,7 @@ export class SurveyComponent extends BaseComponent implements OnInit {
                 // call rating api
                 dialofref.close();
             } else if (result === "close") {
-                this.getSurveys();
+                // this.getSurveys();
                 dialofref.close();
             }
         });
