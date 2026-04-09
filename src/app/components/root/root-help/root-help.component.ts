@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { SharedModule } from "../../../shared.module";
+import { BaseComponent } from "../../../base.component";
 
 @Component({
     selector: 'app-root-help',
@@ -7,9 +8,10 @@ import { SharedModule } from "../../../shared.module";
     templateUrl: './root-help.component.html',
     styleUrls: ['./root-help.component.scss']
 })
-export class RootHelpComponent implements OnInit {
+export class RootHelpComponent extends BaseComponent implements OnInit {
 
     constructor() {
+        super();
     }
 
 

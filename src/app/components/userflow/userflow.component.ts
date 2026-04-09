@@ -1,9 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { SharedModule } from "../../shared.module";
+import { RouterOutlet } from "@angular/router";
 
 @Component({
     selector: 'app-userflow',
-    imports: [SharedModule],
+    imports: [RouterOutlet,SharedModule],
     templateUrl: './userflow.component.html',
     styleUrls: ['./userflow.component.scss']
 })

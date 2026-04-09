@@ -43,6 +43,33 @@ export class SeoService {
         this.metaService.updateTag({ name: 'twitter:site', content: '@Profitpiller' });
     }
 
+
+    updateHreflang(currentPath: string) {
+        if (!this.isBrowser) return;
+
+        const languages = ['en', 'hi']; // 👈 add more if needed
+        const baseUrl = 'https://profitpiller.com';
+
+        // Remove old hreflang tags
+        const existing = this.document.querySelectorAll("link[rel='alternate']");
+        existing.forEach(el => el.remove());
+
+        // Add hreflang links
+        languages.forEach(lang => {
+            const link: HTMLLinkElement = this.document.createElement('link');
+            link.setAttribute('rel', 'alternate');
+            link.setAttribute('hreflang', lang);
+            link.setAttribute('href', `${baseUrl}/${lang}${currentPath}`);
+            this.document.head.appendChild(link);
+        });
+
+        // ✅ x-default (VERY IMPORTANT for Google)
+        const defaultLink: HTMLLinkElement = this.document.createElement('link');
+        defaultLink.setAttribute('rel', 'alternate');
+        defaultLink.setAttribute('hreflang', 'x-default');
+        defaultLink.setAttribute('href', `${baseUrl}/en${currentPath}`);
+        this.document.head.appendChild(defaultLink);
+    }
     private setCanonicalURL(url: string) {
         if (!this.isBrowser) return;
 

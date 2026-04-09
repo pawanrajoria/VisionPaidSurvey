@@ -69,7 +69,7 @@
                 <p>{{ 'cookieBanner.message' | translate }}</p>
                 <button mat-raised-button color="primary">{{ 'cookieBanner.accept' | translate }}</button>
                 <button mat-stroked-button color="warn">{{ 'cookieBanner.reject' | translate }}</button>
-                <a routerLink="/cookie-policy">{{ 'cookieBanner.moreInfo' | translate }}</a>
+                <a  [routerLink]="['/', currentLang, 'cookie-policy']">{{ 'cookieBanner.moreInfo' | translate }}</a>
               </div> -->
 
             </mat-card>

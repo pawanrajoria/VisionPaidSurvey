@@ -6,6 +6,7 @@ import { Router } from "@angular/router";
 import { AuthService } from "../../auth/auth.service";
 import { AccountService } from "../account.service";
 import { LocalStorageService } from "../../../localstorage.service";
+import { BaseComponent } from "../../../base.component";
 
 @Component({
     selector: 'app-profile',
@@ -13,7 +14,7 @@ import { LocalStorageService } from "../../../localstorage.service";
     templateUrl: './profile.component.html',
     styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent extends BaseComponent implements OnInit {
 
     userInfo: IProfileVM = { level: "", totalOfferCompleted: "0", totalPointEarned: "0", totalRewardRedeemed: "0", totalSurveyCompleted: "" };
     userHeading: Array<IUserHeading> = [];
@@ -21,6 +22,7 @@ export class ProfileComponent implements OnInit {
     constructor(private profileService: ProfileService, private router: Router,
         public authService: AuthService, private accountService: AccountService,
         private localStorageService: LocalStorageService) {
+        super();
     }
 
     async ngOnInit() {

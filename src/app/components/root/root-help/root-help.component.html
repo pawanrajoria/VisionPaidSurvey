@@ -92,7 +92,7 @@
                         <li>{{ 'help.supportSection.point4' | translate }}</li>
                         <li>{{ 'help.supportSection.point5' | translate }}</li>
                     </ul>
-                    <a href="javascript://" routerLink="/contactus">{{ 'help.supportSection.contactButton' | translate
+                    <a href="javascript://"  [routerLink]="['/', currentLang, 'contactus']">{{ 'help.supportSection.contactButton' | translate
                         }} <mat-icon>{{ 'common.arrowForward' | translate }}</mat-icon></a>
                 </div>
             </div>

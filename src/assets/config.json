@@ -3,5 +3,6 @@
     "BaseUrl1": "https://localhost:7156/api/",
     "HostingDomain": "https://profitpiller.com/",
     "UserflowEndpoint": "https://apicrtool.azurewebsites.net/userflow/api/",
-    "UserflowEndpoint1": "https://localhost:7156/userflow/api/"
+    "UserflowEndpoint1": "https://localhost:7156/userflow/api/",
+    "appUrl": "https://profitpiller.com"
 }

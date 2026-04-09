@@ -20,7 +20,7 @@
       {{ 'cookiePolicy.reject' | translate }}
     </button>
 
-    <a mat-stroked-button routerLink="cookie-policy" class="setting-button">
+    <a mat-stroked-button  [routerLink]="['/', currentLang, 'cookie-policy']" class="setting-button">
       {{ 'cookiePolicy.settings' | translate }}
     </a>
 

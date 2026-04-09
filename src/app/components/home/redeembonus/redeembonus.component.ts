@@ -3,6 +3,7 @@ import { SharedModule } from "../../../shared.module";
 import { ReferalService } from "../referal/referal.service";
 import { MessageService } from "../../layout/message/message.service";
 import { MessageVM } from "../../layout/message/message.vm";
+import { BaseComponent } from "../../../base.component";
 
 @Component({
     selector: 'app-redeembonus',
@@ -10,10 +11,10 @@ import { MessageVM } from "../../layout/message/message.vm";
     templateUrl: './redeembonus.component.html',
     styleUrls: ['./redeembonus.component.scss']
 })
-export class RedeemBonusComponent implements OnInit {
+export class RedeemBonusComponent extends BaseComponent implements OnInit {
     bonusCode: string = "";
     constructor(private referalService: ReferalService, private messageService: MessageService) {
-
+        super();
     }
 
     async ngOnInit() {

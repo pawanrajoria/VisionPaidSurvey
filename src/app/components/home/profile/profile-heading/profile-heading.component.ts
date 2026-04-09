@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { SharedModule } from "../../../../shared.module";
+import { BaseComponent } from "../../../../base.component";
 
 @Component({
     selector: 'app-profile-heading',
@@ -7,8 +8,12 @@ import { SharedModule } from "../../../../shared.module";
     templateUrl: './profile-heading.component.html',
     styleUrls: ['./profile-heading.component.scss']
 })
-export class ProfileHeadingComponent implements OnInit {
+export class ProfileHeadingComponent extends BaseComponent implements OnInit {
     headingData: Array<any> = [];
+
+    constructor() {
+        super();
+    }
 
     ngOnInit(): void {
     }

@@ -8,7 +8,7 @@
                     <div class="d-none d-md-block">
                         <p>{{ 'amazonGiftCard.banner.description' | translate }}</p>
                         <div class="sign-up">
-                            <a href="javascript://" routerLink="/auth/login">{{ 'amazonGiftCard.banner.signUpButton' |
+                            <a href="javascript://"  [routerLink]="['/', currentLang, 'auth', 'login']">{{ 'amazonGiftCard.banner.signUpButton' |
                                 translate }} <mat-icon>arrow_forward</mat-icon></a>
                             <p>{{ 'amazonGiftCard.banner.signUpNote' | translate }}</p>
                         </div>
@@ -24,7 +24,7 @@
                 <div class="hero2-heading d-md-none">
                     <p>{{ 'amazonGiftCard.banner.description' | translate }}</p>
                     <div class="sign-up">
-                        <a href="javascript://" routerLink="/auth/login">{{ 'amazonGiftCard.banner.signUpButton' |
+                        <a href="javascript://"  [routerLink]="['/', currentLang, 'auth', 'login']">{{ 'amazonGiftCard.banner.signUpButton' |
                             translate }} <mat-icon>arrow_forward</mat-icon></a>
                         <p>{{ 'amazonGiftCard.banner.signUpNote' | translate }}</p>
                     </div>
@@ -131,7 +131,7 @@
                     <img src="assets/images/icon/paypal.png" class="logo" alt="PayPal Logo" />
                     <div>
                         <p>{{ 'amazonGiftCard.rewardsGrid.visaCard' | translate }}</p>
-                        <a href="javascript://" routerLink="/visa" class="learn-link">{{ 'common.learnMore' | translate
+                        <a href="javascript://"  [routerLink]="['/', currentLang, 'visa']" class="learn-link">{{ 'common.learnMore' | translate
                             }} <mat-icon>arrow_forward</mat-icon></a>
                     </div>
                 </div>
@@ -141,7 +141,7 @@
                     <img src="assets/images/icon/amazon.png" class="logo" alt="Amazon Logo" />
                     <div>
                         <p>{{ 'amazonGiftCard.rewardsGrid.paypalRewards' | translate }}</p>
-                        <a href="javascript://" routerLink="/paypal" class="learn-link">{{ 'common.learnMore' |
+                        <a href="javascript://"  [routerLink]="['/', currentLang, 'paypal']" class="learn-link">{{ 'common.learnMore' |
                             translate }} <mat-icon>arrow_forward</mat-icon></a>
                     </div>
                 </div>
@@ -159,7 +159,7 @@
                 <div class="footer-note">
                     <h4>{{ 'amazonGiftCard.support.title' | translate }}</h4>
                     <p>{{ 'amazonGiftCard.support.description' | translate }}</p>
-                    <a href="javascript://" routerLink="/auth/login">{{ 'amazonGiftCard.support.joinNow' | translate
+                    <a href="javascript://"  [routerLink]="['/', currentLang, 'auth', 'login']">{{ 'amazonGiftCard.support.joinNow' | translate
                         }}<mat-icon>arrow_forward</mat-icon></a>
                 </div>
             </div>

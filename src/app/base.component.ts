@@ -1,6 +1,7 @@
 import { inject } from '@angular/core';
 import { BrowserService } from './browser.service';
 import { UserService } from './components/layout/user.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 export abstract class BaseComponent {
     protected readonly browserService = inject(BrowserService);
@@ -10,6 +11,8 @@ export abstract class BaseComponent {
     protected isBrowser: boolean = false;
 
     readonly userService = inject(UserService);
+    readonly activateRoutelang = inject(ActivatedRoute);
+    readonly currentLang = this.activateRoutelang.snapshot.paramMap.get('lang');
 
     constructor() {
         this.bindBrowserSetting(); // ✅ safe in constructor

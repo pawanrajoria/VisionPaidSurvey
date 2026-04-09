@@ -8,7 +8,7 @@
                     <div class="d-none d-md-block">
                         <p>{{ 'paypalGiftCards.banner.description' | translate }}</p>
                         <div class="sign-up">
-                            <a href="javascript://" routerLink="/auth/login">{{ 'paypalGiftCards.banner.startButton' | translate }} <mat-icon>arrow_forward</mat-icon></a>
+                            <a href="javascript://"  [routerLink]="['/', currentLang, 'auth/login']">{{ 'paypalGiftCards.banner.startButton' | translate }} <mat-icon>arrow_forward</mat-icon></a>
                             <p>{{ 'paypalGiftCards.banner.startNote' | translate }}</p>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                 <div class="hero2-heading d-md-none">
                     <p>{{ 'paypalGiftCards.banner.description' | translate }}</p>
                     <div class="sign-up">
-                        <a href="javascript://" routerLink="/auth/login">{{ 'paypalGiftCards.banner.startButton' | translate }} <mat-icon>arrow_forward</mat-icon></a>
+                        <a href="javascript://"  [routerLink]="['/', currentLang, 'auth/login']">{{ 'paypalGiftCards.banner.startButton' | translate }} <mat-icon>arrow_forward</mat-icon></a>
                         <p>{{ 'paypalGiftCards.banner.startNote' | translate }}</p>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
                     <img src="assets/images/icon/paypal.png" class="logo" alt="PayPal Logo" />
                     <div>
                         <p>{{ 'paypalGiftCards.rewardsGrid.paypalSurveys' | translate }}</p>
-                        <a href="javascript://" routerLink="/paypal" class="learn-link">{{ 'common.arrowForward' | translate }} <mat-icon>arrow_forward</mat-icon></a>
+                        <a href="javascript://"  [routerLink]="['/', currentLang, 'paypal']" class="learn-link">{{ 'common.arrowForward' | translate }} <mat-icon>arrow_forward</mat-icon></a>
                     </div>
                 </div>
             </div>
@@ -124,7 +124,7 @@
                     <img src="assets/images/icon/amazon.png" class="logo" alt="Amazon Logo" />
                     <div>
                         <p>{{ 'paypalGiftCards.rewardsGrid.amazonSurveys' | translate }}</p>
-                        <a href="javascript://" routerLink="/amazongiftcard" class="learn-link">{{ 'common.arrowForward' | translate }} <mat-icon>arrow_forward</mat-icon></a>
+                        <a href="javascript://"  [routerLink]="['/', currentLang, 'amazongiftcard']" class="learn-link">{{ 'common.arrowForward' | translate }} <mat-icon>arrow_forward</mat-icon></a>
                     </div>
                 </div>
             </div>
@@ -141,7 +141,7 @@
                 <div class="footer-note">
                     <h4>{{ 'paypalGiftCards.support.title' | translate }}</h4>
                     <p>{{ 'paypalGiftCards.support.description' | translate }}</p>
-                    <a href="javascript://" routerLink="/auth/login">{{ 'paypalGiftCards.support.joinNow' | translate }} <mat-icon>arrow_forward</mat-icon></a>
+                    <a href="javascript://"  [routerLink]="['/', currentLang, 'auth/login']">{{ 'paypalGiftCards.support.joinNow' | translate }} <mat-icon>arrow_forward</mat-icon></a>
                 </div>
             </div>
             <div class="col-lg-4 offset-lg-1">

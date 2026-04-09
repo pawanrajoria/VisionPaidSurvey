@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from "@angular/core";
 import { SharedModule } from "../../../../shared.module";
 import { MatDialog } from "@angular/material/dialog";
 import { ProfileSettingPopup } from "./profile-setting-popup/profile-setting-popup";
+import { BaseComponent } from "../../../../base.component";
 
 @Component({
     selector: 'app-profile-setting',
@@ -9,12 +10,14 @@ import { ProfileSettingPopup } from "./profile-setting-popup/profile-setting-pop
     templateUrl: './profile-setting.component.html',
     styleUrls: ['./profile-setting.component.scss']
 })
-export class ProfileSettingComponent implements OnInit {
+export class ProfileSettingComponent extends BaseComponent implements OnInit {
     readonly dialog = inject(MatDialog);
 
+    constructor() {
+        super();
+    }
 
     ngOnInit(): void {
-
     }
 
     updateUserName() {

@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { SharedModule } from "../../../shared.module";
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { BaseComponent } from "../../../base.component";
 
 @Component({
     selector: 'app-root-footer',
@@ -9,11 +10,12 @@ import { DomSanitizer } from '@angular/platform-browser';
     templateUrl: './root-footer.component.html',
     styleUrls: ['./root-footer.component.scss']
 })
-export class RootFooterComponent implements OnInit {
+export class RootFooterComponent extends BaseComponent implements OnInit {
     constructor(
         private matIconRegistry: MatIconRegistry,
         private sanitizer: DomSanitizer
     ) {
+        super();
         this.matIconRegistry.addSvgIcon(
             'facebook',
             this.sanitizer.bypassSecurityTrustResourceUrl('assets/icons/facebook.svg')

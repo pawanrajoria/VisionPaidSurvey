@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { SharedModule } from "../../../shared.module";
 import { FaqRootComponent } from "../root-faq/root-faq.component";
+import { BaseComponent } from "../../../base.component";
 
 @Component({
     selector: 'app-root-visa',
@@ -8,9 +9,10 @@ import { FaqRootComponent } from "../root-faq/root-faq.component";
     templateUrl: './root-visa.component.html',
     styleUrls: ['./root-visa.component.scss']
 })
-export class RootVisaComponent implements OnInit {
+export class RootVisaComponent extends BaseComponent implements OnInit {
 
     constructor() {
+        super();
     }
 
 

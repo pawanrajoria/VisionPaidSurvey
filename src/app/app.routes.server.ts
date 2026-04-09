@@ -1,52 +1,31 @@
 import { RenderMode, ServerRoute } from '@angular/ssr';
 
 export const serverRoutes: ServerRoute[] = [
-  // Public root pages
-  { path: '', renderMode: RenderMode.Server },
-  { path: 'aboutus', renderMode: RenderMode.Server },
-  { path: 'amazongiftcard', renderMode: RenderMode.Server },
-  { path: 'cashout', renderMode: RenderMode.Server },
-  { path: 'contactus', renderMode: RenderMode.Server },
-  { path: 'do-not-sell', renderMode: RenderMode.Server },
-  { path: 'giftcard', renderMode: RenderMode.Server },
-  { path: 'help', renderMode: RenderMode.Server },
-  { path: 'paypal', renderMode: RenderMode.Server },
-  { path: 'privacy-policy', renderMode: RenderMode.Server },
-  { path: 'terms-conditions', renderMode: RenderMode.Server },
-  { path: 'visa', renderMode: RenderMode.Server },
-  { path: 'survey/completesurvey', renderMode: RenderMode.Server },
-  { path: 'survey/getSurveyInventory', renderMode: RenderMode.Server },
+  // 🌍 SSR ONLY SEO PAGES
+  { path: ':lang', renderMode: RenderMode.Server },
+  { path: ':lang/aboutus', renderMode: RenderMode.Server },
+  { path: ':lang/contactus', renderMode: RenderMode.Server },
+  { path: ':lang/privacy-policy', renderMode: RenderMode.Server },
+  { path: ':lang/terms-conditions', renderMode: RenderMode.Server },
+  { path: ':lang/cookie-policy', renderMode: RenderMode.Server },
 
-  // Auth routes
-  { path: 'auth/login', renderMode: RenderMode.Server },
-  { path: 'auth/signup/:id', renderMode: RenderMode.Server },
-  { path: 'auth/verify-link/:idve/:idvp', renderMode: RenderMode.Server },
-  { path: 'auth/reset-link/:idve/:idvp', renderMode: RenderMode.Server },
-  { path: 'auth/forgot-password', renderMode: RenderMode.Server },
-  { path: 'auth/link', renderMode: RenderMode.Server },
+  { path: ':lang/amazongiftcard', renderMode: RenderMode.Server },
+  { path: ':lang/cashout', renderMode: RenderMode.Server },
+  { path: ':lang/do-not-sell', renderMode: RenderMode.Server },
+  { path: ':lang/giftcard', renderMode: RenderMode.Server },
+  { path: ':lang/help', renderMode: RenderMode.Server },
+  { path: ':lang/paypal', renderMode: RenderMode.Server },
+  { path: ':lang/visa', renderMode: RenderMode.Server },
 
-  // Protected (post-login) app routes
-  { path: 'app', renderMode: RenderMode.Server },
-  { path: 'app/survey', renderMode: RenderMode.Server },
-  { path: 'app/offers', renderMode: RenderMode.Server },
-  { path: 'app/offerwall', renderMode: RenderMode.Server },
-  { path: 'app/cashout', renderMode: RenderMode.Server },
-  { path: 'app/leaderboard', renderMode: RenderMode.Server },
-  { path: 'app/account', renderMode: RenderMode.Server },
-  { path: 'app/help', renderMode: RenderMode.Server },
-  { path: 'app/refer', renderMode: RenderMode.Server },
-  { path: 'app/redeem', renderMode: RenderMode.Server },
+  // 🔐 AUTH (optional SSR)
+  { path: ':lang/auth/**', renderMode: RenderMode.Server },
 
-  //SurveyRoutes
-  { path: 'survey', renderMode: RenderMode.Server },
-  { path: 'survey/completesurvey', renderMode: RenderMode.Server },
-  { path: 'survey/getSurveyInventory', renderMode: RenderMode.Server },
-  { path: 'survey/takeSurvey', renderMode: RenderMode.Server },
+  // 🚫 CLIENT ONLY
+  { path: ':lang/app/**', renderMode: RenderMode.Client },
+  { path: ':lang/admin/**', renderMode: RenderMode.Client },
+  { path: ':lang/survey/**', renderMode: RenderMode.Client },
+  { path: ':lang/offerwall/**', renderMode: RenderMode.Client },
 
-  // Admin section - optional (can keep Client for security)
-  { path: 'admin', renderMode: RenderMode.Client },
-  { path: 'admin/user-admin-dashboard', renderMode: RenderMode.Client },
-
-  // Wildcard fallback
+  // 🚫 FALLBACK
   { path: '**', renderMode: RenderMode.Client },
 ];

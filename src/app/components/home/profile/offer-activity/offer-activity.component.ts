@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { SharedModule } from "../../../../shared.module";
 import { IUserActivityVM } from "../profile.vm";
 import { ProfileService } from "../profile.service";
+import { BaseComponent } from "../../../../base.component";
 
 @Component({
     selector: 'app-offer-activity',
@@ -9,10 +10,11 @@ import { ProfileService } from "../profile.service";
     templateUrl: './offer-activity.component.html',
     styleUrls: ['./offer-activity.component.scss']
 })
-export class OfferActivityComponent implements OnInit {
+export class OfferActivityComponent extends BaseComponent implements OnInit {
     offerData: Array<IUserActivityVM> = [];
 
     constructor(private profileService: ProfileService) {
+        super();
     }
 
     async ngOnInit() {

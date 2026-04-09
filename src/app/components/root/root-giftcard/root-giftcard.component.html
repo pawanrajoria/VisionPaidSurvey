@@ -8,7 +8,7 @@
                     <div class="d-none d-md-block">
                         <p>{{ 'giftCardSurveys.banner.description' | translate }}</p>
                         <div class="sign-up">
-                            <a href="javascript://" routerLink="/auth/login">{{ 'giftCardSurveys.banner.startButton' | translate }} <mat-icon>arrow_forward</mat-icon></a>
+                            <a href="javascript://"  [routerLink]="['/', currentLang, 'auth', 'login']">{{ 'giftCardSurveys.banner.startButton' | translate }} <mat-icon>arrow_forward</mat-icon></a>
                             <p>{{ 'giftCardSurveys.banner.startNote' | translate }}</p>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                 <div class="hero2-heading d-md-none">
                     <p>{{ 'giftCardSurveys.banner.description' | translate }}</p>
                     <div class="sign-up">
-                        <a href="javascript://" routerLink="/auth/login">{{ 'giftCardSurveys.banner.startButton' | translate }} <mat-icon>arrow_forward</mat-icon></a>
+                        <a href="javascript://"  [routerLink]="['/', currentLang, 'auth', 'login']">{{ 'giftCardSurveys.banner.startButton' | translate }} <mat-icon>arrow_forward</mat-icon></a>
                         <p>{{ 'giftCardSurveys.banner.startNote' | translate }}</p>
                     </div>
                 </div>
@@ -125,7 +125,7 @@
                 <div class="footer-note">
                     <h4>{{ 'giftCardSurveys.support.title' | translate }}</h4>
                     <p>{{ 'giftCardSurveys.support.description' | translate }}</p>
-                    <a href="javascript://" routerLink="/auth/login">{{ 'giftCardSurveys.support.joinNow' | translate }}<mat-icon>arrow_forward</mat-icon></a>
+                    <a href="javascript://"  [routerLink]="['/', currentLang, 'auth', 'login']">{{ 'giftCardSurveys.support.joinNow' | translate }}<mat-icon>arrow_forward</mat-icon></a>
                 </div>
             </div>
             <div class="col-lg-4 offset-lg-1">

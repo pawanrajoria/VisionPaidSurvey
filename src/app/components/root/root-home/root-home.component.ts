@@ -10,6 +10,7 @@ import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { GoogleAuthProvider, signInWithCredential } from "@firebase/auth";
 import { LocalStorageService } from "../../../localstorage.service";
 import { isPlatformBrowser } from "@angular/common";
+import { BaseComponent } from "../../../base.component";
 
 @Component({
     selector: 'app-root-home',
@@ -33,7 +34,7 @@ import { isPlatformBrowser } from "@angular/common";
         ]),
     ]
 })
-export class RootHomeComponent implements OnInit {
+export class RootHomeComponent extends BaseComponent implements OnInit {
     selectedCategory = 'Cash';
     email = "";
     password = "";
@@ -94,7 +95,7 @@ export class RootHomeComponent implements OnInit {
         private googleAuth: GoogleService, private angularFireAuth: AngularFireAuth,
         private route: ActivatedRoute, private localStorageService: LocalStorageService,
         @Inject(PLATFORM_ID) private platformId: Object) {
-
+        super();
 
     }
 

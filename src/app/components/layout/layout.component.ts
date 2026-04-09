@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { MatSidenav, MatSidenavContent } from '@angular/material/sidenav';
-import { Router, NavigationEnd, RouterModule } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Subscription, filter } from 'rxjs';
 
@@ -36,7 +36,6 @@ const TABLET_VIEW = 'screen and (min-width: 769px) and (max-width: 1024px)';
     templateUrl: './layout.component.html',
     styleUrls: ['./layout.component.scss'],
     imports: [
-        RouterModule,
         SharedModule,
         SidebarComponent,
         HeaderComponent,

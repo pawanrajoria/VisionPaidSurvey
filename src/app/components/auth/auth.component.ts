@@ -1,12 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 import { SharedModule } from "../../shared.module";
 import { AuthService } from "./auth.service";
-import { Router } from "@angular/router";
+import { Router, RouterOutlet } from "@angular/router";
 import { RootFooterComponent } from "../root/root-footer/root-footer.component";
 
 @Component({
     selector: 'app-auth',
-    imports: [SharedModule,RootFooterComponent],
+    imports: [RouterOutlet,SharedModule,RootFooterComponent],
     templateUrl: './auth.component.html',
     styleUrls: ['./auth.component.scss']
 })

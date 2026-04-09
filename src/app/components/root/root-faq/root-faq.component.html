@@ -13,7 +13,7 @@
             </div>
             <div class="col-lg-6 col-md-5">
                 <div class="text-end">
-                    <a href="javascript://" routerLink="/help" class="theme-clr4">
+                    <a href="javascript://"  [routerLink]="['/', currentLang, 'help']" class="theme-clr4">
                         <mat-icon class="bg-white rounded-circle">{{ 'common.arrowForward' | translate }}</mat-icon> {{ 'faq.checkAllQuestions' | translate }}
                     </a>
                 </div>
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <p>{{ 'faq.needHelp.description' | translate }}</p>
-                    <a href="javascript://" routerLink="/help" class="theme-btn style1">
+                    <a href="javascript://"  [routerLink]="['/', currentLang, 'help']" class="theme-btn style1">
                         <mat-icon class="bg-white rounded-circle">{{ 'common.arrowForward' | translate }}</mat-icon> {{ 'faq.checkAllQuestions' | translate }}
                     </a>
                 </div>

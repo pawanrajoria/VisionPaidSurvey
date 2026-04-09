@@ -7,7 +7,6 @@ import { HelperService } from '../../userflow/helper.service';
 import { BaseComponent } from '../../../base.component';
 import { LocalStorageService } from '../../../localstorage.service';
 
-// let nodeCrypto: typeof import('crypto') | undefined;
 
 @Component({
     selector: 'app-offerwall-home',

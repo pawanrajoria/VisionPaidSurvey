@@ -3,7 +3,7 @@ import { SharedModule } from "../../shared.module";
 import { animate, query, stagger, style, transition, trigger } from "@angular/animations";
 import { RootFooterComponent } from "./root-footer/root-footer.component";
 import { RootHeaderComponent } from "./root-header/root-header.component";
-import { Router } from "@angular/router";
+import { Router, RouterOutlet } from "@angular/router";
 import { CookiePolicyPopupComponent } from "./root-cookiepolicy/root-cookie-policy-popup/root-cookie-policy-popup";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { LocalStorageService } from "../../localstorage.service";
@@ -13,7 +13,7 @@ import { DeviceService } from "../../device.service";
 
 @Component({
     selector: 'app-root',
-    imports: [SharedModule, RootHeaderComponent, RootFooterComponent, ApkToggleComponent],
+    imports: [RouterOutlet,SharedModule, RootHeaderComponent, RootFooterComponent, ApkToggleComponent],
     templateUrl: './root.component.html',
     styleUrls: ['./root.component.scss'],
     animations: [

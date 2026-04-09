@@ -352,7 +352,7 @@
                     <img src="assets/images/icon/paypal.png" class="logo" alt="PayPal Logo" />
                     <div>
                         <p>{{ 'rewardsGrid.paypal.description' | translate }}</p>
-                        <a href="javascript://" routerLink="/paypal" class="learn-link">
+                        <a href="javascript://"  [routerLink]="['/', currentLang, 'paypal']" class="learn-link">
                             {{ 'common.learnMore' | translate }} <mat-icon>arrow_forward</mat-icon>
                         </a>
                     </div>
@@ -363,7 +363,7 @@
                     <img src="assets/images/icon/amazon.png" class="logo" alt="Amazon Logo" />
                     <div>
                         <p>{{ 'rewardsGrid.amazon.description' | translate }}</p>
-                        <a href="javascript://" routerLink="/amazongiftcard" class="learn-link">
+                        <a href="javascript://"  [routerLink]="['/', currentLang, 'amazongiftcard']" class="learn-link">
                             {{ 'common.learnMore' | translate }} <mat-icon>arrow_forward</mat-icon>
                         </a>
                     </div>
@@ -374,7 +374,7 @@
                     <img src="assets/images/icon/visa.png" class="logo" alt="Visa Logo" />
                     <div>
                         <p>{{ 'rewardsGrid.visa.description' | translate }}</p>
-                        <a href="javascript://" routerLink="/visa" class="learn-link">
+                        <a href="javascript://"  [routerLink]="['/', currentLang, 'visa']" class="learn-link">
                             {{ 'common.learnMore' | translate }} <mat-icon>arrow_forward</mat-icon>
                         </a>
                     </div>

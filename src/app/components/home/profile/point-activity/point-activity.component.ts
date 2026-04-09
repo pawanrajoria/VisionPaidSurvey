@@ -3,6 +3,7 @@ import { SharedModule } from "../../../../shared.module";
 import { ProfileService } from "../profile.service";
 import { IProfileActivityEarningVM } from "./point-activity.vm";
 import { ActivatedRoute } from "@angular/router";
+import { BaseComponent } from "../../../../base.component";
 
 @Component({
     selector: 'app-point-activity',
@@ -10,12 +11,13 @@ import { ActivatedRoute } from "@angular/router";
     templateUrl: './point-activity.component.html',
     styleUrls: ['./point-activity.component.scss']
 })
-export class PointActivityComponent implements OnInit {
+export class PointActivityComponent extends BaseComponent implements OnInit {
     pointTransactionInfo!: IProfileActivityEarningVM;
     selectedIndex = 0;
 
     constructor(private profileService: ProfileService, private route: ActivatedRoute,
     ) {
+        super();
         this.route.paramMap.subscribe(params => {
             this.selectedIndex = Number(params.get('id') || 1);
         });

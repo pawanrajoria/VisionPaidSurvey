@@ -43,27 +43,27 @@
 
             <div class="footer-column">
                 <h4>Platform</h4>
-                <a routerLink="/auth/login">Log In or Sign Up</a>
-                <a routerLink="/aboutus">About ProfitPiller</a>
-                <a routerLink="/contactus">Contact Us</a>
-                <a routerLink="/help">Help</a>
+                <a  [routerLink]="['/', currentLang, 'auth', 'login']">Log In or Sign Up</a>
+                <a [routerLink]="['/', currentLang, 'aboutus']">About ProfitPiller</a>
+                <a [routerLink]="['/', currentLang, 'contactus']">Contact Us</a>
+                <a [routerLink]="['/', currentLang, 'help']">Help</a>
             </div>
 
             <div class="footer-column">
                 <h4>Legal</h4>
-                <a routerLink="/privacy-policy">Privacy Policy</a>
-                <a routerLink="/terms-conditions">Terms & Conditions</a>
-                <a routerLink="/cookie-policy">Cookie Policy</a>
-                <a routerLink="/do-not-sell">Do Not Sell My Info</a>
+                <a [routerLink]="['/', currentLang, 'privacy-policy']">Privacy Policy</a>
+                <a [routerLink]="['/', currentLang, 'terms-conditions']">Terms & Conditions</a>
+                <a [routerLink]="['/', currentLang, 'cookie-policy']">Cookie Policy</a>
+                <a [routerLink]="['/', currentLang, 'do-not-sell']">Do Not Sell My Info</a>
             </div>
 
             <div class="footer-column">
                 <h4>Explore More</h4>
-                <a routerLink="/cashout">Earn Cash from Surveys</a>
-                <a routerLink="/giftcard">Gift Cards</a>
-                <a routerLink="/amazongiftcard">Amazon Gift Cards</a>
-                <a routerLink="/paypal">PayPal Rewards</a>
-                <a routerLink="/visa">Visa Gift Cards</a>
+                <a [routerLink]="['/', currentLang, 'cashout']">Earn Cash from Surveys</a>
+                <a [routerLink]="['/', currentLang, 'giftcard']">Gift Cards</a>
+                <a [routerLink]="['/', currentLang, 'amazongiftcard']">Amazon Gift Cards</a>
+                <a [routerLink]="['/', currentLang, 'paypal']">PayPal Rewards</a>
+                <a [routerLink]="['/', currentLang, 'visa']">Visa Gift Cards</a>
             </div>
 
             <div class="footer-column">

@@ -10,15 +10,25 @@ export class DeviceService {
     ) { }
 
     isMobile(): boolean {
-        const ua = this.getUserAgent().toLowerCase();
-        if (!ua) return false;
+        const userAgent = this.getUserAgent().toLowerCase();
+        if (!userAgent) return false;
 
-        return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini|mobile|mobi|silk/i.test(ua);
+        // Detect iOS (including modern iPads)
+        const isIOS = /iphone|ipad|ipod/.test(userAgent) ||
+            (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+        // Detect Android
+        const isAndroid = /android/.test(userAgent);
+
+        // Screen fallback (tablet + small devices)
+        const isSmallScreen = window.innerWidth <= 1024;
+
+        return isIOS || isAndroid || isSmallScreen;
     }
 
     private getUserAgent(): string {
         if (isPlatformBrowser(this.platformId)) {
-            return this.document.defaultView?.navigator?.userAgent || '';
+            return this.document.defaultView?.navigator?.userAgent || navigator.vendor;
         }
         return '';
     }

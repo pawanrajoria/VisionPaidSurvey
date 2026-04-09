@@ -33,7 +33,7 @@
                     <mat-icon color="accent">whatshot</mat-icon> Gaming Offers
                 </div>
                 <div class="actions">
-                    <span class="view-all" routerLink="/app/offers">View All</span>
+                    <span class="view-all" [routerLink]="['/', currentLang, 'app', 'offers']">View All</span>
                     <button mat-icon-button (click)="scrollLeft('gamingSlider')">
                         <mat-icon>chevron_left</mat-icon>
                     </button>
@@ -108,7 +108,7 @@
                     <mat-icon color="accent">assignment</mat-icon> Featured Surveys
                 </div>
                 <div class="actions">
-                    <span class="view-all" routerLink="/app/survey">View All</span>
+                    <span class="view-all" [routerLink]="['/', currentLang, 'app', 'survey']">View All</span>
                     <button mat-icon-button (click)="scrollLeft('surveySlider')">
                         <mat-icon>chevron_left</mat-icon>
                     </button>
@@ -201,7 +201,7 @@
             <mat-icon color="accent">assignment</mat-icon> Offer Partner's
         </div>
         <div class="actions">
-            <span class="view-all" routerLink="/app/offerwall">View All</span>
+            <span class="view-all" [routerLink]="['/', currentLang, 'app', 'offerwall']">View All</span>
             <button mat-icon-button (click)="scrollLeft('offerwallSlider')">
                 <mat-icon>chevron_left</mat-icon>
             </button>
@@ -235,7 +235,7 @@
             <mat-icon color="accent">assignment</mat-icon> Survey Partner's
         </div>
         <div class="actions">
-            <span class="view-all" routerLink="/app/offerwall">View All</span>
+            <span class="view-all" [routerLink]="['/', currentLang, 'app', 'survey']">View All</span>
             <button mat-icon-button (click)="scrollLeft('surveyWallSlider')">
                 <mat-icon>chevron_left</mat-icon>
             </button>

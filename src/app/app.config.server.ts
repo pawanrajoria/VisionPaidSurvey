@@ -5,7 +5,6 @@ import { serverRoutes } from './app.routes.server';
 import { importProvidersFrom, APP_INITIALIZER } from '@angular/core';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MultiTranslateServerLoader } from '../../server/multilanguagetranslator.server';
-import { HttpClient } from '@angular/common/http';
 
 // ✅ APP_INITIALIZER to preload translations
 function initTranslateServiceServer(): () => Promise<void> {

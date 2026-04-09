@@ -47,53 +47,74 @@ export class AppComponent extends BaseComponent implements OnInit {
     super();
     this.isLoading$ = this.loader.loading$;
     this.versionCheck.check();
-     this.translate.use('en');
-    // const browserLang = this.isBrowser ? this.translate.getBrowserLang() : 'en';
-    // this.translate.setDefaultLang('en');
-
-    // this.translate.use(browserLang?.match(/en|es|fr/) ? browserLang : 'en').subscribe(() => {
-    //   // // ✅ FIX: If we are on the server, set this to true immediately.
-    //   // // The server doesn't need the 100ms timeout.
-    //   // if (!this.isBrowser) {
-    //   //   this.translationsLoaded = true;
-    //   // } else {
-    //   //   // Browser logic remains the same
-    //   //   setTimeout(() => {
-    //   //     this.translationsLoaded = true;
-    //   //   }, 100);
-    //   // }
-    // });
+    this.translate.setDefaultLang('en');
   }
 
   ngOnInit() {
     // ✅ SSR-safe check before using `window`
     if (this.isBrowser && this.win) {
       this.localStorageService.setItem('LandedUrl', this.win.location.href);
+
     }
 
     this.helperService.setDuid();
 
-
+    this.detectAndSetLanguage();
 
     this.router.events
       .pipe(
-        filter((event) => event instanceof NavigationEnd),
-        map(() => {
-          let route = this.activatedRoute;
-          while (route.firstChild) route = route.firstChild;
-          return route;
-        }),
-        filter((route) => route.outlet === 'primary'),
-        mergeMap((route) => route.data)
+        filter((event) => event instanceof NavigationEnd)
       )
-      .subscribe((data) => {
-        const title = data['title'] || 'Profitpiller';
-        const description = data['description'] || title;
-        this.seoService.updateMetaData(title, description);
+      .subscribe(() => {
+        const fullUrl = this.router.url;
+        // Extract lang (en / hi)
+        const langMatch = fullUrl.match(/^\/(en|hi)/);
+        const lang = langMatch ? langMatch[1] : 'en';
+        // Remove lang from path
+        const cleanPath = fullUrl.replace(/^\/(en|hi)/, '');
+
+        const title = this.titleService.getTitle() || 'Profitpiller';
+        const description = this.metaService.getTag('name=description')?.content || title;
+
+        // ✅ Update SEO
+        this.seoService.updateMetaData(
+          title,
+          description,
+          `https://profitpiller.com/${lang}${cleanPath}`
+        );
+
+        // ✅ Add hreflang
+        this.seoService.updateHreflang(cleanPath);
       });
   }
 
   changeLanguage(lang: string) {
     this.translate.use(lang);
+  }
+
+
+  private detectAndSetLanguage(): void {
+    if (!this.isBrowser) return;
+
+    const supportedLangs = ['en', 'hi']; // 👈 add more if needed
+
+    let lang = navigator.language || navigator.languages?.[0] || 'en';
+    let langCode = lang.split('-')[0];
+
+    if (!supportedLangs.includes(langCode)) {
+      langCode = 'en';
+    }
+
+    const currentUrl = this.router.url;
+    // Check if URL already has language prefix
+    const hasLangPrefix = supportedLangs.some(l => currentUrl.startsWith(`/${l}`));
+    // 👉 Set language in ngx-translate
+    this.translate.use(langCode);
+    // 👉 Save to local storage (optional)
+    this.localStorageService.setItem('lang', langCode);
+    // 👉 Append language to URL if not present
+    if (!hasLangPrefix) {
+      this.router.navigate([`/${langCode}${currentUrl}`]);
+    }
   }
 }

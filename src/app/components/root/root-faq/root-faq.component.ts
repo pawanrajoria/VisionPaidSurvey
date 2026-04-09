@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { animate, query, stagger, style, transition, trigger } from "@angular/animations";
 import { SharedModule } from "../../../shared.module";
+import { BaseComponent } from "../../../base.component";
 
 @Component({
     selector: 'app-root-faq',
@@ -24,7 +25,8 @@ import { SharedModule } from "../../../shared.module";
         ]),
     ]
 })
-export class FaqRootComponent implements OnInit {
+export class FaqRootComponent extends BaseComponent implements OnInit {
+
     faqs = [
         {
             question: 'How can I make money with paid surveys?',
@@ -149,7 +151,9 @@ export class FaqRootComponent implements OnInit {
         },
     ];
 
-
+    constructor() {
+        super();
+    }
 
     ngOnInit(): void {
     }

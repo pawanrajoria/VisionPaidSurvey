@@ -14,22 +14,22 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked">
                         <li class="active">
-                            <a extended routerLink="/app/account">
+                            <a extended [routerLink]="['/', currentLang, 'app', 'account']">
                                 <mat-icon>perm_identity</mat-icon> {{ 'account.profile' | translate }}</a>
                         </li>
                         <li>
-                            <a extended routerLink="/app/account/activity">
+                            <a extended [routerLink]="['/', currentLang, 'app', 'account', 'activity']">
                                 <mat-icon>calendar_today</mat-icon> {{ 'account.recent_activity' | translate }} <span
                                     class="label">9</span></a>
                         </li>
                         <li>
-                            <a extended routerLink="/app/account/accountsettings">
+                            <a extended [routerLink]="['/', currentLang, 'app', 'account', 'accountsettings']">
                                 <mat-icon>settings</mat-icon>
                                 {{ 'account.setting' | translate }}
                             </a>
                         </li>
                         <li>
-                            <a (click)="authService.logOut()" extended routerLink="/app/account/">
+                            <a (click)="authService.logOut()" extended [routerLink]="['/', currentLang, 'app', 'account']">
                                 <mat-icon>input</mat-icon>
                                 {{ 'account.log_out' | translate }}
                             </a>
