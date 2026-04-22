@@ -1,0 +1,41 @@
+{
+    "instruction": {
+        "header": {
+            "title": "欢迎来到我们的平台！",
+            "subtitle": "开始之前，请阅读并同意以下规则。"
+        },
+        "rules": {
+            "rule1": {
+                "title": "规则1",
+                "desc": "至少16岁。"
+            },
+            "rule2": {
+                "title": "规则2",
+                "desc": "每人一个账户。"
+            },
+            "rule3": {
+                "title": "规则3",
+                "desc": "禁止使用VPN。"
+            },
+            "rule4": {
+                "title": "规则4",
+                "desc": "请诚实回答。"
+            },
+            "rule5": {
+                "title": "规则5",
+                "desc": "通过PayPal或礼品卡付款。"
+            },
+            "rule6": {
+                "title": "规则6",
+                "desc": "符合GDPR。"
+            },
+            "rule7": {
+                "title": "规则7",
+                "desc": "请尊重平台。"
+            }
+        },
+        "button": {
+            "continue": "我已理解并继续"
+        }
+    }
+}

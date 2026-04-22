@@ -1,0 +1,57 @@
+{
+  "afterloginhelp": {
+    "title": "Ajuda e Suporte",
+    "subtitle": "Estamos aqui para você — e sua privacidade está protegida.",
+    "ask_question": "Enviar uma consulta",
+    "question_title": "💬 Ainda tem dúvidas?",
+    "question_subtitle": "Não se preocupe — as respostas estão a apenas um clique! Se precisar de mais ajuda, nossa equipe de suporte está pronta para ajudar. Envie sua pergunta abaixo e garantiremos que você tenha a clareza que precisa — de forma rápida e sem complicações.",
+    "question_instruction": "Por favor, seja claro e específico ao descrever sua pergunta",
+    "enter_your_email": "Digite seu e-mail",
+    "how_can_help": "Como podemos ajudar?",
+    "survey_instruction": "Se você teve algum problema com uma pesquisa ou oferta, por favor envie uma captura de tela do problema encontrado.",
+    "upload_text": "Clique ou arraste arquivos para enviar",
+    "upload_instruction": "PNG, JPG (Máx. 1MB)",
+    "faqs": {
+      "q1": {
+        "question": "Como posso ganhar recompensas?",
+        "answer": "Você pode ganhar recompensas completando pesquisas, ofertas especiais e através de bônus por indicação na plataforma."
+      },
+      "q2": {
+        "question": "Como posso me qualificar para pesquisas?",
+        "answer": "Cada pesquisa possui critérios específicos. Completar seu perfil de forma honesta aumenta suas chances de qualificação."
+      },
+      "q3": {
+        "question": "Por que não há pesquisas disponíveis?",
+        "answer": "A disponibilidade depende do seu perfil e da demanda dos parceiros. Certifique-se de que seu perfil está completo."
+      },
+      "q4": {
+        "question": "O que é um screen-out?",
+        "answer": "Ocorre quando suas respostas não correspondem ao público-alvo da pesquisa."
+      },
+      "q5": {
+        "question": "Por que não recebi a recompensa completa?",
+        "answer": "Algumas pesquisas oferecem recompensas parciais em caso de desqualificação ou conclusão parcial."
+      },
+      "q6": {
+        "question": "Posso usar VPN ou Proxy?",
+        "answer": "Não. O uso de VPNs ou proxies é proibido e pode resultar em suspensão da conta."
+      },
+      "q7": {
+        "question": "Quando posso resgatar minhas recompensas?",
+        "answer": "Após atingir o valor mínimo necessário, você pode resgatar via PayPal ou cartões-presente."
+      },
+      "q8": {
+        "question": "Posso indicar amigos?",
+        "answer": "Sim! Você pode ganhar comissão sobre os ganhos de seus indicados."
+      },
+      "q9": {
+        "question": "Meus dados estão seguros?",
+        "answer": "Sim, seus dados são protegidos e nunca compartilhados sem seu consentimento."
+      },
+      "q10": {
+        "question": "Como entrar em contato com o suporte?",
+        "answer": "Você pode entrar em contato pelo e-mail support@profitpiller.com ou pelo formulário de contato."
+      }
+    }
+  }
+}

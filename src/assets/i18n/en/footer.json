@@ -1,29 +1,33 @@
 {
-    "footer": {
-        "copyright": "© 2025 Profit Piller - All Rights Reserved.",
-        "productOf": "A product of",
-        "cralpkResearchGroup": "Cralpk Research Group",
-        "platform": {
-            "title": "Platform",
-            "loginOrSignUp": "Log In or Sign Up",
-            "aboutProfitpiller": "About Profitpiller",
-            "contactUs": "Contact Us",
-            "help": "Help"
-        },
-        "legal": {
-            "title": "Legal",
-            "privacyPolicy": "Privacy Policy",
-            "cookiePolicy": "Cookie Policy",
-            "termsConditions": "Terms & Conditions",
-            "doNotSell": "Do Not Sell My Personal Info"
-        },
-        "exploreMore": {
-            "title": "Explore More",
-            "earnCash": "Earn Cash from Paid Surveys",
-            "getRewarded": "Get Rewarded with Gift Cards",
-            "redeemAmazon": "Redeem Amazon Gift Cards",
-            "getPaiyPal": "Get Paid via PayPal",
-            "visaGiftCards": "Visa Gift Cards & More"
-        }
+  "footer": {
+    "trust": "Excellent",
+    "copyright": "© 2026 Profit Piller. All rights reserved.",
+    "product_of": "A product of",
+    "platform": {
+      "title": "Platform",
+      "login": "Log In or Sign Up",
+      "about": "About ProfitPiller",
+      "contact": "Contact Us",
+      "help": "Help"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms & Conditions",
+      "cookie": "Cookie Policy",
+      "dns": "Do Not Sell My Info"
+    },
+    "explore": {
+      "title": "Explore More",
+      "cash": "Earn Cash from Surveys",
+      "gift": "Gift Cards",
+      "amazon": "Amazon Gift Cards",
+      "paypal": "PayPal Rewards",
+      "visa": "Visa Gift Cards"
+    },
+    "follow": {
+      "title": "Follow Us",
+      "download": "Download Our App"
     }
+  }
 }

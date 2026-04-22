@@ -37,6 +37,8 @@ export function multiHttpLoaderFactory() {
     { prefix: '/assets/i18n/', suffix: '/auth.json' },
     { prefix: '/assets/i18n/', suffix: '/refer.json' },
     { prefix: '/assets/i18n/', suffix: '/profile.json' },
+    { prefix: '/assets/i18n/', suffix: '/instruction.json' },
+    { prefix: '/assets/i18n/', suffix: '/afterloginhelp.json' },
   ]);
 };
 

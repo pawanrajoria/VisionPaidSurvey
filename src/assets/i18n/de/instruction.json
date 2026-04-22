@@ -1,0 +1,41 @@
+{
+    "instruction": {
+        "header": {
+            "title": "Willkommen auf unserer Plattform!",
+            "subtitle": "Bevor Sie mit Umfragen beginnen, lesen und akzeptieren Sie bitte diese wichtigen Regeln."
+        },
+        "rules": {
+            "rule1": {
+                "title": "Regel 1 von 7 – Altersanforderungen",
+                "desc": "Sie müssen mindestens 16 Jahre alt sein, um die Plattform zu nutzen. Einige Umfragen erfordern je nach Land ein Mindestalter von 18 Jahren."
+            },
+            "rule2": {
+                "title": "Regel 2 von 7 – Nur ein Konto",
+                "desc": "Pro Person ist nur ein Konto erlaubt. Erstellen Sie keine mehreren Konten und teilen Sie Ihr Konto nicht mit anderen."
+            },
+            "rule3": {
+                "title": "Regel 3 von 7 – Keine VPNs oder Emulatoren",
+                "desc": "Verwenden Sie keine VPNs, Emulatoren oder Tools, die Ihren Standort oder Ihr Gerät verfälschen. Dies kann zu einer Sperrung führen."
+            },
+            "rule4": {
+                "title": "Regel 4 von 7 – Ehrliche Teilnahme",
+                "desc": "Geben Sie ehrliche Antworten. Verwenden Sie keine KI-Tools, Sprachaufnahmen oder Copy-Paste."
+            },
+            "rule5": {
+                "title": "Regel 5 von 7 – Belohnungen & Auszahlungen",
+                "desc": "Wir zahlen über PayPal, Geschenkkarten oder Guthaben. Wählen Sie die für Sie passende Option."
+            },
+            "rule6": {
+                "title": "Regel 6 von 7 – Daten & DSGVO",
+                "desc": "Wir halten uns an die DSGVO. Sie können jederzeit die Löschung Ihrer Daten anfordern."
+            },
+            "rule7": {
+                "title": "Regel 7 von 7 – Respektieren Sie die Plattform",
+                "desc": "Missbrauch oder Betrugsversuche können zu Sperrungen oder Ausschluss führen."
+            }
+        },
+        "button": {
+            "continue": "Verstanden & Weiter"
+        }
+    }
+}

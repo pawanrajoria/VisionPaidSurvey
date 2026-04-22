@@ -1,0 +1,41 @@
+.not-found-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.content {
+    max-width: 500px;
+}
+
+.code {
+    font-size: 120px;
+    font-weight: 800;
+    margin: 0;
+    background: linear-gradient(45deg, #3b82f6, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.title {
+    font-size: 28px;
+    margin: 10px 0;
+}
+
+.message {
+    font-size: 16px;
+    opacity: 0.8;
+    margin-bottom: 25px;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}

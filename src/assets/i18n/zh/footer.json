@@ -1,29 +1,33 @@
 {
-    "footer": {
-        "copyright": "© 2026 Profit Piller - 保留所有权利。",
-        "productOf": "一个产品来自",
-        "cralpkResearchGroup": "Cralpk Research Group",
-        "platform": {
-            "title": "平台",
-            "loginOrSignUp": "登录或注册",
-            "aboutProfitpiller": "关于 Profitpiller",
-            "contactUs": "联系我们",
-            "help": "帮助"
-        },
-        "legal": {
-            "title": "法律",
-            "privacyPolicy": "隐私政策",
-            "cookiePolicy": "Cookie 政策",
-            "termsConditions": "条款与条件",
-            "doNotSell": "不出售我的个人信息"
-        },
-        "exploreMore": {
-            "title": "探索更多",
-            "earnCash": "通过付费调查赚取现金",
-            "getRewarded": "获得礼品卡奖励",
-            "redeemAmazon": "兑换亚马逊礼品卡",
-            "getPaiyPal": "通过 PayPal 获得报酬",
-            "visaGiftCards": "Visa 礼品卡及更多"
-        }
+  "footer": {
+    "trust": "优秀",
+    "copyright": "© 2026 Profit Piller。保留所有权利。",
+    "product_of": "由以下公司提供",
+    "platform": {
+      "title": "平台",
+      "login": "登录或注册",
+      "about": "关于 ProfitPiller",
+      "contact": "联系我们",
+      "help": "帮助"
+    },
+    "legal": {
+      "title": "法律",
+      "privacy": "隐私政策",
+      "terms": "条款和条件",
+      "cookie": "Cookie 政策",
+      "dns": "不要出售我的信息"
+    },
+    "explore": {
+      "title": "探索更多",
+      "cash": "通过问卷赚钱",
+      "gift": "礼品卡",
+      "amazon": "亚马逊礼品卡",
+      "paypal": "PayPal 奖励",
+      "visa": "Visa 礼品卡"
+    },
+    "follow": {
+      "title": "关注我们",
+      "download": "下载我们的应用"
     }
+  }
 }

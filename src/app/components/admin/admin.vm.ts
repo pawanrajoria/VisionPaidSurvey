@@ -30,7 +30,7 @@ export interface AdminWithdrawalResponseDto {
     userTotalEarning: number;
     userTotalRejection: number;
     rejectionRate: number;
-    requestRaiseDate: string; // ISO date string, e.g. "2025-05-16T10:00:00Z"
+    requestRaiseDate: string; // ISO date string, e.g. "2026-05-16T10:00:00Z"
     requestedAmount: number;
     userName: string;
     country: string;

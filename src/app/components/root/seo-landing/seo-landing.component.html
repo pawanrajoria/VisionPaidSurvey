@@ -1,0 +1,38 @@
+<div class="seo-page" *ngIf="data">
+
+    <h1>{{ data.h1 }}</h1>
+
+    <p class="intro">{{ data.intro }}</p>
+
+    <section>
+        <h2>How to Earn Money</h2>
+        <p>{{ data.howItWorks }}</p>
+    </section>
+
+    <section>
+        <h2>Payment Methods</h2>
+        <ul>
+            <li *ngFor="let p of data.payouts">{{ p }}</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Top Locations</h2>
+        <a *ngFor="let city of data.cities" [routerLink]="['/surveys', data.country, city.slug]">
+            {{ city.name }}
+        </a>
+    </section>
+
+    <section>
+        <h2>FAQs</h2>
+        <div *ngFor="let faq of data.faqs">
+            <h3>{{ faq.q }}</h3>
+            <p>{{ faq.a }}</p>
+        </div>
+    </section>
+
+    <button mat-raised-button color="primary">
+        Download App & Start Earning
+    </button>
+
+</div>

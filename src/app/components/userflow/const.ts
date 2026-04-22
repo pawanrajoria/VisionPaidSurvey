@@ -27,3 +27,22 @@ export const questionTypeComponents = [
 export const ClientTypeConstant = {
     YourSurveys: "89841bc6-9d8a-4c31-9766-755ae10c5a45",
 };
+
+
+export const supportedLangs = [
+    'en', // English
+    'hi', // Hindi
+    'es', // Spanish
+    'fr', // French
+    'de', // German
+    'zh', // Chinese (Simplified)
+    'ja', // Japanese
+    'pt', // Portuguese
+    'ru', // Russian
+    'ar', // Arabic
+    'it', // Italian
+    'ko', // Korean
+    'bn', // Bengali
+    'mr', // Marathi
+    'pa'  // Punjabi
+];

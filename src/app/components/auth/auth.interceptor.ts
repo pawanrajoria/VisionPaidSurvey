@@ -80,12 +80,14 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
         catchError(error => {
           // console.error('Interceptor Error:', error);
 
-          if (error.status === 401 || error.status === 0) {
+          if (error.status === 401) {
             messageService.showMessage(new MessageVM(
               error.status === 401 ? "Unauthorized! Redirecting to login..." : "Something went wrong.",
               "error"
             ));
             authService.logOut();
+          } else if (error.status === 400 && error.error && error.error.errorCode == 'INSTRUCTION_NOT_UNDERSTOOD') {
+            router.navigate(['/app/instruction']);
           } else if (error.error && typeof error.error === 'object' && 'message' in error.error) {
             messageService.showMessage(new MessageVM(error.error.message, "error"));
           } else {

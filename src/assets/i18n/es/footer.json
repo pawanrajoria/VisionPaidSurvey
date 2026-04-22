@@ -1,29 +1,33 @@
 {
-    "footer": {
-        "copyright": "© 2025 Profit Piller - Tous droits réservés.",
-        "productOf": "Un produit de",
-        "cralpkResearchGroup": "Cralpk Research Group",
-        "platform": {
-            "title": "Plateforme",
-            "loginOrSignUp": "Se connecter ou s'inscrire",
-            "aboutProfitpiller": "À propos de Profitpiller",
-            "contactUs": "Contactez-nous",
-            "help": "Aide"
-        },
-        "legal": {
-            "title": "Mentions légales",
-            "privacyPolicy": "Politique de confidentialité",
-            "cookiePolicy": "Politique en matière de cookies",
-            "termsConditions": "Conditions générales",
-            "doNotSell": "Ne pas vendre mes informations personnelles"
-        },
-        "exploreMore": {
-            "title": "Explorer plus",
-            "earnCash": "Gagner de l'argent avec des sondages rémunérés",
-            "getRewarded": "Être récompensé avec des cartes-cadeaux",
-            "redeemAmazon": "Échanger des cartes-cadeaux Amazon",
-            "getPaiyPal": "Être payé via PayPal",
-            "visaGiftCards": "Cartes-cadeaux Visa et plus"
-        }
+  "footer": {
+    "trust": "Excelente",
+    "copyright": "© 2026 Profit Piller. Todos los derechos reservados.",
+    "product_of": "Un producto de",
+    "platform": {
+      "title": "Plataforma",
+      "login": "Iniciar sesión o registrarse",
+      "about": "Sobre ProfitPiller",
+      "contact": "Contáctanos",
+      "help": "Ayuda"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Política de privacidad",
+      "terms": "Términos y condiciones",
+      "cookie": "Política de cookies",
+      "dns": "No vender mi información"
+    },
+    "explore": {
+      "title": "Explorar más",
+      "cash": "Ganar dinero con encuestas",
+      "gift": "Tarjetas regalo",
+      "amazon": "Tarjetas regalo Amazon",
+      "paypal": "Recompensas PayPal",
+      "visa": "Tarjetas regalo Visa"
+    },
+    "follow": {
+      "title": "Síguenos",
+      "download": "Descargar la app"
     }
+  }
 }

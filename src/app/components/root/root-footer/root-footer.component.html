@@ -5,12 +5,11 @@
         <div class="footer-logo">
             <img src="assets/images/homepagelogo.png" alt="ProfitPiller logo" class="logo" />
 
-            <!-- Trustpilot Badge -->
             <div class="trustpilot-inline">
                 <a href="https://www.trustpilot.com/review/profitpiller.com" target="_blank" rel="noopener">
 
                     <span class="tp-text">
-                        {{ 'Excellent' | translate }}
+                        {{ 'footer.trust' | translate }}
                     </span>
 
                     <div class="tp-stars">
@@ -30,8 +29,8 @@
             </div>
 
             <p class="footer-copy">
-                © 2025 Profit Piller. All rights reserved.<br />
-                A product of
+                {{ 'footer.copyright' | translate }}<br />
+                {{ 'footer.product_of' | translate }}
                 <a href="https://cralpkresearch.com/" target="_blank">
                     Cralpk Research Group
                 </a>
@@ -41,48 +40,79 @@
         <!-- RIGHT : LINKS -->
         <div class="footer-links">
 
+            <!-- PLATFORM -->
             <div class="footer-column">
-                <h4>Platform</h4>
-                <a  [routerLink]="['/', currentLang, 'auth', 'login']">Log In or Sign Up</a>
-                <a [routerLink]="['/', currentLang, 'aboutus']">About ProfitPiller</a>
-                <a [routerLink]="['/', currentLang, 'contactus']">Contact Us</a>
-                <a [routerLink]="['/', currentLang, 'help']">Help</a>
+                <h4>{{ 'footer.platform.title' | translate }}</h4>
+                <a [routerLink]="['/', currentLang, 'auth', 'login']">
+                    {{ 'footer.platform.login' | translate }}
+                </a>
+                <a [routerLink]="['/', currentLang, 'aboutus']">
+                    {{ 'footer.platform.about' | translate }}
+                </a>
+                <a [routerLink]="['/', currentLang, 'contactus']">
+                    {{ 'footer.platform.contact' | translate }}
+                </a>
+                <a [routerLink]="['/', currentLang, 'help']">
+                    {{ 'footer.platform.help' | translate }}
+                </a>
             </div>
 
+            <!-- LEGAL -->
             <div class="footer-column">
-                <h4>Legal</h4>
-                <a [routerLink]="['/', currentLang, 'privacy-policy']">Privacy Policy</a>
-                <a [routerLink]="['/', currentLang, 'terms-conditions']">Terms & Conditions</a>
-                <a [routerLink]="['/', currentLang, 'cookie-policy']">Cookie Policy</a>
-                <a [routerLink]="['/', currentLang, 'do-not-sell']">Do Not Sell My Info</a>
+                <h4>{{ 'footer.legal.title' | translate }}</h4>
+                <a [routerLink]="['/', currentLang, 'privacy-policy']">
+                    {{ 'footer.legal.privacy' | translate }}
+                </a>
+                <a [routerLink]="['/', currentLang, 'terms-conditions']">
+                    {{ 'footer.legal.terms' | translate }}
+                </a>
+                <a [routerLink]="['/', currentLang, 'cookie-policy']">
+                    {{ 'footer.legal.cookie' | translate }}
+                </a>
+                <a [routerLink]="['/', currentLang, 'do-not-sell']">
+                    {{ 'footer.legal.dns' | translate }}
+                </a>
             </div>
 
+            <!-- EXPLORE -->
             <div class="footer-column">
-                <h4>Explore More</h4>
-                <a [routerLink]="['/', currentLang, 'cashout']">Earn Cash from Surveys</a>
-                <a [routerLink]="['/', currentLang, 'giftcard']">Gift Cards</a>
-                <a [routerLink]="['/', currentLang, 'amazongiftcard']">Amazon Gift Cards</a>
-                <a [routerLink]="['/', currentLang, 'paypal']">PayPal Rewards</a>
-                <a [routerLink]="['/', currentLang, 'visa']">Visa Gift Cards</a>
+                <h4>{{ 'footer.explore.title' | translate }}</h4>
+                <a [routerLink]="['/', currentLang, 'cashout']">
+                    {{ 'footer.explore.cash' | translate }}
+                </a>
+                <a [routerLink]="['/', currentLang, 'giftcard']">
+                    {{ 'footer.explore.gift' | translate }}
+                </a>
+                <a [routerLink]="['/', currentLang, 'amazongiftcard']">
+                    {{ 'footer.explore.amazon' | translate }}
+                </a>
+                <a [routerLink]="['/', currentLang, 'paypal']">
+                    {{ 'footer.explore.paypal' | translate }}
+                </a>
+                <a [routerLink]="['/', currentLang, 'visa']">
+                    {{ 'footer.explore.visa' | translate }}
+                </a>
             </div>
 
+            <!-- SOCIAL -->
             <div class="footer-column">
-                <h4>Follow Us</h4>
+                <h4>{{ 'footer.follow.title' | translate }}</h4>
 
-                
-                  <div class="social-icons">
-                    <a href="https://www.facebook.com/profitpiller/" target="_blank" aria-label="Facebook">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profitpiller/" target="_blank">
                         <mat-icon svgIcon="facebook"></mat-icon>
                     </a>
-                    <a href="https://x.com/profitpiller" target="_blank" aria-label="Twitter X">
+                    <a href="https://x.com/profitpiller" target="_blank">
                         <mat-icon svgIcon="twitterx"></mat-icon>
                     </a>
-                    <a href="https://www.linkedin.com/company/profitpiller" target="_blank" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/company/profitpiller" target="_blank">
                         <mat-icon svgIcon="linkedin"></mat-icon>
                     </a>
                 </div>
 
-                <h4 class="download-title">Download Our App</h4>
+                <h4 class="download-title">
+                    {{ 'footer.follow.download' | translate }}
+                </h4>
 
                 <a class="app-badge"
                     href="https://play.google.com/store/apps/details?id=com.cralpkresearch.profitpiller"

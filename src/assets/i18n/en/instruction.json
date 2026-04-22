@@ -1,0 +1,41 @@
+{
+  "instruction": {
+    "header": {
+      "title": "¡Bienvenido a nuestra plataforma!",
+      "subtitle": "Antes de comenzar, lea y acepte estas reglas importantes."
+    },
+    "rules": {
+      "rule1": {
+        "title": "Regla 1 de 7 – Edad mínima",
+        "desc": "Debe tener al menos 16 años. Algunas encuestas pueden requerir 18+ según su país."
+      },
+      "rule2": {
+        "title": "Regla 2 de 7 – Una sola cuenta",
+        "desc": "Solo se permite una cuenta por persona. No cree múltiples cuentas ni comparta la suya."
+      },
+      "rule3": {
+        "title": "Regla 3 de 7 – Sin VPN ni emuladores",
+        "desc": "No use VPNs ni herramientas que falsifiquen su ubicación o dispositivo."
+      },
+      "rule4": {
+        "title": "Regla 4 de 7 – Participación honesta",
+        "desc": "Responda con honestidad. No use IA ni copie respuestas."
+      },
+      "rule5": {
+        "title": "Regla 5 de 7 – Pagos",
+        "desc": "Pagamos mediante PayPal, tarjetas regalo o créditos."
+      },
+      "rule6": {
+        "title": "Regla 6 de 7 – Datos y GDPR",
+        "desc": "Cumplimos con GDPR. Puede solicitar la eliminación de sus datos."
+      },
+      "rule7": {
+        "title": "Regla 7 de 7 – Respeto",
+        "desc": "El abuso o fraude puede resultar en suspensión."
+      }
+    },
+    "button": {
+      "continue": "Entendido y continuar"
+    }
+  }
+}

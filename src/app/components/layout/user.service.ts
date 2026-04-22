@@ -16,4 +16,5 @@ export class UserService {
         
         return await this.http.post<any>(this.config.baseUrl + "auth/log-activity", request).toPromise();
     }
+    
 }

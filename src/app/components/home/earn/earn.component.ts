@@ -81,7 +81,9 @@ export class EarnComponent extends BaseComponent implements OnInit {
         const output = await self.surveyService.getSurveys();
         self.isFeaturedSurveyLoading = false;
         if (!!output && !!output.surveys && output.surveys.length > 0) {
-            self.featuredSurveys = output.surveys;
+            this.featuredSurveys = output.surveys.sort((a: any, b: any) => {
+                return (b.isProfileSurvey === true ? 1 : 0) - (a.isProfileSurvey === true ? 1 : 0);
+            });
         }
     }
 
@@ -232,6 +234,10 @@ export class EarnComponent extends BaseComponent implements OnInit {
         if (/iPhone|iPad|iPod|Android/i.test(ua)) return 'Mobile';
         if (/Tablet|iPad/i.test(ua)) return 'Tablet';
         return 'Desktop';
+    }
+
+    hasProfileSurvey(): boolean {
+        return this.featuredSurveys.some(survey => survey.isProfileSurvey === true);
     }
 
 }

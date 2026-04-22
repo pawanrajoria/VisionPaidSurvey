@@ -1,14 +1,137 @@
 {
     "faq": {
         "heading": {
-            "subtitle": "FAQ",
+            "subtitle": "Soalan Lazim",
             "title": "Soalan Lazim (FAQs)",
-            "description": "Lihat soalan paling biasa yang ditanya oleh pengguna tentang cara menggunakan <strong>ProfitPiller</strong> dan cara untuk mula menjana pendapatan."
+            "description": "Lihat soalan-soalan paling biasa yang ditanya oleh pengguna tentang penggunaan <strong>ProfitPiller</strong> dan cara untuk mula menjana pendapatan."
         },
-        "checkAllQuestions": "Lihat Semua Soalan",
+        "checkAllQuestions": "Semak Semua Soalan",
         "needHelp": {
             "title": "Perlukan bantuan? Jawapan anda hanya satu klik sahaja.",
-            "description": "Perlukan bantuan lanjut? Pasukan kami sedia membantu. Jika anda tidak menemui jawapan yang anda cari, hubungi kami — kami akan memastikan anda mendapat kejelasan yang anda perlukan."
+            "description": "Perlukan bantuan lanjut? Pasukan kami sedia membantu. Jika anda tidak menemui jawapan yang dicari, hubungi kami sahaja — kami akan memastikan anda mendapat penjelasan yang diperlukan."
+        },
+        "items": {
+            "q0": {
+                "question": "Bagaimanakah saya boleh menjana wang dengan tinjauan berbayar?",
+                "answer": {
+                    "0": "ProfitPiller adalah laman web percuma di mana anda boleh menjana wang tunai sebenar dengan mengambil tinjauan berbayar.",
+                    "1": "Hanya daftar dengan e-mel anda dan mula menjana pendapatan hari ini. Kebanyakan pengguna mengeluarkan tunai pertama mereka pada hari yang sama!",
+                    "2": "Anda boleh mengambil tinjauan pada bila-bila masa dari telefon atau komputer anda."
+                }
+            },
+            "q1": {
+                "question": "Bagaimanakah cara kerja pengambilan tinjauan?",
+                "answer": {
+                    "0": "Pertama, daftar untuk ProfitPiller — ia percuma dan hanya memerlukan alamat e-mel anda.",
+                    "1": "Setelah log masuk, anda akan melihat senarai tinjauan yang tersedia dengan butiran mengenai tempoh dan bayaran.",
+                    "2": "Klik pada tinjauan, lengkapkan beberapa soalan kelayakan, dan kemudian selesaikan tinjauan utama.",
+                    "3": "Selepas selesai, anda akan diberi ganjaran mata, yang boleh ditebus serta-merta."
+                }
+            },
+            "q2": {
+                "question": "Adakah saya perlu memberikan data peribadi saya kepada anda?",
+                "answer": {
+                    "0": "Tidak! Kami tidak akan sekali-kali menjual atau berkongsi e-mel anda dengan pelanggan tinjauan.",
+                    "1": "Tinjauan tidak akan meminta maklumat pengenalan peribadi seperti nama atau alamat anda.",
+                    "2": "Semua respons anda kekal tanpa nama."
+                }
+            },
+            "q3": {
+                "question": "Berapa banyak wang yang boleh saya hasilkan?",
+                "answer": {
+                    "0": "ProfitPiller bukan kerja sepenuh masa, tetapi dengan hanya 30–60 minit sehari, anda boleh menjana pendapatan yang mencukupi untuk kemewahan harian.",
+                    "1": "Semak statistik langsung kami untuk melihat hasil pendapatan pengguna lain semalam!"
+                }
+            },
+            "q4": {
+                "question": "Adakah ProfitPiller membayar lebih baik daripada laman web lain?",
+                "answer": {
+                    "0": "Ya! Secara purata, ProfitPiller membayar sehingga 150% lebih untuk tinjauan yang sama.",
+                    "1": "Kami fokus pada memberi ganjaran kepada pengguna kami daripada berbelanja untuk pemasaran yang besar."
+                }
+            },
+            "q5": {
+                "question": "Bolehkah saya benar-benar mengeluarkan wang tunai?",
+                "answer": {
+                    "0": "Ya! Anda boleh mengeluarkan wang tunai serta-merta ke akaun PayPal atau bank anda.",
+                    "1": "Pengeluaran diproses segera dan biasanya dikreditkan dalam masa beberapa jam.",
+                    "2": "Anda juga boleh menebus pelbagai kad hadiah untuk perkhidmatan popular seperti Amazon, Shopify, Apple dan banyak lagi."
+                }
+            },
+            "q6": {
+                "question": "Adakah terdapat jumlah pengeluaran minimum?",
+                "answer": {
+                    "0": "Tidak juga! Ia fleksibel.",
+                    "1": "Semasa mendaftar, anda memilih Bonus Aluan anda — sama ada pengeluaran tunai cepat dengan jumlah kecil atau bonus yang lebih besar dengan pengeluaran minimum yang sedikit lebih tinggi."
+                }
+            },
+            "q7": {
+                "question": "Apakah yang penting semasa mengambil tinjauan?",
+                "answer": {
+                    "0": "Pendapat anda memberi kesan langsung kepada produk dan perkhidmatan jenama utama.",
+                    "1": "Itulah sebabnya penting untuk kekal jujur dan fokus semasa menjawab.",
+                    "2": "Tinjauan memantau kualiti respons — jawapan yang tidak ikhlas boleh menyebabkan pembatalan kelayakan."
+                }
+            },
+            "q8": {
+                "question": "Berikut adalah beberapa petua untuk berjaya melengkapkan tinjauan",
+                "answer": {
+                    "0": "Jangan tergesa-gesa. Ambil masa anda untuk membaca soalan.",
+                    "1": "Jujur. Berikan jawapan yang tepat tentang diri anda dan pendapat anda.",
+                    "2": "Jangan gunakan VPN atau Wi-Fi awam. Perkhidmatan yang menyembunyikan sambungan anda akan ditandakan sebagai penipuan.",
+                    "3": "Bersikap terbuka. Elakkan menjawab “Saya tidak mahu menjawab” terlalu kerap — ia boleh membatalkan kelayakan anda.",
+                    "4": "Berikan butiran. Berikan jawapan yang bernas dalam soalan terbuka. Kandungan yang rendah usaha atau menyinggung perasaan boleh menyebabkan anda ditapis keluar."
+                }
+            },
+            "q9": {
+                "question": "Bagaimanakah saya boleh menjana wang dengan tinjauan dan tawaran?",
+                "answer": {
+                    "0": "ProfitPiller membolehkan anda memperoleh ganjaran sebenar dengan melengkapkan tinjauan dalam talian dan meneroka tawaran istimewa.",
+                    "1": "Pilih apa yang menarik minat anda, lengkapkannya, dan dapatkan mata yang boleh anda tebus untuk tunai atau kad hadiah."
+                }
+            },
+            "q10": {
+                "question": "Apakah jenis tawaran yang boleh saya lengkapkan?",
+                "answer": {
+                    "0": "Tawaran mungkin termasuk mendaftar untuk percubaan percuma, memuat turun aplikasi, atau terlibat dengan perkhidmatan baharu.",
+                    "1": "Ia cepat, mudah, dan menambah pendapatan anda bersama tinjauan."
+                }
+            },
+            "q11": {
+                "question": "Adakah tinjauan dan tawaran membayar jumlah yang sama?",
+                "answer": {
+                    "0": "Jumlah ganjaran berbeza-beza bergantung pada tempoh dan keperluan.",
+                    "1": "Sesetengah tawaran mungkin membayar lebih, terutamanya jika ia melibatkan pendaftaran atau pemasangan."
+                }
+            },
+            "q12": {
+                "question": "Seberapa cepat saya boleh menjana pendapatan dengan tinjauan dan tawaran?",
+                "answer": {
+                    "0": "Ramai pengguna memperoleh pendapatan yang mencukupi untuk ganjaran pertama mereka dalam hari yang sama.",
+                    "1": "Tawaran sering dikreditkan lebih cepat, manakala tinjauan memberikan pendapatan harian yang stabil."
+                }
+            },
+            "q13": {
+                "question": "Bolehkah saya memilih tinjauan atau tawaran yang ingin dilengkapkan?",
+                "answer": {
+                    "0": "Ya! ProfitPiller membolehkan anda memilih daripada pelbagai tinjauan dan tawaran.",
+                    "1": "Anda sentiasa mempunyai kawalan ke atas apa yang anda lengkapkan."
+                }
+            },
+            "q14": {
+                "question": "Adakah saya perlu melengkapkan kedua-duanya untuk memperoleh ganjaran?",
+                "answer": {
+                    "0": "Tidak. Anda boleh menjana pendapatan daripada tinjauan atau tawaran secara berasingan.",
+                    "1": "Menggabungkan kedua-duanya hanya membantu anda mencapai ganjaran dengan lebih cepat."
+                }
+            },
+            "q15": {
+                "question": "Adakah melengkapkan tawaran itu percuma?",
+                "answer": {
+                    "0": "Banyak tawaran adalah percuma sepenuhnya — seperti pemasangan aplikasi atau pendaftaran surat berita.",
+                    "1": "Sesetengah mungkin melibatkan pembelian atau percubaan percuma, jadi sentiasa baca butiran tawaran."
+                }
+            }
         }
     },
     "common": {

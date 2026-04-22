@@ -1,0 +1,57 @@
+{
+  "afterloginhelp": {
+    "title": "Hulp & Ondersteuning",
+    "subtitle": "We staan voor je klaar — en je privacy is beschermd.",
+    "ask_question": "Vraag indienen",
+    "question_title": "💬 Nog vragen?",
+    "question_subtitle": "Geen zorgen — antwoorden zijn slechts één klik verwijderd! Ons supportteam staat klaar om je te helpen.",
+    "question_instruction": "Wees zo duidelijk mogelijk bij het beschrijven van je vraag",
+    "enter_your_email": "Voer je e-mailadres in",
+    "how_can_help": "Hoe kunnen we helpen?",
+    "survey_instruction": "Upload een screenshot als je een probleem hebt gehad.",
+    "upload_text": "Klik of sleep bestanden om te uploaden",
+    "upload_instruction": "PNG, JPG (Max 1MB)",
+    "faqs": {
+      "q1": {
+        "question": "Hoe kan ik beloningen verdienen?",
+        "answer": "Door enquêtes, aanbiedingen en verwijzingen te voltooien."
+      },
+      "q2": {
+        "question": "Hoe kwalificeer ik me?",
+        "answer": "Door je profiel volledig en eerlijk in te vullen."
+      },
+      "q3": {
+        "question": "Waarom zijn er geen enquêtes?",
+        "answer": "Dit hangt af van je profiel en de vraag van partners."
+      },
+      "q4": {
+        "question": "Wat is screen-out?",
+        "answer": "Je voldoet niet aan de doelgroepcriteria."
+      },
+      "q5": {
+        "question": "Waarom kreeg ik niet de volledige beloning?",
+        "answer": "Soms worden gedeeltelijke beloningen gegeven."
+      },
+      "q6": {
+        "question": "Mag ik een VPN gebruiken?",
+        "answer": "Nee, dit is niet toegestaan."
+      },
+      "q7": {
+        "question": "Wanneer kan ik uitbetalen?",
+        "answer": "Na het bereiken van het minimum saldo."
+      },
+      "q8": {
+        "question": "Kan ik anderen verwijzen?",
+        "answer": "Ja, je krijgt commissie."
+      },
+      "q9": {
+        "question": "Zijn mijn gegevens veilig?",
+        "answer": "Ja, volledig beschermd."
+      },
+      "q10": {
+        "question": "Hoe contact opnemen?",
+        "answer": "Via support@profitpiller.com."
+      }
+    }
+  }
+}

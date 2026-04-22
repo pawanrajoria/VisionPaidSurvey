@@ -1,29 +1,33 @@
 {
-    "footer": {
-        "copyright": "© 2026 Profit Piller - Alle rechten voorbehouden.",
-        "productOf": "Een product van",
-        "cralpkResearchGroup": "Cralpk Research Group",
-        "platform": {
-            "title": "Platform",
-            "loginOrSignUp": "Inloggen of aanmelden",
-            "aboutProfitpiller": "Over Profitpiller",
-            "contactUs": "Contact",
-            "help": "Hulp"
-        },
-        "legal": {
-            "title": "Juridisch",
-            "privacyPolicy": "Privacybeleid",
-            "cookiePolicy": "Cookiebeleid",
-            "termsConditions": "Algemene voorwaarden",
-            "doNotSell": "Verkoop mijn persoonlijke gegevens niet"
-        },
-        "exploreMore": {
-            "title": "Verken meer",
-            "earnCash": "Verdien geld met betaalde enquêtes",
-            "getRewarded": "Word beloond met cadeaubonnen",
-            "redeemAmazon": "Amazon-cadeaubonnen inwisselen",
-            "getPaiyPal": "Betaald krijgen via PayPal",
-            "visaGiftCards": "Visa-cadeaubonnen en meer"
-        }
+  "footer": {
+    "trust": "Uitstekend",
+    "copyright": "© 2026 Profit Piller. Alle rechten voorbehouden.",
+    "product_of": "Een product van",
+    "platform": {
+      "title": "Platform",
+      "login": "Inloggen of Registreren",
+      "about": "Over ProfitPiller",
+      "contact": "Contact",
+      "help": "Help"
+    },
+    "legal": {
+      "title": "Juridisch",
+      "privacy": "Privacybeleid",
+      "terms": "Algemene voorwaarden",
+      "cookie": "Cookiebeleid",
+      "dns": "Verkoop mijn gegevens niet"
+    },
+    "explore": {
+      "title": "Ontdek meer",
+      "cash": "Geld verdienen met enquêtes",
+      "gift": "Cadeaubonnen",
+      "amazon": "Amazon cadeaubonnen",
+      "paypal": "PayPal beloningen",
+      "visa": "Visa cadeaubonnen"
+    },
+    "follow": {
+      "title": "Volg ons",
+      "download": "Download onze app"
     }
+  }
 }

@@ -1,17 +1,27 @@
 .top-filters {
   display: flex;
   align-items: center;
+  justify-content: center;
+  /* Centers the content horizontally */
   gap: 12px;
-  margin-bottom: 20px;
-  margin: 0 auto;
+  margin-bottom: 30px;
+  /* Increased margin to separate from the grid */
+  width: 100%;
+  /* Ensure it takes full width */
+  padding: 15px 0;
 
-  mat-chip {
-    background: #105749;
-    color: #ffffff;
+  // Add this to ensure it's not hidden by overflow
+  overflow: visible;
 
-    span.mat-mdc-chip-action-label {
-      color: white !important;
-    }
+  span {
+    font-weight: bold;
+    color: #105749;
+  }
+
+  .toggle-group {
+    border: 1px solid #105749;
+    border-radius: 8px;
+    background: white;
   }
 }
 
@@ -465,7 +475,8 @@
     justify-content: center;
 
     img {
-      width: 50px;
+      width: 80%;
+      padding: 8px;
     }
   }
 
@@ -501,4 +512,35 @@
 .logocoin {
   width: 15px !important;
   height: 15px !important;
+}
+
+/* The blur effect */
+.is-blurred {
+  filter: blur(4px) grayscale(80%);
+  opacity: 0.6;
+  pointer-events: none;
+  /* Prevents clicking */
+  user-select: none;
+  /* Prevents highlighting text */
+  transition: all 0.3s ease;
+}
+
+/* Optional: Make the profile survey stand out more */
+.profile-highlight {
+  border: 2px solid #3f51b5;
+  /* Primary color border */
+  transform: scale(1.02);
+  z-index: 2;
+}
+
+.profile-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4081;
+  color: white;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 4px;
 }

@@ -2,13 +2,136 @@
     "faq": {
         "heading": {
             "subtitle": "FAQ",
-            "title": "Perguntas frequentes (FAQs)",
-            "description": "Confira as perguntas mais comuns que os usuários fazem sobre como usar o <strong>ProfitPiller</strong> e como começar a ganhar dinheiro."
+            "title": "Perguntas Frequentes (FAQs)",
+            "description": "Consulte as perguntas mais comuns que os utilizadores fazem sobre a utilização do <strong>ProfitPiller</strong> e como começar a ganhar."
         },
-        "checkAllQuestions": "Ver Todas as Perguntas",
+        "checkAllQuestions": "Ver todas as perguntas",
         "needHelp": {
-            "title": "Precisa de ajuda? Suas respostas estão a apenas um clique de distância.",
-            "description": "Precisa de mais ajuda? Nossa equipe está aqui para ajudar. Se você não encontrou a resposta que estava procurando, entre em contato — garantiremos que você obtenha a clareza de que precisa."
+            "title": "Precisa de ajuda? As respostas estão apenas a um clique de distância.",
+            "description": "Precisa de mais assistência? A nossa equipa está aqui para ajudar. Se não encontrou a resposta que procurava, entre em contacto — garantiremos que obtenha a clareza de que necessita."
+        },
+        "items": {
+            "q0": {
+                "question": "Como posso ganhar dinheiro com inquéritos remunerados?",
+                "answer": {
+                    "0": "O ProfitPiller é um site gratuito onde pode ganhar dinheiro real ao responder a inquéritos remunerados.",
+                    "1": "Basta inscrever-se com o seu e-mail e começar a ganhar hoje mesmo. A maioria dos utilizadores levanta o seu primeiro dinheiro no próprio dia!",
+                    "2": "Pode responder a inquéritos a qualquer momento a partir do seu telemóvel ou computador."
+                }
+            },
+            "q1": {
+                "question": "Como funciona o preenchimento de inquéritos?",
+                "answer": {
+                    "0": "Primeiro, inscreva-se no ProfitPiller — é gratuito e requer apenas o seu endereço de e-mail.",
+                    "1": "Após iniciar sessão, verá uma lista de inquéritos disponíveis com detalhes sobre a duração e o pagamento.",
+                    "2": "Clique num inquérito, complete algumas perguntas de qualificação e, em seguida, termine o inquérito principal.",
+                    "3": "Após a conclusão, será recompensado com pontos, que podem ser trocados instantaneamente."
+                }
+            },
+            "q2": {
+                "question": "Preciso de fornecer os meus dados pessoais?",
+                "answer": {
+                    "0": "Não! Nunca venderemos nem partilharemos o seu e-mail com os clientes dos inquéritos.",
+                    "1": "Os inquéritos não pedirão informações de identificação pessoal, como o seu nome ou morada.",
+                    "2": "Todas as suas respostas permanecem anónimas."
+                }
+            },
+            "q3": {
+                "question": "Quanto dinheiro posso ganhar?",
+                "answer": {
+                    "0": "O ProfitPiller não é um emprego a tempo inteiro, mas com apenas 30–60 minutos por dia, pode ganhar o suficiente para pequenos luxos do dia a dia.",
+                    "1": "Consulte as nossas estatísticas em direto para ver o que outros utilizadores ganharam ontem!"
+                }
+            },
+            "q4": {
+                "question": "O ProfitPiller paga melhor do que outros sites?",
+                "answer": {
+                    "0": "Sim! Em média, o ProfitPiller paga até 150% mais pelos mesmos inquéritos.",
+                    "1": "Focamo-nos em recompensar os nossos utilizadores em vez de gastar em marketing pesado."
+                }
+            },
+            "q5": {
+                "question": "Posso realmente levantar dinheiro?",
+                "answer": {
+                    "0": "Sim! Pode levantar dinheiro instantaneamente para a sua conta PayPal ou bancária.",
+                    "1": "Os levantamentos são processados imediatamente e normalmente creditados em poucas horas.",
+                    "2": "Também pode trocar pontos por vários cartões-presente de serviços populares como Amazon, Shopify, Apple e muito mais."
+                }
+            },
+            "q6": {
+                "question": "Existe um montante mínimo de levantamento?",
+                "answer": {
+                    "0": "Na verdade, não! É flexível.",
+                    "1": "Ao inscrever-se, escolhe o seu Bónus de Boas-vindas — ou um levantamento rápido com um valor pequeno ou um bónus maior com um levantamento mínimo ligeiramente superior."
+                }
+            },
+            "q7": {
+                "question": "O que é importante ao responder a inquéritos?",
+                "answer": {
+                    "0": "As suas opiniões impactam diretamente os produtos e serviços de grandes marcas.",
+                    "1": "Por isso, é importante ser honesto e manter-se focado ao responder.",
+                    "2": "Os inquéritos monitorizam a qualidade das respostas — respostas insinceras podem levar à desqualificação."
+                }
+            },
+            "q8": {
+                "question": "Aqui estão algumas dicas para completar inquéritos com sucesso",
+                "answer": {
+                    "0": "Não tenha pressa. Reserve tempo para ler as perguntas.",
+                    "1": "Seja honesto. Dê respostas precisas sobre si e a sua opinião.",
+                    "2": "Não utilize VPN ou Wi-Fi público. Serviços que ocultam a sua ligação são sinalizados como fraude.",
+                    "3": "Seja aberto. Evite responder “Não quero responder” com demasiada frequência — isso pode desqualificá-lo.",
+                    "4": "Seja detalhado. Forneça respostas ponderadas em perguntas abertas. Conteúdo ofensivo ou com pouco esforço pode fazer com que seja excluído."
+                }
+            },
+            "q9": {
+                "question": "Como posso ganhar dinheiro com inquéritos e ofertas?",
+                "answer": {
+                    "0": "O ProfitPiller permite-lhe ganhar recompensas reais ao completar inquéritos online e explorar ofertas especiais.",
+                    "1": "Escolha o que lhe interessa, complete-o e ganhe pontos que pode trocar por dinheiro ou cartões-presente."
+                }
+            },
+            "q10": {
+                "question": "Que tipo de ofertas posso completar?",
+                "answer": {
+                    "0": "As ofertas podem incluir a inscrição em períodos de teste gratuitos, o download de aplicações ou a interação com novos serviços.",
+                    "1": "São rápidas, fáceis e somam-se aos seus ganhos com inquéritos."
+                }
+            },
+            "q11": {
+                "question": "Os inquéritos e as ofertas pagam o mesmo?",
+                "answer": {
+                    "0": "Os valores das recompensas variam dependendo da duração e dos requisitos.",
+                    "1": "Algumas ofertas podem pagar mais, especialmente se envolverem inscrições ou instalações."
+                }
+            },
+            "q12": {
+                "question": "Com que rapidez posso ganhar com inquéritos e ofertas?",
+                "answer": {
+                    "0": "Muitos utilizadores ganham o suficiente para a sua primeira recompensa no mesmo dia.",
+                    "1": "As ofertas são frequentemente creditadas mais rapidamente, enquanto os inquéritos proporcionam ganhos diários constantes."
+                }
+            },
+            "q13": {
+                "question": "Posso escolher quais os inquéritos ou ofertas completar?",
+                "answer": {
+                    "0": "Sim! O ProfitPiller permite-lhe escolher entre uma vasta gama de inquéritos e ofertas.",
+                    "1": "Está sempre no controlo do que completa."
+                }
+            },
+            "q14": {
+                "question": "Preciso de completar ambos para ganhar recompensas?",
+                "answer": {
+                    "0": "Não. Pode ganhar com inquéritos ou ofertas de forma independente.",
+                    "1": "Combinar ambos apenas ajuda a alcançar as recompensas mais rapidamente."
+                }
+            },
+            "q15": {
+                "question": "É gratuito completar ofertas?",
+                "answer": {
+                    "0": "Muitas ofertas são completamente gratuitas — como instalações de apps ou inscrições em newsletters.",
+                    "1": "Algumas podem envolver uma compra ou um período de teste gratuito, por isso leia sempre os detalhes da oferta."
+                }
+            }
         }
     },
     "common": {

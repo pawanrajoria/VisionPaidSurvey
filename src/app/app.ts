@@ -17,6 +17,7 @@ import { BaseComponent } from './base.component';
 import { GoogleService } from './components/auth/google.service';
 import { VersionCheckService } from './version-check.service';
 import { RecaptchaV3Module } from 'ng-recaptcha';
+import { supportedLangs } from './components/userflow/const';
 
 @Component({
   selector: 'app-root',
@@ -66,6 +67,16 @@ export class AppComponent extends BaseComponent implements OnInit {
         filter((event) => event instanceof NavigationEnd)
       )
       .subscribe(() => {
+
+        const urlSegments = this.router.url.split('/');
+        const langInUrl = urlSegments[1];
+
+        if (supportedLangs.includes(langInUrl)) {
+          this.translate.use(langInUrl);
+          this.localStorageService.setItem('lang', langInUrl);
+        }
+
+
         const fullUrl = this.router.url;
         // Extract lang (en / hi)
         const langMatch = fullUrl.match(/^\/(en|hi)/);
@@ -96,25 +107,45 @@ export class AppComponent extends BaseComponent implements OnInit {
   private detectAndSetLanguage(): void {
     if (!this.isBrowser) return;
 
-    const supportedLangs = ['en', 'hi']; // 👈 add more if needed
-
-    let lang = navigator.language || navigator.languages?.[0] || 'en';
-    let langCode = lang.split('-')[0];
+    let langCode = localStorage.getItem('lang') || navigator.language.split('-')[0];
 
     if (!supportedLangs.includes(langCode)) {
       langCode = 'en';
     }
 
-    const currentUrl = this.router.url;
-    // Check if URL already has language prefix
-    const hasLangPrefix = supportedLangs.some(l => currentUrl.startsWith(`/${l}`));
-    // 👉 Set language in ngx-translate
-    this.translate.use(langCode);
-    // 👉 Save to local storage (optional)
-    this.localStorageService.setItem('lang', langCode);
-    // 👉 Append language to URL if not present
-    if (!hasLangPrefix) {
-      this.router.navigate([`/${langCode}${currentUrl}`]);
-    }
+    // ✅ Force ngx-translate to switch
+    this.translate.use(langCode).subscribe({
+      next: () => {
+        console.log(`Translations loaded for: ${langCode}`);
+        this.translationsLoaded = true;
+      },
+      error: (err) => console.error('Failed to load translations', err)
+    });
   }
+
+
+  // private detectAndSetLanguage(): void {
+  //   if (!this.isBrowser) return;
+
+  //   const supportedLangs = ['en', 'hi']; // 👈 add more if needed
+
+  //   let lang = navigator.language || navigator.languages?.[0] || 'en';
+  //   let langCode = lang.split('-')[0];
+
+  //   if (!supportedLangs.includes(langCode)) {
+  //     langCode = 'en';
+  //   }
+
+  //   const currentUrl = this.router.url;
+  //   // Check if URL already has language prefix
+  //   const hasLangPrefix = supportedLangs.some(l => currentUrl.startsWith(`/${l}`));
+  //   // 👉 Set language in ngx-translate
+  //   this.translate.use(langCode);
+  //   // 👉 Save to local storage (optional)
+  //   this.localStorageService.setItem('lang', langCode);
+  //   // 👉 Append language to URL if not present
+  //   if (!hasLangPrefix) {
+  //     this.router.navigate([`/${langCode}${currentUrl}`]);
+  //   }
+  // }
 }

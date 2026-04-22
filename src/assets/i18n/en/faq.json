@@ -1,17 +1,140 @@
 {
-    "faq": {
-        "heading": {
-            "subtitle": "FAQ",
-            "title": "Frequently asked questions (FAQs)",
-            "description": "Check out the most common questions users ask about using <strong>ProfitPiller</strong> and how to start earning."
-        },
-        "checkAllQuestions": "Check All Questions",
-        "needHelp": {
-            "title": "Need help? Your answers are only a click away.",
-            "description": "Need further assistance? Our team is here to help. If you didn’t find the answer you were looking for, just reach out — we’ll ensure you get the clarity you need."
-        }
+  "faq": {
+    "heading": {
+      "subtitle": "FAQ",
+      "title": "Frequently asked questions (FAQs)",
+      "description": "Check out the most common questions users ask about using <strong>ProfitPiller</strong> and how to start earning."
     },
-    "common": {
-        "arrowForward": "arrow_forward"
+    "checkAllQuestions": "Check All Questions",
+    "needHelp": {
+      "title": "Need help? Your answers are only a click away.",
+      "description": "Need further assistance? Our team is here to help. If you didn’t find the answer you were looking for, just reach out — we’ll ensure you get the clarity you need."
+    },
+    "items": {
+      "q0": {
+        "question": "How can I make money with paid surveys?",
+        "answer": {
+          "0": "ProfitPiller is a free website where you can earn real money for taking paid surveys.",
+          "1": "Simply sign up with your email and start earning today. Most users withdraw their first cash on the same day!",
+          "2": "You can take surveys anytime from your phone or computer."
+        }
+      },
+      "q1": {
+        "question": "How does taking surveys work?",
+        "answer": {
+          "0": "First, sign up for ProfitPiller — it’s free and only requires your email address.",
+          "1": "Once logged in, you’ll see a list of available surveys with details on duration and payout.",
+          "2": "Click on a survey, complete a few qualification questions, and then finish the main survey.",
+          "3": "After completion, you’ll be rewarded with points, which can be redeemed instantly."
+        }
+      },
+      "q2": {
+        "question": "Do I need to give you my personal data?",
+        "answer": {
+          "0": "No! We will never sell or share your email with survey clients.",
+          "1": "Surveys will not ask for personal identifying information like your name or address.",
+          "2": "All your responses remain anonymous."
+        }
+      },
+      "q3": {
+        "question": "How much money can I make?",
+        "answer": {
+          "0": "ProfitPiller is not a full-time job, but with just 30–60 minutes per day, you can earn enough for everyday luxuries.",
+          "1": "Check our live stats to see what other users earned yesterday!"
+        }
+      },
+      "q4": {
+        "question": "Does ProfitPiller pay better than other websites?",
+        "answer": {
+          "0": "Yes! On average, ProfitPiller pays up to 150% more for the same surveys.",
+          "1": "We focus on rewarding our users instead of spending on heavy marketing."
+        }
+      },
+      "q5": {
+        "question": "Can I really withdraw cash?",
+        "answer": {
+          "0": "Yes! You can withdraw cash instantly to your PayPal or bank account.",
+          "1": "Withdrawals are processed immediately and typically credited within hours.",
+          "2": "You can also redeem various gift cards for popular services like Amazon, Shopify, Apple, and more."
+        }
+      },
+      "q6": {
+        "question": "Is there a minimum withdrawal amount?",
+        "answer": {
+          "0": "Not really! It’s flexible.",
+          "1": "When signing up, you choose your Welcome Bonus — either a quick cashout with a small amount or a larger bonus with a slightly higher minimum withdrawal."
+        }
+      },
+      "q7": {
+        "question": "What is important when taking surveys?",
+        "answer": {
+          "0": "Your opinions directly impact products and services of major brands.",
+          "1": "That’s why it’s important to stay honest and focused while answering.",
+          "2": "Surveys monitor the quality of responses — insincere answers may lead to disqualification."
+        }
+      },
+      "q8": {
+        "question": "These are some tips for successfully completing surveys",
+        "answer": {
+          "0": "Don't rush. Take your time to read the questions.",
+          "1": "Be honest. Give accurate answers about yourself and your opinion.",
+          "2": "Don't use a VPN or public Wi-Fi. Services that hide your connection are flagged as fraud.",
+          "3": "Be open. Avoid answering “I don’t want to answer” too often — it could disqualify you.",
+          "4": "Be detailed. Provide thoughtful answers in open-ended questions. Low-effort or offensive content may get you screened out."
+        }
+      },
+      "q9": {
+        "question": "How can I make money with surveys and offers?",
+        "answer": {
+          "0": "ProfitPiller allows you to earn real rewards by completing online surveys and exploring special offers.",
+          "1": "Choose what interests you, complete it, and earn points you can redeem for cash or gift cards."
+        }
+      },
+      "q10": {
+        "question": "What kind of offers can I complete?",
+        "answer": {
+          "0": "Offers may include signing up for free trials, downloading apps, or engaging with new services.",
+          "1": "They’re quick, easy, and add to your earnings alongside surveys."
+        }
+      },
+      "q11": {
+        "question": "Do surveys and offers pay the same?",
+        "answer": {
+          "0": "Reward amounts vary depending on the length and requirements.",
+          "1": "Some offers may pay more, especially if they involve sign-ups or installs."
+        }
+      },
+      "q12": {
+        "question": "How fast can I earn with surveys and offers?",
+        "answer": {
+          "0": "Many users earn enough for their first reward within the same day.",
+          "1": "Offers often credit faster, while surveys provide steady daily earnings."
+        }
+      },
+      "q13": {
+        "question": "Can I choose which surveys or offers to complete?",
+        "answer": {
+          "0": "Yes! ProfitPiller lets you choose from a wide range of surveys and offers.",
+          "1": "You are always in control of what you complete."
+        }
+      },
+      "q14": {
+        "question": "Do I need to complete both to earn rewards?",
+        "answer": {
+          "0": "No. You can earn from surveys or offers independently.",
+          "1": "Combining both just helps you reach rewards faster."
+        }
+      },
+      "q15": {
+        "question": "Is it free to complete offers?",
+        "answer": {
+          "0": "Many offers are completely free — like app installs or newsletter sign-ups.",
+          "1": "Some may involve a purchase or free trial, so always read the offer details."
+        }
+      }
     }
+  },
+  "common": {
+    "arrowForward": "arrow_forward"
+  }
 }

@@ -1,0 +1,41 @@
+{
+    "instruction": {
+        "header": {
+            "title": "¡Bienvenido a nuestra plataforma!",
+            "subtitle": "Antes de comenzar a completar encuestas, por favor lee y acepta estas reglas importantes."
+        },
+        "rules": {
+            "rule1": {
+                "title": "Regla 1 de 7 – Requisitos de edad",
+                "desc": "Debes tener al menos 16 años para usar la plataforma. Algunas encuestas pueden requerir 18 años o más, según tu país."
+            },
+            "rule2": {
+                "title": "Regla 2 de 7 – Una sola cuenta",
+                "desc": "Solo se permite una cuenta por persona. No crees múltiples cuentas ni compartas la tuya con otros."
+            },
+            "rule3": {
+                "title": "Regla 3 de 7 – Sin VPN ni emuladores",
+                "desc": "No utilices VPN, emuladores ni herramientas que falsifiquen tu ubicación o dispositivo. Esto puede resultar en una suspensión."
+            },
+            "rule4": {
+                "title": "Regla 4 de 7 – Participación honesta",
+                "desc": "Proporciona respuestas honestas. No utilices herramientas de IA, dictado por voz ni copies y pegues respuestas."
+            },
+            "rule5": {
+                "title": "Regla 5 de 7 – Recompensas y pagos",
+                "desc": "Pagamos a través de PayPal, tarjetas regalo o créditos. Puedes elegir la opción que mejor te convenga."
+            },
+            "rule6": {
+                "title": "Regla 6 de 7 – Datos y GDPR",
+                "desc": "Cumplimos con el RGPD. Puedes solicitar la eliminación de tus datos en cualquier momento."
+            },
+            "rule7": {
+                "title": "Regla 7 de 7 – Respeta la plataforma",
+                "desc": "El comportamiento ofensivo, el abuso o los intentos de fraude pueden resultar en descalificación o suspensión."
+            }
+        },
+        "button": {
+            "continue": "Entendido y continuar"
+        }
+    }
+}

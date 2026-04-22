@@ -1,0 +1,27 @@
+{
+  "afterloginhelp": {
+    "title": "帮助与支持",
+    "subtitle": "我们随时为您服务 — 您的隐私受到保护。",
+    "ask_question": "提交问题",
+    "question_title": "💬 还有疑问吗？",
+    "question_subtitle": "我们的团队将快速为您解答。",
+    "question_instruction": "请清楚描述您的问题",
+    "enter_your_email": "输入邮箱",
+    "how_can_help": "我们如何帮助您？",
+    "survey_instruction": "如有问题，请上传截图。",
+    "upload_text": "点击或拖拽上传",
+    "upload_instruction": "PNG, JPG (最大1MB)",
+    "faqs": {
+      "q1": { "question": "如何赚钱？", "answer": "通过问卷和任务。" },
+      "q2": { "question": "如何符合资格？", "answer": "完善资料。" },
+      "q3": { "question": "没有问卷？", "answer": "取决于需求。" },
+      "q4": { "question": "什么是筛选失败？", "answer": "不符合条件。" },
+      "q5": { "question": "奖励减少？", "answer": "部分奖励。" },
+      "q6": { "question": "VPN？", "answer": "禁止使用。" },
+      "q7": { "question": "提现？", "answer": "达到最低金额。" },
+      "q8": { "question": "推荐？", "answer": "10%佣金。" },
+      "q9": { "question": "数据安全吗？", "answer": "完全安全。" },
+      "q10": { "question": "联系客服？", "answer": "support@profitpiller.com" }
+    }
+  }
+}

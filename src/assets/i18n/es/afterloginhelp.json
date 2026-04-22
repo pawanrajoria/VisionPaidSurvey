@@ -1,0 +1,27 @@
+{
+  "afterloginhelp": {
+    "title": "Ayuda y Soporte",
+    "subtitle": "Estamos aquí para ayudarte — tu privacidad está protegida.",
+    "ask_question": "Enviar consulta",
+    "question_title": "💬 ¿Aún tienes preguntas?",
+    "question_subtitle": "No te preocupes — nuestro equipo está listo para ayudarte rápidamente.",
+    "question_instruction": "Por favor, sé claro con tu pregunta",
+    "enter_your_email": "Introduce tu correo electrónico",
+    "how_can_help": "¿Cómo podemos ayudarte?",
+    "survey_instruction": "Si tuviste un problema, sube una captura de pantalla.",
+    "upload_text": "Haz clic o arrastra archivos",
+    "upload_instruction": "PNG, JPG (Máx. 1MB)",
+    "faqs": {
+      "q1": { "question": "¿Cómo gano recompensas?", "answer": "Completando encuestas y ofertas." },
+      "q2": { "question": "¿Cómo califico?", "answer": "Completa tu perfil." },
+      "q3": { "question": "¿Por qué no hay encuestas?", "answer": "Depende del perfil." },
+      "q4": { "question": "¿Qué es screen-out?", "answer": "No coincidiste con criterios." },
+      "q5": { "question": "¿Por qué menos recompensa?", "answer": "Parcial por descalificación." },
+      "q6": { "question": "¿VPN permitido?", "answer": "No permitido." },
+      "q7": { "question": "¿Cuándo retirar?", "answer": "Al alcanzar mínimo." },
+      "q8": { "question": "¿Referidos?", "answer": "Gana 10% comisión." },
+      "q9": { "question": "¿Datos seguros?", "answer": "Sí, protegidos." },
+      "q10": { "question": "¿Soporte?", "answer": "support@profitpiller.com" }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "afterloginhelp": {
+    "title": "Hilfe & Support",
+    "subtitle": "Wir sind für Sie da — und Ihre Privatsphäre ist geschützt.",
+    "ask_question": "Anfrage senden",
+    "question_title": "💬 Haben Sie noch Fragen?",
+    "question_subtitle": "Keine Sorge — Antworten sind nur einen Klick entfernt! Unser Support-Team hilft Ihnen gerne schnell und unkompliziert weiter.",
+    "question_instruction": "Bitte beschreiben Sie Ihre Frage so genau wie möglich",
+    "enter_your_email": "E-Mail eingeben",
+    "how_can_help": "Wie können wir helfen?",
+    "survey_instruction": "Wenn Sie ein Problem mit einer Umfrage hatten, laden Sie bitte einen Screenshot hoch.",
+    "upload_text": "Dateien anklicken oder ziehen",
+    "upload_instruction": "PNG, JPG (Max. 1MB)",
+    "faqs": {
+      "q1": {
+        "question": "Wie kann ich Belohnungen verdienen?",
+        "answer": "Durch das Ausfüllen von Umfragen, Angebote und Empfehlungen."
+      },
+      "q2": {
+        "question": "Wie qualifiziere ich mich?",
+        "answer": "Ein vollständiges Profil erhöht Ihre Chancen."
+      },
+      "q3": {
+        "question": "Warum gibt es keine Umfragen?",
+        "answer": "Abhängig von Profil und Nachfrage."
+      },
+      "q4": {
+        "question": "Was ist ein Screen-out?",
+        "answer": "Sie passen nicht zur Zielgruppe."
+      },
+      "q5": {
+        "question": "Warum nicht volle Belohnung?",
+        "answer": "Teilweise Auszahlung möglich."
+      },
+      "q6": {
+        "question": "VPN erlaubt?",
+        "answer": "Nein, verboten."
+      },
+      "q7": {
+        "question": "Wann Auszahlung?",
+        "answer": "Nach Mindestbetrag."
+      },
+      "q8": {
+        "question": "Freunde einladen?",
+        "answer": "Ja, Provision erhalten."
+      },
+      "q9": {
+        "question": "Sind Daten sicher?",
+        "answer": "Ja, vollständig geschützt."
+      },
+      "q10": {
+        "question": "Support kontaktieren?",
+        "answer": "support@profitpiller.com"
+      }
+    }
+  }
+}

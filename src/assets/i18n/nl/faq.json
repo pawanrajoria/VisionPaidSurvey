@@ -2,13 +2,136 @@
     "faq": {
         "heading": {
             "subtitle": "FAQ",
-            "title": "Veelgestelde vragen (FAQ's)",
+            "title": "Veelgestelde vragen (FAQs)",
             "description": "Bekijk de meest voorkomende vragen die gebruikers stellen over het gebruik van <strong>ProfitPiller</strong> en hoe ze kunnen beginnen met verdienen."
         },
-        "checkAllQuestions": "Alle vragen bekijken",
+        "checkAllQuestions": "Bekijk alle vragen",
         "needHelp": {
             "title": "Hulp nodig? Uw antwoorden zijn slechts een klik verwijderd.",
-            "description": "Heeft u verdere hulp nodig? Ons team staat klaar om u te helpen. Als u het antwoord dat u zocht niet heeft gevonden, neem dan contact met ons op — we zorgen ervoor dat u de duidelijkheid krijgt die u nodig heeft."
+            "description": "Hulp nodig? Ons team staat voor u klaar. Als u het antwoord dat u zocht niet heeft gevonden, neem dan contact met ons op – wij zorgen voor de gewenste duidelijkheid."
+        },
+        "items": {
+            "q0": {
+                "question": "Hoe kan ik geld verdienen met betaalde enquêtes?",
+                "answer": {
+                    "0": "ProfitPiller is een gratis website waar u echt geld kunt verdienen met het invullen van betaalde enquêtes.",
+                    "1": "Meld u eenvoudig aan met uw e-mailadres en begin vandaag nog met verdienen. De meeste gebruikers nemen hun eerste geld op dezelfde dag op!",
+                    "2": "U kunt op elk gewenst moment enquêtes invullen vanaf uw telefoon of computer."
+                }
+            },
+            "q1": {
+                "question": "Hoe werkt het invullen van enquêtes?",
+                "answer": {
+                    "0": "Meld u eerst aan voor ProfitPiller — het is gratis en vereist alleen uw e-mailadres.",
+                    "1": "Zodra u bent ingelogd, ziet u een lijst met beschikbare enquêtes met details over de duur en de uitbetaling.",
+                    "2": "Klik op een enquête, beantwoord een paar kwalificatievragen en voltooi vervolgens de hoofdenquête.",
+                    "3": "Na voltooiing wordt u beloond met punten, die direct kunnen worden ingewisseld."
+                }
+            },
+            "q2": {
+                "question": "Moet ik mijn persoonlijke gegevens aan u verstrekken?",
+                "answer": {
+                    "0": "Nee! We zullen uw e-mailadres nooit verkopen of delen met enquêteklanten.",
+                    "1": "In enquêtes wordt niet gevraagd naar persoonlijk identificeerbare informatie zoals uw naam of adres.",
+                    "2": "Al uw antwoorden blijven anoniem."
+                }
+            },
+            "q3": {
+                "question": "Hoeveel geld kan ik verdienen?",
+                "answer": {
+                    "0": "ProfitPiller is geen fulltime baan, maar met slechts 30-60 minuten per dag kunt u genoeg verdienen voor alledaagse luxe.",
+                    "1": "Bekijk onze live statistieken om te zien wat andere gebruikers gisteren hebben verdiend!"
+                }
+            },
+            "q4": {
+                "question": "Betaalt ProfitPiller beter dan andere websites?",
+                "answer": {
+                    "0": "Ja! Gemiddeld betaalt ProfitPiller tot 150% meer voor dezelfde enquêtes.",
+                    "1": "Wij richten ons op het belonen van onze gebruikers in plaats van geld uit te geven aan zware marketing."
+                }
+            },
+            "q5": {
+                "question": "Kan ik echt geld opnemen?",
+                "answer": {
+                    "0": "Ja! U kunt direct geld opnemen naar uw PayPal- of bankrekening.",
+                    "1": "Opnames worden onmiddellijk verwerkt en meestal binnen enkele uren bijgeschreven.",
+                    "2": "U kunt ook verschillende cadeaubonnen inwisselen voor populaire diensten zoals Amazon, Shopify, Apple en meer."
+                }
+            },
+            "q6": {
+                "question": "Is er een minimaal opnamebedrag?",
+                "answer": {
+                    "0": "Niet echt! Het is flexibel.",
+                    "1": "Bij het aanmelden kiest u uw welkomstbonus — een snelle uitbetaling met een klein bedrag of een grotere bonus met een iets hogere minimale opname."
+                }
+            },
+            "q7": {
+                "question": "Wat is belangrijk bij het invullen van enquêtes?",
+                "answer": {
+                    "0": "Uw mening heeft directe invloed op producten en diensten van grote merken.",
+                    "1": "Daarom is het belangrijk om eerlijk en geconcentreerd te blijven tijdens het antwoorden.",
+                    "2": "Enquêtes controleren de kwaliteit van de antwoorden — onoprechte antwoorden kunnen leiden tot diskwalificatie."
+                }
+            },
+            "q8": {
+                "question": "Dit zijn enkele tips voor het succesvol invullen van enquêtes",
+                "answer": {
+                    "0": "Haast u niet. Neem de tijd om de vragen te lezen.",
+                    "1": "Wees eerlijk. Geef nauwkeurige antwoorden over uzelf en uw mening.",
+                    "2": "Gebruik geen VPN of openbare wifi. Diensten die uw verbinding verbergen, worden gemarkeerd als fraude.",
+                    "3": "Wees open. Vermijd om te vaak te antwoorden met 'Ik wil niet antwoorden' — dit kan u diskwalificeren.",
+                    "4": "Wees gedetailleerd. Geef doordachte antwoorden bij open vragen. Weinig inspanning of aanstootgevende inhoud kan ervoor zorgen dat u wordt uitgefilterd."
+                }
+            },
+            "q9": {
+                "question": "Hoe kan ik geld verdienen met enquêtes en aanbiedingen?",
+                "answer": {
+                    "0": "Met ProfitPiller kunt u echte beloningen verdienen door online enquêtes in te vullen en speciale aanbiedingen te verkennen.",
+                    "1": "Kies wat u interesseert, voltooi het en verdien punten die u kunt inwisselen voor geld of cadeaubonnen."
+                }
+            },
+            "q10": {
+                "question": "Wat voor soort aanbiedingen kan ik voltooien?",
+                "answer": {
+                    "0": "Aanbiedingen kunnen bestaan uit het aanmelden voor gratis proefversies, het downloaden van apps of het uitproberen van nieuwe diensten.",
+                    "1": "Ze zijn snel, gemakkelijk en vormen een aanvulling op uw verdiensten uit enquêtes."
+                }
+            },
+            "q11": {
+                "question": "Betalen enquêtes en aanbiedingen hetzelfde?",
+                "answer": {
+                    "0": "De beloningsbedragen variëren afhankelijk van de lengte en de vereisten.",
+                    "1": "Sommige aanbiedingen kunnen meer betalen, vooral als er sprake is van aanmeldingen of installaties."
+                }
+            },
+            "q12": {
+                "question": "Hoe snel kan ik verdienen met enquêtes en aanbiedingen?",
+                "answer": {
+                    "0": "Veel gebruikers verdienen hun eerste beloning op dezelfde dag.",
+                    "1": "Aanbiedingen worden vaak sneller bijgeschreven, terwijl enquêtes zorgen voor een vast dagelijks inkomen."
+                }
+            },
+            "q13": {
+                "question": "Kan ik kiezen welke enquêtes of aanbiedingen ik voltooi?",
+                "answer": {
+                    "0": "Ja! ProfitPiller laat u kiezen uit een breed scala aan enquêtes en aanbiedingen.",
+                    "1": "U heeft altijd de controle over wat u voltooit."
+                }
+            },
+            "q14": {
+                "question": "Moet ik beide voltooien om beloningen te verdienen?",
+                "answer": {
+                    "0": "Nee. U kunt onafhankelijk verdienen met enquêtes of aanbiedingen.",
+                    "1": "Het combineren van beide helpt u alleen om sneller beloningen te behalen."
+                }
+            },
+            "q15": {
+                "question": "Is het gratis om aanbiedingen te voltooien?",
+                "answer": {
+                    "0": "Veel aanbiedingen zijn volledig gratis — zoals app-installaties of aanmeldingen voor nieuwsbrieven.",
+                    "1": "Sommige kunnen een aankoop of een gratis proefperiode vereisen, dus lees altijd de details van de aanbieding."
+                }
+            }
         }
     },
     "common": {

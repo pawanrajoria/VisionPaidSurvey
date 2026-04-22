@@ -1,29 +1,33 @@
 {
-    "footer": {
-        "copyright": "© 2026 Profit Piller - Alle Rechte vorbehalten.",
-        "productOf": "Ein Produkt von",
-        "cralpkResearchGroup": "Cralpk Research Group",
-        "platform": {
-            "title": "Plattform",
-            "loginOrSignUp": "Anmelden oder Registrieren",
-            "aboutProfitpiller": "Über Profitpiller",
-            "contactUs": "Kontakt",
-            "help": "Hilfe"
-        },
-        "legal": {
-            "title": "Rechtliches",
-            "privacyPolicy": "Datenschutzerklärung",
-            "cookiePolicy": "Cookie-Richtlinie",
-            "termsConditions": "Allgemeine Geschäftsbedingungen",
-            "doNotSell": "Meine persönlichen Informationen nicht verkaufen"
-        },
-        "exploreMore": {
-            "title": "Mehr entdecken",
-            "earnCash": "Mit bezahlten Umfragen Geld verdienen",
-            "getRewarded": "Mit Geschenkkarten belohnt werden",
-            "redeemAmazon": "Amazon-Geschenkkarten einlösen",
-            "getPaiyPal": "Über PayPal bezahlt werden",
-            "visaGiftCards": "Visa-Geschenkkarten & mehr"
-        }
+  "footer": {
+    "trust": "Ausgezeichnet",
+    "copyright": "© 2026 Profit Piller. Alle Rechte vorbehalten.",
+    "product_of": "Ein Produkt von",
+    "platform": {
+      "title": "Plattform",
+      "login": "Anmelden oder Registrieren",
+      "about": "Über ProfitPiller",
+      "contact": "Kontakt",
+      "help": "Hilfe"
+    },
+    "legal": {
+      "title": "Rechtliches",
+      "privacy": "Datenschutzrichtlinie",
+      "terms": "Allgemeine Geschäftsbedingungen",
+      "cookie": "Cookie-Richtlinie",
+      "dns": "Meine Daten nicht verkaufen"
+    },
+    "explore": {
+      "title": "Mehr entdecken",
+      "cash": "Geld mit Umfragen verdienen",
+      "gift": "Geschenkkarten",
+      "amazon": "Amazon Geschenkkarten",
+      "paypal": "PayPal Belohnungen",
+      "visa": "Visa Geschenkkarten"
+    },
+    "follow": {
+      "title": "Folgen Sie uns",
+      "download": "App herunterladen"
     }
+  }
 }

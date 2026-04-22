@@ -1,0 +1,57 @@
+{
+  "afterloginhelp": {
+    "title": "Bantuan & Sokongan",
+    "subtitle": "Kami di sini untuk anda — dan privasi anda dilindungi sepenuhnya.",
+    "ask_question": "Hantar Pertanyaan",
+    "question_title": "💬 Masih Ada Soalan?",
+    "question_subtitle": "Jangan risau — jawapan hanya satu klik sahaja! Jika anda memerlukan bantuan lanjut, pasukan sokongan kami sedia membantu anda. Hantar pertanyaan anda di bawah dan kami akan memastikan anda mendapat penjelasan yang diperlukan — dengan cepat dan tanpa sebarang kerumitan.",
+    "question_instruction": "Sila nyatakan soalan anda dengan jelas dan tepat",
+    "enter_your_email": "Masukkan alamat e-mel anda",
+    "how_can_help": "Bagaimana kami boleh membantu?",
+    "survey_instruction": "Jika anda menghadapi masalah dengan tinjauan atau tawaran, sila muat naik tangkapan skrin masalah yang anda alami.",
+    "upload_text": "Klik atau seret fail untuk dimuat naik",
+    "upload_instruction": "PNG, JPG (Maks 1MB)",
+    "faqs": {
+      "q1": {
+        "question": "Bagaimana saya boleh mendapatkan ganjaran?",
+        "answer": "Anda boleh mendapatkan ganjaran dengan melengkapkan tinjauan, menyertai tawaran khas, dan melalui bonus rujukan di platform."
+      },
+      "q2": {
+        "question": "Bagaimana saya layak untuk tinjauan?",
+        "answer": "Setiap tinjauan mempunyai kriteria sasaran tertentu. Melengkapkan profil anda dengan jujur akan meningkatkan peluang anda untuk layak menerima lebih banyak tinjauan."
+      },
+      "q3": {
+        "question": "Mengapa tiada tinjauan tersedia?",
+        "answer": "Ketersediaan tinjauan bergantung kepada profil anda dan permintaan semasa daripada rakan kongsi kami. Pastikan profil anda lengkap dan cuba lagi kemudian."
+      },
+      "q4": {
+        "question": "Apakah yang dimaksudkan dengan screen-out?",
+        "answer": "Screen-out berlaku apabila jawapan anda tidak sepadan dengan sasaran tinjauan. Anda mungkin tidak menerima ganjaran penuh, tetapi ia membantu kami memadankan anda dengan lebih baik pada masa hadapan."
+      },
+      "q5": {
+        "question": "Mengapa saya tidak menerima ganjaran penuh?",
+        "answer": "Sesetengah tinjauan memberikan ganjaran separa jika anda tidak melengkapkannya sepenuhnya atau jika anda tidak layak. Pastikan anda memberikan jawapan yang tepat dan mempunyai sambungan internet yang stabil."
+      },
+      "q6": {
+        "question": "Bolehkah saya menggunakan VPN atau Proksi?",
+        "answer": "Tidak. Penggunaan VPN atau proksi adalah dilarang sama sekali dan boleh menyebabkan akaun anda digantung atau anda disingkirkan daripada tinjauan."
+      },
+      "q7": {
+        "question": "Bilakah saya boleh menebus ganjaran saya?",
+        "answer": "Sebaik sahaja anda mencapai jumlah minimum yang ditetapkan, anda boleh menebus ganjaran melalui PayPal, kad hadiah, atau kaedah lain yang tersedia."
+      },
+      "q8": {
+        "question": "Bolehkah saya merujuk orang lain dan mendapat bonus?",
+        "answer": "Ya! Kongsi pautan rujukan anda dan anda akan memperoleh komisen daripada pendapatan rujukan anda."
+      },
+      "q9": {
+        "question": "Adakah data saya selamat?",
+        "answer": "Ya, data anda dilindungi dengan protokol keselamatan yang ketat dan tidak akan dikongsi tanpa kebenaran anda."
+      },
+      "q10": {
+        "question": "Bagaimana saya boleh menghubungi sokongan?",
+        "answer": "Anda boleh menghubungi kami melalui e-mel di support@profitpiller.com atau menggunakan borang hubungan dalam dashboard anda."
+      }
+    }
+  }
+}

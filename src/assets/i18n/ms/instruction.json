@@ -1,0 +1,20 @@
+{
+  "instruction": {
+    "header": {
+      "title": "Selamat datang!",
+      "subtitle": "Sila baca peraturan sebelum mula."
+    },
+    "rules": {
+      "rule1": { "title": "Peraturan 1", "desc": "Minimum umur 16 tahun." },
+      "rule2": { "title": "Peraturan 2", "desc": "Satu akaun sahaja." },
+      "rule3": { "title": "Peraturan 3", "desc": "Tiada VPN." },
+      "rule4": { "title": "Peraturan 4", "desc": "Jawab dengan jujur." },
+      "rule5": { "title": "Peraturan 5", "desc": "Bayaran PayPal atau kad hadiah." },
+      "rule6": { "title": "Peraturan 6", "desc": "Patuh GDPR." },
+      "rule7": { "title": "Peraturan 7", "desc": "Hormati platform." }
+    },
+    "button": {
+      "continue": "Faham & teruskan"
+    }
+  }
+}

@@ -9,12 +9,23 @@ import { UserflowComponent } from './components/userflow/userflow.component';
 import { OfferwallComponent } from './components/offerwall/offerwall.component';
 import { AuthCallbackComponent } from './components/auth/AuthCallbackComponent';
 import { RedirectComponent } from './components/root/apk-toggle/apk.redirect';
+import { langRedirectGuard } from './lang.redirect.guard';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { SeoLandingComponent } from './components/root/seo-landing/seo-landing.component';
 
 export const routes: Routes = [
+
+  // {
+  //   path: '',
+  //   pathMatch: 'full',
+  //   canActivate: [langRedirectGuard],
+  //   children: []
+  // },
 
   // 🌍 LANGUAGE WRAPPER
   {
     path: ':lang',
+    canActivate: [langRedirectGuard],
     children: [
 
       // 🔐 ADMIN
@@ -54,6 +65,7 @@ export const routes: Routes = [
         canActivate: [authGuard],
         children: [
           { path: '', redirectTo: 'earn', pathMatch: 'full' },
+          { path: 'instruction', loadChildren: () => import('./components/home/instruction/instruction.route').then(m => m.InstructionRoutes) },
           { path: 'earn', loadChildren: () => import('./components/home/earn/earn.route').then(m => m.EarnRoutes) },
           { path: 'survey', loadChildren: () => import('./components/home/survey/survey.route').then(m => m.SurveyRoutes) },
           { path: 'offers', loadChildren: () => import('./components/home/offer/offer.route').then(m => m.OfferRoutes) },
@@ -72,7 +84,7 @@ export const routes: Routes = [
         path: '',
         component: RootComponent,
         children: [
-          { path: '', loadChildren: () => import('./components/root/root-home/root-home.route').then(m => m.rootHomeRoutes) },
+          { path: '', pathMatch: 'full', loadChildren: () => import('./components/root/root-home/root-home.route').then(m => m.rootHomeRoutes) },
           { path: 'aboutus', loadChildren: () => import('./components/root/root-aboutus/root-aboutus.route').then(m => m.rootAboutUsRoutes) },
           { path: 'amazongiftcard', loadChildren: () => import('./components/root/root-amazongiftcard/root-amazongiftcard.route').then(m => m.rootAmazonGiftCardRoutes) },
           { path: 'cashout', loadChildren: () => import('./components/root/root-cash/root-cash.route').then(m => m.rootCashRoutes) },
@@ -85,7 +97,11 @@ export const routes: Routes = [
           { path: 'terms-conditions', loadChildren: () => import('./components/root/root-termcondition/root-termcondition.route').then(m => m.rootTermConditionRoutes) },
           { path: 'visa', loadChildren: () => import('./components/root/root-visa/root-visa.route').then(m => m.rootVisaRoutes) },
           { path: 'cookie-policy', loadChildren: () => import('./components/root/root-cookiepolicy/root-cookiepolicy.route').then(m => m.rootCookiePolicyRoutes) },
-          { path: 'redirecttoapk', component: RedirectComponent }
+          { path: 'redirecttoapk', component: RedirectComponent },
+          { path: 'surveys/:country', component: SeoLandingComponent },
+          { path: 'surveys/:country/:city', component: SeoLandingComponent },
+          { path: 'paid-surveys/:country/:payout', component: SeoLandingComponent },
+          { path: 'earn-money/:country/:segment', component: SeoLandingComponent }
         ],
       },
 
@@ -118,13 +134,16 @@ export const routes: Routes = [
         children: [
           { path: '', loadChildren: () => import('./components/survey-redirects/survey-redirects.route').then(m => m.SurveyRedirectRoutes) }
         ],
-      }
+      },
+
+      { path: '**', component: NotFoundComponent, data: { statusCode: 404 } }
     ]
   },
 
   // 🔁 DEFAULT
-  { path: '', redirectTo: 'en', pathMatch: 'full' },
+  // { path: '', redirectTo: 'en', pathMatch: 'full' },
 
   // 🔁 FALLBACK
-  { path: '**', redirectTo: 'en' }
+  // { path: '**', canActivate: [langRedirectGuard], children: [] }
+  { path: '', pathMatch: 'full', redirectTo: 'en' },
 ];

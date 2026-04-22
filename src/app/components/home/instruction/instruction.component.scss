@@ -1,0 +1,132 @@
+.page-container {
+  min-height: 100vh;
+  padding: 20px;
+  // background: linear-gradient(-225deg, #fff 0%, #d4d4d4 29%, #ffff 67%, #81cebb 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Header */
+.header-card {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 20px;
+  padding: 20px;
+  background: #105749;
+  color: #fff;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 4px 0 0;
+    opacity: 0.8;
+    font-size: 14px;
+  }
+}
+
+.header-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+}
+
+/* Rules */
+.rules-container {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 20px;
+  padding: 20px;
+  background: #105749
+}
+
+/* Grid */
+.rules-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* Tablet */
+@media (min-width: 600px) {
+  .rules-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Rule Card */
+.rule-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 16px;
+  color: #f1f1f1;
+  backdrop-filter: blur(8px);
+  transition: 0.3s;
+
+  h3 {
+    margin: 0 0 8px;
+    font-size: 15px;
+    color: #d3d01c;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.85;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
+/* Full width for last card */
+.full-width {
+  grid-column: span 1;
+}
+
+@media (min-width: 600px) {
+  .full-width {
+    grid-column: span 2;
+  }
+}
+
+/* Button */
+.action-btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+
+  button {
+    border-radius: 30px;
+    padding: 10px 24px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #f93816, #cd4830);
+    color: #fff;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .action-btn {
+    justify-content: center;
+  }
+}

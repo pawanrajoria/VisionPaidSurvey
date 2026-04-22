@@ -1,17 +1,33 @@
 {
-    "faq": {
-        "heading": {
-            "subtitle": "FAQ",
-            "title": "Preguntas frecuentes (FAQ)",
-            "description": "Echa un vistazo a las preguntas más comunes que los usuarios hacen sobre cómo usar <strong>ProfitPiller</strong> y cómo empezar a ganar."
-        },
-        "checkAllQuestions": "Ver Todas las Preguntas",
-        "needHelp": {
-            "title": "¿Necesitas ayuda? Tus respuestas están a solo un clic de distancia.",
-            "description": "¿Necesitas más ayuda? Nuestro equipo está aquí para ayudarte. Si no encontraste la respuesta que buscabas, contáctanos — nos aseguraremos de que obtengas la claridad que necesitas."
-        }
+  "faq": {
+    "heading": {
+      "subtitle": "Preguntas frecuentes",
+      "title": "Preguntas frecuentes (FAQs)",
+      "description": "Echa un vistazo a las preguntas más comunes que los usuarios hacen sobre el uso de <strong>ProfitPiller</strong> y cómo empezar a ganar."
     },
-    "common": {
-        "arrowForward": "arrow_forward"
+    "checkAllQuestions": "Consultar todas las preguntas",
+    "needHelp": {
+      "title": "¿Necesitas ayuda? Tus respuestas están a solo un clic de distancia.",
+      "description": "¿Necesitas más ayuda? Nuestro equipo está aquí para ayudarte. Si no encontraste la respuesta que buscabas, solo contáctanos; nos aseguraremos de que obtengas la claridad necesaria."
+    },
+    "items": {
+      "q0": { "question": "¿Cómo puedo ganar dinero con encuestas pagadas?", "answer": { "0": "ProfitPiller es un sitio web gratuito donde puedes ganar dinero real participando en encuestas pagadas.", "1": "Simplemente regístrate con tu correo electrónico y comienza a ganar hoy mismo. ¡La mayoría de los usuarios retiran su primer dinero el mismo día!", "2": "Puedes realizar encuestas en cualquier momento desde tu teléfono o computadora." } },
+      "q1": { "question": "¿Cómo funciona realizar encuestas?", "answer": { "0": "Primero, regístrate en ProfitPiller; es gratis y solo requiere tu dirección de correo electrónico.", "1": "Una vez que hayas iniciado sesión, verás una lista de encuestas disponibles con detalles sobre la duración y el pago.", "2": "Haz clic en una encuesta, completa algunas preguntas de calificación y luego finaliza la encuesta principal.", "3": "Al finalizar, serás recompensado con puntos, que se pueden canjear instantáneamente." } },
+      "q2": { "question": "¿Necesito darles mis datos personales?", "answer": { "0": "¡No! Nunca venderemos ni compartiremos tu correo electrónico con los clientes de las encuestas.", "1": "Las encuestas no solicitarán información de identificación personal como tu nombre o dirección.", "2": "Todas tus respuestas permanecen anónimas." } },
+      "q3": { "question": "¿Cuánto dinero puedo ganar?", "answer": { "0": "ProfitPiller no es un trabajo de tiempo completo, pero con solo 30 a 60 minutos al día, puedes ganar lo suficiente para los lujos cotidianos.", "1": "¡Consulta nuestras estadísticas en vivo para ver lo que otros usuarios ganaron ayer!" } },
+      "q4": { "question": "¿ProfitPiller paga mejor que otros sitios web?", "answer": { "0": "¡Sí! En promedio, ProfitPiller paga hasta un 150% más por las mismas encuestas.", "1": "Nos enfocamos en recompensar a nuestros usuarios en lugar de gastar en marketing pesado." } },
+      "q5": { "question": "¿Realmente puedo retirar efectivo?", "answer": { "0": "¡Sí! Puedes retirar efectivo instantáneamente a tu cuenta de PayPal o bancaria.", "1": "Los retiros se procesan de inmediato y generalmente se acreditan en unas pocas horas.", "2": "También puedes canjear varias tarjetas de regalo para servicios populares como Amazon, Shopify, Apple y más." } },
+      "q6": { "question": "¿Hay un monto mínimo de retiro?", "answer": { "0": "¡No realmente! Es flexible.", "1": "Al registrarte, eliges tu Bono de Bienvenida: ya sea un retiro rápido con una cantidad pequeña o un bono mayor con un retiro mínimo ligeramente más alto." } },
+      "q7": { "question": "¿Qué es importante al realizar encuestas?", "answer": { "0": "Tus opiniones impactan directamente en los productos y servicios de las principales marcas.", "1": "Por eso es importante ser honesto y estar concentrado al responder.", "2": "Las encuestas monitorean la calidad de las respuestas; las respuestas poco sinceras pueden llevar a la descalificación." } },
+      "q8": { "question": "Estos son algunos consejos para completar encuestas con éxito", "answer": { "0": "No te apresures. Tómate tu tiempo para leer las preguntas.", "1": "Sé honesto. Da respuestas precisas sobre ti y tu opinión.", "2": "No uses una VPN o Wi-Fi público. Los servicios que ocultan tu conexión se marcan como fraude.", "3": "Sé abierto. Evita responder “No quiero responder” con demasiada frecuencia; podría descalificarte.", "4": "Sé detallado. Proporciona respuestas reflexivas en preguntas abiertas. El contenido ofensivo o de poco esfuerzo puede hacer que te descarten." } },
+      "q9": { "question": "¿Cómo puedo ganar dinero con encuestas y ofertas?", "answer": { "0": "ProfitPiller te permite ganar recompensas reales completando encuestas en línea y explorando ofertas especiales.", "1": "Elige lo que te interese, complétalo y gana puntos que puedes canjear por efectivo o tarjetas de regalo." } },
+      "q10": { "question": "¿Qué tipo de ofertas puedo completar?", "answer": { "0": "Las ofertas pueden incluir registrarse para pruebas gratuitas, descargar aplicaciones o interactuar con nuevos servicios.", "1": "Son rápidas, fáciles y se suman a tus ganancias junto con las encuestas." } },
+      "q11": { "question": "¿Las encuestas y las ofertas pagan lo mismo?", "answer": { "0": "Los montos de las recompensas varían según la duración y los requisitos.", "1": "Algunas ofertas pueden pagar más, especialmente si implican registros o instalaciones." } },
+      "q12": { "question": "¿Qué tan rápido puedo ganar con encuestas y ofertas?", "answer": { "0": "Muchos usuarios ganan lo suficiente para su primera recompensa en el mismo día.", "1": "Las ofertas a menudo se acreditan más rápido, mientras que las encuestas proporcionan ganancias diarias constantes." } },
+      "q13": { "question": "¿Puedo elegir qué encuestas u ofertas completar?", "answer": { "0": "¡Sí! ProfitPiller te permite elegir entre una amplia gama de encuestas y ofertas.", "1": "Siempre tienes el control de lo que completas." } },
+      "q14": { "question": "¿Necesito completar ambas para ganar recompensas?", "answer": { "0": "No. Puedes ganar con encuestas u ofertas de forma independiente.", "1": "Combinar ambas solo te ayuda a alcanzar las recompensas más rápido." } },
+      "q15": { "question": "¿Es gratis completar ofertas?", "answer": { "0": "Muchas ofertas son completamente gratuitas, como instalaciones de aplicaciones o registros a boletines.", "1": "Algunas pueden implicar una compra o una prueba gratuita, así que lee siempre los detalles de la oferta." } }
     }
+  },
+  "common": { "arrowForward": "arrow_forward" }
 }

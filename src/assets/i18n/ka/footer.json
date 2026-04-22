@@ -1,29 +1,33 @@
 {
-    "footer": {
-        "copyright": "© 2026 Profit Piller - ყველა უფლება დაცულია.",
-        "productOf": "პროდუქტი",
-        "cralpkResearchGroup": "Cralpk Research Group",
-        "platform": {
-            "title": "პლატფორმა",
-            "loginOrSignUp": "შესვლა ან რეგისტრაცია",
-            "aboutProfitpiller": "Profitpiller-ის შესახებ",
-            "contactUs": "დაგვიკავშირდით",
-            "help": "დახმარება"
-        },
-        "legal": {
-            "title": "იურიდიული",
-            "privacyPolicy": "კონფიდენციალურობის პოლიტიკა",
-            "cookiePolicy": "ქუქიების პოლიტიკა",
-            "termsConditions": "წესები და პირობები",
-            "doNotSell": "არ გაყიდოთ ჩემი პირადი ინფორმაცია"
-        },
-        "exploreMore": {
-            "title": "მეტი გაიგეთ",
-            "earnCash": "ფულადი სახსრების გამომუშავება ფასიანი გამოკითხვებიდან",
-            "getRewarded": "დაჯილდოვდით სასაჩუქრე ბარათებით",
-            "redeemAmazon": "Amazon-ის სასაჩუქრე ბარათების გაცვლა",
-            "getPaiyPal": "გადახდა PayPal-ის საშუალებით",
-            "visaGiftCards": "Visa-ს სასაჩუქრე ბარათები და სხვა"
-        }
+  "footer": {
+    "trust": "შესანიშნავი",
+    "copyright": "© 2026 Profit Piller. ყველა უფლება დაცულია.",
+    "product_of": "პროდუქტი კომპანია",
+    "platform": {
+      "title": "პლატფორმა",
+      "login": "შესვლა ან რეგისტრაცია",
+      "about": "ProfitPiller-ის შესახებ",
+      "contact": "დაგვიკავშირდით",
+      "help": "დახმარება"
+    },
+    "legal": {
+      "title": "იურიდიული",
+      "privacy": "კონფიდენციალურობის პოლიტიკა",
+      "terms": "წესები და პირობები",
+      "cookie": "Cookie პოლიტიკა",
+      "dns": "არ გაყიდოთ ჩემი ინფორმაცია"
+    },
+    "explore": {
+      "title": "აღმოაჩინე მეტი",
+      "cash": "შემოსავლის მიღება კვლევებიდან",
+      "gift": "სასაჩუქრე ბარათები",
+      "amazon": "Amazon სასაჩუქრე ბარათები",
+      "paypal": "PayPal ჯილდოები",
+      "visa": "Visa სასაჩუქრე ბარათები"
+    },
+    "follow": {
+      "title": "გამოგვყევით",
+      "download": "ჩამოტვირთეთ ჩვენი აპლიკაცია"
     }
+  }
 }

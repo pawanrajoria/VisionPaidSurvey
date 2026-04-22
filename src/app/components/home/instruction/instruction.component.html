@@ -1,0 +1,31 @@
+<div class="page-container">
+
+    <div class="header-card mat-elevation-z4">
+        <div class="header-content">
+            <img src="/assets/images/logo.png" alt="Mascot" class="header-icon" />
+
+            <div>
+                <h1>{{ 'instruction.header.title' | translate }}</h1>
+                <p>{{ 'instruction.header.subtitle' | translate }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="rules-container mat-elevation-z4">
+        <div class="rules-grid">
+
+            <mat-card class="rule-card" *ngFor="let i of [1,2,3,4,5,6,7]">
+                <h3>{{ ('instruction.rules.rule' + i + '.title') | translate }}</h3>
+                <p>{{ ('instruction.rules.rule' + i + '.desc') | translate }}</p>
+            </mat-card>
+
+        </div>
+
+        <div class="action-btn">
+            <button mat-raised-button color="primary" (click)="proceedToNext()">
+                {{ 'instruction.button.continue' | translate }}
+            </button>
+        </div>
+    </div>
+
+</div>

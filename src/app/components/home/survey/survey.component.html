@@ -6,8 +6,17 @@
 <mat-tab-nav-panel #tabPanel>
     <div class="card-container">
         @for(item of filteredSurveys; track item.name) {
-        <mat-card class="custom-card" (click)="attemptSurvey(item)">
-            <div class="hot-icon" *ngIf="item.isHot"> 🔥 </div>
+        <mat-card class="custom-card" 
+                  [ngClass]="{
+                    'is-blurred': !item.isProfileSurvey && hasProfileSurvey(),
+                    'profile-highlight': item.isProfileSurvey
+                  }"
+                  (click)="!item.isProfileSurvey && hasProfileSurvey() ? null : attemptSurvey(item)">
+            
+            <div class="profile-tag" *ngIf="item.isProfileSurvey">REQUIRED</div>
+            
+            <div class="hot-icon" *ngIf="item.isHot && !item.isProfileSurvey"> 🔥 </div>
+            
             <div class="top-bar">
                 <div class="left">
                     <mat-icon class="clock-icon">schedule</mat-icon>
@@ -17,6 +26,7 @@
                     {{ item.name }}
                 </div>
             </div>
+            
             <div class="points-rating-vertical centered">
                 <div class="points">
                     {{ item.points }} <span class="points-label">Points</span>
@@ -30,15 +40,6 @@
             </div>
         </mat-card>
         }
-
-        <div class="no-survey-container mat-elevation-z1" *ngIf="isApiLoaded && (!surveys || surveys.length<1)">
-            <div class="no-survey-icon">
-                <mat-icon class="clock-icon" color="warn">access_time</mat-icon>
-            </div>
-            <h2 class="title">No surveys at the moment</h2>
-            <p class="subtitle">Unfortunately currently there are no surveys</p>
-            <p class="highlight-text">Please come back later!</p>
+        
         </div>
-    </div>
-
 </mat-tab-nav-panel>

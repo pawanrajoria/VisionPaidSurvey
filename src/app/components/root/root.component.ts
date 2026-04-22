@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, PLATFORM_ID, ViewEncapsulation } from "@angular/core";
+import { ChangeDetectorRef, Component, Inject, OnInit, PLATFORM_ID, ViewEncapsulation } from "@angular/core";
 import { SharedModule } from "../../shared.module";
 import { animate, query, stagger, style, transition, trigger } from "@angular/animations";
 import { RootFooterComponent } from "./root-footer/root-footer.component";
@@ -13,7 +13,7 @@ import { DeviceService } from "../../device.service";
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet,SharedModule, RootHeaderComponent, RootFooterComponent, ApkToggleComponent],
+    imports: [RouterOutlet, SharedModule, RootHeaderComponent, RootFooterComponent, ApkToggleComponent],
     templateUrl: './root.component.html',
     styleUrls: ['./root.component.scss'],
     animations: [
@@ -83,22 +83,25 @@ export class RootComponent implements OnInit {
 
 
     constructor(private router: Router, private snackBar: MatSnackBar,
+        private cdr: ChangeDetectorRef,
         private deviceService: DeviceService,
         private localStorageService: LocalStorageService, @Inject(PLATFORM_ID) private platformId: Object) {
 
     }
 
 
-    ngOnInit(): void {
+    async ngOnInit() {
         if (isPlatformBrowser(this.platformId)) {
-            this.isMobile = this.deviceService.isMobile();
-
+            setTimeout(() => {
+                this.isMobile = this.deviceService.isMobile();
+                this.cdr.markForCheck(); // Better for Standalone/OnPush
+                this.cdr.detectChanges(); // Forces immediate update
+            });
             setTimeout(() => {
                 this.showConsent();
             }, 0);
         }
     }
-
 
     selectCategory(category: string) {
         this.selectedCategory = category;

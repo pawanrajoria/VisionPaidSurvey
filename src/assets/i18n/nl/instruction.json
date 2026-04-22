@@ -1,0 +1,20 @@
+{
+  "instruction": {
+    "header": {
+      "title": "Welkom!",
+      "subtitle": "Lees deze regels voordat je begint."
+    },
+    "rules": {
+      "rule1": { "title": "Regel 1", "desc": "Minimaal 16 jaar." },
+      "rule2": { "title": "Regel 2", "desc": "Eén account per persoon." },
+      "rule3": { "title": "Regel 3", "desc": "Geen VPN." },
+      "rule4": { "title": "Regel 4", "desc": "Eerlijke antwoorden." },
+      "rule5": { "title": "Regel 5", "desc": "Betaling via PayPal of cadeaubonnen." },
+      "rule6": { "title": "Regel 6", "desc": "GDPR compliant." },
+      "rule7": { "title": "Regel 7", "desc": "Respecteer het platform." }
+    },
+    "button": {
+      "continue": "Begrepen & doorgaan"
+    }
+  }
+}

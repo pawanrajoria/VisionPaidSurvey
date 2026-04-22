@@ -3,12 +3,135 @@
         "heading": {
             "subtitle": "FAQ",
             "title": "Foire aux questions (FAQ)",
-            "description": "Découvrez les questions les plus courantes que les utilisateurs posent sur l'utilisation de <strong>ProfitPiller</strong> et sur la façon de commencer à gagner de l'argent."
+            "description": "Consultez les questions les plus fréquentes posées par les utilisateurs sur l'utilisation de <strong>ProfitPiller</strong> et sur la manière de commencer à gagner de l'argent."
         },
         "checkAllQuestions": "Consulter toutes les questions",
         "needHelp": {
             "title": "Besoin d'aide ? Vos réponses sont à portée de clic.",
-            "description": "Besoin d'aide supplémentaire ? Notre équipe est là pour vous aider. Si vous n'avez pas trouvé la réponse que vous cherchiez, contactez-nous — nous veillerons à ce que vous obteniez la clarté dont vous avez besoin."
+            "description": "Besoin d'une assistance supplémentaire ? Notre équipe est là pour vous aider. Si vous n'avez pas trouvé la réponse que vous cherchiez, contactez-nous – nous veillerons à ce que vous obteniez la clarté dont vous avez besoin."
+        },
+        "items": {
+            "q0": {
+                "question": "Comment puis-je gagner de l'argent avec des sondages rémunérés ?",
+                "answer": {
+                    "0": "ProfitPiller est un site Web gratuit où vous pouvez gagner de l'argent réel en répondant à des sondages rémunérés.",
+                    "1": "Inscrivez-vous simplement avec votre e-mail et commencez à gagner dès aujourd'hui. La plupart des utilisateurs effectuent leur premier retrait le jour même !",
+                    "2": "Vous pouvez répondre aux sondages à tout moment depuis votre téléphone ou votre ordinateur."
+                }
+            },
+            "q1": {
+                "question": "Comment fonctionnent les sondages ?",
+                "answer": {
+                    "0": "Tout d'abord, inscrivez-vous sur ProfitPiller — c'est gratuit et ne nécessite que votre adresse e-mail.",
+                    "1": "Une fois connecté, vous verrez une liste de sondages disponibles avec des détails sur la durée et la rémunération.",
+                    "2": "Cliquez sur un sondage, remplissez quelques questions de qualification, puis terminez le sondage principal.",
+                    "3": "Une fois terminé, vous serez récompensé par des points, qui peuvent être échangés instantanément."
+                }
+            },
+            "q2": {
+                "question": "Dois-je vous fournir mes données personnelles ?",
+                "answer": {
+                    "0": "Non ! Nous ne vendrons ni ne partagerons jamais votre e-mail avec les clients des sondages.",
+                    "1": "Les sondages ne demanderont pas d'informations d'identification personnelle comme votre nom ou votre adresse.",
+                    "2": "Toutes vos réponses restent anonymes."
+                }
+            },
+            "q3": {
+                "question": "Combien d'argent puis-je gagner ?",
+                "answer": {
+                    "0": "ProfitPiller n'est pas un emploi à plein temps, mais avec seulement 30 à 60 minutes par jour, vous pouvez gagner assez pour les petits plaisirs quotidiens.",
+                    "1": "Consultez nos statistiques en direct pour voir ce que les autres utilisateurs ont gagné hier !"
+                }
+            },
+            "q4": {
+                "question": "ProfitPiller paie-t-il mieux que les autres sites Web ?",
+                "answer": {
+                    "0": "Oui ! En moyenne, ProfitPiller paie jusqu'à 150 % de plus pour les mêmes sondages.",
+                    "1": "Nous nous concentrons sur la récompense de nos utilisateurs plutôt que sur des dépenses marketing massives."
+                }
+            },
+            "q5": {
+                "question": "Puis-je vraiment retirer de l'argent ?",
+                "answer": {
+                    "0": "Oui ! Vous pouvez retirer de l'argent instantanément sur votre compte PayPal ou bancaire.",
+                    "1": "Les retraits sont traités immédiatement et généralement crédités en quelques heures.",
+                    "2": "Vous pouvez également échanger divers chèques-cadeaux pour des services populaires comme Amazon, Shopify, Apple, etc."
+                }
+            },
+            "q6": {
+                "question": "Y a-t-il un montant minimum de retrait ?",
+                "answer": {
+                    "0": "Pas vraiment ! C'est flexible.",
+                    "1": "Lors de l'inscription, vous choisissez votre bonus de bienvenue — soit un retrait rapide avec un petit montant, soit un bonus plus important avec un retrait minimum légèrement plus élevé."
+                }
+            },
+            "q7": {
+                "question": "Qu'est-ce qui est important lors de la participation aux sondages ?",
+                "answer": {
+                    "0": "Vos opinions ont un impact direct sur les produits et services des grandes marques.",
+                    "1": "C'est pourquoi il est important de rester honnête et concentré en répondant.",
+                    "2": "Les sondages surveillent la qualité des réponses — les réponses insincères peuvent entraîner une disqualification."
+                }
+            },
+            "q8": {
+                "question": "Voici quelques conseils pour réussir les sondages",
+                "answer": {
+                    "0": "Ne vous précipitez pas. Prenez le temps de lire les questions.",
+                    "1": "Soyez honnête. Donnez des réponses précises sur vous-même et votre opinion.",
+                    "2": "N'utilisez pas de VPN ou de Wi-Fi public. Les services qui masquent votre connexion sont signalés comme frauduleux.",
+                    "3": "Soyez ouvert. Évitez de répondre trop souvent « Je ne souhaite pas répondre » — cela pourrait vous disqualifier.",
+                    "4": "Soyez précis. Fournissez des réponses réfléchies aux questions ouvertes. Un contenu bâclé ou offensant peut vous faire exclure."
+                }
+            },
+            "q9": {
+                "question": "Comment gagner de l'argent avec les sondages et les offres ?",
+                "answer": {
+                    "0": "ProfitPiller vous permet de gagner de réelles récompenses en répondant à des sondages en ligne et en explorant des offres spéciales.",
+                    "1": "Choisissez ce qui vous intéresse, terminez-le et gagnez des points que vous pouvez échanger contre de l'argent ou des chèques-cadeaux."
+                }
+            },
+            "q10": {
+                "question": "Quel genre d'offres puis-je compléter ?",
+                "answer": {
+                    "0": "Les offres peuvent inclure l'inscription à des essais gratuits, le téléchargement d'applications ou l'utilisation de nouveaux services.",
+                    "1": "Elles sont rapides, faciles et s'ajoutent à vos gains de sondages."
+                }
+            },
+            "q11": {
+                "question": "Les sondages et les offres paient-ils la même chose ?",
+                "answer": {
+                    "0": "Les montants des récompenses varient en fonction de la durée et des exigences.",
+                    "1": "Certaines offres peuvent payer plus, surtout si elles impliquent des inscriptions ou des installations."
+                }
+            },
+            "q12": {
+                "question": "À quelle vitesse puis-je gagner avec les sondages et les offres ?",
+                "answer": {
+                    "0": "De nombreux utilisateurs gagnent assez pour leur première récompense le jour même.",
+                    "1": "Les offres sont souvent créditées plus rapidement, tandis que les sondages offrent des gains quotidiens réguliers."
+                }
+            },
+            "q13": {
+                "question": "Puis-je choisir les sondages ou les offres à compléter ?",
+                "answer": {
+                    "0": "Oui ! ProfitPiller vous permet de choisir parmi une large gamme de sondages et d'offres.",
+                    "1": "Vous gardez toujours le contrôle sur ce que vous complétez."
+                }
+            },
+            "q14": {
+                "question": "Dois-je faire les deux pour gagner des récompenses ?",
+                "answer": {
+                    "0": "Non. Vous pouvez gagner avec les sondages ou les offres indépendamment.",
+                    "1": "Combiner les deux vous aide simplement à obtenir des récompenses plus rapidement."
+                }
+            },
+            "q15": {
+                "question": "Est-ce gratuit de compléter des offres ?",
+                "answer": {
+                    "0": "De nombreuses offres sont totalement gratuites — comme les installations d'applications ou les inscriptions aux newsletters.",
+                    "1": "Certaines peuvent impliquer un achat ou un essai gratuit, lisez donc toujours les détails de l'offre."
+                }
+            }
         }
     },
     "common": {

@@ -1,29 +1,33 @@
 {
-    "footer": {
-        "copyright": "© 2026 Profit Piller - Tutti i diritti riservati.",
-        "productOf": "Un prodotto di",
-        "cralpkResearchGroup": "Cralpk Research Group",
-        "platform": {
-            "title": "Piattaforma",
-            "loginOrSignUp": "Accedi o registrati",
-            "aboutProfitpiller": "Informazioni su Profitpiller",
-            "contactUs": "Contattaci",
-            "help": "Aiuto"
-        },
-        "legal": {
-            "title": "Legale",
-            "privacyPolicy": "Informativa sulla privacy",
-            "cookiePolicy": "Politica sui cookie",
-            "termsConditions": "Termini e condizioni",
-            "doNotSell": "Non vendere le mie informazioni personali"
-        },
-        "exploreMore": {
-            "title": "Esplora di più",
-            "earnCash": "Guadagna denaro con sondaggi a pagamento",
-            "getRewarded": "Ottieni ricompense con carte regalo",
-            "redeemAmazon": "Riscatta carte regalo Amazon",
-            "getPaiyPal": "Ricevi pagamenti tramite PayPal",
-            "visaGiftCards": "Carte regalo Visa e altro"
-        }
+  "footer": {
+    "trust": "Eccellente",
+    "copyright": "© 2026 Profit Piller. Tutti i diritti riservati.",
+    "product_of": "Un prodotto di",
+    "platform": {
+      "title": "Piattaforma",
+      "login": "Accedi o Registrati",
+      "about": "Informazioni su ProfitPiller",
+      "contact": "Contattaci",
+      "help": "Aiuto"
+    },
+    "legal": {
+      "title": "Legale",
+      "privacy": "Informativa sulla privacy",
+      "terms": "Termini e condizioni",
+      "cookie": "Politica sui cookie",
+      "dns": "Non vendere le mie informazioni"
+    },
+    "explore": {
+      "title": "Esplora di più",
+      "cash": "Guadagna con i sondaggi",
+      "gift": "Carte regalo",
+      "amazon": "Carte regalo Amazon",
+      "paypal": "Ricompense PayPal",
+      "visa": "Carte regalo Visa"
+    },
+    "follow": {
+      "title": "Seguici",
+      "download": "Scarica la nostra app"
     }
+  }
 }

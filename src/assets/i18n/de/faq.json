@@ -3,12 +3,135 @@
         "heading": {
             "subtitle": "FAQ",
             "title": "Häufig gestellte Fragen (FAQs)",
-            "description": "Sehen Sie sich die häufigsten Fragen an, die Benutzer zur Verwendung von <strong>ProfitPiller</strong> und zum Beginn des Geldverdienens stellen."
+            "description": "Erfahren Sie mehr über die am häufigsten gestellten Fragen zur Nutzung von <strong>ProfitPiller</strong> und wie Sie mit dem Verdienen beginnen."
         },
-        "checkAllQuestions": "Alle Fragen anzeigen",
+        "checkAllQuestions": "Alle Fragen prüfen",
         "needHelp": {
             "title": "Brauchen Sie Hilfe? Ihre Antworten sind nur einen Klick entfernt.",
-            "description": "Benötigen Sie weitere Unterstützung? Unser Team hilft Ihnen gerne weiter. Wenn Sie die gesuchte Antwort nicht gefunden haben, wenden Sie sich einfach an uns – wir sorgen dafür, dass Sie die nötige Klarheit erhalten."
+            "description": "Benötigen Sie weitere Unterstützung? Unser Team ist hier, um zu helfen. Wenn Sie die gesuchte Antwort nicht gefunden haben, wenden Sie sich einfach an uns – wir sorgen für Klarheit."
+        },
+        "items": {
+            "q0": {
+                "question": "Wie kann ich mit bezahlten Umfragen Geld verdienen?",
+                "answer": {
+                    "0": "ProfitPiller ist eine kostenlose Website, auf der Sie echtes Geld für die Teilnahme an bezahlten Umfragen verdienen können.",
+                    "1": "Melden Sie sich einfach mit Ihrer E-Mail-Adresse an und beginnen Sie noch heute mit dem Verdienen. Die meisten Nutzer lassen sich ihr erstes Geld noch am selben Tag auszahlen!",
+                    "2": "Sie können jederzeit von Ihrem Handy oder Computer aus an Umfragen teilnehmen."
+                }
+            },
+            "q1": {
+                "question": "Wie funktioniert die Teilnahme an Umfragen?",
+                "answer": {
+                    "0": "Melden Sie sich zuerst bei ProfitPiller an – es ist kostenlos und erfordert nur Ihre E-Mail-Adresse.",
+                    "1": "Sobald Sie eingeloggt sind, sehen Sie eine Liste der verfügbaren Umfragen mit Details zu Dauer und Vergütung.",
+                    "2": "Klicken Sie auf eine Umfrage, beantworten Sie ein paar Qualifizierungsfragen und schließen Sie dann die Hauptumfrage ab.",
+                    "3": "Nach Abschluss werden Sie mit Punkten belohnt, die sofort eingelöst werden können."
+                }
+            },
+            "q2": {
+                "question": "Muss ich Ihnen meine persönlichen Daten geben?",
+                "answer": {
+                    "0": "Nein! Wir werden Ihre E-Mail niemals an Umfragekunden verkaufen oder weitergeben.",
+                    "1": "In Umfragen wird nicht nach persönlich identifizierbaren Informationen wie Ihrem Namen oder Ihrer Adresse gefragt.",
+                    "2": "Alle Ihre Antworten bleiben anonym."
+                }
+            },
+            "q3": {
+                "question": "Wie viel Geld kann ich verdienen?",
+                "answer": {
+                    "0": "ProfitPiller ist kein Vollzeitjob, aber mit nur 30–60 Minuten pro Tag können Sie genug für den täglichen Luxus verdienen.",
+                    "1": "Schauen Sie sich unsere Live-Statistiken an, um zu sehen, was andere Nutzer gestern verdient haben!"
+                }
+            },
+            "q4": {
+                "question": "Zahlt ProfitPiller besser als andere Websites?",
+                "answer": {
+                    "0": "Ja! Im Durchschnitt zahlt ProfitPiller bis zu 150 % mehr für dieselben Umfragen.",
+                    "1": "Wir konzentrieren uns darauf, unsere Nutzer zu belohnen, anstatt Geld für teures Marketing auszugeben."
+                }
+            },
+            "q5": {
+                "question": "Kann ich wirklich Bargeld abheben?",
+                "answer": {
+                    "0": "Ja! Sie können sich Bargeld sofort auf Ihr PayPal- oder Bankkonto auszahlen lassen.",
+                    "1": "Auszahlungen werden sofort bearbeitet und in der Regel innerhalb weniger Stunden gutgeschrieben.",
+                    "2": "Sie können auch verschiedene Geschenkkarten für beliebte Dienste wie Amazon, Shopify, Apple und mehr einlösen."
+                }
+            },
+            "q6": {
+                "question": "Gibt es einen Mindestauszahlungsbetrag?",
+                "answer": {
+                    "0": "Nicht wirklich! Es ist flexibel.",
+                    "1": "Bei der Anmeldung wählen Sie Ihren Willkommensbonus – entweder eine schnelle Auszahlung mit einem kleinen Betrag oder einen größeren Bonus mit einer etwas höheren Mindestauszahlung."
+                }
+            },
+            "q7": {
+                "question": "Was ist bei der Teilnahme an Umfragen wichtig?",
+                "answer": {
+                    "0": "Ihre Meinung hat direkten Einfluss auf die Produkte und Dienstleistungen großer Marken.",
+                    "1": "Deshalb ist es wichtig, beim Antworten ehrlich und konzentriert zu bleiben.",
+                    "2": "Umfragen überwachen die Qualität der Antworten – unaufrichtige Antworten können zum Ausschluss führen."
+                }
+            },
+            "q8": {
+                "question": "Dies sind einige Tipps für den erfolgreichen Abschluss von Umfragen",
+                "answer": {
+                    "0": "Beeilen Sie sich nicht. Nehmen Sie sich Zeit, die Fragen zu lesen.",
+                    "1": "Seien Sie ehrlich. Geben Sie genaue Antworten über sich selbst und Ihre Meinung.",
+                    "2": "Verwenden Sie kein VPN oder öffentliches WLAN. Dienste, die Ihre Verbindung verbergen, werden als Betrug markiert.",
+                    "3": "Seien Sie offen. Vermeiden Sie es, zu oft mit „Ich möchte nicht antworten“ zu antworten – das könnte Sie disqualifizieren.",
+                    "4": "Seien Sie detailliert. Geben Sie bei offenen Fragen durchdachte Antworten. Minderwertige oder beleidigende Inhalte können zum Ausschluss führen."
+                }
+            },
+            "q9": {
+                "question": "Wie kann ich mit Umfragen und Angeboten Geld verdienen?",
+                "answer": {
+                    "0": "ProfitPiller ermöglicht es Ihnen, echte Belohnungen zu verdienen, indem Sie Online-Umfragen ausfüllen und spezielle Angebote erkunden.",
+                    "1": "Wählen Sie aus, was Sie interessiert, schließen Sie es ab und verdienen Sie Punkte, die Sie gegen Bargeld oder Geschenkkarten einlösen können."
+                }
+            },
+            "q10": {
+                "question": "Welche Art von Angeboten kann ich abschließen?",
+                "answer": {
+                    "0": "Angebote können die Anmeldung für kostenlose Testversionen, das Herunterladen von Apps oder die Nutzung neuer Dienste umfassen.",
+                    "1": "Sie sind schnell, einfach und erhöhen Ihren Verdienst zusätzlich zu den Umfragen."
+                }
+            },
+            "q11": {
+                "question": "Zahlen Umfragen und Angebote das Gleiche?",
+                "answer": {
+                    "0": "Die Belohnungsbeträge variieren je nach Länge und Anforderungen.",
+                    "1": "Einige Angebote zahlen mehr, insbesondere wenn sie Anmeldungen oder Installationen beinhalten."
+                }
+            },
+            "q12": {
+                "question": "Wie schnell kann ich mit Umfragen und Angeboten verdienen?",
+                "answer": {
+                    "0": "Viele Nutzer verdienen bereits am ersten Tag genug für ihre erste Belohnung.",
+                    "1": "Angebote werden oft schneller gutgeschrieben, während Umfragen für ein stetiges tägliches Einkommen sorgen."
+                }
+            },
+            "q13": {
+                "question": "Kann ich wählen, welche Umfragen oder Angebote ich abschließe?",
+                "answer": {
+                    "0": "Ja! ProfitPiller lässt Sie aus einer breiten Palette von Umfragen und Angeboten wählen.",
+                    "1": "Sie haben immer die Kontrolle darüber, was Sie abschließen."
+                }
+            },
+            "q14": {
+                "question": "Muss ich beides abschließen, um Belohnungen zu erhalten?",
+                "answer": {
+                    "0": "Nein. Sie können unabhängig voneinander mit Umfragen oder Angeboten verdienen.",
+                    "1": "Die Kombination aus beidem hilft Ihnen lediglich, Belohnungen schneller zu erreichen."
+                }
+            },
+            "q15": {
+                "question": "Ist der Abschluss von Angeboten kostenlos?",
+                "answer": {
+                    "0": "Viele Angebote sind völlig kostenlos – wie App-Installationen oder Newsletter-Anmeldungen.",
+                    "1": "Einige können einen Kauf oder eine kostenlose Testversion beinhalten, lesen Sie daher immer die Angebotsdetails."
+                }
+            }
         }
     },
     "common": {

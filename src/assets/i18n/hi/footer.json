@@ -1,29 +1,33 @@
 {
-    "footer": {
-        "copyright": "© 2026 प्रॉफिट पिलर - सभी अधिकार सुरक्षित।",
-        "productOf": "का एक उत्पाद",
-        "cralpkResearchGroup": "Cralpk Research Group",
-        "platform": {
-            "title": "प्लेटफार्म",
-            "loginOrSignUp": "लॉग इन करें या साइन अप करें",
-            "aboutProfitpiller": "प्रॉफिटपिलर के बारे में",
-            "contactUs": "हमसे संपर्क करें",
-            "help": "मदद"
-        },
-        "legal": {
-            "title": "कानूनी",
-            "privacyPolicy": "गोपनीयता नीति",
-            "cookiePolicy": "कूकी नीति",
-            "termsConditions": "नियम और शर्तें",
-            "doNotSell": "मेरी व्यक्तिगत जानकारी न बेचें"
-        },
-        "exploreMore": {
-            "title": "और अधिक खोजें",
-            "earnCash": "सशुल्क सर्वेक्षणों से नकद कमाएं",
-            "getRewarded": "उपहार कार्ड के साथ पुरस्कृत हों",
-            "redeemAmazon": "अमेज़ॅन उपहार कार्ड भुनाएं",
-            "getPaiyPal": "पेपैल के माध्यम से भुगतान प्राप्त करें",
-            "visaGiftCards": "वीज़ा उपहार कार्ड और अधिक"
-        }
+  "footer": {
+    "trust": "उत्कृष्ट",
+    "copyright": "© 2026 प्रॉफिट पिलर। सर्वाधिकार सुरक्षित।",
+    "product_of": "का एक उत्पाद",
+    "platform": {
+      "title": "प्लेटफ़ॉर्म",
+      "login": "लॉग इन या साइन अप करें",
+      "about": "ProfitPiller के बारे में",
+      "contact": "संपर्क करें",
+      "help": "सहायता"
+    },
+    "legal": {
+      "title": "कानूनी",
+      "privacy": "गोपनीयता नीति",
+      "terms": "नियम और शर्तें",
+      "cookie": "कुकी नीति",
+      "dns": "मेरी जानकारी न बेचें"
+    },
+    "explore": {
+      "title": "और जानें",
+      "cash": "सर्वे से पैसे कमाएं",
+      "gift": "गिफ्ट कार्ड",
+      "amazon": "Amazon गिफ्ट कार्ड",
+      "paypal": "PayPal रिवॉर्ड्स",
+      "visa": "Visa गिफ्ट कार्ड"
+    },
+    "follow": {
+      "title": "हमें फॉलो करें",
+      "download": "हमारा ऐप डाउनलोड करें"
     }
+  }
 }

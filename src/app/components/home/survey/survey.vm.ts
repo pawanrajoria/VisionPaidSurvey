@@ -8,4 +8,5 @@ export interface ISurveyVM {
     ratingCount: number;
     conversion:string;
     isHot:boolean;
+    isProfileSurvey?: boolean;
 }

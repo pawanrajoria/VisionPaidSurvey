@@ -48,7 +48,9 @@ export class SurveyComponent extends BaseComponent implements OnInit {
         const self = this;
         const output = await self.surveyService.getSurveys();
         if (!!output && !!output.surveys && output.surveys.length > 0) {
-            self.surveys = output.surveys;
+            self.surveys = output.surveys.sort((a: any, b: any) => {
+                return (b.isProfileSurvey === true ? 1 : 0) - (a.isProfileSurvey === true ? 1 : 0);
+            });
         }
 
     }
@@ -143,5 +145,9 @@ export class SurveyComponent extends BaseComponent implements OnInit {
                 dialofref.close();
             }
         });
+    }
+
+    hasProfileSurvey(): boolean {
+        return this.filteredSurveys?.some(survey => survey.isProfileSurvey === true) ?? false;
     }
 }

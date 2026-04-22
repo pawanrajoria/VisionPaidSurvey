@@ -1,0 +1,20 @@
+{
+  "instruction": {
+    "header": {
+      "title": "Bem-vindo!",
+      "subtitle": "Leia as regras antes de começar."
+    },
+    "rules": {
+      "rule1": { "title": "Regra 1", "desc": "Mínimo 16 anos." },
+      "rule2": { "title": "Regra 2", "desc": "Uma conta por pessoa." },
+      "rule3": { "title": "Regra 3", "desc": "Sem VPN." },
+      "rule4": { "title": "Regra 4", "desc": "Respostas honestas." },
+      "rule5": { "title": "Regra 5", "desc": "Pagamento via PayPal ou gift cards." },
+      "rule6": { "title": "Regra 6", "desc": "Compatível com GDPR." },
+      "rule7": { "title": "Regra 7", "desc": "Respeite a plataforma." }
+    },
+    "button": {
+      "continue": "Entendido e continuar"
+    }
+  }
+}

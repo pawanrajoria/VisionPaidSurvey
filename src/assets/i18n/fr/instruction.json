@@ -1,0 +1,41 @@
+{
+  "instruction": {
+    "header": {
+      "title": "Bienvenue sur notre plateforme !",
+      "subtitle": "Avant de commencer, veuillez lire et accepter ces règles importantes."
+    },
+    "rules": {
+      "rule1": {
+        "title": "Règle 1 sur 7 – Âge requis",
+        "desc": "Vous devez avoir au moins 16 ans."
+      },
+      "rule2": {
+        "title": "Règle 2 sur 7 – Un seul compte",
+        "desc": "Un seul compte par personne est autorisé."
+      },
+      "rule3": {
+        "title": "Règle 3 sur 7 – Pas de VPN",
+        "desc": "N’utilisez pas de VPN ou d’outils falsifiant votre localisation."
+      },
+      "rule4": {
+        "title": "Règle 4 sur 7 – Réponses honnêtes",
+        "desc": "Fournissez des réponses sincères."
+      },
+      "rule5": {
+        "title": "Règle 5 sur 7 – Paiements",
+        "desc": "Paiements via PayPal ou cartes cadeaux."
+      },
+      "rule6": {
+        "title": "Règle 6 sur 7 – Données",
+        "desc": "Conforme au RGPD."
+      },
+      "rule7": {
+        "title": "Règle 7 sur 7 – Respect",
+        "desc": "Tout abus peut entraîner un bannissement."
+      }
+    },
+    "button": {
+      "continue": "Compris et continuer"
+    }
+  }
+}

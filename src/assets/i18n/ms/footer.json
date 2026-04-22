@@ -1,29 +1,33 @@
 {
-    "footer": {
-        "copyright": "© 2065 Profit Piller - Hak Cipta Terpelihara.",
-        "productOf": "Produk daripada",
-        "cralpkResearchGroup": "Cralpk Research Group",
-        "platform": {
-            "title": "Platform",
-            "loginOrSignUp": "Log Masuk atau Daftar",
-            "aboutProfitpiller": "Tentang Profitpiller",
-            "contactUs": "Hubungi Kami",
-            "help": "Bantuan"
-        },
-        "legal": {
-            "title": "Undang-undang",
-            "privacyPolicy": "Dasar Privasi",
-            "cookiePolicy": "Kebijakan Cookie",
-            "termsConditions": "Terma & Syarat",
-            "doNotSell": "Jangan Jual Maklumat Peribadi Saya"
-        },
-        "exploreMore": {
-            "title": "Terokai Lagi",
-            "earnCash": "Jana Tunai daripada Tinjauan Berbayar",
-            "getRewarded": "Dapatkan Ganjaran dengan Kad Hadiah",
-            "redeemAmazon": "Tebus Kad Hadiah Amazon",
-            "getPaiyPal": "Dapatkan Bayaran melalui PayPal",
-            "visaGiftCards": "Kad Hadiah Visa & Banyak Lagi"
-        }
+  "footer": {
+    "trust": "Cemerlang",
+    "copyright": "© 2026 Profit Piller. Hak cipta terpelihara.",
+    "product_of": "Produk oleh",
+    "platform": {
+      "title": "Platform",
+      "login": "Log masuk atau Daftar",
+      "about": "Tentang ProfitPiller",
+      "contact": "Hubungi Kami",
+      "help": "Bantuan"
+    },
+    "legal": {
+      "title": "Perundangan",
+      "privacy": "Dasar Privasi",
+      "terms": "Terma & Syarat",
+      "cookie": "Dasar Kuki",
+      "dns": "Jangan jual maklumat saya"
+    },
+    "explore": {
+      "title": "Terokai Lagi",
+      "cash": "Jana wang daripada tinjauan",
+      "gift": "Kad hadiah",
+      "amazon": "Kad hadiah Amazon",
+      "paypal": "Ganjaran PayPal",
+      "visa": "Kad hadiah Visa"
+    },
+    "follow": {
+      "title": "Ikuti Kami",
+      "download": "Muat turun aplikasi kami"
     }
+  }
 }

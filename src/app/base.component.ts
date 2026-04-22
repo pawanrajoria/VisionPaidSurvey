@@ -12,7 +12,7 @@ export abstract class BaseComponent {
 
     readonly userService = inject(UserService);
     readonly activateRoutelang = inject(ActivatedRoute);
-    readonly currentLang = this.activateRoutelang.snapshot.paramMap.get('lang');
+    readonly currentLang = this.getLangFromRoute(this.activateRoutelang);
 
     constructor() {
         this.bindBrowserSetting(); // ✅ safe in constructor
@@ -30,4 +30,18 @@ export abstract class BaseComponent {
     async logUserActivity(pageName: string, eventName: string, status: string, remarks: string) {
         await this.userService.logActivity({ eventName: eventName, pageName: pageName, status: status, remarks: remarks });
     }
+
+
+    private getLangFromRoute(route: ActivatedRoute): string {
+        let current: ActivatedRoute | null = route;
+
+        while (current) {
+            const lang = current.snapshot.paramMap.get('lang');
+            if (lang) return lang;
+            current = current.parent;
+        }
+
+        return 'en'; // fallback
+    }
+
 }

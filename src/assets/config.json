@@ -1,6 +1,6 @@
 {
-    "BaseUrl": "https://apicrtool.azurewebsites.net/api/",
-    "BaseUrl1": "https://localhost:7156/api/",
+    "BaseUrl1": "https://apicrtool.azurewebsites.net/api/",
+    "BaseUrl": "https://localhost:7156/api/",
     "HostingDomain": "https://profitpiller.com/",
     "UserflowEndpoint": "https://apicrtool.azurewebsites.net/userflow/api/",
     "UserflowEndpoint1": "https://localhost:7156/userflow/api/",

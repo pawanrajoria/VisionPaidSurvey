@@ -213,7 +213,7 @@
                     <div class="divider"></div>
 
                     <!-- Rewards Panel -->
-                    <div class="reward-cards" [@fadeIn]>
+                    <div class="reward-cards">
                         <mat-card *ngFor="let reward of rewards[selectedCategory]" class="reward-card m-b-0"
                             [@cardAnimation] (click)="selectReward(reward)">
                             <div class="icon">
@@ -295,7 +295,7 @@
     </div>
 </section>
 
-<section class="landing-container position-relative" @fadeIn>
+<section class="landing-container position-relative">
     <img src="assets/images/backgrounds/elements9.png" alt="" class="elements9">
     <div class="container">
         <div class="row">
@@ -344,7 +344,7 @@
     </div>
 </section>
 
-<section class="rewards-grid" @fadeIn>
+<section class="rewards-grid">
     <div class="container">
         <div class="row">
             <div class="col-sm-4">

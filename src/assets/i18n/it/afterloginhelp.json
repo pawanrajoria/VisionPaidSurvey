@@ -1,0 +1,57 @@
+{
+  "afterloginhelp": {
+    "title": "Aiuto e Supporto",
+    "subtitle": "Siamo qui per te — e la tua privacy è completamente protetta.",
+    "ask_question": "Invia una richiesta",
+    "question_title": "💬 Hai ancora domande?",
+    "question_subtitle": "Non preoccuparti — le risposte sono a portata di clic! Se hai bisogno di ulteriore assistenza, il nostro team di supporto è pronto ad aiutarti. Invia la tua richiesta qui sotto e ci assicureremo che tu riceva le informazioni di cui hai bisogno — in modo rapido e senza complicazioni.",
+    "question_instruction": "Per favore, descrivi la tua domanda in modo chiaro e preciso",
+    "enter_your_email": "Inserisci la tua email",
+    "how_can_help": "Come possiamo aiutarti?",
+    "survey_instruction": "Se hai riscontrato un problema con un sondaggio o un'offerta, carica uno screenshot del problema.",
+    "upload_text": "Clicca o trascina i file per caricarli",
+    "upload_instruction": "PNG, JPG (Max 1MB)",
+    "faqs": {
+      "q1": {
+        "question": "Come posso guadagnare ricompense?",
+        "answer": "Puoi guadagnare completando sondaggi, partecipando a offerte speciali e tramite bonus referral."
+      },
+      "q2": {
+        "question": "Come posso qualificarmi per i sondaggi?",
+        "answer": "Ogni sondaggio ha criteri specifici. Completare il profilo in modo accurato aumenta le probabilità."
+      },
+      "q3": {
+        "question": "Perché non ci sono sondaggi disponibili?",
+        "answer": "Dipende dal tuo profilo e dalla domanda dei partner."
+      },
+      "q4": {
+        "question": "Cos'è uno screen-out?",
+        "answer": "Significa che non corrispondi al pubblico target del sondaggio."
+      },
+      "q5": {
+        "question": "Perché non ho ricevuto la ricompensa completa?",
+        "answer": "Alcuni sondaggi offrono ricompense parziali."
+      },
+      "q6": {
+        "question": "Posso usare VPN o proxy?",
+        "answer": "No, è vietato e può causare sospensione."
+      },
+      "q7": {
+        "question": "Quando posso riscattare le ricompense?",
+        "answer": "Dopo aver raggiunto la soglia minima."
+      },
+      "q8": {
+        "question": "Posso invitare amici?",
+        "answer": "Sì, guadagni una commissione."
+      },
+      "q9": {
+        "question": "I miei dati sono al sicuro?",
+        "answer": "Sì, completamente protetti."
+      },
+      "q10": {
+        "question": "Come contattare il supporto?",
+        "answer": "support@profitpiller.com"
+      }
+    }
+  }
+}
