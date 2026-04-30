@@ -1,0 +1,91 @@
+.popup-container {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease-out;
+}
+
+.popup-header {
+  background-color: #105749;
+  color: white;
+  padding: 24px 18px 18px; // Extra top padding for the icon
+  text-align: center;
+  position: relative;
+
+  /* The Icon Circle */
+  .icon-circle {
+    background: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    mat-icon {
+      color: #105749; // Emerald icon on white circle
+      font-size: 30px;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  .close-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: white;
+  }
+}
+
+.popup-body {
+  padding: 20px !important;
+  text-align: center;
+}
+
+.option-row {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  text-align: left;
+  
+  mat-radio-button {
+    width: 100%;
+    --mdc-radio-selected-icon-color: #105749;
+  }
+}
+
+.custom-input {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 10px;
+  resize: none;
+  &:focus { outline: none; border-color: #105749; }
+}
+
+.main-submit-btn {
+  background: linear-gradient(to right, #105749 85%, #9fd675 100%) !important;
+  color: white !important;
+  width: 90%;
+  height: 45px;
+  border-radius: 6px !important;
+  margin-bottom: 15px;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

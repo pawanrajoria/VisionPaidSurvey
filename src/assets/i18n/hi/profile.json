@@ -33,8 +33,21 @@
             "change_email": "ईमेल बदलें",
             "delete_account": "खाता हटाएँ",
             "reward_transaction": "पुरस्कार और लेन-देन",
+            "offers_activity": "ऑफ़र की गतिविधियाँ",
             "notification": "सूचनाएँ",
-            "help_support": "सहायता और समर्थन"
+            "help_support": "सहायता और समर्थन",
+            "profile_data": "प्रोफ़ाइल डेटा",
+            "overview": "अवलोकन",
+            "Automotive": "ऑटोमोटिव",
+            "Data Quality & System": "डेटा गुणवत्ता और प्रणाली",
+            "Demographics & Core Identity": "जनसांख्यिकी और मूल पहचान",
+            "Employment & Professional": "रोजगार और पेशेवर",
+            "Finance & Insurance": "वित्त और बीमा",
+            "Geography & Location": "भूगोल और स्थान",
+            "Household & Family": "घर और परिवार",
+            "Lifestyle & Health": "जीवनशैली और स्वास्थ्य",
+            "Media & Technology": "मीडिया और प्रौद्योगिकी",
+            "Travel & Leisure": "यात्रा और अवकाश"
         }
     }
 }

@@ -1,82 +1,56 @@
-<h2 mat-dialog-title class="text-center">Qualification</h2>
+<div class="premium-qualification">
+    <div class="modal-header">
+        <div class="header-icon-box">
+            <mat-icon>assignment_turned_in</mat-icon>
+        </div>
+        <h2 mat-dialog-title>Qualification</h2>
+        <button mat-icon-button (click)="closeQualification()" class="close-btn">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
 
-<mat-card appearance="outlined" class="custom-card text-center">
-    <mat-dialog-content class="qualification">
-        <div class="boxes">
+    <mat-dialog-content class="modal-body">
+        <div class="intro-text">
+            <h3>Share your opinion</h3>
+            <span class="privacy-badge">Your responses are completely anonymous</span>
+        </div>
 
-            <h4>Share your opinion</h4>
-            <p>Your responses are completely anonymous</p>
-            <div class="scroll-box">
-                <ul>
-                    <li>
-                        <h4>Participation</h4>
-                        <p>Before starting a survey, you might need to answer a few short questions to check if
-                            you're a match for the survey’s requirements.</p>
-                    </li>
-                    <li>
-                        <h4>Honesty</h4>
-                        <p>Please answer truthfully and thoughtfully. False or inconsistent responses may result in
-                            disqualification from future surveys.</p>
-                    </li>
-                    <li>
-                        <h4>Data Protection</h4>
-                        <p>We respect your privacy. Information like your device info or IP address may be collected
-                            but is handled securely and used only for survey relevance. Your identity will remain
-                            anonymous.</p>
-                    </li>
-                </ul>
+        <div class="rules-container">
+            <div class="rule-card">
+                <div class="rule-header">
+                    <mat-icon>groups</mat-icon>
+                    <h4>Participation</h4>
+                </div>
+                <p>Before starting a survey, you might need to answer a few short questions to check if you're a match
+                    for the survey’s requirements.</p>
             </div>
-            <div class="bottom">
-                <p>By taking this survey you accept our <a href="/privacy-policy" target="_blank"><span>Privacy
-                            Policy</span></a></p>
+
+            <div class="rule-card">
+                <div class="rule-header">
+                    <mat-icon>verified_user</mat-icon>
+                    <h4>Honesty</h4>
+                </div>
+                <p>Please answer truthfully and thoughtfully. False or inconsistent responses may result in
+                    disqualification from future surveys.</p>
+            </div>
+
+            <div class="rule-card">
+                <div class="rule-header">
+                    <mat-icon>security</mat-icon>
+                    <h4>Data Protection</h4>
+                </div>
+                <p>We respect your privacy. Information like your device info or IP address may be collected but is
+                    handled securely and used only for survey relevance. Your identity will remain anonymous.</p>
             </div>
         </div>
     </mat-dialog-content>
-</mat-card>
-<mat-dialog-actions>
-        <button mat-flat-button color="primary" (click)="startSurvey()" class="custom-btn w-100">Start this
-            Survey</button>
-</mat-dialog-actions>
 
-<!-- <div class="happen-modal">
-    <button mat-icon-button class="close" (click)="closeQualification()" aria-label="Close">
-        <mat-icon>close</mat-icon>
-    </button>
-    <mat-card appearance="outlined" class="custom-card text-center">
-        <mat-card-content class="qualification">
-            <h3>Qualification</h3>
-            <div class="boxes">
-                <h4>Share your opinion</h4>
-                <p>Your responses are completely anonymous</p>
-                <div class="scroll-box">
-                    <ul>
-                        <li>
-                            <h4>Participation</h4>
-                            <p>Before starting a survey, you might need to answer a few short questions to check if
-                                you're a match for the survey’s requirements.</p>
-                        </li>
-                        <li>
-                            <h4>Honesty</h4>
-                            <p>Please answer truthfully and thoughtfully. False or inconsistent responses may result in
-                                disqualification from future surveys.</p>
-                        </li>
-                        <li>
-                            <h4>Data Protection</h4>
-                            <p>We respect your privacy. Information like your device info or IP address may be collected
-                                but is handled securely and used only for survey relevance. Your identity will remain
-                                anonymous.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="bottom">
-                <p>By taking this survey you accept our <a href="/privacy-policy" target="_blank"><span>Privacy
-                            Policy</span></a></p>
-
-                <button mat-flat-button color="primary" (click)="startSurvey()" class="custom-btn">Start this
-                    Survey</button>
-            </div>
-
-        </mat-card-content>
-    </mat-card>
-</div> -->
+    <mat-dialog-actions align="center" class="modal-footer">
+        <p class="policy-agreement">
+            By taking this survey you accept our <a href="/privacy-policy" target="_blank">Privacy Policy</a>
+        </p>
+        <button mat-flat-button class="start-btn" (click)="startSurvey()">
+            START THIS SURVEY
+        </button>
+    </mat-dialog-actions>
+</div>

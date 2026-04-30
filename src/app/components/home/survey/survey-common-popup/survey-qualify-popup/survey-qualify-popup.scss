@@ -1,0 +1,193 @@
+.premium-success-popup {
+    position: relative; // Required for absolute positioning of children
+    border-radius: 32px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.close-btn {
+    position: absolute !important; // Forces it out of the normal layout flow
+    top: 16px !important; // Fixed distance from top
+    right: 16px !important; // Fixed distance from right
+    z-index: 100; // Keeps it above all other elements
+
+    width: 32px !important; // Smaller button width
+    height: 32px !important; // Smaller button height
+    line-height: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: rgba(0, 0, 0, 0.05) !important; // Subtle background circle
+    color: #64748b !important; // Modern slate color
+    transition: all 0.2s ease;
+
+    mat-icon {
+        font-size: 18px !important; // Scaled icon
+        width: 18px !important;
+        height: 18px !important;
+        line-height: 18px !important;
+    }
+
+    &:hover {
+        background: rgba(16, 87, 73, 0.1) !important; // Emerald hint on hover
+        color: #105749 !important;
+        transform: rotate(90deg); // Optional: fun rotation effect
+    }
+}
+
+.glow-bg {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(16, 87, 73, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.premium-body {
+    padding: 48px 32px 32px !important;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-orbit {
+    position: relative;
+    margin-bottom: 24px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90px;
+        height: 90px;
+        background: #f0f7f5;
+        border-radius: 50%;
+        z-index: 0;
+    }
+}
+
+.icon-bg {
+    position: relative;
+    z-index: 1;
+    width: 64px;
+    height: 64px;
+    background: #105749;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(-5deg);
+    box-shadow: 0 10px 20px rgba(16, 87, 73, 0.3);
+
+    mat-icon {
+        color: white;
+        font-size: 32px;
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.text-content {
+    margin-bottom: 24px;
+
+    h2 {
+        color: #105749;
+        font-weight: 800;
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        color: #64748b;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+}
+
+.info-pills {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 32px;
+
+    .pill {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 16px;
+        background: #f1f5f9;
+        border-radius: 100px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #475569;
+
+        mat-icon {
+            font-size: 16px;
+            width: 16px;
+            height: 16px;
+        }
+
+        &.highlight {
+            background: #ecfdf5;
+            color: #059669;
+        }
+    }
+}
+
+.action-btn-main {
+    width: 100%;
+    height: 58px;
+    background: linear-gradient(135deg, #105749 0%, #1da389 100%) !important;
+    color: white !important;
+    border-radius: 16px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.5px;
+    box-shadow: 0 15px 30px rgba(16, 87, 73, 0.35);
+    margin-bottom: 24px;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 20px 40px rgba(16, 87, 73, 0.45);
+    }
+}
+
+.pro-tip-container {
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 16px;
+    text-align: left;
+    border-left: 4px solid #105749;
+
+    .tip-header {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 4px;
+
+        span {
+            font-size: 0.75rem;
+            font-weight: 900;
+            color: #105749;
+            letter-spacing: 1px;
+        }
+
+        mat-icon {
+            font-size: 16px;
+            width: 16px;
+            height: 16px;
+            color: #105749;
+        }
+    }
+
+    p {
+        font-size: 0.8rem;
+        color: #64748b;
+        margin: 0;
+        line-height: 1.4;
+    }
+}

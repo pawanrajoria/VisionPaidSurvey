@@ -70,32 +70,38 @@ export class GoogleService {
   loginWithGoogleTab(openInNewTab: boolean = true): Promise<string> {
     if (!this.isBrowser) return Promise.reject('Not in browser');
 
+    // Detect if running as an iOS PWA
+    const isStandalone = (window.navigator as any).standalone || window.matchMedia('(display-mode: standalone)').matches;
     const redirectUri = window.location.origin + '/auth/callback';
 
     const googleAuthUrl =
       'https://accounts.google.com/o/oauth2/v2/auth' +
       `?client_id=${this.clientId}` +
       `&redirect_uri=${encodeURIComponent(redirectUri)}` +
-      '&response_type=token' +
-      '&scope=' + encodeURIComponent('openid email profile') +
-      '&prompt=select_account';
+      `&response_type=token` +
+      `&scope=` + encodeURIComponent('openid email profile') +
+      `&prompt=select_account`;
 
+    if (isStandalone) {
+      // iOS PWA: Redirect the current window instead of opening a tab
+      window.location.href = googleAuthUrl;
+      return new Promise(() => { }); // Execution stops as page redirects
+    }
+
+    // Standard Browser: Use your existing Tab/Popup logic
     const popup = openInNewTab
-      ? window.open(googleAuthUrl, '_blank') // ✅ new tab
+      ? window.open(googleAuthUrl, '_blank')
       : window.open(googleAuthUrl, 'googleLogin', 'width=500,height=600');
 
     if (!popup) return Promise.reject('Popup blocked!');
 
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       const listener = (event: MessageEvent) => {
         if (event.data?.token) {
           resolve(event.data.token);
-          cleanup();
+          window.removeEventListener('message', listener);
         }
       };
-
-      const cleanup = () => window.removeEventListener('message', listener);
-
       window.addEventListener('message', listener);
     });
   }

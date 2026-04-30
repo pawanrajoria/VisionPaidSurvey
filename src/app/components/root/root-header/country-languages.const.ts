@@ -13,15 +13,7 @@ export interface CountryLanguage {
 }
 
 export const COUNTRY_LANGUAGE_LIST: CountryLanguage[] = [
-    {
-        id: 1,
-        countryName: 'भारत',
-        countryCode: 'IN',
-        flagUrl: 'https://flagcdn.com/24x18/in.png',
-        languages: [
-            { id: 4, name: 'English', code: 'en' }
-        ]
-    },
+
     {
         id: 2,
         countryName: 'United States',
@@ -61,6 +53,16 @@ export const COUNTRY_LANGUAGE_LIST: CountryLanguage[] = [
         ]
     },
     {
+        id: 1,
+        countryName: 'India',
+        countryCode: 'IN',
+        flagUrl: 'https://flagcdn.com/24x18/in.png',
+        languages: [
+            { id: 1, name: 'हिन्दी', code: 'hi' },
+            { id: 2, name: 'English', code: 'en' }
+        ]
+    },
+    {
         id: 6,
         countryName: 'Singapore',
         countryCode: 'SG',
@@ -85,8 +87,8 @@ export const COUNTRY_LANGUAGE_LIST: CountryLanguage[] = [
         countryCode: 'GE',
         flagUrl: 'https://flagcdn.com/24x18/ge.png',
         languages: [
-            { id: 1, name: 'English', code: 'en' },
-            { id: 2, name: 'Georgia', code: 'ka' }
+            { id: 1, name: 'ქართული', code: 'ka' },
+            { id: 2, name: 'English', code: 'en' }
         ]
     },
     {
@@ -114,7 +116,8 @@ export const COUNTRY_LANGUAGE_LIST: CountryLanguage[] = [
         flagUrl: 'https://flagcdn.com/24x18/be.png',
         languages: [
             { id: 1, name: 'Nederlands', code: 'nl' },
-            { id: 2, name: 'Français', code: 'fr' }
+            { id: 2, name: 'Français', code: 'fr' },
+            { id: 3, name: 'Deutsch', code: 'de' }
         ]
     },
     {
@@ -150,8 +153,27 @@ export const COUNTRY_LANGUAGE_LIST: CountryLanguage[] = [
         countryCode: 'MY',
         flagUrl: 'https://flagcdn.com/24x18/my.png',
         languages: [
-            { id: 1, name: 'English', code: 'en' },
-            { id: 2, name: 'Bahasa Melayu', code: 'ms' }
+            { id: 1, name: 'Bahasa Melayu', code: 'ms' },
+            { id: 2, name: 'English', code: 'en' },
+            { id: 3, name: '中文', code: 'zh' }
+        ]
+    },
+    {
+        id: 16,
+        countryName: 'Deutschland',
+        countryCode: 'DE',
+        flagUrl: 'https://flagcdn.com/24x18/de.png',
+        languages: [
+            { id: 1, name: 'Deutsch', code: 'de' }
+        ]
+    },
+    {
+        id: 17,
+        countryName: 'Netherlands',
+        countryCode: 'NL',
+        flagUrl: 'https://flagcdn.com/24x18/nl.png',
+        languages: [
+            { id: 1, name: 'Nederlands', code: 'nl' }
         ]
     }
 ];

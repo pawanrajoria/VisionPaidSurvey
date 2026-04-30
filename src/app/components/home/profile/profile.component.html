@@ -13,8 +13,8 @@
                                     Points</em></span></p>
                     </div>
                     <ul class="nav nav-pills nav-stacked">
-                        <li class="active">
-                            <a extended [routerLink]="['/', currentLang, 'app', 'account']">
+                        <li>
+                            <a extended [routerLink]="['/', currentLang, 'app', 'account','profiledata']">
                                 <mat-icon>perm_identity</mat-icon> {{ 'account.profile' | translate }}</a>
                         </li>
                         <li>
@@ -29,7 +29,8 @@
                             </a>
                         </li>
                         <li>
-                            <a (click)="authService.logOut()" extended [routerLink]="['/', currentLang, 'app', 'account']">
+                            <a (click)="authService.logOut()" extended
+                                [routerLink]="['/', currentLang, 'app', 'account']">
                                 <mat-icon>input</mat-icon>
                                 {{ 'account.log_out' | translate }}
                             </a>

@@ -33,8 +33,21 @@
             "change_email": "更改电子邮件",
             "delete_account": "删除账户",
             "reward_transaction": "奖励与交易",
+            "offers_activity": "优惠活动",
             "notification": "通知",
-            "help_support": "帮助与支持"
+            "help_support": "帮助与支持",
+            "profile_data": "档案数据",
+            "overview": "概览",
+            "Automotive": "汽车",
+            "Data Quality & System": "数据质量与系统",
+            "Demographics & Core Identity": "人口普查与核心身份",
+            "Employment & Professional": "就业与职业",
+            "Finance & Insurance": "金融与保险",
+            "Geography & Location": "地理与位置",
+            "Household & Family": "家庭",
+            "Lifestyle & Health": "生活方式与健康",
+            "Media & Technology": "媒体与技术",
+            "Travel & Leisure": "旅游与休闲"
         }
     }
 }

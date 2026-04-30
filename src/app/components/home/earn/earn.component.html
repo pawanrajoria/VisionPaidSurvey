@@ -1,267 +1,237 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <div class="top-filters">
-                <span>Earn on</span>
-                <mat-button-toggle-group name="Change Devices" [(ngModel)]="selectedDeviceType" (change)="filterItems()"
-                    class="toggle-group" multiple>
-                    <mat-button-toggle value="Android">
-                        <i-tabler name="brand-android" class="fill-black"></i-tabler>
-                    </mat-button-toggle>
-                    <mat-button-toggle value="IOS">
-                        <i-tabler name="brand-apple" class="fill-black"></i-tabler>
-                    </mat-button-toggle>
-                    <mat-button-toggle value="Desktop">
-                        <i-tabler name="device-imac" class="fill-black"></i-tabler>
-                    </mat-button-toggle>
-                </mat-button-toggle-group>
-            </div>
-        </div>
-    </div>
+<div class="earn-page-wrapper">
+    <div class="container-fluid py-3 py-md-4">
 
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="section-container">
-                <div class="section-header">
-                    <div class="section-title">
-                        <mat-icon color="accent">whatshot</mat-icon> Gaming Offers
-                    </div>
-                    <div class="actions">
-                        <span class="view-all" [routerLink]="['/', currentLang, 'app', 'offers']">View All</span>
-                        <button mat-icon-button (click)="scrollLeft('gamingSlider')">
-                            <mat-icon>chevron_left</mat-icon>
-                        </button>
-                        <button mat-icon-button (click)="scrollRight('gamingSlider')">
-                            <mat-icon>chevron_right</mat-icon>
-                        </button>
-                    </div>
-                </div>
-
-                <div #gamingSlider class="slider">
-                    @if (isGamingOfferLoading){
-                    <app-empty-skelten></app-empty-skelten>
-                    }@else{
-                    <mat-card class="offer-card" *ngFor="let offer of gamingOffers" (click)="openOfferDialog(offer)">
-                        <img mat-card-image [src]="offer.imageUrl" alt="{{offer.offerName}}">
-                        <mat-card-content class="card-content">
-                            <h3>{{offer.offerName}}</h3>
-                            <p>{{offer.providerName}}</p>
-                            <span class="price">
-                                <img class="logocoin" src="/assets/images/logo.png" alt="" />
-                                {{offer.points}}
-                            </span>
-                        </mat-card-content>
-                    </mat-card>
-                    }
-                </div>
-
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="section-container">
-                <div class="section-header">
-                    <div class="section-title">
-                        <mat-icon color="accent">local_offer</mat-icon> Other Offers
-                    </div>
-                    <div class="actions">
-                        <span class="view-all">View All</span>
-                        <button mat-icon-button (click)="scrollLeft('offerSlider')">
-                            <mat-icon>chevron_left</mat-icon>
-                        </button>
-                        <button mat-icon-button (click)="scrollRight('offerSlider')">
-                            <mat-icon>chevron_right</mat-icon>
-                        </button>
-                    </div>
-                </div>
-                <div #offerSlider class="slider">
-                    @if (isOtherOfferLoading){
-                    <app-empty-skelten></app-empty-skelten>
-                    }@else{
-                    <mat-card class="offer-card" *ngFor="let offer of otherOffers" (click)="openOfferDialog(offer)">
-                        <img mat-card-image [src]="offer.imageUrl" alt="{{offer.offerName}}">
-                        <mat-card-content class="card-content">
-                            <h3>{{offer.offerName}}</h3>
-                            <p>{{offer.providerName}}</p>
-                            <span class="price">
-                                <img class="logocoin" src="/assets/images/logo.png" alt="" />
-                                {{offer.points}}
-                            </span>
-                        </mat-card-content>
-                    </mat-card>
-                    }
+        <div class="row mb-4">
+            <div class="col-12 d-flex justify-content-center">
+                <div class="top-filters-container">
+                    <span class="d-none d-sm-inline">Earn on</span>
+                    <mat-button-toggle-group name="Change Devices" [(ngModel)]="selectedDeviceType"
+                        (change)="filterItems()" class="toggle-group" multiple>
+                        <mat-button-toggle value="Android"><i-tabler
+                                name="brand-android"></i-tabler></mat-button-toggle>
+                        <mat-button-toggle value="IOS"><i-tabler name="brand-apple"></i-tabler></mat-button-toggle>
+                        <mat-button-toggle value="Desktop"><i-tabler name="device-imac"></i-tabler></mat-button-toggle>
+                    </mat-button-toggle-group>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col">
-            <div class="section-container">
-                <div class="section-header">
-                    <div class="section-title">
-                        <mat-icon color="accent">assignment</mat-icon> Featured Surveys
+        <div class="row">
+            <div [class]="otherOffers.length>0? 'col-lg-6' : 'col-12'">
+                <div class="section-container">
+                    <div class="section-header">
+                        <div class="section-title">
+                            <mat-icon color="accent">whatshot</mat-icon> Gaming Offers
+                        </div>
+                        <div class="actions">
+                            <span class="view-all" [routerLink]="['/', currentLang, 'app', 'offers']">View All</span>
+                            <button mat-icon-button (click)="scrollLeft('gamingSlider')">
+                                <mat-icon>chevron_left</mat-icon>
+                            </button>
+                            <button mat-icon-button (click)="scrollRight('gamingSlider')">
+                                <mat-icon>chevron_right</mat-icon>
+                            </button>
+                        </div>
                     </div>
-                    <div class="actions">
-                        <span class="view-all" [routerLink]="['/', currentLang, 'app', 'survey']">View All</span>
-                        <button mat-icon-button (click)="scrollLeft('surveySlider')">
-                            <mat-icon>chevron_left</mat-icon>
-                        </button>
-                        <button mat-icon-button (click)="scrollRight('surveySlider')">
-                            <mat-icon>chevron_right</mat-icon>
-                        </button>
+
+                    <div #gamingSlider class="slider">
+                        @if (isGamingOfferLoading){
+                        <app-empty-skelten></app-empty-skelten>
+                        }@else{
+                        <mat-card class="offer-card" *ngFor="let offer of gamingOffers"
+                            (click)="openOfferDialog(offer)">
+                            <img mat-card-image [src]="offer.imageUrl" alt="{{offer.offerName}}">
+                            <mat-card-content class="card-content">
+                                <h3>{{offer.offerName}}</h3>
+                                <p>{{offer.providerName}}</p>
+                                <span class="price">
+                                    <img class="logocoin" src="/assets/images/logo.png" alt="" />
+                                    {{offer.points}}
+                                </span>
+                            </mat-card-content>
+                        </mat-card>
+                        }
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-6" *ngIf="otherOffers.length > 0">
+                <div class="section-container">
+                    <div class="section-header">
+                        <div class="section-title">
+                            <mat-icon color="accent">local_offer</mat-icon> Other Offers
+                        </div>
+                        <div class="actions">
+                            <span class="view-all">View All</span>
+                            <button mat-icon-button (click)="scrollLeft('offerSlider')">
+                                <mat-icon>chevron_left</mat-icon>
+                            </button>
+                            <button mat-icon-button (click)="scrollRight('offerSlider')">
+                                <mat-icon>chevron_right</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                    <div #offerSlider class="slider">
+                        @if (isOtherOfferLoading){
+                        <app-empty-skelten></app-empty-skelten>
+                        }@else{
+                        <mat-card class="offer-card" *ngFor="let offer of otherOffers" (click)="openOfferDialog(offer)">
+                            <img mat-card-image [src]="offer.imageUrl" alt="{{offer.offerName}}">
+                            <mat-card-content class="card-content">
+                                <h3>{{offer.offerName}}</h3>
+                                <p>{{offer.providerName}}</p>
+                                <span class="price">
+                                    <img class="offerlogocoin" src="/assets/images/logo.png" alt="" />
+                                    {{offer.points}}
+                                </span>
+                            </mat-card-content>
+                        </mat-card>
+                        }
                     </div>
                 </div>
-                <div #surveySlider class="slider">
-                    @if (isFeaturedSurveyLoading){
-                    <app-empty-skelten></app-empty-skelten>
-                    }@else{
-                    <mat-card class="offer-card survey-box-head" *ngFor="let item of featuredSurveys; let i = index"
-                        [ngClass]="{
-            'is-blurred': !item.isProfileSurvey && hasProfileSurvey(),
-            'profile-highlight': item.isProfileSurvey
-          }" (click)="!item.isProfileSurvey && hasProfileSurvey() ? null : startSurvey(item)">
+            </div>
+        </div>
 
-                        <div *ngIf="item.isProfileSurvey" class="profile-tag">REQUIRED</div>
+        <div class="section-container mt-5" *ngIf="featuredSurveys.length > 0">
+            <div class="section-header">
+                <div class="section-title"><mat-icon color="primary">assignment</mat-icon> Featured Surveys</div>
+                <div class="actions">
+                    <span class="view-all" [routerLink]="['/', currentLang, 'app', 'survey']">View All</span>
+                    <button mat-icon-button
+                        (click)="scrollLeft('surveySlider')"><mat-icon>chevron_left</mat-icon></button>
+                    <button mat-icon-button
+                        (click)="scrollRight('surveySlider')"><mat-icon>chevron_right</mat-icon></button>
+                </div>
+            </div>
+            <div #surveySlider class="horizontal-scroll-container">
+                <div class="two-row-grid">
+                    <div class="survey-card-mini" *ngFor="let item of featuredSurveys"
+                        [ngClass]="{'is-blurred': !item.isProfileSurvey && hasProfileSurvey()}"
+                        (click)="!item.isProfileSurvey && hasProfileSurvey() ? null : startSurvey(item)">
+                        <div class="survey-content">
+                            <div class="icon-box" [ngClass]="item.isHot ? 'hot' : 'trending'">
+                                <mat-icon>poll</mat-icon>
+                            </div>
 
-                        <div [ngClass]="item.isHot ? 'survey-logo hot_coloe' : 'survey-logo trending_color'">
-                            <img src="assets/images/svgs/survey-icon.svg" alt="">
+                            <div class="details">
+                                <h3>{{item.name}}</h3>
+
+                                <div class="stats-row">
+                                    <div class="points">
+                                        <img src="/assets/images/logo.png" alt="points"> {{item.points}}
+                                    </div>
+                                    <div class="loi-info">
+                                        <mat-icon>schedule</mat-icon>
+                                        <span>{{item.loi}} min</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <mat-icon class="arrow">play_arrow</mat-icon>
                         </div>
 
-                        <mat-card-content class="card-content">
-                            <h3>{{item.name}}</h3>
-                            <p>{{item.providerName}}</p>
-                            <span class="price">
-                                <img class="logocoin" src="/assets/images/logo.png" alt="" />
-                                {{item.points}}
-                            </span>
-                        </mat-card-content>
-                    </mat-card>
-                    }
+                        <div class="card-progress-bar" *ngIf="item.progress > 0">
+                            <div class="fill" [style.width.%]="item.progress"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- <div class="section-container">
-    <div class="section-header">
-        <div class="section-title">
-            <mat-icon color="accent">assignment</mat-icon> Featured Surveys
-        </div>
-        <div class="actions">
-            <span class="view-all">View All</span>
-            <button mat-icon-button (click)="scrollLeft('surveySlider')">
-                <mat-icon>chevron_left</mat-icon>
-            </button>
-            <button mat-icon-button (click)="scrollRight('surveySlider')">
-                <mat-icon>chevron_right</mat-icon>
-            </button>
-        </div>
-    </div>
-    <div #surveySlider class="slider">
-        <div class="row survey-grid g-0">
-            <div class="col" *ngFor="let item of featuredSurveys; let i = index">
-                <div class="survey-box" [ngClass]="item.isHot?'hot':''">
-                    <img src="assets/images/fire.gif" class="hot-gif" alt="" *ngIf="item.isHot">
-                    <div class="survey-box-head">
-                        <div [ngClass]="item.isHot?'survey-logo hot_coloe':'survey-logo trending_color'">
-                            <img src="assets/images/svgs/survey-icon.svg" alt="">
+
+        <div class="section-container mt-5">
+            <div class="section-header">
+                <div class="section-title"><mat-icon color="primary">stars</mat-icon> Top Partners</div>
+                <div class="actions">
+                    <button mat-icon-button
+                        (click)="scrollLeft('partnerSlider')"><mat-icon>chevron_left</mat-icon></button>
+                    <button mat-icon-button
+                        (click)="scrollRight('partnerSlider')"><mat-icon>chevron_right</mat-icon></button>
+                </div>
+            </div>
+            <div #partnerSlider class="horizontal-scroll-container">
+                <div class="two-row-grid">
+                    <div class="partner-box offer-wall" *ngFor="let partner of surveyService.offerspartners"
+                        [style.background]="partner.gradient || '#105749'" (click)="goToPartner(partner)">
+
+                        <div class="status-badge" [ngClass]="partner.tagClass">
+                            {{ partner.tag || 'Popular' }}
                         </div>
-                        <div class="survey-card-head-right w-100">
-                            <div class="survey-title">#{{item.id}}</div>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <span class="survey-time">
-                                    <img src="assets/images/svgs/clock-icon.svg" alt=""> {{item.loi}} {{'Mins' |
-                                    translate}}
+
+                        <img [src]="partner.logo" class="partner-logo">
+
+                        <div class="partner-info">
+                            <span class="label">{{ partner.name }}</span>
+                            <div class="earn-row">
+                                <span class="rating">
+                                    <mat-icon>star</mat-icon> {{ partner.rating }}
+                                </span>
+                                <span class="earn-limit">Up to <img class="logocoin" src="/assets/images/logo.png"
+                                        alt="" /> {{ partner.max }}
                                 </span>
                             </div>
                         </div>
                     </div>
-                    <div class="survey-box-footer">
-                        <h5 class="survey-amount">
-                            <div class="amount-text">
-                                <span>{{ item.points | number:'1.0-2'}}</span>
-                            </div>
-                        </h5>
-                        <button class="survey-action">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="11" viewBox="0 0 13 11"
-                                fill="none">
-                                <path
-                                    d="M0.885231 5.68232C0.885231 5.44205 0.980678 5.21162 1.15058 5.04173C1.32047 4.87183 1.5509 4.77638 1.79117 4.77638L8.96625 4.77638L6.58664 2.39677C6.42661 2.22503 6.33949 1.99789 6.34363 1.76319C6.34777 1.52848 6.44285 1.30455 6.60884 1.13857C6.77482 0.972584 6.99875 0.877505 7.23345 0.873364C7.46815 0.869223 7.6953 0.956343 7.86704 1.11637L11.7928 5.04212C11.9624 5.21199 12.0577 5.44225 12.0577 5.68232C12.0577 5.9224 11.9624 6.15266 11.7928 6.32252L7.86704 10.2483C7.7841 10.3373 7.68408 10.4087 7.57295 10.4582C7.46182 10.5077 7.34186 10.5343 7.22022 10.5365C7.09858 10.5386 6.97775 10.5163 6.86494 10.4707C6.75214 10.4251 6.64967 10.3573 6.56364 10.2713C6.47761 10.1852 6.40979 10.0828 6.36423 9.96997C6.31867 9.85716 6.29629 9.73634 6.29844 9.6147C6.30058 9.49305 6.32721 9.37309 6.37672 9.26196C6.42624 9.15083 6.49763 9.05082 6.58664 8.96788L8.96625 6.58827L1.79117 6.58827C1.29109 6.58827 0.885231 6.1824 0.885231 5.68232Z"
-                                    fill="#0F0E16" />
-                            </svg>
-                            <img src="assets/images/svgs/running-icon.svg" alt="">
-                        </button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="section-container-surveywall mt-5">
+            <div class="section-header">
+                <div class="section-title">
+                    <mat-icon color="accent">assignment</mat-icon>
+                    <span>Survey Partners</span>
+                </div>
+                <div class="actions">
+                    <button mat-icon-button
+                        (click)="scrollLeft('surveyWallSlider')"><mat-icon>chevron_left</mat-icon></button>
+                    <button mat-icon-button
+                        (click)="scrollRight('surveyWallSlider')"><mat-icon>chevron_right</mat-icon></button>
+                </div>
+            </div>
+
+            <div #surveyWallSlider class="survey-wallslider">
+                <div class="surveywall-partner-box survey-wall" *ngFor="let partner of surveyService.surveyspartners"
+                    (click)="goToPartner(partner)">
+
+                    <div class="surveywallcard-top">
+                        <div class="surveywallcard-logo">
+                            <img [src]="partner.logo" [alt]="partner.name">
+                        </div>
+                        <div class="surveywallcard-name">
+                            <strong>{{partner.name}}</strong>
+                        </div>
+                    </div>
+
+                    <div class="surveywallcard-bottom">
+                        <div class="rating-group">
+                            <span class="rating-value">{{ partner.rating }}</span>
+                            <mat-icon class="star-icon">star</mat-icon>
+                        </div>
+
+                        <div class="survey-info">
+                            <span class="count">{{ partner.max }}+</span>
+                            <span class="label">Surveys</span>
+                        </div>
+
+                        <mat-icon class="go-btn">chevron_right</mat-icon>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div> -->
-    <div class="section-container">
-        <div class="section-header">
-            <div class="section-title">
-                <mat-icon color="accent">assignment</mat-icon> Offer Partner's
+
+        <div class="quick-actions-container mt-5">
+            <div class="action-item">
+                <div class="icon-circle red"><mat-icon>redeem</mat-icon></div>
+                <span>Daily</span>
             </div>
-            <div class="actions">
-                <span class="view-all" [routerLink]="['/', currentLang, 'app', 'offerwall']">View All</span>
-                <button mat-icon-button (click)="scrollLeft('offerwallSlider')">
-                    <mat-icon>chevron_left</mat-icon>
-                </button>
-                <button mat-icon-button (click)="scrollRight('offerwallSlider')">
-                    <mat-icon>chevron_right</mat-icon>
-                </button>
+            <div class="action-item">
+                <div class="icon-circle blue"><mat-icon>group_add</mat-icon></div>
+                <span>Invite</span>
             </div>
-        </div>
-        <div #offerwallSlider class="offer-wallslider">
-            <mat-card class="survey-card" *ngFor="let partner of surveyService.offerspartners"
-                (click)="goToPartner(partner)">
-                <mat-card-content class="card-content">
-                    <div class="card-media">
-                        <img [src]="partner.logo" alt="{{ partner.name }}" class="partner-logo" />
-                    </div>
-                    <div class="card-body">
-                        <div class="partner-name">{{ partner.name }}</div>
-                        <div class="partner-rating">
-                            <mat-icon *ngFor="let s of stars(partner.rating)">
-                                {{ s }}
-                            </mat-icon>
-                        </div>
-                    </div>
-                </mat-card-content>
-            </mat-card>
-        </div>
-    </div>
-    <div class="section-container">
-        <div class="section-header">
-            <div class="section-title">
-                <mat-icon color="accent">assignment</mat-icon> Survey Partner's
+            <div class="action-item">
+                <div class="icon-circle green"><mat-icon>history</mat-icon></div>
+                <span>History</span>
             </div>
-            <div class="actions">
-                <span class="view-all" [routerLink]="['/', currentLang, 'app', 'survey']">View All</span>
-                <button mat-icon-button (click)="scrollLeft('surveyWallSlider')">
-                    <mat-icon>chevron_left</mat-icon>
-                </button>
-                <button mat-icon-button (click)="scrollRight('surveyWallSlider')">
-                    <mat-icon>chevron_right</mat-icon>
-                </button>
-            </div>
-        </div>
-        <div #surveyWallSlider class="offer-wallslider">
-            <mat-card class="survey-card" *ngFor="let partner of surveyService.surveyspartners"
-                (click)="goToPartner(partner)">
-                <mat-card-content class="card-content">
-                    <div class="card-media">
-                        <img [src]="partner.logo" alt="{{ partner.name }}" class="partner-logo" />
-                    </div>
-                    <div class="card-body">
-                        <div class="partner-name">{{ partner.name }}</div>
-                        <div class="partner-rating">
-                            <mat-icon *ngFor="let s of stars(partner.rating)">
-                                {{ s }}
-                            </mat-icon>
-                        </div>
-                    </div>
-                </mat-card-content>
-            </mat-card>
         </div>
     </div>
 </div>

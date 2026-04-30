@@ -18,6 +18,7 @@ import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dial
 import { Router } from '@angular/router';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { SelectRewardComponent } from '../../home/reward/select-reward/select-reward.component';
+import { TierAwardComponent } from "./tier-award/tier-award.component";
 
 @Component({
   selector: 'app-header',
@@ -43,9 +44,6 @@ export class HeaderComponent {
   readonly dialog = inject(MatDialog);
   dialogRef: MatDialogRef<any> | null = null;
   @ViewChild('Qualify', { read: TemplateRef }) Qualify!: TemplateRef<any>;
-  @ViewChild('Levels', { read: TemplateRef }) Levels!: TemplateRef<any>;
-
-  levels = ['l1', 'l2', 'l3', 'l4'];
 
   constructor(public authService: AuthService, private accountService: AccountService,
     private router: Router, private breakpointObserver: BreakpointObserver,
@@ -117,6 +115,7 @@ export class HeaderComponent {
   closeHappened() {
     this.dialog.closeAll();
   }
+
   openQualify() {
     this.dialog.open(this.Qualify);
   }
@@ -124,12 +123,16 @@ export class HeaderComponent {
   closeQualify() {
     this.dialog.closeAll();
   }
-  openLevels() {
-    this.dialog.open(this.Levels);
-  }
 
-  closeLevels() {
-    this.dialog.closeAll();
+  openLevels() {
+    const dialofref = this.dialog.open(TierAwardComponent);
+    dialofref.afterClosed().subscribe(async (result) => {
+      if (result === "submitForm") {
+        dialofref.close();
+      } else {
+        dialofref.close();
+      }
+    });
   }
 
   closeQualification() {

@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, forwardRef } from "@angular/core";
 import { timer, Subscription } from 'rxjs';
 import { Pipe, PipeTransform } from '@angular/core';
 import { SharedModule } from "../../../shared.module";
+import { ProfileService } from "../profile/profile.service";
 
 @Component({
   selector: 'app-leaderboard',
@@ -10,16 +11,31 @@ import { SharedModule } from "../../../shared.module";
   styleUrls: ['./leaderboard.component.scss']
 })
 export class LeaderboardComponent implements OnInit, OnDestroy {
+  userInfo: any = { level: "", totalOfferCompleted: "0", totalPointEarned: "0", totalRewardRedeemed: "0", totalSurveyCompleted: "" };
+
   ngOnDestroy(): void {
   }
   countDown: Subscription | undefined;
   counter = 9994400;
   tick = 1000;
+
+  constructor(private profileService: ProfileService) {
+
+  }
+
   ngOnInit(): void {
     this.countDown = timer(0, this.tick).subscribe(() => --this.counter);
+    this.getProfileInfo();
+  }
+
+
+  async getProfileInfo() {
+    const self = this;
+    self.userInfo = await self.profileService.getAccountInfo();
   }
 
 }
+
 @Pipe({
   name: 'formatTime',
 })

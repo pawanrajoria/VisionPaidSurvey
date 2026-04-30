@@ -54,7 +54,8 @@ export const routes: Routes = [
           { path: 'reset-link/:idve/:idvp', loadChildren: () => import('./components/auth/reset-password/reset-password.route').then(m => m.resetPasswordRoutes) },
           { path: 'forgot-password', loadChildren: () => import('./components/auth/forgot-password/forgot-password.route').then(m => m.forgotPasswordRoutes) },
           { path: 'link', component: OfferLinkComponent },
-          { path: 'callback', component: AuthCallbackComponent }
+          { path: 'callback', component: AuthCallbackComponent },
+          { path: 'paypalcallback', component: AuthCallbackComponent }
         ],
       },
 

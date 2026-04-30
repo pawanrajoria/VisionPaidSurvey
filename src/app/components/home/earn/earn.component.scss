@@ -1,29 +1,48 @@
-.top-filters {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* Centers the content horizontally */
-  gap: 12px;
-  margin-bottom: 30px;
-  /* Increased margin to separate from the grid */
-  width: 100%;
-  /* Ensure it takes full width */
-  padding: 15px 0;
+.earn-page-wrapper {
+  // background-color: #f6f9fc;
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
 
-  // Add this to ensure it's not hidden by overflow
-  overflow: visible;
+// SHARED 2-ROW GRID LOGIC
+.horizontal-scroll-container {
+  overflow-x: auto;
+  padding: 10px 0;
 
-  span {
-    font-weight: bold;
-    color: #105749;
-  }
-
-  .toggle-group {
-    border: 1px solid #105749;
-    border-radius: 8px;
-    background: white;
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
+
+.two-row-grid {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr); // Strict 2 rows
+  grid-auto-flow: column; // Force horizontal expansion
+  grid-auto-columns: 280px; // Width of each item
+  gap: 12px;
+
+  @media (max-width: 576px) {
+    grid-auto-columns: 240px; // Slightly smaller on mobile
+  }
+}
+
+// TOP FILTERS
+.top-filters-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  padding: 8px 20px;
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  span {
+    font-weight: 800;
+    color: #105749;
+  }
+}
+
+// GAMING SLIDER
 
 .section-container {
   margin-bottom: 0;
@@ -77,7 +96,7 @@
     gap: 10px;
     scroll-behavior: smooth;
     padding: 8px;
-    height: 230px;
+    height: auto;
 
     mat-card {
       width: 130px;
@@ -185,362 +204,418 @@
   }
 }
 
-.survey-grid {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -5px; // balance padding from cols
-  width: 100%;
-
-  .col {
-    flex: 0 0 calc(100% / 7 - 10px); // proper 7 equal columns
-    max-width: calc(100% / 7 - 10px);
-    padding: 5px;
-    margin: 0;
-  }
-
-  .survey-box {
-    padding: 8px;
-    border-radius: 9px;
-    background-color: #105749;
-    background-size: cover;
-    background-position: center;
-    backdrop-filter: blur(15px);
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 10px;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    box-shadow: 5px 5px 8px 0px rgba(0, 0, 0, 0.30) inset;
-    transition: 0.3s linear;
-
-    &::before {
-      content: "";
-      border-radius: 9px;
-      padding: 1px;
-      background: linear-gradient(90deg, #8577f08b, #8577f000 100%);
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      background-clip: padding-box, border-box;
-      background-origin: padding-box, border-box;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      transition: 0.3s linear;
-    }
-
-    &.hot {
-      &::before {
-        background: linear-gradient(90deg, rgba(255, 0, 0, 0.60), #8577f000 100%);
-      }
-
-      .hot-gif {
-        width: 18px;
-        position: absolute;
-        right: -2px;
-        top: -13px;
-      }
-    }
-
-    .survey-box-head {
-      display: flex;
-      align-items: flex-start;
-      gap: 6px;
-      width: 100%;
-
-      .survey-logo {
-        min-width: 40px;
-        aspect-ratio: 1/1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 7px;
-
-        img {
-          width: 22px;
-        }
-      }
-
-      .survey-title {
-        color: #FFF;
-        font-size: 13px;
-        font-weight: 500;
-        line-height: normal;
-        margin-bottom: 5px;
-      }
-
-      .survey-time {
-        display: flex;
-        align-items: center;
-        color: #7D7D9E;
-        font-size: 12px;
-        line-height: normal;
-        gap: 3px;
-
-        img {
-          width: 14px;
-        }
-      }
-
-      .btn-share {
-        display: flex;
-        padding: 3px;
-        border: 0;
-        filter: brightness(5);
-      }
-    }
-
-    .survey-box-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-
-      .survey-amount {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        font-size: 16px;
-        color: #fff;
-        font-weight: 600;
-
-        img {
-          width: 13px;
-          margin-top: -4px;
-        }
-
-        small {
-          font-size: 75%;
-        }
-      }
-
-      .survey-action {
-        padding: 5px 14px;
-        border-radius: 6px;
-        background-color: #8577F0;
-        border: 0;
-        display: flex;
-        position: relative;
-        overflow: hidden;
-        transition: 0.3s linear;
-
-        svg {
-          width: 15px;
-          height: auto;
-          transition: 0.3s linear;
-        }
-
-        img {
-          position: absolute;
-          top: 50%;
-          left: -20px;
-          transform: translate(-50%, -50%);
-          width: 15px;
-          transition: 0.3s linear;
-        }
-      }
-    }
-
-    &:hover {
-      &::before {
-        background: linear-gradient(0deg, #8577f0b7, #8577f000 100%);
-      }
-
-      &.hot {
-        &::before {
-          background: linear-gradient(0deg, rgba(255, 0, 0, 0.60), #8577f000 100%);
-        }
-      }
-
-      .survey-box-footer {
-        .survey-action {
-          img {
-            left: 50%;
-          }
-
-          svg {
-            transform: translateX(40px);
-          }
-        }
-      }
-    }
-  }
-}
-
-/* Responsive tweaks */
-@media (max-width: 1200px) {
-  .survey-grid .col {
-    flex: 0 0 calc(100% / 4 - 10px);
-    max-width: calc(100% / 4 - 10px);
-  }
-}
-
-@media (max-width: 768px) {
-  .survey-grid .col {
-    flex: 0 0 calc(100% / 2 - 10px);
-    max-width: calc(100% / 2 - 10px);
-  }
-}
-
-.trending_color {
-  background: linear-gradient(to right, #105749 0%, #009688 100%);
-}
-
-.high_payingcolor {
-  background: linear-gradient(180deg, #3b2667 0%, #bc78ec 100%)
-}
-
-.featured_color {
-  background: linear-gradient(180deg, #fab2ff 0%, #1904e5 100%)
-}
-
-.lowloi_color {
-  background: linear-gradient(180deg, #70f570 0%, #49c628 100%)
-}
-
-.hot_coloe {
-  background: linear-gradient(180deg, #e7533c 0%, #ff9500 100%)
-}
-
-// .color_lightgreen {
-//   background: linear-gradient(180deg, #fff720 0%, #3cd500 100%)
-// }
-
-// .color_greenlight {
-//   background: linear-gradient(180deg, #70f570 0%, #49c628 100%)
-// }
-
-
-
-// @media(max-width: 992px) {
-//   .survey-grid {
-//     .col {
-//       width: calc(100% / 5 - 8px) !important;
-//     }
-//   }
-// }
-
-// @media(max-width: 768px) {
-//   .survey-grid {
-//     .col {
-//       width: calc(100% / 3 - 8px) !important;
-//     }
-//   }
-// }
-
-// @media(max-width: 576px) {
-//   .survey-grid {
-//     .col {
-//       width: calc(100% / 2 - 60px) !important;
-//     }
-//   }
-// }
-
-.amount-text {
-  color: #fff;
-  font-size: 11px;
-  margin-bottom: 0;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-
-  small {
-    font-size: 75%;
-  }
-
-  img {
-    width: 14px;
-  }
-}
-
-
-////
-/// 
-/// 
-.survey-box-head {
-  display: flex;
-  gap: 6px;
-  width: 100%;
-
-  .survey-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    img {
-      width: 80%;
-      padding: 8px;
-    }
-  }
-
-  .survey-title {
-    color: #FFF;
-    font-size: 13px;
-    font-weight: 500;
-    line-height: normal;
-    margin-bottom: 5px;
-  }
-
-  .survey-time {
-    display: flex;
-    align-items: center;
-    color: #7D7D9E;
-    font-size: 12px;
-    line-height: normal;
-    gap: 3px;
-
-    img {
-      width: 14px;
-    }
-  }
-
-  .btn-share {
-    display: flex;
-    padding: 3px;
-    border: 0;
-    filter: brightness(5);
-  }
-}
-
 .logocoin {
   width: 15px !important;
   height: 15px !important;
 }
 
-/* The blur effect */
+
+.offerlogocoin {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+// PARTNER BOXES
+.partner-box {
+  position: relative; // CRITICAL: Keeps badge inside the card
+  border-radius: 12px;
+  padding: 24px 12px 12px 12px; // Extra top padding for the badge
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 80px;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  .status-badge {
+    position: absolute;
+    top: -1px;
+    left: 0px;
+    font-size: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    z-index: 2;
+
+    &.high-paying {
+      background: #ef4444;
+    }
+
+    &.quick-easy {
+      background: #10b981;
+    }
+
+    &.popular {
+      background: #3b82f6;
+    }
+
+    &.top-rated {
+      background: #f59e0b;
+    }
+  }
+
+  &.offer-wall {
+    color: white;
+
+    .partner-logo {
+      width: 40px;
+      height: 30px;
+      object-fit: contain;
+      // Only invert if your logos are dark and background is dark
+      filter: brightness(0) invert(1);
+    }
+
+    .partner-info {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+
+      .label {
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 2px;
+      }
+
+      .earn-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .rating {
+          display: flex;
+          align-items: center;
+          font-size: 11px;
+          font-weight: 600;
+
+          mat-icon {
+            font-size: 12px;
+            width: 12px;
+            height: 12px;
+            color: #ffeb3b;
+            margin-right: 2px;
+          }
+        }
+
+        .earn-limit {
+          font-size: 10px;
+          font-weight: 800;
+          background: rgba(255, 255, 255, 0.2);
+          padding: 1px 6px;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}
+
+// SURVEY CARDS
+.survey-card-mini {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05); // Glassmorphism base
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(31, 19, 19, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+  overflow: hidden;
+
+  // background: white;
+  // border: 1px solid #edf2f7;
+
+
+  // Hover State: Lift and Glow
+  &:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2),
+      0 0 15px rgba(255, 255, 255, 0.05); // Subtle outer glow
+
+    .arrow {
+      transform: translateX(3px);
+      color: #fff;
+    }
+  }
+
+  .icon-box {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.hot {
+      background: #fee2e2;
+      color: #ef4444;
+    }
+
+    &.trending {
+      background: #dcfce7;
+      color: #22c55e;
+    }
+  }
+
+  .survey-content {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .details {
+    flex: 1;
+
+    h3 {
+      margin: 0 0 6px 0;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .stats-row {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 0.8rem;
+      opacity: 0.8;
+
+      .points,
+      .loi-info {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        mat-icon {
+          font-size: 16px;
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      img {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+
+  // Small progress bar at the bottom
+  .card-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+
+    .fill {
+      height: 100%;
+      background: linear-gradient(90deg, #00dbde, #fc00ff); // Vibrant gradient
+      transition: width 0.5s ease;
+    }
+  }
+
+  .arrow {
+    transition: transform 0.2s ease;
+    opacity: 0.6;
+  }
+
+  &.is-blurred {
+    filter: blur(4px);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+// QUICK ACTIONS
+.quick-actions-container {
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  margin-top: 20px;
+
+  .action-item {
+    text-align: center;
+    cursor: pointer;
+
+    .icon-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 6px;
+
+      &.red {
+        background: #fee2e2;
+        color: #ef4444;
+      }
+
+      &.blue {
+        background: #e0f2fe;
+        color: #0ea5e9;
+      }
+
+      &.green {
+        background: #dcfce7;
+        color: #22c55e;
+      }
+    }
+
+    span {
+      font-size: 12px;
+      font-weight: 700;
+      color: #4a5568;
+    }
+  }
+}
+
+// SECTION HEADER
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+
+  .section-title {
+    font-size: 18px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #1e293b;
+  }
+
+  .view-all {
+    font-size: 12px;
+    font-weight: 700;
+    color: #105749;
+    cursor: pointer;
+  }
+}
+
 .is-blurred {
-  filter: blur(4px) grayscale(80%);
+  filter: blur(3px);
   opacity: 0.6;
   pointer-events: none;
-  /* Prevents clicking */
-  user-select: none;
-  /* Prevents highlighting text */
-  transition: all 0.3s ease;
 }
 
-/* Optional: Make the profile survey stand out more */
-.profile-highlight {
-  border: 2px solid #3f51b5;
-  /* Primary color border */
-  transform: scale(1.02);
-  z-index: 2;
-}
 
-.profile-tag {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #ff4081;
-  color: white;
-  padding: 2px 8px;
-  font-size: 10px;
-  font-weight: bold;
-  border-radius: 4px;
+
+// Survey Partner Boxes Section
+.section-container-surveywall {
+
+  .survey-wallslider {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 10px 4px;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .surveywall-partner-box {
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px;
+      min-width: 195px; // Adjusted for better fit
+      display: flex;
+      flex-direction: column;
+      gap: 16px; // Space between top and bottom rows
+      border: 1px solid #edf2f7;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      cursor: pointer;
+
+      .surveywallcard-top {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .surveywallcard-logo {
+          width: 45px; // Fixed container width
+          height: 35px; // Fixed container height
+          display: flex;
+          align-items: center; // Centers logo vertically
+          justify-content: center; // Centers logo horizontally
+
+          img {
+            max-width: 100%; // Takes full width of container
+            max-height: 100%; // Takes full height of container
+            width: auto; // Maintains aspect ratio
+            height: auto; // Maintains aspect ratio
+            object-fit: contain; // Ensures no part of the logo is cropped
+          }
+        }
+
+        .surveywallcard-name strong {
+          font-size: 15px;
+          color: #1e293b;
+          font-weight: 700;
+        }
+      }
+
+      .surveywallcard-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; // Spreads elements horizontally
+
+        .rating-group {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+
+          .rating-value {
+            font-weight: 800;
+            font-size: 15px;
+            color: #1e293b;
+          }
+
+          .star-icon {
+            color: #f59e0b;
+            font-size: 18px;
+            width: 18px;
+            height: 18px;
+          }
+        }
+
+        .survey-info {
+          display: flex;
+          flex-direction: column;
+          line-height: 1.1;
+
+          .count {
+            font-weight: 700;
+            font-size: 13px;
+            color: #1e293b;
+          }
+
+          .label {
+            font-size: 10px;
+            color: #94a3b8;
+          }
+        }
+
+        .go-btn {
+          color: #1e293b;
+          font-size: 20px;
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
 }

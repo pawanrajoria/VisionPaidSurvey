@@ -13,6 +13,7 @@ export class RespondentEntryResponseVM {
     ip: string = "";
     zipCode: string = "";
     city: string = "";
+    isQualified: boolean = false;
     qualifications?: Array<QualQuestionVM>;
 }
 

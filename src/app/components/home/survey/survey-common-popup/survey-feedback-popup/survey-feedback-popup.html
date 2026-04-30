@@ -1,45 +1,40 @@
-<div class="happen-modal">
-      <button mat-icon-button class="close" (click)="closeHappened()" aria-label="Close">
-        <mat-icon>close</mat-icon>
-      </button>
-    <mat-card appearance="outlined" class="custom-card text-center">
-        <mat-card-content class="form-field">
-            <h3>What happened?</h3>
-            <p>You did not return from the survey yet</p>
-            <div class="form-box">
-                <form>
-                    <div class="mb-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1"> I did not like the survey </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                                checked>
-                            <label class="form-check-label" for="flexRadioDefault2"> The survey asked for personal
-                                information </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                            <label class="form-check-label" for="flexRadioDefault3"> The survey is broken/i con't
-                                continue </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4"
-                                checked>
-                            <label class="form-check-label" for="flexRadioDefault4"> Other </label>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="form-floating">
-                            <textarea class="form-control" rows="4" placeholder="Comments"
-                                id="floatingTextarea"></textarea>
+<div class="popup-container animate-in">
+    <div class="popup-header">
+        <div class="icon-circle">
+            <mat-icon>quiz</mat-icon>
+        </div>
+        <h2>What happened?</h2>
+        <button mat-icon-button (click)="closeHappened()" class="close-icon">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
 
-                        </div>
-                    </div>
-                    <button mat-flat-button color="primary" (click)="submitFeedback()" class="btn btn-primary">Submit</button>
-                </form>
+    <mat-dialog-content class="popup-body">
+        <p class="instruction">You did not return from the survey yet</p>
+
+        <mat-radio-group class="options-list" [(ngModel)]="selectedReason">
+            <div class="option-row">
+                <mat-radio-button value="1">I did not like the survey</mat-radio-button>
             </div>
-        </mat-card-content>
-    </mat-card>
+            <div class="option-row">
+                <mat-radio-button value="2">The survey asked for personal information</mat-radio-button>
+            </div>
+            <div class="option-row">
+                <mat-radio-button value="3">The survey is broken/i con't continue</mat-radio-button>
+            </div>
+            <div class="option-row">
+                <mat-radio-button value="4">Other</mat-radio-button>
+            </div>
+        </mat-radio-group>
+
+        <div class="comment-section">
+            <textarea class="custom-input" placeholder="Comments" rows="3"></textarea>
+        </div>
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="center" class="popup-actions">
+        <button mat-flat-button class="main-submit-btn" (click)="submitFeedback()">
+            Submit
+        </button>
+    </mat-dialog-actions>
 </div>

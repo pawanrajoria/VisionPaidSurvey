@@ -1,0 +1,90 @@
+<div class="main-page-wrapper">
+
+    <mat-card class="cardWithShadow overflow-hidden" (click)="goBack()">
+        <div class="bg-primary p-x-24 p-y-10 text-white">
+            <mat-card-title class="d-flex align-items-center gap-10">
+                <a mat-icon-button class="text-white d-flex justify-content-center">
+                    <i-tabler name="chevron-left" class="icon-18 d-flex">
+                    </i-tabler>
+                </a>
+                {{ 'account.headings.profile_data' | translate }}
+                › {{ activeCategory?.categoryName || ('account.headings.overview' | translate) }}
+            </mat-card-title>
+        </div>
+    </mat-card>
+
+
+    <div class="content-body animate-in">
+
+        <mat-card class="list-container-card" *ngIf="currentView === 'categories' || currentView === 'questions'">
+            <div class="list-group">
+                <ng-container *ngIf="currentView === 'categories'">
+                    <div class="clickable-row" *ngFor="let item of data" (click)="selectCategory(item)">
+                        <span class="row-text">{{  'account.headings.' + item.categoryName | translate }}</span>
+                        <mat-icon class="row-arrow">chevron_right</mat-icon>
+                    </div>
+                </ng-container>
+
+                <ng-container *ngIf="currentView === 'questions'">
+                    <div class="clickable-row" *ngFor="let item of activeCategory?.qualifications"
+                        (click)="showQuestion(item)">
+                        <span class="row-text">{{ item.questionName }}</span>
+                        <mat-icon class="row-arrow">chevron_right</mat-icon>
+                    </div>
+                </ng-container>
+            </div>
+        </mat-card>
+
+        <div *ngIf="currentView === 'detail'" class="detail-container">
+            <mat-card class="question-card">
+                <h2 class="question-title">{{ activeQuestion?.questionName }}</h2>
+
+                <div class="search-wrapper" *ngIf="activeQuestion?.typeId === 2 || activeQuestion?.typeId === 3">
+                    <mat-form-field appearance="outline" class="full-width custom-search">
+                        <mat-icon matPrefix>search</mat-icon>
+                        <input matInput placeholder="Search options..." [(ngModel)]="searchText" autocomplete="off">
+                    </mat-form-field>
+                </div>
+
+                <div class="options-scroll-area custom-scrollbar">
+
+                    <div *ngIf="activeQuestion?.typeId === 2" class="selection-stack">
+                        <div class="option-row option-row-question" *ngFor="let ans of filteredAnswers"
+                            [class.active]="ans.isSelected" (click)="onRadioChange(ans)">
+                            <div class="control-label">
+                                <mat-radio-button [checked]="ans.isSelected" color="primary"></mat-radio-button>
+                                <span class="label-text">{{ ans.answerName }}</span>
+                            </div>
+                            <mat-icon class="row-arrow">chevron_right</mat-icon>
+                        </div>
+                    </div>
+
+                    <div *ngIf="activeQuestion?.typeId === 3" class="selection-stack">
+                        <div class="option-row option-row-question" *ngFor="let ans of filteredAnswers"
+                            [class.active]="ans.isSelected" (click)="onCheckboxChange(ans)">
+                            <div class="control-label">
+                                <mat-checkbox [checked]="ans.isSelected" color="primary"></mat-checkbox>
+                                <span class="label-text">{{ ans.answerName }}</span>
+                            </div>
+                            <mat-icon class="row-arrow">chevron_right</mat-icon>
+                        </div>
+                    </div>
+
+                    <div *ngIf="activeQuestion?.typeId === 10 || activeQuestion?.typeId === 8" class="p-t-10">
+                        <mat-form-field appearance="outline" class="full-width emerald-field">
+                            <mat-label>Your Answer</mat-label>
+                            <input matInput [(ngModel)]="activeQuestion.answerText" placeholder="Type here...">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="action-footer">
+                    <button mat-flat-button class="btn-submit emerald-gradient" [disabled]="isSubmitDisabled()"
+                        (click)="submitAnswer()">
+                        SUBMIT ANSWER
+                    </button>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

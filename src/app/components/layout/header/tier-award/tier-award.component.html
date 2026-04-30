@@ -1,0 +1,53 @@
+<div class="premium-glass-modal animate-in">
+
+    <div class="modal-top-section">
+        <button class="btn-close-modern" (click)="closeLevels()" aria-label="Close">
+            <mat-icon>close</mat-icon>
+        </button>
+
+        <div class="level-badge-glow">
+            <mat-icon>military_tech</mat-icon>
+        </div>
+        <h2 class="title-gradient">Platform Ranks</h2>
+    </div>
+
+    <mat-dialog-content class="modal-scroll-body">
+        <div class="hero-achievement blue-theme">
+            <div class="achievement-icon">
+                <img src="assets/images/icon/level-up.png" class="levitating" alt="Level Up">
+            </div>
+            <div class="achievement-info">
+                <span class="unlock-tag">UNLOCKED</span>
+                <h3>Blue Tier Status 💎</h3>
+                <p>You've successfully completed Step 1 of your earning journey!</p>
+            </div>
+        </div>
+
+        <div class="rank-chain">
+            <div class="chain-item" *ngFor="let lvl of levels; let i = index" [ngClass]="lvl"
+                [style.animation-delay]="(i * 0.15) + 's'">
+
+                <div class="chain-visual">
+                    <div class="step-number">{{ i + 1 }}</div>
+                    <div class="chain-line" *ngIf="i < levels.length - 1"></div>
+                </div>
+
+                <div class="rank-card">
+                    <div class="rank-content">
+                        <h4>{{ 'header.levels.'+lvl+'.title' | translate }}</h4>
+                        <p>{{ 'header.levels.'+lvl+'.description' | translate }}</p>
+                    </div>
+                    <div class="rank-range-box">
+                        <span class="range-pill">{{ 'header.levels.'+lvl+'.range' | translate }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-dialog-content>
+
+    <div class="modal-bottom-action">
+        <button mat-flat-button class="btn-modern-primary" (click)="closeLevels()">
+            Sounds Great!
+        </button>
+    </div>
+</div>

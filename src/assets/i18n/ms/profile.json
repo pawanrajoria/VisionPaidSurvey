@@ -33,8 +33,21 @@
             "change_email": "Tukar E-mel",
             "delete_account": "Padam Akaun",
             "reward_transaction": "Ganjaran & Transaksi",
+            "offers_activity": "Aktiviti Tawaran",
             "notification": "Pemberitahuan",
-            "help_support": "Bantuan & Sokongan"
+            "help_support": "Bantuan & Sokongan",
+            "profile_data": "Data Profil",
+            "overview": "Gambaran Keseluruhan",
+            "Automotive": "Automotif",
+            "Data Quality & System": "Kualiti Data & Sistem",
+            "Demographics & Core Identity": "Demografi & Identiti Teras",
+            "Employment & Professional": "Pekerjaan & Profesional",
+            "Finance & Insurance": "Kewangan & Insurans",
+            "Geography & Location": "Geografi & Lokasi",
+            "Household & Family": "Isi Rumah & Keluarga",
+            "Lifestyle & Health": "Gaya Hidup & Kesihatan",
+            "Media & Technology": "Media & Teknologi",
+            "Travel & Leisure": "Pelancongan & Rekreasi"
         }
     }
 }

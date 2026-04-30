@@ -13,6 +13,7 @@ import { SurveyFeedBackPopupComponent } from "../survey/survey-common-popup/surv
 import { OfferPopupDialog } from "../offer/offer-popup/offer-popup.component";
 import { FraudService } from "../../../frauddetection.service";
 
+
 @Component({
     selector: 'app-earn',
     imports: [SharedModule, EmptySkeltenComponent],
@@ -47,6 +48,7 @@ export class EarnComponent extends BaseComponent implements OnInit {
 
     searchTxt = '';
 
+    isLoading: boolean = false;
 
     readonly offerService = inject(OfferService);
     readonly surveyService = inject(SurveyService);
@@ -240,4 +242,13 @@ export class EarnComponent extends BaseComponent implements OnInit {
         return this.featuredSurveys.some(survey => survey.isProfileSurvey === true);
     }
 
+    scroll(el: HTMLElement, distance: number) {
+        el.scrollBy({
+            left: distance,
+            behavior: 'smooth'
+        });
+    }
+
+
+    
 }

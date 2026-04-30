@@ -1,0 +1,185 @@
+// MODAL CONTAINER
+.premium-glass-modal {
+  position: relative; 
+  background: #ffffff;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  max-height: 85vh; 
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+// HEADER & CLOSE BUTTON
+.modal-top-section {
+  padding: 35px 24px 15px;
+  text-align: center;
+  position: relative;
+
+  .btn-close-modern {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #f1f5f9;
+    border: none;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #64748b;
+    transition: all 0.2s ease;
+    z-index: 10;
+
+    mat-icon { font-size: 20px; width: 20px; height: 20px; }
+    &:hover { background: #e2e8f0; transform: rotate(90deg); color: #0f172a; }
+  }
+}
+
+.title-gradient {
+  background: linear-gradient(to right, #105749, #1da389);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+// HERO ACHIEVEMENT CARD
+.hero-achievement {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  border-radius: 24px;
+  padding: 24px;
+  margin: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  box-shadow: 0 15px 30px rgba(30, 58, 138, 0.3);
+
+  .levitating {
+    width: 60px;
+    animation: levitate 4s ease-in-out infinite; // Floating effect
+  }
+
+  .unlock-tag {
+    background: rgba(59, 130, 246, 0.3);
+    color: #93c5fd;
+    font-size: 0.65rem;
+    font-weight: 900;
+    padding: 2px 8px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+  }
+}
+
+// CHAINED STEP DESIGN
+.rank-chain {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+}
+
+.chain-item {
+  display: flex;
+  gap: 15px;
+  opacity: 0; 
+  animation: fadeInUp 0.5s ease forwards; // Staggered appearance
+  position: relative;
+
+  .chain-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 32px;
+    flex-shrink: 0;
+
+    .step-number {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #f1f5f9;
+      color: #64748b;
+      font-size: 0.75rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 1px #e2e8f0;
+      z-index: 2;
+    }
+
+    .chain-line { width: 2px; flex-grow: 1; background: #e2e8f0; margin: 4px 0; z-index: 1; }
+  }
+
+  .rank-card {
+    flex: 1;
+    background: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 18px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease;
+
+    h4 { margin: 0; font-weight: 700; color: #1e293b; font-size: 0.95rem; }
+    p { margin: 2px 0 0; font-size: 0.75rem; color: #64748b; line-height: 1.3; }
+  }
+
+  // PREVENT 21-30 RANGE BREAKING
+  .rank-range-box {
+    flex-shrink: 0;
+    text-align: right;
+    .range-pill {
+      background: #fff;
+      padding: 4px 10px;
+      border-radius: 10px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #105749;
+      border: 1px solid #e2e8f0;
+      white-space: nowrap; // Mandatory for single-line text
+    }
+  }
+
+  // ACTIVE BLUE TIER STYLE
+  &.Blue {
+    .step-number { background: #3b82f6; color: white; box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2); }
+    .rank-card { background: #f0f9ff; border-color: #bae6fd; h4 { color: #0369a1; } }
+    .chain-line { background: #3b82f6; }
+  }
+}
+
+// FIXED FOOTER BUTTON
+.modal-bottom-action {
+  padding: 20px 24px 30px;
+  background: #fff;
+  border-top: 1px solid #f1f5f9;
+}
+
+.btn-modern-primary {
+  width: 100%;
+  height: 56px;
+  background: linear-gradient(135deg, #105749 0%, #1da389 100%) !important;
+  color: white !important;
+  border-radius: 18px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 12px 24px rgba(16, 87, 73, 0.25);
+}
+
+// ANIMATIONS
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes levitate {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}

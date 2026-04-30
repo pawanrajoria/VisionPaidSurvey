@@ -1,33 +1,42 @@
-<div class="survey-modal">
-     <button mat-icon-button class="close" (click)="closeSurvey()" aria-label="Close">
+<div class="premium-success-popup animate-in">
+    <button mat-icon-button class="close-btn" (click)="closeSurvey()" aria-label="Close dialog">
         <mat-icon>close</mat-icon>
-      </button>
-    <mat-card appearance="outlined" class="custom-card text-center">
-        <mat-card-content>
-            <div class="icon">
-                <img src="assets/images/icon/party.png">
-            </div>
-            <h2>You've qualified for this survey!</h2>
-            <p>
-                click below to get started and earn your rewards.
-            </p>
-            <div class="clock">
-                Survey will take around 20 minutes</div>
+    </button>
 
-            <button class="custom-btn" mat-flat-button color="primary" (click)="participateSurvey()">Participate</button>
-            <div class="bg">
-
-                <div class="card-box">
-                    <div class="icon">
-                        <!-- <img src="assets/images/icon/done.png"> -->
-                        <mat-icon>wb_sunny</mat-icon>
-                    </div>
-                    <div class="des text-left">
-                        <h4>Survey Success Tip</h4>
-                        <p>If you take surveys on other sites always come here first to aviod getting many declines.</p>
-                    </div>
-                </div>
+    <mat-dialog-content class="premium-body">
+        <div class="icon-orbit">
+            <div class="icon-bg">
+                <mat-icon>celebration</mat-icon>
             </div>
-        </mat-card-content>
-    </mat-card>
+        </div>
+
+        <div class="text-content">
+            <h2>Success! You're Qualified</h2>
+            <p class="subtitle">Get ready to earn. This high-value survey is reserved just for you.</p>
+        </div>
+
+        <div class="info-pills">
+            <div class="pill">
+                <mat-icon>timer</mat-icon>
+                <span>~20 mins</span>
+            </div>
+            <div class="pill highlight">
+                <mat-icon>trending_up</mat-icon>
+                <span>High Reward</span>
+            </div>
+        </div>
+
+        <button mat-flat-button class="action-btn-main" (click)="participateSurvey()">
+            START EARNING NOW
+            <mat-icon>bolt</mat-icon>
+        </button>
+
+        <div class="pro-tip-container">
+            <div class="tip-header">
+                <mat-icon>tips_and_updates</mat-icon>
+                <span>PRO TIP</span>
+            </div>
+            <p>Using our daily partner dashboard reduces disqualification rates by 40%.</p>
+        </div>
+    </mat-dialog-content>
 </div>

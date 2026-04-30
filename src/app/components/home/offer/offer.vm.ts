@@ -17,6 +17,7 @@ export interface IOfferResponseDto {
     currentDevice?: string;
     providerName: string;
     payoutType:string;
+    max: number;
 }
 
 export interface IOfferTaskResponseDto {

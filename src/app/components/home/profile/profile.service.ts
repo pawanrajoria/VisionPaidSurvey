@@ -8,8 +8,8 @@ import { Router } from "@angular/router";
 @Injectable({ providedIn: 'root' })
 export class ProfileService {
 
-    constructor(private http: HttpClient, private config: ConfigService, 
-        private localStorageService: LocalStorageService,private router:Router) {
+    constructor(private http: HttpClient, private config: ConfigService,
+        private localStorageService: LocalStorageService, private router: Router) {
     }
 
     async getAccountInfo(): Promise<any> {
@@ -51,5 +51,9 @@ export class ProfileService {
             this.localStorageService.setItem("token", response.token);
             this.router.navigate(['/app']);
         }
+    }
+
+    async getprofileQualifications(langcode: string): Promise<any> {
+        return await this.http.get<any>(`${this.config.baseUrl}profile/get-category-wise-qualification/${langcode}`).toPromise();
     }
 }

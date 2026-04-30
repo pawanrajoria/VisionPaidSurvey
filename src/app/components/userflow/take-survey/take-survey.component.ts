@@ -12,6 +12,8 @@ import { HelperService } from '../helper.service';
 import { SharedModule } from '../../../shared.module';
 import { QuestionComponent } from './question/question.component';
 import { BaseComponent } from '../../../base.component';
+import { MatDialog } from "@angular/material/dialog";
+import { SurveyQualifyPopupComponent } from '../../home/survey/survey-common-popup/survey-qualify-popup/survey-qualify-popup';
 
 @Component({
   selector: 'app-take-survey',
@@ -32,7 +34,8 @@ export class TakeSurveyComponent extends BaseComponent {
   constructor(
     private respondentService: RespondentService,
     private localStorageService: LocalStorageService,
-    private helperService: HelperService
+    private helperService: HelperService,
+    private dialog: MatDialog
   ) {
     super(); // bind win, nav, doc, isBrowser
     if (this.isBrowser) {
@@ -87,8 +90,26 @@ export class TakeSurveyComponent extends BaseComponent {
       this.qualification = this.respondentData.qualifications[this.qualificationIndex];
     } else {
       const redirect = this.respondentData?.redirectUrl || 'https://profitpiller.com';
-      if (this.win) this.win.location.href = redirect;
+
+      if (!!this.respondentData && this.respondentData.isQualified) {
+        this.qualifySurvey(redirect);
+      } else {
+        if (this.win) this.win.location.href = redirect;
+      }
     }
+  }
+
+  async qualifySurvey(redirect: string) {
+    const dialofref = this.dialog.open(SurveyQualifyPopupComponent);
+    dialofref.afterClosed().subscribe(async (result) => {
+      if (result === "participate") {
+        dialofref.close();
+        if (this.win) this.win.location.href = redirect;
+      } else if (result === "close") {
+        if (this.win) this.win.location.href = redirect;
+        dialofref.close();
+      }
+    });
   }
 
   async submitSurvey(answerRequest: RespondentSubmitVM): Promise<void> {
@@ -111,7 +132,12 @@ export class TakeSurveyComponent extends BaseComponent {
       }
     } else {
       const redirect = response?.redirectUrl || 'https://profitpiller.com';
-      if (this.win) this.win.location.href = redirect;
+
+      if (!!this.respondentData && this.respondentData.isQualified) {
+        this.qualifySurvey(redirect);
+      } else {
+        if (this.win) this.win.location.href = redirect;
+      }
     }
   }
 

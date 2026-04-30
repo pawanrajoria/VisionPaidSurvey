@@ -54,6 +54,7 @@ export class LoginComponent implements OnInit {
         const googleToken = await this.googleAuth.loginWithGoogleTab();
         if (googleToken) {
             this.localStorageService.removeItem('token');
+            this.localStorageService.setItem('bonusCode', this.bonusCode);
             const credential = GoogleAuthProvider.credential(null, googleToken);
             const userCredential = await this.angularFireAuth.signInWithCredential(credential);
 

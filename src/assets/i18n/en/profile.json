@@ -33,7 +33,19 @@
             "change_email": "Change Email",
             "delete_account": "Delete Account",
             "reward_transaction": "Rewards & Transactions",
-            "offers_activity": "Offer's Activities"
+            "offers_activity": "Offer's Activities",
+            "profile_data": "Profile Data",
+            "overview": "Overview",
+            "Automotive": "Automotive",
+            "Data Quality & System": "Data Quality & System",
+            "Demographics & Core Identity": "Demographics & Core Identity",
+            "Employment & Professional": "Employment & Professional",
+            "Finance & Insurance": "Finance & Insurance",
+            "Geography & Location": "Geography & Location",
+            "Household & Family": "Household & Family",
+            "Lifestyle & Health": "Lifestyle & Health",
+            "Media & Technology": "Media & Technology",
+            "Travel & Leisure": "Travel & Leisure"
         }
     }
 }

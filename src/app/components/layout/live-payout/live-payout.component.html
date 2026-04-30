@@ -1,0 +1,24 @@
+<div class="live-payout-wrapper">
+    <div class="payout-list-container" *ngIf="isExpanded && recentActivities.length > 0">
+        <div class="list-header">
+            Recent Payouts
+            <span class="close-btn" (click)="toggleTicker()">×</span>
+        </div>
+        <div class="scroll-area">
+            <div class="ticker-card-mini" *ngFor="let act of recentActivities">
+                <div class="pulse-indicator"></div>&nbsp;&nbsp;
+                <div class="ticker-content">
+                    <span class="user-name">{{ act.user }}</span>
+                    <span class="action-text"> earned </span>
+                    <span class="amount">{{ act.amount }} pts</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="fab-toggle" (click)="toggleTicker()" [class.active]="isExpanded">
+        <div class="pulse-indicator" *ngIf="!isExpanded"></div>
+        <span *ngIf="!isExpanded">Live Payouts</span>
+        <span *ngIf="isExpanded">Hide</span>
+    </button>
+</div>

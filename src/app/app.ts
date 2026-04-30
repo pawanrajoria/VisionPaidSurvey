@@ -18,6 +18,9 @@ import { GoogleService } from './components/auth/google.service';
 import { VersionCheckService } from './version-check.service';
 import { RecaptchaV3Module } from 'ng-recaptcha';
 import { supportedLangs } from './components/userflow/const';
+import { GoogleAuthProvider } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AuthService } from './components/auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -43,6 +46,8 @@ export class AppComponent extends BaseComponent implements OnInit {
     private localStorageService: LocalStorageService,
     private googleService: GoogleService,
     private versionCheck: VersionCheckService,
+    private angularFireAuth: AngularFireAuth,
+    private authService: AuthService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     super();
@@ -50,6 +55,7 @@ export class AppComponent extends BaseComponent implements OnInit {
     this.versionCheck.check();
     this.translate.setDefaultLang('en');
   }
+
 
   ngOnInit() {
     // ✅ SSR-safe check before using `window`
@@ -97,6 +103,18 @@ export class AppComponent extends BaseComponent implements OnInit {
         // ✅ Add hreflang
         this.seoService.updateHreflang(cleanPath);
       });
+
+    if (this.isBrowser && this.win) {
+      const hash = window.location.hash;
+      if (hash.includes('access_token=')) {
+        const params = new URLSearchParams(hash.substring(1));
+        const token = params.get('access_token');
+
+        if (token) {
+          this.completeGoogleLogin(token);
+        }
+      }
+    }
   }
 
   changeLanguage(lang: string) {
@@ -121,6 +139,26 @@ export class AppComponent extends BaseComponent implements OnInit {
       },
       error: (err) => console.error('Failed to load translations', err)
     });
+  }
+
+
+  async completeGoogleLogin(googleToken: string) {
+    const credential = GoogleAuthProvider.credential(null, googleToken);
+    const userCredential = await this.angularFireAuth.signInWithCredential(credential);
+
+    if (userCredential?.user) {
+      const idToken = await userCredential.user.getIdToken();
+
+      await this.authService.firebaseLogin({
+        idToken: idToken,
+        fullName: userCredential.user?.displayName,
+        userId: userCredential.user?.uid,
+        imageSrc: userCredential.user?.photoURL,
+        emailVerified: userCredential.user?.emailVerified,
+        phoneNumber: userCredential.user?.phoneNumber,
+        bonusCode: this.localStorageService.getItem('bonusCode') || ''
+      });
+    }
   }
 
 

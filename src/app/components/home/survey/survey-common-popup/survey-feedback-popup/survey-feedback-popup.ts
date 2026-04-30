@@ -10,6 +10,7 @@ import { MatDialogRef } from "@angular/material/dialog";
 })
 export class SurveyFeedBackPopupComponent implements OnInit {
     readonly dialogRef = inject(MatDialogRef<SurveyFeedBackPopupComponent>);
+    selectedReason: string = '';
     ngOnInit() {
     }
 

@@ -5,6 +5,7 @@ import { ProfileSettingComponent } from "./profile-setting/profile-setting.compo
 import { PointActivityComponent } from "./point-activity/point-activity.component";
 import { SurveyActivityComponent } from "./survey-activity/survey-activity.component";
 import { OfferActivityComponent } from "./offer-activity/offer-activity.component";
+import { ProfileDataComponent } from "./profile-data/profile-data.component";
 
 export const ProfileRoutes: Routes = [
   {
@@ -16,6 +17,19 @@ export const ProfileRoutes: Routes = [
         'Manage your account information and view your recent platform activity.',
       urls: [
         { title: 'My Account' }
+      ]
+    }
+  },
+   {
+    path: 'profiledata',
+    component: ProfileDataComponent,
+    data: {
+      title: 'Profile Data | Profitpiller',
+      description:
+        'View your profile information and activity history on Profitpiller.',
+      urls: [
+        { title: 'My Account', url: '/account' },
+        { title: 'Activity' }
       ]
     }
   },

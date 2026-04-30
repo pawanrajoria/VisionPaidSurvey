@@ -105,10 +105,9 @@ export class RootHomeComponent extends BaseComponent implements OnInit {
         const googleToken = await this.googleAuth.loginWithGoogleTab();
         if (googleToken) {
             this.localStorageService.removeItem('token');
+            this.localStorageService.setItem('bonusCode', this.bonusCode);
             const credential = GoogleAuthProvider.credential(null, googleToken);
             const userCredential = await this.angularFireAuth.signInWithCredential(credential);
-
-
 
             if (userCredential != null && userCredential.user != null) {
                 const idToken = await userCredential.user.getIdToken();
@@ -122,10 +121,6 @@ export class RootHomeComponent extends BaseComponent implements OnInit {
                     phoneNumber: userCredential.user?.phoneNumber,
                     bonusCode: this.bonusCode
                 });
-                if (!!response && !!response.token) {
-                    this.localStorageService.setItem("token", response.token);
-                    this.router.navigate(['/app']);
-                }
             }
         }
     }

@@ -33,8 +33,21 @@
             "change_email": "ელ.ფოსტის შეცვლა",
             "delete_account": "ანგარიშის წაშლა",
             "reward_transaction": "ჯილდოები და ტრანზაქციები",
+            "offers_activity": "შეთავაზებების აქტივობები",
             "notification": "შეტყობინებები",
-            "help_support": "დახმარება და მხარდაჭერა"
+            "help_support": "დახმარება და მხარდაჭერა",
+            "profile_data": "პროფილის მონაცემები",
+            "overview": "მიმოხილვა",
+            "Automotive": "ავტომობილები",
+            "Data Quality & System": "მონაცემთა ხარისხი და სისტემა",
+            "Demographics & Core Identity": "დემოგრაფია და ძირითადი იდენტობა",
+            "Employment & Professional": "დასაქმება და პროფესიული",
+            "Finance & Insurance": "ფინანსები და დაზღვევა",
+            "Geography & Location": "გეოგრაფია და მდებარეობა",
+            "Household & Family": "საოჯახო მეურნეობა და ოჯახი",
+            "Lifestyle & Health": "ცხოვრების წესი და ჯანმრთელობა",
+            "Media & Technology": "მედია და ტექნოლოგია",
+            "Travel & Leisure": "მოგზაურობა და დასვენება"
         }
     }
 }

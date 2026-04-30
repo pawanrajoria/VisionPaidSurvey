@@ -97,4 +97,13 @@ export class NotFoundComponent extends BaseComponent implements OnInit {
         this.router.navigate(['/']);
     }
 
+
+    get currentUrl() {
+        if (this.isBrowser && this.win) {
+            return this.win.location.href;
+        }
+
+        return '';
+    }
+
 }

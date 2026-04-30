@@ -33,8 +33,21 @@
             "change_email": "E-mail wijzigen",
             "delete_account": "Account verwijderen",
             "reward_transaction": "Beloningen & Transacties",
+            "offers_activity": "Activiteiten van Aanbiedingen",
             "notification": "Meldingen",
-            "help_support": "Hulp & ondersteuning"
+            "help_support": "Hulp & ondersteuning",
+            "profile_data": "Profielgegevens",
+            "overview": "Overzicht",
+            "Automotive": "Automotive",
+            "Data Quality & System": "Datakwaliteit en Systeem",
+            "Demographics & Core Identity": "Demografie en Kernidentiteit",
+            "Employment & Professional": "Werk en Professioneel",
+            "Finance & Insurance": "Financiën en Verzekeringen",
+            "Geography & Location": "Geografie en Locatie",
+            "Household & Family": "Huishouden en Familie",
+            "Lifestyle & Health": "Levensstijl en Gezondheid",
+            "Media & Technology": "Media en Technologie",
+            "Travel & Leisure": "Reizen en Vrije Tijd"
         }
     }
 }

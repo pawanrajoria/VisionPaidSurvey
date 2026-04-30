@@ -33,8 +33,21 @@
             "change_email": "E-Mail ändern",
             "delete_account": "Konto löschen",
             "reward_transaction": "Belohnungen & Transaktionen",
+            "offers_activity": "Angebotsaktivitäten",
             "notification": "Benachrichtigungen",
-            "help_support": "Hilfe & Support"
+            "help_support": "Hilfe & Support",
+            "profile_data": "Profildaten",
+            "overview": "Übersicht",
+            "Automotive": "Automobil",
+            "Data Quality & System": "Datenqualität und System",
+            "Demographics & Core Identity": "Demografie und Kernidentität",
+            "Employment & Professional": "Beschäftigung und Beruf",
+            "Finance & Insurance": "Finanzen und Versicherungen",
+            "Geography & Location": "Geografie und Standort",
+            "Household & Family": "Haushalt und Familie",
+            "Lifestyle & Health": "Lebensstil und Gesundheit",
+            "Media & Technology": "Medien und Technologie",
+            "Travel & Leisure": "Reisen und Freizeit"
         }
     }
 }

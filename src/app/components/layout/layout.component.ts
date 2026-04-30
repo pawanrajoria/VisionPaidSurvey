@@ -26,6 +26,7 @@ import { BaseComponent } from '../../base.component';
 import { NotificationService } from '../../notification.service';
 import { MessageService } from './message/message.service';
 import { MessageVM } from './message/message.vm';
+import { LivepayoutComponent } from './live-payout/live-payout.component';
 
 const MOBILE_VIEW = 'screen and (max-width: 768px)';
 const TABLET_VIEW = 'screen and (min-width: 769px) and (max-width: 1024px)';
@@ -39,8 +40,9 @@ const TABLET_VIEW = 'screen and (min-width: 769px) and (max-width: 1024px)';
         SharedModule,
         SidebarComponent,
         HeaderComponent,
+        LivepayoutComponent,
         AppNavItemComponent,
-        NgScrollbarModule
+        NgScrollbarModule        
     ]
 })
 export class LayoutComponent extends BaseComponent implements AfterViewInit, OnDestroy {
