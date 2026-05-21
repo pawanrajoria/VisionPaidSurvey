@@ -6,6 +6,8 @@ import { Iso639Map } from "../../../../supporteslanguage";
 import { IProfileQuestionAnswerDetailsDtos, IProfileQuestionDetailsDtos, IProfileQuestionDtos } from "./profile-data.vm";
 import { SearchQuestionPipe } from "../../../userflow/search.pipe";
 import { Router } from "@angular/router";
+import { MessageService } from "../../../layout/message/message.service";
+import { MessageVM } from "../../../layout/message/message.vm";
 
 @Component({
     selector: 'app-profile-data',
@@ -23,7 +25,9 @@ export class ProfileDataComponent extends BaseComponent implements OnInit {
 
     data: IProfileQuestionDtos[] = [];
 
-    constructor(private profileService: ProfileService,private router:Router) {
+    constructor(private profileService: ProfileService, private router: Router,
+        private messageService: MessageService
+    ) {
         super();
     }
 
@@ -53,8 +57,11 @@ export class ProfileDataComponent extends BaseComponent implements OnInit {
     }
 
     isSubmitDisabled(): boolean {
-        if (this.activeQuestion?.typeId === 10 || this.activeQuestion?.typeId === 8) {
-            return !this.activeQuestion.answerText || this.activeQuestion.answerText.trim() === '';
+        if (this.activeQuestion?.typeId === 8) {
+            return !this.activeQuestion?.answers.some(a => a.answerText ?? 0 > 10);
+        }
+        else if (this.activeQuestion?.typeId === 10) {
+            return !this.activeQuestion?.answers.some(a => !!a.answerText && a.answerText.toString().trim() != '');
         }
         return !this.activeQuestion?.answers.some(a => a.isSelected);
     }
@@ -68,13 +75,24 @@ export class ProfileDataComponent extends BaseComponent implements OnInit {
         }
     }
 
-    submitAnswer() {
+    async submitAnswer() {
         if (!this.activeQuestion) return;
 
-        const selectedAnswers = this.activeQuestion.answers
-            .filter(a => a.isSelected);
+        let request: Array<IProfileQuestionAnswerDetailsDtos> = [];
 
-        console.log('Submitted:', selectedAnswers);
+        if (this.activeQuestion?.typeId === 10 || this.activeQuestion?.typeId === 8) {
+            request = this.activeQuestion.answers;
+            request.forEach(p => p.answerText = p.answerText?.toString().trim() ?? '');
+        }
+        else {
+            request = this.activeQuestion.answers.filter(a => a.isSelected);
+        }
+
+        const response = await this.profileService.saveProfileQualification(request);
+        if (!!response) {
+            this.messageService.showMessage(new MessageVM("Profile updated successfully", "success"));
+            await this.getQualifications();
+        }
 
         this.currentView = 'questions';
     }

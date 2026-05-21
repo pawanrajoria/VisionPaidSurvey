@@ -80,7 +80,7 @@
                                 <h3>{{offer.offerName}}</h3>
                                 <p>{{offer.providerName}}</p>
                                 <span class="price">
-                                    <img class="offerlogocoin" src="/assets/images/logo.png" alt="" />
+                                    <img class="logocoin" src="/assets/images/logo.png" alt="" />
                                     {{offer.points}}
                                 </span>
                             </mat-card-content>
@@ -220,15 +220,15 @@
         </div>
 
         <div class="quick-actions-container mt-5">
-            <div class="action-item">
+            <div class="action-item" [routerLink]="['/', currentLang, 'app', 'cashout']">
                 <div class="icon-circle red"><mat-icon>redeem</mat-icon></div>
                 <span>Daily</span>
             </div>
-            <div class="action-item">
+            <div class="action-item" [routerLink]="['/', currentLang, 'app', 'refer']">
                 <div class="icon-circle blue"><mat-icon>group_add</mat-icon></div>
                 <span>Invite</span>
             </div>
-            <div class="action-item">
+            <div class="action-item" [routerLink]="['/', currentLang, 'app', 'account','activity']">
                 <div class="icon-circle green"><mat-icon>history</mat-icon></div>
                 <span>History</span>
             </div>

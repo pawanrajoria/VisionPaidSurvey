@@ -9,7 +9,6 @@ export interface IProfileQuestionDetailsDtos {
     questionName: string;
     isSelected: boolean;
     typeId: number;
-    answerText: string;       // nullable → optional
     answers: IProfileQuestionAnswerDetailsDtos[];
 }
 
@@ -21,4 +20,5 @@ export interface IProfileQuestionAnswerDetailsDtos {
     answerId?: number;
     qualificationId?: number;
     questionId?: number;
+    languageId?: number;
 }

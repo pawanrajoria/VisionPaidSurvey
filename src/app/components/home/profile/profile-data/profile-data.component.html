@@ -20,7 +20,7 @@
             <div class="list-group">
                 <ng-container *ngIf="currentView === 'categories'">
                     <div class="clickable-row" *ngFor="let item of data" (click)="selectCategory(item)">
-                        <span class="row-text">{{  'account.headings.' + item.categoryName | translate }}</span>
+                        <span class="row-text">{{ 'account.headings.' + item.categoryName | translate }}</span>
                         <mat-icon class="row-arrow">chevron_right</mat-icon>
                     </div>
                 </ng-container>
@@ -70,11 +70,22 @@
                         </div>
                     </div>
 
-                    <div *ngIf="activeQuestion?.typeId === 10 || activeQuestion?.typeId === 8" class="p-t-10">
+                    <div *ngIf="activeQuestion?.typeId === 10 " class="p-t-10">
+                        @for (item of filteredAnswers; track $index) {
                         <mat-form-field appearance="outline" class="full-width emerald-field">
                             <mat-label>Your Answer</mat-label>
-                            <input matInput [(ngModel)]="activeQuestion.answerText" placeholder="Type here...">
+                            <input matInput  [(ngModel)]="item.answerText" placeholder="Type here...">
                         </mat-form-field>
+                        }
+                    </div>
+
+                    <div *ngIf="activeQuestion?.typeId === 8" class="p-t-10">
+                        @for (item of filteredAnswers; track $index) {
+                        <mat-form-field appearance="outline" class="full-width emerald-field">
+                            <mat-label>Your Answer</mat-label>
+                            <input matInput type="number" [(ngModel)]="item.answerText" placeholder="Type here...">
+                        </mat-form-field>
+                        }
                     </div>
                 </div>
 

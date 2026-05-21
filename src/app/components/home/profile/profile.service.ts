@@ -4,6 +4,7 @@ import { IProfileVM, IUserDeleteVM, IUserDetailsUpdateVM, IUserUpdateVM } from "
 import { ConfigService } from "../../../config.service";
 import { LocalStorageService } from "../../../localstorage.service";
 import { Router } from "@angular/router";
+import { IProfileQuestionAnswerDetailsDtos } from "./profile-data/profile-data.vm";
 
 @Injectable({ providedIn: 'root' })
 export class ProfileService {
@@ -55,5 +56,9 @@ export class ProfileService {
 
     async getprofileQualifications(langcode: string): Promise<any> {
         return await this.http.get<any>(`${this.config.baseUrl}profile/get-category-wise-qualification/${langcode}`).toPromise();
+    }
+
+    async saveProfileQualification(request: Array<IProfileQuestionAnswerDetailsDtos>): Promise<any> {
+        return await this.http.post<any>(this.config.baseUrl + "profile/save-user-profile", request).toPromise();
     }
 }

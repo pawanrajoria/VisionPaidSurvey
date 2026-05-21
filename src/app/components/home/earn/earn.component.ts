@@ -179,20 +179,29 @@ export class EarnComponent extends BaseComponent implements OnInit {
     }
 
     async startSurvey(item: ISurveyVM) {
-        const fraudSignals: any = await this.fraudService.collectSignals();
-        if (fraudSignals && fraudSignals.decision === "BLOCK") {
-            await this.logUserActivity("Survey", "StartSurvey", "SurveyScore", fraudSignals.decision);
-            // alert("Suspicious activity detected");
-        }
-
+        let winNew: Window | null = null;
 
         if (this.win) {
-            const winNew = this.win.open(item.clickUrl, '_blank');
+            // Open immediately (user gesture safe)
+            winNew = this.win.open('', '_blank');
 
             if (!winNew) {
                 alert('Popup blocked. Please allow popups for this site.');
                 return;
             }
+        }
+
+        const fraudSignals: any = await this.fraudService.collectSignals();
+
+        if (fraudSignals && fraudSignals.decision === "BLOCK") {
+            await this.logUserActivity("Survey", "StartSurvey", "SurveyScore", fraudSignals.decision);
+            winNew?.close(); // close opened tab if blocked
+            return;
+        }
+
+        // Now redirect the already opened tab
+        if (winNew) {
+            winNew.location.href = item.clickUrl;
         }
 
         await this.logUserActivity("Survey", "StartSurvey", "Click", item.clickUrl);
@@ -250,5 +259,5 @@ export class EarnComponent extends BaseComponent implements OnInit {
     }
 
 
-    
+
 }

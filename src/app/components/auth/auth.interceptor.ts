@@ -88,6 +88,8 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
             authService.logOut();
           } else if (error.status === 400 && error.error && error.error.errorCode == 'INSTRUCTION_NOT_UNDERSTOOD') {
             router.navigate(['/app/instruction']);
+          } else if (error.status === 400 && error.error && error.error.errorCode == 'PREIUM_USER_FAILED') {
+            messageService.showPremiumUserComponent();
           } else if (error.error && typeof error.error === 'object' && 'message' in error.error) {
             messageService.showMessage(new MessageVM(error.error.message, "error"));
           } else {

@@ -22,7 +22,7 @@ export class LivepayoutComponent implements OnInit, OnDestroy {
     // Dynamic generated users
     private names: string[] = [];
 
-    private amounts = [100, 250, 500, 750, 1000, 1500, 2000];
+    private amounts = [10, 100, 89, 67, 45, 50, 250, 300, 150, 75, 120, 200];
     private times = ['Just now', '2 sec ago', '5 sec ago', '10 sec ago'];
 
     // Username generator pools

@@ -18,10 +18,11 @@ export class SurveyService {
     ];
 
     surveyspartners = [
-        { id: 2, name: 'Bit Lab', logo: 'assets/images/partners/BitLabsWhiteLogo.png', rating: 5, bonus: 50, description: 'RevU+', max: "20K" },
-        { id: 9, name: 'CPX Research', logo: 'assets/images/partners/logo-cpx-reserach-green.svg', rating: 4.5, bonus: 50, max: "25K" },
-        { id: 10, name: 'SaySo', logo: 'assets/images/partners/sayso.webp', rating: 3.8, bonus: 50, description: 'RevU+', max: "10K" },
-        { id: 18, name: 'Dynata', logo: 'assets/images/partners/dynata.jpg', rating: 5, bonus: 50, description: 'Dynata', max: "50K" }
+        { id: 9, name: 'CPX Research', logo: 'assets/images/partners/logo-cpx-reserach-green.svg', rating: 4.5, bonus: 50, max: "4K" },
+        { id: 2, name: 'Bit Lab', logo: 'assets/images/partners/BitLabsWhiteLogo.png', rating: 5, bonus: 50, description: 'RevU+', max: "3K" },
+        { id: 10, name: 'SaySo', logo: 'assets/images/partners/sayso.webp', rating: 3.8, bonus: 50, description: 'RevU+', max: "5K" },
+        { id: 18, name: 'Dynata', logo: 'assets/images/partners/dynata.jpg', rating: 5, bonus: 50, description: 'Dynata', max: "10K" },
+        { id: 20, name: 'TheoremReach', logo: 'assets/images/partners/theoremreach.svg', rating: 5, bonus: 50, description: 'TheoremReach', max: "5K" },
     ];
 
     constructor(private http: HttpClient, private config: ConfigService) {
