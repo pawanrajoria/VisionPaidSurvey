@@ -19,6 +19,7 @@ import { Router } from '@angular/router';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { SelectRewardComponent } from '../../home/reward/select-reward/select-reward.component';
 import { TierAwardComponent } from "./tier-award/tier-award.component";
+import { RewardComponent } from '../../home/reward/reward.component';
 
 @Component({
   selector: 'app-header',
@@ -93,7 +94,7 @@ export class HeaderComponent {
         config.panelClass = 'slide-in-dialog';
       }
 
-      this.dialogRef = this.dialog.open(SelectRewardComponent, config);
+      this.dialogRef = this.dialog.open(RewardComponent, config);
     });
 
 

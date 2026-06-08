@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { MatDialogRef } from "@angular/material/dialog";
+import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { SharedModule } from "../../../../shared.module";
 import { IGiftCardVM, IRewardInfoVM, UserWithdrawalRequestVM } from "../reward.vm";
@@ -7,6 +7,7 @@ import { RewardService } from "../reward.service";
 import { MessageService } from "../../../layout/message/message.service";
 import { MessageVM } from "../../../layout/message/message.vm";
 import { PayoutMethodEnum } from "../reward.enum";
+import { RedemptionDetailsComponent } from "../redemption-details/redemption-details.component";
 
 @Component({
     selector: 'app-select-reward',
@@ -36,7 +37,7 @@ export class SelectRewardComponent implements OnInit {
     rewardInfo: IRewardInfoVM = { giftCards: [], transferCards: [] };
 
 
-    constructor(private rewardService: RewardService, private messageService: MessageService) {
+    constructor(private rewardService: RewardService, private messageService: MessageService, private dialog: MatDialog) {
     }
 
     async applyFilter() {
@@ -47,7 +48,7 @@ export class SelectRewardComponent implements OnInit {
         const response = await this.rewardService.bindRewardInfo({ productName: this.searchText });
         if (!!response && response.isSuccess) {
             this.rewardInfo.giftCards = response.data.filter((p: any) => p.typeId == 2);
-            this.rewardInfo.transferCards = response.data.filter((p: any) => p.typeId == 1);
+            this.rewardInfo.transferCards = response.data.filter((p: any) => p.typeId == 1 || p.typeId == 3);
             this.updatePagedGiftCards();
         }
     }
@@ -84,52 +85,70 @@ export class SelectRewardComponent implements OnInit {
 
 
     async onSelectReward() {
-        if (this.selectedType == 1) {
-            this.redeemPayPal(this.selectedChildOptionCard, this.selectedCard);
-        }
-        else if (this.selectedType == 2) {
-            this.redeemGift(this.selectedChildOptionCard, this.selectedCard);
-        }
-    }
-
-
-    async redeemGift(option: any, giftCard: any) {
         const self = this;
 
-        const request: UserWithdrawalRequestVM = {
-            method: PayoutMethodEnum.GiftCard,
-            point: option.points,
-            giftCardId: giftCard.productId,
-            giftCardName: giftCard.name,
-            emailId: "",
-            giftCardImage: giftCard.imageUrl,
-        };
-        const response = await self.rewardService.requestUserWithdrawal(request);
-        if (!!response && !!response.isSuccess) {
-            self.messageService.showMessage(new MessageVM(response.message, "success"));
-        }
-        else {
-            self.messageService.showMessage(new MessageVM(response.message, "error"));
-        }
+        if (!self.selectedChildOptionCard)
+            return;
+
+        this.dialog.open(RedemptionDetailsComponent, {
+            maxWidth: '100vw',
+            panelClass: 'custom-dialog-container',
+            data: {
+                reward: this.selectedChildOptionCard,
+                isPayPal: this.selectedChildOptionCard.productName == 'Paypal'
+            }
+        });
+
     }
 
-    async redeemPayPal(option: any, card: any) {
-        const self = this;
 
-        const request: UserWithdrawalRequestVM = {
-            method: PayoutMethodEnum.PayPal,
-            point: option.points,
-            giftCardId: 0,
-            giftCardName: card.name,
-            emailId: "",
-            giftCardImage: ""
-        };
-        const response = await self.rewardService.requestUserWithdrawal(request);
-        if (!!response && !!response.isSuccess) {
-            self.messageService.showMessage(new MessageVM(response.message, "success"));
-        }
-        else {
-            self.messageService.showMessage(new MessageVM(response.message, "error"));
-        }
-    }
+    // async onSelectReward() {
+    //     if (this.selectedType == 1) {
+    //         this.redeemPayPal(this.selectedChildOptionCard, this.selectedCard);
+    //     }
+    //     else if (this.selectedType == 2) {
+    //         this.redeemGift(this.selectedChildOptionCard, this.selectedCard);
+    //     }
+    // }
+
+
+    // async redeemGift(option: any, giftCard: any) {
+    //     const self = this;
+
+    //     const request: UserWithdrawalRequestVM = {
+    //         method: PayoutMethodEnum.GiftCard,
+    //         point: option.points,
+    //         giftCardId: giftCard.productId,
+    //         giftCardName: giftCard.name,
+    //         emailId: "",
+    //         giftCardImage: giftCard.imageUrl,
+    //     };
+    //     const response = await self.rewardService.requestUserWithdrawal(request);
+    //     if (!!response && !!response.isSuccess) {
+    //         self.messageService.showMessage(new MessageVM(response.message, "success"));
+    //     }
+    //     else {
+    //         self.messageService.showMessage(new MessageVM(response.message, "error"));
+    //     }
+    // }
+
+    // async redeemPayPal(option: any, card: any) {
+    //     const self = this;
+
+    //     const request: UserWithdrawalRequestVM = {
+    //         method: PayoutMethodEnum.PayPal,
+    //         point: option.points,
+    //         giftCardId: 0,
+    //         giftCardName: card.name,
+    //         emailId: "",
+    //         giftCardImage: ""
+    //     };
+    //     const response = await self.rewardService.requestUserWithdrawal(request);
+    //     if (!!response && !!response.isSuccess) {
+    //         self.messageService.showMessage(new MessageVM(response.message, "success"));
+    //     }
+    //     else {
+    //         self.messageService.showMessage(new MessageVM(response.message, "error"));
+    //     }
+    // }
 }

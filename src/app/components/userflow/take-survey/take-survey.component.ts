@@ -14,6 +14,7 @@ import { QuestionComponent } from './question/question.component';
 import { BaseComponent } from '../../../base.component';
 import { MatDialog } from "@angular/material/dialog";
 import { SurveyQualifyPopupComponent } from '../../home/survey/survey-common-popup/survey-qualify-popup/survey-qualify-popup';
+import { Iso639Map } from '../../../supporteslanguage';
 
 @Component({
   selector: 'app-take-survey',
@@ -57,6 +58,11 @@ export class TakeSurveyComponent extends BaseComponent {
     return 'Unknown';
   }
 
+  getLang3(lang: string): string {
+    const lang2 = lang.split('-')[0].toLowerCase();
+    return Iso639Map[lang2] || "eng";
+  }
+
   async getSurvey(): Promise<void> {
     const duid = this.helperService.fetchDuid();
     if (!duid && this.win) {
@@ -73,7 +79,8 @@ export class TakeSurveyComponent extends BaseComponent {
       requestUrl: landedUrl,
       duid: duid,
       browser: this.detectBrowser(),
-      refredUrl: this.doc?.referrer || ''
+      refredUrl: this.doc?.referrer || '',
+      languageCode: this.isBrowser ? this.getLang3(navigator.language) : 'eng'
     };
 
     this.respondentData = await this.respondentService.enterRespondent(request);

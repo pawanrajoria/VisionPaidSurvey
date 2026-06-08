@@ -1,12 +1,121 @@
 <div class="example-sidenav-content">
     <div class="wrapper">
         <div class="main">
-            <div class="section">
-               
-            </div>
+            <div class="section"></div>
             <div class="container">
-                Loading..
-             </div>
+                <div class="loading-card">
+
+                    <!-- Animation -->
+                    <div class="loading-animation">
+                        <div class="pill-icon">
+                            <mat-icon>swap_horiz</mat-icon>
+                        </div>
+                        <div class="ring ring-1"></div>
+                        <div class="ring ring-2"></div>
+                        <div class="ring ring-3"></div>
+                    </div>
+
+                    <!-- Status Text -->
+                    <h2 class="loading-title">Survey In Progress</h2>
+                    <p class="loading-sub">
+                        You've been redirected to the survey provider.<br>
+                        Please complete the survey and return here.
+                    </p>
+
+                    <!-- Progress -->
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+
+                    <!-- Status Badge -->
+                    <div class="status-badge pending">
+                        <span class="badge-dot"></span>
+                        Waiting for response...
+                    </div>
+
+                    <!-- Info Steps -->
+                    <div class="info-box">
+                        <div class="info-row">
+                            <div class="info-icon purple">
+                                <mat-icon>open_in_new</mat-icon>
+                            </div>
+                            <div class="info-text">
+                                <span class="info-title">
+                                    Redirected to vendor
+                                </span>
+                                <span class="info-sub">
+                                    Survey opened in current window
+                                </span>
+                            </div>
+                            <mat-icon class="info-check done">
+                                check_circle
+                            </mat-icon>
+                        </div>
+
+                        <div class="info-divider"></div>
+
+                        <div class="info-row">
+                            <div class="info-icon amber">
+                                <mat-icon>pending</mat-icon>
+                            </div>
+                            <div class="info-text">
+                                <span class="info-title">
+                                    Awaiting completion
+                                </span>
+                                <span class="info-sub">
+                                    Checking your survey status
+                                </span>
+                            </div>
+                            <mat-icon class="info-check spinning">
+                                autorenew
+                            </mat-icon>
+                        </div>
+
+                        <div class="info-divider"></div>
+
+                        <div class="info-row muted">
+                            <div class="info-icon gray">
+                                <mat-icon>emoji_events</mat-icon>
+                            </div>
+                            <div class="info-text">
+                                <span class="info-title">
+                                    Points credited
+                                </span>
+                                <span class="info-sub">
+                                    Reward added after completion
+                                </span>
+                            </div>
+                            <mat-icon class="info-check pending-icon">
+                                radio_button_unchecked
+                            </mat-icon>
+                        </div>
+                    </div>
+
+                    <!-- Warning Note -->
+                    <div class="warning-note">
+                        <mat-icon>info_outline</mat-icon>
+                        <span>
+                            Do not close this tab.
+                            We'll update your status automatically
+                            once you return.
+                        </span>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="divider"><span>or</span></div>
+
+                    <!-- Explore Link -->
+                    <a href="https://profitpiller.com" target="_blank" class="explore-btn">
+                        <mat-icon>open_in_new</mat-icon>
+                        Explore ProfitPiller Panel
+                    </a>
+
+                    <p class="explore-hint">
+                        Opens in a new window
+                    </p>
+
+                </div>
+            </div>
         </div>
     </div>
 </div>

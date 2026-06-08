@@ -1,0 +1,76 @@
+<mat-toolbar color="primary">
+    <span>Redemption Details</span>
+    <span class="spacer"></span>
+    <button mat-icon-button (click)="closeModal()">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-toolbar>
+
+@if (!!reward) {
+<div class="content-container">
+    <!-- Reward Card -->
+    <mat-card appearance="outlined" class="reward-card">
+        <mat-card-content class="reward-content">
+            <img [src]="reward.imageUrl" [alt]="reward.productName" class="reward-img">
+            <div class="reward-info">
+                <h3>{{ reward.productName }}</h3>
+                <p>{{ reward.value | currency: 'INR' }} • {{ reward.points }} pts</p>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+    <!-- Instructions Section -->
+    <div class="header-section">
+        <h3>Redemption Details</h3>
+        <div class="info-box">
+            <!-- PayPal -->
+            <div *ngIf="reward.typeId == 1">
+                <p><b>PayPal Verification:</b> <span class="time-badge">48 Hours</span></p>
+                <ul>
+                    <li>Ensure your PayPal email is verified.</li>
+                    <li>First-time redemptions require a security review.</li>
+                </ul>
+            </div>
+
+            <!-- UPI -->
+            <div *ngIf="reward.typeId == 3">
+                <p><b>UPI Transfer:</b> <span class="time-badge">Within 24 Hours</span></p>
+                <ul>
+                    <li>Ensure UPI is linked to an active bank account.</li>
+                    <li>Enter correct VPA (e.g., name@upi).</li>
+                </ul>
+            </div>
+
+            <!-- Gift Card -->
+            <div *ngIf="reward.typeId == 2">
+                <p><b>e-Gift Card Delivery:</b> <span class="time-badge">24 - 48 Hours</span></p>
+                <ul>
+                    <li>Voucher code sent directly to your registered email.</li>
+                    <li>Non-refundable and non-transferable.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form Fields -->
+    <div class="form-container">
+        @if(reward.typeId == 3){
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>UPI ID (VPA)</mat-label>
+            <input matInput [(ngModel)]="reward.upiId" placeholder="username@bank">
+            <mat-icon matPrefix>account_balance_wallet</mat-icon>
+        </mat-form-field>
+        } @else {
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>{{ reward.typeId == 1 ? 'PayPal Email' : 'Recipient Email' }}</mat-label>
+            <input matInput type="email" [(ngModel)]="reward.emailId" placeholder="example@mail.com">
+            <mat-icon matPrefix>mail_outline</mat-icon>
+        </mat-form-field>
+        }
+    </div>
+
+    <button mat-flat-button color="primary" class="full-width confirm-btn" (click)="confirmRedemption()">
+        Confirm Redemption
+    </button>
+</div>
+}

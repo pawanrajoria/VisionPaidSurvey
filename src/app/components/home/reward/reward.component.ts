@@ -1,16 +1,21 @@
-import { afterNextRender, ChangeDetectorRef, Component, ElementRef, OnInit, signal, ViewChild } from "@angular/core";
+import { afterNextRender, ChangeDetectorRef, Component, ElementRef, inject, OnInit, signal, ViewChild } from "@angular/core";
 import { SharedModule } from "../../../shared.module";
 import { MatPaginator } from "@angular/material/paginator";
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { RewardService } from "./reward.service";
-import { ICommonCardVM, IGiftCardVM, IRewardInfoVM, UserWithdrawalRequestVM } from "./reward.vm";
+import { ICommonCardVM, IGiftCardVM, IRewardInfoVM, RedemptionOption, RewardCategory, UserWithdrawalRequestVM } from "./reward.vm";
 import { PayoutMethodEnum } from "./reward.enum";
 import { MessageService } from "../../layout/message/message.service";
 import { MessageVM } from "../../layout/message/message.vm";
+import { RedemptionDetailsComponent } from "./redemption-details/redemption-details.component";
+import { MatDialog, MatDialogRef } from "@angular/material/dialog";
+import { MatSnackBar } from "@angular/material/snack-bar";
+import { CasoutFilterByNamePipe } from "./filterByName.pipe";
+import { AccountService } from "../account.service";
 
 @Component({
     selector: 'app-reward',
-    imports: [SharedModule],
+    imports: [SharedModule, CasoutFilterByNamePipe],
     templateUrl: './reward.component.html',
     styleUrls: ['./reward.component.scss'],
     animations: [
@@ -24,114 +29,149 @@ import { MessageVM } from "../../layout/message/message.vm";
     ]
 })
 export class RewardComponent {
+    searchText = '';
+    allRewards: RewardCategory[] = [];
+    rewardsCategories: RewardCategory[] = [];
 
-    @ViewChild(MatPaginator) paginator!: MatPaginator;
+    private itemsPerPage = 5;
+    private currentPage = 0;
+    isLoading = true;
 
-    rewardInfo: IRewardInfoVM = { giftCards: [], transferCards: [] };
+    selectedRewardCategory!: RedemptionOption;
+    selectedCategory!: RewardCategory;
 
-    pagedGiftCards: IGiftCardVM[] = [];
-    pageSize = 12; // 5 items per row * 3 rows
-    pageIndex = 0;
-    searchText = "";
+    skeletonArray = [1, 2];
 
-    selectedCard: any = null;
-    selectedChildOptionCard: any = null;
-    showAllGiftCards = false;
+    private rewardService = inject(RewardService);
+    private snackBar = inject(MatSnackBar);
+    private dialog = inject(MatDialog);
+    private accountService = inject(AccountService);
 
-    constructor(private rewardService: RewardService, private messageService: MessageService) {
+    dialogRef = inject(MatDialogRef<RewardComponent>, {
+        optional: true
+    });
+
+
+    get userBalanceInfo() {
+        return this.accountService.getUserBalanceInfo();
     }
 
-
-    async applyFilter() {
-        await this.ngOnInit();
+    get isPopup(): boolean {
+        return !!this.dialogRef;
     }
+
 
     async ngOnInit() {
-        const response = await this.rewardService.bindRewardInfo({ productName: this.searchText });
-        if (!!response && response.isSuccess) {
-            this.rewardInfo.giftCards = response.data.filter((p: any) => p.typeId == 2);
-            this.rewardInfo.transferCards = response.data.filter((p: any) => p.typeId == 1);
-            this.updatePagedGiftCards();
+        this.isLoading = true;
+        const response = await this.rewardService.bindRewardInfo({
+            productName: this.searchText
+        });
+        if (response?.isSuccess) {
+            this.allRewards = this.processRewards(response.data);
+            this.loadInitialItems();
         }
-
+        this.isLoading = false;
     }
 
-    get filteredGiftCards() {
-        return this.pagedGiftCards?.filter(card =>
-            !this.searchText || card.name?.toLowerCase().includes(this.searchText.toLowerCase())
-        );
+    private loadInitialItems() {
+        this.currentPage = 1;
+        this.rewardsCategories = this.paginateItems(1);
     }
 
-    viewMoreGiftCards() {
-        this.showAllGiftCards = true;
-        this.pageSize = this.rewardInfo.giftCards.length;
-        this.pageIndex = 0;
-        this.updatePagedGiftCards();
+    private paginateItems(page: number): RewardCategory[] {
+        const limit = page * this.itemsPerPage;
+        return this.allRewards.map(cat => ({
+            ...cat,
+            items: cat.items.slice(0, limit)
+        }));
     }
 
-    selectChilOption(option: any, event: MouseEvent) {
-        event.stopPropagation();
-        this.selectedChildOptionCard = option;
-    }
+    onScroll(event: Event) {
+        const element = event.target as HTMLElement;
+        const atBottom =
+            element.scrollHeight - element.scrollTop <= element.clientHeight + 100;
 
-    toggleCard(card: ICommonCardVM) {
-        if (this.selectedCard?.productId === card.productId) {
-            this.selectedCard = null;
-            this.selectedChildOptionCard = null; // <-- clear selected child
-        } else {
-            this.selectedCard = card;
-            this.selectedChildOptionCard = null; // <-- clear selected child
+        if (atBottom) {
+            this.currentPage++;
+            const nextItems = this.paginateItems(this.currentPage);
+            this.rewardsCategories = nextItems;
         }
     }
 
-    updatePagedGiftCards() {
-        if (this.showAllGiftCards) {
-            this.pagedGiftCards = this.rewardInfo.giftCards;
-        }
-
-        const start = this.pageIndex * this.pageSize;
-        const end = start + this.pageSize;
-        this.pagedGiftCards = this.rewardInfo.giftCards.slice(start, end);
+    private processRewards(data: any[]): RewardCategory[] {
+        return [
+            {
+                name: 'Transfer',
+                count: data.filter(p => p.typeId == 1 || p.typeId == 3).length,
+                icon: 'business',
+                items: data
+                    .filter(p => p.typeId == 1 || p.typeId == 3)
+                    .map(card => this.mapCardToItem(card)),
+                type: PayoutMethodEnum.PayPal,
+            },
+            {
+                name: 'Gift Cards',
+                count: data.filter(p => p.typeId == 2).length,
+                icon: 'card_giftcard',
+                items: data
+                    .filter(p => p.typeId == 2)
+                    .map(card => this.mapCardToItem(card)),
+                type: PayoutMethodEnum.GiftCard
+            }
+        ];
     }
 
-    async redeemGift(option: any, giftCard: any) {
-        const self = this;
-
-        const request: UserWithdrawalRequestVM = {
-            method: PayoutMethodEnum.GiftCard,
-            point: option.points,
-            giftCardId: giftCard.productId,
-            giftCardName: giftCard.name,
-            emailId: "",
-            giftCardImage: giftCard.imageUrl,
+    private mapCardToItem(card: any) {
+        return {
+            id: card.productId,
+            name: card.name,
+            showAll: false,
+            subText: `From ${card.minPoints} Points`,
+            image: card.imageUrl ||
+                'https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_74x46.jpg',
+            currencyCode: card.currencyCode,
+            options: card.options.map((option: any) => ({
+                productId: card.productId,
+                productName: card.name,
+                imageUrl: card.imageUrl,
+                value: option.amount,
+                points: option.points,
+                typeId: card.typeId,
+                isAvailable: (this.userBalanceInfo.balance ?? 0) >= option.points,
+                emailId: card?.emailId || '',
+                upiId: card?.upiId || '',
+            }))
         };
-        const response = await self.rewardService.requestUserWithdrawal(request);
-        if (!!response && !!response.isSuccess) {
-            self.messageService.showMessage(new MessageVM(response.message, "success"));
-        }
-        else {
-            self.messageService.showMessage(new MessageVM(response.message, "error"));
-        }
     }
 
-    async redeemPayPal(option: any) {
-        const self = this;
-
-        const request: UserWithdrawalRequestVM = {
-            method: PayoutMethodEnum.PayPal,
-            point: option.points,
-            giftCardId: 0,
-            giftCardName: "PayPal International",
-            emailId: "",
-            giftCardImage: ""
-        };
-        const response = await self.rewardService.requestUserWithdrawal(request);
-        if (!!response && !!response.isSuccess) {
-            self.messageService.showMessage(new MessageVM(response.message, "success"));
-        }
-        else {
-            self.messageService.showMessage(new MessageVM(response.message, "error"));
-        }
+    closeModal() {
+        this.dialogRef?.close(null);
     }
 
+    async handleRewardClick(option: any, item: any) {
+        if (option.points > (this.userBalanceInfo.balance ?? 0)) {
+            this.snackBar.open(
+                `${item.name} requires ${option.points} pts. You have ${this.userBalanceInfo.balance}.`,
+                'OK',
+                { duration: 2000, verticalPosition: 'bottom' }
+            );
+            return;
+        }
+        this.selectedRewardCategory = option;
+        this.selectedCategory = item;
+    }
+
+    async onSelectReward() {
+        if (!this.selectedRewardCategory) return;
+        // this.dialogRef.close({
+        //     reward: this.selectedRewardCategory,
+        //     isPayPal: this.selectedRewardCategory.productName === 'Paypal'
+        // });
+
+        this.dialog.open(RedemptionDetailsComponent, {
+            maxWidth: '100vw',
+            panelClass: 'custom-dialog-container',
+            data: this.selectedRewardCategory
+        });
+    }
 }

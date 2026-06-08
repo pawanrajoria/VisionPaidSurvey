@@ -23,6 +23,7 @@ export class SurveyService {
         { id: 10, name: 'SaySo', logo: 'assets/images/partners/sayso.webp', rating: 3.8, bonus: 50, description: 'RevU+', max: "5K" },
         { id: 18, name: 'Dynata', logo: 'assets/images/partners/dynata.jpg', rating: 5, bonus: 50, description: 'Dynata', max: "10K" },
         { id: 20, name: 'TheoremReach', logo: 'assets/images/partners/theoremreach.svg', rating: 5, bonus: 50, description: 'TheoremReach', max: "5K" },
+        { id: 21, name: 'PrimeEarn', logo: 'assets/images/partners/prime.png', rating: 5, bonus: 50, description: 'PrimeEarn', max: "10K" }
     ];
 
     constructor(private http: HttpClient, private config: ConfigService) {

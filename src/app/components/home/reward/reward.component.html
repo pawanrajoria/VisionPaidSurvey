@@ -1,122 +1,132 @@
-<h2 class="section-title text-center">
-    <mat-icon color="primary">redeem</mat-icon>
-    {{ 'Redeem Points' | translate }}
-    <mat-icon class="info-icon">help_outline</mat-icon>
-</h2>
-
-<div class="section m-y-1rem">
-    <div class="section-header">
-        <mat-icon>account_balance</mat-icon>
-        <span> {{ 'Transfer' | translate }} ({{ rewardInfo.transferCards.length }})</span>
+<!-- Header -->
+<div class="cashout-header">
+    <div class="header-toolbar">
+        <h2 class="header-title">Select Reward</h2>
+        @if(isPopup) {
+        <button mat-icon-button (click)="closeModal()" class="close-btn">
+            <mat-icon>cancel</mat-icon>
+        </button>
+        }
     </div>
-    <div class="section-content">
-        <div class="giftcard-grid">
-            @for (card of rewardInfo.transferCards; track card.productId) {
-            <mat-card class="giftcard" [ngClass]="{ 'active': selectedCard?.productId === card.productId }"
-                (click)="toggleCard(card)" [class.expanded]="selectedCard?.productId === card.productId">
-                <div class="card-header">
-                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_74x46.jpg" />
-                    <div class="card-info">
-                        <h3>{{ card.name }}</h3>
-                        <p>{{ 'From' | translate }} {{ card.minPoints }} points</p>
-                    </div>
-                    <button mat-icon-button class="expand-icon" (click)="toggleCard(card); $event.stopPropagation()">
-                        <mat-icon>
-                            {{ selectedCard?.productId === card.productId ? 'expand_less' : 'expand_more' }}
-                        </mat-icon>
-                    </button>
-                </div>
-            </mat-card>
-            <div *ngIf="selectedCard?.productId=== card.productId" class="giftcard-expand-row" [@expandCollapse]>
-                <img src="assets/images/backgrounds/gift-2.png" class="elements46">
-                <img src="assets/images/backgrounds/dust-gold-hi.png" class="stars">
-                <img src="assets/images/elements4.png" class="elements4">
-                <!-- <div class="cta-images">
-                    <img src="assets/images/backgrounds/gift-img.png" class="elements7 keyframe5">
-                </div> -->
-                <div class="gift-point">
 
-                    <div class="child-options">
-                        <div class="child-card" *ngFor="let option of card.options;"
-                            [class.selected]="selectedChildOptionCard?.amount === option.amount"
-                            (click)="selectChilOption(option, $event)">
-                            <div class="child-card-content">
-                                <div>{{ option.amount | currency: card.currencyCode : 'symbol' }}</div>
-                                <div class="points">{{ option.points }} points</div>
+    <!-- Balance Card -->
+    <div class="balance-card">
+        <div class="balance-info">
+            <span class="label">Available Balance</span>
+            <h2 class="points">
+                {{ userBalanceInfo.balance }}
+                <span>Points</span>
+            </h2>
+        </div>
+        <div class="currency-equivalent">
+            ≈ {{ userBalanceInfo.currencyAmount }}
+        </div>
+    </div>
+
+    <!-- Search -->
+    <mat-form-field appearance="outline" class="search-field">
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput placeholder="Search brands, gift cards..." [(ngModel)]="searchText" />
+        <button *ngIf="searchText" matSuffix mat-icon-button (click)="searchText = ''">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+
+<!-- Content -->
+<div [class]="isPopup?'cashout-content':'cashout-content-main'" (scroll)="onScroll($event)">
+
+    <!-- Skeleton Loading -->
+    @if (isLoading) {
+    <div class="reward-list-container">
+        @for (cat of skeletonArray; track cat) {
+        <div class="skeleton-category-divider"></div>
+        @for (item of skeletonArray; track item) {
+        <div class="skeleton-accordion-item"></div>
+        }
+        }
+    </div>
+    } @else {
+
+    <!-- Rewards List -->
+    <div class="reward-list-container">
+        @for (category of rewardsCategories; track category.name) {
+
+        <!-- Category Header -->
+        <div class="category-divider">
+            <mat-icon>{{ category.icon }}</mat-icon>
+            <span class="category-name">{{ category.name }}</span>
+            <span class="category-count">{{ category.count }}</span>
+        </div>
+
+        <!-- Accordion -->
+        <mat-accordion class="item-accordion-group" multi="false">
+            @for (
+            item of category.items | cashoutFilterByName: searchText;
+            track item.id
+            ) {
+            <mat-expansion-panel class="reward-panel">
+
+                <!-- Panel Header -->
+                <mat-expansion-panel-header class="panel-header">
+                    <div class="reward-logo-container">
+                        <img [src]="item.image" [alt]="item.name" />
+                    </div>
+                    <mat-panel-title>
+                        <div class="panel-title-content">
+                            <span class="item-name">{{ item.name }}</span>
+                            <span class="item-subtext">{{ item.subText }}</span>
+                        </div>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <!-- Panel Content -->
+                <div class="accordion-content">
+                    <div class="options-grid">
+                        @for (option of item.options; track option.points) {
+                        <div class="reward-box" [class.locked]="option.points > (userBalanceInfo.balance ?? 0)"
+                            [class.active]="
+                      selectedRewardCategory?.productId == item.id &&
+                      selectedRewardCategory?.points == option.points
+                    " (click)="handleRewardClick(option, item)" [matTooltip]="
+                      option.points > (userBalanceInfo.balance ?? 0)
+                        ? 'Insufficient points'
+                        : ''
+                    ">
+
+                            <!-- Lock Overlay -->
+                            @if (option.points > (userBalanceInfo.balance ?? 0)) {
+                            <div class="lock-overlay">
+                                <mat-icon>lock</mat-icon>
                             </div>
-                            <mat-icon class="lock-icon">lock</mat-icon>
+                            }
+
+                            <div class="box-inner">
+                                <span class="currency-val">
+                                    {{ option.value | currency: item.currencyCode : 'symbol' }}
+                                </span>
+                                <span class="point-val">{{ option.points }} pts</span>
+                            </div>
+
                         </div>
+                        }
                     </div>
                 </div>
-                <div *ngIf="selectedChildOptionCard" class="redeem-button-container">
-                    <button mat-flat-button color="accent" class="btn-theme"
-                        (click)="redeemPayPal(selectedChildOptionCard)">
-                        {{ 'buttons.redeem' | translate }} {{ selectedChildOptionCard.amount | currency:
-                        card.currencyCode : 'symbol' }}
-                    </button>
-                </div>
-            </div>
+
+            </mat-expansion-panel>
             }
-        </div>
-    </div>
-    <div class="section-header">
-        <mat-icon>card_giftcard</mat-icon>
-        <span> {{ 'Gift Cards' | translate }} ({{ rewardInfo.giftCards.length }})</span>
+        </mat-accordion>
+
+        }
     </div>
 
-    <div class="section-content">
-        <mat-form-field appearance="outline" color="primary" class="w-100">
-            <mat-label>{{ 'search_reward' | translate }}</mat-label>
-            <input matInput [(ngModel)]="searchText" />
-        </mat-form-field>
-        <div class="giftcard-grid">
-            @for (card of filteredGiftCards; track card.productId) {
-            <mat-card class="giftcard" [ngClass]="{ 'active': selectedCard?.productId === card.productId }"
-                (click)="toggleCard(card)" [class.expanded]="selectedCard?.productId === card.productId">
-                <div class="card-header">
-                    <img [src]="card.imageUrl" alt="{{ card.name }}" />
-                    <div class="card-info">
-                        <h3>{{ card.name }}</h3>
-                        <p> {{ 'From' | translate }} {{ card.minPoints }} points</p>
-                    </div>
-                    <button mat-icon-button class="expand-icon " (click)="toggleCard(card); $event.stopPropagation()">
-                        <mat-icon>
-                            {{ selectedCard?.productId === card.productId ? 'expand_less' : 'expand_more' }}
-                        </mat-icon>
-                    </button>
-                </div>
-            </mat-card>
-            <div *ngIf="selectedCard?.productId === card.productId" class="giftcard-expand-row" [@expandCollapse]>
-                <img src="assets/images/backgrounds/gift-2.png" class="elements46">
-                <img src="assets/images/backgrounds/dust-gold-hi.png" class="stars">
-                <img src="assets/images/elements4.png" class="elements4">
-                <div class="child-options">
-                    <div class="child-card" *ngFor="let option of card.options;"
-                        [class.selected]="selectedChildOptionCard?.amount === option.amount"
-                        (click)="selectChilOption(option, $event)">
-                        <div class="child-card-content">
-                            <div>{{ option.amount | currency: card.currencyCode : 'symbol' }}</div>
-                            <div class="points">{{ option.points }} points</div>
-                        </div>
-                        <mat-icon class="lock-icon">lock</mat-icon>
-                    </div>
-                </div>
-                <div *ngIf="selectedChildOptionCard" class="redeem-button-container">
-                    <button mat-flat-button color="accent" class="btn-theme"
-                        (click)="redeemGift(selectedChildOptionCard,selectedCard)">
-                        {{ 'buttons.redeem' | translate }} {{ selectedChildOptionCard.amount | currency:
-                        card.currencyCode : 'symbol' }}
-                    </button>
-                </div>
-            </div>
-            }
-        </div>
+    }
+</div>
 
-        <div class="view-more-container" *ngIf="!showAllGiftCards && rewardInfo.giftCards.length > pageSize">
-            <button mat-button class="view-more-link" (click)="viewMoreGiftCards()">
-                {{ 'View' | translate }} {{ rewardInfo.giftCards.length - pageSize }} {{ 'more_giftcard' | translate }}
-            </button>
-        </div>
-    </div>
-
+<!-- Footer -->
+<div class="cashout-footer">
+    <button mat-flat-button color="primary" class="claim-button" [disabled]="!selectedRewardCategory"
+        (click)="onSelectReward()">
+        Claim Reward
+    </button>
 </div>

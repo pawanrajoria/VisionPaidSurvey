@@ -3,6 +3,7 @@ export class RespondentEntryRequestVM {
     duid: string = "";
     refredUrl?: string = "";
     browser?: string = "";
+    languageCode?: string = "";
 }
 
 export class RespondentEntryResponseVM {

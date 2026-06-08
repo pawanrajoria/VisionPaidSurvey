@@ -7,6 +7,8 @@ export interface UserWithdrawalRequestVM {
     giftCardName: string;
     giftCardImage: string;
     emailId: string;
+    typeId: number;
+    upiId?: string;
 }
 
 export interface IRewardInfoVM {
@@ -33,13 +35,43 @@ export interface ICommonCardVM {
     imageUrl?: string;
     maxValue?: number;
     minValue?: number;
-    minPoints?:number;
+    minPoints?: number;
     typeId?: number;
-    currencyCode?:string;
+    currencyCode?: string;
     options?: IOptionCardVM[];
 }
 
 export interface IOptionCardVM {
     points?: string;
     amount?: string;
+}
+
+export interface RewardCategory {
+    name: string;
+    count: number;
+    icon: string;
+    items: RewardItem[];
+    type: PayoutMethodEnum;
+}
+
+export interface RewardItem {
+    id: number;
+    name: string;
+    subText: string;
+    currencyCode: string;
+    image: string;
+    options: RedemptionOption[];
+}
+
+
+export interface RedemptionOption {
+    value: number; // e.g., 5 for $5 USD
+    points: number;
+    isAvailable: boolean;
+    productId: number;
+    productName: string;
+    imageUrl: string;
+    emailId: string;
+    upiId: string;
+    typeId: number;
 }
