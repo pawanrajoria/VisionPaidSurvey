@@ -41,7 +41,7 @@ export class RedemptionDetailsComponent {
         }
 
         const request: UserWithdrawalRequestVM = {
-            method: self.reward.productName == 'Paypal' ? PayoutMethodEnum.PayPal : PayoutMethodEnum.GiftCard,
+            method: self.reward.typeId == 1 ? PayoutMethodEnum.PayPal : self.reward.typeId == 3 ? PayoutMethodEnum.UPI : PayoutMethodEnum.GiftCard,
             point: self.reward.points,
             giftCardId: self.reward.productId,
             giftCardName: self.reward.productName,

@@ -1,0 +1,50 @@
+// @use '@angular/material' as mat;
+// @use 'sass:map';
+
+// // Angular Material 17+ theming API. Adjust to `mat.define-theme` /
+// // `mat.theme()` mixin naming if you are on Material 3 (M3) — the
+// // palette values below map 1:1 either way.
+
+// $pp-primary-palette: (
+//   50: #e2fbf8, 100: #b6f3ec, 200: #85ebe0, 300: #53e2d3,
+//   400: #2fdac9, 500: #29D3C0, 600: #22b3a2, 700: #1c9285,
+//   800: #167268, 900: #0f524b, A100: #a6fff2, A200: #52ffe4,
+//   A400: #00e6c8, A700: #00ccb1,
+//   contrast: (
+//     50: #0B1120, 100: #0B1120, 200: #0B1120, 300: #0B1120,
+//     400: #0B1120, 500: #0B1120, 600: #E8ECF4, 700: #E8ECF4,
+//     800: #E8ECF4, 900: #E8ECF4, A100: #0B1120, A200: #0B1120,
+//     A400: #0B1120, A700: #0B1120,
+//   )
+// );
+
+// $pp-accent-palette: (
+//   50: #fdf3e2, 100: #fbe0b3, 200: #f8cc80, 300: #f5b84d,
+//   400: #f5b942, 500: #F5B942, 600: #d99e2c, 700: #b98a2c,
+//   800: #966f20, 900: #6e5116, A100: #ffe9c2, A200: #ffd98f,
+//   A400: #ffc75c, A700: #ffbc3d,
+//   contrast: (
+//     50: #1A1200, 100: #1A1200, 200: #1A1200, 300: #1A1200,
+//     400: #1A1200, 500: #1A1200, 600: #1A1200, 700: #E8ECF4,
+//     800: #E8ECF4, 900: #E8ECF4, A100: #1A1200, A200: #1A1200,
+//     A400: #1A1200, A700: #1A1200,
+//   )
+// );
+
+// $pp-primary: mat.define-palette($pp-primary-palette);
+// $pp-accent: mat.define-palette($pp-accent-palette);
+// $pp-warn: mat.define-palette(mat.$red-palette);
+
+// $pp-theme: mat.define-dark-theme((
+//   color: (
+//     primary: $pp-primary,
+//     accent: $pp-accent,
+//     warn: $pp-warn,
+//   ),
+//   typography: mat.define-typography-config(
+//     $font-family: 'Inter, Segoe UI, sans-serif',
+//   ),
+//   density: 0,
+// ));
+
+// @include mat.all-component-themes($pp-theme);

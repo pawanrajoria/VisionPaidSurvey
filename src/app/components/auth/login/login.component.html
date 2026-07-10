@@ -1,4 +1,4 @@
-<div class="text-center top-head m-b-24">
+<div class="text-center top-head m-b-24" style="margin-top: -50px;">
     <p class="f-s-16 f-w-500 text-muted">
         {{ 'login.headline' | translate }}
     </p>
@@ -10,10 +10,7 @@
         <!-- Earnings Highlight -->
         <div class="rh-hr-rgt-top m-b-24">
             <div class="d-flex align-items-center justify-content-center gap-10">
-                <img
-                    src="assets/images/icon/trophy-star.png"
-                    alt="Earnings"
-                    class="icon-md">
+                <img src="assets/images/icon/trophy-star.png" alt="Earnings" class="icon-md">
                 <h3 class="m-0 f-w-700">
                     {{ defaultAmount | currency: 'USD' : 'symbol' }} million
                     <span class="text-muted f-w-500">
@@ -37,25 +34,21 @@
                     <input matInput formControlName="email">
 
                     @if (loginForm.get('email')?.hasError('required')) {
-                        <mat-error>{{ 'messages.email.required' | translate }}</mat-error>
+                    <mat-error>{{ 'messages.email.required' | translate }}</mat-error>
                     }
                     @else if (loginForm.get('email')?.hasError('email')) {
-                        <mat-error>{{ 'messages.email.invalid' | translate }}</mat-error>
+                    <mat-error>{{ 'messages.email.invalid' | translate }}</mat-error>
                     }
                 </mat-form-field>
 
                 <!-- Password -->
-                <mat-form-field
-                    appearance="outline"
-                    color="primary"
-                    class="w-100 m-b-8"
-                    *ngIf="isEmailValidCheck">
+                <mat-form-field appearance="outline" color="primary" class="w-100 m-b-8" *ngIf="isEmailValidCheck">
 
                     <mat-label>{{ 'text.password' | translate }}</mat-label>
                     <input matInput type="password" formControlName="password">
 
                     @if (loginForm.get('password')?.hasError('required')) {
-                        <mat-error>{{ 'messages.password.required' | translate }}</mat-error>
+                    <mat-error>{{ 'messages.password.required' | translate }}</mat-error>
                     }
                 </mat-form-field>
 
@@ -65,9 +58,7 @@
                         {{ 'login.remember_me' | translate }}
                     </mat-checkbox>
 
-                    <a
-                        class="text-secondary f-w-600 text-decoration-none f-s-14"
-                        (click)="forgotPassword()"
+                    <a class="text-secondary f-w-600 text-decoration-none f-s-14" (click)="forgotPassword()"
                         href="javascript://">
                         {{ 'login.forgotpassword' | translate }}
                     </a>
@@ -94,11 +85,7 @@
                 </div>
 
                 <!-- Submit -->
-                <button
-                    type="submit"
-                    mat-flat-button
-                    color="primary"
-                    class="w-100 btn-theme btn-lg">
+                <button type="submit" mat-flat-button color="primary" class="w-100 btn-theme btn-lg">
                     {{ 'buttons.continue' | translate }}
                 </button>
 
@@ -114,11 +101,7 @@
             </div>
 
             <div class="rh-hr-rgt-social-part">
-                <button
-                    type="button"
-                    mat-stroked-button
-                    color="primary"
-                    (click)="googleLogin()"
+                <button type="button" mat-stroked-button color="primary" (click)="googleLogin()"
                     class="w-100 rh-hr-form-social-btn">
 
                     <div class="d-flex align-items-center justify-content-center gap-10">

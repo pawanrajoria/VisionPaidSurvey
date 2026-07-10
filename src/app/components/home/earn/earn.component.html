@@ -23,7 +23,7 @@
                             <mat-icon color="accent">whatshot</mat-icon> Gaming Offers
                         </div>
                         <div class="actions">
-                            <span class="view-all" [routerLink]="['/', currentLang, 'app', 'offers']">View All</span>
+                            <span class="view-all" [routerLink]="['/', currentLocale, 'app', 'offers']">View All</span>
                             <button mat-icon-button (click)="scrollLeft('gamingSlider')">
                                 <mat-icon>chevron_left</mat-icon>
                             </button>
@@ -95,7 +95,7 @@
             <div class="section-header">
                 <div class="section-title"><mat-icon color="primary">assignment</mat-icon> Featured Surveys</div>
                 <div class="actions">
-                    <span class="view-all" [routerLink]="['/', currentLang, 'app', 'survey']">View All</span>
+                    <span class="view-all" [routerLink]="['/', currentLocale, 'app', 'survey']">View All</span>
                     <button mat-icon-button
                         (click)="scrollLeft('surveySlider')"><mat-icon>chevron_left</mat-icon></button>
                     <button mat-icon-button
@@ -106,7 +106,7 @@
                 <div class="two-row-grid">
                     <div class="survey-card-mini" *ngFor="let item of featuredSurveys"
                         [ngClass]="{'is-blurred': !item.isProfileSurvey && hasProfileSurvey()}"
-                        (click)="!item.isProfileSurvey && hasProfileSurvey() ? null : startSurvey(item)">
+                        (click)="!item.isProfileSurvey && hasProfileSurvey() ? null : attemptSurvey(item)">
                         <div class="survey-content">
                             <div class="icon-box" [ngClass]="item.isHot ? 'hot' : 'trending'">
                                 <mat-icon>poll</mat-icon>
@@ -220,15 +220,15 @@
         </div>
 
         <div class="quick-actions-container mt-5">
-            <div class="action-item" [routerLink]="['/', currentLang, 'app', 'cashout']">
+            <div class="action-item" [routerLink]="['/', currentLocale, 'app', 'cashout']">
                 <div class="icon-circle red"><mat-icon>redeem</mat-icon></div>
                 <span>Daily</span>
             </div>
-            <div class="action-item" [routerLink]="['/', currentLang, 'app', 'refer']">
+            <div class="action-item" [routerLink]="['/', currentLocale, 'app', 'refer']">
                 <div class="icon-circle blue"><mat-icon>group_add</mat-icon></div>
                 <span>Invite</span>
             </div>
-            <div class="action-item" [routerLink]="['/', currentLang, 'app', 'account','activity']">
+            <div class="action-item" [routerLink]="['/', currentLocale, 'app', 'account','activity']">
                 <div class="icon-circle green"><mat-icon>history</mat-icon></div>
                 <span>History</span>
             </div>

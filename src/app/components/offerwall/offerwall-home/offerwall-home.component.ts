@@ -33,11 +33,7 @@ export class OfferwallHomeComponent extends BaseComponent implements OnInit {
 
 
     async registerUser() {
-        const duid = this.helperService.fetchDuid();
-        if (!duid && this.win) {
-            this.win.location.reload();
-            return;
-        }
+        const duid = await this.helperService.getOrInitializeDuid();
 
         let landedUrl: string = this.localStorageService.getItem('LandedUrl') || '';
         if (this.win && landedUrl.length !== this.win.location.href.length) {

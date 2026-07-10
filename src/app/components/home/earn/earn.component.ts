@@ -12,6 +12,8 @@ import { ISurveyVM } from "../survey/survey.vm";
 import { SurveyFeedBackPopupComponent } from "../survey/survey-common-popup/survey-feedback-popup/survey-feedback-popup";
 import { OfferPopupDialog } from "../offer/offer-popup/offer-popup.component";
 import { FraudService } from "../../../frauddetection.service";
+import { BaseSurveyComponent } from "../../../base.survey.component";
+import { SurveyInstructionPopupComponent } from "../survey/survey-common-popup/survey-instruction-popup/survey-instruction-popup";
 
 
 @Component({
@@ -20,7 +22,7 @@ import { FraudService } from "../../../frauddetection.service";
     templateUrl: './earn.component.html',
     styleUrls: ['./earn.component.scss']
 })
-export class EarnComponent extends BaseComponent implements OnInit {
+export class EarnComponent extends BaseSurveyComponent implements OnInit {
     @ViewChild('gamingSlider', { read: ElementRef }) gamingSlider!: ElementRef;
     @ViewChild('offerSlider', { read: ElementRef }) offerSlider!: ElementRef;
     @ViewChild('surveySlider', { read: ElementRef }) surveySlider!: ElementRef;
@@ -53,10 +55,9 @@ export class EarnComponent extends BaseComponent implements OnInit {
     readonly offerService = inject(OfferService);
     readonly surveyService = inject(SurveyService);
 
-    readonly dialog = inject(MatDialog);
     dialogRef: MatDialogRef<any> | null = null;
 
-    constructor(private breakpointObserver: BreakpointObserver, private fraudService: FraudService) {
+    constructor(private breakpointObserver: BreakpointObserver) {
         super();
     }
 
@@ -178,44 +179,24 @@ export class EarnComponent extends BaseComponent implements OnInit {
 
     }
 
-    async startSurvey(item: ISurveyVM) {
-        let winNew: Window | null = null;
-
-        if (this.win) {
-            // Open immediately (user gesture safe)
-            winNew = this.win.open('', '_blank');
-
-            if (!winNew) {
-                alert('Popup blocked. Please allow popups for this site.');
-                return;
-            }
+    async attemptSurvey(item: ISurveyVM) {
+        if (item.isProfileSurvey) {
+            this.openSurveyInstruction(item);
         }
-
-        const fraudSignals: any = await this.fraudService.collectSignals();
-
-        if (fraudSignals && fraudSignals.decision === "BLOCK") {
-            await this.logUserActivity("Survey", "StartSurvey", "SurveyScore", fraudSignals.decision);
-            winNew?.close(); // close opened tab if blocked
-            return;
+        else {
+            this.startSurvey(item);
+            this.getSurveys();
         }
-
-        // Now redirect the already opened tab
-        if (winNew) {
-            winNew.location.href = item.clickUrl;
-        }
-
-        await this.logUserActivity("Survey", "StartSurvey", "Click", item.clickUrl);
-        await this.feedbackSurvey(item);
     }
 
-    async feedbackSurvey(item: ISurveyVM) {
-        const dialofref = this.dialog.open(SurveyFeedBackPopupComponent);
+    async openSurveyInstruction(item: ISurveyVM) {
+        const dialofref = this.dialog.open(SurveyInstructionPopupComponent);
         dialofref.afterClosed().subscribe(async (result) => {
-            if (result === "submitForm") {
-                // call rating api
+            if (result === "startSurvey") {
+                await this.startSurvey(item);
                 dialofref.close();
-            } else if (result === "close") {
                 this.getSurveys();
+            } else if (result === "close") {
                 dialofref.close();
             }
         });

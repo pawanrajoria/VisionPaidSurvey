@@ -1,0 +1,71 @@
+<section class="pp-hero">
+  <div class="pp-hero__inner">
+    <span class="pp-eyebrow">Redeem Your Points</span>
+    <h1>{{ heading() }}</h1>
+    <p class="pp-hero__lede">
+      Turn your wallet balance into real gift cards, crypto, and prepaid cards.
+      Instant delivery, verified brands, transparent point pricing.
+    </p>
+  </div>
+</section>
+
+<nav class="pp-category-rail" aria-label="Gift card categories">
+  <a class="pp-chip" [class.pp-chip--active]="activeCategory() === null" routerLink="/gift-cards">All</a>
+  <a
+    *ngFor="let cat of categories"
+    class="pp-chip"
+    [class.pp-chip--active]="activeCategory() === cat.value"
+    [routerLink]="['/gift-cards/category', cat.value]"
+  >
+    <mat-icon>{{ cat.icon }}</mat-icon>
+    {{ cat.label }}
+  </a>
+</nav>
+
+<section class="pp-toolbar">
+  <mat-button-toggle-group [value]="sort()" (change)="onSortChange($event.value)">
+    <mat-button-toggle value="popular">Popular</mat-button-toggle>
+    <mat-button-toggle value="rating">Top Rated</mat-button-toggle>
+    <mat-button-toggle value="az">A–Z</mat-button-toggle>
+  </mat-button-toggle-group>
+  <span class="pp-count">{{ totalItems() | number }} gift cards</span>
+</section>
+
+<section class="pp-grid-wrap">
+  <div class="pp-loading" *ngIf="loading()">
+    <mat-spinner diameter="36"></mat-spinner>
+  </div>
+
+  <div class="pp-grid" *ngIf="!loading()">
+    <a
+      class="pp-gc-card"
+      *ngFor="let card of cards(); trackBy: trackBySlug"
+      [routerLink]="['/gift-cards', card.slug]"
+    >
+      <div class="pp-gc-card__logo">
+        <img [src]="card.logoUrl" [alt]="card.brand" loading="lazy" />
+      </div>
+      <h3>{{ card.title }}</h3>
+      <p>{{ card.shortDescription }}</p>
+      <div class="pp-gc-card__rating">
+        <mat-icon>star</mat-icon>
+        <span>{{ card.rating }}</span>
+        <span class="pp-dot">&middot;</span>
+        <span>{{ card.reviewCount | number }} reviews</span>
+      </div>
+      <div class="pp-gc-card__price">
+        {{ minPrice(card) | currency }} – {{ maxPrice(card) | currency }}
+      </div>
+    </a>
+  </div>
+
+  <mat-paginator
+    *ngIf="!loading() && totalItems() > pageSize()"
+    [length]="totalItems()"
+    [pageSize]="pageSize()"
+    [pageIndex]="pageIndex()"
+    [pageSizeOptions]="[15, 30, 60]"
+    (page)="onPage($event)"
+    aria-label="Select page of gift cards"
+  ></mat-paginator>
+</section>

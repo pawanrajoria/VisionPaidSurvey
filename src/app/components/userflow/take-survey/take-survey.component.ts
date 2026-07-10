@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, inject, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import {
   QualQuestionVM,
@@ -11,10 +11,9 @@ import { LocalStorageService } from '../../../localstorage.service';
 import { HelperService } from '../helper.service';
 import { SharedModule } from '../../../shared.module';
 import { QuestionComponent } from './question/question.component';
-import { BaseComponent } from '../../../base.component';
-import { MatDialog } from "@angular/material/dialog";
-import { SurveyQualifyPopupComponent } from '../../home/survey/survey-common-popup/survey-qualify-popup/survey-qualify-popup';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { Iso639Map } from '../../../supporteslanguage';
+import { BaseSurveyComponent } from '../../../base.survey.component';
 
 @Component({
   selector: 'app-take-survey',
@@ -23,8 +22,15 @@ import { Iso639Map } from '../../../supporteslanguage';
   styleUrls: ['./take-survey.component.scss'],
   imports: [SharedModule, QuestionComponent]
 })
-export class TakeSurveyComponent extends BaseComponent {
+export class TakeSurveyComponent extends BaseSurveyComponent {
   @ViewChild('drawer') public drawer?: MatDrawer;
+
+
+  dialogRef = inject(MatDialogRef<TakeSurveyComponent>, {
+    optional: true
+  });
+
+  private dialogData = inject(MAT_DIALOG_DATA, { optional: true });
 
   classname: string = '';
   country: string = '';
@@ -35,8 +41,7 @@ export class TakeSurveyComponent extends BaseComponent {
   constructor(
     private respondentService: RespondentService,
     private localStorageService: LocalStorageService,
-    private helperService: HelperService,
-    private dialog: MatDialog
+    private helperService: HelperService
   ) {
     super(); // bind win, nav, doc, isBrowser
     if (this.isBrowser) {
@@ -64,20 +69,22 @@ export class TakeSurveyComponent extends BaseComponent {
   }
 
   async getSurvey(): Promise<void> {
-    const duid = this.helperService.fetchDuid();
-    if (!duid && this.win) {
-      this.win.location.reload();
-      return;
-    }
+    const duid = await this.helperService.getOrInitializeDuid();
+
+
 
     let landedUrl: string = this.localStorageService.getItem('LandedUrl') || '';
     if (this.win && landedUrl.length !== this.win.location.href.length) {
       landedUrl = this.win.location.href;
     }
 
+    if (this.dialogData) {
+      landedUrl = this.dialogData.landedUrl;
+    }
+
     const request: RespondentEntryRequestVM = {
       requestUrl: landedUrl,
-      duid: duid,
+      duid: duid ?? '',
       browser: this.detectBrowser(),
       refredUrl: this.doc?.referrer || '',
       languageCode: this.isBrowser ? this.getLang3(navigator.language) : 'eng'
@@ -98,25 +105,13 @@ export class TakeSurveyComponent extends BaseComponent {
     } else {
       const redirect = this.respondentData?.redirectUrl || 'https://profitpiller.com';
 
-      if (!!this.respondentData && this.respondentData.isQualified) {
-        this.qualifySurvey(redirect);
+      if (!!this.dialogRef && !!this.respondentData && this.respondentData.isQualified) {
+        this.dialogRef?.close({ role: 'qualify', data: redirect });
+        // this.qualifySurvey(redirect);
       } else {
         if (this.win) this.win.location.href = redirect;
       }
     }
-  }
-
-  async qualifySurvey(redirect: string) {
-    const dialofref = this.dialog.open(SurveyQualifyPopupComponent);
-    dialofref.afterClosed().subscribe(async (result) => {
-      if (result === "participate") {
-        dialofref.close();
-        if (this.win) this.win.location.href = redirect;
-      } else if (result === "close") {
-        if (this.win) this.win.location.href = redirect;
-        dialofref.close();
-      }
-    });
   }
 
   async submitSurvey(answerRequest: RespondentSubmitVM): Promise<void> {
@@ -140,8 +135,9 @@ export class TakeSurveyComponent extends BaseComponent {
     } else {
       const redirect = response?.redirectUrl || 'https://profitpiller.com';
 
-      if (!!this.respondentData && this.respondentData.isQualified) {
-        this.qualifySurvey(redirect);
+      if (!!this.dialogRef && !!this.respondentData && this.respondentData.isQualified) {
+        // this.qualifySurvey(redirect);
+        this.dialogRef?.close({ role: 'qualify', data: redirect });
       } else {
         if (this.win) this.win.location.href = redirect;
       }

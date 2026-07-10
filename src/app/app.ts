@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { filter, map, mergeMap, Observable } from 'rxjs';
+import { filter, Observable } from 'rxjs';
 import { SharedModule } from './shared.module';
 import { LoaderService } from './components/layout/loader.service';
 import { SeoService } from './seo.service';
@@ -16,11 +16,65 @@ import { LocalStorageService } from './localstorage.service';
 import { BaseComponent } from './base.component';
 import { GoogleService } from './components/auth/google.service';
 import { VersionCheckService } from './version-check.service';
-import { RecaptchaV3Module } from 'ng-recaptcha';
-import { supportedLangs } from './components/userflow/const';
 import { GoogleAuthProvider } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AuthService } from './components/auth/auth.service';
+import { LOCALE_COUNTRY_MAP, SUPPORTED_LOCALE_CODES } from './country-langiuage-list';
+import { GtmService } from './gtm.service';
+import { isPlatformBrowser } from '@angular/common';
+
+function resolveLocaleSlug(rawLang: string): string {
+  const normalised = rawLang.toLowerCase().replace('_', '-'); // "en-US" → "en-us"
+
+  // Full match in map (e.g. "en-gb")
+  if (LOCALE_COUNTRY_MAP[normalised]) {
+    return normalised; // already "en-gb"
+  }
+
+  // Has a country part but not in map → keep it as-is
+  if (normalised.includes('-')) {
+    return normalised; // e.g. "fr-ch"
+  }
+
+  // Bare base lang (e.g. "en", "hi", "de")
+  const mapped = LOCALE_COUNTRY_MAP[normalised];
+  if (mapped) {
+    return `${normalised}-${mapped}`; // "de" → "de-de"
+  }
+
+  // Final fallback
+  return 'en-us';
+}
+
+/**
+ * Extract the locale-country slug from a URL path.
+ * Supports both old format ("/en/...") and new format ("/en-us/...").
+ *
+ * Returns { locale: 'en-us', cleanPath: '/dashboard' }
+ */
+function parseLocaleFromUrl(url: string): { locale: string; cleanPath: string } {
+  // New format: /en-us/... or /hi-in/...
+  const newFormat = url.match(/^\/(([a-z]{2})-([a-z]{2}))(\/.*)?$/);
+  if (newFormat) {
+    return {
+      locale: newFormat[1],          // "en-us"
+      cleanPath: newFormat[4] || '/' // "/dashboard"
+    };
+  }
+
+  // Old / legacy format: /en/... or /hi/...
+  const oldFormat = url.match(/^\/(en|hi)(\/.*)?$/);
+  if (oldFormat) {
+    // Upgrade bare lang to full locale slug
+    const upgraded = resolveLocaleSlug(oldFormat[1]);
+    return {
+      locale: upgraded,
+      cleanPath: oldFormat[2] || '/'
+    };
+  }
+
+  return { locale: 'en-us', cleanPath: url };
+}
 
 @Component({
   selector: 'app-root',
@@ -37,17 +91,16 @@ export class AppComponent extends BaseComponent implements OnInit {
   constructor(
     private loader: LoaderService,
     private router: Router,
-    private activatedRoute: ActivatedRoute,
     private titleService: Title,
     private metaService: Meta,
     private seoService: SeoService,
     private translate: TranslateService,
     private helperService: HelperService,
     private localStorageService: LocalStorageService,
-    private googleService: GoogleService,
     private versionCheck: VersionCheckService,
     private angularFireAuth: AngularFireAuth,
     private authService: AuthService,
+    private gtm: GtmService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     super();
@@ -56,60 +109,58 @@ export class AppComponent extends BaseComponent implements OnInit {
     this.translate.setDefaultLang('en');
   }
 
-
-  ngOnInit() {
-    // ✅ SSR-safe check before using `window`
+  async ngOnInit() {
+    // ✅ SSR-safe: store landing URL
     if (this.isBrowser && this.win) {
       this.localStorageService.setItem('LandedUrl', this.win.location.href);
-
     }
 
-    this.helperService.setDuid();
+    await this.helperService.getOrInitializeDuid();
 
     this.detectAndSetLanguage();
 
+
+    // ─── Router events: update SEO + hreflang on every navigation ───────────
+
     this.router.events
-      .pipe(
-        filter((event) => event instanceof NavigationEnd)
-      )
-      .subscribe(() => {
-
-        const urlSegments = this.router.url.split('/');
-        const langInUrl = urlSegments[1];
-
-        if (supportedLangs.includes(langInUrl)) {
-          this.translate.use(langInUrl);
-          this.localStorageService.setItem('lang', langInUrl);
+      .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
+      .subscribe((event) => {
+        if (isPlatformBrowser(this.platformId)) {
+          this.gtm.pushEvent('page_view', {
+            page_location: this.gtm.location,
+            page_title: this.gtm.title,
+            page_path: event.urlAfterRedirects
+          });
         }
 
+        const { locale, cleanPath } = parseLocaleFromUrl(event.urlAfterRedirects);
+        const baseLang = locale.split('-')[0];
 
-        const fullUrl = this.router.url;
-        // Extract lang (en / hi)
-        const langMatch = fullUrl.match(/^\/(en|hi)/);
-        const lang = langMatch ? langMatch[1] : 'en';
-        // Remove lang from path
-        const cleanPath = fullUrl.replace(/^\/(en|hi)/, '');
+        if (SUPPORTED_LOCALE_CODES.has(baseLang)) {
+          this.translate.use(baseLang);
+          this.localStorageService.setItem('lang', baseLang);
+          this.localStorageService.setItem('locale', locale);
+        }
 
-        const title = this.titleService.getTitle() || 'Profitpiller';
-        const description = this.metaService.getTag('name=description')?.content || title;
+        const pageTitle = this.titleService.getTitle() || 'ProfitPiller';
+        const description = this.metaService.getTag('name=description')?.content || pageTitle;
 
-        // ✅ Update SEO
         this.seoService.updateMetaData(
-          title,
+          pageTitle,
           description,
-          `https://profitpiller.com/${lang}${cleanPath}`
+          `https://profitpiller.com/${locale}${cleanPath}`,
+          undefined,
+          locale
         );
-
-        // ✅ Add hreflang
-        this.seoService.updateHreflang(cleanPath);
+        this.seoService.updateHreflang(cleanPath, locale);
       });
 
+    // ─── Handle Google OAuth redirect hash ──────────────────────────────────
     if (this.isBrowser && this.win) {
       const hash = window.location.hash;
       if (hash.includes('access_token=')) {
         const params = new URLSearchParams(hash.substring(1));
         const token = params.get('access_token');
-
         if (token) {
           this.completeGoogleLogin(token);
         }
@@ -117,31 +168,75 @@ export class AppComponent extends BaseComponent implements OnInit {
     }
   }
 
+  // ─── Language switcher ────────────────────────────────────────────────────
   changeLanguage(lang: string) {
     this.translate.use(lang);
   }
 
-
+  // ─── Detect browser locale and load the right translation ────────────────
   private detectAndSetLanguage(): void {
     if (!this.isBrowser) return;
 
-    let langCode = localStorage.getItem('lang') || navigator.language.split('-')[0];
+    let locale: string | null = null;
 
-    if (!supportedLangs.includes(langCode)) {
-      langCode = 'en';
+    // 1. Check URL first
+    const path = window.location.pathname;
+    const segments = path.split('/').filter(Boolean);
+
+    if (
+      segments.length > 0 &&
+      SUPPORTED_LOCALE_CODES.has(segments[0].toLowerCase())
+    ) {
+      locale = segments[0].toLowerCase();
     }
 
-    // ✅ Force ngx-translate to switch
-    this.translate.use(langCode).subscribe({
+    // 2. Check stored locale
+    if (!locale) {
+      const storedLocale = localStorage.getItem('locale');
+      if (
+        storedLocale &&
+        SUPPORTED_LOCALE_CODES.has(storedLocale.toLowerCase())
+      ) {
+        locale = storedLocale.toLowerCase();
+      }
+    }
+
+    // 3. Check stored language
+    if (!locale) {
+      const storedLang = localStorage.getItem('lang');
+      if (storedLang) {
+        locale = resolveLocaleSlug(storedLang);
+      }
+    }
+
+    // 4. Browser language fallback
+    if (!locale) {
+      const browserLang = navigator.language || 'en-US';
+      locale = resolveLocaleSlug(browserLang);
+    }
+
+    // Final safety fallback
+    if (!locale || !SUPPORTED_LOCALE_CODES.has(locale)) {
+      locale = 'en-us';
+    }
+
+    const baseLang = locale.split('-')[0];
+
+    this.translate.use(baseLang).subscribe({
       next: () => {
-        console.log(`Translations loaded for: ${langCode}`);
+        console.log(
+          `Translations loaded for: ${baseLang} (locale: ${locale})`
+        );
+
         this.translationsLoaded = true;
+
+        this.localStorageService.setItem('lang', baseLang);
+        this.localStorageService.setItem('locale', locale);
       },
       error: (err) => console.error('Failed to load translations', err)
     });
   }
-
-
+  // ─── Complete Google OAuth sign-in ────────────────────────────────────────
   async completeGoogleLogin(googleToken: string) {
     const credential = GoogleAuthProvider.credential(null, googleToken);
     const userCredential = await this.angularFireAuth.signInWithCredential(credential);
@@ -160,30 +255,5 @@ export class AppComponent extends BaseComponent implements OnInit {
       });
     }
   }
-
-
-  // private detectAndSetLanguage(): void {
-  //   if (!this.isBrowser) return;
-
-  //   const supportedLangs = ['en', 'hi']; // 👈 add more if needed
-
-  //   let lang = navigator.language || navigator.languages?.[0] || 'en';
-  //   let langCode = lang.split('-')[0];
-
-  //   if (!supportedLangs.includes(langCode)) {
-  //     langCode = 'en';
-  //   }
-
-  //   const currentUrl = this.router.url;
-  //   // Check if URL already has language prefix
-  //   const hasLangPrefix = supportedLangs.some(l => currentUrl.startsWith(`/${l}`));
-  //   // 👉 Set language in ngx-translate
-  //   this.translate.use(langCode);
-  //   // 👉 Save to local storage (optional)
-  //   this.localStorageService.setItem('lang', langCode);
-  //   // 👉 Append language to URL if not present
-  //   if (!hasLangPrefix) {
-  //     this.router.navigate([`/${langCode}${currentUrl}`]);
-  //   }
-  // }
 }
+

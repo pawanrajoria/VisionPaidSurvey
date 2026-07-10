@@ -6,7 +6,7 @@ import { SharedModule } from '../../../shared.module';
   selector: 'app-branding',
   imports: [SharedModule],
   template: `
-    <a  [routerLink]="['/', currentLang, 'app', 'earn']" class="logodark">
+    <a  [routerLink]="['/', currentLocale, 'app', 'earn']" class="logodark">
       <img
         src="./assets/images/logo.png"
         class="align-middle m-2"

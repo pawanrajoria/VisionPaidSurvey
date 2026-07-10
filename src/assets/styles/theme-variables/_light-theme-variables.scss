@@ -47,4 +47,42 @@ html.light-theme {
   --mat-stepper-header-hover-state-layer-color: #f3f5f7;
   --mdc-dialog-supporting-text-color: var(--mat-sys-on-background);
   --mat-expansion-header-hover-state-layer-color: #f3f5f7;
+
+
+
+  --pp-bg: #0B1120;              // deep navy-slate base
+  --pp-surface: #121A2C;         // card/panel surface
+  --pp-surface-raised: #17213A;  // hovered / elevated surface
+  --pp-border: #223052;          // hairline borders on dark
+
+  --pp-accent: #29D3C0;          // teal-mint — primary "money moving" accent
+  --pp-accent-dim: #1B8F83;
+  --pp-gold: #F5B942;            // gift-card / reward gold
+  --pp-gold-dim: #B98A2C;
+
+  --pp-text: #E8ECF4;
+  --pp-text-muted: #8993A8;
+  --pp-text-faint: #5B6684;
+
+  --pp-success: #33D17A;
+  --pp-danger: #FF6B6B;
+
+  // ---- Type ----
+  --pp-font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --pp-font-body: 'Inter', 'Segoe UI', sans-serif;
+  --pp-font-mono: 'IBM Plex Mono', 'Consolas', monospace;
+
+  // ---- Scale ----
+  --pp-radius-sm: 8px;
+  --pp-radius-md: 14px;
+  --pp-radius-lg: 22px;
+
+  --pp-space-1: 4px;
+  --pp-space-2: 8px;
+  --pp-space-3: 16px;
+  --pp-space-4: 24px;
+  --pp-space-5: 40px;
+  --pp-space-6: 64px;
+
+  --pp-shadow-card: 0 1px 0 rgba(255,255,255,0.03) inset, 0 12px 24px -12px rgba(0,0,0,0.6);
 }

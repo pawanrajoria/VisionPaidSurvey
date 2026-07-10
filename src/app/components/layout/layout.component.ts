@@ -27,6 +27,7 @@ import { NotificationService } from '../../notification.service';
 import { MessageService } from './message/message.service';
 import { MessageVM } from './message/message.vm';
 import { LivepayoutComponent } from './live-payout/live-payout.component';
+import { GtmService } from '../../gtm.service';
 
 const MOBILE_VIEW = 'screen and (max-width: 768px)';
 const TABLET_VIEW = 'screen and (min-width: 769px) and (max-width: 1024px)';
@@ -42,7 +43,7 @@ const TABLET_VIEW = 'screen and (min-width: 769px) and (max-width: 1024px)';
         HeaderComponent,
         LivepayoutComponent,
         AppNavItemComponent,
-        NgScrollbarModule        
+        NgScrollbarModule
     ]
 })
 export class LayoutComponent extends BaseComponent implements AfterViewInit, OnDestroy {
@@ -72,6 +73,7 @@ export class LayoutComponent extends BaseComponent implements AfterViewInit, OnD
         private notificationService: NotificationService,
         private messageService: MessageService,
         private ngZone: NgZone,
+        private gtm: GtmService,
         private cdr: ChangeDetectorRef, // To manually trigger detection after async data load
         @Inject(PLATFORM_ID) private platformId: Object
     ) {
@@ -100,8 +102,13 @@ export class LayoutComponent extends BaseComponent implements AfterViewInit, OnD
         if (isPlatformBrowser(this.platformId)) {
             this.router.events
                 .pipe(filter((event) => event instanceof NavigationEnd))
-                .subscribe(() => {
+                .subscribe((event) => {
                     this.content?.scrollTo({ top: 0 });
+                    this.gtm.pushEvent('generate_lead', {
+                        page_location: this.gtm.location,
+                        page_title: this.gtm.title,
+                        page_path: event.urlAfterRedirects
+                    });
                 });
         }
     }

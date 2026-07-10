@@ -2,10 +2,9 @@
 <div class="landing-wrapper mat-elevation-z2">
     <div class="not-found-container">
         <div class="content">
+            <mat-icon class="large-icon">error_outline</mat-icon>
+
             <h1 class="code">404</h1>
-            <div style="position: fixed; bottom: 0; background: black; color: lime; font-size: 10px; z-index: 9999;">
-                URL: {{ currentUrl }}
-            </div>
             <h2 class="title">Page Not Found</h2>
             <p class="message">
                 Oops! The page you're looking for doesn’t exist or has been moved.
@@ -15,9 +14,13 @@
                 <button mat-raised-button color="primary" routerLink="/">
                     Go to Home
                 </button>
-                <button mat-stroked-button color="accent" (click)="goToApp()">
+                <button mat-stroked-button color="primary" (click)="goToApp()">
                     Go Back
                 </button>
+            </div>
+
+            <div class="debug-info">
+                <span class="label">Debug Path:</span> {{ currentUrl }}
             </div>
         </div>
     </div>

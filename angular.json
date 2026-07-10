@@ -21,7 +21,9 @@
             "index": "src/index.html",
             "browser": "src/main.ts",
             "server": "src/main.server.ts",
-            "polyfills": ["zone.js"],
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -29,7 +31,22 @@
               "src/assets",
               "src/firebase-messaging-sw.js",
               {
+                "glob": "**/*",
+                "input": "src/sitemaps",
+                "output": "/sitemaps"
+              },
+              {
                 "glob": "ads.txt",
+                "input": "./",
+                "output": "./"
+              },
+              {
+                "glob": "adscend.txt",
+                "input": "./",
+                "output": "./"
+              },
+              {
+                "glob": "robots.txt",
                 "input": "./",
                 "output": "./"
               },
@@ -99,7 +116,10 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "polyfills": ["zone.js", "zone.js/testing"],
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [

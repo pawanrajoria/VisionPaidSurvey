@@ -1,0 +1,40 @@
+// ============================================================
+// ProfitPiller Design Tokens
+// Theme concept: "Ledger" — a dark fintech/rewards dashboard.
+// Every card behaves like a line item with a visible price tag,
+// echoing the payout-ticker language of the product itself.
+// ============================================================
+
+
+// Shared "value tag" signature element — a diagonal ribbon corner
+// used on every content card (blog, guide, gift card) to encode
+// its associated payout/value at a glance.
+@mixin pp-value-tag {
+  position: absolute;
+  top: 14px;
+  right: -34px;
+  transform: rotate(40deg);
+  background: linear-gradient(135deg, var(--pp-gold), var(--pp-gold-dim));
+  color: #1A1200;
+  font-family: var(--pp-font-mono);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  padding: 4px 38px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+}
+
+@mixin pp-card-base {
+  background: var(--pp-surface);
+  border: 1px solid var(--pp-border);
+  border-radius: var(--pp-radius-md);
+  box-shadow: var(--pp-shadow-card);
+  overflow: hidden;
+  position: relative;
+  transition: transform .18s ease, border-color .18s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: var(--pp-accent-dim);
+  }
+}

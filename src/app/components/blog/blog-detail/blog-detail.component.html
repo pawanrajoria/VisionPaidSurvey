@@ -1,0 +1,114 @@
+<div class="pp-loading" *ngIf="loading()">
+  <mat-spinner diameter="40"></mat-spinner>
+</div>
+
+<div class="pp-not-found" *ngIf="notFound()">
+  <mat-icon>search_off</mat-icon>
+  <h1>We couldn't find that article</h1>
+  <p>It may have been moved or the link is out of date.</p>
+  <a mat-flat-button color="primary" routerLink="/blog">Browse the blog</a>
+</div>
+
+<ng-container *ngIf="post() as p">
+  <nav class="pp-breadcrumb" aria-label="Breadcrumb">
+    <a routerLink="/">Home</a> <span>/</span>
+    <a routerLink="/blog">Blog</a> <span>/</span>
+    <a [routerLink]="['/blog/category', p.category]">{{ p.category }}</a> <span>/</span>
+    <span class="pp-breadcrumb__current">{{ p.title }}</span>
+  </nav>
+
+  <header class="pp-article-hero">
+    <div class="pp-article-hero__media">
+      <img [src]="p.coverImage" [alt]="p.title" width="1200" height="600" />
+      <span class="pp-value-tag" *ngIf="p.estimatedEarnings">{{ p.estimatedEarnings }}</span>
+    </div>
+    <div class="pp-article-hero__meta">
+      <mat-chip-set>
+        <mat-chip disabled>{{ p.category }}</mat-chip>
+        <mat-chip disabled *ngFor="let tag of p.tags">#{{ tag }}</mat-chip>
+      </mat-chip-set>
+      <h1>{{ p.title }}</h1>
+      <p class="pp-excerpt">{{ p.excerpt }}</p>
+      <div class="pp-byline">
+        <img [src]="p.author.avatar" [alt]="p.author.name" class="pp-avatar" />
+        <div>
+          <strong>{{ p.author.name }}</strong>
+          <div class="pp-byline__dates">
+            Published {{ p.publishedAt | date:'mediumDate' }} &middot; Updated {{ p.updatedAt | date:'mediumDate' }} &middot; {{ p.readMinutes }} min read
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="pp-article-layout">
+    <aside class="pp-toc" *ngIf="toc().length">
+      <h2>On this page</h2>
+      <ol>
+        <li *ngFor="let item of toc()"><a [href]="'#' + item.id">{{ item.text }}</a></li>
+      </ol>
+    </aside>
+
+    <article class="pp-content">
+      <ng-container *ngFor="let block of p.content">
+        <h2 *ngIf="block.type === 'heading'" [id]="headingId(block.heading!)">{{ block.heading }}</h2>
+
+        <p *ngIf="block.type === 'paragraph'">{{ block.text }}</p>
+
+        <ul *ngIf="block.type === 'list'">
+          <li *ngFor="let item of block.items">{{ item }}</li>
+        </ul>
+
+        <div class="pp-callout pp-callout--tip" *ngIf="block.type === 'tip'">
+          <mat-icon>lightbulb</mat-icon>
+          <p>{{ block.text }}</p>
+        </div>
+
+        <div class="pp-callout pp-callout--warning" *ngIf="block.type === 'warning'">
+          <mat-icon>warning</mat-icon>
+          <p>{{ block.text }}</p>
+        </div>
+
+        <div class="pp-table-wrap" *ngIf="block.type === 'table'">
+          <table>
+            <thead>
+              <tr><th *ngFor="let h of block.tableHeaders">{{ h }}</th></tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of block.tableRows">
+                <td *ngFor="let cell of row">{{ cell }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <figure class="pp-figure" *ngIf="block.type === 'image'">
+          <img [src]="block.imageUrl" [alt]="block.imageAlt || ''" loading="lazy" />
+          <figcaption *ngIf="block.imageAlt">{{ block.imageAlt }}</figcaption>
+        </figure>
+
+        <section class="pp-faq" *ngIf="block.type === 'faq'">
+          <h2>Frequently Asked Questions</h2>
+          <mat-accordion multi>
+            <mat-expansion-panel *ngFor="let faq of block.faqs">
+              <mat-expansion-panel-header>
+                <mat-panel-title>{{ faq.question }}</mat-panel-title>
+              </mat-expansion-panel-header>
+              <p>{{ faq.answer }}</p>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </section>
+      </ng-container>
+    </article>
+  </div>
+
+  <section class="pp-related" *ngIf="related().length">
+    <h2>Related Articles</h2>
+    <div class="pp-related__grid">
+      <a class="pp-related__card" *ngFor="let r of related()" [routerLink]="['/blog', r.slug]">
+        <img [src]="r.coverImage" [alt]="r.title" loading="lazy" />
+        <span>{{ r.title }}</span>
+      </a>
+    </div>
+  </section>
+</ng-container>

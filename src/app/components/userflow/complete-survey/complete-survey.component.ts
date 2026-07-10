@@ -28,10 +28,7 @@ export class CompleteSurveyComponent extends BaseComponent {
     if (!this.localStorageService.getItem('LandedUrl'))
       return;
 
-    const duid = self.helperService.fetchDuid();
-    if (duid == "" && this.win) {
-      this.win.location.reload();
-    }
+    const duid = await this.helperService.getOrInitializeDuid();
 
     let landedUrl: string = this.localStorageService.getItem('LandedUrl') ?? '';
     if (!!this.win && landedUrl.length != this.win.location.href.length) {
@@ -41,7 +38,7 @@ export class CompleteSurveyComponent extends BaseComponent {
 
     const request: RespondentEndSurveyVM = {
       requestUrl: landedUrl,
-      duid: duid,
+      duid: duid ?? '',
     };
 
     if (request.requestUrl.indexOf("/") >= 0) {

@@ -314,3 +314,23 @@ mat-form-field {
     font-size: 14px !important;
   }
 }
+
+.email-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: rgba(255, 193, 7, 0.12);
+    color: #856404;
+    font-size: 13px;
+    line-height: 1.4;
+
+    mat-icon {
+        font-size: 18px;
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+    }
+}

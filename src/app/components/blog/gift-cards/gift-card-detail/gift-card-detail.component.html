@@ -1,0 +1,99 @@
+<div class="pp-loading" *ngIf="loading()">
+  <mat-spinner diameter="40"></mat-spinner>
+</div>
+
+<div class="pp-not-found" *ngIf="notFound()">
+  <mat-icon>search_off</mat-icon>
+  <h1>We couldn't find that gift card</h1>
+  <a mat-flat-button color="primary" routerLink="/gift-cards">Browse gift cards</a>
+</div>
+
+<ng-container *ngIf="card() as c">
+  <nav class="pp-breadcrumb" aria-label="Breadcrumb">
+    <a routerLink="/">Home</a> <span>/</span>
+    <a routerLink="/gift-cards">Gift Cards</a> <span>/</span>
+    <a [routerLink]="['/gift-cards/category', c.category]">{{ c.category }}</a> <span>/</span>
+    <span class="pp-breadcrumb__current">{{ c.title }}</span>
+  </nav>
+
+  <header class="pp-gc-hero">
+    <div class="pp-gc-hero__media">
+      <img [src]="c.heroImage" [alt]="c.title" width="1200" height="500" />
+    </div>
+
+    <div class="pp-gc-hero__panel">
+      <div class="pp-gc-hero__brand">
+        <img [src]="c.logoUrl" [alt]="c.brand" class="pp-logo" />
+        <div>
+          <h1>{{ c.title }}</h1>
+          <div class="pp-rating">
+            <mat-icon>star</mat-icon>
+            <span>{{ c.rating }}</span>
+            <span class="pp-dot">&middot;</span>
+            <span>{{ c.reviewCount | number }} reviews</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="pp-short-desc">{{ c.shortDescription }}</p>
+
+      <div class="pp-denoms">
+        <span class="pp-denoms__label">Choose an amount</span>
+        <div class="pp-denoms__grid">
+          <button
+            *ngFor="let d of c.denominations"
+            type="button"
+            class="pp-denom"
+            [class.pp-denom--active]="selectedDenom() === d"
+            [disabled]="!d.inStock"
+            (click)="selectDenom(d)"
+          >
+            {{ d.amount | currency:d.currency }}
+            <small>{{ d.pointsRequired | number }} pts</small>
+          </button>
+        </div>
+      </div>
+
+      <a mat-flat-button color="accent" class="pp-redeem-btn" routerLink="/wallet">
+        <mat-icon>redeem</mat-icon>
+        Redeem for {{ selectedDenom()?.pointsRequired | number }} points
+      </a>
+
+      <div class="pp-countries" *ngIf="c.countriesAvailable?.length">
+        <mat-icon>public</mat-icon>
+        <span>Available in {{ c.countriesAvailable.length }} countries</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="pp-section">
+    <h2>About {{ c.brand }}</h2>
+    <p>{{ c.longDescription }}</p>
+  </section>
+
+  <section class="pp-section" *ngIf="c.howToRedeem?.length">
+    <h2>How to Redeem</h2>
+    <ol class="pp-steps">
+      <li *ngFor="let step of c.howToRedeem">{{ step }}</li>
+    </ol>
+  </section>
+
+  <section class="pp-section" *ngIf="c.termsAndConditions?.length">
+    <h2>Terms &amp; Conditions</h2>
+    <ul class="pp-terms">
+      <li *ngFor="let term of c.termsAndConditions">{{ term }}</li>
+    </ul>
+  </section>
+
+  <section class="pp-section" *ngIf="c.faqs?.length">
+    <h2>Frequently Asked Questions</h2>
+    <mat-accordion multi>
+      <mat-expansion-panel *ngFor="let faq of c.faqs">
+        <mat-expansion-panel-header>
+          <mat-panel-title>{{ faq.question }}</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>{{ faq.answer }}</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </section>
+</ng-container>

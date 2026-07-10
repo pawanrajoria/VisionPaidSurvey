@@ -115,6 +115,7 @@ export class RewardComponent {
                 icon: 'card_giftcard',
                 items: data
                     .filter(p => p.typeId == 2)
+                    .sort((a, b) => a.minPoints - b.minPoints)
                     .map(card => this.mapCardToItem(card)),
                 type: PayoutMethodEnum.GiftCard
             }

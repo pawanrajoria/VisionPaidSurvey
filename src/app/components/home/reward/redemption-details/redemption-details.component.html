@@ -60,13 +60,21 @@
             <input matInput [(ngModel)]="reward.upiId" placeholder="username@bank">
             <mat-icon matPrefix>account_balance_wallet</mat-icon>
         </mat-form-field>
-        } @else {
+        }
+
         <mat-form-field appearance="outline" class="full-width">
             <mat-label>{{ reward.typeId == 1 ? 'PayPal Email' : 'Recipient Email' }}</mat-label>
-            <input matInput type="email" [(ngModel)]="reward.emailId" placeholder="example@mail.com">
+            <input matInput type="email" disabled [(ngModel)]="reward.emailId" placeholder="example@mail.com">
             <mat-icon matPrefix>mail_outline</mat-icon>
         </mat-form-field>
-        }
+
+        <div class="email-note" *ngIf="reward.typeId != 3">
+            <mat-icon>info</mat-icon>
+            <span>
+                This email address cannot be changed. If you need to update your email address,
+                please contact the Support Team or raise a ticket through the Help & Support section.
+            </span>
+        </div>
     </div>
 
     <button mat-flat-button color="primary" class="full-width confirm-btn" (click)="confirmRedemption()">

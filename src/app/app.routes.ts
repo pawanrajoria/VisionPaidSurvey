@@ -24,7 +24,7 @@ export const routes: Routes = [
 
   // 🌍 LANGUAGE WRAPPER
   {
-    path: ':lang',
+    path: ':locale',
     canActivate: [langRedirectGuard],
     children: [
 
@@ -102,7 +102,10 @@ export const routes: Routes = [
           { path: 'surveys/:country', component: SeoLandingComponent },
           { path: 'surveys/:country/:city', component: SeoLandingComponent },
           { path: 'paid-surveys/:country/:payout', component: SeoLandingComponent },
-          { path: 'earn-money/:country/:segment', component: SeoLandingComponent }
+          { path: 'earn-money/:country/:segment', component: SeoLandingComponent },
+          { path: 'blog', loadChildren: () => import('./components/blog/blog.route').then(m => m.blogRoutes) },
+          { path: 'guides', loadChildren: () => import('./components/blog/guides.route').then(m => m.guidesRoutes) },
+           { path: 'gift-cards', loadChildren: () => import('./components/blog/gift-cards/gift-cards.route').then(m => m.giftcardsRoutes) },
         ],
       },
 
@@ -114,6 +117,7 @@ export const routes: Routes = [
           { path: 'completesurvey', loadChildren: () => import('./components/userflow/complete-survey/complete-survey.route').then(m => m.completeSurveyRoutes) },
           { path: 'getSurveyInventory', loadChildren: () => import('./components/userflow/survey-status/survey-status.route').then(m => m.surveyStatusRoutes) },
           { path: 'takeSurvey', loadChildren: () => import('./components/userflow/take-survey/take-survey.route').then(m => m.takeSurveyRoutes) },
+          // { path: 'surveybycampaign', loadChildren: () => import('./components/userflow/take-survey/take-survey.route').then(m => m.takeSurveyRoutes) },
           { path: 'endsurvey', loadChildren: () => import('./components/userflow/end-survey/end-survey.route').then(m => m.endSurveyRoutes) },
         ],
       },
@@ -146,5 +150,5 @@ export const routes: Routes = [
 
   // 🔁 FALLBACK
   // { path: '**', canActivate: [langRedirectGuard], children: [] }
-  { path: '', pathMatch: 'full', redirectTo: 'en' },
+  { path: '', pathMatch: 'full', redirectTo: 'en-us' },
 ];

@@ -71,7 +71,7 @@ export class ProfileDataComponent extends BaseComponent implements OnInit {
         if (this.currentView === 'detail') { this.currentView = 'questions'; }
         else if (this.currentView === 'questions') { this.currentView = 'categories'; this.activeCategory = null; }
         else {
-            this.router.navigate(['/', this.currentLang, 'app', 'account']);
+            this.router.navigate(['/', this.currentLocale, 'app', 'account']);
         }
     }
 

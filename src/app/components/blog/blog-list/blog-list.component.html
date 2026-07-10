@@ -1,0 +1,83 @@
+<section class="pp-hero">
+  <div class="pp-hero__inner">
+    <span class="pp-eyebrow">ProfitPiller Blog</span>
+    <h1>{{ heading() }}</h1>
+    <p class="pp-hero__lede">
+      Explore practical guides, tips, and strategies to maximize your online earnings.
+      Learn how to get the most out of surveys, games, offers, and digital rewards.
+    </p>
+
+    <mat-form-field appearance="outline" class="pp-search">
+      <mat-icon matPrefix>search</mat-icon>
+      <input
+        matInput
+        placeholder="Search articles, e.g. 'receipt scanning apps'"
+        [value]="searchTerm()"
+        (input)="onSearch($any($event.target).value)"
+      />
+    </mat-form-field>
+  </div>
+</section>
+
+<nav class="pp-category-rail" aria-label="Blog categories">
+  <a
+    class="pp-chip"
+    [class.pp-chip--active]="activeCategory() === null"
+    routerLink="/blog"
+  >All</a>
+  <a
+    *ngFor="let cat of categories"
+    class="pp-chip"
+    [class.pp-chip--active]="activeCategory() === cat.value"
+    [routerLink]="['/blog/category', cat.value]"
+  >
+    <mat-icon>{{ cat.icon }}</mat-icon>
+    {{ cat.label }}
+  </a>
+</nav>
+
+<section class="pp-grid-wrap">
+  <div class="pp-loading" *ngIf="loading()">
+    <mat-spinner diameter="36"></mat-spinner>
+  </div>
+
+  <div class="pp-grid" *ngIf="!loading()">
+    <a
+      class="pp-post-card"
+      *ngFor="let post of posts(); trackBy: trackBySlug"
+      [routerLink]="['/blog', post.slug]"
+    >
+      <div class="pp-post-card__media">
+        <img [src]="post.coverImage" [alt]="post.title" loading="lazy" width="400" height="225" />
+        <span class="pp-value-tag" *ngIf="post.estimatedEarnings">{{ post.estimatedEarnings }}</span>
+      </div>
+      <div class="pp-post-card__body">
+        <mat-chip-set>
+          <mat-chip disabled>{{ post.category }}</mat-chip>
+        </mat-chip-set>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.excerpt }}</p>
+        <div class="pp-post-card__meta">
+          <img [src]="post.author.avatar" [alt]="post.author.name" class="pp-avatar" />
+          <span>{{ post.author.name }}</span>
+          <span class="pp-dot">&middot;</span>
+          <span>{{ post.readMinutes }} min read</span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <p class="pp-empty" *ngIf="!loading() && posts().length === 0">
+    No articles matched your search yet — try a different keyword.
+  </p>
+
+  <mat-paginator
+    *ngIf="!loading() && totalItems() > pageSize()"
+    [length]="totalItems()"
+    [pageSize]="pageSize()"
+    [pageIndex]="pageIndex()"
+    [pageSizeOptions]="[12, 24, 48]"
+    (page)="onPage($event)"
+    aria-label="Select page of articles"
+  ></mat-paginator>
+</section>
