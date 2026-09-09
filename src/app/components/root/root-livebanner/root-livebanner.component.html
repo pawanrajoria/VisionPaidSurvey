@@ -5,7 +5,7 @@
             <mat-chip-set>
                 <ng-container *ngFor="let payout of payouts; let i = index">
                     <mat-chip>
-                        <img [src]="payout.icon" alt="icon" class="icon" />
+                        <img loading="lazy" [src]="payout.icon" alt="icon" class="icon" />
                         <span>{{ payout.label }} <b>{{ payout.amount }}</b></span></mat-chip>
                 </ng-container>
             </mat-chip-set>

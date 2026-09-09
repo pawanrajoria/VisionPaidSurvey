@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { SeoLandingService } from './seo-landing.service';
-import { SharedModule } from '../../../shared.module';
+import { PublicSharedModule } from '../../../public-shared.module';
 
 @Component({
     selector: 'app-seo-landing',
     standalone: true,
-    imports: [SharedModule],
+    imports: [PublicSharedModule],
     templateUrl: './seo-landing.component.html'
 })
 export class SeoLandingComponent implements OnInit {

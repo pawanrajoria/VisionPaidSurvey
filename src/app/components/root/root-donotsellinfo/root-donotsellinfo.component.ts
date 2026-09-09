@@ -1,12 +1,12 @@
 import { Component, OnInit } from "@angular/core";
-import { SharedModule } from "../../../shared.module";
+import { PublicSharedModule } from "../../../public-shared.module";
 import { MessageService } from "../../layout/message/message.service";
 import { HelpService } from "../../home/help/help.service";
 import { MessageVM } from "../../layout/message/message.vm";
 
 @Component({
     selector: 'app-root-donotsellinfo',
-    imports: [SharedModule],
+    imports: [PublicSharedModule],
     templateUrl: './root-donotsellinfo.component.html',
     styleUrls: ['./root-donotsellinfo.component.scss']
 })

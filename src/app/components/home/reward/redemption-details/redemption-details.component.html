@@ -11,7 +11,7 @@
     <!-- Reward Card -->
     <mat-card appearance="outlined" class="reward-card">
         <mat-card-content class="reward-content">
-            <img [src]="reward.imageUrl" [alt]="reward.productName" class="reward-img">
+            <img loading="lazy" [src]="reward.imageUrl" [alt]="reward.productName" class="reward-img">
             <div class="reward-info">
                 <h3>{{ reward.productName }}</h3>
                 <p>{{ reward.value | currency: 'INR' }} • {{ reward.points }} pts</p>

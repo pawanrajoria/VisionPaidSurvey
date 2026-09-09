@@ -39,12 +39,12 @@
                         }@else{
                         <mat-card class="offer-card" *ngFor="let offer of gamingOffers"
                             (click)="openOfferDialog(offer)">
-                            <img mat-card-image [src]="offer.imageUrl" alt="{{offer.offerName}}">
+                            <img loading="lazy" mat-card-image [src]="offer.imageUrl" alt="{{offer.offerName}}">
                             <mat-card-content class="card-content">
                                 <h3>{{offer.offerName}}</h3>
                                 <p>{{offer.providerName}}</p>
                                 <span class="price">
-                                    <img class="logocoin" src="/assets/images/logo.png" alt="" />
+                                    <img loading="lazy" class="logocoin" src="/assets/images/logo.png" alt="" />
                                     {{offer.points}}
                                 </span>
                             </mat-card-content>
@@ -75,12 +75,12 @@
                         <app-empty-skelten></app-empty-skelten>
                         }@else{
                         <mat-card class="offer-card" *ngFor="let offer of otherOffers" (click)="openOfferDialog(offer)">
-                            <img mat-card-image [src]="offer.imageUrl" alt="{{offer.offerName}}">
+                            <img loading="lazy" mat-card-image [src]="offer.imageUrl" alt="{{offer.offerName}}">
                             <mat-card-content class="card-content">
                                 <h3>{{offer.offerName}}</h3>
                                 <p>{{offer.providerName}}</p>
                                 <span class="price">
-                                    <img class="logocoin" src="/assets/images/logo.png" alt="" />
+                                    <img loading="lazy" class="logocoin" src="/assets/images/logo.png" alt="" />
                                     {{offer.points}}
                                 </span>
                             </mat-card-content>
@@ -117,7 +117,7 @@
 
                                 <div class="stats-row">
                                     <div class="points">
-                                        <img src="/assets/images/logo.png" alt="points"> {{item.points}}
+                                        <img loading="lazy" src="/assets/images/logo.png" alt="points"> {{item.points}}
                                     </div>
                                     <div class="loi-info">
                                         <mat-icon>schedule</mat-icon>
@@ -156,7 +156,7 @@
                             {{ partner.tag || 'Popular' }}
                         </div>
 
-                        <img [src]="partner.logo" class="partner-logo">
+                        <img loading="lazy" [src]="partner.logo" class="partner-logo">
 
                         <div class="partner-info">
                             <span class="label">{{ partner.name }}</span>
@@ -164,7 +164,7 @@
                                 <span class="rating">
                                     <mat-icon>star</mat-icon> {{ partner.rating }}
                                 </span>
-                                <span class="earn-limit">Up to <img class="logocoin" src="/assets/images/logo.png"
+                                <span class="earn-limit">Up to <img loading="lazy" class="logocoin" src="/assets/images/logo.png"
                                         alt="" /> {{ partner.max }}
                                 </span>
                             </div>
@@ -195,7 +195,7 @@
 
                     <div class="surveywallcard-top">
                         <div class="surveywallcard-logo">
-                            <img [src]="partner.logo" [alt]="partner.name">
+                            <img loading="lazy" [src]="partner.logo" [alt]="partner.name">
                         </div>
                         <div class="surveywallcard-name">
                             <strong>{{partner.name}}</strong>

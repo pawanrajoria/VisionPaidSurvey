@@ -35,7 +35,12 @@ import { TablerIconsModule } from 'angular-tabler-icons';
 import * as TablerIcons from 'angular-tabler-icons/icons';
 
 import { NgScrollbarModule } from 'ngx-scrollbar';
-import { SharedModule } from './shared.module';
+// PERF: SharedModule (full Material+CDK) removed from root providers below.
+// It contributed no DI providers here — every component that needs it already
+// imports it directly in its own `imports: []` array. Public/root pages now use
+// PublicSharedModule instead (see public-shared.module.ts) so Material/CDK for
+// features like Datepicker, Table, Stepper, Sidenav, Tabs, Dialog, etc. only
+// ships to the authenticated /app and /admin areas that actually use them.
 
 // ✅ NEW MODULAR FIREBASE IMPORTS
 import { initializeApp as provideInit, provideFirebaseApp } from '@angular/fire/app';
@@ -187,11 +192,16 @@ export const appConfig: ApplicationConfig = {
     TranslateService,
 
     importProvidersFrom(
-      SharedModule,
       TablerIconsModule.pick(icons),
       NgScrollbarModule,
 
       // ✅ COMPAT PROVIDERS (Keeps your existing login working)
+      // TODO(perf): AngularFireAuth (compat) is still used directly in ~10 files
+      // (auth.service, login, google/apple/facebook directives, bearer-token
+      // interceptor, root-home, app.ts) alongside the modular provideAuth() below —
+      // meaning both the compat and modular Firebase Auth SDKs ship today. Consolidating
+      // onto the modular API would shrink the bundle further, but touches live auth flows
+      // and needs its own tested migration — out of scope for this pass, flagging for follow-up.
       AngularFireModule.initializeApp(firebaseConfig),
       AngularFireAuthModule,
 

@@ -58,7 +58,7 @@
         <h3>{{ post.title }}</h3>
         <p>{{ post.excerpt }}</p>
         <div class="pp-post-card__meta">
-          <img [src]="post.author.avatar" [alt]="post.author.name" class="pp-avatar" />
+          <img loading="lazy" [src]="post.author.avatar" [alt]="post.author.name" class="pp-avatar" />
           <span>{{ post.author.name }}</span>
           <span class="pp-dot">&middot;</span>
           <span>{{ post.readMinutes }} min read</span>

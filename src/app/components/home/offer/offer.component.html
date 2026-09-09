@@ -26,7 +26,7 @@
             <div class="offer-content">
                 <div>
                     <div class="offer-image">
-                        <img [src]="offer.imageUrl" alt="Offer" />
+                        <img loading="lazy" [src]="offer.imageUrl" alt="Offer" />
 
                         <div class="platform-icon">
                             @if(offer?.device?.includes('All') || offer?.device?.includes('Desktop')) {

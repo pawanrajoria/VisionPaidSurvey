@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { SharedModule } from "../../../shared.module";
+import { PublicSharedModule } from "../../../public-shared.module";
 import { BaseComponent } from "../../../base.component";
 
 @Component({
     selector: 'app-root-help',
-    imports: [SharedModule],
+    imports: [PublicSharedModule],
     templateUrl: './root-help.component.html',
     styleUrls: ['./root-help.component.scss']
 })

@@ -1,6 +1,6 @@
 <mat-dialog-content class="translate-sec">
     <div class="header">
-        <img src="/assets/images/icon/world-map.png">
+        <img loading="lazy" src="/assets/images/icon/world-map.png">
         <h2>Select Country and Language</h2>
     </div>
     <div class="translate-box m-t-24">
@@ -10,7 +10,7 @@
                 <mat-expansion-panel-header class="accordion-header">
                     <div class="accordion-button">
                         <div class="flag-icon">
-                            <img [src]="country.flagUrl" />
+                            <img loading="lazy" [src]="country.flagUrl" />
                         </div>
                         <span>{{ country.countryName }}</span>
                     </div>
@@ -40,7 +40,7 @@
     <mat-card appearance="outlined" class="custom-card box-shadow text-center">
         <mat-card-content class="translate-sec">
             <div class="header">
-                <img src="/assets/images/icon/world-map.png">
+                <img loading="lazy" src="/assets/images/icon/world-map.png">
                 <h2>Select Country and Language</h2>
             </div>
             <div class="translate-box m-t-24">
@@ -50,7 +50,7 @@
                         <mat-expansion-panel-header class="accordion-header">
                             <div class="accordion-button">
                                 <div class="flag-icon">
-                                    <img [src]="country.flagUrl" />
+                                    <img loading="lazy" [src]="country.flagUrl" />
                                 </div>
                                 <span>{{ country.countryName }}</span>
                             </div>

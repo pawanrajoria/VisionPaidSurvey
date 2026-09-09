@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { animate, query, stagger, style, transition, trigger } from "@angular/animations";
-import { SharedModule } from "../../../shared.module";
+import { PublicSharedModule } from "../../../public-shared.module";
 import { BaseComponent } from "../../../base.component";
 
 @Component({
     selector: 'app-root-faq',
-    imports: [SharedModule],
+    imports: [PublicSharedModule],
     templateUrl: './root-faq.component.html',
     styleUrls: ['./root-faq.component.scss'],
     animations: [

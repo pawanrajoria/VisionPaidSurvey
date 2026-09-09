@@ -16,7 +16,7 @@
 
     <div class="offer-header">
         <div class="offer-image-container">
-            <img [src]="offer.imageUrl" alt="{{ offer.offerName }}" />
+            <img loading="lazy" [src]="offer.imageUrl" alt="{{ offer.offerName }}" />
             <div class="platform-icon">
                 @if(offer?.device?.includes('All') || offer?.device?.includes('Desktop')) {
                 <mat-icon>apple</mat-icon>

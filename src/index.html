@@ -33,13 +33,25 @@
   <link rel="preload" as="image" href="/assets/images/backgrounds/rh-vps-bg.webp" fetchpriority="high">
 
   <!-- ✅ Fonts -->
+  <!-- PERF: fonts are now loaded non-render-blocking via the preload+swap
+       pattern instead of a plain <link rel="stylesheet">. The noscript
+       fallback keeps fonts working with JS disabled. Roboto was removed
+       entirely — it was imported but never referenced in any stylesheet
+       ($font-family in _variables.scss is "DM Sans"); Material Icons (an
+       icon *font*) is still needed for the ~60 ligature-style <mat-icon>
+       usages in the authenticated/admin areas, just no longer blocking. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap"
-    rel="stylesheet">
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </noscript>
 
 
   <script>(function (w, d, s, l, i) {
@@ -51,7 +63,15 @@
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-5CM7Q4S3');</script>
 
-  <script src="/assets/js/fingerprint.js"></script>
+  <!-- PERF: was a plain blocking <script src> — this is a 35KB unminified
+       library that also does synchronous canvas/WebGL/audio fingerprinting
+       work on load. `defer` stops it from blocking parsing/first paint.
+       TODO(perf): you also have @fingerprintjs/fingerprintjs v5 as an npm
+       dependency — worth consolidating onto one fingerprinting library
+       (this file is the deprecated Fingerprint2 v2.1.5) rather than shipping
+       both; left as-is here since removing it touches whatever reads its
+       output (frauddetection.service.ts) and needs its own testing. -->
+  <script src="/assets/js/fingerprint.js" defer></script>
   <link rel="manifest" href="assets/manifest.webmanifest">
 </head>
 

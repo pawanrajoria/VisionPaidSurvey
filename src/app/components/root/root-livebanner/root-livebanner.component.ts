@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { SharedModule } from "../../../shared.module";
+import { PublicSharedModule } from "../../../public-shared.module";
 
 @Component({
     selector: 'app-root-livebanner',
-    imports: [SharedModule],
+    imports: [PublicSharedModule],
     templateUrl: './root-livebanner.component.html',
     styleUrls: ['./root-livebanner.component.scss']
 })
