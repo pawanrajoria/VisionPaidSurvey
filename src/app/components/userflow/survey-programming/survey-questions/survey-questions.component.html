@@ -1,0 +1,333 @@
+<div class="survey-container">
+
+  <mat-card class="survey-card">
+
+    <div class="header">
+      <span>Consumer Study</span>
+      <span>Question {{ currentQuestion }} of {{ totalQuestions }}</span>
+    </div>
+
+    <mat-progress-bar
+      mode="determinate"
+      [value]="progress">
+    </mat-progress-bar>
+
+    <form [formGroup]="form">
+
+      <!-- QUESTION 1 -->
+      <section *ngIf="currentQuestion === 1">
+
+        <h2>
+          How often do you participate in online surveys?
+        </h2>
+
+        <mat-radio-group formControlName="surveyFrequency">
+
+          <mat-radio-button value="daily">
+            Daily
+          </mat-radio-button>
+
+          <mat-radio-button value="few_week">
+            Several times a week
+          </mat-radio-button>
+
+          <mat-radio-button value="weekly">
+            About once a week
+          </mat-radio-button>
+
+          <mat-radio-button value="monthly">
+            A few times a month
+          </mat-radio-button>
+
+          <mat-radio-button value="rarely">
+            Rarely
+          </mat-radio-button>
+
+        </mat-radio-group>
+
+      </section>
+
+
+      <!-- QUESTION 2 -->
+      <section *ngIf="currentQuestion === 2">
+
+        <h2>
+          What type of reward do you prefer when participating in surveys?
+        </h2>
+
+        <mat-radio-group formControlName="rewardPreference">
+
+          <mat-radio-button value="cash">
+            Cash
+          </mat-radio-button>
+
+          <mat-radio-button value="gift_card">
+            Gift cards
+          </mat-radio-button>
+
+          <mat-radio-button value="points">
+            Reward points
+          </mat-radio-button>
+
+          <mat-radio-button value="discounts">
+            Discounts or coupons
+          </mat-radio-button>
+
+          <mat-radio-button value="other">
+            Other
+          </mat-radio-button>
+
+        </mat-radio-group>
+
+      </section>
+
+
+      <!-- QUESTION 3 -->
+      <section *ngIf="currentQuestion === 3">
+
+        <h2>
+          Which devices do you regularly use to participate in online surveys?
+        </h2>
+
+        <div class="checkbox-list">
+
+          <mat-checkbox formControlName="smartphone">
+            Smartphone
+          </mat-checkbox>
+
+          <mat-checkbox formControlName="desktop">
+            Desktop / Laptop
+          </mat-checkbox>
+
+          <mat-checkbox formControlName="tablet">
+            Tablet
+          </mat-checkbox>
+
+        </div>
+
+      </section>
+
+
+      <!-- QUESTION 4 -->
+      <section *ngIf="currentQuestion === 4">
+
+        <h2>
+          Before today, had you heard of the ProfitPiller survey panel?
+        </h2>
+
+        <mat-radio-group formControlName="heardProfitPiller">
+
+          <mat-radio-button value="yes">
+            Yes
+          </mat-radio-button>
+
+          <mat-radio-button value="no">
+            No
+          </mat-radio-button>
+
+          <mat-radio-button value="not_sure">
+            Not sure
+          </mat-radio-button>
+
+        </mat-radio-group>
+
+      </section>
+
+
+      <!-- QUESTION 5 -->
+      <section
+        *ngIf="currentQuestion === 5 && form.get('heardProfitPiller')?.value === 'yes'">
+
+        <h2>
+          How would you rate your overall experience with ProfitPiller?
+        </h2>
+
+        <mat-radio-group formControlName="profitPillerRating">
+
+          <mat-radio-button value="5">
+            ⭐⭐⭐⭐⭐ Excellent
+          </mat-radio-button>
+
+          <mat-radio-button value="4">
+            ⭐⭐⭐⭐ Very Good
+          </mat-radio-button>
+
+          <mat-radio-button value="3">
+            ⭐⭐⭐ Good
+          </mat-radio-button>
+
+          <mat-radio-button value="2">
+            ⭐⭐ Fair
+          </mat-radio-button>
+
+          <mat-radio-button value="1">
+            ⭐ Poor
+          </mat-radio-button>
+
+        </mat-radio-group>
+
+      </section>
+
+
+      <!-- QUESTION 5 ALTERNATIVE FOR NON-USERS -->
+      <section
+        *ngIf="currentQuestion === 5 && form.get('heardProfitPiller')?.value !== 'yes'">
+
+        <h2>
+          Based on what you know or have seen, how appealing does ProfitPiller
+          seem as a survey and rewards platform?
+        </h2>
+
+        <mat-radio-group formControlName="profitPillerAppeal">
+
+          <mat-radio-button value="5">
+            Very appealing
+          </mat-radio-button>
+
+          <mat-radio-button value="4">
+            Somewhat appealing
+          </mat-radio-button>
+
+          <mat-radio-button value="3">
+            Neutral
+          </mat-radio-button>
+
+          <mat-radio-button value="2">
+            Not very appealing
+          </mat-radio-button>
+
+          <mat-radio-button value="1">
+            Not appealing at all
+          </mat-radio-button>
+
+        </mat-radio-group>
+
+      </section>
+
+
+      <!-- QUESTION 6 -->
+      <section *ngIf="currentQuestion === 6">
+
+        <h2>
+          Which survey or rewards platform do you consider the best overall?
+        </h2>
+
+        <mat-radio-group formControlName="preferredPlatform">
+
+          <mat-radio-button value="profitpiller">
+            ProfitPiller
+          </mat-radio-button>
+
+          <mat-radio-button value="swagbucks">
+            Swagbucks
+          </mat-radio-button>
+
+          <mat-radio-button value="toluna">
+            Toluna
+          </mat-radio-button>
+
+          <mat-radio-button value="prolific">
+            Prolific
+          </mat-radio-button>
+
+          <mat-radio-button value="yougov">
+            YouGov
+          </mat-radio-button>
+
+          <mat-radio-button value="prime_opinion">
+            Prime Opinion
+          </mat-radio-button>
+
+          <mat-radio-button value="other">
+            Other
+          </mat-radio-button>
+
+          <mat-radio-button value="none">
+            None of these
+          </mat-radio-button>
+
+        </mat-radio-group>
+
+      </section>
+
+
+      <!-- OPEN END -->
+      <section *ngIf="currentQuestion === 7">
+
+        <h2>
+          What would you like to see or improve on ProfitPiller?
+        </h2>
+
+        <p class="question-description">
+          Please share any feedback, suggestions, or features that could make
+          ProfitPiller a better survey and rewards platform.
+        </p>
+
+        <mat-form-field
+          appearance="outline"
+          class="full-width">
+
+          <mat-label>
+            Your feedback
+          </mat-label>
+
+          <textarea
+            matInput
+            rows="6"
+            maxlength="1000"
+            formControlName="profitPillerFeedback"
+            placeholder="Tell us what you think...">
+          </textarea>
+
+          <mat-hint align="end">
+            {{ form.get('profitPillerFeedback')?.value?.length || 0 }}/1000
+          </mat-hint>
+
+        </mat-form-field>
+
+      </section>
+
+
+      <!-- NAVIGATION -->
+      <div class="navigation-buttons">
+
+        <button
+          mat-stroked-button
+          type="button"
+          *ngIf="currentQuestion > 1"
+          (click)="previous()">
+
+          <mat-icon>arrow_back</mat-icon>
+
+          Previous
+
+        </button>
+
+        <span class="button-spacer"></span>
+
+        <button
+          mat-flat-button
+          color="primary"
+          type="button"
+          [disabled]="!isCurrentQuestionValid()"
+          (click)="next()">
+
+          <span *ngIf="currentQuestion < totalQuestions">
+            Next
+            <mat-icon>arrow_forward</mat-icon>
+          </span>
+
+          <span *ngIf="currentQuestion === totalQuestions">
+            Submit
+            <mat-icon>check</mat-icon>
+          </span>
+
+        </button>
+
+      </div>
+
+    </form>
+
+  </mat-card>
+
+</div>

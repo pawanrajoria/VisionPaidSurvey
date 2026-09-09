@@ -34,8 +34,8 @@ export class BlogService {
   private readonly http = inject(HttpClient);
 
   /** Flip to false once a real API is available. */
-  readonly useStaticShards = true;
-  private readonly apiBase = '/api/blog';
+  readonly useStaticShards = false;
+  private readonly apiBase = '/api/blog/posts';
   private readonly shardBase = '/assets/data/blog';
 
   private readonly categoryCache = new Map<string, Observable<Paginated<BlogPostSummary>>>();

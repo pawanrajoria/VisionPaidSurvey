@@ -52,6 +52,33 @@ import { provideServiceWorker } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { RECAPTCHA_V3_SITE_KEY } from 'ng-recaptcha';
 
+import { 
+  IconUser, 
+  IconLock, 
+  IconMail, 
+  IconCheck, 
+  IconChevronRight ,
+  IconTrash,
+  IconCircleFilled,
+  IconShoppingCart,
+  IconBrandAndroid,
+  IconBrandApple,
+  IconDeviceImac,
+  IconChevronLeft,
+  IconLockPassword,
+  IconMailCheck,
+  IconMenu2,
+  IconCash,
+  IconCashBanknote,
+  IconActivity,
+  IconCircleDottedLetterC,
+  IconGift,
+  IconCheckbox,
+  IconCircleDashedCheck,
+  IconCertificate2,
+  IconTrophy
+} from 'angular-tabler-icons/icons';
+
 const firebaseConfig = {
   apiKey: "AIzaSyBs6AtPBpCdFwQWRdJC0gWvuz6nFxHL-I4",
   authDomain: "visionpaidsurvey.firebaseapp.com",
@@ -60,6 +87,33 @@ const firebaseConfig = {
   messagingSenderId: "988754056043",
   appId: "1:988754056043:web:91671c3ff865fcdc48b22e",
   measurementId: "G-LE58YJQQHT"
+};
+
+const icons = {
+  IconUser, 
+  IconLock, 
+  IconMail, 
+  IconCheck, 
+  IconChevronRight ,
+  IconTrash,
+  IconCircleFilled,
+  IconShoppingCart,
+  IconBrandAndroid,
+  IconBrandApple,
+  IconDeviceImac,
+  IconChevronLeft,
+  IconLockPassword,
+  IconMailCheck,
+  IconMenu2,
+  IconCash,
+  IconCashBanknote,
+  IconActivity,
+  IconCircleDottedLetterC,
+  IconGift,
+  IconCheckbox,
+  IconCircleDashedCheck,
+  IconCertificate2,
+  IconTrophy
 };
 
 function initConfigService() {
@@ -134,7 +188,7 @@ export const appConfig: ApplicationConfig = {
 
     importProvidersFrom(
       SharedModule,
-      TablerIconsModule.pick(TablerIcons),
+      TablerIconsModule.pick(icons),
       NgScrollbarModule,
 
       // ✅ COMPAT PROVIDERS (Keeps your existing login working)

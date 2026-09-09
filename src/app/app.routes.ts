@@ -1,17 +1,6 @@
 import { Routes } from '@angular/router';
-import { LayoutComponent } from './components/layout/layout.component';
 import { authGuard } from './components/auth/auth.guard';
-import { AuthComponent } from './components/auth/auth.component';
-import { RootComponent } from './components/root/root.component';
-import { OfferLinkComponent } from './components/home/offer/offer-popup/offer-link/offer-link.component';
-import { AdminComponent } from './components/admin/admin.component';
-import { UserflowComponent } from './components/userflow/userflow.component';
-import { OfferwallComponent } from './components/offerwall/offerwall.component';
-import { AuthCallbackComponent } from './components/auth/AuthCallbackComponent';
-import { RedirectComponent } from './components/root/apk-toggle/apk.redirect';
 import { langRedirectGuard } from './lang.redirect.guard';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { SeoLandingComponent } from './components/root/seo-landing/seo-landing.component';
 
 export const routes: Routes = [
 
@@ -31,7 +20,7 @@ export const routes: Routes = [
       // 🔐 ADMIN
       {
         path: 'admin',
-        component: AdminComponent,
+        loadComponent: () => import('./components/admin/admin.component').then(m => m.AdminComponent),
         children: [
           { path: '', redirectTo: 'user-admin-dashboard', pathMatch: 'full' },
           {
@@ -41,11 +30,10 @@ export const routes: Routes = [
           },
         ],
       },
-
       // 🔐 AUTH
       {
         path: 'auth',
-        component: AuthComponent,
+        loadComponent: () => import('./components/auth/auth.component').then(m => m.AuthComponent),
         children: [
           { path: '', redirectTo: 'login', pathMatch: 'full' },
           { path: 'login', loadChildren: () => import('./components/auth/login/login.route').then(m => m.loginRoutes) },
@@ -53,16 +41,16 @@ export const routes: Routes = [
           { path: 'verify-link/:idve/:idvp', loadChildren: () => import('./components/auth/verifylink/verifylink.route').then(m => m.verifyLinkRoutes) },
           { path: 'reset-link/:idve/:idvp', loadChildren: () => import('./components/auth/reset-password/reset-password.route').then(m => m.resetPasswordRoutes) },
           { path: 'forgot-password', loadChildren: () => import('./components/auth/forgot-password/forgot-password.route').then(m => m.forgotPasswordRoutes) },
-          { path: 'link', component: OfferLinkComponent },
-          { path: 'callback', component: AuthCallbackComponent },
-          { path: 'paypalcallback', component: AuthCallbackComponent }
+          { path: 'link', loadComponent: () => import('./components/home/offer/offer-popup/offer-link/offer-link.component').then(m => m.OfferLinkComponent) },
+          { path: 'callback', loadComponent: () => import('./components/auth/AuthCallbackComponent').then(m => m.AuthCallbackComponent) },
+          { path: 'paypalcallback', loadComponent: () => import('./components/auth/AuthCallbackComponent').then(m => m.AuthCallbackComponent) }
         ],
       },
 
       // 🔐 APP (Protected)
       {
         path: 'app',
-        component: LayoutComponent,
+        loadComponent: () => import('./components/layout/layout.component').then(m => m.LayoutComponent),
         canActivate: [authGuard],
         children: [
           { path: '', redirectTo: 'earn', pathMatch: 'full' },
@@ -83,7 +71,7 @@ export const routes: Routes = [
       // 🌍 PUBLIC (SEO pages)
       {
         path: '',
-        component: RootComponent,
+        loadComponent: () => import('./components/root/root.component').then(m => m.RootComponent),
         children: [
           { path: '', pathMatch: 'full', loadChildren: () => import('./components/root/root-home/root-home.route').then(m => m.rootHomeRoutes) },
           { path: 'aboutus', loadChildren: () => import('./components/root/root-aboutus/root-aboutus.route').then(m => m.rootAboutUsRoutes) },
@@ -98,33 +86,39 @@ export const routes: Routes = [
           { path: 'terms-conditions', loadChildren: () => import('./components/root/root-termcondition/root-termcondition.route').then(m => m.rootTermConditionRoutes) },
           { path: 'visa', loadChildren: () => import('./components/root/root-visa/root-visa.route').then(m => m.rootVisaRoutes) },
           { path: 'cookie-policy', loadChildren: () => import('./components/root/root-cookiepolicy/root-cookiepolicy.route').then(m => m.rootCookiePolicyRoutes) },
-          { path: 'redirecttoapk', component: RedirectComponent },
-          { path: 'surveys/:country', component: SeoLandingComponent },
-          { path: 'surveys/:country/:city', component: SeoLandingComponent },
-          { path: 'paid-surveys/:country/:payout', component: SeoLandingComponent },
-          { path: 'earn-money/:country/:segment', component: SeoLandingComponent },
+          { path: 'redirecttoapk', loadComponent: () => import('./components/root/apk-toggle/apk.redirect').then(m => m.RedirectComponent) },
+          { path: 'surveys/:country', loadComponent: () => import('./components/root/seo-landing/seo-landing.component').then(m => m.SeoLandingComponent) },
+          { path: 'surveys/:country/:city', loadComponent: () => import('./components/root/seo-landing/seo-landing.component').then(m => m.SeoLandingComponent) },
+          { path: 'paid-surveys/:country/:payout', loadComponent: () => import('./components/root/seo-landing/seo-landing.component').then(m => m.SeoLandingComponent) },
+          { path: 'earn-money/:country/:segment', loadComponent: () => import('./components/root/seo-landing/seo-landing.component').then(m => m.SeoLandingComponent) },
           { path: 'blog', loadChildren: () => import('./components/blog/blog.route').then(m => m.blogRoutes) },
           { path: 'guides', loadChildren: () => import('./components/blog/guides.route').then(m => m.guidesRoutes) },
-           { path: 'gift-cards', loadChildren: () => import('./components/blog/gift-cards/gift-cards.route').then(m => m.giftcardsRoutes) },
+          { path: 'gift-cards', loadChildren: () => import('./components/blog/gift-cards/gift-cards.route').then(m => m.giftcardsRoutes) },
         ],
       },
 
       // 🚫 CLIENT ONLY FLOWS
       {
         path: 'survey',
-        component: UserflowComponent,
+        loadComponent: () => import('./components/userflow/userflow.component').then(m => m.UserflowComponent),
         children: [
           { path: 'completesurvey', loadChildren: () => import('./components/userflow/complete-survey/complete-survey.route').then(m => m.completeSurveyRoutes) },
           { path: 'getSurveyInventory', loadChildren: () => import('./components/userflow/survey-status/survey-status.route').then(m => m.surveyStatusRoutes) },
           { path: 'takeSurvey', loadChildren: () => import('./components/userflow/take-survey/take-survey.route').then(m => m.takeSurveyRoutes) },
           // { path: 'surveybycampaign', loadChildren: () => import('./components/userflow/take-survey/take-survey.route').then(m => m.takeSurveyRoutes) },
           { path: 'endsurvey', loadChildren: () => import('./components/userflow/end-survey/end-survey.route').then(m => m.endSurveyRoutes) },
+
+
+          { path: 'welcome', loadComponent: () => import('./components/userflow/survey-programming/welcome/welcome.component').then(m => m.WelcomeComponent) },
+          { path: 'eligibility', loadComponent: () => import('./components/userflow/survey-programming/eligibility/eligibility.component').then(m => m.EligibilityComponent) },
+          { path: 'questions', loadComponent: () => import('./components/userflow/survey-programming/survey-questions/survey-questions.component').then(m => m.SurveyQuestionsComponent) },
+          { path: 'completed', loadComponent: () => import('./components/userflow/survey-programming/completed/completed.component').then(m => m.CompletedComponent) }
         ],
       },
 
       {
         path: 'offerwall',
-        component: OfferwallComponent,
+        loadComponent: () => import('./components/offerwall/offerwall.component').then(m => m.OfferwallComponent),
         children: [
           { path: '', loadChildren: () => import('./components/offerwall/offerwall-home/offerwall-home.route').then(m => m.offerwallHomeRoutes) },
           { path: 'profile', loadChildren: () => import('./components/offerwall/offerwall-profile/offerwall-profile.route').then(m => m.offerwallProfileRoutes) },
@@ -135,13 +129,13 @@ export const routes: Routes = [
 
       {
         path: 'surveyresult',
-        component: UserflowComponent,
+        loadComponent: () => import('./components/userflow/userflow.component').then(m => m.UserflowComponent),
         children: [
           { path: '', loadChildren: () => import('./components/survey-redirects/survey-redirects.route').then(m => m.SurveyRedirectRoutes) }
         ],
       },
 
-      { path: '**', component: NotFoundComponent, data: { statusCode: 404 } }
+      { path: '**', loadComponent: () => import('./components/not-found/not-found.component').then(m => m.NotFoundComponent), data: { statusCode: 404 } }
     ]
   },
 
