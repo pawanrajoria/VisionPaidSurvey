@@ -1,10 +1,10 @@
 <!-- Mobile Menu -->
 <mat-toolbar class="balance-card">
-    <button mat-icon-button (click)="toggleMobileNav.emit()" class="d-flex d-lg-none justify-content-center">
+    <button mat-icon-button (click)="toggleMobileNav.emit()" class="d-flex d-lg-none justify-content-center" aria-label="Open menu">
         <i-tabler name="menu-2" class="icon-20 d-flex"></i-tabler>
     </button>
     <div class="balance-left">
-        <button mat-icon-button class="hide-on-mobile">
+        <button mat-icon-button class="hide-on-mobile" aria-label="Wallet balance">
             <mat-icon>account_balance_wallet</mat-icon>
         </button>
         <div class="balance-text">
@@ -50,7 +50,7 @@
             </mat-card>
         </mat-menu>
 
-        <button mat-icon-button [matMenuTriggerFor]="notificationMenu">
+        <button mat-icon-button [matMenuTriggerFor]="notificationMenu" aria-label="Notifications">
             <mat-icon [matBadge]="notificationCount" matBadgeColor="warn" [matBadgeHidden]="notificationCount === 0">
                 notifications
             </mat-icon>
@@ -115,7 +115,7 @@
 <mat-toolbar class="topbar gap-10">
 
 
-  <button mat-icon-button (click)="toggleMobileNav.emit()" class="d-flex d-lg-none justify-content-center">
+  <button mat-icon-button (click)="toggleMobileNav.emit()" class="d-flex d-lg-none justify-content-center" aria-label="Open menu">
     <i-tabler name="menu-2" class="icon-20 d-flex"></i-tabler>
   </button>
 
@@ -161,7 +161,7 @@
     <mat-card appearance="outlined" class="custom-card text-center">
         <mat-card-content class="qualify-sec">
             <div class="icon">
-                <img loading="lazy" src="assets/images/icon/quality.png">
+                <img loading="lazy" src="assets/images/icon/quality.png" width="128" height="128">
             </div>
             <h3>You Didn't Qualify This Time</h3>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the

@@ -3,7 +3,7 @@
     <div class="header-toolbar">
         <h2 class="header-title">Select Reward</h2>
         @if(isPopup) {
-        <button mat-icon-button (click)="closeModal()" class="close-btn">
+        <button mat-icon-button (click)="closeModal()" class="close-btn" aria-label="Close">
             <mat-icon>cancel</mat-icon>
         </button>
         }
@@ -27,7 +27,7 @@
     <mat-form-field appearance="outline" class="search-field">
         <mat-icon matPrefix>search</mat-icon>
         <input matInput placeholder="Search brands, gift cards..." [(ngModel)]="searchText" />
-        <button *ngIf="searchText" matSuffix mat-icon-button (click)="searchText = ''">
+        <button *ngIf="searchText" matSuffix mat-icon-button (click)="searchText = ''" aria-label="Clear search">
             <mat-icon>close</mat-icon>
         </button>
     </mat-form-field>

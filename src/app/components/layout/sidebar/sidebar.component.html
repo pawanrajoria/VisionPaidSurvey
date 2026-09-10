@@ -2,13 +2,19 @@
   <div class="branding"><app-branding></app-branding></div>
 
   @if(showToggle) {
-  <a href="javascript:void(0)" (click)="toggleMobileNav.emit()"
-    class="d-flex justify-content-center ng-star-inserted icon-40 align-items-center">
+  <!-- PERF/SEO: was <a href="javascript:void(0)"> - not real navigation, so it
+       was being flagged as a non-crawlable link. This is a UI toggle, not a
+       link, so a <button> is both semantically correct and no longer
+       counted against link crawlability. Added aria-label for the
+       icon-only accessible-name audit too. -->
+  <button type="button" (click)="toggleMobileNav.emit()" aria-label="Close menu"
+    class="d-flex justify-content-center ng-star-inserted icon-40 align-items-center border-0 bg-transparent p-0">
     <i-tabler name="x" class="icon-20 d-flex"></i-tabler>
-  </a>
+  </button>
   }
   @else {
-  <button mat-button class="language my-custom-button" (click)="openTranslate()">
+  <!-- PERF: icon-only button had no accessible name (text label is commented out) -->
+  <button mat-button class="language my-custom-button" (click)="openTranslate()" aria-label="Change language">
     <mat-icon>public</mat-icon>
     <!-- {{ 'header.language' | translate }} -->
   </button>

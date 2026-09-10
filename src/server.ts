@@ -3,6 +3,7 @@ import {
   writeResponseToNodeResponse
 } from '@angular/ssr/node';
 import express from 'express';
+import compression from 'compression';
 import path from 'node:path';
 import fs from 'node:fs';
 import { SUPPORTED_LOCALES } from './app/country-langiuage-list';
@@ -12,6 +13,14 @@ const angularApp = new AngularNodeAppEngine();
 
 const serverModuleDir = import.meta.dirname;
 const browserDistFolder = path.resolve(serverModuleDir, '..', 'browser');
+
+// PERF: nothing was compressing responses before this - HTML, JS, CSS, and
+// the i18n JSON files were all being sent uncompressed. gzip/brotli
+// typically cuts text-based payloads by 70-80%, which directly addresses
+// the "Document request latency" and general transfer-time cost on
+// throttled mobile connections. Must be registered before any route/static
+// handlers so it compresses everything below it.
+app.use(compression());
 
 /**
  * SEO: Schema.org Injection

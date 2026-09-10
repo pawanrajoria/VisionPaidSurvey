@@ -1,10 +1,11 @@
 <mat-card class="cardWithShadow overflow-hidden"  [routerLink]="['/', currentLocale, 'app', 'account']">
     <div class="bg-primary p-x-24 p-y-10 text-white">
         <mat-card-title class="d-flex align-items-center gap-10">
-            <a mat-icon-button class="text-white d-flex justify-content-center">
+            <!-- A11y: was an <a> with no href/click - not a real link, and had no accessible name. Converted to a button; TODO verify this back-chevron is supposed to be wired to an action (looks inert either way). -->
+            <button type="button" mat-icon-button class="text-white d-flex justify-content-center" aria-label="Back">
                 <i-tabler name="chevron-left" class="icon-18 d-flex">
                 </i-tabler>
-            </a> {{ 'account.headings.account_setting' | translate }} </mat-card-title>
+            </button> {{ 'account.headings.account_setting' | translate }} </mat-card-title>
     </div>
 </mat-card>
 

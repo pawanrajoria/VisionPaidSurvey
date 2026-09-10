@@ -1,10 +1,10 @@
 <div mat-dialog-content class="dialog-container">
     <div class="dialog-header">
-        <button mat-icon-button (click)="onBack()">
+        <button mat-icon-button (click)="onBack()" aria-label="Back">
             <mat-icon>arrow_back</mat-icon>
         </button>
         <span class="title">{{ offer.offerName }}</span>
-        <button mat-icon-button (click)="onClose()">
+        <button mat-icon-button (click)="onClose()" aria-label="Close">
             <mat-icon>close</mat-icon>
         </button>
     </div>

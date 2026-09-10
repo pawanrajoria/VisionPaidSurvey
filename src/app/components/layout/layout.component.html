@@ -26,7 +26,7 @@
                     <strong>{{ activeNotification.title }}</strong>
                     <p>{{ activeNotification.body }}</p>
                 </div>
-                <button mat-icon-button (click)="activeNotification = null">
+                <button mat-icon-button (click)="activeNotification = null" aria-label="Dismiss notification">
                     <mat-icon>close</mat-icon>
                 </button>
             </div>

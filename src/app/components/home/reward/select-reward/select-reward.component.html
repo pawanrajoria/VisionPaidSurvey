@@ -3,7 +3,7 @@
     <div class="reward-container">
         <div class="d-flex align-items-center justify-content-between m-b-16">
             <h3 class="text-center"> {{ 'Redeem Points' | translate }}</h3>
-            <button mat-icon-button mat-dialog-close>
+            <button mat-icon-button mat-dialog-close aria-label="Close">
                 <i-tabler name="x" class="x icon-20"></i-tabler>
             </button>
         </div>
@@ -36,9 +36,9 @@
                             </mat-panel-title>
                         </mat-expansion-panel-header>
                         <div class="amount-body">
-                            <img loading="lazy" src="assets/images/backgrounds/gift-2.png" class="elements46">
-                            <img loading="lazy" src="assets/images/backgrounds/dust-gold-hi.png" class="stars">
-                            <img loading="lazy" src="assets/images/elements4.png" class="elements4">
+                            <img loading="lazy" src="assets/images/backgrounds/gift-2.png" class="elements46" width="1600" height="1515">
+                            <img loading="lazy" src="assets/images/backgrounds/dust-gold-hi.png" class="stars" width="669" height="689">
+                            <img loading="lazy" src="assets/images/elements4.png" class="elements4" width="1105" height="722">
                             <div class="grid gift-point grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div *ngFor="let option of card.options;" class="amount-card"
                                     [class.selected]="selectedChildOptionCard?.amount === option.amount"
@@ -78,9 +78,9 @@
                             </mat-panel-title>
                         </mat-expansion-panel-header>
                         <div class="amount-body">
-                            <img loading="lazy" src="assets/images/backgrounds/gift-2.png" class="elements46">
-                            <img loading="lazy" src="assets/images/backgrounds/dust-gold-hi.png" class="stars">
-                            <img loading="lazy" src="assets/images/elements4.png" class="elements4">
+                            <img loading="lazy" src="assets/images/backgrounds/gift-2.png" class="elements46" width="1600" height="1515">
+                            <img loading="lazy" src="assets/images/backgrounds/dust-gold-hi.png" class="stars" width="669" height="689">
+                            <img loading="lazy" src="assets/images/elements4.png" class="elements4" width="1105" height="722">
                             <div class="grid gift-point grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div *ngFor="let option of card.options;" class="amount-card"
                                     [class.selected]="selectedChildOptionCard?.amount === option.amount"
