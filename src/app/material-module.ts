@@ -36,14 +36,21 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 
 /**
  * PERF: Lean Material module for public/SEO/marketing pages (components/root/**).
- * These pages only ever use these 7 components — verified via:
- *   grep -rhoE 'mat-[a-z-]+' src/app/components/root --include="*.html" | sort -u
+ * Verified via a regex that catches BOTH hyphenated tags AND camelCase attribute
+ * directives (the first pass only checked hyphenated tags like `mat-form-field`
+ * and missed `matInput` - that gap broke the homepage login card's email field,
+ * since mat-form-field needs a MatFormFieldControl and matInput is what provides
+ * one; MatInputModule is what exports that directive):
+ *   grep -rohE '\bmat-[a-z-]+|\bmat[A-Z][a-zA-Z]*' src/app/components/root --include="*.html" | sort -u
  * Importing this instead of the full VisionMaterialModule keeps Datepicker, Table,
  * Stepper, Sort, Paginator, Slider, Sidenav, Tabs, Menu, Dialog, Autocomplete,
  * Bottom Sheet, etc. out of the public bundle entirely.
  *
- * If a public page starts using a new Material component, add it here explicitly
- * rather than switching that page back to VisionMaterialModule.
+ * If a public page starts using a new Material component OR directive (including
+ * camelCase ones like matInput, matSuffix, matPrefix, matTooltip, matBadge), add
+ * it here explicitly rather than switching that page back to VisionMaterialModule -
+ * and re-run the grep above across all of components/root to catch anything else
+ * using the same directive elsewhere.
  */
 @NgModule({
     exports: [
@@ -54,6 +61,7 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
         MatExpansionModule,
         MatFormFieldModule,
         MatIconModule,
+        MatInputModule, // needed for the matInput directive used by mat-form-field on root-home's inline login card
     ]
 })
 export class PublicMaterialModule { }
