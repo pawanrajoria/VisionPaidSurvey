@@ -81,7 +81,17 @@ import {
   IconCheckbox,
   IconCircleDashedCheck,
   IconCertificate2,
-  IconTrophy
+  IconTrophy,
+  // Sidebar nav icons (from backend rolePermissions.iconName) - were missing,
+  // causing every nav item except "Account" to render with no icon at all.
+  IconDotsCircleHorizontal, // More
+  IconHelp,                 // Help
+  IconFriends,              // Refer A Friend
+  IconWalletOff,            // Cashout, Redeem Bonus Code
+  IconNotebook,             // Surveys
+  IconConfetti,             // Offers
+  IconCrown,                // Leaderboard
+  IconCoin                  // Earn
 } from 'angular-tabler-icons/icons';
 
 const firebaseConfig = {
@@ -118,7 +128,15 @@ const icons = {
   IconCheckbox,
   IconCircleDashedCheck,
   IconCertificate2,
-  IconTrophy
+  IconTrophy,
+  IconDotsCircleHorizontal,
+  IconHelp,
+  IconFriends,
+  IconWalletOff,
+  IconNotebook,
+  IconConfetti,
+  IconCrown,
+  IconCoin
 };
 
 function initConfigService() {
