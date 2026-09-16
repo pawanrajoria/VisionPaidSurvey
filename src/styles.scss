@@ -80,3 +80,50 @@
          padding-right: 12px !important;
      }
  }
+
+// ============================================================
+// ProfitPiller "Ledger" content-page design tokens
+// (Blog / Guides / Gift Cards - see src/app/components/blog/theme/_tokens.scss
+// for the mixins that consume these. Defined once here, globally, rather
+// than per-component, so they aren't duplicated into every component's
+// encapsulated stylesheet.)
+// ============================================================
+:root {
+  // Surfaces
+  --pp-bg: #0B1120;
+  --pp-surface: #121A2E;
+  --pp-surface-raised: #182238;
+  --pp-border: rgba(232, 236, 244, 0.08);
+
+  // Text
+  --pp-text: #E8ECF4;
+  --pp-text-muted: rgba(232, 236, 244, 0.7);
+  --pp-text-faint: rgba(232, 236, 244, 0.45);
+
+  // Brand accents
+  --pp-accent: #29D3C0;
+  --pp-accent-dim: #1C9285;
+  --pp-gold: #F5B942;
+  --pp-gold-dim: #D99E2C;
+  --pp-danger: #FF6B6B;
+
+  // Type
+  --pp-font-display: 'DM Sans', sans-serif;
+  --pp-font-body: 'DM Sans', sans-serif;
+  --pp-font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+
+  // Radius
+  --pp-radius-sm: 8px;
+  --pp-radius-md: 14px;
+  --pp-radius-lg: 22px;
+
+  // Shadow
+  --pp-shadow-card: 0 8px 24px rgba(0, 0, 0, 0.35);
+
+  // Spacing scale
+  --pp-space-2: 8px;
+  --pp-space-3: 12px;
+  --pp-space-4: 16px;
+  --pp-space-5: 24px;
+  --pp-space-6: 32px;
+}
