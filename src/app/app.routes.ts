@@ -106,7 +106,9 @@ export const routes: Routes = [
           { path: 'getSurveyInventory', loadChildren: () => import('./components/userflow/survey-status/survey-status.route').then(m => m.surveyStatusRoutes) },
           { path: 'takeSurvey', loadChildren: () => import('./components/userflow/take-survey/take-survey.route').then(m => m.takeSurveyRoutes) },
           // { path: 'surveybycampaign', loadChildren: () => import('./components/userflow/take-survey/take-survey.route').then(m => m.takeSurveyRoutes) },
-          { path: 'endsurvey', loadChildren: () => import('./components/userflow/end-survey/end-survey.route').then(m => m.endSurveyRoutes) },
+          { path: 'userflowendsurvey', loadChildren: () => import('./components/userflow/end-survey/end-survey.route').then(m => m.endSurveyRoutes) },
+          { path: 'endsurvey', loadChildren: () => import('./components/userflow/complete-survey/complete-survey.route').then(m => m.completeSurveyRoutes) },
+
 
 
           { path: 'welcome', loadComponent: () => import('./components/userflow/survey-programming/welcome/welcome.component').then(m => m.WelcomeComponent) },

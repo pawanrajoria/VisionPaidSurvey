@@ -11,7 +11,7 @@ import { LocalStorageService } from '../../../localstorage.service';
 import { HelperService } from '../helper.service';
 import { SharedModule } from '../../../shared.module';
 import { QuestionComponent } from './question/question.component';
-import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from "@angular/material/dialog";
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 import { Iso639Map } from '../../../supporteslanguage';
 import { BaseSurveyComponent } from '../../../base.survey.component';
 
@@ -25,12 +25,13 @@ import { BaseSurveyComponent } from '../../../base.survey.component';
 export class TakeSurveyComponent extends BaseSurveyComponent {
   @ViewChild('drawer') public drawer?: MatDrawer;
 
-
-  dialogRef = inject(MatDialogRef<TakeSurveyComponent>, {
-    optional: true
-  });
-
+  dialogRef = inject(MatDialogRef<TakeSurveyComponent>, { optional: true });
   private dialogData = inject(MAT_DIALOG_DATA, { optional: true });
+
+  // Exposes whether this component is running in a popup or as a full page
+  get isDialog(): boolean {
+    return !!this.dialogRef;
+  }
 
   classname: string = '';
   country: string = '';
@@ -71,8 +72,6 @@ export class TakeSurveyComponent extends BaseSurveyComponent {
   async getSurvey(): Promise<void> {
     const duid = await this.helperService.getOrInitializeDuid();
 
-
-
     let landedUrl: string = this.localStorageService.getItem('LandedUrl') || '';
     if (this.win && landedUrl.length !== this.win.location.href.length) {
       landedUrl = this.win.location.href;
@@ -107,7 +106,6 @@ export class TakeSurveyComponent extends BaseSurveyComponent {
 
       if (!!this.dialogRef && !!this.respondentData && this.respondentData.isQualified) {
         this.dialogRef?.close({ role: 'qualify', data: redirect });
-        // this.qualifySurvey(redirect);
       } else {
         if (this.win) this.win.location.href = redirect;
       }
@@ -136,7 +134,6 @@ export class TakeSurveyComponent extends BaseSurveyComponent {
       const redirect = response?.redirectUrl || 'https://profitpiller.com';
 
       if (!!this.dialogRef && !!this.respondentData && this.respondentData.isQualified) {
-        // this.qualifySurvey(redirect);
         this.dialogRef?.close({ role: 'qualify', data: redirect });
       } else {
         if (this.win) this.win.location.href = redirect;

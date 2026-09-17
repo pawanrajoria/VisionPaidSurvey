@@ -91,7 +91,13 @@ export class SurveyComponent extends BaseSurveyComponent implements OnInit {
 
 
     async openSurveyInstruction(item: ISurveyVM) {
-        const dialofref = this.dialog.open(SurveyInstructionPopupComponent);
+        const dialofref = this.dialog.open(SurveyInstructionPopupComponent, {
+            width: '480px',          // Reduced from 600px
+            maxWidth: '92vw',
+            maxHeight: '85vh',       // Enforces total height limit
+            autoFocus: false,
+            panelClass: 'survey-instruction-dialog'
+        });
         dialofref.afterClosed().subscribe(async (result) => {
             if (result === "startSurvey") {
                 await this.startSurvey(item);

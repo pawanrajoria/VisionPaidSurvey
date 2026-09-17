@@ -215,6 +215,7 @@
     .icon {
         img {
             width: 70px;
+            height: 70px;
         }
     }
     &:hover {
@@ -255,6 +256,7 @@
     .illustration {
         img {
             width: 100%;
+            height: 100%;
         }
     }
     .content {
@@ -336,6 +338,7 @@
                     background: linear-gradient(90deg, #145c4b 0%, #7ebf76 100%);
                     img {
                         width: 50px;
+                        height: 50px;
                         filter: brightness(0) invert(1);
                     }
                 }
@@ -373,6 +376,7 @@
         cursor: pointer;
         img {
             width: 80px;
+            height: 80px;
             filter: drop-shadow(0px 0px 3px #ffffff);
         }
         &.blue-bg {
@@ -540,6 +544,7 @@
     .choose8-img {
         img {
             width: 100%;
+            height: 100%;
         }
     }
 }
@@ -681,6 +686,7 @@
             box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.09);
             img {
                 width: 100%;
+                height: 100%;
             }
             &::before {
                 content: '';
@@ -777,6 +783,7 @@
             z-index: 1;
             img {
                 width: 100%;
+                height: 100%;
             }
             &.second {
                 top: 50px;
@@ -808,6 +815,7 @@
                 align-items: center;
                 img {
                     width: 60px;
+                    height: 60px;
                     filter: brightness(0) invert(1);
                 }
             }
@@ -866,6 +874,7 @@
                 }
                 img {
                     width: 100%;
+                    height: 100%;
                     border-radius: 8px;
                     border: 3px solid rgb(16 87 73 / 39%);
                 }
@@ -1024,6 +1033,7 @@
                 }
                 img {
                     width: 30px;
+                    height: 30px;
                 }
                 h3 {
                     font-family: "Work Sans", sans-serif;
@@ -1200,6 +1210,7 @@
                 color: #105749;
                 img {
                     width: 20px;
+                    height: 20px;
                     height: auto;
                     padding: 0px;
                     margin: 0px 10px 0px 0px;
@@ -1271,6 +1282,7 @@
                     height: 70px;
                     img {
                         width: 40px;
+                        height: 40px;
                     }
                 }
             }
@@ -1280,6 +1292,7 @@
         .reward-card {
             img {
                 width: 70px;
+                height: 70px;
             }
         }
     }
@@ -1348,6 +1361,7 @@
             }
             img {
                 width: 50px;
+                height: 50px;
             }
         }
     }
@@ -1379,6 +1393,7 @@
                         height: 42px;
                         img {
                             width: 30px;
+                            height: 30px;
                         }
                     }
                     h3 {
@@ -1470,6 +1485,7 @@
                     .icon {
                         img {
                             width: 44px;
+                            height: 44px;
                         }
                     }
                     .amount {
@@ -1493,6 +1509,7 @@
         .elements46 {
             img {
                 width: 100%;
+                height: 100%;
             }
         }
         .cta-images {
@@ -1515,6 +1532,7 @@
                     height: 60px;
                     img {
                         width: 38px;
+                        height: 38px;
                     }
                 }
                 .text-area {
@@ -1552,6 +1570,7 @@
                         margin: auto;
                         img {
                             width: 30px;
+                            height: 30px;
                         }
                     }
                     &:last-child {

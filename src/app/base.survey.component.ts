@@ -81,6 +81,12 @@ export abstract class BaseSurveyComponent {
     async openTakeSurvey(item: ISurveyVM) {
 
         const dialogRef = this.dialog.open(TakeSurveyComponent, {
+            width: '560px',
+            minWidth: '320px',
+            maxWidth: '95vw',
+            maxHeight: '90vh',
+            autoFocus: false,
+            panelClass: 'take-survey-dialog-panel',
             data: {
                 landedUrl: item.clickUrl,
                 surveyItem: item

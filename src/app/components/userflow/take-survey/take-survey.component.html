@@ -1,2 +1,24 @@
- <app-question *ngIf="!!qualification && !!qualification.qKey" [qualification]="qualification"
-                    [country]="country" (submitSurvey)="submitSurvey($event)"></app-question>
+<div class="take-survey-wrapper" [class.is-dialog]="isDialog" [class.page-mode]="!isDialog">
+
+  <!-- Header (Visible in Dialog Mode) -->
+  <div class="dialog-header" *ngIf="isDialog">
+    <div class="header-left">
+      <mat-icon class="header-icon">badge</mat-icon>
+      <div>
+        <h3 class="header-title">Profiling Survey</h3>
+        <span class="header-subtitle">Answer a few quick questions to match surveys</span>
+      </div>
+    </div>
+    <button mat-icon-button (click)="dialogRef?.close()" class="close-btn" aria-label="Close">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <!-- Main Body / Question Area -->
+  <div class="survey-body-container" [class.dialog-scroll-body]="isDialog">
+    <app-question *ngIf="!!qualification && !!qualification.qKey" [qualification]="qualification" [country]="country"
+      (submitSurvey)="submitSurvey($event)">
+    </app-question>
+  </div>
+
+</div>
