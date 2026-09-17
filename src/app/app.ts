@@ -18,6 +18,7 @@ import { GoogleService } from './components/auth/google.service';
 import { VersionCheckService } from './version-check.service';
 import { GoogleAuthProvider } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AiSupportWidgetComponent } from './components/ai-support/ai-support-widget.component';
 import { AuthService } from './components/auth/auth.service';
 import { LOCALE_COUNTRY_MAP, SUPPORTED_LOCALE_CODES } from './country-langiuage-list';
 import { GtmService } from './gtm.service';
@@ -79,7 +80,7 @@ function parseLocaleFromUrl(url: string): { locale: string; cleanPath: string } 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SharedModule],
+  imports: [RouterOutlet, SharedModule, AiSupportWidgetComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
 })

@@ -138,6 +138,106 @@ app.use('/sitemaps', express.static(path.join(browserDistFolder, 'sitemaps'), {
   }
 }));
 
+// 2b. AI SUPPORT ASSISTANT API
+// Proxies chat messages to Anthropic's API server-side, so the API key
+// never reaches the browser. Requires ANTHROPIC_API_KEY to be set in the
+// server's environment (never commit it to source).
+app.post('/api/ai-chat', express.json(), async (req, res) => {
+  try {
+    const { messages } = req.body ?? {};
+    if (!Array.isArray(messages) || messages.length === 0) {
+      res.status(400).json({ error: 'messages array is required' });
+      return;
+    }
+
+    const apiKey = process.env['ANTHROPIC_API_KEY'];
+    if (!apiKey) {
+      console.error('[ai-chat] ANTHROPIC_API_KEY is not set in the server environment');
+      res.status(500).json({ error: 'AI assistant is not configured' });
+      return;
+    }
+
+    const AI_SYSTEM_PROMPT = `You are the ProfitPiller support assistant, embedded on profitpiller.com.
+ProfitPiller is a survey-rewards platform: users earn points/cash by taking paid surveys,
+completing offers from an offerwall, playing sponsored games, referring friends, and doing
+daily check-ins. Points are redeemed for PayPal cash, Visa/Amazon/other gift cards, or crypto,
+subject to a minimum cashout threshold. There's also a leaderboard and a bonus-code redemption
+feature.
+
+Answer user questions about how the platform works, earning methods, payouts, cashout timing,
+account issues, and general troubleshooting, in a friendly, concise tone (2-4 sentences unless
+more detail is truly needed). You do not have access to any specific user's account data
+(balance, ticket history, etc.) - if asked for that, explain you can't see account specifics
+and offer to raise a support ticket instead.
+
+Call the create_support_ticket tool when: the user explicitly asks for a human/support ticket,
+you cannot resolve their issue with general information, or the issue clearly requires account-
+specific action (a missing payout, a locked account, a billing dispute, suspected fraud, etc).
+Do not call it for general "how does X work" questions you can already answer.`;
+
+    const SUPPORT_TICKET_TOOL = {
+      name: 'create_support_ticket',
+      description: 'Escalate the user\'s issue to a human support agent by drafting a support ticket.',
+      input_schema: {
+        type: 'object',
+        properties: {
+          subject: { type: 'string', description: 'Short (under 80 char) summary of the issue.' },
+          description: { type: 'string', description: 'Full details of the issue, including anything already tried in this conversation.' },
+          category: { type: 'string', enum: ['account', 'payout', 'survey', 'technical', 'other'] },
+        },
+        required: ['subject', 'description', 'category'],
+      },
+    };
+
+    const anthropicResponse = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-5',
+        max_tokens: 1024,
+        system: AI_SYSTEM_PROMPT,
+        messages,
+        tools: [SUPPORT_TICKET_TOOL],
+      }),
+    });
+
+    if (!anthropicResponse.ok) {
+      const errText = await anthropicResponse.text();
+      console.error('[ai-chat] Anthropic API error:', anthropicResponse.status, errText);
+      res.status(502).json({ error: 'The assistant is temporarily unavailable. Please try again shortly.' });
+      return;
+    }
+
+    const data: any = await anthropicResponse.json();
+    let reply = '';
+    let ticketDraft: { subject: string; description: string; category: string } | null = null;
+
+    for (const block of data.content ?? []) {
+      if (block.type === 'text') reply += block.text;
+      if (block.type === 'tool_use' && block.name === 'create_support_ticket') {
+        ticketDraft = {
+          subject: block.input?.subject ?? '',
+          description: block.input?.description ?? '',
+          category: block.input?.category ?? 'other',
+        };
+      }
+    }
+
+    if (!reply && ticketDraft) {
+      reply = "I've drafted a support ticket for this - take a look below and submit it whenever you're ready.";
+    }
+
+    res.json({ reply, ticketDraft });
+  } catch (err) {
+    console.error('[ai-chat] proxy error:', err);
+    res.status(500).json({ error: 'Something went wrong talking to the assistant.' });
+  }
+});
+
 // 3. SSR RENDERING WITH SCHEMA INJECTION
 app.use(async (req, res, next) => {
   angularApp

@@ -1,0 +1,117 @@
+<button
+  class="pp-ai-fab"
+  [class.pp-ai-fab--open]="open()"
+  (click)="toggle()"
+  [attr.aria-label]="open() ? 'Close support chat' : 'Open support chat'"
+>
+  <mat-icon>{{ open() ? 'close' : 'support_agent' }}</mat-icon>
+</button>
+
+<div class="pp-ai-panel" *ngIf="open()">
+  <header class="pp-ai-panel__header">
+    <mat-icon>support_agent</mat-icon>
+    <div>
+      <strong>ProfitPiller Assistant</strong>
+      <span>Ask a question or raise a support ticket</span>
+    </div>
+    <button mat-icon-button aria-label="Close" (click)="toggle()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </header>
+
+  <div class="pp-ai-panel__messages">
+    <div
+      *ngFor="let m of messages()"
+      class="pp-ai-msg"
+      [class.pp-ai-msg--user]="m.role === 'user'"
+      [class.pp-ai-msg--assistant]="m.role === 'assistant'"
+    >
+      {{ m.content }}
+    </div>
+
+    <div class="pp-ai-msg pp-ai-msg--assistant pp-ai-typing" *ngIf="sending()">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div #scrollAnchor></div>
+  </div>
+
+  <form class="pp-ai-panel__composer" (ngSubmit)="send()">
+    <textarea
+      rows="1"
+      placeholder="Ask about surveys, payouts, your account…"
+      [ngModel]="draft()"
+      (ngModelChange)="draft.set($event)"
+      name="message"
+      (keydown)="onKeydown($event)"
+    ></textarea>
+    <button mat-icon-button type="submit" aria-label="Send message" [disabled]="sending() || !draft().trim()">
+      <mat-icon>send</mat-icon>
+    </button>
+  </form>
+
+  <button class="pp-ai-panel__ticket-link" type="button" (click)="openTicketForm()">
+    <mat-icon>confirmation_number</mat-icon>
+    Raise a support ticket instead
+  </button>
+</div>
+
+<div class="pp-ai-ticket-backdrop" *ngIf="ticketOpen()" (click)="closeTicketForm()">
+  <div class="pp-ai-ticket" (click)="$event.stopPropagation()">
+    <header>
+      <h2>{{ ticketSubmitted() ? 'Ticket submitted' : 'Raise a support ticket' }}</h2>
+      <button mat-icon-button aria-label="Close" (click)="closeTicketForm()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </header>
+
+    <ng-container *ngIf="!ticketSubmitted(); else doneTpl">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Subject</mat-label>
+        <input matInput [ngModel]="ticketSubject()" (ngModelChange)="ticketSubject.set($event)" name="subject" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Category</mat-label>
+        <mat-select [ngModel]="ticketCategory()" (ngModelChange)="ticketCategory.set($event)" name="category">
+          <mat-option value="account">Account</mat-option>
+          <mat-option value="payout">Payout</mat-option>
+          <mat-option value="survey">Survey / Offer</mat-option>
+          <mat-option value="technical">Technical Issue</mat-option>
+          <mat-option value="other">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Describe your issue</mat-label>
+        <textarea matInput rows="4" [ngModel]="ticketDescription()" (ngModelChange)="ticketDescription.set($event)" name="description"></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Email (so we can follow up)</mat-label>
+        <input matInput type="email" [ngModel]="ticketEmail()" (ngModelChange)="ticketEmail.set($event)" name="email" />
+      </mat-form-field>
+
+      <p class="pp-ai-ticket__error" *ngIf="ticketError()">{{ ticketError() }}</p>
+
+      <button
+        mat-flat-button
+        color="primary"
+        class="w-100"
+        [disabled]="ticketSubmitting() || !ticketSubject().trim() || !ticketDescription().trim()"
+        (click)="submitTicket()"
+      >
+        <mat-spinner *ngIf="ticketSubmitting()" diameter="18"></mat-spinner>
+        <span *ngIf="!ticketSubmitting()">Submit Ticket</span>
+      </button>
+    </ng-container>
+
+    <ng-template #doneTpl>
+      <div class="pp-ai-ticket__done">
+        <mat-icon>check_circle</mat-icon>
+        <p>We've received your ticket and will follow up by email shortly.</p>
+        <button mat-flat-button color="primary" (click)="closeTicketForm()">Close</button>
+      </div>
+    </ng-template>
+  </div>
+</div>
