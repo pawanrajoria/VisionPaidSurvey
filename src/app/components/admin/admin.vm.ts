@@ -159,6 +159,43 @@ export interface PriorityOfferAdminDto {
     updatedAt?: string | null;
 }
 
+export interface AdminNotificationDto {
+    id: number;
+    title: string;
+    body: string;
+    url?: string | null;
+    createdAt: string;
+    /** all | web | android | ios */
+    audience: string;
+    targetCount: number;
+    sentCount: number;
+    failedCount: number;
+}
+
+export interface NotificationAudienceDto {
+    /** False until DatabaseScripts/007 has been run. */
+    available: boolean;
+    webDevices: number;
+    androidDevices: number;
+    iosDevices: number;
+    history: AdminNotificationDto[];
+}
+
+export interface SendNotificationRequest {
+    title: string;
+    body: string;
+    url: string;
+    audience: string;
+}
+
+export interface SendNotificationResult {
+    isSuccess: boolean;
+    message: string;
+    targetCount: number;
+    sentCount: number;
+    failedCount: number;
+}
+
 export interface BulkUserActionResultDto {
     isSuccess: boolean;
     message: string;

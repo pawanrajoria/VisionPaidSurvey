@@ -18,14 +18,9 @@
         <div class="offer-image-container">
             <img loading="lazy" [src]="offer.imageUrl" alt="{{ offer.offerName }}" />
             <div class="platform-icon">
-                @if(offer?.device?.includes('All') || offer?.device?.includes('Desktop')) {
-                <mat-icon>apple</mat-icon>
-                <mat-icon>android</mat-icon>
-                } @else{ @if(offer?.device?.includes('IOS')) {
-                <mat-icon>apple</mat-icon>
-                } @if(offer?.device?.includes('Android')) {
-                <mat-icon>android</mat-icon>
-                } }
+                @if(offer?.device?.includes('Android')) {<mat-icon>android</mat-icon>}
+@if(offer?.device?.includes('IOS')) {<mat-icon>apple</mat-icon>}
+@if(offer?.device?.includes('Desktop')) {<mat-icon>desktop_windows</mat-icon>}
 
             </div>
         </div>

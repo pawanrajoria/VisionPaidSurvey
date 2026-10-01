@@ -30,6 +30,7 @@ import { LivepayoutComponent } from './live-payout/live-payout.component';
 import { GtmService } from '../../gtm.service';
 import { EngagementService } from '../home/engagement/engagement.service';
 import { USER_TIME_ZONE_KEY } from '../../timezones';
+import { NotifyCardComponent } from './notify-card/notify-card.component';
 
 const MOBILE_VIEW = 'screen and (max-width: 768px)';
 const TABLET_VIEW = 'screen and (min-width: 769px) and (max-width: 1024px)';
@@ -45,7 +46,8 @@ const TABLET_VIEW = 'screen and (min-width: 769px) and (max-width: 1024px)';
         HeaderComponent,
         LivepayoutComponent,
         AppNavItemComponent,
-        NgScrollbarModule
+        NgScrollbarModule,
+        NotifyCardComponent
     ]
 })
 export class LayoutComponent extends BaseComponent implements AfterViewInit, OnDestroy {
@@ -62,6 +64,9 @@ export class LayoutComponent extends BaseComponent implements AfterViewInit, OnD
     private isCollapsedWidthFixed = false;
     activeNotification: { title: string, body: string } | null = null;
     notificationHistory: any[] = [];
+    private swMessageHandler = (event: MessageEvent) => {
+        if (event.data?.type === 'notification-click') this.ngZone.run(() => this.openNotificationUrl(event.data.url));
+    };
 
     get isOver(): boolean {
         return this.isMobileScreen;
@@ -137,6 +142,9 @@ export class LayoutComponent extends BaseComponent implements AfterViewInit, OnD
             const userEmail = this.accountService.userEmail || '';
             this.notificationService.registerNotificationToken(userEmail);
             this.notificationService.listenForMessages();
+            this.loadNotifications();
+            // A notification tapped while the site is open asks this tab to navigate.
+            navigator.serviceWorker?.addEventListener('message', this.swMessageHandler);
 
             // ✅ FIX 3: Safe subscription handling
             this.messageSubscription = this.notificationService.currentMessage.subscribe((msg) => {
@@ -147,7 +155,14 @@ export class LayoutComponent extends BaseComponent implements AfterViewInit, OnD
                         const body = msg.notification?.body || msg.body || '';
 
                         this.activeNotification = { title, body };
-                        this.notificationHistory.push(msg);
+                        // Newest first; an announcement that is already listed is not added twice.
+                        const id = Number(msg.data?.notificationId ?? 0);
+                        if (!id || !this.notificationHistory.some(n => n.id === id)) {
+                            this.notificationHistory = [
+                                { id: id || Date.now(), title, body, url: msg.data?.url || null },
+                                ...this.notificationHistory
+                            ];
+                        }
 
                         // Show the message service (toast)
                         this.messageService.showMessage(new MessageVM(body, title));
@@ -187,9 +202,33 @@ export class LayoutComponent extends BaseComponent implements AfterViewInit, OnD
         }
     }
 
+    /** Announcements sent from the admin console that this user has not cleared yet. */
+    private async loadNotifications() {
+        const seenId = this.notificationService.seenId;
+        const list = (await this.notificationService.getNotifications()).filter(n => n.id > seenId);
+        if (list.length) {
+            const known = new Set(this.notificationHistory.map(n => n.id));
+            this.notificationHistory = [...this.notificationHistory, ...list.filter(n => !known.has(n.id))];
+            this.cdr.markForCheck();
+        }
+    }
+
+    /** "/app/offers" (a page of the site, language added here) or a full https link. */
+    openNotificationUrl(url?: string | null) {
+        if (!url) return;
+        if (url.startsWith('/')) {
+            this.router.navigateByUrl(`/${this.currentLocale}${url}`);
+        } else if (/^https:\/\//i.test(url)) {
+            window.open(url, '_blank', 'noopener');
+        }
+    }
+
     ngOnDestroy() {
         this.layoutChangesSubscription.unsubscribe();
         this.messageSubscription.unsubscribe();
+        if (isPlatformBrowser(this.platformId)) {
+            navigator.serviceWorker?.removeEventListener('message', this.swMessageHandler);
+        }
     }
 
     // --- SideNav UI Methods ---
@@ -216,6 +255,9 @@ export class LayoutComponent extends BaseComponent implements AfterViewInit, OnD
     }
 
     clearNotifications() {
+        // Remembered per browser, so cleared announcements do not come back on the next visit.
+        const newest = Math.max(0, ...this.notificationHistory.map(n => Number(n.id) || 0).filter(id => id < 1e12));
+        this.notificationService.markSeen(newest);
         this.notificationHistory = [];
     }
 }

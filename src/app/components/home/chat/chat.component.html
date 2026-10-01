@@ -1,10 +1,11 @@
-<div class="chat-page">
+<div class="chat-page" (click)="closePopovers()">
     <header class="chat-head">
         <span class="chat-head-icon" aria-hidden="true"><mat-icon>forum</mat-icon></span>
         <div class="chat-head-text">
             <h1>{{ 'app.chat.title' | translate }}</h1>
             <p>{{ 'app.chat.subtitle' | translate }}</p>
         </div>
+        @if (available && !loading) { <span class="live-dot" aria-hidden="true"></span> }
     </header>
 
     @if (loading) {
@@ -27,28 +28,55 @@
         @if (newDay($index)) {
         <div class="day-divider"><span>{{ m.createdAt | date:'mediumDate' }}</span></div>
         }
-        <article class="msg" [class.mine]="m.isMine">
+        <article class="msg" [class.mine]="m.isMine" [class.jumbo]="isJumbo(m)">
             @if (!m.isMine) {
-            <span class="avatar" [style.background]="tierColor(m.level)" aria-hidden="true">{{ m.name.charAt(0) }}</span>
+            <span class="avatar" [style.--tier]="tierColor(m.level)" aria-hidden="true">{{ m.name.charAt(0) }}</span>
             }
-            <div class="bubble">
-                <div class="meta">
-                    <strong>{{ m.isMine ? ('app.chat.you' | translate) : m.name }}</strong>
-                    @if (flag(m.countryCode)) { <span class="flag" aria-hidden="true">{{ flag(m.countryCode) }}</span> }
-                    <span class="lvl" [style.color]="tierColor(m.level)">{{ 'app.chat.level' | translate:{ level: m.level } }}</span>
-                    @if (m.platform === 'android' || m.platform === 'ios') {
-                    <mat-icon class="on-app" [attr.aria-label]="'app.chat.onApp' | translate" [title]="'app.chat.onApp' | translate">smartphone</mat-icon>
+            <div class="msg-body">
+                <div class="bubble">
+                    <div class="meta">
+                        <strong>{{ m.isMine ? ('app.chat.you' | translate) : m.name }}</strong>
+                        @if (flag(m.countryCode)) { <span class="flag" aria-hidden="true">{{ flag(m.countryCode) }}</span> }
+                        <span class="lvl" [style.--tier]="tierColor(m.level)">{{ 'app.chat.level' | translate:{ level: m.level } }}</span>
+                        @if (m.platform === 'android' || m.platform === 'ios') {
+                        <mat-icon class="on-app" [attr.aria-label]="'app.chat.onApp' | translate" [title]="'app.chat.onApp' | translate">smartphone</mat-icon>
+                        }
+                    </div>
+                    <p class="text">{{ m.message }}</p>
+                    <div class="foot">
+                        <time [attr.datetime]="m.createdAt">{{ m.createdAt | date:'shortTime' }}</time>
+                        @if (isAdmin) {
+                        <button type="button" class="remove-btn" (click)="remove(m)">
+                            <mat-icon>delete</mat-icon>{{ 'app.chat.remove' | translate }}
+                        </button>
+                        }
+                    </div>
+
+                    @if (reactionEmojis.length && !muted) {
+                    <button type="button" class="react-btn" aria-label="Add a reaction" title="Add a reaction"
+                        [attr.aria-expanded]="reactingTo === m.id" (click)="toggleReactionPicker(m, $event)">
+                        <mat-icon>add_reaction</mat-icon>
+                    </button>
+                    }
+                    @if (reactingTo === m.id) {
+                    <div class="reaction-picker" role="group" aria-label="Pick a reaction" (click)="$event.stopPropagation()">
+                        @for (e of reactionEmojis; track e) {
+                        <button type="button" [class.active]="hasReacted(m, e)" (click)="react(m, e)">{{ e }}</button>
+                        }
+                    </div>
                     }
                 </div>
-                <p class="text">{{ m.message }}</p>
-                <div class="foot">
-                    <time [attr.datetime]="m.createdAt">{{ m.createdAt | date:'shortTime' }}</time>
-                    @if (isAdmin) {
-                    <button type="button" class="remove-btn" (click)="remove(m)">
-                        <mat-icon>delete</mat-icon>{{ 'app.chat.remove' | translate }}
+
+                @if (m.reactions?.length) {
+                <div class="reactions">
+                    @for (r of m.reactions; track r.emoji) {
+                    <button type="button" class="reaction" [class.mine]="r.mine" [disabled]="muted"
+                        [attr.aria-pressed]="r.mine" (click)="react(m, r.emoji)">
+                        <span class="emoji">{{ r.emoji }}</span><span class="count">{{ r.count }}</span>
                     </button>
                     }
                 </div>
+                }
             </div>
         </article>
         } @empty {
@@ -65,13 +93,40 @@
     </button>
     }
 
-    <footer class="composer">
+    <footer class="composer" (click)="$event.stopPropagation()">
         @if (muted) {
         <p class="muted-note"><mat-icon>volume_off</mat-icon>{{ 'app.chat.muted' | translate }}</p>
         } @else {
         @if (error) { <p class="send-error" role="alert">{{ error }}</p> }
+
+        @if (emojiOpen) {
+        <div class="emoji-panel" role="group" aria-label="Emoji">
+            <div class="emoji-tabs">
+                @for (g of emojiGroups; track g.label; let i = $index) {
+                <button type="button" [class.active]="emojiGroup === i" (click)="emojiGroup = i"
+                    [attr.aria-label]="g.label" [title]="g.label">{{ g.icon }}</button>
+                }
+            </div>
+            <div class="emoji-grid">
+                @for (e of emojiGroups[emojiGroup].emojis; track e) {
+                <button type="button" (click)="insertEmoji(e)">{{ e }}</button>
+                }
+            </div>
+        </div>
+        } @else {
+        <div class="quick-row" role="group" aria-label="Quick emoji">
+            @for (e of quickEmojis; track e) {
+            <button type="button" (click)="insertEmoji(e)">{{ e }}</button>
+            }
+        </div>
+        }
+
         <div class="composer-row">
-            <textarea [(ngModel)]="draft" rows="1" [maxLength]="maxLength" (keydown)="onKey($event)"
+            <button type="button" class="emoji-btn" [class.active]="emojiOpen" (click)="emojiOpen = !emojiOpen"
+                aria-label="Emoji" [attr.aria-expanded]="emojiOpen">
+                <mat-icon>{{ emojiOpen ? 'keyboard' : 'mood' }}</mat-icon>
+            </button>
+            <textarea #input [(ngModel)]="draft" rows="1" [maxLength]="maxLength" (keydown)="onKey($event)"
                 [placeholder]="'app.chat.placeholder' | translate" [attr.aria-label]="'app.chat.placeholder' | translate"></textarea>
             <button type="button" class="send-btn" [disabled]="!canSend" (click)="send()" [attr.aria-label]="'app.chat.send' | translate">
                 <mat-icon>send</mat-icon>

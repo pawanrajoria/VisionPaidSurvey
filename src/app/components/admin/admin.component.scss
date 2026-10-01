@@ -650,3 +650,55 @@ tbody tr[data-rejection="block"]:hover td { background: #fbdcd8; }
 .row-actions .btn + .btn {
   margin-left: 6px;
 }
+
+// ───────── Notifications tab ─────────
+.form-grid label.span-4 {
+  grid-column: 1 / -1;
+}
+
+.notify-preview {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 420px;
+  margin-top: 14px;
+  padding: 12px 14px;
+  border: 1px solid $line;
+  border-radius: 14px;
+  background: #f6f8f7;
+
+  mat-icon {
+    flex: none;
+    color: #105749;
+  }
+
+  strong {
+    display: block;
+    font-size: 14px;
+  }
+
+  p {
+    margin: 2px 0 0;
+    color: $muted;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+  }
+}
+
+.form-grid textarea {
+  padding: 10px 12px;
+  border: 1px solid #c9d5d1;
+  border-radius: 10px;
+  background: #fff;
+  color: $ink;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  resize: vertical;
+
+  &:focus-visible {
+    outline: none;
+    border-color: $brand;
+    box-shadow: 0 0 0 3px rgba(16, 87, 73, 0.18);
+  }
+}

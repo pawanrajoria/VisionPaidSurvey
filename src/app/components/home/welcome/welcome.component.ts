@@ -21,6 +21,8 @@ import { ONBOARDING_SKIPPED_KEY } from '../engagement/engagement.vm';
 const SINGLE = 2, MULTI = 3, NUMBER = 8, TEXT = 10;
 const MAX_OPTIONS = 40;
 const MIN_AGE = 16;
+/** AGE, GENDER, ZIP qualifications - collected by the basics step and stored by the API. */
+const BASICS_QUALIFICATION_IDS = [1, 2, 3];
 
 @Component({
     selector: 'app-welcome',
@@ -124,6 +126,9 @@ export class WelcomeComponent extends BaseComponent implements OnInit {
                     const supported = q.typeId === SINGLE || q.typeId === MULTI || q.typeId === NUMBER || q.typeId === TEXT;
                     const alreadyAnswered = q.isSelected || answers.some(a => a.isSelected);
                     if (!supported || alreadyAnswered || !q.questionName || answers.length === 0) continue;
+                    // Age, gender and postal code are the basics step; asking them again here
+                    // is what made age show up twice.
+                    if (BASICS_QUALIFICATION_IDS.includes(q.qualificationId)) continue;
                     if ((q.typeId === SINGLE || q.typeId === MULTI) && answers.length > MAX_OPTIONS) continue;
                     picked.push(q);
                 }

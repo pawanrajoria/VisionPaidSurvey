@@ -14,6 +14,20 @@ export interface IChatMessage {
     isMine: boolean;
     /** web | android | ios */
     platform: string;
+    reactions?: IChatReaction[];
+}
+
+export interface IChatReaction {
+    emoji: string;
+    count: number;
+    /** The signed-in user gave this reaction. */
+    mine: boolean;
+}
+
+export interface IChatReactResult {
+    isSuccess: boolean;
+    message: string;
+    reactions: IChatReaction[];
 }
 
 export interface IChatFeed {
@@ -24,6 +38,11 @@ export interface IChatFeed {
     secondsBetweenMessages: number;
     messages: IChatMessage[];
     removedIds: number[];
+    /** Emoji a message can be reacted with; empty when reactions are switched off. */
+    reactionEmojis?: string[];
+    /** While polling: current reactions of every message from reactionsFromId on that has any. */
+    reactionUpdates?: { messageId: number; reactions: IChatReaction[] }[];
+    reactionsFromId?: number;
 }
 
 export interface IChatSendResult {
@@ -62,6 +81,11 @@ export class ChatService {
 
     send(message: string): Promise<IChatSendResult> {
         return firstValueFrom(this.http.post<IChatSendResult>(this.base + "messages", { message }, BACKGROUND));
+    }
+
+    /** Adds the reaction, or takes it back when the user already gave it. */
+    react(id: number, emoji: string): Promise<IChatReactResult> {
+        return firstValueFrom(this.http.post<IChatReactResult>(this.base + `messages/${id}/react`, { emoji }, BACKGROUND));
     }
 
     // ───────────── Moderation (administrators) ─────────────

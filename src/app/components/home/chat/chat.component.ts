@@ -3,6 +3,7 @@ import { TranslateService } from "@ngx-translate/core";
 import { SharedModule } from "../../../shared.module";
 import { BaseComponent } from "../../../base.component";
 import { ChatService, IChatFeed, IChatMessage } from "./chat.service";
+import { EMOJI_GROUPS, QUICK_EMOJIS, isEmojiOnly } from "./chat-emoji";
 import { tierForLevel } from "../engagement/engagement.vm";
 
 const POLL_MS = 5000;
@@ -17,6 +18,7 @@ const NEAR_BOTTOM = 120;
 })
 export class ChatComponent extends BaseComponent implements OnInit, OnDestroy {
     @ViewChild('list') list?: ElementRef<HTMLElement>;
+    @ViewChild('input') input?: ElementRef<HTMLTextAreaElement>;
 
     private readonly chat = inject(ChatService);
     private readonly translate = inject(TranslateService);
@@ -35,6 +37,16 @@ export class ChatComponent extends BaseComponent implements OnInit, OnDestroy {
     error = '';
     /** New messages arrived while the user was reading older ones. */
     unseen = 0;
+
+    /** Emoji a message can be reacted with (from the server; empty = reactions off). */
+    reactionEmojis: string[] = [];
+    /** Id of the message whose reaction picker is open. */
+    reactingTo = 0;
+    emojiOpen = false;
+    emojiGroup = 0;
+    readonly emojiGroups = EMOJI_GROUPS;
+    readonly quickEmojis = QUICK_EMOJIS;
+    private readonly jumboCache = new Map<number, boolean>();
 
     private timer: ReturnType<typeof setInterval> | undefined;
     private polling = false;
@@ -71,6 +83,7 @@ export class ChatComponent extends BaseComponent implements OnInit, OnDestroy {
         this.isAdmin = !!feed?.isAdmin;
         this.maxLength = feed?.maxLength || 300;
         this.messages = feed?.messages ?? [];
+        this.reactionEmojis = feed?.reactionEmojis ?? [];
     }
 
     private async poll() {
@@ -83,6 +96,14 @@ export class ChatComponent extends BaseComponent implements OnInit, OnDestroy {
             if (feed.removedIds?.length) {
                 const removed = new Set(feed.removedIds);
                 this.messages = this.messages.filter(m => !removed.has(m.id));
+            }
+
+            // Reactions other people added to (or took off) messages already on screen.
+            if (feed.reactionsFromId) {
+                const updates = new Map((feed.reactionUpdates ?? []).map(u => [u.messageId, u.reactions]));
+                for (const m of this.messages) {
+                    if (m.id >= feed.reactionsFromId) m.reactions = updates.get(m.id) ?? [];
+                }
             }
 
             const known = new Set(this.messages.map(m => m.id));
@@ -130,6 +151,7 @@ export class ChatComponent extends BaseComponent implements OnInit, OnDestroy {
                 return;
             }
             this.draft = '';
+            this.emojiOpen = false;
             if (result.sent && !this.messages.some(m => m.id === result.sent!.id)) {
                 this.messages = [...this.messages, result.sent];
             }
@@ -148,6 +170,67 @@ export class ChatComponent extends BaseComponent implements OnInit, OnDestroy {
             event.preventDefault();
             this.send();
         }
+    }
+
+    // ───────────── Emoji and reactions ─────────────
+
+    /** Puts the emoji where the cursor is and keeps typing there. */
+    insertEmoji(emoji: string) {
+        if (this.draft.length + emoji.length > this.maxLength) return;
+        const el = this.input?.nativeElement;
+        const start = el?.selectionStart ?? this.draft.length;
+        const end = el?.selectionEnd ?? this.draft.length;
+        this.draft = this.draft.slice(0, start) + emoji + this.draft.slice(end);
+        setTimeout(() => {
+            if (!el) return;
+            el.focus();
+            el.selectionStart = el.selectionEnd = start + emoji.length;
+        });
+    }
+
+    toggleReactionPicker(message: IChatMessage, event: Event) {
+        event.stopPropagation();
+        this.reactingTo = this.reactingTo === message.id ? 0 : message.id;
+    }
+
+    /** A click anywhere else closes the open reaction picker. */
+    closePopovers() {
+        this.reactingTo = 0;
+    }
+
+    hasReacted(message: IChatMessage, emoji: string): boolean {
+        return !!message.reactions?.some(r => r.emoji === emoji && r.mine);
+    }
+
+    /** Shows the change at once, then takes the server's totals (or rolls back if it failed). */
+    async react(message: IChatMessage, emoji: string) {
+        this.reactingTo = 0;
+        if (this.muted) return;
+
+        const before = message.reactions ?? [];
+        const existing = before.find(r => r.emoji === emoji);
+        message.reactions = existing?.mine
+            ? before.map(r => r.emoji === emoji ? { ...r, count: r.count - 1, mine: false } : r).filter(r => r.count > 0)
+            : existing
+                ? before.map(r => r.emoji === emoji ? { ...r, count: r.count + 1, mine: true } : r)
+                : [...before, { emoji, count: 1, mine: true }];
+
+        try {
+            const result = await this.chat.react(message.id, emoji);
+            message.reactions = result?.isSuccess ? (result.reactions ?? []) : before;
+        } catch {
+            message.reactions = before;
+        }
+    }
+
+    /** One to three emoji and nothing else are shown large. */
+    isJumbo(message: IChatMessage): boolean {
+        let value = this.jumboCache.get(message.id);
+        if (value === undefined) {
+            value = isEmojiOnly(message.message);
+            this.jumboCache.set(message.id, value);
+        }
+        return value;
     }
 
     /** Admins can remove a message straight from the chat. */

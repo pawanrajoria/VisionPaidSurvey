@@ -17,11 +17,6 @@ import { SurveyInstructionPopupComponent } from "../survey/survey-common-popup/s
 import { Router } from "@angular/router";
 import { EngagementService } from "../engagement/engagement.service";
 import { IEngagementSummary, IPriorityOffer } from "../engagement/engagement.vm";
-import { AccountService } from "../account.service";
-import { MessageService } from "../../layout/message/message.service";
-import { MessageVM } from "../../layout/message/message.vm";
-import { TierAwardComponent } from "../../layout/header/tier-award/tier-award.component";
-import { IUserbalanceInfoVM } from "../account.vm";
 
 
 @Component({
@@ -69,13 +64,10 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
     @ViewChild('prioritySlider', { read: ElementRef }) prioritySlider!: ElementRef;
 
     readonly engagement = inject(EngagementService);
-    readonly accountService = inject(AccountService);
-    readonly messageService = inject(MessageService);
     readonly router = inject(Router);
 
     priorityOffers: IPriorityOffer[] = [];
     summary: IEngagementSummary | null = null;
-    claimingDaily = false;
 
     constructor(private breakpointObserver: BreakpointObserver) {
         super();
@@ -97,6 +89,7 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
     async getOffers() {
         try {
             this.offers = (await this.offerService.getOffers(true)) ?? [];
+            this.preselectPlatform();
         } catch {
             this.offers = [];
         } finally {
@@ -127,42 +120,9 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
 
     /** Server explanation when surveys are hidden (daily limit for new accounts, proxy detected). */
     surveyNotice = '';
-    drawing = false;
-
-    /** Weekly streak prize draw. */
-    async drawPrize() {
-        if (this.drawing || !this.summary?.streak?.drawsAvailable) return;
-        this.drawing = true;
-        try {
-            const result = await this.engagement.streakDraw();
-            this.messageService.showMessage(new MessageVM(result?.message ?? 'Done', result?.isSuccess ? 'success' : 'warn'));
-            await this.loadEngagement(true);
-            if (result?.isSuccess) {
-                const info = await this.accountService.getuserinfo();
-                if (info) this.accountService.setUserBalanceInfo(info);
-            }
-        } catch {
-            /* the interceptor already told the user */
-        } finally {
-            this.drawing = false;
-        }
-    }
-
-    // ───────────── Streak / check-in / getting-started sheets ─────────────
     noticeOpen = false;
 
-    @ViewChild('streakSheet') streakSheetTpl?: TemplateRef<unknown>;
     @ViewChild('promoTpl') promoTpl?: TemplateRef<unknown>;
-
-    get balanceInfo(): IUserbalanceInfoVM { return this.accountService.getUserBalanceInfo() ?? {}; }
-
-    openStreak() {
-        if (this.streakSheetTpl) this.openSheet(this.streakSheetTpl);
-    }
-
-    openLevels() {
-        this.dialog.open(TierAwardComponent);
-    }
 
     // ───────────── Offer of the day popup ─────────────
     promo: IPriorityOffer | null = null;
@@ -200,26 +160,6 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
         this.closePromo();
         if (offer) this.openPriorityOffer(offer);
     }
-    private sheetRef: MatDialogRef<unknown> | null = null;
-
-    /** Opens one of the engagement details: a bottom sheet on phones, a small dialog on larger screens. */
-    openSheet(template: TemplateRef<unknown>) {
-        this.sheetRef?.close();
-        const phone = this.isBrowser && this.breakpointObserver.isMatched('(max-width: 600px)');
-        this.sheetRef = this.dialog.open(template, {
-            width: phone ? '100vw' : '440px',
-            maxWidth: phone ? '100vw' : '94vw',
-            maxHeight: '88vh',
-            autoFocus: false,
-            position: phone ? { bottom: '0' } : undefined,
-            panelClass: phone ? ['engage-sheet-panel', 'engage-sheet-bottom'] : ['engage-sheet-panel']
-        });
-    }
-
-    closeSheet() {
-        this.sheetRef?.close();
-        this.sheetRef = null;
-    }
 
     // ───────────── Priority offers ─────────────
     async loadPriorityOffers() {
@@ -234,8 +174,25 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
     get currentPlatform(): string {
         const ua = this.nav?.userAgent ?? '';
         if (/iPhone|iPad|iPod/i.test(ua)) return 'IOS';
+        // iPadOS reports a Mac user agent; the touch screen gives it away.
+        if (/Macintosh/i.test(ua) && (this.nav?.maxTouchPoints ?? 0) > 1) return 'IOS';
         if (/Android/i.test(ua)) return 'Android';
         return 'Desktop';
+    }
+
+    private platformPreselected = false;
+
+    /**
+     * Starts the Android / iOS / Desktop filter on the visitor's own device, so a phone does not
+     * open on desktop-only offers. Skipped when nothing would match; the chips stay changeable.
+     */
+    private preselectPlatform() {
+        if (this.platformPreselected || !this.isBrowser) return;
+        this.platformPreselected = true;
+        const platform = this.currentPlatform;
+        if (this.offers.some(o => (o.device ?? []).includes(platform))) {
+            this.selectedDeviceType = [platform];
+        }
     }
 
     openPriorityOffer(offer: IPriorityOffer) {
@@ -252,7 +209,7 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
         offer.imageUrl = null;
     }
 
-    // ───────────── Onboarding, daily check-in, checklist ─────────────
+    // ───────────── Onboarding banner (streak, check-in and checklist live in the header) ─────────────
     async loadEngagement(refresh = false) {
         this.summary = await this.engagement.getSummary(refresh);
     }
@@ -262,63 +219,16 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
         return !!o && o.available && !o.completed;
     }
 
-    get streakDays(): number[] {
-        const every = this.summary?.daily?.streakBonusEveryDays ?? 7;
-        return Array.from({ length: every }, (_, i) => i + 1);
-    }
-
-    /** Position inside the current streak cycle (1..N), 0 when no streak is running. */
-    get streakPosition(): number {
-        const d = this.summary?.daily;
-        if (!d || d.streak === 0) return 0;
-        const mod = d.streak % d.streakBonusEveryDays;
-        return mod === 0 ? d.streakBonusEveryDays : mod;
-    }
-
-    async claimDaily() {
-        if (this.claimingDaily || !this.summary?.daily?.available || this.summary.daily.claimedToday) return;
-        this.claimingDaily = true;
-        try {
-            const result = await this.engagement.dailyCheckin();
-            this.messageService.showMessage(new MessageVM(result?.message ?? 'Done', result?.isSuccess ? 'success' : 'warn'));
-            await this.loadEngagement(true);
-            if (result?.isSuccess) {
-                const info = await this.accountService.getuserinfo();
-                if (info) this.accountService.setUserBalanceInfo(info);
-            }
-        } catch {
-            /* the interceptor already told the user */
-        } finally {
-            this.claimingDaily = false;
-        }
-    }
-
-    get checklist(): { label: string; done: boolean; link: string[] }[] {
-        const c = this.summary?.checklist;
-        if (!c) return [];
-        const app = ['/', this.currentLocale, 'app'];
-        const items = [
-            { label: 'app.earn.checkProfile', done: c.profileCompleted, link: [...app, 'welcome'] },
-            { label: 'app.earn.checkSurvey', done: c.firstSurveyDone, link: [...app, 'survey'] },
-            { label: 'app.earn.checkOffer', done: c.firstOfferDone, link: [...app, 'offers'] },
-            { label: 'app.earn.checkInvite', done: c.invitedFriend, link: [...app, 'refer'] },
-            { label: 'app.earn.checkCashout', done: c.firstCashout, link: [...app, 'cashout'] }
-        ];
-        // The profile step only exists while the welcome bonus is switched on.
-        return this.summary?.onboarding?.available ? items : items.slice(1);
-    }
-
-    get checklistDone(): number { return this.checklist.filter(i => i.done).length; }
-    get showChecklist(): boolean { return this.checklist.length > 0 && this.checklistDone < this.checklist.length; }
-
     filterItems() {
         const text = this.searchTxt.toLowerCase();
 
         this.filteredOffers = this.offers
             .filter(item => {
+                // An offer without device information is not restricted to a platform.
+                const devices = item.device ?? [];
                 const matchesCategory =
-                    this.selectedDeviceType.length === 0 ||
-                    item.device.some((cat: any) => this.selectedDeviceType.includes(cat));
+                    this.selectedDeviceType.length === 0 || devices.length === 0 ||
+                    devices.some(cat => this.selectedDeviceType.includes(cat));
 
                 const matchesText = item.offerName?.toLowerCase().includes(text);
                 return matchesCategory && matchesText;

@@ -432,6 +432,103 @@
         </section>
         }
 
+        <!-- ═════════ NOTIFICATIONS ═════════ -->
+        @if (tab === 'notifications') {
+        <section>
+            <div class="section-head">
+                <h1>Notifications</h1>
+                <button type="button" class="btn ghost" (click)="loadNotifications()"><mat-icon>refresh</mat-icon> Refresh</button>
+            </div>
+            @if (notificationError) { <p class="notice error">{{ notificationError }}</p> }
+            @if (notifications && !notifications.available) {
+            <p class="notice error">Notifications are not set up yet. Run DatabaseScripts/007_chat_reactions_notifications.sql on the database first.</p>
+            }
+
+            @if (notifications; as n) {
+            <div class="kpi-grid">
+                <div class="kpi">
+                    <span class="kpi-label">Website</span>
+                    <span class="kpi-value">{{ n.webDevices | number }}</span>
+                    <span class="kpi-sub">browsers with notifications enabled</span>
+                </div>
+                <div class="kpi">
+                    <span class="kpi-label">Android app</span>
+                    <span class="kpi-value">{{ n.androidDevices | number }}</span>
+                    <span class="kpi-sub">devices registered for push</span>
+                </div>
+                <div class="kpi">
+                    <span class="kpi-label">iOS app</span>
+                    <span class="kpi-value">{{ n.iosDevices | number }}</span>
+                    <span class="kpi-sub">devices registered for push</span>
+                </div>
+            </div>
+            }
+
+            <form class="panel form" (ngSubmit)="sendNotification()">
+                <h2>Send a notification</h2>
+                <div class="form-grid">
+                    <label class="span-2">Title
+                        <input type="text" name="ntitle" [(ngModel)]="notificationForm.title" maxlength="100" required
+                            placeholder="New high-paying offers are live">
+                    </label>
+                    <label>Send to
+                        <select name="naudience" [(ngModel)]="notificationForm.audience">
+                            @for (a of audiences; track a.value) { <option [value]="a.value">{{ a.label }}</option> }
+                        </select>
+                    </label>
+                    <label>Link <small>optional</small>
+                        <input type="text" name="nurl" [(ngModel)]="notificationForm.url" maxlength="300" placeholder="/app/offers">
+                    </label>
+                    <label class="span-4">Message
+                        <textarea name="nbody" [(ngModel)]="notificationForm.body" maxlength="300" rows="3" required
+                            placeholder="Complete one today and earn bonus points."></textarea>
+                        <small>{{ notificationForm.body.length }}/300 · shown as a push notification and in the bell / notification list of the website and the app.</small>
+                    </label>
+                </div>
+
+                <div class="notify-preview" aria-label="Preview">
+                    <mat-icon>notifications_active</mat-icon>
+                    <div>
+                        <strong>{{ notificationForm.title || 'Title' }}</strong>
+                        <p>{{ notificationForm.body || 'Your message appears here.' }}</p>
+                    </div>
+                </div>
+
+                @if (notificationFormError) { <p class="notice error" role="alert">{{ notificationFormError }}</p> }
+                <div class="form-actions">
+                    <button type="submit" class="btn primary" [disabled]="busy">
+                        <mat-icon>send</mat-icon> {{ busy ? 'Sending…' : 'Send notification' }}
+                    </button>
+                    <span class="hint">Push reaches {{ notificationReach | number }} device{{ notificationReach === 1 ? '' : 's' }}; everyone in the audience sees it in their notification list.</span>
+                </div>
+            </form>
+
+            <div class="panel table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Notification</th><th>Sent to</th><th class="num">Delivered</th><th class="num">Failed</th><th>Sent</th></tr>
+                    </thead>
+                    <tbody>
+                        @for (h of notifications?.history ?? []; track h.id) {
+                        <tr>
+                            <td>
+                                <div class="cell-main">{{ h.title }}</div>
+                                <div class="cell-sub">{{ h.body }}@if (h.url) { · {{ h.url }} }</div>
+                            </td>
+                            <td>{{ audienceLabel(h.audience) }}</td>
+                            <td class="num">{{ h.sentCount | number }} / {{ h.targetCount | number }}</td>
+                            <td class="num">{{ h.failedCount | number }}</td>
+                            <td>{{ h.createdAt | date:'d MMM, HH:mm' }}</td>
+                        </tr>
+                        } @empty {
+                        <tr><td colspan="5" class="empty">{{ notifications ? 'Nothing sent yet.' : 'Loading…' }}</td></tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        }
+
         <!-- ═════════ EARNINGS (existing dashboard) ═════════ -->
         @if (tab === 'earnings') {
         <app-admindashboard></app-admindashboard>

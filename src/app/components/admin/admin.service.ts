@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 import { ConfigService } from "../../config.service";
 import { BACKGROUND } from "../home/engagement/engagement.service";
-import { AdminOverviewDto, AdminPayoutDto, AdminUserListDto, BulkUserActionResultDto, PriorityOfferAdminDto } from "./admin.vm";
+import { AdminOverviewDto, AdminPayoutDto, AdminUserListDto, BulkUserActionResultDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest, SendNotificationResult } from "./admin.vm";
 
 @Injectable({ providedIn: 'root' })
 export class AdminService {
@@ -71,6 +71,15 @@ export class AdminService {
 
     async savePriorityOffer(offer: PriorityOfferAdminDto): Promise<PriorityOfferAdminDto> {
         return await firstValueFrom(this.http.post<PriorityOfferAdminDto>(this.base + "priority-offers", offer));
+    }
+
+    // ───────────── Notifications (push + in-app list, website and app) ─────────────
+    async getNotificationOverview(): Promise<NotificationAudienceDto> {
+        return await firstValueFrom(this.http.get<NotificationAudienceDto>(this.config.baseUrl + "notification/admin/overview"));
+    }
+
+    async sendNotification(request: SendNotificationRequest): Promise<SendNotificationResult> {
+        return await firstValueFrom(this.http.post<SendNotificationResult>(this.config.baseUrl + "notification/admin/send", request));
     }
 
     async deletePriorityOffer(id: number): Promise<{ isSuccess: boolean; message: string }> {

@@ -5,10 +5,10 @@ import { AdminService } from "./admin.service";
 import { AdminDashboardComponent } from "./dashboard/dashboard.component";
 import { MessageService } from "../layout/message/message.service";
 import { MessageVM } from "../layout/message/message.vm";
-import { AdminOverviewDto, AdminPayoutDto, AdminUserDto, PriorityOfferAdminDto } from "./admin.vm";
+import { AdminOverviewDto, AdminPayoutDto, AdminUserDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest } from "./admin.vm";
 import { ChatService, IAdminChatMessage } from "../home/chat/chat.service";
 
-type AdminTab = 'overview' | 'offers' | 'payouts' | 'users' | 'chat' | 'earnings';
+type AdminTab = 'overview' | 'offers' | 'payouts' | 'users' | 'chat' | 'notifications' | 'earnings';
 
 const PAYOUT_PENDING = 1, PAYOUT_COMPLETED = 2, PAYOUT_REJECTED = 4;
 const USER_BLOCKED = 3;
@@ -26,6 +26,7 @@ export class AdminComponent extends BaseComponent implements OnInit {
         { id: 'payouts', label: 'Payouts', icon: 'payments' },
         { id: 'users', label: 'Users', icon: 'group' },
         { id: 'chat', label: 'Chat', icon: 'forum' },
+        { id: 'notifications', label: 'Notifications', icon: 'campaign' },
         { id: 'earnings', label: 'Earnings', icon: 'monitoring' }
     ];
     tab: AdminTab = 'overview';
@@ -62,6 +63,18 @@ export class AdminComponent extends BaseComponent implements OnInit {
     chatLoaded = false;
     chatHasMore = false;
 
+    // Notifications
+    notifications: NotificationAudienceDto | null = null;
+    notificationError = '';
+    notificationForm: SendNotificationRequest = { title: '', body: '', url: '', audience: 'all' };
+    notificationFormError = '';
+    readonly audiences = [
+        { value: 'all', label: 'Everyone (website + apps)' },
+        { value: 'web', label: 'Website only' },
+        { value: 'android', label: 'Android app only' },
+        { value: 'ios', label: 'iOS app only' }
+    ];
+
     constructor(private adminService: AdminService, private messageService: MessageService, private chatService: ChatService) {
         super();
     }
@@ -77,6 +90,7 @@ export class AdminComponent extends BaseComponent implements OnInit {
         if (tab === 'payouts' && !this.payoutsLoaded) await this.loadPayouts();
         if (tab === 'users' && !this.usersLoaded) await this.loadUsers();
         if (tab === 'chat') await this.loadChat();
+        if (tab === 'notifications') await this.loadNotifications();
     }
 
     private toast(message: string, type: 'success' | 'error' = 'success') {
@@ -305,6 +319,60 @@ export class AdminComponent extends BaseComponent implements OnInit {
 
     platformIcon(platform: string): string {
         return platform === 'android' ? 'android' : platform === 'ios' ? 'phone_iphone' : platform === 'web' ? 'language' : 'help_outline';
+    }
+
+    // ───────────── Notifications ─────────────
+    async loadNotifications() {
+        this.notificationError = '';
+        try {
+            this.notifications = await this.adminService.getNotificationOverview();
+        } catch {
+            this.notificationError = 'Notifications could not be loaded.';
+        }
+    }
+
+    /** Devices that will get the push for the audience picked in the form. */
+    get notificationReach(): number {
+        const n = this.notifications;
+        if (!n) return 0;
+        switch (this.notificationForm.audience) {
+            case 'web': return n.webDevices;
+            case 'android': return n.androidDevices;
+            case 'ios': return n.iosDevices;
+            default: return n.webDevices + n.androidDevices + n.iosDevices;
+        }
+    }
+
+    audienceLabel(value: string): string {
+        return value === 'web' ? 'Website' : value === 'android' ? 'Android' : value === 'ios' ? 'iOS' : 'Everyone';
+    }
+
+    async sendNotification() {
+        const f = this.notificationForm;
+        const title = f.title.trim(), body = f.body.trim(), url = f.url.trim();
+        this.notificationFormError =
+            title.length < 3 ? 'Add a title (at least 3 characters).'
+                : body.length < 3 ? 'Add the message.'
+                    : url && !url.startsWith('/') && !/^https:\/\//i.test(url) ? 'The link must start with / (a page of the site, e.g. /app/offers) or https://.'
+                        : '';
+        if (this.notificationFormError || this.busy) return;
+
+        const who = this.audiences.find(a => a.value === f.audience)?.label ?? 'Everyone';
+        if (!confirm(`Send this notification to: ${who}?\n\n${title}\n${body}`)) return;
+
+        this.busy = true;
+        try {
+            const result = await this.adminService.sendNotification({ title, body, url, audience: f.audience });
+            this.toast(result?.message ?? 'Done', result?.isSuccess ? 'success' : 'error');
+            if (result?.isSuccess) {
+                this.notificationForm = { title: '', body: '', url: '', audience: f.audience };
+                await this.loadNotifications();
+            } else {
+                this.notificationFormError = result?.message ?? '';
+            }
+        } catch { /* toast already shown */ } finally {
+            this.busy = false;
+        }
     }
 
     // ───────────── Chat moderation ─────────────
