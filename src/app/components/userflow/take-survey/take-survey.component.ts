@@ -89,30 +89,46 @@ export class TakeSurveyComponent extends BaseSurveyComponent {
       languageCode: this.isBrowser ? this.getLang3(navigator.language) : 'eng'
     };
 
-    this.respondentData = await this.respondentService.enterRespondent(request);
+    let entry: RespondentEntryResponseVM | null = null;
+    try {
+      entry = await this.respondentService.enterRespondent(request);
+    } catch {
+      entry = null;
+    }
 
     if (
-      !!this.respondentData &&
-      !this.respondentData.isFailed &&
-      !this.respondentData.redirectUrl &&
-      !!this.respondentData.qualifications
+      !!entry &&
+      !entry.isFailed &&
+      !entry.redirectUrl &&
+      !!entry.qualifications &&
+      entry.qualifications.length > 0
     ) {
-      this.respondentData.qualifications = this.respondentData.qualifications.sort((a, b) =>
+      this.respondentData = entry;
+      this.respondentData.qualifications = entry.qualifications.sort((a, b) =>
         a.orderId < b.orderId ? -1 : 1
       );
       this.qualification = this.respondentData.qualifications[this.qualificationIndex];
     } else {
-      const redirect = this.respondentData?.redirectUrl || 'https://profitpiller.com';
-
-      if (!!this.dialogRef && !!this.respondentData) {
-        if (this.respondentData.isQualified)
-          this.dialogRef?.close({ role: 'qualify', data: redirect });
-        else if (this.respondentData.isFailed)
-          this.dialogRef?.close({ role: 'disquality', data: redirect });
-      } else {
-        if (this.win) this.win.location.href = redirect;
-      }
+      if (entry) this.respondentData = entry;
+      this.leave(entry);
     }
+  }
+
+  /**
+   * Ends the screener. Every outcome is handled, including a failed request and a response
+   * with neither flag set - those used to leave the dialog open and blank, or (worse) sent the
+   * whole app to the marketing site from inside a dialog.
+   */
+  private leave(response: RespondentEntryResponseVM | null): void {
+    const redirect = response?.redirectUrl || '';
+
+    if (this.dialogRef) {
+      const qualified = !!response && !response.isFailed && (response.isQualified || !!redirect);
+      this.dialogRef.close({ role: qualified ? 'qualify' : 'disquality', data: redirect });
+      return;
+    }
+
+    if (this.win) this.win.location.href = redirect || this.win.location.origin;
   }
 
   async submitSurvey(answerRequest: RespondentSubmitVM): Promise<void> {
@@ -123,7 +139,12 @@ export class TakeSurveyComponent extends BaseSurveyComponent {
       answerRequest.isLast = true;
     }
 
-    const response = await this.respondentService.submitRespondent(answerRequest);
+    let response: RespondentEntryResponseVM | null = null;
+    try {
+      response = await this.respondentService.submitRespondent(answerRequest);
+    } catch {
+      response = null;
+    }
 
     if (!!response && !response.isFailed && !response.redirectUrl) {
       this.qualificationIndex++;
@@ -134,17 +155,7 @@ export class TakeSurveyComponent extends BaseSurveyComponent {
         this.qualification = this.respondentData.qualifications[this.qualificationIndex];
       }
     } else {
-      const redirect = response?.redirectUrl || 'https://profitpiller.com';
-
-      if (!!this.dialogRef && !!response) {
-        if (response.isQualified)
-          this.dialogRef?.close({ role: 'qualify', data: redirect });
-        else if (response.isFailed)
-          this.dialogRef?.close({ role: 'disquality', data: redirect });
-
-      } else {
-        if (this.win) this.win.location.href = redirect;
-      }
+      this.leave(response);
     }
   }
 

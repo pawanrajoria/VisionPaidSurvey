@@ -102,3 +102,68 @@
         .earnings { font-weight: 600; color: #1e293b; }
     }
 }
+// Live (unlocked) rows and shared states
+.state-text {
+    margin: 0;
+    padding: 24px 8px;
+    color: #64748b;
+    text-align: center;
+}
+
+.start-link {
+    color: #105749;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover { text-decoration: underline; }
+}
+
+.user-row.live {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 8px;
+    border-bottom: 1px solid #f1f5f9;
+    border-radius: 10px;
+
+    &.me { background: rgba(16, 87, 73, 0.08); }
+
+    .rank {
+        width: 36px;
+        font-weight: 700;
+        color: #94a3b8;
+        font-variant-numeric: tabular-nums;
+
+        &.top { color: #d4a106; }
+    }
+
+    .avatar-circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #105749;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .user-name {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-width: 0;
+        color: #1e293b;
+        font-weight: 600;
+
+        small { color: #94a3b8; font-weight: 400; }
+    }
+
+    .earnings {
+        font-weight: 700;
+        color: #105749;
+        font-variant-numeric: tabular-nums;
+    }
+}

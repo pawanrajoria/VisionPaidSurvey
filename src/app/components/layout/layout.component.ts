@@ -28,6 +28,8 @@ import { MessageService } from './message/message.service';
 import { MessageVM } from './message/message.vm';
 import { LivepayoutComponent } from './live-payout/live-payout.component';
 import { GtmService } from '../../gtm.service';
+import { EngagementService } from '../home/engagement/engagement.service';
+import { USER_TIME_ZONE_KEY } from '../../timezones';
 
 const MOBILE_VIEW = 'screen and (max-width: 768px)';
 const TABLET_VIEW = 'screen and (min-width: 769px) and (max-width: 1024px)';
@@ -74,6 +76,7 @@ export class LayoutComponent extends BaseComponent implements AfterViewInit, OnD
         private messageService: MessageService,
         private ngZone: NgZone,
         private gtm: GtmService,
+        private engagementService: EngagementService,
         private cdr: ChangeDetectorRef, // To manually trigger detection after async data load
         @Inject(PLATFORM_ID) private platformId: Object
     ) {
@@ -128,6 +131,7 @@ export class LayoutComponent extends BaseComponent implements AfterViewInit, OnD
             // ✅ FIX 1: Populate menus and profile (This fixes the "Loading..." issue)
             this.allowedMenus = this.accountService.getAllowedMenus();
             await this.getUserProfile();
+            this.syncTimeZone();
 
             // ✅ FIX 2: Register notifications
             const userEmail = this.accountService.userEmail || '';
@@ -165,6 +169,16 @@ export class LayoutComponent extends BaseComponent implements AfterViewInit, OnD
         }, 0);
     }
 
+
+    /** Keeps this device in step with the time zone saved on the account (applies on next load). */
+    private async syncTimeZone() {
+        const settings = await this.engagementService.getSettings();
+        if (!settings) return;
+        try {
+            if (settings.timeZone) localStorage.setItem(USER_TIME_ZONE_KEY, settings.timeZone);
+            else localStorage.removeItem(USER_TIME_ZONE_KEY);
+        } catch { /* storage blocked */ }
+    }
 
     async getUserProfile() {
         const response = await this.accountService.getuserinfo();

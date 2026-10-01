@@ -37,8 +37,8 @@ export class SurveyService {
         this.refreshSurveys$.next();
     }
 
-    async getSurveys(): Promise<any> {
-        return await this.http.get<any>(this.config.baseUrl + "survey/get-surveys").toPromise();
+    async getSurveys(background = false): Promise<any> {
+        return await this.http.get<any>(this.config.baseUrl + "survey/get-surveys", background ? { headers: { "X-Background": "true" } } : {}).toPromise();
     }
 
     // async getSurveys(): Promise<Array<ISurveyVM>> {

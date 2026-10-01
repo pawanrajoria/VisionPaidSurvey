@@ -6,28 +6,32 @@
   <title>pocketsfull – Opinion Research Platform</title>
   <base href="/">
 
-  <!-- ✅ SEO (Neutral & Safe) -->
+  <!-- Defaults only. The real per-page <title>, description, canonical, Open Graph,
+       Twitter and hreflang tags are written during server rendering from each route's
+       data (see app.ts + seo.service.ts) and replace the values below. -->
   <meta name="description"
     content="pocketsfull is an online opinion research platform where users can participate in surveys and research studies." />
   <meta name="robots" content="index, follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="canonical" href="https://www.pocketsfull.com" />
+  <meta name="theme-color" content="#105749" />
+  <link rel="canonical" href="https://pocketsfull.com" />
 
   <!-- ✅ Trust / Identity -->
   <meta name="author" content="Cralpk Research Pvt Ltd" />
   <meta name="copyright" content="© 2026 Cralpk Research Pvt Ltd" />
   <meta name="contact" content="support@pocketsfull.com" />
 
-  <!-- ✅ Open Graph (Neutral) -->
+  <!-- ✅ Open Graph (defaults) -->
   <meta property="og:title" content="pocketsfull – Opinion Research Platform" />
   <meta property="og:description"
     content="Participate in online research surveys and share your opinions on pocketsfull." />
-  <meta property="og:image" content="https://www.pocketsfull.com/assets/images/og-image.png" />
-  <meta property="og:url" content="https://www.pocketsfull.com" />
+  <meta property="og:image" content="https://pocketsfull.com/assets/images/og-image.png" />
+  <meta property="og:url" content="https://pocketsfull.com" />
   <meta property="og:type" content="website" />
 
-  <!-- ✅ Favicon -->
+  <!-- ✅ Icons -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/icons/180.png">
 
   <!--PreLoad Images-->
   <link rel="preload" as="image" href="/assets/images/backgrounds/rh-vps-bg.webp" fetchpriority="high">
@@ -53,25 +57,34 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </noscript>
 
+  <!-- PERF: Google Tag Manager used to start downloading and executing in <head>,
+       competing with first paint. It now starts on the visitor's first interaction
+       (scroll / tap / key / pointer move) or 4 seconds after load, whichever comes
+       first. dataLayer exists immediately, so events pushed before that are kept
+       and replayed by GTM once it loads. -->
+  <script>
+    (function (w, d, id) {
+      w.dataLayer = w.dataLayer || [];
+      var started = false;
+      var events = ['pointerdown', 'pointermove', 'keydown', 'touchstart', 'scroll'];
+      function start() {
+        if (started) return;
+        started = true;
+        events.forEach(function (e) { w.removeEventListener(e, start); });
+        w.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var s = d.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtm.js?id=' + id;
+        d.head.appendChild(s);
+      }
+      events.forEach(function (e) { w.addEventListener(e, start, { passive: true, once: true }); });
+      w.addEventListener('load', function () { setTimeout(start, 4000); });
+    })(window, document, 'GTM-5CM7Q4S3');
+  </script>
 
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-5CM7Q4S3');</script>
-
-  <!-- PERF: was a plain blocking <script src> — this is a 35KB unminified
-       library that also does synchronous canvas/WebGL/audio fingerprinting
-       work on load. `defer` stops it from blocking parsing/first paint.
-       TODO(perf): you also have @fingerprintjs/fingerprintjs v5 as an npm
-       dependency — worth consolidating onto one fingerprinting library
-       (this file is the deprecated Fingerprint2 v2.1.5) rather than shipping
-       both; left as-is here since removing it touches whatever reads its
-       output (frauddetection.service.ts) and needs its own testing. -->
-  <script src="/assets/js/fingerprint.js" defer></script>
+  <!-- PERF: /assets/js/fingerprint.js is no longer loaded here. It is fetched on demand
+       by HelperService the first time a device id is actually needed (signed-in and
+       survey pages), so public pages do not pay for its font/canvas probing. -->
   <link rel="manifest" href="assets/manifest.webmanifest">
 </head>
 

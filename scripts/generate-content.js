@@ -241,7 +241,7 @@ function writeSitemaps(items, urlPrefix, filePrefix) {
   for (let i = 0; i * CHUNK < items.length; i++) {
     const chunk = items.slice(i * CHUNK, (i + 1) * CHUNK);
     const urls = chunk.map(item =>
-      `<url><loc>${SITE_URL}${urlPrefix}/${item.slug}</loc><lastmod>${(item.updatedAt || '').slice(0, 10)}</lastmod></url>`
+      `<url><loc>${SITE_URL}/en-us${urlPrefix}/${item.slug}</loc><lastmod>${(item.updatedAt || '').slice(0, 10)}</lastmod></url>`
     ).join('');
     const filename = `${filePrefix}-${i + 1}.xml`;
     fs.writeFileSync(

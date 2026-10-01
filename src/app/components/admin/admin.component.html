@@ -1,3 +1,368 @@
-<main class="pageWrapper maxWidth">
-    <router-outlet></router-outlet>
-</main>
+<div class="admin-shell">
+    <header class="admin-bar">
+        <div class="admin-title">
+            <img src="/assets/images/homepagelogo.png" alt="" width="28" height="28">
+            <span>Admin console</span>
+        </div>
+        <a class="back-link" [routerLink]="['/', currentLocale, 'app', 'earn']">
+            <mat-icon>arrow_back</mat-icon> Back to app
+        </a>
+    </header>
+
+    <nav class="admin-tabs" aria-label="Admin sections">
+        @for (t of tabs; track t.id) {
+        <button type="button" class="admin-tab" [class.active]="tab === t.id" [attr.aria-current]="tab === t.id ? 'page' : null"
+            (click)="selectTab(t.id)">
+            <mat-icon>{{ t.icon }}</mat-icon><span>{{ t.label }}</span>
+            @if (t.id === 'payouts' && overview && overview.pendingPayoutCount > 0) {
+            <span class="count-badge">{{ overview.pendingPayoutCount }}</span>
+            }
+        </button>
+        }
+    </nav>
+
+    <main class="admin-main">
+
+        <!-- ═════════ OVERVIEW ═════════ -->
+        @if (tab === 'overview') {
+        <section>
+            <div class="section-head">
+                <h1>Overview</h1>
+                <button type="button" class="btn ghost" (click)="loadOverview()"><mat-icon>refresh</mat-icon> Refresh</button>
+            </div>
+
+            @if (overviewError) { <p class="notice error">{{ overviewError }}</p> }
+
+            @if (overview; as o) {
+            <div class="kpi-grid">
+                <div class="kpi">
+                    <span class="kpi-label">Total users</span>
+                    <span class="kpi-value">{{ o.totalUsers | number }}</span>
+                    <span class="kpi-sub">{{ o.activeUsers | number }} active · {{ o.unverifiedUsers | number }} unverified</span>
+                </div>
+                <div class="kpi">
+                    <span class="kpi-label">New sign-ups</span>
+                    <span class="kpi-value">{{ o.newUsersToday | number }}</span>
+                    <span class="kpi-sub">today · {{ o.newUsersLast7Days | number }} in the last 7 days</span>
+                </div>
+                <div class="kpi" [class.attention]="o.pendingPayoutCount > 0">
+                    <span class="kpi-label">Pending payouts</span>
+                    <span class="kpi-value">{{ o.pendingPayoutCount | number }}</span>
+                    <span class="kpi-sub">${{ o.pendingPayoutAmount | number:'1.2-2' }} waiting for review</span>
+                </div>
+                <div class="kpi">
+                    <span class="kpi-label">Credited today</span>
+                    <span class="kpi-value">${{ o.earningsToday | number:'1.2-2' }}</span>
+                    <span class="kpi-sub">net of reversals, incl. bonuses</span>
+                </div>
+                <div class="kpi">
+                    <span class="kpi-label">Owed to users</span>
+                    <span class="kpi-value">${{ o.outstandingBalance | number:'1.2-2' }}</span>
+                    <span class="kpi-sub">${{ o.paidOutAmount | number:'1.2-2' }} paid out so far</span>
+                </div>
+                <div class="kpi">
+                    <span class="kpi-label">Profiles completed</span>
+                    <span class="kpi-value">{{ o.onboardingCompleted | number }}</span>
+                    <span class="kpi-sub">{{ profileCompletionRate }}% of active users</span>
+                </div>
+                <div class="kpi">
+                    <span class="kpi-label">Daily check-ins</span>
+                    <span class="kpi-value">{{ o.checkinsToday | number }}</span>
+                    <span class="kpi-sub">users checked in today (UTC)</span>
+                </div>
+                <div class="kpi">
+                    <span class="kpi-label">Blocked accounts</span>
+                    <span class="kpi-value">{{ o.blockedUsers | number }}</span>
+                    <span class="kpi-sub">manage in the Users tab</span>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h2>Sign-ups, last 14 days</h2>
+                <div class="bars" role="img" aria-label="Daily sign-ups for the last 14 days">
+                    @for (s of o.signups; track s.day) {
+                    <div class="bar-col" [attr.title]="(s.day | date:'MMM d') + ': ' + s.count">
+                        <span class="bar-value">{{ s.count }}</span>
+                        <div class="bar" [style.height.%]="(s.count / maxSignups) * 100"></div>
+                        <span class="bar-label">{{ s.day | date:'d MMM' }}</span>
+                    </div>
+                    }
+                </div>
+            </div>
+            } @else if (!overviewError) {
+            <p class="notice">Loading…</p>
+            }
+        </section>
+        }
+
+        <!-- ═════════ PRIORITY OFFERS ═════════ -->
+        @if (tab === 'offers') {
+        <section>
+            <div class="section-head">
+                <div>
+                    <h1>Priority offers</h1>
+                    <p class="hint">Pinned to the top of the Earn page with your tag, per country. Use <code>*</code> for all countries.</p>
+                </div>
+                <button type="button" class="btn primary" (click)="newOffer()"><mat-icon>add</mat-icon> New offer</button>
+            </div>
+
+            @if (editing; as f) {
+            <form class="panel form" (ngSubmit)="saveOffer()">
+                <h2>{{ f.id ? 'Edit offer' : 'New offer' }}</h2>
+                <div class="form-grid">
+                    <label class="span-2">Title
+                        <input type="text" name="title" [(ngModel)]="f.title" maxlength="150" required>
+                    </label>
+                    <label class="span-2">Click URL
+                        <input type="text" name="clickUrl" [(ngModel)]="f.clickUrl" maxlength="1200" required
+                            placeholder="https://… or an in-app path like /app/survey">
+                        <small>Use <code>{{ '{' }}userId{{ '}' }}</code> where the network needs the user id.</small>
+                    </label>
+                    <label class="span-2">Description
+                        <input type="text" name="description" [(ngModel)]="f.description" maxlength="600">
+                    </label>
+                    <label class="span-2">Image URL
+                        <input type="text" name="imageUrl" [(ngModel)]="f.imageUrl" maxlength="600" placeholder="https://… (square image works best)">
+                    </label>
+                    <label>Points
+                        <input type="number" name="points" [(ngModel)]="f.points" min="0" step="1">
+                    </label>
+                    <label>Tag
+                        <input type="text" name="tag" [(ngModel)]="f.tag" maxlength="30" list="tag-suggestions">
+                        <datalist id="tag-suggestions">
+                            @for (t of tagSuggestions; track t) { <option [value]="t"></option> }
+                        </datalist>
+                    </label>
+                    <label>Country code
+                        <input type="text" name="countryCode" [(ngModel)]="f.countryCode" maxlength="2" placeholder="* or US, IN, GB…">
+                    </label>
+                    <label>Device
+                        <select name="device" [(ngModel)]="f.device">
+                            @for (d of devices; track d) { <option [value]="d">{{ d }}</option> }
+                        </select>
+                    </label>
+                    <label>Sort order
+                        <input type="number" name="sortOrder" [(ngModel)]="f.sortOrder" step="1">
+                        <small>Lower numbers show first.</small>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="isActive" [(ngModel)]="f.isActive"> Active
+                    </label>
+                    <label>Starts (optional)
+                        <input type="datetime-local" name="startDate" [(ngModel)]="f.startDate">
+                    </label>
+                    <label>Ends (optional)
+                        <input type="datetime-local" name="endDate" [(ngModel)]="f.endDate">
+                    </label>
+                </div>
+                @if (formError) { <p class="notice error" role="alert">{{ formError }}</p> }
+                <div class="form-actions">
+                    <button type="submit" class="btn primary" [disabled]="busy">{{ busy ? 'Saving…' : 'Save offer' }}</button>
+                    <button type="button" class="btn ghost" (click)="cancelEdit()">Cancel</button>
+                </div>
+            </form>
+            }
+
+            <div class="panel table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Offer</th><th>Country</th><th>Device</th><th class="num">Points</th>
+                            <th class="num">Order</th><th class="num">Clicks</th><th>State</th><th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (offer of offers; track offer.id) {
+                        <tr>
+                            <td>
+                                <div class="cell-main">{{ offer.title }} <span class="tag">{{ offer.tag }}</span></div>
+                                <div class="cell-sub truncate">{{ offer.clickUrl }}</div>
+                            </td>
+                            <td>{{ offer.countryCode === '*' ? 'All' : offer.countryCode }}</td>
+                            <td>{{ offer.device }}</td>
+                            <td class="num">{{ offer.points | number }}</td>
+                            <td class="num">{{ offer.sortOrder }}</td>
+                            <td class="num">{{ offer.clickCount | number }}</td>
+                            <td><span class="state" [attr.data-state]="offerState(offer)">{{ offerState(offer) }}</span></td>
+                            <td class="row-actions">
+                                <button type="button" class="btn small ghost" (click)="editOffer(offer)">Edit</button>
+                                <button type="button" class="btn small ghost" [disabled]="busy" (click)="toggleOffer(offer)">
+                                    {{ offer.isActive ? 'Turn off' : 'Turn on' }}
+                                </button>
+                                <button type="button" class="btn small danger" [disabled]="busy" (click)="deleteOffer(offer)">Delete</button>
+                            </td>
+                        </tr>
+                        } @empty {
+                        <tr><td colspan="8" class="empty">
+                            {{ offersLoaded ? 'No priority offers yet. Create one to pin it on the Earn page.' : 'Loading…' }}
+                        </td></tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        }
+
+        <!-- ═════════ PAYOUTS ═════════ -->
+        @if (tab === 'payouts') {
+        <section>
+            <div class="section-head">
+                <h1>Payout requests</h1>
+                <div class="seg">
+                    <button type="button" [class.active]="payoutFilter === 1" (click)="setPayoutFilter(1)">Pending</button>
+                    <button type="button" [class.active]="payoutFilter === 2" (click)="setPayoutFilter(2)">Completed</button>
+                    <button type="button" [class.active]="payoutFilter === 4" (click)="setPayoutFilter(4)">Rejected</button>
+                    <button type="button" [class.active]="payoutFilter === null" (click)="setPayoutFilter(null)">All</button>
+                </div>
+            </div>
+
+            <div class="panel table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User</th><th>Method</th><th class="num">Amount</th><th class="num">Balance now</th>
+                            <th>Requested</th><th>State</th><th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (p of payouts; track p.payoutId) {
+                        <tr>
+                            <td>
+                                <div class="cell-main">{{ p.fullName || p.email }}</div>
+                                <div class="cell-sub">{{ p.email }} · {{ p.countryCode }} · #{{ p.userId }}</div>
+                            </td>
+                            <td>
+                                <div class="cell-main">{{ p.payoutByName || p.method }}</div>
+                                <div class="cell-sub">{{ p.payoutEmailId }}</div>
+                            </td>
+                            <td class="num strong">${{ p.amount | number:'1.2-2' }}</td>
+                            <td class="num">${{ p.balance | number:'1.2-2' }}</td>
+                            <td>{{ p.requesteDate | date:'d MMM y, HH:mm' }}</td>
+                            <td><span class="state" [attr.data-state]="p.statusName">{{ p.statusName }}</span></td>
+                            <td class="row-actions">
+                                @if (isPending(p)) {
+                                <button type="button" class="btn small primary" [disabled]="busy" (click)="processPayout(p, true)">Approve</button>
+                                <button type="button" class="btn small danger" [disabled]="busy" (click)="processPayout(p, false)">Reject</button>
+                                } @else {
+                                <span class="cell-sub">{{ p.processeDate | date:'d MMM y' }}</span>
+                                }
+                            </td>
+                        </tr>
+                        } @empty {
+                        <tr><td colspan="7" class="empty">{{ payoutsLoaded ? 'Nothing here.' : 'Loading…' }}</td></tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        }
+
+        <!-- ═════════ USERS ═════════ -->
+        @if (tab === 'users') {
+        <section>
+            <div class="section-head">
+                <h1>Users <span class="muted-count">{{ userTotal | number }}</span></h1>
+                <form class="search" (ngSubmit)="searchUsers()">
+                    <input type="search" name="search" [(ngModel)]="userSearch" placeholder="Email, name or user id" aria-label="Search users">
+                    <select name="status" [(ngModel)]="userStatus" (change)="searchUsers()" aria-label="Status">
+                        <option [ngValue]="null">Any status</option>
+                        <option [ngValue]="1">Active</option>
+                        <option [ngValue]="2">Not verified</option>
+                        <option [ngValue]="3">Blocked</option>
+                        <option [ngValue]="4">Deleted</option>
+                    </select>
+                    <select name="minRejection" [(ngModel)]="minRejection" (change)="searchUsers()" aria-label="Rejection rate">
+                        <option [ngValue]="null">Any rejection rate</option>
+                        <option [ngValue]="highlightPercent">Rejection above {{ highlightPercent }}%</option>
+                        <option [ngValue]="blockPercent">Rejection {{ blockPercent }}% or more</option>
+                    </select>
+                    <button type="submit" class="btn primary">Search</button>
+                </form>
+            </div>
+
+            <div class="bulk-bar">
+                <span>
+                    Rows above {{ highlightPercent }}% rejection are highlighted. Accounts at {{ blockPercent }}% or more can be
+                    selected, disabled together and emailed the reason.
+                </span>
+                <button type="button" class="btn danger" [disabled]="busy || selectedUserIds.size === 0" (click)="disableSelected()">
+                    <mat-icon>block</mat-icon>
+                    Disable selected &amp; send email @if (selectedUserIds.size > 0) { ({{ selectedUserIds.size }}) }
+                </button>
+            </div>
+
+            @if (bulkSkipped.length > 0) {
+            <div class="notice">
+                <strong>Skipped:</strong>
+                <ul class="skipped">
+                    @for (s of bulkSkipped; track s) { <li>{{ s }}</li> }
+                </ul>
+            </div>
+            }
+
+            <div class="panel table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="check-col">
+                                <input type="checkbox" [checked]="allSelected" [disabled]="selectableUsers.length === 0"
+                                    (change)="toggleAllUsers()" aria-label="Select all users that can be disabled">
+                            </th>
+                            <th>User</th><th>Country</th><th class="num">Rejection</th><th class="num">Level</th><th class="num">Balance</th>
+                            <th>Sign-in</th><th>Joined</th><th>Status</th><th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (u of users; track u.id) {
+                        <tr [attr.data-rejection]="rejectionLevel(u)">
+                            <td class="check-col">
+                                <input type="checkbox" [checked]="selectedUserIds.has(u.id)" [disabled]="!canSelect(u)"
+                                    (change)="toggleUser(u)" [attr.aria-label]="'Select ' + u.email">
+                            </td>
+                            <td>
+                                <div class="cell-main">{{ u.fullName || u.email }}</div>
+                                <div class="cell-sub">
+                                    {{ u.email }} · #{{ u.id }}
+                                    @if (u.fraudDecision && u.fraudDecision !== 'ALLOW') { · <span class="risk">risk: {{ u.fraudDecision }}</span> }
+                                </div>
+                            </td>
+                            <td>{{ u.countryCode }}</td>
+                            <td class="num">
+                                <span class="rejection" [attr.data-level]="rejectionLevel(u)">{{ u.rejectionRate | number:'1.0-1' }}%</span>
+                                <div class="cell-sub">{{ u.rejected }} of {{ u.completed }}</div>
+                            </td>
+                            <td class="num">{{ u.currentLevel ?? 0 }}</td>
+                            <td class="num">${{ u.balance | number:'1.2-2' }}</td>
+                            <td>{{ providerName(u.loginProvider) }}</td>
+                            <td>{{ u.createdAt | date:'d MMM y' }}<div class="cell-sub">{{ u.accountAgeDays }} days</div></td>
+                            <td><span class="state" [attr.data-state]="u.statusName">{{ u.statusName }}</span></td>
+                            <td class="row-actions">
+                                @if (u.status === 1 || u.status === 3) {
+                                <button type="button" class="btn small" [class.danger]="!isBlocked(u)" [class.ghost]="isBlocked(u)"
+                                    [disabled]="busy" (click)="toggleBlock(u)">{{ isBlocked(u) ? 'Unblock' : 'Block' }}</button>
+                                }
+                            </td>
+                        </tr>
+                        } @empty {
+                        <tr><td colspan="10" class="empty">{{ usersLoaded ? 'No users match.' : 'Loading…' }}</td></tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            @if (userPageCount > 1) {
+            <div class="pager">
+                <button type="button" class="btn small ghost" [disabled]="userPage <= 1" (click)="goToUserPage(userPage - 1)">Previous</button>
+                <span>Page {{ userPage }} of {{ userPageCount }}</span>
+                <button type="button" class="btn small ghost" [disabled]="userPage >= userPageCount" (click)="goToUserPage(userPage + 1)">Next</button>
+            </div>
+            }
+        </section>
+        }
+
+        <!-- ═════════ EARNINGS (existing dashboard) ═════════ -->
+        @if (tab === 'earnings') {
+        <app-admindashboard></app-admindashboard>
+        }
+    </main>
+</div>

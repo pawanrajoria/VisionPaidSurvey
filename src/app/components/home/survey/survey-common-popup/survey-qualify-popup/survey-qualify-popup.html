@@ -11,32 +11,32 @@
         </div>
 
         <div class="text-content">
-            <h2>Success! You're Qualified</h2>
-            <p class="subtitle">Get ready to earn. This high-value survey is reserved just for you.</p>
+            <h2>{{ 'app.survey.qualify.title' | translate }}</h2>
+            <p class="subtitle">{{ 'app.survey.qualify.text' | translate }}</p>
         </div>
 
         <div class="info-pills">
             <div class="pill">
                 <mat-icon>timer</mat-icon>
-                <span>~20 mins</span>
+                <span>{{ 'app.survey.qualify.mins' | translate }}</span>
             </div>
             <div class="pill highlight">
                 <mat-icon>trending_up</mat-icon>
-                <span>High Reward</span>
+                <span>{{ 'app.survey.qualify.high' | translate }}</span>
             </div>
         </div>
 
         <button mat-flat-button class="action-btn-main" (click)="participateSurvey()">
-            START EARNING NOW
+            {{ 'app.survey.qualify.start' | translate }}
             <mat-icon>bolt</mat-icon>
         </button>
 
         <div class="pro-tip-container">
             <div class="tip-header">
                 <mat-icon>tips_and_updates</mat-icon>
-                <span>PRO TIP</span>
+                <span>{{ 'app.survey.qualify.tip' | translate }}</span>
             </div>
-            <p>Using our daily partner dashboard reduces disqualification rates by 40%.</p>
+            <p>{{ 'app.survey.qualify.tipText' | translate }}</p>
         </div>
     </mat-dialog-content>
 </div>

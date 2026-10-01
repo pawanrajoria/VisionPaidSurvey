@@ -35,11 +35,11 @@ export class AdminDashboardComponent implements OnInit {
 
     get stats() {
         return [
-            { id:0,label: "Total Users", value: this.adminData.totalUsers, icon: 'person', change: 3, period: this.timePeriod },
-            { id:1,label: "Earning", value: '$' + this.adminData.earning, icon: 'account_balance_wallet', change: 55, period: this.timePeriod },
-            { id:2,label: 'Rejection', value: '$' + this.adminData.rejection, icon: 'leaderboard', change: -2, period: this.timePeriod },
-            { id:3,label: 'LevelBonusEarn', value: '$' + this.adminData.levelBonusEarn, icon: 'shopping_cart', change: 5, period: this.timePeriod },
-            { id:4,label: 'RefrelEarn', value: '$' + this.adminData.refrelEarn, icon: 'shopping_cart', change: 5, period: this.timePeriod },
+            { id:0,label: "Total Users", value: this.adminData.totalUsers, icon: 'person' },
+            { id:1,label: "Earning", value: '$' + this.adminData.earning, icon: 'account_balance_wallet' },
+            { id:2,label: 'Rejection', value: '$' + this.adminData.rejection, icon: 'leaderboard' },
+            { id:3,label: 'Level bonus', value: '$' + this.adminData.levelBonusEarn, icon: 'shopping_cart' },
+            { id:4,label: 'Referral bonus', value: '$' + this.adminData.refrelEarn, icon: 'shopping_cart' },
         ];
     };
 

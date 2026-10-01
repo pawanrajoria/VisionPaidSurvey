@@ -87,7 +87,7 @@
         </mat-menu>
 
 
-        <button mat-mini-fab [matMenuTriggerFor]="profilemenu" aria-label="Notifications">
+        <button mat-mini-fab [matMenuTriggerFor]="profilemenu" aria-label="Account menu">
             <img loading="lazy" src="/assets/images/profile/user-1.jpg" class="rounded-circle object-cover d-block" width="35" />
         </button>
         <mat-menu #profilemenu="matMenu" class="cardWithShadow topbar-dd">
@@ -96,6 +96,11 @@
                         class="icon-18 d-flex"></i-tabler></mat-icon>
                 {{ 'Cashout Reward' | translate }}
             </button>
+            @if (isAdmin) {
+            <button mat-menu-item (click)="goToAdmin()">
+                <mat-icon class="d-flex align-items-center">admin_panel_settings</mat-icon>Admin console
+            </button>
+            }
             <button mat-menu-item (click)="goToAccount()">
                 <mat-icon class="d-flex align-items-center"><i-tabler name="user"
                         class="icon-18 d-flex"></i-tabler></mat-icon>{{ 'My Account' | translate }}

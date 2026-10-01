@@ -286,17 +286,19 @@ export class SurveyQuestionsComponent implements OnInit {
       completedAt: new Date().toISOString()
     };
 
-    try {
-      // Direct completion redirect with token and passed status
-      const statusId = passedAttentionVerification ? 1 : 2; // 1 = Complete, 2 = Quality Screenout
-      this.router.navigateByUrl(`/survey/completed?Token=${encodeURIComponent(this.respondenttoken)}&StatusId=${statusId}`);
+    // 1 = Complete. A failed attention check is reported as 8 (client security terminate): the
+    // router has no handler for 2, so those respondents were never recorded as terminated.
+    const statusId = passedAttentionVerification ? 1 : 8;
 
-      const response = await this.programmingSurveyService.captureSurveyResponse(surveyData);
-      console.log('Survey response captured successfully:', response);
+    try {
+      // Save the answers first, then move on. Navigating first meant a slow or failed save
+      // was invisible and the response could be lost.
+      await this.programmingSurveyService.captureSurveyResponse(surveyData);
     } catch (error) {
       console.error('Unable to save survey response:', error);
     } finally {
       this.isSubmitting = false;
+      this.router.navigateByUrl(`/survey/completed?Token=${encodeURIComponent(this.respondenttoken)}&StatusId=${statusId}`);
     }
   }
 }

@@ -34,7 +34,7 @@
 
         <mat-form-field appearance="outline" color="primary" class="w-100">
             <mat-label>{{ 'text.password' | translate }}</mat-label>
-            <input matInput formControlName="password">
+            <input matInput type="password" autocomplete="current-password" formControlName="password">
             @if (changeEmailForm.get('password')?.hasError('required')) {
             <mat-error class="text-right">{{ 'messages.password.required' | translate }}</mat-error>
             }
@@ -49,26 +49,32 @@
 <form class="m-t-30" *ngIf="profileSettingDialogData.type==3" [formGroup]="changePasswordForm"
     (submit)="updatePassword()">
     <mat-dialog-content class="mat-typography">
+        @if (hasPassword) {
         <mat-form-field appearance="outline" color="primary" class="w-100">
             <mat-label>{{ 'text.oldpassword' | translate }}</mat-label>
-            <input matInput formControlName="password">
-            @if (changeEmailForm.get('password')?.hasError('required')) {
+            <input matInput type="password" autocomplete="current-password" formControlName="password">
+            @if (changePasswordForm.get('password')?.hasError('required')) {
             <mat-error class="text-right">{{ 'messages.oldpassword.required' | translate }}</mat-error>
             }
         </mat-form-field>
+        } @else {
+        <p class="social-note">
+            {{ 'app.settings.noPassword' | translate }}
+        </p>
+        }
 
         <mat-form-field appearance="outline" color="primary" class="w-100">
             <mat-label>{{ 'text.newpassword' | translate }}</mat-label>
-            <input matInput formControlName="newPassword">
-            @if (changeEmailForm.get('password')?.hasError('required')) {
+            <input matInput type="password" autocomplete="new-password" formControlName="newPassword">
+            @if (changePasswordForm.get('newPassword')?.hasError('required')) {
             <mat-error class="text-right">{{ 'messages.newpassword.required' | translate }}</mat-error>
             }
         </mat-form-field>
 
         <mat-form-field appearance="outline" color="primary" class="w-100">
             <mat-label>{{ 'text.confirmnewpassword' | translate }}</mat-label>
-            <input matInput formControlName="confirmNewPassword">
-            @if (changeEmailForm.get('confirmNewPassword')?.hasError('required')) {
+            <input matInput type="password" autocomplete="new-password" formControlName="confirmNewPassword">
+            @if (changePasswordForm.get('confirmNewPassword')?.hasError('required')) {
             <mat-error class="text-right">{{ 'messages.confirmnewpassword.required' | translate }}</mat-error>
             }
         </mat-form-field>
@@ -82,12 +88,42 @@
 <form class="m-t-30" *ngIf="profileSettingDialogData.type==4" [formGroup]="deleteAccountForm"
     (submit)="deleteAccount()">
     <mat-dialog-content class="mat-typography">
+        @if (hasPassword) {
         <mat-form-field appearance="outline" color="primary" class="w-100">
             <mat-label>{{ 'text.password' | translate }}</mat-label>
-            <input matInput formControlName="password">
-            @if (changeEmailForm.get('password')?.hasError('required')) {
+            <input matInput type="password" autocomplete="current-password" formControlName="password">
+            @if (deleteAccountForm.get('password')?.hasError('required')) {
             <mat-error class="text-right">{{ 'messages.password.required' | translate }}</mat-error>
             }
+        </mat-form-field>
+        } @else {
+        <p class="social-note">{{ 'app.settings.deleteWarning' | translate }}</p>
+        }
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button type="button" mat-dialog-close>{{ 'buttons.cancel' | translate }}</button>
+        <button mat-button type="submit" cdkFocusInitial>{{ 'buttons.save' | translate }}</button>
+    </mat-dialog-actions>
+</form>
+
+<form class="m-t-30" *ngIf="profileSettingDialogData.type==6" (ngSubmit)="saveTimeZone()">
+    <mat-dialog-content class="mat-typography">
+        <p class="social-note">
+            {{ 'app.settings.timeZoneHelp' | translate:{ zone: zoneLabel(browserZone) } }}
+        </p>
+        <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>{{ 'app.settings.timeZoneLabel' | translate }}</mat-label>
+            <mat-select name="timeZone" [(ngModel)]="selectedZone">
+                <mat-option value="">{{ 'app.settings.automaticLong' | translate }}</mat-option>
+                @if (countryZones.length > 0) {
+                <mat-optgroup [label]="'app.settings.yourCountry' | translate">
+                    @for (z of countryZones; track z) { <mat-option [value]="z">{{ zoneLabel(z) }}</mat-option> }
+                </mat-optgroup>
+                }
+                <mat-optgroup [label]="'app.settings.allZones' | translate">
+                    @for (z of otherZones; track z) { <mat-option [value]="z">{{ zoneLabel(z) }}</mat-option> }
+                </mat-optgroup>
+            </mat-select>
         </mat-form-field>
     </mat-dialog-content>
     <mat-dialog-actions align="end">

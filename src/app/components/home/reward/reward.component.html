@@ -9,6 +9,13 @@
         }
     </div>
 
+    @if (firstCashoutMinPoints > 0) {
+    <p class="first-cashout-note" role="note">
+        <mat-icon>info</mat-icon>
+        {{ 'app.cashout.firstNote' | translate:{ usd: cashoutRule?.firstMinimumUsd, points: (firstCashoutMinPoints | number:'1.0-0') } }}
+    </p>
+    }
+
     <!-- Balance Card -->
     <div class="balance-card">
         <div class="balance-info">

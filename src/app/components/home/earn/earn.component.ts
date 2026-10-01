@@ -14,13 +14,19 @@ import { OfferPopupDialog } from "../offer/offer-popup/offer-popup.component";
 import { FraudService } from "../../../frauddetection.service";
 import { BaseSurveyComponent } from "../../../base.survey.component";
 import { SurveyInstructionPopupComponent } from "../survey/survey-common-popup/survey-instruction-popup/survey-instruction-popup";
+import { Router } from "@angular/router";
+import { EngagementService } from "../engagement/engagement.service";
+import { IEngagementSummary, IPriorityOffer } from "../engagement/engagement.vm";
+import { AccountService } from "../account.service";
+import { MessageService } from "../../layout/message/message.service";
+import { MessageVM } from "../../layout/message/message.vm";
 
 
 @Component({
     selector: 'app-earn',
     imports: [SharedModule, EmptySkeltenComponent],
     templateUrl: './earn.component.html',
-    styleUrls: ['./earn.component.scss']
+    styleUrls: ['./earn.component.scss', './earn-engagement.scss']
 })
 export class EarnComponent extends BaseSurveyComponent implements OnInit {
     @ViewChild('gamingSlider', { read: ElementRef }) gamingSlider!: ElementRef;
@@ -57,6 +63,18 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
 
     dialogRef: MatDialogRef<any> | null = null;
 
+    @ViewChild('partnerSlider', { read: ElementRef }) partnerSlider!: ElementRef;
+    @ViewChild('prioritySlider', { read: ElementRef }) prioritySlider!: ElementRef;
+
+    readonly engagement = inject(EngagementService);
+    readonly accountService = inject(AccountService);
+    readonly messageService = inject(MessageService);
+    readonly router = inject(Router);
+
+    priorityOffers: IPriorityOffer[] = [];
+    summary: IEngagementSummary | null = null;
+    claimingDaily = false;
+
     constructor(private breakpointObserver: BreakpointObserver) {
         super();
     }
@@ -66,22 +84,37 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
         this.fraudService.resetTracking();
         this.fraudService.startTracking();
 
+        // Everything loads in parallel and in the background: our own (fast) data paints
+        // first, the third-party offer/survey lists fill their skeletons when they arrive.
+        this.loadEngagement();
+        this.loadPriorityOffers();
         this.getOffers();
         this.getSurveys();
     }
 
     async getOffers() {
-        this.offers = await this.offerService.getOffers();
-        this.isGamingOfferLoading = false;
-        this.isOtherOfferLoading = false;
-        this.isOfferLoading = false;
+        try {
+            this.offers = (await this.offerService.getOffers(true)) ?? [];
+        } catch {
+            this.offers = [];
+        } finally {
+            this.isGamingOfferLoading = false;
+            this.isOtherOfferLoading = false;
+            this.isOfferLoading = false;
+        }
         this.filterItems();
     }
 
 
     async getSurveys() {
         const self = this;
-        const output = await self.surveyService.getSurveys();
+        let output: any = null;
+        try {
+            output = await self.surveyService.getSurveys(true);
+            this.surveyNotice = output?.restrictionMessage ?? '';
+        } catch {
+            output = null;
+        }
         self.isFeaturedSurveyLoading = false;
         if (!!output && !!output.surveys && output.surveys.length > 0) {
             this.featuredSurveys = output.surveys.sort((a: any, b: any) => {
@@ -89,6 +122,117 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
             });
         }
     }
+
+    /** Server explanation when surveys are hidden (daily limit for new accounts, proxy detected). */
+    surveyNotice = '';
+    drawing = false;
+
+    /** Weekly streak prize draw. */
+    async drawPrize() {
+        if (this.drawing || !this.summary?.streak?.drawsAvailable) return;
+        this.drawing = true;
+        try {
+            const result = await this.engagement.streakDraw();
+            this.messageService.showMessage(new MessageVM(result?.message ?? 'Done', result?.isSuccess ? 'success' : 'warn'));
+            await this.loadEngagement(true);
+            if (result?.isSuccess) {
+                const info = await this.accountService.getuserinfo();
+                if (info) this.accountService.setUserBalanceInfo(info);
+            }
+        } catch {
+            /* the interceptor already told the user */
+        } finally {
+            this.drawing = false;
+        }
+    }
+
+    // ───────────── Priority offers ─────────────
+    async loadPriorityOffers() {
+        const offers = await this.engagement.getPriorityOffers();
+        const device = this.currentPlatform;
+        this.priorityOffers = offers.filter(o => !o.device || o.device === 'All' || o.device === device);
+    }
+
+    /** Matches the Device values an admin can pick: Desktop | Android | IOS. */
+    get currentPlatform(): string {
+        const ua = this.nav?.userAgent ?? '';
+        if (/iPhone|iPad|iPod/i.test(ua)) return 'IOS';
+        if (/Android/i.test(ua)) return 'Android';
+        return 'Desktop';
+    }
+
+    openPriorityOffer(offer: IPriorityOffer) {
+        // Open first, track second: a window opened after an await is treated as a popup and blocked.
+        if (offer.isInternal) {
+            this.router.navigateByUrl(`/${this.currentLocale}${offer.clickUrl}`);
+        } else {
+            this.win?.open(offer.clickUrl, '_blank', 'noopener');
+        }
+        this.engagement.trackPriorityClick(offer.id);
+    }
+
+    hidePriorityImage(offer: IPriorityOffer) {
+        offer.imageUrl = null;
+    }
+
+    // ───────────── Onboarding, daily check-in, checklist ─────────────
+    async loadEngagement(refresh = false) {
+        this.summary = await this.engagement.getSummary(refresh);
+    }
+
+    get showProfileBanner(): boolean {
+        const o = this.summary?.onboarding;
+        return !!o && o.available && !o.completed;
+    }
+
+    get streakDays(): number[] {
+        const every = this.summary?.daily.streakBonusEveryDays ?? 7;
+        return Array.from({ length: every }, (_, i) => i + 1);
+    }
+
+    /** Position inside the current streak cycle (1..N), 0 when no streak is running. */
+    get streakPosition(): number {
+        const d = this.summary?.daily;
+        if (!d || d.streak === 0) return 0;
+        const mod = d.streak % d.streakBonusEveryDays;
+        return mod === 0 ? d.streakBonusEveryDays : mod;
+    }
+
+    async claimDaily() {
+        if (this.claimingDaily || !this.summary?.daily.available || this.summary.daily.claimedToday) return;
+        this.claimingDaily = true;
+        try {
+            const result = await this.engagement.dailyCheckin();
+            this.messageService.showMessage(new MessageVM(result?.message ?? 'Done', result?.isSuccess ? 'success' : 'warn'));
+            await this.loadEngagement(true);
+            if (result?.isSuccess) {
+                const info = await this.accountService.getuserinfo();
+                if (info) this.accountService.setUserBalanceInfo(info);
+            }
+        } catch {
+            /* the interceptor already told the user */
+        } finally {
+            this.claimingDaily = false;
+        }
+    }
+
+    get checklist(): { label: string; done: boolean; link: string[] }[] {
+        const c = this.summary?.checklist;
+        if (!c) return [];
+        const app = ['/', this.currentLocale, 'app'];
+        const items = [
+            { label: 'app.earn.checkProfile', done: c.profileCompleted, link: [...app, 'welcome'] },
+            { label: 'app.earn.checkSurvey', done: c.firstSurveyDone, link: [...app, 'survey'] },
+            { label: 'app.earn.checkOffer', done: c.firstOfferDone, link: [...app, 'offers'] },
+            { label: 'app.earn.checkInvite', done: c.invitedFriend, link: [...app, 'refer'] },
+            { label: 'app.earn.checkCashout', done: c.firstCashout, link: [...app, 'cashout'] }
+        ];
+        // The profile step only exists while the welcome bonus is switched on.
+        return this.summary?.onboarding.available ? items : items.slice(1);
+    }
+
+    get checklistDone(): number { return this.checklist.filter(i => i.done).length; }
+    get showChecklist(): boolean { return this.checklist.length > 0 && this.checklistDone < this.checklist.length; }
 
     filterItems() {
         const text = this.searchTxt.toLowerCase();
@@ -131,6 +275,12 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
         }
         else if (id === 'surveyWallSlider') {
             return this.surveyWallSlider.nativeElement;
+        }
+        else if (id === 'partnerSlider') {
+            return this.partnerSlider.nativeElement;
+        }
+        else if (id === 'prioritySlider') {
+            return this.prioritySlider.nativeElement;
         }
         throw new Error('Invalid slider ID');
     }

@@ -27,7 +27,9 @@ export class ReferalPopupComponent extends BaseComponent implements OnInit {
     }
 
     get referalLink(): string {
-        return `${this.configService.appUrl}/auth/login?referralCode=${this.referal.referLinkCode}`;
+        // The code is base64 (it can contain + / =), so it must be URL-encoded or the
+        // referral is silently lost when the friend opens the link.
+        return `${(this.configService.appUrl || "").replace(/\/+$/, "")}/auth/login?referralCode=${encodeURIComponent(this.referal.referLinkCode)}`;
     }
 
     copyLink(): void {

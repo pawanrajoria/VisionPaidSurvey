@@ -176,12 +176,17 @@ export class CompletedComponent extends BaseComponent {
       request.requestUrl = request.requestUrl.replace("/#/", "/");
     }
 
-    const ourputUrl: RespondentEndSurveyResponseVM = await self.respondentService.completeRespondent(request);
-    if (!!ourputUrl && !!ourputUrl.requestUrl) {
-      this.redirectLink = ourputUrl.requestUrl;
+    // On failure both buttons used to stay disabled forever (isLoading never reset).
+    try {
+      const ourputUrl: RespondentEndSurveyResponseVM = await self.respondentService.completeRespondent(request);
+      if (!!ourputUrl && !!ourputUrl.requestUrl) {
+        this.redirectLink = ourputUrl.requestUrl;
+      }
+    } catch {
+      this.redirectLink = '';
+    } finally {
+      self.isLoading = false;
     }
-
-    self.isLoading = false;
   }
 
 
@@ -193,8 +198,8 @@ export class CompletedComponent extends BaseComponent {
 
   finish(): void {
     if (!!this.win) {
-      window.location.href = this.redirectLink;
-      window.close();
+      // Without a return link, go to the home page rather than reloading this one.
+      window.location.href = this.redirectLink || window.location.origin;
     }
   }
 }

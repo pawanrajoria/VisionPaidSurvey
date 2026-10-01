@@ -7,6 +7,7 @@ import compression from 'compression';
 import path from 'node:path';
 import fs from 'node:fs';
 import { SUPPORTED_LOCALES } from './app/country-langiuage-list';
+import { BRAND_NAME, SITE_URL } from './app/site.config';
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
@@ -26,23 +27,31 @@ app.use(compression());
  * SEO: Schema.org Injection
  * This adds structured data to the <head> for better Google rich snippets.
  */
-function injectSchema(html: string): string {
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Profitpiller",
-    "alternateName": "Profit Piller",
-    "url": "https://www.profitpiller.com",
-    "logo": "https://www.profitpiller.com/assets/images/logo.png",
-    "description": "Profitpiller is a leading opinion research platform offering paid surveys and market research studies.",
-    "sameAs": [
-      "https://www.facebook.com/profitpiller",
-      "https://twitter.com/profitpiller"
-    ]
-  };
+// Brand and domain come from src/environments/environment.ts (via site.config.ts) so
+// structured data, canonical URLs and the sitemaps can never disagree about the host.
+const SCHEMA_TAG = `\n<script type="application/ld+json">${JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      "name": BRAND_NAME,
+      "url": SITE_URL,
+      "logo": `${SITE_URL}/assets/images/logo.png`,
+      "description": `${BRAND_NAME} is an opinion research platform offering paid surveys, offers and market research studies.`
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      "name": BRAND_NAME,
+      "url": SITE_URL,
+      "publisher": { "@id": `${SITE_URL}/#organization` }
+    }
+  ]
+})}</script>\n`;
 
-  const scriptTag = `\n<script type="application/ld+json">${JSON.stringify(schemaData)}</script>\n`;
-  return html.replace('</head>', `${scriptTag}</head>`);
+function injectSchema(html: string): string {
+  return html.replace('</head>', `${SCHEMA_TAG}</head>`);
 }
 
 // 1. STATIC ASSETS (Check these first)
@@ -53,8 +62,41 @@ app.use(express.static(browserDistFolder, {
 }));
 
 // 2. MIXED SITEMAP: CORE DYNAMIC PAGES + STATIC SHARDS INDEX
+// /sitemap.xml is a sitemap INDEX: one entry for the core pages below plus one per
+// generated content shard. (It used to be a single urlset that listed the shard files
+// as if they were pages, which is invalid, and it rebuilt ~170k hreflang links on
+// every request - the core-page sitemap is now built once and kept in memory.)
+let corePagesSitemap: string | null = null;
+
 app.get('/sitemap.xml', (_req, res) => {
-  const hostname = 'https://www.profitpiller.com';
+  const today = new Date().toISOString().slice(0, 10);
+  let shards = '';
+  try {
+    const indexContent = fs.readFileSync(path.join(browserDistFolder, 'sitemaps', 'sitemap-index.xml'), 'utf-8');
+    for (const match of indexContent.matchAll(/<loc>\s*([^<]+?)\s*<\/loc>/g)) {
+      // Keep only the file name so the shard always lives on the configured host.
+      const file = match[1].split('/').pop();
+      if (file) shards += `<sitemap><loc>${SITE_URL}/sitemaps/${file}</loc><lastmod>${today}</lastmod></sitemap>`;
+    }
+  } catch (e) {
+    console.warn('Programmatic sitemap shards index not found. Only serving core pages.');
+  }
+
+  res.header('Content-Type', 'application/xml');
+  res.header('Cache-Control', 'public, max-age=3600');
+  res.send(`<?xml version="1.0" encoding="UTF-8"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>${SITE_URL}/sitemap-pages.xml</loc><lastmod>${today}</lastmod></sitemap>${shards}</sitemapindex>`);
+});
+
+app.get('/sitemap-pages.xml', (_req, res) => {
+  res.header('Content-Type', 'application/xml');
+  res.header('Cache-Control', 'public, max-age=3600');
+
+  if (corePagesSitemap) {
+    res.send(corePagesSitemap);
+    return;
+  }
+
+  const hostname = SITE_URL;
 
   // Core pages to be translated dynamically on the fly
   const routes = [
@@ -82,7 +124,7 @@ app.get('/sitemap.xml', (_req, res) => {
 
       const hreflangs = SUPPORTED_LOCALES.map(l => {
         const href = l.hreflang === 'x-default'
-          ? `${hostname}${pathSegment}`
+          ? `${hostname}/${l.urlPrefix}${pathSegment}`
           : `${hostname}/${l.urlPrefix}${pathSegment}`;
 
         return `<xhtml:link rel="alternate" hreflang="${l.hreflang}" href="${href}" />`;
@@ -99,35 +141,14 @@ app.get('/sitemap.xml', (_req, res) => {
     }
   }
 
-  // 2. Read the programmatic sitemap index from file and parse its links right into here
-  let programmaticSitemapsXml = '';
-  try {
-    const sitemapIndexPath = path.join(browserDistFolder, 'sitemaps', 'sitemap-index.xml');
-    const indexContent = fs.readFileSync(sitemapIndexPath, 'utf-8');
-    
-    // Extract everything between <sitemap> and </sitemap> tags
-    const sitemapMatches = indexContent.match(/<sitemap>[\s\S]*?<\/sitemap>/g);
-    if (sitemapMatches) {
-      // Convert <sitemap><loc>...</loc></sitemap> structures into flat <url> pointers
-      programmaticSitemapsXml = sitemapMatches
-        .map(s => s.replace('<sitemap>', '<url>').replace('</sitemap>', '</url>'))
-        .join('');
-    }
-  } catch (e) {
-    // Fail silently if content generator hasn't run yet so it doesn't crash the whole main file
-    console.warn('Programmatic sitemap shards index not found. Only serving core pages.');
-  }
-
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+  corePagesSitemap = `<?xml version="1.0" encoding="UTF-8"?>
   <urlset
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
       xmlns:xhtml="http://www.w3.org/1999/xhtml">
       ${xml}
-      ${programmaticSitemapsXml}
   </urlset>`;
 
-  res.header('Content-Type', 'application/xml');
-  res.send(sitemap);
+  res.send(corePagesSitemap);
 });
 
 // Expose the folder containing your split XML sitemaps (/sitemaps/sitemap-blog-1.xml, etc.)

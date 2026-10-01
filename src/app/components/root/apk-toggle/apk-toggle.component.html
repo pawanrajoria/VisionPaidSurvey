@@ -19,8 +19,14 @@
 
         <div class="qr-container">
             <!-- Replace with your QR -->
+            <!-- The QR library draws on a canvas and needs `document`, so it must never run during
+                 server rendering. A defer block is skipped on the server and loads in the browser. -->
+            @defer {
             <ngx-qrcode-styling [template]="'beans'" data="https://play.google.com/store/apps/details?id=com.cralpkresearch.profitpiller" [width]="200" [height]="200">
             </ngx-qrcode-styling>
+            } @placeholder {
+            <div style="width:200px;height:200px"></div>
+            }
             <!-- <img loading="lazy" src="assets/images/apk-qr.jpeg" alt="Download APK QR" width="1024" height="1024"> -->
         </div>
 

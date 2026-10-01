@@ -1,5 +1,7 @@
 import { HttpClient } from "@angular/common/http";
-import { Inject, Injectable, PLATFORM_ID } from "@angular/core";
+import { inject, Inject, Injectable, PLATFORM_ID } from "@angular/core";
+import { EngagementService } from "../home/engagement/engagement.service";
+import { AdminService } from "../admin/admin.service";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { ConfigService } from "../../config.service";
 import { firstValueFrom } from "rxjs";
@@ -13,6 +15,8 @@ import { FraudService } from "../../frauddetection.service";
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
+    private engagementService = inject(EngagementService);
+    private adminService = inject(AdminService);
     private allowedMenus: string[] = [];
     private secretKey = "AADD654564ADD";
     private vi = "AADD654564ADD";
@@ -22,21 +26,22 @@ export class AuthService {
         private fraudService: FraudService,
         private localStorageService: LocalStorageService, @Inject(PLATFORM_ID) private platformId: Object) {
 
-        this.angularFireAuth.authState.subscribe((user) => {
-            // if (user) {
-            //        console.log('User found.');
-            //     // User is signed in. You can store user data here.
-            // } else {
-            //     // User is signed out.
-            //      console.log('No User found.');
-            // }
-        });
+        // PERF: an empty authState subscription used to sit here. Its only effect was to boot
+        // the Firebase Auth SDK (iframe + Google API scripts, ~130 KB) on every page that
+        // injects this service, including the public home page. Firebase now starts only
+        // when a Google sign-in is actually attempted.
     }
 
     async logOut(): Promise<void> {
         // await this.angularFireAuth.signOut();
         this.localStorageService.removeItem('google-token');
         this.localStorageService.removeItem('token');
+        // Per-user session caches must not leak into the next login on this device.
+        this.engagementService.clear();
+        this.adminService.clear();
+        if (isPlatformBrowser(this.platformId)) {
+            try { sessionStorage.removeItem('onboardingSkipped'); } catch { }
+        }
         this.router.navigate(['/auth/login']);
     }
 
@@ -51,9 +56,9 @@ export class AuthService {
             return false;
         }
 
-        const googleUser = await firstValueFrom(this.angularFireAuth.authState);
-        const dbAuth = !!this.localStorageService.getItem('token'); // Check if database token exists
-        return (!!googleUser && !!dbAuth) || (!!dbAuth);
+        // The previous expression, (googleUser && dbAuth) || dbAuth, always equals dbAuth,
+        // so waiting for Firebase here only delayed the answer.
+        return !!this.localStorageService.getItem('token'); // Check if database token exists
     }
 
     async firebaseLogin(request: any): Promise<any> {

@@ -31,8 +31,4 @@ export class RespondentService {
         return self.http.get<string>(self.configService.userflowEndpoint + "Respondent/getredirect?respondentToken=" + token + "&transactionId=" + transId + "&statusId=" + statusId).toPromise();
     }
 
-    async callCPXSurveyResponseApi(transId: any): Promise<any> {
-        const self = this;
-        return self.http.get<string>("https://publisher.cpx-research.com/index.php?page=api-check-transaction-id&transaction_id=" + transId + "&api_key=f2a1e7f079bc1e5ee9eb29fa3e101ec1").toPromise();
-    }
 }

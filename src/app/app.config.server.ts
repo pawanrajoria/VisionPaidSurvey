@@ -1,4 +1,5 @@
-import { mergeApplicationConfig, ApplicationConfig, inject } from '@angular/core';
+import { mergeApplicationConfig, ApplicationConfig, inject, REQUEST } from '@angular/core';
+import { DEFAULT_LANGUAGE, languageForLocale } from './i18n-languages';
 import { provideServerRendering, withRoutes } from '@angular/ssr';
 import { appConfig } from './app.config';
 import { serverRoutes } from './app.routes.server';
@@ -9,9 +10,20 @@ import { MultiTranslateServerLoader } from '../../server/multilanguagetranslator
 // ✅ APP_INITIALIZER to preload translations
 function initTranslateServiceServer(): () => Promise<void> {
   const translate = inject(TranslateService);
-  translate.setDefaultLang('en');
+  // The language comes from the locale in the requested URL (/de-de/... -> German). It used
+  // to be hard-coded to English, so every localized URL was server-rendered in English and
+  // search engines saw English text on the German, Hindi, Spanish... pages.
+  const request = inject(REQUEST, { optional: true });
+  let language = DEFAULT_LANGUAGE;
+  try {
+    if (request?.url) language = languageForLocale(new URL(request.url).pathname);
+  } catch {
+    language = DEFAULT_LANGUAGE;
+  }
+
+  translate.setDefaultLang(DEFAULT_LANGUAGE);
   return () =>
-    translate.use('en').toPromise().then(() => {
+    translate.use(language).toPromise().then(() => {
     });
 }
 
@@ -39,6 +51,7 @@ export function multiHttpLoaderFactory() {
     { prefix: '/assets/i18n/', suffix: '/profile.json' },
     { prefix: '/assets/i18n/', suffix: '/instruction.json' },
     { prefix: '/assets/i18n/', suffix: '/afterloginhelp.json' },
+    { prefix: '/assets/i18n/', suffix: '/app.json' },
   ]);
 };
 

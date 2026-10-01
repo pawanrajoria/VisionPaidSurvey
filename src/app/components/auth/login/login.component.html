@@ -109,6 +109,17 @@
                         {{ 'buttons.google' | translate }}
                     </div>
                 </button>
+
+                <div class="social-row">
+                    <button type="button" mat-stroked-button class="social-btn apple" [disabled]="socialBusy"
+                        (click)="socialLogin('apple')">
+                        <mat-icon>apple</mat-icon> Apple
+                    </button>
+                    <button type="button" mat-stroked-button class="social-btn facebook" [disabled]="socialBusy"
+                        (click)="socialLogin('facebook')">
+                        <mat-icon>facebook</mat-icon> Facebook
+                    </button>
+                </div>
             </div>
         </div>
 

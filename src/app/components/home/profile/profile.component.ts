@@ -7,6 +7,8 @@ import { AuthService } from "../../auth/auth.service";
 import { AccountService } from "../account.service";
 import { LocalStorageService } from "../../../localstorage.service";
 import { BaseComponent } from "../../../base.component";
+import { EngagementService } from "../engagement/engagement.service";
+import { IStreakStatus, ITier, tierForLevel } from "../engagement/engagement.vm";
 
 @Component({
     selector: 'app-profile',
@@ -18,16 +20,23 @@ export class ProfileComponent extends BaseComponent implements OnInit {
 
     userInfo: IProfileVM = { level: "", totalOfferCompleted: "0", totalPointEarned: "0", totalRewardRedeemed: "0", totalSurveyCompleted: "" };
     userHeading: Array<IUserHeading> = [];
+    /** Survey streak and leaderboard gate shown on the account page. */
+    streak: IStreakStatus | null = null;
+
+    get tier(): ITier {
+        return tierForLevel(this.userBalanceInfo.userLevel);
+    }
 
     constructor(private profileService: ProfileService, private router: Router,
         public authService: AuthService, private accountService: AccountService,
-        private localStorageService: LocalStorageService) {
+        private localStorageService: LocalStorageService, private engagement: EngagementService) {
         super();
     }
 
     async ngOnInit() {
         await this.getProfileInfo();
         await this.bindUserHeading();
+        this.streak = (await this.engagement.getSummary())?.streak ?? null;
     }
 
     get userBalanceInfo() {

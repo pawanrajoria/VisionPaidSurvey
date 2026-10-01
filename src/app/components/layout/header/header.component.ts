@@ -20,6 +20,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { SelectRewardComponent } from '../../home/reward/select-reward/select-reward.component';
 import { TierAwardComponent } from "./tier-award/tier-award.component";
 import { RewardComponent } from '../../home/reward/reward.component';
+import { AdminService } from '../../admin/admin.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -44,11 +46,16 @@ export class HeaderComponent {
   @Output() removeNotification = new EventEmitter<void>();
   readonly dialog = inject(MatDialog);
   dialogRef: MatDialogRef<any> | null = null;
+  isAdmin = false;
   @ViewChild('Qualify', { read: TemplateRef }) Qualify!: TemplateRef<any>;
 
   constructor(public authService: AuthService, private accountService: AccountService,
     private router: Router, private breakpointObserver: BreakpointObserver,
     @Inject(PLATFORM_ID) private platformId: any) {
+    // Shows the "Admin console" entry only to accounts the API recognises as administrators.
+    if (isPlatformBrowser(this.platformId)) {
+      inject(AdminService).isAdmin().then(value => this.isAdmin = value);
+    }
   }
 
 
@@ -98,6 +105,10 @@ export class HeaderComponent {
     });
 
 
+  }
+
+  goToAdmin() {
+    this.router.navigate(['admin']);
   }
 
   goToAccount() {

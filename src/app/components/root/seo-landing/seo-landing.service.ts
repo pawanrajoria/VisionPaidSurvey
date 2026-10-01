@@ -83,7 +83,7 @@ export class SeoLandingService {
   async getSeoPage(params: any): Promise<any> {
     return await firstValueFrom(
       this.http.get<any>(
-        this.config.baseUrl + 'seo-page',
+        this.config.baseUrl + 'seo/seo-page',
         { params }
       )
     );

@@ -241,3 +241,27 @@
 .terms-container a {
   font-weight: 500;
 }
+// Apple / Facebook sign-in buttons under the Google button
+.social-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+
+  .social-btn {
+    height: 46px;
+    font-weight: 600;
+
+    mat-icon {
+      margin-right: 6px;
+    }
+
+    &.apple {
+      color: #111;
+    }
+
+    &.facebook {
+      color: #1877f2;
+    }
+  }
+}

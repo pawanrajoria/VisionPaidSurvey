@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './components/auth/auth.guard';
 import { langRedirectGuard } from './lang.redirect.guard';
+import { onboardingGuard } from './components/home/welcome/onboarding.guard';
+import { adminGuard } from './components/admin/admin.guard';
 
 export const routes: Routes = [
 
@@ -21,6 +23,7 @@ export const routes: Routes = [
       {
         path: 'admin',
         loadComponent: () => import('./components/admin/admin.component').then(m => m.AdminComponent),
+        canActivate: [authGuard, adminGuard],
         children: [
           { path: '', redirectTo: 'user-admin-dashboard', pathMatch: 'full' },
           {
@@ -55,7 +58,8 @@ export const routes: Routes = [
         children: [
           { path: '', redirectTo: 'earn', pathMatch: 'full' },
           { path: 'instruction', loadChildren: () => import('./components/home/instruction/instruction.route').then(m => m.InstructionRoutes) },
-          { path: 'earn', loadChildren: () => import('./components/home/earn/earn.route').then(m => m.EarnRoutes) },
+          { path: 'welcome', loadChildren: () => import('./components/home/welcome/welcome.route').then(m => m.WelcomeRoutes) },
+          { path: 'earn', canActivate: [onboardingGuard], loadChildren: () => import('./components/home/earn/earn.route').then(m => m.EarnRoutes) },
           { path: 'survey', loadChildren: () => import('./components/home/survey/survey.route').then(m => m.SurveyRoutes) },
           { path: 'offers', loadChildren: () => import('./components/home/offer/offer.route').then(m => m.OfferRoutes) },
           { path: 'offerwall', loadChildren: () => import('./components/home/offer-wall/offer-wall.route').then(m => m.OfferWallRoutes) },

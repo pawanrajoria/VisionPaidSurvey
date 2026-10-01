@@ -17,6 +17,18 @@ export const serverRoutes: ServerRoute[] = [
   { path: ':lang/paypal', renderMode: RenderMode.Server },
   { path: ':lang/visa', renderMode: RenderMode.Server },
 
+  // 🌍 Programmatic SEO pages. These were falling through to the client-only fallback,
+  // so crawlers received an empty shell instead of the article / landing content.
+  { path: ':lang/blog', renderMode: RenderMode.Server },
+  { path: ':lang/blog/**', renderMode: RenderMode.Server },
+  { path: ':lang/guides', renderMode: RenderMode.Server },
+  { path: ':lang/guides/**', renderMode: RenderMode.Server },
+  { path: ':lang/gift-cards', renderMode: RenderMode.Server },
+  { path: ':lang/gift-cards/**', renderMode: RenderMode.Server },
+  { path: ':lang/surveys/**', renderMode: RenderMode.Server },
+  { path: ':lang/paid-surveys/**', renderMode: RenderMode.Server },
+  { path: ':lang/earn-money/**', renderMode: RenderMode.Server },
+
   // 🔐 AUTH (optional SSR)
   { path: ':lang/auth/**', renderMode: RenderMode.Server },
 

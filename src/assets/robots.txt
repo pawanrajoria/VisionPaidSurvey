@@ -1,3 +1,4 @@
-Sitemap: https://www.pocketsfull.com/sitemap.xml
 User-agent: *
 Allow: /
+
+Sitemap: https://pocketsfull.com/sitemap.xml

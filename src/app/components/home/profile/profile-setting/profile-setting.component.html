@@ -72,6 +72,38 @@
             </mat-list-item>
         </div>
         <div class="col-sm-12 col-lg-6 p-10">
+            <mat-list-item class="h-100 bg-light-secondary gap-6" (click)="updateTimeZone()">
+                <div mat-list-item-content class="d-flex align-items-center">
+                    <div mat-list-item-avatar class="d-flex justify-content-center align-items-center">
+                        <mat-icon>schedule</mat-icon>
+                    </div>
+                    <div class="m-l-5 m-t-5 f-s-18 f-w-600">
+                        {{ 'app.settings.timeZone' | translate }}
+                        <small class="d-block f-s-12 f-w-400">{{ timeZoneText }}</small>
+                    </div>
+                    <div mat-list-item-avatar class="d-flex justify-content-end w-100">
+                        <i-tabler name="chevron-right" class="icon-20">
+                        </i-tabler>
+                    </div>
+                </div>
+            </mat-list-item>
+        </div>
+        @if (signedInWith) {
+        <div class="col-sm-12 col-lg-6 p-10">
+            <mat-list-item class="h-100 bg-light-secondary gap-6" disabled>
+                <div mat-list-item-content class="d-flex align-items-center">
+                    <div mat-list-item-avatar class="d-flex justify-content-center align-items-center">
+                        <mat-icon>login</mat-icon>
+                    </div>
+                    <div class="m-l-5 m-t-5 f-s-18 f-w-600">
+                        {{ 'app.settings.signedInWith' | translate }}
+                        <small class="d-block f-s-12 f-w-400">{{ signedInWith }}</small>
+                    </div>
+                </div>
+            </mat-list-item>
+        </div>
+        }
+        <div class="col-sm-12 col-lg-6 p-10">
             <mat-list-item class="h-100 bg-light-error gap-6" (click)="deleteAccount()">
                 <div mat-list-item-content class="d-flex align-items-center">
                     <div mat-list-item-avatar class="d-flex justify-content-center align-items-center">

@@ -26,7 +26,8 @@ import {
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
-import { isPlatformBrowser } from '@angular/common';
+import { DATE_PIPE_DEFAULT_OPTIONS, isPlatformBrowser } from '@angular/common';
+import { USER_TIME_ZONE_KEY, offsetFor } from './timezones';
 
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MultiTranslateClientHttpLoader } from './multilanguagetranslator';
@@ -168,6 +169,7 @@ export function multiHttpLoaderFactory(http: HttpClient) {
     { prefix: '/assets/i18n/', suffix: '/cookiepolicy.json' },
     { prefix: '/assets/i18n/', suffix: '/instruction.json' },
     { prefix: '/assets/i18n/', suffix: '/afterloginhelp.json' },
+    { prefix: '/assets/i18n/', suffix: '/app.json' },
   ]);
 };
 
@@ -201,6 +203,21 @@ export const appConfig: ApplicationConfig = {
 
     provideClientHydration(withEventReplay()),
     provideAnimationsAsync(),
+    // Dates are formatted in the time zone the user picked in account settings (stored in
+    // localStorage by the settings dialog / layout); without a choice the browser zone is used.
+    {
+      provide: DATE_PIPE_DEFAULT_OPTIONS,
+      useFactory: (platformId: Object) => {
+        if (!isPlatformBrowser(platformId)) return {};
+        try {
+          const timezone = offsetFor(localStorage.getItem(USER_TIME_ZONE_KEY));
+          return timezone ? { timezone } : {};
+        } catch {
+          return {};
+        }
+      },
+      deps: [PLATFORM_ID],
+    },
 
     // ✅ MODULAR PROVIDERS (Fixes the NG0201 Error)
     provideFirebaseApp(() => provideInit(firebaseConfig)),

@@ -12,8 +12,12 @@
     <div class="qr-instruction">Scan the QR Code with your phone.</div>
 
     <div class="qr-code-wrapper">
+        @defer {
         <ngx-qrcode-styling [template]="'beans'" [data]="offer.clickUrl" [width]="200" [height]="200">
         </ngx-qrcode-styling>
+        } @placeholder {
+        <div style="width:200px;height:200px"></div>
+        }
     </div>
 
     <div class="device-info">

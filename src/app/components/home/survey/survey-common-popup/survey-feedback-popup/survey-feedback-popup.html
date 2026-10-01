@@ -3,38 +3,40 @@
         <div class="icon-circle">
             <mat-icon>quiz</mat-icon>
         </div>
-        <h2>What happened?</h2>
-        <button mat-icon-button (click)="closeHappened()" class="close-icon" aria-label="Close">
+        <h2>{{ 'app.survey.feedback.title' | translate }}</h2>
+        <button mat-icon-button (click)="closeHappened()" class="close-icon" [attr.aria-label]="'app.common.close' | translate">
             <mat-icon>close</mat-icon>
         </button>
     </div>
 
     <mat-dialog-content class="popup-body">
-        <p class="instruction">You did not return from the survey yet</p>
+        <p class="instruction">{{ 'app.survey.feedback.notReturned' | translate }}</p>
 
         <mat-radio-group class="options-list" [(ngModel)]="selectedReason">
             <div class="option-row">
-                <mat-radio-button value="1">I did not like the survey</mat-radio-button>
+                <mat-radio-button value="1">{{ 'app.survey.feedback.reason1' | translate }}</mat-radio-button>
             </div>
             <div class="option-row">
-                <mat-radio-button value="2">The survey asked for personal information</mat-radio-button>
+                <mat-radio-button value="2">{{ 'app.survey.feedback.reason2' | translate }}</mat-radio-button>
             </div>
             <div class="option-row">
-                <mat-radio-button value="3">The survey is broken/i con't continue</mat-radio-button>
+                <mat-radio-button value="3">{{ 'app.survey.feedback.reason3' | translate }}</mat-radio-button>
             </div>
             <div class="option-row">
-                <mat-radio-button value="4">Other</mat-radio-button>
+                <mat-radio-button value="4">{{ 'app.survey.feedback.reason4' | translate }}</mat-radio-button>
             </div>
         </mat-radio-group>
 
         <div class="comment-section">
-            <textarea class="custom-input" placeholder="Comments" rows="3"></textarea>
+            <textarea class="custom-input" [(ngModel)]="comment" maxlength="500" rows="3"
+                [placeholder]="'app.survey.feedback.comments' | translate"
+                [attr.aria-label]="'app.survey.feedback.comments' | translate"></textarea>
         </div>
     </mat-dialog-content>
 
     <mat-dialog-actions align="center" class="popup-actions">
         <button mat-flat-button class="main-submit-btn" (click)="submitFeedback()">
-            Submit
+            {{ 'app.common.submit' | translate }}
         </button>
     </mat-dialog-actions>
 </div>

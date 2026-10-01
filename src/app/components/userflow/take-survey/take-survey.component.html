@@ -5,11 +5,11 @@
     <div class="header-left">
       <mat-icon class="header-icon">badge</mat-icon>
       <div>
-        <h3 class="header-title">Profiling Survey</h3>
-        <span class="header-subtitle">Answer a few quick questions to match surveys</span>
+        <h3 class="header-title">{{ 'app.survey.screener.title' | translate }}</h3>
+        <span class="header-subtitle">{{ 'app.survey.screener.sub' | translate }}</span>
       </div>
     </div>
-    <button mat-icon-button (click)="dialogRef?.close()" class="close-btn" aria-label="Close">
+    <button mat-icon-button (click)="dialogRef?.close()" class="close-btn" [attr.aria-label]="'app.common.close' | translate">
       <mat-icon>close</mat-icon>
     </button>
   </div>

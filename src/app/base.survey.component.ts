@@ -5,7 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ISurveyVM } from './components/home/survey/survey.vm';
 import { MatDialog } from '@angular/material/dialog';
 import { FraudService } from './frauddetection.service';
-import { SurveyFeedBackPopupComponent } from './components/home/survey/survey-common-popup/survey-feedback-popup/survey-feedback-popup';
+import { ISurveyFeedback, SURVEY_FEEDBACK_REASONS, SurveyFeedBackPopupComponent } from './components/home/survey/survey-common-popup/survey-feedback-popup/survey-feedback-popup';
+import { TranslateService } from '@ngx-translate/core';
 import { TakeSurveyComponent } from './components/userflow/take-survey/take-survey.component';
 import { SurveyQualifyPopupComponent } from './components/home/survey/survey-common-popup/survey-qualify-popup/survey-qualify-popup';
 import { SurveyDisqualifyPopupComponent } from './components/home/survey/survey-common-popup/survey-disqualify-popup/survey-disqualify-popup';
@@ -23,6 +24,7 @@ export abstract class BaseSurveyComponent {
     readonly currentLocale = this.getLocaleFromRoute(this.activateRoutelang);
     readonly dialog = inject(MatDialog);
     readonly fraudService = inject(FraudService);
+    protected readonly translateService = inject(TranslateService);
 
     constructor() {
         this.bindBrowserSetting(); // ✅ safe in constructor
@@ -39,7 +41,7 @@ export abstract class BaseSurveyComponent {
                 if (this.win) {
                     let winNew = this.win.open('', '_blank');
                     if (!winNew) {
-                        alert('Popup blocked. Please allow popups for this site.');
+                        alert(this.translateService.instant('app.survey.popupBlocked'));
                         return;
                     }
 
@@ -56,26 +58,36 @@ export abstract class BaseSurveyComponent {
                     }
                 }
 
-                await this.logUserActivity("Survey", "StartSurvey", "Click", item.clickUrl);
+                // The survey is already open at this point. A failed activity log must not be
+                // reported to the user as "could not start the survey".
+                try {
+                    await this.logUserActivity("Survey", "StartSurvey", "Click", item.clickUrl);
+                } catch { /* logging only */ }
                 await this.feedbackSurvey(item);
             }
         } catch (e) {
             console.error('Failed to open survey in browser:', e);
-            alert('Could not start the survey. Please check your connection.');
+            alert(this.translateService.instant('app.survey.startFailed'));
         }
     }
 
 
+    /**
+     * "What happened?" dialog shown after a survey was opened in another tab. The answer used to
+     * be thrown away (the submit handler was an empty stub). It is now stored in the user activity
+     * log (page "Survey", event "Feedback"), where it shows up in the admin activity views.
+     */
     async feedbackSurvey(item: ISurveyVM) {
         const dialofref = this.dialog.open(SurveyFeedBackPopupComponent);
-        dialofref.afterClosed().subscribe(async (result) => {
-            if (result === "submitForm") {
-                // call rating api
-                dialofref.close();
-            } else if (result === "close") {
-                // this.getSurveys();
-                dialofref.close();
-            }
+        dialofref.afterClosed().subscribe(async (result: ISurveyFeedback | string | undefined) => {
+            if (!result || typeof result === 'string' || result.action !== 'submitForm') return;
+
+            const reason = SURVEY_FEEDBACK_REASONS[result.reason] ?? 'Not specified';
+            const survey = `${item.name ?? ''} | ${item.clickUrl ?? ''}`.slice(0, 300);
+            const remarks = result.comment ? `${result.comment} | ${survey}` : survey;
+            try {
+                await this.logUserActivity("Survey", "Feedback", reason, remarks);
+            } catch { /* the interceptor already reported it */ }
         });
     }
 
@@ -100,7 +112,8 @@ export abstract class BaseSurveyComponent {
             return;
         }
 
-        if (result.role === 'qualify') {
+        // A "qualified" result is only usable when it carries the survey link.
+        if (result.role === 'qualify' && !!result.data) {
             const surveyItem = { ...item };
             surveyItem.clickUrl = result.data;
 
@@ -110,7 +123,7 @@ export abstract class BaseSurveyComponent {
                 if (this.win) {
                     let winNew = this.win.open('', '_blank');
                     if (!winNew) {
-                        alert('Popup blocked. Please allow popups for this site.');
+                        alert(this.translateService.instant('app.survey.popupBlocked'));
                         return;
                     }
 
@@ -122,7 +135,7 @@ export abstract class BaseSurveyComponent {
                 await this.qualifySurvey(surveyItem);
             }
         }
-        else if (result.role === 'disquality') {
+        else if (result.role === 'disquality' || result.role === 'qualify') {
             await this.disqualifySurvey(item);
         }
     }

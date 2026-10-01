@@ -1,48 +1,115 @@
 <div class="main-dashboard">
     <main class="primary-content">
+
+        @if (loading) {
+        <section class="unlock-mission-card">
+            <p class="state-text">{{ 'app.leaderboard.loading' | translate }}</p>
+        </section>
+        }
+
+        @if (failed) {
+        <section class="unlock-mission-card">
+            <p class="state-text">{{ 'app.leaderboard.failed' | translate }}</p>
+        </section>
+        }
+
+        @if (board; as b) {
+
+        <!-- LOCKED -->
+        @if (b.locked) {
         <section class="unlock-mission-card">
             <div class="trophy-header">
                 <div class="icon-glow">
-                    <mat-icon>emoji_events</mat-icon>
+                    <mat-icon>lock</mat-icon>
                 </div>
-                <h2>Unlock Leaderboard!</h2>
-                <p>Complete <strong> {{10 - userInfo.totalSurveyCompleted}}</strong> more surveys to see your rank and start competing.</p>
+                <h2>{{ 'app.leaderboard.lockedTitle' | translate }}</h2>
+                <p>{{ (b.surveysToUnlock === 1 ? 'app.leaderboard.lockedText_one' : 'app.leaderboard.lockedText_other')
+                    | translate:{ count: b.surveysToUnlock } }}</p>
             </div>
 
             <div class="progress-wrapper">
                 <div class="progress-rail">
-                    <div class="progress-bar" [style.width.%]="userInfo.totalSurveyCompleted*1000/100"></div>
+                    <div class="progress-bar" [style.width.%]="progress"></div>
                 </div>
-                <span class="progress-label">{{userInfo.totalSurveyCompleted}}/10 surveys completed</span>
+                <span class="progress-label">
+                    {{ 'app.leaderboard.progress' | translate:{ done: b.surveysCompleted, total: b.threshold } }}
+                </span>
             </div>
 
             <div class="prize-footer">
-                <span>Weekly Prize Pool:</span>
-                <span class="prize-amt">127,300 Points (≈ $ 1273 USD)</span>
+                <a class="start-link" [routerLink]="['/', currentLocale, 'app', 'survey']">
+                    {{ 'app.leaderboard.takeSurvey' | translate }}
+                </a>
             </div>
         </section>
 
         <section class="top-earners-container">
             <div class="list-header">
-                <h3>Top Earners</h3>
-                <small>Income from completed surveys counts</small>
+                <h3>{{ 'app.leaderboard.topEarners' | translate }}</h3>
+                <small>{{ 'app.leaderboard.incomeNote' | translate }}</small>
             </div>
-
             <div class="list-wrapper">
                 <div class="lock-overlay">
                     <mat-icon>lock</mat-icon>
-                    <p>Finish your daily goal to reveal the top earners</p>
+                    <p>{{ 'app.leaderboard.reveal' | translate }}</p>
                 </div>
-
-                <div class="blurred-list">
+                <div class="blurred-list" aria-hidden="true">
                     <div class="user-row" *ngFor="let i of [1,2,3,4,5]">
                         <div class="rank">#{{i}}</div>
                         <div class="avatar-circle"></div>
-                        <div class="user-name">Hidden_User_{{i}}</div>
-                        <div class="earnings">$0,000.00</div>
+                        <div class="user-name">{{ 'app.leaderboard.hidden' | translate }}</div>
+                        <div class="earnings">•••• {{ 'app.common.pts' | translate }}</div>
                     </div>
                 </div>
             </div>
         </section>
+        }
+
+        <!-- UNLOCKED -->
+        @if (!b.locked) {
+        <section class="unlock-mission-card">
+            <div class="trophy-header">
+                <div class="icon-glow">
+                    <mat-icon>emoji_events</mat-icon>
+                </div>
+                <h2>
+                    @if (b.myRank > 0) { {{ 'app.leaderboard.rankTitle' | translate:{ rank: b.myRank } }} }
+                    @else { {{ 'app.leaderboard.inTitle' | translate }} }
+                </h2>
+                <p>
+                    @if (b.myRank > 0) { {{ 'app.leaderboard.rankSub' | translate:{ points: (b.myPoints | number:'1.0-0') } }} }
+                    @else { {{ 'app.leaderboard.inSub' | translate }} }
+                </p>
+            </div>
+            <div class="prize-footer">
+                <span>{{ 'app.leaderboard.resets' | translate }}</span>
+                <span class="prize-amt">{{ counter | formatTime }}</span>
+            </div>
+        </section>
+
+        <section class="top-earners-container">
+            <div class="list-header">
+                <h3>{{ 'app.leaderboard.topEarners' | translate }}</h3>
+                <small>{{ 'app.leaderboard.incomeNote' | translate }}</small>
+            </div>
+            <div class="list-wrapper">
+                @for (entry of b.entries; track entry.rank) {
+                <div class="user-row live" [class.me]="entry.isMe">
+                    <div class="rank" [class.top]="entry.rank <= 3">#{{ entry.rank }}</div>
+                    <div class="avatar-circle">{{ entry.name.charAt(0) }}</div>
+                    <div class="user-name">
+                        {{ entry.name }}
+                        <small>{{ entry.countryCode }} · {{ 'app.leaderboard.surveysCount' | translate:{ count: entry.surveys } }}</small>
+                    </div>
+                    <div class="earnings">{{ entry.points | number:'1.0-0' }} {{ 'app.common.pts' | translate }}</div>
+                </div>
+                } @empty {
+                <p class="state-text">{{ 'app.leaderboard.empty' | translate }}</p>
+                }
+            </div>
+        </section>
+        }
+
+        }
     </main>
 </div>

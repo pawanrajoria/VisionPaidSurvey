@@ -238,3 +238,59 @@
         }
     }
 }
+
+// Streak / tier / leaderboard strip on the account page
+.account-streak {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 0 16px 16px;
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 12px;
+    border: 1px solid #dfe7e4;
+    border-radius: 12px;
+    background: #fff;
+
+    strong {
+      font-size: 18px;
+      color: #14231f;
+      font-variant-numeric: tabular-nums;
+    }
+
+    span {
+      font-size: 12px;
+      color: #5d6d68;
+    }
+  }
+
+  .board {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: rgba(16, 87, 73, 0.08);
+    color: #14231f;
+    text-decoration: none;
+
+    mat-icon { color: #105749; }
+
+    span { display: flex; flex-direction: column; }
+    small { color: #5d6d68; }
+
+    &.locked {
+      background: #f1f5f4;
+
+      mat-icon { color: #7a8a85; }
+    }
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}

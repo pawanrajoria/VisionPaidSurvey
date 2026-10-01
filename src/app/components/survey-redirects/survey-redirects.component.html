@@ -21,28 +21,28 @@
         <!-- TITLE -->
         <h2 class="status-title">
             @switch (status) {
-            @case (1) { Survey Successfully Completed! }
-            @case (11) { Survey Overquota }
-            @case (8) { Security Termination }
-            @case (7) { Not a Match }
-            @default { Survey Terminated }
+            @case (1) { {{ 'app.status.completeTitle' | translate }} }
+            @case (11) { {{ 'app.status.overquotaTitle' | translate }} }
+            @case (8) { {{ 'app.status.securityTitle' | translate }} }
+            @case (7) { {{ 'app.status.notMatchTitle' | translate }} }
+            @default { {{ 'app.status.terminatedTitle' | translate }} }
             }
         </h2>
 
         <!-- CONTENT -->
         <p class="description">
             @switch (status) {
-            @case (1) { Thank you! Your reward is being processed. }
-            @case (11) { Sorry, this survey has reached its maximum response limit. }
-            @case (8) { Session terminated due to security protocols. }
-            @case (7) { Unfortunately, you did not meet the specific criteria required for this study. }
-            @default { This survey is no longer available. }
+            @case (1) { {{ 'app.status.completeText' | translate }} }
+            @case (11) { {{ 'app.status.overquotaText' | translate }} }
+            @case (8) { {{ 'app.status.securityText' | translate }} }
+            @case (7) { {{ 'app.status.notMatchText' | translate }} }
+            @default { {{ 'app.status.terminatedText' | translate }} }
             }
         </p>
 
         <div class="redirect-pill">
             <span class="pulse"></span>
-            Redirecting in <strong>{{ countdown }}s</strong>
+            {{ 'app.status.redirecting' | translate }} <strong>{{ countdown }}s</strong>
         </div>
 
         <!-- DIVIDER -->
@@ -50,30 +50,26 @@
 
         <!-- PROMO -->
         <div class="promo-section">
-            <div class="brand-badge">PROFITPILLER EXCLUSIVE</div>
-            <h3>Maximize Your Earnings</h3>
-            <p>Don't stop here. Thousands of users are earning daily with our high-reward tasks.</p>
+            <h3>{{ 'app.status.maximize' | translate }}</h3>
+            <p>{{ 'app.status.maximizeText' | translate }}</p>
 
             <div class="open-note">
-                Opens in a new tab
+                {{ 'app.status.newTab' | translate }}
             </div>
 
             <div class="action-buttons">
-                <a mat-flat-button class="btn-glow" href="https://profitpiller.com" target="_blank"
-                    rel="noopener noreferrer">
+                <a mat-flat-button class="btn-glow" href="/" target="_blank" rel="noopener noreferrer">
                     <mat-icon>language</mat-icon>
-                    Open Web
+                    {{ 'app.status.openWeb' | translate }}
                 </a>
 
                 <a mat-stroked-button class="btn-outline"
                     href="https://play.google.com/store/apps/details?id=com.cralpkresearch.profitpiller" target="_blank"
                     rel="noopener noreferrer">
                     <mat-icon>phone_android</mat-icon>
-                    App Store
+                    {{ 'app.status.appStore' | translate }}
                 </a>
             </div>
-
         </div>
-
     </mat-card>
 </main>
