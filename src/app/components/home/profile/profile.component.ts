@@ -69,9 +69,9 @@ export class ProfileComponent extends BaseComponent implements OnInit {
         } else if (heading.icon === 'certificate-2') {
             self.router.navigate(['/app/account/achievements']);
         } else if (heading.icon === 'trophy') {
-            self.router.navigate(['/app/account/leaderboard']);
+            self.router.navigate(['/app/leaderboard']);
         } else {
-            self.router.navigate(['/app/account/transactions']);
+            self.router.navigate(['/app/account/transactions/0']);
         }
     }
 

@@ -104,8 +104,11 @@ export class TakeSurveyComponent extends BaseSurveyComponent {
     } else {
       const redirect = this.respondentData?.redirectUrl || 'https://profitpiller.com';
 
-      if (!!this.dialogRef && !!this.respondentData && this.respondentData.isQualified) {
-        this.dialogRef?.close({ role: 'qualify', data: redirect });
+      if (!!this.dialogRef && !!this.respondentData) {
+        if (this.respondentData.isQualified)
+          this.dialogRef?.close({ role: 'qualify', data: redirect });
+        else if (this.respondentData.isFailed)
+          this.dialogRef?.close({ role: 'disquality', data: redirect });
       } else {
         if (this.win) this.win.location.href = redirect;
       }
@@ -133,8 +136,12 @@ export class TakeSurveyComponent extends BaseSurveyComponent {
     } else {
       const redirect = response?.redirectUrl || 'https://profitpiller.com';
 
-      if (!!this.dialogRef && !!this.respondentData && this.respondentData.isQualified) {
-        this.dialogRef?.close({ role: 'qualify', data: redirect });
+      if (!!this.dialogRef && !!response) {
+        if (response.isQualified)
+          this.dialogRef?.close({ role: 'qualify', data: redirect });
+        else if (response.isFailed)
+          this.dialogRef?.close({ role: 'disquality', data: redirect });
+
       } else {
         if (this.win) this.win.location.href = redirect;
       }

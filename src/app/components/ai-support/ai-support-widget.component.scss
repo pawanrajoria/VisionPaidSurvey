@@ -172,7 +172,7 @@
   width: min(420px, 100%);
   max-height: 90vh;
   overflow-y: auto;
-  background: var(--pp-surface);
+  background: linear-gradient(180deg, rgba(13, 87, 72, 1) 0%, rgba(109, 175, 119, 1) 100%);
   border: 1px solid var(--pp-border);
   border-radius: var(--pp-radius-lg);
   box-shadow: var(--pp-shadow-card);

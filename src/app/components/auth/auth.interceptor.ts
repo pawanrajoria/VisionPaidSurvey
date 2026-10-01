@@ -49,10 +49,12 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const skipRequest = shouldSkipRequest(req);
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
+  const  platform = "web";
+
   // ✅ Skip for static, SSR, or explicitly excluded requests
   if (skipRequest) {
     return next(req.clone({
-      headers: req.headers.set('X-Timezone', timezone)
+      headers: req.headers.set('X-Timezone', timezone).set('X-Platform', platform)
     }));
   }
 
@@ -64,7 +66,8 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
 
       const headers = req.headers
         .delete('X-Skip-Loader')
-        .set('X-Timezone', timezone);
+        .set('X-Timezone', timezone)
+        .set('X-Platform', platform);
 
       const authHeaders = token ? headers.set('Authorization', `Bearer ${token}`) : headers;
       const modifiedReq = req.clone({ headers: authHeaders });

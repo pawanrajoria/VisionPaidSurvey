@@ -8,6 +8,7 @@ import { FraudService } from './frauddetection.service';
 import { SurveyFeedBackPopupComponent } from './components/home/survey/survey-common-popup/survey-feedback-popup/survey-feedback-popup';
 import { TakeSurveyComponent } from './components/userflow/take-survey/take-survey.component';
 import { SurveyQualifyPopupComponent } from './components/home/survey/survey-common-popup/survey-qualify-popup/survey-qualify-popup';
+import { SurveyDisqualifyPopupComponent } from './components/home/survey/survey-common-popup/survey-disqualify-popup/survey-disqualify-popup';
 
 export abstract class BaseSurveyComponent {
     protected readonly browserService = inject(BrowserService);
@@ -103,7 +104,26 @@ export abstract class BaseSurveyComponent {
             const surveyItem = { ...item };
             surveyItem.clickUrl = result.data;
 
-            await this.qualifySurvey(surveyItem);
+
+
+            if (item.isProfileSurvey) {
+                if (this.win) {
+                    let winNew = this.win.open('', '_blank');
+                    if (!winNew) {
+                        alert('Popup blocked. Please allow popups for this site.');
+                        return;
+                    }
+
+                    if (winNew) {
+                        winNew.location.href = surveyItem.clickUrl;
+                    }
+                }
+            } else {
+                await this.qualifySurvey(surveyItem);
+            }
+        }
+        else if (result.role === 'disquality') {
+            await this.disqualifySurvey(item);
         }
     }
 
@@ -113,6 +133,17 @@ export abstract class BaseSurveyComponent {
             if (result === "participate") {
                 dialofref.close();
                 await this.startSurvey(item);
+            } else if (result === "close") {
+                dialofref.close();
+            }
+        });
+    }
+
+    async disqualifySurvey(item: ISurveyVM) {
+        const dialofref = this.dialog.open(SurveyDisqualifyPopupComponent);
+        dialofref.afterClosed().subscribe(async (result) => {
+            if (result === "refresh") {
+                dialofref.close();
             } else if (result === "close") {
                 dialofref.close();
             }

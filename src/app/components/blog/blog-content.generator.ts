@@ -203,3 +203,5 @@ export function searchBlogSummaries(query: string, limit = 24): BlogPostSummary[
   }
   return results;
 }
+
+export { parseIndexFromSlug };

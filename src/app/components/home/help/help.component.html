@@ -9,7 +9,7 @@
             </div>
             <div class="col-lg-6 col-md-5">
                 <div class="text-end">
-                    <button type="button" class="theme-clr4 border-0 bg-transparent" (click)="askQuestion()">
+                    <button  mat-button type="button" class="theme-clr4 border-0 bg-transparent" (click)="askQuestion()">
                         <mat-icon class="bg-white rounded-circle">arrow_forward</mat-icon>{{
                         'afterloginhelp.ask_question' | translate }}</button>
                 </div>
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <p>{{ 'afterloginhelp.question_subtitle' | translate }}</p>
-                    <button type="button" class="theme-btn style1 ask-button" (click)="askQuestion()">
+                    <button   mat-button type="button" class="theme-btn style1 ask-button" (click)="askQuestion()">
                         <mat-icon class="bg-white rounded-circle">arrow_forward</mat-icon> {{
                         'afterloginhelp.ask_question' | translate }}</button>
                 </div>

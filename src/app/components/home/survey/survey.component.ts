@@ -4,6 +4,7 @@ import { ISurveyVM } from "./survey.vm";
 import { SurveyService } from "./survey.service";
 import { SurveyInstructionPopupComponent } from "./survey-common-popup/survey-instruction-popup/survey-instruction-popup";
 import { BaseSurveyComponent } from "../../../base.survey.component";
+import { Subject, takeUntil } from "rxjs";
 
 @Component({
     selector: 'app-survey',
@@ -12,6 +13,7 @@ import { BaseSurveyComponent } from "../../../base.survey.component";
     styleUrls: ['./survey.component.scss']
 })
 export class SurveyComponent extends BaseSurveyComponent implements OnInit {
+    private destroy$ = new Subject<void>();
     isApiLoaded = false;
     surveys: Array<ISurveyVM> = [];
     filteredSurveys = [...this.surveys];
@@ -28,6 +30,13 @@ export class SurveyComponent extends BaseSurveyComponent implements OnInit {
         this.fraudService.resetTracking();
         this.fraudService.startTracking();
 
+        // Listen for refresh triggers across the app
+        this.surveyService.refresh$
+            .pipe(takeUntil(this.destroy$))
+            .subscribe(async () => {
+                await this.getSurveys();
+                this.filterItems();
+            });
 
         await this.getSurveys();
         this.isApiLoaded = true;
@@ -83,11 +92,15 @@ export class SurveyComponent extends BaseSurveyComponent implements OnInit {
         }
         else {
             this.startSurvey(item);
-            // this.getSurveys();
+            this.removeSurveyFromList(item);
         }
     }
 
-
+    removeSurveyFromList(item: ISurveyVM) {
+        const idKey = (item as any).id !== undefined ? 'id' : 'name'; // matches your model's ID property
+        this.surveys = this.surveys.filter((s: any) => s[idKey] !== (item as any)[idKey]);
+        this.filteredSurveys = this.filteredSurveys.filter((s: any) => s[idKey] !== (item as any)[idKey]);
+    }
 
 
     async openSurveyInstruction(item: ISurveyVM) {

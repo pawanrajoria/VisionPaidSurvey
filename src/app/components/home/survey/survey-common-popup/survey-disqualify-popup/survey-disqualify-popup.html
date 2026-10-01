@@ -1,0 +1,48 @@
+<div class="premium-disqualify-popup animate-in">
+  <button mat-icon-button class="close-btn" (click)="closeSurvey()" aria-label="Close dialog">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <mat-dialog-content class="premium-body">
+    <!-- Disqualified Icon Orbit -->
+    <div class="icon-orbit warning">
+      <div class="icon-bg">
+        <mat-icon>sentiment_dissatisfied</mat-icon>
+      </div>
+    </div>
+
+    <div class="text-content">
+      <h2>Survey Disqualified</h2>
+      <p class="subtitle">You didn't qualify for this specific survey, but your time matters! Try again in a little
+        while for fresh matches.</p>
+    </div>
+
+    <!-- Optional Bonus Reward Pill -->
+    <div class="info-pills">
+      <div class="pill highlight-bonus" *ngIf="earnedBonusCoins > 0">
+        <mat-icon>monetization_on</mat-icon>
+        <span>+{{ earnedBonusCoins }} Effort Coins Added</span>
+      </div>
+      <div class="pill">
+        <mat-icon>schedule</mat-icon>
+        <span>Try again in ~15 mins</span>
+      </div>
+    </div>
+
+    <!-- Action Button -->
+    <button mat-flat-button class="action-btn-main retry" (click)="checkAvailableSurveys()">
+      FIND NEW SURVEYS
+      <mat-icon>refresh</mat-icon>
+    </button>
+
+    <!-- Tip / Info Container -->
+    <div class="pro-tip-container">
+      <div class="tip-header">
+        <mat-icon>info_outline</mat-icon>
+        <span>PROFILE TIP</span>
+      </div>
+      <p>Survey criteria depend on real-time partner requirements. Completing your profile details improves your match
+        rate.</p>
+    </div>
+  </mat-dialog-content>
+</div>
