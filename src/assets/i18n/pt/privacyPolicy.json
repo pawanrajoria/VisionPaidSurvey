@@ -2,14 +2,14 @@
   "privacyPolicy": {
     "heading": {
       "title": "Política de privacidade",
-      "intro": "Sua privacidade é importante para nós. É política da Profit Piller respeitar sua privacidade em relação a qualquer informação que possamos coletar de você em nosso site, https://www.profitpiller.com, e em outros sites que possuímos e operamos.",
+      "intro": "Sua privacidade é importante para nós. É política da Profit Piller respeitar sua privacidade em relação a qualquer informação que possamos coletar de você em nosso site, https://www.pocketsfull.com, e em outros sites que possuímos e operamos.",
       "effectiveDate": "Data de vigência: 6 de maio de 2026"
     },
     "section1": {
       "title": "1. Detalhes que coletamos",
       "accessLogs": {
         "subtitle": "Registros de acesso",
-        "description": "Quando você navega na plataforma Profitpiller, nossos servidores podem capturar automaticamente dados padrão enviados pelo seu navegador de internet. Isso pode incluir o endereço de Protocolo de Internet (IP) do seu sistema, nome e versão do navegador, páginas visitadas, carimbos de data e hora da sua visita, duração do tempo gasto em cada página e detalhes técnicos adicionais."
+        "description": "Quando você navega na plataforma pocketsfull, nossos servidores podem capturar automaticamente dados padrão enviados pelo seu navegador de internet. Isso pode incluir o endereço de Protocolo de Internet (IP) do seu sistema, nome e versão do navegador, páginas visitadas, carimbos de data e hora da sua visita, duração do tempo gasto em cada página e detalhes técnicos adicionais."
       },
       "deviceInformation": {
         "subtitle": "Informações do dispositivo",
@@ -45,7 +45,7 @@
     },
     "section6": {
       "title": "6. Armazenamento e transferências internacionais",
-      "description": "A Profitpiller pode armazenar ou processar seus dados pessoais em países diferentes do seu. Essas transferências são realizadas em conformidade com as estruturas legais e salvaguardas apropriadas para garantir um nível de segurança equivalente ao do seu país de origem."
+      "description": "A pocketsfull pode armazenar ou processar seus dados pessoais em países diferentes do seu. Essas transferências são realizadas em conformidade com as estruturas legais e salvaguardas apropriadas para garantir um nível de segurança equivalente ao do seu país de origem."
     },
     "section7": {
       "title": "7. Seus direitos de privacidade",
@@ -69,21 +69,21 @@
     },
     "section12": {
       "title": "12. Exercício de seus direitos",
-      "description": "Para exercer seus direitos ou para quaisquer perguntas sobre esta política, entre em contato conosco por e-mail em <a href=\"mailto:privacy@profitpiller.com\">privacy@profitpiller.com</a>. As solicitações devem ser enviadas de uma maneira que nos permita verificar sua identidade, geralmente através de sua conta ou de outro método de contato de sua escolha."
+      "description": "Para exercer seus direitos ou para quaisquer perguntas sobre esta política, entre em contato conosco por e-mail em <a href=\"mailto:privacy@pocketsfull.com\">privacy@pocketsfull.com</a>. As solicitações devem ser enviadas de uma maneira que nos permita verificar sua identidade, geralmente através de sua conta ou de outro método de contato de sua escolha."
     },
     "section13": {
       "title": "13. Limitações de nossa política de privacidade",
-      "description": "O site da Profitpiller pode incluir links para sites ou serviços externos não gerenciados por nós. Esteja ciente de que não somos responsáveis pelo conteúdo, práticas ou políticas de plataformas de terceiros e o incentivamos a revisar seus termos de privacidade de forma independente."
+      "description": "O site da pocketsfull pode incluir links para sites ou serviços externos não gerenciados por nós. Esteja ciente de que não somos responsáveis pelo conteúdo, práticas ou políticas de plataformas de terceiros e o incentivamos a revisar seus termos de privacidade de forma independente."
     },
     "section14": {
       "title": "14. Atualizações desta política de privacidade",
-      "description1": "A Profitpiller reserva-se o direito de modificar esta política de privacidade a qualquer momento para se alinhar com os padrões legais, operacionais ou da indústria em evolução. Tomaremos as medidas apropriadas para informar os usuários sobre atualizações importantes, geralmente por meio de nosso site. O uso contínuo de nossos serviços após quaisquer revisões constituirá seu reconhecimento e aceitação dos termos da política atualizada.",
+      "description1": "A pocketsfull reserva-se o direito de modificar esta política de privacidade a qualquer momento para se alinhar com os padrões legais, operacionais ou da indústria em evolução. Tomaremos as medidas apropriadas para informar os usuários sobre atualizações importantes, geralmente por meio de nosso site. O uso contínuo de nossos serviços após quaisquer revisões constituirá seu reconhecimento e aceitação dos termos da política atualizada.",
       "description2": "Nos casos em que as alterações afetem significativamente a forma como lidamos com seus dados pessoais, como a alteração da base legal para o processamento, buscaremos seu consentimento renovado antes de prosseguir com as práticas revisadas."
     },
     "dataProtectionOfficer": {
       "title": "Encarregado de Proteção de Dados",
       "name": "Bogdan Pashynskyi",
-      "email": "dpo@profitpiller.com",
+      "email": "dpo@pocketsfull.com",
       "company": "Legal Nodes Ltd",
       "companyNumber": "Número da empresa: 11668206",
       "address": "Endereço: 90a High Street, Berkhamsted, Hertfordshire, England, HP4 2BL"

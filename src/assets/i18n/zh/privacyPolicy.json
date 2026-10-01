@@ -2,14 +2,14 @@
   "privacyPolicy": {
     "heading": {
       "title": "隐私政策",
-      "intro": "您的隐私对我们很重要。Profit Piller 的政策是尊重您在使用我们的网站 https://www.profitpiller.com 以及我们拥有和运营的其他网站时可能收集的任何信息方面的隐私。",
+      "intro": "您的隐私对我们很重要。Profit Piller 的政策是尊重您在使用我们的网站 https://www.pocketsfull.com 以及我们拥有和运营的其他网站时可能收集的任何信息方面的隐私。",
       "effectiveDate": "生效日期：2026 年 5 月 6 日"
     },
     "section1": {
       "title": "1. 我们收集的详细信息",
       "accessLogs": {
         "subtitle": "访问日志",
-        "description": "当您浏览 Profitpiller 平台时，我们的服务器可能会自动捕获您的互联网浏览器发送的标准数据。这可能包括您系统的互联网协议 (IP) 地址、浏览器名称和版本、访问的页面、访问的时间戳、在每个页面上花费的时间以及其他技术细节。"
+        "description": "当您浏览 pocketsfull 平台时，我们的服务器可能会自动捕获您的互联网浏览器发送的标准数据。这可能包括您系统的互联网协议 (IP) 地址、浏览器名称和版本、访问的页面、访问的时间戳、在每个页面上花费的时间以及其他技术细节。"
       },
       "deviceInformation": {
         "subtitle": "设备信息",
@@ -45,7 +45,7 @@
     },
     "section6": {
       "title": "6. 存储和国际传输",
-      "description": "Profitpiller 可能会在您的国家/地区以外的国家/地区存储或处理您的个人数据。这些传输是在遵守适当的法律框架和保障措施的情况下进行的，以确保与您所在国家/地区的安全性相当。"
+      "description": "pocketsfull 可能会在您的国家/地区以外的国家/地区存储或处理您的个人数据。这些传输是在遵守适当的法律框架和保障措施的情况下进行的，以确保与您所在国家/地区的安全性相当。"
     },
     "section7": {
       "title": "7. 您的隐私权",
@@ -69,21 +69,21 @@
     },
     "section12": {
       "title": "12. 行使您的权利",
-      "description": "要行使您的权利或对本政策有任何疑问，请通过电子邮件 <a href=\"mailto:privacy@profitpiller.com\">privacy@profitpiller.com</a> 与我们联系。请求必须以允许我们验证您身份的方式提交，通常是通过您的账户或您选择的其他联系方式。"
+      "description": "要行使您的权利或对本政策有任何疑问，请通过电子邮件 <a href=\"mailto:privacy@pocketsfull.com\">privacy@pocketsfull.com</a> 与我们联系。请求必须以允许我们验证您身份的方式提交，通常是通过您的账户或您选择的其他联系方式。"
     },
     "section13": {
       "title": "13. 我们隐私政策的局限性",
-      "description": "Profitpiller 网站可能包含指向非我们管理的外部网站或服务的链接。请注意，我们对第三方平台的内容、做法或政策概不负责，并鼓励您独立审查其隐私条款。"
+      "description": "pocketsfull 网站可能包含指向非我们管理的外部网站或服务的链接。请注意，我们对第三方平台的内容、做法或政策概不负责，并鼓励您独立审查其隐私条款。"
     },
     "section14": {
       "title": "14. 本隐私政策的更新",
-      "description1": "Profitpiller 保留随时修改本隐私政策的权利，以使其与不断发展的法律、运营或行业标准保持一致。我们将采取适当措施通知用户重大更新，通常通过我们的网站。在任何修订后继续使用我们的服务将构成您对更新政策条款的认可和接受。",
+      "description1": "pocketsfull 保留随时修改本隐私政策的权利，以使其与不断发展的法律、运营或行业标准保持一致。我们将采取适当措施通知用户重大更新，通常通过我们的网站。在任何修订后继续使用我们的服务将构成您对更新政策条款的认可和接受。",
       "description2": "如果更改对我们处理您的个人数据的方式产生重大影响，例如更改处理的法律依据，我们将在继续实施修订后的做法之前征求您的再次同意。"
     },
     "dataProtectionOfficer": {
       "title": "数据保护官",
       "name": "Bogdan Pashynskyi",
-      "email": "dpo@profitpiller.com",
+      "email": "dpo@pocketsfull.com",
       "company": "Legal Nodes Ltd",
       "companyNumber": "公司编号：11668206",
       "address": "地址：90a High Street, Berkhamsted, Hertfordshire, England, HP4 2BL"

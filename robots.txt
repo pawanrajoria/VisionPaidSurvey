@@ -861,5 +861,5 @@ Disallow: /en-rs/personal-information
 Disallow: /en-sk/personal-information
 Disallow: /en-si/personal-information
 
-Sitemap: https://www.profitpiller.com/sitemap.xml
+Sitemap: https://www.pocketsfull.com/sitemap.xml
 # END nuxt-robots

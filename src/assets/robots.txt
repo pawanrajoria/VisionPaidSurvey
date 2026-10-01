@@ -1,3 +1,3 @@
-Sitemap: https://www.profitpiller.com/sitemap.xml
+Sitemap: https://www.pocketsfull.com/sitemap.xml
 User-agent: *
 Allow: /

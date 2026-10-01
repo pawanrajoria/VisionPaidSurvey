@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * ProfitPiller programmatic content generator
+ * pocketsfull programmatic content generator
  * -------------------------------------------
  * Produces the static "sharded JSON" data layer that BlogService /
  * GiftCardService read from, plus paginated index files and a
@@ -52,7 +52,7 @@ const args = Object.fromEntries(
 const BLOG_COUNT = parseInt(args.blogCount || '1000', 10);       // set to 100000 for full run
 const GIFTCARD_COUNT = parseInt(args.giftCardCount || '500', 10); // set to 10000 for full run
 const PAGE_SIZE = 24;
-const SITE_URL = 'https://profitpiller.com';
+const SITE_URL = 'https://pocketsfull.com';
 const OUT_ROOT = path.join(__dirname, '..', 'src', 'assets', 'data');
 const SITEMAP_ROOT = path.join(__dirname, '..', 'src', 'sitemaps');
 
@@ -120,7 +120,7 @@ function buildBlogPost(index) {
     id: `post-${index}`,
     slug,
     title,
-    metaTitle: `${title} | ProfitPiller`,
+    metaTitle: `${title} | pocketsfull`,
     metaDescription: `Earn $${earningsLow}\u2013$${earningsHigh} with our ${subject} guide. Step-by-step instructions, screenshots, and payout-maximizing tips updated for 2026.`,
     excerpt: `A complete, up-to-date walkthrough for ${subject.toLowerCase()} \u2014 what it pays, how long it takes, and the fastest legitimate path to your reward.`,
     category,
@@ -133,9 +133,9 @@ function buildBlogPost(index) {
     estimatedEarnings: `$${earningsLow}\u2013$${earningsHigh}`,
     content: [
       { type: 'heading', heading: `What Is ${subject}?` },
-      { type: 'paragraph', text: `${subject} is one of the highest-converting ways to earn on ProfitPiller right now. This guide breaks down exactly how it works, what you need before you start, and how to avoid the mistakes that slow most users down.` },
+      { type: 'paragraph', text: `${subject} is one of the highest-converting ways to earn on pocketsfull right now. This guide breaks down exactly how it works, what you need before you start, and how to avoid the mistakes that slow most users down.` },
       { type: 'heading', heading: 'Before You Start' },
-      { type: 'list', items: ['A verified ProfitPiller account', '10\u201315 minutes of uninterrupted time', 'A stable internet connection', 'Optional: a referral link to stack bonus points'] },
+      { type: 'list', items: ['A verified pocketsfull account', '10\u201315 minutes of uninterrupted time', 'A stable internet connection', 'Optional: a referral link to stack bonus points'] },
       { type: 'tip', text: `Completing ${subject.toLowerCase()} during weekly bonus windows can boost your payout by up to 25%.` },
       { type: 'heading', heading: 'Step-by-Step Walkthrough' },
       { type: 'list', items: [`Open the ${subject} offer from your dashboard`, 'Follow the in-offer instructions exactly as shown', 'Reach the qualifying milestone to trigger the payout', 'Confirm crediting in your wallet within 24\u201348 hours'] },
@@ -168,18 +168,18 @@ function buildGiftCard(index) {
     slug,
     brand,
     title,
-    metaTitle: `${title} \u2014 Redeem With Points | ProfitPiller`,
-    metaDescription: `Redeem your ProfitPiller wallet points for a ${brand} gift card. Instant delivery, verified codes, transparent point pricing.`,
+    metaTitle: `${title} \u2014 Redeem With Points | pocketsfull`,
+    metaDescription: `Redeem your pocketsfull wallet points for a ${brand} gift card. Instant delivery, verified codes, transparent point pricing.`,
     category,
     logoUrl: `https://picsum.photos/seed/${slugify(brand)}-logo/120/120`,
     heroImage: `https://picsum.photos/seed/${slug}/900/600`,
     shortDescription: `Redeem your points instantly for a ${brand} gift card \u2014 verified codes, no waiting.`,
-    longDescription: `${brand} is one of the most requested redemption options on ProfitPiller. Codes are sourced from verified distributors and delivered directly to your account wallet, ready to use within minutes of redemption.`,
+    longDescription: `${brand} is one of the most requested redemption options on pocketsfull. Codes are sourced from verified distributors and delivered directly to your account wallet, ready to use within minutes of redemption.`,
     denominations: denominations.length ? denominations : [{ amount: 10, currency: 'USD', pointsRequired: 1000, inStock: true }],
     howToRedeem: [
       'Confirm you have enough wallet points for your chosen denomination',
       `Select your ${brand} gift card amount and click Redeem`,
-      'Check your email and ProfitPiller inbox for the code',
+      'Check your email and pocketsfull inbox for the code',
       `Apply the code at ${brand}\u2019s official redemption page`,
     ],
     termsAndConditions: [
