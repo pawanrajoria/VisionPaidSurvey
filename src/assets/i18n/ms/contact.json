@@ -60,5 +60,31 @@
         "dateofbirth.required": "Tarikh lahir diperlukan.",
         "gender.required": "Jantina diperlukan.",
         "zip_code.required": "Kod pos diperlukan."
+    },
+    "contact": {
+        "heading": {
+            "subtitle": "Ada Soalan? Kami Sedia Membantu!",
+            "title": "Hubungi Profit Piller Hari Ini"
+        },
+        "emailUs": {
+            "title": "E-mel Kami",
+            "address": "support@profitpiller.com"
+        },
+        "callUs": {
+            "title": "Hubungi Kami",
+            "number": "+91-8876654356"
+        },
+        "headOffice": {
+            "title": "Ibu Pejabat",
+            "address": "Spaze ITech Park, Sector-49,Gurgaon, Haryana – 122001, India"
+        },
+        "form": {
+            "title": "Hubungi Kami",
+            "nameLabel": "Nama",
+            "emailLabel": "E-mel",
+            "phoneLabel": "No. Telefon",
+            "messageLabel": "Mesej",
+            "submitButton": "Hantar Mesej"
+        }
     }
 }

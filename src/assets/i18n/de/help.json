@@ -1,61 +1,67 @@
 {
-  "help": {
-    "heading": {
-      "title": "Brauchen Sie Hilfe mit Profit Piller?",
-      "intro": "Wir sind hier, um Ihre Erfahrung reibungslos zu gestalten. Egal, ob Sie Hilfe bei Umfragen, Einlösungen oder Belohnungen benötigen — unser Support-Team steht Ihnen zur Seite."
-    },
-    "faqs": {
-      "q1": {
-        "question": "Wie fange ich an, bei Profit Piller zu verdienen?",
-        "answer": "Melden Sie sich einfach für ein kostenloses Konto an, vervollständigen Sie Ihr Profil und greifen Sie auf Umfragen und Angebote zu. Ihre Einnahmen summieren sich sofort!"
-      },
-      "q2": {
-        "question": "Wann kann ich meine Belohnungen einlösen?",
-        "answer": "Sobald Sie den Mindestschwellenwert für die Einlösung erreicht haben (z. B. $425 für PayPal oder Geschenkkarten), können Sie Ihre Punkte sofort einlösen."
-      },
-      "q3": {
-        "question": "Warum habe ich für eine Umfrage keine Gutschrift erhalten?",
-        "answer": "Möglicherweise wurden Sie aufgrund der Umfrageanforderungen oder unvollständiger Antworten disqualifiziert. Wenn Sie glauben, dass dies ein Fehler war, <a href=\"mailto:support@profitpiller.com\">wenden Sie sich an unser Support-Team</a>."
-      },
-      "q4": {
-        "question": "Wie kann ich den Profit Piller Support kontaktieren?",
-        "answer": "Senden Sie uns eine E-Mail an <a href=\"mailto:support@profitpiller.com\">support@profitpiller.com</a> oder nutzen Sie das Kontaktformular auf unserer Website."
-      },
-      "q5": {
-        "question": "Gibt es tägliche oder wöchentliche Verdienstgrenzen?",
-        "answer": "Nein, es gibt keine Grenzen. Sie können so viel verdienen, wie Sie möchten, basierend auf den verfügbaren Umfragen und Angeboten."
-      },
-      "q6": {
-        "question": {
-          "text": "Ich wurde von einer Umfrage disqualifiziert. Was kann ich tun?",
-          "short": "Disqualifikation bei einer Umfrage"
+    "help": {
+        "heading": {
+            "title": "Brauchen Sie Hilfe mit Profit Piller?",
+            "intro": "Wir sind hier, um Ihre Erfahrung reibungslos zu gestalten. Egal, ob Sie Hilfe bei Umfragen, Einlösungen oder Belohnungen benötigen — unser Support-Team steht Ihnen zur Seite."
         },
-        "answer": "Wir verstehen, dass das frustrierend ist. Die Umfragequalifikationen werden von Drittpartnern verwaltet. Manchmal können erste Antworten darauf hinweisen, dass Sie nicht in das Zielprofil passen. Versuchen Sie es weiter mit den Umfragen und Sie werden eine finden, die zu Ihnen passt. In der Regel erhalten Sie eine kleine Belohnung für die Zeit, die Sie mit dem Versuch der Qualifizierung für eine Umfrage verbracht haben. Sie erhalten nicht die volle Gutschrift, aber es hilft uns, Sie beim nächsten Mal besser zuzuordnen."
-      },
-      "q7": {
-        "question": "Warum habe ich nicht die volle Belohnung für die Umfrage erhalten?",
-        "answer": "Einige Umfragen bieten Teilbelohnungen für teilweise ausgefüllte oder disqualifizierte Umfragen. Stellen Sie immer sicher, dass Sie genaue Antworten geben und eine stabile Internetverbindung haben."
-      },
-      "q8": {
-        "question": "Kann ich ein VPN oder einen Proxy verwenden, um an Umfragen teilzunehmen?",
-        "answer": "Nein. Die Verwendung von VPNs oder Proxys ist strengstens untersagt und kann zur Sperrung Ihres Kontos oder zur Disqualifizierung von Umfragen führen."
-      },
-      "q9": {
-        "question": "Wann kann ich meine Belohnungen einlösen?",
-        "answer": "Sobald Sie den Mindestschwellenwert erreicht haben (z. B. $425), können Sie sofort über PayPal, Geschenkkarten oder andere verfügbare Methoden einlösen."
-      },
-      "q10": {
-        "question": "Kann ich andere werben und Boni verdienen?",
-        "answer": "Ja! Teilen Sie Ihren Empfehlungslink. Sie erhalten eine Provision von 10 % auf das, was Ihre Empfehlungen durch Umfragen verdienen — und das lebenslang!"
-      },
-      "q11": {
-        "question": "Sind meine Daten bei Profit Piller sicher?",
-        "answer": "Ja, Ihre Daten werden durch strenge Datenschutzprotokolle gesichert und niemals ohne Ihre Zustimmung weitergegeben."
-      },
-      "q12": {
-        "question": "Wie kann ich den Support kontaktieren?",
-        "answer": "Sie erreichen uns jederzeit unter <a href='mailto:support@profitpiller.com'>support@profitpiller.com</a> oder über das Kontaktformular in der App."
-      }
+        "faqs": {
+            "q1": {
+                "question": "Wie fange ich an, bei Profit Piller zu verdienen?",
+                "answer": "Melden Sie sich einfach für ein kostenloses Konto an, vervollständigen Sie Ihr Profil und greifen Sie auf Umfragen und Angebote zu. Ihre Einnahmen summieren sich sofort!"
+            },
+            "q2": {
+                "question": "Wann kann ich meine Belohnungen einlösen?",
+                "answer": "Sobald Sie den Mindestschwellenwert für die Einlösung erreicht haben (z. B. $425 für PayPal oder Geschenkkarten), können Sie Ihre Punkte sofort einlösen."
+            },
+            "q3": {
+                "question": "Warum habe ich für eine Umfrage keine Gutschrift erhalten?",
+                "answer": "Möglicherweise wurden Sie aufgrund der Umfrageanforderungen oder unvollständiger Antworten disqualifiziert. Wenn Sie glauben, dass dies ein Fehler war, <a href=\"mailto:support@profitpiller.com\">wenden Sie sich an unser Support-Team</a>."
+            },
+            "q4": {
+                "question": "Wie kann ich den Profit Piller Support kontaktieren?",
+                "answer": "Senden Sie uns eine E-Mail an <a href=\"mailto:support@profitpiller.com\">support@profitpiller.com</a> oder nutzen Sie das Kontaktformular auf unserer Website."
+            },
+            "q5": {
+                "question": "Gibt es tägliche oder wöchentliche Verdienstgrenzen?",
+                "answer": "Nein, es gibt keine Grenzen. Sie können so viel verdienen, wie Sie möchten, basierend auf den verfügbaren Umfragen und Angeboten."
+            },
+            "q6": {
+                "question": "Kann ich Profit Piller auf dem Smartphone nutzen?",
+                "answer": "Wir verstehen, dass das frustrierend ist. Die Umfragequalifikationen werden von Drittpartnern verwaltet. Manchmal können erste Antworten darauf hinweisen, dass Sie nicht in das Zielprofil passen. Versuchen Sie es weiter mit den Umfragen und Sie werden eine finden, die zu Ihnen passt. In der Regel erhalten Sie eine kleine Belohnung für die Zeit, die Sie mit dem Versuch der Qualifizierung für eine Umfrage verbracht haben. Sie erhalten nicht die volle Gutschrift, aber es hilft uns, Sie beim nächsten Mal besser zuzuordnen."
+            },
+            "q7": {
+                "question": "Warum habe ich nicht die volle Belohnung für die Umfrage erhalten?",
+                "answer": "Einige Umfragen bieten Teilbelohnungen für teilweise ausgefüllte oder disqualifizierte Umfragen. Stellen Sie immer sicher, dass Sie genaue Antworten geben und eine stabile Internetverbindung haben."
+            },
+            "q8": {
+                "question": "Kann ich ein VPN oder einen Proxy verwenden, um an Umfragen teilzunehmen?",
+                "answer": "Nein. Die Verwendung von VPNs oder Proxys ist strengstens untersagt und kann zur Sperrung Ihres Kontos oder zur Disqualifizierung von Umfragen führen."
+            },
+            "q9": {
+                "question": "Wann kann ich meine Belohnungen einlösen?",
+                "answer": "Sobald Sie den Mindestschwellenwert erreicht haben (z. B. $425), können Sie sofort über PayPal, Geschenkkarten oder andere verfügbare Methoden einlösen."
+            },
+            "q10": {
+                "question": "Kann ich andere werben und Boni verdienen?",
+                "answer": "Ja! Teilen Sie Ihren Empfehlungslink. Sie erhalten eine Provision von 10 % auf das, was Ihre Empfehlungen durch Umfragen verdienen — und das lebenslang!"
+            },
+            "q11": {
+                "question": "Sind meine Daten bei Profit Piller sicher?",
+                "answer": "Ja, Ihre Daten werden durch strenge Datenschutzprotokolle gesichert und niemals ohne Ihre Zustimmung weitergegeben."
+            },
+            "q12": {
+                "question": "Wie kann ich den Support kontaktieren?",
+                "answer": "Sie erreichen uns jederzeit unter <a href='mailto:support@profitpiller.com'>support@profitpiller.com</a> oder über das Kontaktformular in der App."
+            }
+        },
+        "supportSection": {
+            "title": "Benötigen Sie weitere Hilfe oder haben Sie noch Fragen?",
+            "point1": "Sind Sie neu auf der Plattform oder haben Sie Schwierigkeiten beim Zugriff auf Funktionen?",
+            "point2": "Keine Sorge – wir begleiten Sie Schritt für Schritt.",
+            "point3": "Unser Team unterstützt Sie schnell, freundlich und kompetent.",
+            "point4": "Ob einfache Frage oder technisches Problem:",
+            "point5": "Melden Sie sich jederzeit – wir sind nur einen Klick entfernt.",
+            "contactButton": "Support-Team kontaktieren"
+        }
     }
-  }
 }

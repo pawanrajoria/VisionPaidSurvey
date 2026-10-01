@@ -1,92 +1,298 @@
 {
-  "privacyPolicy": {
-    "heading": {
-      "title": "Privacybeleid",
-      "intro": "Uw privacy is belangrijk voor ons. Het is het beleid van Profit Piller om uw privacy te respecteren met betrekking tot alle informatie die we van u verzamelen op onze website, https://www.pocketsfull.com, en andere sites die we bezitten en beheren.",
-      "effectiveDate": "Ingangsdatum: 6 mei 2026"
-    },
-    "section1": {
-      "title": "1. Details die we verzamelen",
-      "accessLogs": {
-        "subtitle": "Toegangslogboeken",
-        "description": "Wanneer u door de pocketsfull-platform bladert, kunnen onze servers automatisch standaardgegevens vastleggen die door uw internetbrowser worden verzonden. Dit kan het Internet Protocol (IP)-adres van uw systeem, de naam en versie van de browser, bezochte pagina's, tijdstempels van uw bezoek, de duur van het verblijf op elke pagina en aanvullende technische details omvatten."
-      },
-      "deviceInformation": {
-        "subtitle": "Apparaatinformatie",
-        "description": "We kunnen ook informatie verzamelen met betrekking tot het apparaat dat u gebruikt om toegang te krijgen tot ons platform. Dit kan de apparaatcategorie, het besturingssysteem, unieke identificatiegegevens, configuratie-instellingen en locatiegegevens omvatten. De exacte verzamelde gegevens zijn afhankelijk van de specifieke voorkeuren en machtigingen die op uw apparaat en software zijn ingesteld. Voor meer inzicht raden we aan de privacypraktijken van uw apparaat- of softwareprovider te raadplegen om te begrijpen welke gegevens zij met ons delen."
-      },
-      "userInformation": {
-        "subtitle": "Gebruikersinformatie",
-        "description": "Persoonlijke informatie die u ons vrijwillig verstrekt via ons platform, zoals voor- en achternaam, e-mailadres, geboortedatum, telefoonnummer, woonadres, profielinformatie en andere demografische informatie, kan ook worden verzameld."
-      }
-    },
-    "section2": {
-      "title": "2. Juridische basis voor gegevensverwerking",
-      "description": "Wij zullen uw persoonlijke informatie op een rechtmatige, eerlijke en transparante manier verwerken. We verzamelen en verwerken informatie over u alleen wanneer we een juridische basis hebben om dit te doen. Deze juridische bases zijn afhankelijk van de services die u gebruikt en hoe u ze gebruikt, wat betekent dat we uw informatie alleen verzamelen en gebruiken wanneer:"
-    },
-    "section3": {
-      "title": "3. Soorten gegevens die we verzamelen",
-      "subtitle": "Om u onze services te bieden, verzamelen we informatie die in de volgende categorieën valt:",
-      "a": "Identificatiegegevens: Naam, e-mailadres, telefoonnummer, postadres.",
-      "b": "Technische informatie: IP-adres, apparaat-id's, browsertype, toegangslogboeken.",
-      "c": "Demografische informatie: Geslacht, leeftijd, inkomen, opleidingsniveau."
-    },
-    "section4": {
-      "title": "4. Hoe we de informatie gebruiken",
-      "a": "Onze services leveren en verbeteren.",
-      "b": "Gebruikersgedrag analyseren om ons platform te verbeteren.",
-      "c": "Uw ervaring en de beloningen die u ontvangt personaliseren.",
-      "d": "Met u communiceren over services, updates en promoties.",
-      "e": "Voldoen aan wettelijke verplichtingen en beveiliging."
-    },
-    "section5": {
-      "title": "5. Beveiliging van uw gegevens",
-      "description": "We gebruiken geavanceerde beveiligingsmaatregelen om uw persoonlijke gegevens te beschermen tegen ongeoorloofde toegang, wijziging, openbaarmaking of vernietiging. Firewalls, encryptie en toegangscontroleprotocollen zorgen ervoor dat uw informatie veilig blijft."
-    },
-    "section6": {
-      "title": "6. Opslag en internationale overdrachten",
-      "description": "pocketsfull kan uw persoonlijke gegevens opslaan of verwerken in andere landen dan het uwe. Deze overdrachten worden uitgevoerd in overeenstemming met passende wettelijke kaders en waarborgen om een beveiligingsniveau te garanderen dat gelijkwaardig is aan dat in uw thuisland."
-    },
-    "section7": {
-      "title": "7. Uw privacyrechten",
-      "description": "U heeft het recht om een kopie te vragen van uw persoonlijke gegevens die we bewaren, bezwaar te maken tegen het gebruik ervan, een correctie of beperking van de verwerking ervan te vragen en, in sommige gevallen, de verwijdering van uw persoonlijke gegevens te vragen."
-    },
-    "section8": {
-      "title": "8. Gebruik van cookies",
-      "description": "We gebruiken 'cookies' om informatie te verzamelen over uw activiteit op onze site en om uw ervaring te verbeteren. Een cookie is een klein gegevensbestand dat een website op uw computer of mobiele apparaat opslaat. Raadpleeg ons cookiebeleid voor meer details."
-    },
-    "section9": {
-      "title": "9. Privacy van kinderen",
-      "description": "Onze services zijn niet bedoeld voor personen onder de 18 jaar. We verzamelen niet bewust gegevens van kinderen. Als we ontdekken dat we informatie van een minderjarige hebben verzameld, zullen we stappen ondernemen om deze onmiddellijk te verwijderen."
-    },
-    "section10": {
-      "title": "10. Openbaarmaking van gegevens door de gebruiker",
-      "description": "Alle informatie die u vrijwillig openbaar maakt in openbare gedeelten van onze website of ons platform, zoals blogcommentaren of forums, kan door andere gebruikers worden bekeken. Wij zijn niet verantwoordelijk voor hoe derden dergelijke informatie kunnen gebruiken."
-    },
-    "section11": {
-      "title": "11. Gegevensretentie",
-      "description": "We bewaren uw persoonlijke informatie alleen zo lang als nodig is om onze services te leveren en voor legitieme zakelijke en juridische redenen. Zodra het niet meer nodig is, zullen we het veilig verwijderen of anonimiseren."
-    },
-    "section12": {
-      "title": "12. Uitoefening van uw rechten",
-      "description": "Om uw rechten uit te oefenen of voor vragen over dit beleid, kunt u contact met ons opnemen via e-mail op <a href=\"mailto:privacy@pocketsfull.com\">privacy@pocketsfull.com</a>. Verzoeken moeten worden ingediend op een manier die ons in staat stelt uw identiteit te verifiëren, meestal via uw account of een andere contactmethode van uw keuze."
-    },
-    "section13": {
-      "title": "13. Beperkingen van ons privacybeleid",
-      "description": "De pocketsfull-website kan links bevatten naar externe websites of services die niet door ons worden beheerd. Houd er rekening mee dat we niet verantwoordelijk zijn voor de inhoud, praktijken of beleidsregels van platforms van derden en we moedigen u aan om hun privacyvoorwaarden onafhankelijk te beoordelen."
-    },
-    "section14": {
-      "title": "14. Updates van dit privacybeleid",
-      "description1": "pocketsfull behoudt zich het recht voor om dit privacybeleid op elk moment te wijzigen om het af te stemmen op evoluerende juridische, operationele of industriële normen. We zullen passende stappen ondernemen om gebruikers op de hoogte te stellen van materiële updates, meestal via onze website. Voortgezet gebruik van onze services na eventuele herzieningen vormt uw erkenning en acceptatie van de bijgewerkte beleidsvoorwaarden.",
-      "description2": "In gevallen waarin wijzigingen de manier waarop we uw persoonlijke gegevens verwerken aanzienlijk beïnvloeden - zoals het wijzigen van de juridische basis voor verwerking - zullen we uw hernieuwde toestemming vragen voordat we doorgaan met de herziene praktijken."
-    },
-    "dataProtectionOfficer": {
-      "title": "Functionaris Gegevensbescherming",
-      "name": "Bogdan Pashynskyi",
-      "email": "dpo@pocketsfull.com",
-      "company": "Legal Nodes Ltd",
-      "companyNumber": "Bedrijfsnummer: 11668206",
-      "address": "Adres: 90a High Street, Berkhamsted, Hertfordshire, England, HP4 2BL"
+    "privacyPolicy": {
+        "heading": {
+            "title": "Privacybeleid",
+            "intro": "Uw privacy is belangrijk voor ons. Het is het beleid van Profit Piller om uw privacy te respecteren met betrekking tot alle informatie die we van u verzamelen op onze website, https://www.profitpiller.com, en andere sites die we bezitten en beheren.",
+            "effectiveDate": "Ingangsdatum: 6 mei 2026"
+        },
+        "section1": {
+            "title": "1. Details die we verzamelen",
+            "accessLogs": {
+                "subtitle": "Toegangslogboeken",
+                "description": "Wanneer u door de profitpiller-platform bladert, kunnen onze servers automatisch standaardgegevens vastleggen die door uw internetbrowser worden verzonden. Dit kan het Internet Protocol (IP)-adres van uw systeem, de naam en versie van de browser, bezochte pagina's, tijdstempels van uw bezoek, de duur van het verblijf op elke pagina en aanvullende technische details omvatten."
+            },
+            "deviceInformation": {
+                "subtitle": "Apparaatinformatie",
+                "description": "We kunnen ook informatie verzamelen met betrekking tot het apparaat dat u gebruikt om toegang te krijgen tot ons platform. Dit kan de apparaatcategorie, het besturingssysteem, unieke identificatiegegevens, configuratie-instellingen en locatiegegevens omvatten. De exacte verzamelde gegevens zijn afhankelijk van de specifieke voorkeuren en machtigingen die op uw apparaat en software zijn ingesteld. Voor meer inzicht raden we aan de privacypraktijken van uw apparaat- of softwareprovider te raadplegen om te begrijpen welke gegevens zij met ons delen."
+            },
+            "userInformation": {
+                "subtitle": "Gebruikersinformatie",
+                "description": "Persoonlijke informatie die u ons vrijwillig verstrekt via ons platform, zoals voor- en achternaam, e-mailadres, geboortedatum, telefoonnummer, woonadres, profielinformatie en andere demografische informatie, kan ook worden verzameld.",
+                "intro": "We kunnen je om persoonsgegevens vragen, zoals je:",
+                "email": "E-mailadres",
+                "demographicData": "Om je zo goed mogelijk aan passende enquêtes te koppelen, kunnen we ook aanvullende demografische gegevens verzamelen, zoals je postcode, genderidentiteit, burgerlijke staat, opleidingsniveau, gegevens over je werk en niet-identificeerbare gegevens over je huishouden, waaronder het aantal gezinsleden, het totale inkomen, leeftijdscategorieën enzovoort."
+            }
+        },
+        "section2": {
+            "title": "2. Juridische basis voor gegevensverwerking",
+            "description": "Wij zullen uw persoonlijke informatie op een rechtmatige, eerlijke en transparante manier verwerken. We verzamelen en verwerken informatie over u alleen wanneer we een juridische basis hebben om dit te doen. Deze juridische bases zijn afhankelijk van de services die u gebruikt en hoe u ze gebruikt, wat betekent dat we uw informatie alleen verzamelen en gebruiken wanneer:",
+            "paragraph1": "Bij Profitpiller gaan we rechtmatig, ethisch en volledig transparant met je persoonsgegevens om. We verzamelen en gebruiken je gegevens alleen als we daarvoor een geldige wettelijke grondslag hebben.",
+            "paragraph2": "De rechtsgrond voor de verwerking van je gegevens hangt af van de diensten die je gebruikt en de manier waarop je dat doet. Dit betekent dat we je gegevens alleen verzamelen en gebruiken wanneer:",
+            "point1": "dit noodzakelijk is voor de uitvoering van een overeenkomst waarbij je partij bent, of om op jouw verzoek stappen te nemen voordat een dergelijke overeenkomst wordt gesloten (bijvoorbeeld wanneer we een dienst leveren waar je om hebt gevraagd);",
+            "point2": "dit een gerechtvaardigd zakelijk belang dient (dat niet zwaarder weegt dan jouw privacyrechten), zoals onderzoek en innovatie, het promoten van ons aanbod of het verdedigen van onze rechtsvorderingen en belangen;",
+            "point3": "je ons daarvoor uitdrukkelijk toestemming hebt gegeven voor een bepaald doel (bijvoorbeeld door je aan te melden voor onze nieuwsbrieven); of",
+            "point4": "we je gegevens moeten verwerken om aan een wettelijke verplichting te voldoen.",
+            "consentWithdrawal": "Als je ons toestemming geeft om je gegevens voor een bepaald doel te gebruiken, kun je die toestemming op elk moment intrekken (dit heeft echter geen gevolgen voor verwerkingen die vóór de intrekking hebben plaatsgevonden).",
+            "dataRetentionSecurity": "We bewaren persoonsgegevens niet langer dan nodig is. Zolang we je gegevens in ons bezit hebben, beschermen we ze met commercieel redelijke maatregelen tegen verlies, diefstal, onbevoegde toegang, openbaarmaking, kopiëren, misbruik of wijziging. Houd er wel rekening mee dat geen enkele methode van elektronische verzending of opslag volledig veilig is en dat we geen absolute gegevensbeveiliging kunnen garanderen.",
+            "accountClosure": "Waar nodig kunnen we je persoonsgegevens bewaren om aan wettelijke verplichtingen te voldoen of om jouw vitale belangen, of die van een ander, te beschermen. Als je account wordt gesloten, door jou of door Profitpiller, behouden we ons het recht voor om je gegevens te verwijderen of te anonimiseren in overeenstemming met de toepasselijke privacywetgeving, zodat je gegevens beschermd blijven."
+        },
+        "section3": {
+            "title": "3. Soorten gegevens die we verzamelen",
+            "subtitle": "Om u onze services te bieden, verzamelen we informatie die in de volgende categorieën valt:",
+            "a": "Identificatiegegevens: Naam, e-mailadres, telefoonnummer, postadres.",
+            "b": "Technische informatie: IP-adres, apparaat-id's, browsertype, toegangslogboeken.",
+            "c": "Demografische informatie: Geslacht, leeftijd, inkomen, opleidingsniveau.",
+            "intro": "Profitpiller kan gegevens verzamelen, bewaren, gebruiken en delen voor de hieronder genoemde doeleinden. Persoonsgegevens worden niet verwerkt op een manier die met deze doeleinden in strijd is:",
+            "point1": "om je te koppelen aan relevante enquêtes op basis van je demografische profiel en de doelgroepvereisten van de enquêtes;",
+            "point2": "om je in staat te stellen je ervaring op ons platform aan te passen of te personaliseren;",
+            "point3": "om je toegang te geven tot onze website, de bijbehorende mobiele apps en de gekoppelde socialemediakanalen;",
+            "point4": "om contact met je op te nemen en doeltreffend met je te communiceren;",
+            "point5": "ter ondersteuning van onze interne administratie en algemene administratieve taken;",
+            "point6": "voor analyses, marktonderzoek en bedrijfsontwikkeling, waaronder het onderhouden en verbeteren van onze website, apps en online aanwezigheid;",
+            "point7": "voor promotie en reclame, waaronder het toesturen van marketinginformatie over onze diensten en ons aanbod en over producten van derden waarvan we denken dat ze je kunnen interesseren;",
+            "point8": "om aan onze wettelijke verplichtingen te voldoen en om eventuele juridische kwesties of geschillen af te handelen of op te lossen."
+        },
+        "section4": {
+            "title": "4. Hoe we de informatie gebruiken",
+            "a": "Onze services leveren en verbeteren.",
+            "b": "Gebruikersgedrag analyseren om ons platform te verbeteren.",
+            "c": "Uw ervaring en de beloningen die u ontvangt personaliseren.",
+            "d": "Met u communiceren over services, updates en promoties.",
+            "e": "Voldoen aan wettelijke verplichtingen en beveiliging.",
+            "intro": "Profitpiller kan persoonsgegevens delen met de volgende partijen:",
+            "point1": "externe dienstverleners, zodat zij hun werkzaamheden kunnen uitvoeren, waaronder (maar niet beperkt tot) IT-dienstverleners, aanbieders van cloudopslag, hosting- en serverinfrastructuur, advertentienetwerken, analysetools, systemen voor foutmonitoring, incassobureaus, leveranciers van technische ondersteuning, marketing- of reclamebureaus, professionele adviseurs en betalingsverwerkers;",
+            "point2": "onze medewerkers, zelfstandige opdrachtnemers en gelieerde ondernemingen;",
+            "point3": "sponsors of organisatoren van prijsvragen of winacties die we houden;",
+            "point4": "derden, waaronder agenten of onderaannemers, die ons helpen bij het leveren van content, producten, diensten of promotionele communicatie aan jou;",
+            "point5": "klanten, onderzoeksbureaus, partnerbureaus en enquêtemarktplaatsen die ons enquêtes aanleveren."
+        },
+        "section5": {
+            "title": "5. Beveiliging van uw gegevens",
+            "description": "We gebruiken geavanceerde beveiligingsmaatregelen om uw persoonlijke gegevens te beschermen tegen ongeoorloofde toegang, wijziging, openbaarmaking of vernietiging. Firewalls, encryptie en toegangscontroleprotocollen zorgen ervoor dat uw informatie veilig blijft.",
+            "paragraph1": "De persoonsgegevens die Profitpiller verzamelt, kunnen worden opgeslagen en verwerkt in de Verenigde Staten of in elk ander land waar wij, onze gelieerde ondernemingen, partners of externe dienstverleners faciliteiten hebben. Door je persoonsgegevens met ons te delen, ga je akkoord met de doorgifte en verstrekking van die gegevens aan partijen in andere landen.",
+            "paragraph2": "Bij doorgifte van persoonsgegevens vanuit de Europese Economische Ruimte (EER) naar landen buiten de EER zorgen we voor passende waarborgen. Dit kunnen door de Europese Commissie goedgekeurde modelcontractbepalingen, bindende bedrijfsvoorschriften of andere rechtmatige doorgiftemechanismen zijn.",
+            "paragraph3": "Wanneer we persoonsgegevens vanuit rechtsgebieden buiten de EER doorgeven aan andere internationale regio's, erken je dat externe ontvangers in die regio's mogelijk niet onder gegevensbeschermingsregels vallen die gelijkwaardig zijn aan die in jouw land. Dit kan bepaalde risico's met zich meebrengen, met name als deze derden handelingen verrichten die in strijd zijn met onze lokale privacywetgeving, waardoor je mogelijk minder mogelijkheden hebt om op grond van de privacyregels in ons rechtsgebied verhaal te halen."
+        },
+        "section6": {
+            "title": "6. Opslag en internationale overdrachten",
+            "description": "profitpiller kan uw persoonlijke gegevens opslaan of verwerken in andere landen dan het uwe. Deze overdrachten worden uitgevoerd in overeenstemming met passende wettelijke kaders en waarborgen om een beveiligingsniveau te garanderen dat gelijkwaardig is aan dat in uw thuisland.",
+            "choicePermission": {
+                "subtitle": "Keuze en toestemming:",
+                "description": "Door je persoonsgegevens aan Profitpiller te verstrekken, erken en aanvaard je dat wij je gegevens verzamelen, bewaren, gebruiken en delen in overeenstemming met deze privacyverklaring. Als je jonger bent dan 16 jaar, moet je toestemming hebben van je ouder of wettelijke vertegenwoordiger om deze website te bezoeken en te gebruiken, en bevestig je, voor zover de wet dat toestaat, dat je die toestemming hebt en dat zij ermee hebben ingestemd dat je je persoonsgegevens aan ons verstrekt. Het verstrekken van je persoonsgegevens is vrijwillig, maar als je ervoor kiest dit niet te doen, kun je bepaalde onderdelen van ons platform of onze diensten mogelijk niet of maar beperkt gebruiken."
+            },
+            "externalSources": {
+                "subtitle": "Gegevens uit externe bronnen:",
+                "description": "Als we je persoonsgegevens van een andere partij ontvangen, behandelen we die gegevens in overeenstemming met dit privacybeleid. Als je persoonsgegevens van iemand anders aan Profitpiller verstrekt, verklaar je dat je toestemming van die persoon hebt om deze gegevens met ons te delen."
+            },
+            "limitationsRestrictions": {
+                "subtitle": "Beperkingen:",
+                "description": "Je kunt ervoor kiezen om de manier waarop je persoonsgegevens worden verzameld of gebruikt te beperken. Als je eerder toestemming hebt gegeven voor het ontvangen van direct marketing van ons, kun je die toestemming op elk moment intrekken door contact met ons op te nemen via de onderstaande contactgegevens. Als je ons vraagt de verwerking van je persoonsgegevens te beperken, leggen we uit welke gevolgen dit kan hebben voor je toegang tot ons platform en onze diensten."
+            },
+            "accessDataTransferability": {
+                "subtitle": "Inzage en gegevensoverdraagbaarheid:",
+                "description": "Je hebt het recht om een overzicht op te vragen van de persoonsgegevens die Profitpiller over je bewaart. Op verzoek verstrekken we een digitale kopie, doorgaans in CSV-formaat of een ander machineleesbaar formaat. Je kunt ons ook vragen je persoonsgegevens uit onze bestanden te verwijderen of deze over te dragen aan een andere dienstverlener van jouw keuze."
+            }
+        },
+        "section7": {
+            "title": "7. Uw privacyrechten",
+            "description": "U heeft het recht om een kopie te vragen van uw persoonlijke gegevens die we bewaren, bezwaar te maken tegen het gebruik ervan, een correctie of beperking van de verwerking ervan te vragen en, in sommige gevallen, de verwijdering van uw persoonlijke gegevens te vragen."
+        },
+        "section8": {
+            "title": "8. Gebruik van cookies",
+            "description": "We gebruiken 'cookies' om informatie te verzamelen over uw activiteit op onze site en om uw ervaring te verbeteren. Een cookie is een klein gegevensbestand dat een website op uw computer of mobiele apparaat opslaat. Raadpleeg ons cookiebeleid voor meer details."
+        },
+        "section9": {
+            "title": "9. Privacy van kinderen",
+            "description": "Onze services zijn niet bedoeld voor personen onder de 18 jaar. We verzamelen niet bewust gegevens van kinderen. Als we ontdekken dat we informatie van een minderjarige hebben verzameld, zullen we stappen ondernemen om deze onmiddellijk te verwijderen.",
+            "legalGroundsTitle": "Rechtsgronden voor de verwerking van persoonsgegevens onder de AVG",
+            "legalGroundsIntro": "Profitpiller kan je persoonsgegevens verwerken op basis van de volgende rechtsgronden:",
+            "consent": {
+                "title": "Toestemming:",
+                "description": "Je hebt uitdrukkelijk ingestemd met het gebruik van je persoonsgegevens voor een of meer specifieke doeleinden."
+            },
+            "contractualNecessity": {
+                "title": "Uitvoering van een overeenkomst:",
+                "description": "De gegevens zijn nodig om een overeenkomst met je uit te voeren of om voorbereidende stappen te nemen voordat een overeenkomst wordt gesloten."
+            },
+            "legalCompliance": {
+                "title": "Wettelijke verplichting:",
+                "description": "De verwerking is noodzakelijk om te voldoen aan onze verplichtingen op grond van de toepasselijke wetgeving."
+            },
+            "vitalInterests": {
+                "title": "Vitale belangen:",
+                "description": "De verwerking is noodzakelijk om jouw vitale belangen of die van een ander te beschermen."
+            },
+            "publicDuty": {
+                "title": "Taak van algemeen belang:",
+                "description": "De verwerking is noodzakelijk voor de vervulling van een taak van algemeen belang of voor de uitoefening van openbaar gezag."
+            },
+            "legitimateInterests": {
+                "title": "Gerechtvaardigde belangen:",
+                "description": "De verwerking dient een gerechtvaardigd belang van Profitpiller dat niet zwaarder weegt dan jouw rechten op gegevensbescherming."
+            },
+            "legalBasisExplanation": "Desgewenst lichten we graag toe welke specifieke rechtsgrond op jouw gegevens van toepassing is, en of het verstrekken ervan een wettelijke of contractuele verplichting is of noodzakelijk is om een overeenkomst te sluiten.",
+            "yourRightsTitle": "Jouw rechten onder de AVG",
+            "yourRightsIntro": "Profitpiller respecteert de privacyrechten die de AVG je toekent. Als je je in de EU bevindt, kun je de volgende rechten uitoefenen:",
+            "access": {
+                "title": "Inzage:",
+                "description": "Je kunt vragen om de persoonsgegevens die we over je bewaren in te zien, bij te werken of te verwijderen."
+            },
+            "rectification": {
+                "title": "Rectificatie:",
+                "description": "Je kunt ons vragen onjuiste of onvolledige gegevens die we over je hebben te corrigeren."
+            },
+            "objection": {
+                "title": "Bezwaar:",
+                "description": "Je kunt bezwaar maken tegen de verwerking van je gegevens wanneer die plaatsvindt op grond van een gerechtvaardigd belang of voor direct marketing."
+            },
+            "erasure": {
+                "title": "Gegevenswissing:",
+                "description": "Je kunt ons vragen je gegevens te wissen als ze niet langer nodig zijn voor het doel waarvoor we ze hebben verzameld."
+            },
+            "dataPortability": {
+                "title": "Gegevensoverdraagbaarheid:",
+                "description": "Je kunt je gegevens opvragen in een gangbaar, machineleesbaar formaat om ze over te dragen aan een andere dienst."
+            },
+            "withdrawalOfConsent": {
+                "title": "Intrekking van toestemming:",
+                "description": "Je kunt je toestemming op elk moment intrekken. Dit heeft geen gevolgen voor verwerkingen die vóór de intrekking hebben plaatsgevonden."
+            },
+            "exercisingRightsTitle": "Je AVG-rechten uitoefenen",
+            "exercisingRightsDescription1": "Om je rechten uit te oefenen, kun je contact met ons opnemen op de manieren die in dit beleid worden genoemd. We kunnen je vragen je identiteit te verifiëren. We streven ernaar binnen één maand te reageren. Als er meer tijd nodig is, laten we je dat weten en kunnen we de termijn met maximaal twee maanden verlengen.",
+            "exercisingRightsDescription2": "Je kunt een klacht indienen bij je lokale gegevensbeschermingsautoriteit als je van mening bent dat je rechten zijn geschonden."
+        },
+        "section10": {
+            "title": "10. Openbaarmaking van gegevens door de gebruiker",
+            "description": "Alle informatie die u vrijwillig openbaar maakt in openbare gedeelten van onze website of ons platform, zoals blogcommentaren of forums, kan door andere gebruikers worden bekeken. Wij zijn niet verantwoordelijk voor hoe derden dergelijke informatie kunnen gebruiken.",
+            "yourRightsTitle": "Jouw rechten onder de CCPA",
+            "yourRightsIntro": "Als je in Californië woont, heb je op grond van de California Consumer Privacy Act (CCPA) de volgende rechten:",
+            "rightToNotice": {
+                "title": "Recht op kennisgeving:",
+                "description": "Weten welke categorieën gegevens worden verzameld en voor welke doeleinden ze worden gebruikt."
+            },
+            "rightToAccess": {
+                "title": "Recht op inzage:",
+                "description": "Informatie opvragen over je persoonsgegevens die in de afgelopen 12 maanden zijn verzameld en met derden zijn gedeeld."
+            },
+            "rightToOptOut": {
+                "title": "Recht op opt-out:",
+                "description": "Je kunt verzoeken dat je gegevens niet aan derden worden verkocht."
+            },
+            "rightToKnow": {
+                "title": "Recht op informatie:",
+                "description": "Je kunt navragen wat de bron en het doel van je persoonsgegevens zijn en met wie ze worden gedeeld."
+            },
+            "rightToDelete": {
+                "title": "Recht op verwijdering:",
+                "description": "Je kunt vragen om je gegevens uit onze bestanden te laten verwijderen."
+            },
+            "rightToNonDiscrimination": {
+                "title": "Recht op non-discriminatie:",
+                "description": "Je hebt recht op gelijke service en prijzen, ongeacht of je je privacyrechten uitoefent."
+            },
+            "exercisingRightsTitle": "Je CCPA-rechten uitoefenen",
+            "exercisingRightsDescription": "Inwoners van Californië kunnen een verzoek indienen per e-mail, telefonisch of via onze webpagina 'Do Not Sell My Personal Information' (Verkoop mijn persoonsgegevens niet). We reageren binnen 45 dagen; deze termijn kan zo nodig eenmalig met 45 dagen worden verlengd. Ter bescherming van je gegevens kan verificatie nodig zijn."
+        },
+        "section11": {
+            "title": "11. Gegevensretentie",
+            "description": "We bewaren uw persoonlijke informatie alleen zo lang als nodig is om onze services te leveren en voor legitieme zakelijke en juridische redenen. Zodra het niet meer nodig is, zullen we het veilig verwijderen of anonimiseren.",
+            "infoForConsumers": "Informatie voor consumenten in Virginia",
+            "infoForConsumersDescription": "Dit onderdeel is van toepassing op inwoners van Virginia op grond van de Virginia Consumer Data Protection Act (VCDPA). Waar van toepassing gaat het vóór op strijdige bepalingen in dit privacybeleid.",
+            "personalDataHandled": {
+                "title": "Persoonsgegevens die we verwerken",
+                "description": "Profitpiller kan gegevens verzamelen zoals je e-mailadres. We stellen je op de hoogte voordat we aanvullende categorieën persoonsgegevens verzamelen."
+            },
+            "whyProcessData": {
+                "title": "Waarom we je gegevens verwerken",
+                "description": "Onze verwerkingsdoeleinden staan beschreven in 'Gegevens die we verzamelen' en 'Rechtsgronden voor de verwerking'. We gebruiken je gegevens niet voor andere, niet-gerelateerde doeleinden zonder jouw toestemming."
+            },
+            "yourRightsTitle": "Jouw rechten onder de VCDPA",
+            "access": {
+                "title": "Inzage:",
+                "description": "Bevestiging krijgen dat we gegevens over je verwerken en deze inzien."
+            },
+            "correction": {
+                "title": "Correctie:",
+                "description": "Onjuiste persoonsgegevens laten corrigeren."
+            },
+            "deletion": {
+                "title": "Verwijdering:",
+                "description": "Verzoeken om verwijdering van je persoonsgegevens."
+            },
+            "dataPortability": {
+                "title": "Gegevensoverdraagbaarheid:",
+                "description": "Je gegevens ontvangen in een overdraagbaar formaat."
+            },
+            "optOut": {
+                "title": "Opt-out:",
+                "description": "Ervoor kiezen dat je gegevens niet worden gebruikt voor gerichte reclame of profilering."
+            },
+            "nonDiscrimination": {
+                "title": "Non-discriminatie:",
+                "description": "We benadelen je niet omdat je je privacyrechten uitoefent."
+            },
+            "submittingRequestsTitle": "Verzoeken indienen",
+            "submittingRequestsDescription": "Om je rechten uit te oefenen, kun je contact met ons opnemen op de manieren die in dit beleid worden genoemd. We moeten je identiteit verifiëren voordat we een verzoek in behandeling kunnen nemen. Volwassenen kunnen namens hun kinderen een verzoek indienen.",
+            "timelinesAppealsTitle": "Termijnen en beroep",
+            "timelinesAppealsDescription": "We reageren binnen 45 dagen na ontvangst van een geldig verzoek. In complexe gevallen kan dit tot 90 dagen duren. Als we je verzoek afwijzen, kun je daartegen in beroep gaan; we reageren dan binnen 60 dagen op dat beroep. Wordt je verzoek opnieuw afgewezen, dan kun je contact opnemen met de procureur-generaal van Virginia."
+        },
+        "section12": {
+            "title": "12. Uitoefening van uw rechten",
+            "description": "Om uw rechten uit te oefenen of voor vragen over dit beleid, kunt u contact met ons opnemen via e-mail op <a href=\"mailto:privacy@profitpiller.com\">privacy@profitpiller.com</a>. Verzoeken moeten worden ingediend op een manier die ons in staat stelt uw identiteit te verifiëren, meestal via uw account of een andere contactmethode van uw keuze.",
+            "intro": "De Braziliaanse Lei Geral de Proteção de Dados (LGPD) kent gebruikers die in Brazilië wonen de volgende rechten toe:",
+            "confirmation": {
+                "title": "Bevestiging:",
+                "description": "Bevestiging krijgen of we je gegevens verwerken."
+            },
+            "access": {
+                "title": "Inzage:",
+                "description": "Inzien welke persoonsgegevens we hebben en met wie ze worden gedeeld."
+            },
+            "correction": {
+                "title": "Correctie:",
+                "description": "Verouderde of onjuiste gegevens laten bijwerken."
+            },
+            "anonymizationDeletion": {
+                "title": "Anonimisering of verwijdering:",
+                "description": "Verzoeken om verwijdering of blokkering van onnodige gegevens."
+            },
+            "portability": {
+                "title": "Overdraagbaarheid:",
+                "description": "Je gegevens overdragen aan een andere aanbieder."
+            },
+            "erasure": {
+                "title": "Gegevenswissing:",
+                "description": "Gegevens laten wissen die op basis van toestemming zijn verwerkt."
+            },
+            "infoAboutConsent": {
+                "title": "Informatie over toestemming:",
+                "description": "Te weten komen wat de gevolgen zijn als je geen toestemming geeft."
+            },
+            "withdrawConsent": {
+                "title": "Toestemming intrekken:",
+                "description": "Eerder gegeven toestemming op elk moment intrekken."
+            },
+            "howToExerciseRightsTitle": "Hoe je deze rechten uitoefent",
+            "howToExerciseRightsDescription": "Stuur een verifieerbaar verzoek naar: privacy@profitpiller.com. We verifiëren je identiteit voordat we je verzoek in behandeling nemen.",
+            "responseTimeTitle": "Reactietermijn",
+            "responseTimeDescription": "We streven ernaar binnen 15 dagen te reageren, en uiterlijk binnen 30 dagen. Als je een account bij ons hebt, kunnen we onze reactie via je account sturen of via een ander contactkanaal van jouw keuze."
+        },
+        "section13": {
+            "title": "13. Beperkingen van ons privacybeleid",
+            "description": "De profitpiller-website kan links bevatten naar externe websites of services die niet door ons worden beheerd. Houd er rekening mee dat we niet verantwoordelijk zijn voor de inhoud, praktijken of beleidsregels van platforms van derden en we moedigen u aan om hun privacyvoorwaarden onafhankelijk te beoordelen."
+        },
+        "section14": {
+            "title": "14. Updates van dit privacybeleid",
+            "description1": "profitpiller behoudt zich het recht voor om dit privacybeleid op elk moment te wijzigen om het af te stemmen op evoluerende juridische, operationele of industriële normen. We zullen passende stappen ondernemen om gebruikers op de hoogte te stellen van materiële updates, meestal via onze website. Voortgezet gebruik van onze services na eventuele herzieningen vormt uw erkenning en acceptatie van de bijgewerkte beleidsvoorwaarden.",
+            "description2": "In gevallen waarin wijzigingen de manier waarop we uw persoonlijke gegevens verwerken aanzienlijk beïnvloeden - zoals het wijzigen van de juridische basis voor verwerking - zullen we uw hernieuwde toestemming vragen voordat we doorgaan met de herziene praktijken."
+        },
+        "dataProtectionOfficer": {
+            "title": "Functionaris Gegevensbescherming",
+            "name": "Bogdan Pashynskyi",
+            "email": "dpo@profitpiller.com",
+            "company": "Legal Nodes Ltd",
+            "companyNumber": "Bedrijfsnummer: 11668206",
+            "address": "Adres: 90a High Street, Berkhamsted, Hertfordshire, England, HP4 2BL"
+        }
     }
-  }
 }

@@ -6,8 +6,9 @@ import { AdminDashboardComponent } from "./dashboard/dashboard.component";
 import { MessageService } from "../layout/message/message.service";
 import { MessageVM } from "../layout/message/message.vm";
 import { AdminOverviewDto, AdminPayoutDto, AdminUserDto, PriorityOfferAdminDto } from "./admin.vm";
+import { ChatService, IAdminChatMessage } from "../home/chat/chat.service";
 
-type AdminTab = 'overview' | 'offers' | 'payouts' | 'users' | 'earnings';
+type AdminTab = 'overview' | 'offers' | 'payouts' | 'users' | 'chat' | 'earnings';
 
 const PAYOUT_PENDING = 1, PAYOUT_COMPLETED = 2, PAYOUT_REJECTED = 4;
 const USER_BLOCKED = 3;
@@ -24,6 +25,7 @@ export class AdminComponent extends BaseComponent implements OnInit {
         { id: 'offers', label: 'Priority offers', icon: 'local_offer' },
         { id: 'payouts', label: 'Payouts', icon: 'payments' },
         { id: 'users', label: 'Users', icon: 'group' },
+        { id: 'chat', label: 'Chat', icon: 'forum' },
         { id: 'earnings', label: 'Earnings', icon: 'monitoring' }
     ];
     tab: AdminTab = 'overview';
@@ -55,7 +57,12 @@ export class AdminComponent extends BaseComponent implements OnInit {
     readonly userPageSize = 25;
     usersLoaded = false;
 
-    constructor(private adminService: AdminService, private messageService: MessageService) {
+    // Chat moderation
+    chatMessages: IAdminChatMessage[] = [];
+    chatLoaded = false;
+    chatHasMore = false;
+
+    constructor(private adminService: AdminService, private messageService: MessageService, private chatService: ChatService) {
         super();
     }
 
@@ -69,6 +76,7 @@ export class AdminComponent extends BaseComponent implements OnInit {
         if (tab === 'offers' && !this.offersLoaded) await this.loadOffers();
         if (tab === 'payouts' && !this.payoutsLoaded) await this.loadPayouts();
         if (tab === 'users' && !this.usersLoaded) await this.loadUsers();
+        if (tab === 'chat') await this.loadChat();
     }
 
     private toast(message: string, type: 'success' | 'error' = 'success') {
@@ -106,7 +114,7 @@ export class AdminComponent extends BaseComponent implements OnInit {
         this.formError = '';
         this.editing = {
             id: 0, title: '', description: '', imageUrl: '', clickUrl: '', points: 0, tag: 'Priority',
-            countryCode: '*', device: 'All', sortOrder: 0, isActive: true, startDate: null, endDate: null
+            countryCode: '*', device: 'All', sortOrder: 0, isActive: true, showAsPopup: false, startDate: null, endDate: null
         };
     }
 
@@ -286,6 +294,53 @@ export class AdminComponent extends BaseComponent implements OnInit {
     toggleAllUsers() {
         if (this.allSelected) this.selectedUserIds.clear();
         else this.selectableUsers.forEach(u => this.selectedUserIds.add(u.id));
+    }
+
+    /** "web,android" -> "Web + App"; the icon shows where the user was seen last. */
+    platformLabel(u: AdminUserDto): string {
+        const names: Record<string, string> = { web: 'Web', android: 'Android app', ios: 'iOS app' };
+        const all = (u.platforms || u.lastPlatform || '').split(',').map(p => p.trim()).filter(p => !!p);
+        return all.length ? all.map(p => names[p] ?? p).join(' + ') : '—';
+    }
+
+    platformIcon(platform: string): string {
+        return platform === 'android' ? 'android' : platform === 'ios' ? 'phone_iphone' : platform === 'web' ? 'language' : 'help_outline';
+    }
+
+    // ───────────── Chat moderation ─────────────
+    async loadChat(older = false) {
+        try {
+            const beforeId = older && this.chatMessages.length ? this.chatMessages[this.chatMessages.length - 1].id : 0;
+            const rows = await this.chatService.adminMessages(beforeId, 100);
+            this.chatMessages = older ? [...this.chatMessages, ...rows] : rows;
+            this.chatHasMore = rows.length >= 100;
+        } catch {
+            if (!older) this.chatMessages = [];
+        }
+        this.chatLoaded = true;
+    }
+
+    async removeChat(m: IAdminChatMessage) {
+        if (this.busy) return;
+        this.busy = true;
+        try {
+            const result = m.isDeleted ? await this.chatService.restore(m.id) : await this.chatService.remove(m.id);
+            if (result?.isSuccess) m.isDeleted = !m.isDeleted;
+            this.toast(result?.message ?? 'Done', result?.isSuccess ? 'success' : 'error');
+        } catch { /* the interceptor already told the admin */ } finally { this.busy = false; }
+    }
+
+    /** Mute stops the user posting (they can still read). Muting also removes everything they posted. */
+    async muteChat(m: IAdminChatMessage) {
+        if (this.busy) return;
+        const mute = !m.isMuted;
+        if (mute && this.isBrowser && !confirm(`Mute ${m.fullName || m.email} and remove all their chat messages?`)) return;
+        this.busy = true;
+        try {
+            const result = await this.chatService.mute(m.userId, mute, mute);
+            this.toast(result?.message ?? 'Done', result?.isSuccess ? 'success' : 'error');
+            if (result?.isSuccess) await this.loadChat();
+        } catch { /* the interceptor already told the admin */ } finally { this.busy = false; }
     }
 
     providerName(provider: string): string {

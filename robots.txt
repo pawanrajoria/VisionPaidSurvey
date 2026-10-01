@@ -28,4 +28,4 @@ Disallow: /*/redirecttoapk
 # Internal endpoints
 Disallow: /api/
 
-Sitemap: https://pocketsfull.com/sitemap.xml
+Sitemap: https://profitpiller.com/sitemap.xml

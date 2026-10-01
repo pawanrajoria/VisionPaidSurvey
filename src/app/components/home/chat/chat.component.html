@@ -1,0 +1,87 @@
+<div class="chat-page">
+    <header class="chat-head">
+        <span class="chat-head-icon" aria-hidden="true"><mat-icon>forum</mat-icon></span>
+        <div class="chat-head-text">
+            <h1>{{ 'app.chat.title' | translate }}</h1>
+            <p>{{ 'app.chat.subtitle' | translate }}</p>
+        </div>
+    </header>
+
+    @if (loading) {
+    <div class="chat-state"><mat-spinner diameter="32"></mat-spinner></div>
+    } @else if (!available) {
+    <div class="chat-state">
+        <mat-icon>forum</mat-icon>
+        <p>{{ 'app.chat.unavailable' | translate }}</p>
+    </div>
+    } @else {
+
+    <div class="chat-list" #list (scroll)="onScroll()" role="log" aria-live="polite">
+        @if (hasOlder && messages.length) {
+        <button type="button" class="older-btn" [disabled]="loadingOlder" (click)="loadOlder()">
+            {{ (loadingOlder ? 'app.common.loading' : 'app.chat.older') | translate }}
+        </button>
+        }
+
+        @for (m of messages; track trackMessage($index, m)) {
+        @if (newDay($index)) {
+        <div class="day-divider"><span>{{ m.createdAt | date:'mediumDate' }}</span></div>
+        }
+        <article class="msg" [class.mine]="m.isMine">
+            @if (!m.isMine) {
+            <span class="avatar" [style.background]="tierColor(m.level)" aria-hidden="true">{{ m.name.charAt(0) }}</span>
+            }
+            <div class="bubble">
+                <div class="meta">
+                    <strong>{{ m.isMine ? ('app.chat.you' | translate) : m.name }}</strong>
+                    @if (flag(m.countryCode)) { <span class="flag" aria-hidden="true">{{ flag(m.countryCode) }}</span> }
+                    <span class="lvl" [style.color]="tierColor(m.level)">{{ 'app.chat.level' | translate:{ level: m.level } }}</span>
+                    @if (m.platform === 'android' || m.platform === 'ios') {
+                    <mat-icon class="on-app" [attr.aria-label]="'app.chat.onApp' | translate" [title]="'app.chat.onApp' | translate">smartphone</mat-icon>
+                    }
+                </div>
+                <p class="text">{{ m.message }}</p>
+                <div class="foot">
+                    <time [attr.datetime]="m.createdAt">{{ m.createdAt | date:'shortTime' }}</time>
+                    @if (isAdmin) {
+                    <button type="button" class="remove-btn" (click)="remove(m)">
+                        <mat-icon>delete</mat-icon>{{ 'app.chat.remove' | translate }}
+                    </button>
+                    }
+                </div>
+            </div>
+        </article>
+        } @empty {
+        <div class="chat-state">
+            <mat-icon>waving_hand</mat-icon>
+            <p>{{ 'app.chat.empty' | translate }}</p>
+        </div>
+        }
+    </div>
+
+    @if (unseen > 0) {
+    <button type="button" class="new-pill" (click)="jumpToNewest()">
+        <mat-icon>arrow_downward</mat-icon>{{ 'app.chat.newMessages' | translate:{ count: unseen } }}
+    </button>
+    }
+
+    <footer class="composer">
+        @if (muted) {
+        <p class="muted-note"><mat-icon>volume_off</mat-icon>{{ 'app.chat.muted' | translate }}</p>
+        } @else {
+        @if (error) { <p class="send-error" role="alert">{{ error }}</p> }
+        <div class="composer-row">
+            <textarea [(ngModel)]="draft" rows="1" [maxLength]="maxLength" (keydown)="onKey($event)"
+                [placeholder]="'app.chat.placeholder' | translate" [attr.aria-label]="'app.chat.placeholder' | translate"></textarea>
+            <button type="button" class="send-btn" [disabled]="!canSend" (click)="send()" [attr.aria-label]="'app.chat.send' | translate">
+                <mat-icon>send</mat-icon>
+            </button>
+        </div>
+        <p class="rules">
+            <span>{{ 'app.chat.rules' | translate }}</span>
+            @if (draft.length > maxLength - 60) { <span class="count">{{ remaining }}</span> }
+        </p>
+        }
+    </footer>
+    }
+</div>

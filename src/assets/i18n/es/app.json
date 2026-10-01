@@ -17,11 +17,27 @@
       "day_other": "{{count}} días"
     },
     "weekday": {
-      "Mon": "Lun", "Tue": "Mar", "Wed": "Mié", "Thu": "Jue", "Fri": "Vie", "Sat": "Sáb", "Sun": "Dom"
+      "Mon": "Lun",
+      "Tue": "Mar",
+      "Wed": "Mié",
+      "Thu": "Jue",
+      "Fri": "Vie",
+      "Sat": "Sáb",
+      "Sun": "Dom"
     },
     "month": {
-      "1": "Enero", "2": "Febrero", "3": "Marzo", "4": "Abril", "5": "Mayo", "6": "Junio",
-      "7": "Julio", "8": "Agosto", "9": "Septiembre", "10": "Octubre", "11": "Noviembre", "12": "Diciembre"
+      "1": "Enero",
+      "2": "Febrero",
+      "3": "Marzo",
+      "4": "Abril",
+      "5": "Mayo",
+      "6": "Junio",
+      "7": "Julio",
+      "8": "Agosto",
+      "9": "Septiembre",
+      "10": "Octubre",
+      "11": "Noviembre",
+      "12": "Diciembre"
     },
     "earn": {
       "earnOn": "Gana en",
@@ -47,7 +63,9 @@
       "checkSurvey": "Termina tu primera encuesta",
       "checkOffer": "Completa tu primera oferta",
       "checkInvite": "Invita a un amigo",
-      "checkCashout": "Cobra tu primera recompensa"
+      "checkCashout": "Cobra tu primera recompensa",
+      "balance": "Saldo:",
+      "claimReward": "Cobrar recompensa"
     },
     "streak": {
       "title": "Progreso de la racha",
@@ -262,6 +280,30 @@
     },
     "limit": {
       "notice": "Algunas encuestas están ocultas por ahora."
+    },
+    "chat": {
+      "title": "Chat de la comunidad",
+      "short": "Chat",
+      "subtitle": "Comparte consejos y opiniones con otros miembros. Sé amable.",
+      "placeholder": "Escribe un mensaje…",
+      "send": "Enviar",
+      "empty": "Aún no hay mensajes. ¡Saluda!",
+      "unavailable": "El chat no está disponible en este momento.",
+      "muted": "Puedes leer el chat, pero ahora no puedes escribir.",
+      "older": "Cargar mensajes anteriores",
+      "rules": "Sin enlaces, correos ni números de teléfono. Los mensajes que incumplen las normas se eliminan.",
+      "remove": "Eliminar",
+      "you": "Tú",
+      "failed": "No se pudo enviar. Inténtalo de nuevo.",
+      "onApp": "Enviado desde la app",
+      "newMessages": "Mensajes nuevos: {{count}}",
+      "level": "Nv. {{level}}"
+    },
+    "promo": {
+      "today": "La mejor oferta de hoy",
+      "earn": "Gana {{points}} puntos",
+      "cta": "Empezar ahora",
+      "later": "Quizás más tarde"
     }
   }
 }

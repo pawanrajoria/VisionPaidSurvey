@@ -74,6 +74,7 @@ $line: #dfe7e4;
 
 .priority-section {
   margin-bottom: 22px;
+  padding: 0; // a global "section" rule adds 30px above and below otherwise
 
   .section-header {
     display: flex;
@@ -597,4 +598,553 @@ $line: #dfe7e4;
 
 .streak-foot {
   text-align: center;
+}
+
+// ───────── Compact chips (streak / daily check-in / getting started) ─────────
+// One short row instead of three tall cards; the details open in a sheet on tap.
+.engage-chips {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 2px 2px 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.engage-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 0;
+  min-width: 148px;
+  min-height: 56px;
+  padding: 8px 12px;
+  border: 1px solid $line;
+  border-radius: 16px;
+  background: #fff;
+  color: $ink;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(16, 87, 73, 0.12);
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba(16, 87, 73, 0.4);
+    outline-offset: 2px;
+  }
+
+  .chip-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: rgba(16, 87, 73, 0.1);
+    color: $brand;
+
+    mat-icon {
+      font-size: 22px;
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &.streak .chip-icon {
+    background: rgba(232, 89, 12, 0.12);
+    color: #e8590c;
+  }
+
+  &.daily .chip-icon {
+    background: rgba(245, 179, 1, 0.18);
+    color: #9a6b00;
+  }
+
+  .chip-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    line-height: 1.15;
+
+    strong {
+      font-size: 18px;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+    }
+
+    small {
+      overflow: hidden;
+      color: $muted;
+      font-size: 12px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .chip-ok {
+    margin-left: auto;
+    flex-shrink: 0;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    color: $brand;
+  }
+
+  .chip-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    margin-left: auto;
+    border-radius: 50%;
+    background: $gold;
+    color: #3a2a00;
+    animation: chip-pulse 1.6s ease-in-out infinite;
+
+    mat-icon {
+      font-size: 17px;
+      width: 17px;
+      height: 17px;
+    }
+  }
+
+  // Something to collect (a prize draw, today's check-in).
+  &.alert {
+    border-color: $gold;
+    background: linear-gradient(160deg, #fffaf0 0%, #fff 70%);
+  }
+}
+
+@keyframes chip-pulse {
+  50% {
+    box-shadow: 0 0 0 6px rgba(245, 179, 1, 0.25);
+  }
+}
+
+// Card content when it is shown inside the sheet / dialog.
+.engage-card.sheet {
+  position: relative;
+  padding: 20px 18px 22px;
+  border: 0;
+  border-radius: 0;
+
+  .engage-head {
+    padding-right: 34px;
+  }
+}
+
+.sheet-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: #f1f5f4;
+  color: $ink;
+  cursor: pointer;
+
+  mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba(16, 87, 73, 0.4);
+  }
+}
+
+// The notice is one line until tapped.
+button.limit-notice {
+  width: 100%;
+  align-items: center;
+  font: inherit;
+  font-size: 13.5px;
+  text-align: left;
+  cursor: pointer;
+
+  span {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .more {
+    color: #8a6a00;
+  }
+
+  &.open span {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-banner {
+    gap: 10px;
+    margin-bottom: 12px;
+    padding: 10px 12px;
+
+    .banner-coin {
+      width: 38px;
+      height: 38px;
+    }
+
+    .banner-text strong {
+      font-size: 14px;
+    }
+
+    .banner-cta {
+      padding: 7px 12px;
+      font-size: 13px;
+    }
+  }
+
+  .engage-chip {
+    flex: 0 0 auto;
+    min-width: 0;
+    min-height: 52px;
+    padding: 7px 12px 7px 8px;
+  }
+
+  // The count sits beside the title instead of pushing the card taller.
+  .engage-card.sheet .engage-head {
+    flex-direction: row;
+  }
+
+  .priority-section {
+    margin-bottom: 14px;
+
+    .section-title {
+      flex-wrap: wrap;
+      font-size: 17px;
+
+      .title-note {
+        flex-basis: 100%;
+        margin-left: 30px;
+        font-size: 12px;
+      }
+    }
+
+    .actions {
+      display: none; // swipe instead of arrow buttons on touch screens
+    }
+  }
+
+  .priority-card {
+    padding: 16px 12px 12px;
+  }
+
+  .priority-media {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .engage-chip,
+  .engage-chip .chip-badge {
+    transition: none;
+    animation: none;
+  }
+}
+
+// The chat chip is a link.
+a.engage-chip {
+  text-decoration: none;
+}
+
+
+// ───────── Balance bar (balance · leaderboard · streak · level) ─────────
+.balance-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+  padding: 14px 18px;
+  border: 1px solid $line;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(16, 87, 73, 0.06);
+
+  .wallet {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #f1f5f4;
+    color: $ink;
+  }
+
+  .bal {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 0;
+    line-height: 1.25;
+
+    small {
+      color: $muted;
+      font-size: 13px;
+    }
+
+    strong {
+      color: $ink;
+      font-size: 18px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .usd {
+      font-weight: 600;
+    }
+  }
+
+  .bal-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 76px;
+    height: 44px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 999px;
+    background: #f1f5f4;
+    color: $ink;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+    mat-icon {
+      font-size: 22px;
+      width: 22px;
+      height: 22px;
+      color: #6b7b76;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(16, 87, 73, 0.14);
+    }
+
+    &:focus-visible {
+      outline: 3px solid rgba(16, 87, 73, 0.4);
+      outline-offset: 2px;
+    }
+
+    // A running streak lights the flame.
+    &.streak.lit {
+      background: rgba(232, 89, 12, 0.12);
+      color: #c2410c;
+
+      mat-icon {
+        color: #e8590c;
+      }
+    }
+
+    // A prize draw is waiting.
+    &.streak.alert {
+      box-shadow: 0 0 0 2px $gold;
+      animation: chip-pulse 1.6s ease-in-out infinite;
+    }
+
+    &.level {
+      background: linear-gradient(120deg, $brand 0%, $brand-dark 100%);
+      color: #fff;
+
+      mat-icon {
+        color: $gold;
+      }
+    }
+  }
+
+  .claim {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .balance-bar {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px;
+
+    .wallet {
+      display: none;
+    }
+
+    .bal strong {
+      font-size: 16px;
+    }
+
+    .bal .usd {
+      display: none;
+    }
+
+    .bal-actions {
+      gap: 6px;
+    }
+
+    .pill {
+      min-width: 44px;
+      padding: 0 10px;
+    }
+
+    // Level shows as a round badge with just the number.
+    .pill.level {
+      mat-icon {
+        display: none;
+      }
+    }
+
+    .claim {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 100%;
+      height: 44px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, $brand 0%, #1a8a72 60%, $gold 130%);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+}
+
+// ───────── Offer of the day popup ─────────
+.promo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 22px 18px;
+  color: $ink;
+  text-align: center;
+
+  h2 {
+    margin: 2px 0 6px;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  p {
+    margin: 0 0 10px;
+    color: $muted;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+}
+
+.promo-tag {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #d9480f;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.promo-img {
+  width: 112px;
+  height: 112px;
+  margin: 14px 0 12px;
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow: 0 10px 24px rgba(16, 87, 73, 0.18);
+
+  &.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(16, 87, 73, 0.08);
+    color: $brand;
+
+    mat-icon {
+      font-size: 52px;
+      width: 52px;
+      height: 52px;
+    }
+  }
+}
+
+.promo-kicker {
+  color: #c2410c;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.promo-points {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0 16px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #fff8e1;
+  color: #7a5900;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.promo .claim-btn.wide {
+  height: 48px;
+  font-size: 15px;
+}
+
+.promo-later {
+  min-height: 40px;
+  margin-top: 6px;
+  border: 0;
+  background: transparent;
+  color: $muted;
+  font: inherit;
+  font-size: 13.5px;
+  cursor: pointer;
 }

@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject, OnInit, ViewChild } from "@angular/core";
+import { Component, ElementRef, inject, OnInit, TemplateRef, ViewChild } from "@angular/core";
 import { SharedModule } from "../../../shared.module";
 import { OfferService } from "../offer/offer.service";
 import { SurveyService } from "../survey/survey.service";
@@ -20,6 +20,8 @@ import { IEngagementSummary, IPriorityOffer } from "../engagement/engagement.vm"
 import { AccountService } from "../account.service";
 import { MessageService } from "../../layout/message/message.service";
 import { MessageVM } from "../../layout/message/message.vm";
+import { TierAwardComponent } from "../../layout/header/tier-award/tier-award.component";
+import { IUserbalanceInfoVM } from "../account.vm";
 
 
 @Component({
@@ -146,11 +148,86 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
         }
     }
 
+    // ───────────── Streak / check-in / getting-started sheets ─────────────
+    noticeOpen = false;
+
+    @ViewChild('streakSheet') streakSheetTpl?: TemplateRef<unknown>;
+    @ViewChild('promoTpl') promoTpl?: TemplateRef<unknown>;
+
+    get balanceInfo(): IUserbalanceInfoVM { return this.accountService.getUserBalanceInfo() ?? {}; }
+
+    openStreak() {
+        if (this.streakSheetTpl) this.openSheet(this.streakSheetTpl);
+    }
+
+    openLevels() {
+        this.dialog.open(TierAwardComponent);
+    }
+
+    // ───────────── Offer of the day popup ─────────────
+    promo: IPriorityOffer | null = null;
+    private promoRef: MatDialogRef<unknown> | null = null;
+
+    /** One popup per offer per day; closing it (or opening the offer) silences it until tomorrow. */
+    private promoKey(offer: IPriorityOffer): string {
+        return `promoSeen:${offer.id}:${new Date().toISOString().slice(0, 10)}`;
+    }
+
+    private maybeShowPromo() {
+        if (!this.isBrowser || this.promoRef || !this.promoTpl) return;
+        const offer = this.priorityOffers.find(o => o.showAsPopup);
+        if (!offer) return;
+        try {
+            if (localStorage.getItem(this.promoKey(offer))) return;
+        } catch { /* storage blocked: show it */ }
+
+        this.promo = offer;
+        this.promoRef = this.dialog.open(this.promoTpl, {
+            width: '400px', maxWidth: '92vw', autoFocus: false, panelClass: ['engage-sheet-panel', 'promo-panel']
+        });
+        this.promoRef.afterClosed().subscribe(() => {
+            try { localStorage.setItem(this.promoKey(offer), '1'); } catch { /* storage blocked */ }
+            this.promoRef = null;
+        });
+    }
+
+    closePromo() {
+        this.promoRef?.close();
+    }
+
+    acceptPromo() {
+        const offer = this.promo;
+        this.closePromo();
+        if (offer) this.openPriorityOffer(offer);
+    }
+    private sheetRef: MatDialogRef<unknown> | null = null;
+
+    /** Opens one of the engagement details: a bottom sheet on phones, a small dialog on larger screens. */
+    openSheet(template: TemplateRef<unknown>) {
+        this.sheetRef?.close();
+        const phone = this.isBrowser && this.breakpointObserver.isMatched('(max-width: 600px)');
+        this.sheetRef = this.dialog.open(template, {
+            width: phone ? '100vw' : '440px',
+            maxWidth: phone ? '100vw' : '94vw',
+            maxHeight: '88vh',
+            autoFocus: false,
+            position: phone ? { bottom: '0' } : undefined,
+            panelClass: phone ? ['engage-sheet-panel', 'engage-sheet-bottom'] : ['engage-sheet-panel']
+        });
+    }
+
+    closeSheet() {
+        this.sheetRef?.close();
+        this.sheetRef = null;
+    }
+
     // ───────────── Priority offers ─────────────
     async loadPriorityOffers() {
         const offers = await this.engagement.getPriorityOffers();
         const device = this.currentPlatform;
         this.priorityOffers = offers.filter(o => !o.device || o.device === 'All' || o.device === device);
+        // Give the page a moment to paint before the popup appears.
+        setTimeout(() => this.maybeShowPromo(), 1200);
     }
 
     /** Matches the Device values an admin can pick: Desktop | Android | IOS. */
@@ -186,7 +263,7 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
     }
 
     get streakDays(): number[] {
-        const every = this.summary?.daily.streakBonusEveryDays ?? 7;
+        const every = this.summary?.daily?.streakBonusEveryDays ?? 7;
         return Array.from({ length: every }, (_, i) => i + 1);
     }
 
@@ -199,7 +276,7 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
     }
 
     async claimDaily() {
-        if (this.claimingDaily || !this.summary?.daily.available || this.summary.daily.claimedToday) return;
+        if (this.claimingDaily || !this.summary?.daily?.available || this.summary.daily.claimedToday) return;
         this.claimingDaily = true;
         try {
             const result = await this.engagement.dailyCheckin();
@@ -228,7 +305,7 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
             { label: 'app.earn.checkCashout', done: c.firstCashout, link: [...app, 'cashout'] }
         ];
         // The profile step only exists while the welcome bonus is switched on.
-        return this.summary?.onboarding.available ? items : items.slice(1);
+        return this.summary?.onboarding?.available ? items : items.slice(1);
     }
 
     get checklistDone(): number { return this.checklist.filter(i => i.done).length; }

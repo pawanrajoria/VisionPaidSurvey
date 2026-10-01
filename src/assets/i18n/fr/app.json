@@ -17,11 +17,27 @@
       "day_other": "{{count}} jours"
     },
     "weekday": {
-      "Mon": "Lun", "Tue": "Mar", "Wed": "Mer", "Thu": "Jeu", "Fri": "Ven", "Sat": "Sam", "Sun": "Dim"
+      "Mon": "Lun",
+      "Tue": "Mar",
+      "Wed": "Mer",
+      "Thu": "Jeu",
+      "Fri": "Ven",
+      "Sat": "Sam",
+      "Sun": "Dim"
     },
     "month": {
-      "1": "Janvier", "2": "Février", "3": "Mars", "4": "Avril", "5": "Mai", "6": "Juin",
-      "7": "Juillet", "8": "Août", "9": "Septembre", "10": "Octobre", "11": "Novembre", "12": "Décembre"
+      "1": "Janvier",
+      "2": "Février",
+      "3": "Mars",
+      "4": "Avril",
+      "5": "Mai",
+      "6": "Juin",
+      "7": "Juillet",
+      "8": "Août",
+      "9": "Septembre",
+      "10": "Octobre",
+      "11": "Novembre",
+      "12": "Décembre"
     },
     "earn": {
       "earnOn": "Gagner sur",
@@ -47,7 +63,9 @@
       "checkSurvey": "Terminez votre premier sondage",
       "checkOffer": "Terminez votre première offre",
       "checkInvite": "Invitez un ami",
-      "checkCashout": "Encaissez votre première récompense"
+      "checkCashout": "Encaissez votre première récompense",
+      "balance": "Solde :",
+      "claimReward": "Récupérer ma récompense"
     },
     "streak": {
       "title": "Progression de la série",
@@ -262,6 +280,30 @@
     },
     "limit": {
       "notice": "Certains sondages sont masqués pour le moment."
+    },
+    "chat": {
+      "title": "Chat de la communauté",
+      "short": "Chat",
+      "subtitle": "Partagez vos conseils et vos avis avec les autres membres. Restez courtois.",
+      "placeholder": "Écrivez un message…",
+      "send": "Envoyer",
+      "empty": "Aucun message pour le moment. Dites bonjour !",
+      "unavailable": "Le chat n'est pas disponible pour le moment.",
+      "muted": "Vous pouvez lire le chat, mais vous ne pouvez pas écrire pour le moment.",
+      "older": "Charger les messages précédents",
+      "rules": "Pas de liens, e-mails ni numéros de téléphone. Les messages qui enfreignent les règles sont supprimés.",
+      "remove": "Supprimer",
+      "you": "Vous",
+      "failed": "Échec de l'envoi. Veuillez réessayer.",
+      "onApp": "Envoyé depuis l'application",
+      "newMessages": "Nouveaux messages : {{count}}",
+      "level": "Niv. {{level}}"
+    },
+    "promo": {
+      "today": "Meilleure offre du jour",
+      "earn": "Gagnez {{points}} points",
+      "cta": "Commencer",
+      "later": "Plus tard"
     }
   }
 }

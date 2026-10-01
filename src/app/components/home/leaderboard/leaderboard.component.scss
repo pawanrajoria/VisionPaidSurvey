@@ -167,3 +167,24 @@
         font-variant-numeric: tabular-nums;
     }
 }
+
+// ───────── Phone layout ─────────
+@media (max-width: 600px) {
+    .trophy-header h2 {
+        line-height: 1.2;
+    }
+
+    // Title above its note instead of two cramped columns.
+    .top-earners-container .list-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+    }
+
+    .lock-overlay {
+        width: min(86%, 300px);
+        padding: 16px;
+    }
+}

@@ -64,6 +64,7 @@ export const routes: Routes = [
           { path: 'offers', loadChildren: () => import('./components/home/offer/offer.route').then(m => m.OfferRoutes) },
           { path: 'offerwall', loadChildren: () => import('./components/home/offer-wall/offer-wall.route').then(m => m.OfferWallRoutes) },
           { path: 'cashout', loadChildren: () => import('./components/home/reward/reward.route').then(m => m.RewardRoutes) },
+          { path: 'chat', loadChildren: () => import('./components/home/chat/chat.route').then(m => m.ChatRoutes) },
           { path: 'leaderboard', loadChildren: () => import('./components/home/leaderboard/leaderboard.route').then(m => m.LeaderboardRoutes) },
           { path: 'account', loadChildren: () => import('./components/home/profile/profile.route').then(m => m.ProfileRoutes) },
           { path: 'help', loadChildren: () => import('./components/home/help/help.route').then(m => m.HelpRoutes) },

@@ -78,6 +78,11 @@ export interface AdminOverviewDto {
     earningsToday: number;
     onboardingCompleted: number;
     checkinsToday: number;
+    /** Users seen in the last 7 days, by the client they last used. */
+    webUsers7Days: number;
+    androidUsers7Days: number;
+    iosUsers7Days: number;
+    bothPlatformUsers: number;
     signups: AdminDailyCountDto[];
 }
 
@@ -98,6 +103,12 @@ export interface AdminUserDto {
     rejectionRate: number;
     fraudDecision: string;
     loginProvider: string;
+    /** web | android | ios - the client the user was last seen on. */
+    lastPlatform: string;
+    /** Every client the user has used, e.g. "web,android". */
+    platforms: string;
+    appVersion: string;
+    lastSeenAt: string | null;
     accountAgeDays: number;
 }
 
@@ -139,6 +150,8 @@ export interface PriorityOfferAdminDto {
     device: string | null;
     sortOrder: number;
     isActive: boolean;
+    /** Also shown once a day as a popup when the user opens the Earn page (website and app). */
+    showAsPopup: boolean;
     startDate: string | null;
     endDate: string | null;
     clickCount?: number;

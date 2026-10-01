@@ -149,6 +149,8 @@ export interface IPriorityOffer {
     tag: string;
     device: string;
     isInternal: boolean;
+    /** Show once a day as a dismissible popup. */
+    showAsPopup?: boolean;
 }
 
 /** sessionStorage flag: the user chose "later" - don't force the welcome flow again this session. */

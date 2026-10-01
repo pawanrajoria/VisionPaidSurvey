@@ -50,6 +50,10 @@
             </mat-card>
         </mat-menu>
 
+        <button mat-icon-button (click)="goToChat()" [attr.aria-label]="'app.chat.title' | translate" [title]="'app.chat.title' | translate">
+            <mat-icon>forum</mat-icon>
+        </button>
+
         <button mat-icon-button [matMenuTriggerFor]="notificationMenu" aria-label="Notifications">
             <mat-icon [matBadge]="notificationCount" matBadgeColor="warn" [matBadgeHidden]="notificationCount === 0">
                 notifications

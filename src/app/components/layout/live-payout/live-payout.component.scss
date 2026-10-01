@@ -2,7 +2,7 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 10000;
+    z-index: 900; // below dialogs and sheets (the overlay layer is 1000) so it never covers their buttons
     display: flex;
     flex-direction: column;
     align-items: flex-end;

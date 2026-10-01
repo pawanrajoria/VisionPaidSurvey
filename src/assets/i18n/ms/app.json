@@ -17,11 +17,27 @@
       "day_other": "{{count}} Hari"
     },
     "weekday": {
-      "Mon": "Isn", "Tue": "Sel", "Wed": "Rab", "Thu": "Kha", "Fri": "Jum", "Sat": "Sab", "Sun": "Ahd"
+      "Mon": "Isn",
+      "Tue": "Sel",
+      "Wed": "Rab",
+      "Thu": "Kha",
+      "Fri": "Jum",
+      "Sat": "Sab",
+      "Sun": "Ahd"
     },
     "month": {
-      "1": "Januari", "2": "Februari", "3": "Mac", "4": "April", "5": "Mei", "6": "Jun",
-      "7": "Julai", "8": "Ogos", "9": "September", "10": "Oktober", "11": "November", "12": "Disember"
+      "1": "Januari",
+      "2": "Februari",
+      "3": "Mac",
+      "4": "April",
+      "5": "Mei",
+      "6": "Jun",
+      "7": "Julai",
+      "8": "Ogos",
+      "9": "September",
+      "10": "Oktober",
+      "11": "November",
+      "12": "Disember"
     },
     "earn": {
       "earnOn": "Jana pendapatan di",
@@ -47,7 +63,9 @@
       "checkSurvey": "Selesaikan tinjauan pertama anda",
       "checkOffer": "Lengkapkan tawaran pertama anda",
       "checkInvite": "Jemput rakan",
-      "checkCashout": "Tunaikan ganjaran pertama anda"
+      "checkCashout": "Tunaikan ganjaran pertama anda",
+      "balance": "Baki:",
+      "claimReward": "Tuntut ganjaran"
     },
     "streak": {
       "title": "Kemajuan Rentetan",
@@ -262,6 +280,30 @@
     },
     "limit": {
       "notice": "Sesetengah tinjauan disembunyikan buat masa ini."
+    },
+    "chat": {
+      "title": "Sembang komuniti",
+      "short": "Sembang",
+      "subtitle": "Kongsi tip dan pendapat dengan ahli lain. Bersopanlah.",
+      "placeholder": "Tulis mesej…",
+      "send": "Hantar",
+      "empty": "Belum ada mesej. Ucapkan helo!",
+      "unavailable": "Sembang tidak tersedia buat masa ini.",
+      "muted": "Anda boleh membaca sembang tetapi tidak boleh menghantar mesej buat masa ini.",
+      "older": "Muatkan mesej lama",
+      "rules": "Tiada pautan, e-mel atau nombor telefon. Mesej yang melanggar peraturan akan dibuang.",
+      "remove": "Buang",
+      "you": "Anda",
+      "failed": "Tidak dapat menghantar. Sila cuba lagi.",
+      "onApp": "Dihantar dari aplikasi",
+      "newMessages": "Mesej baharu: {{count}}",
+      "level": "Thp {{level}}"
+    },
+    "promo": {
+      "today": "Tawaran terbaik hari ini",
+      "earn": "Dapatkan {{points}} mata",
+      "cta": "Mula sekarang",
+      "later": "Mungkin nanti"
     }
   }
 }

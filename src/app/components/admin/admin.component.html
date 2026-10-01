@@ -45,6 +45,11 @@
                     <span class="kpi-value">{{ o.newUsersToday | number }}</span>
                     <span class="kpi-sub">today · {{ o.newUsersLast7Days | number }} in the last 7 days</span>
                 </div>
+                <div class="kpi">
+                    <span class="kpi-label">Website vs app (last 7 days)</span>
+                    <span class="kpi-value">{{ o.webUsers7Days | number }} <small>web</small> · {{ (o.androidUsers7Days + o.iosUsers7Days) | number }} <small>app</small></span>
+                    <span class="kpi-sub">{{ o.bothPlatformUsers | number }} users have used both</span>
+                </div>
                 <div class="kpi" [class.attention]="o.pendingPayoutCount > 0">
                     <span class="kpi-label">Pending payouts</span>
                     <span class="kpi-value">{{ o.pendingPayoutCount | number }}</span>
@@ -147,6 +152,10 @@
                     </label>
                     <label class="check">
                         <input type="checkbox" name="isActive" [(ngModel)]="f.isActive"> Active
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="showAsPopup" [(ngModel)]="f.showAsPopup"> Show as popup
+                        <small>Once a day, when the user opens Earn (website and app). They can close it.</small>
                     </label>
                     <label>Starts (optional)
                         <input type="datetime-local" name="startDate" [(ngModel)]="f.startDate">
@@ -309,7 +318,7 @@
                                     (change)="toggleAllUsers()" aria-label="Select all users that can be disabled">
                             </th>
                             <th>User</th><th>Country</th><th class="num">Rejection</th><th class="num">Level</th><th class="num">Balance</th>
-                            <th>Sign-in</th><th>Joined</th><th>Status</th><th></th>
+                            <th>Sign-in</th><th>Uses</th><th>Joined</th><th>Status</th><th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -334,6 +343,17 @@
                             <td class="num">{{ u.currentLevel ?? 0 }}</td>
                             <td class="num">${{ u.balance | number:'1.2-2' }}</td>
                             <td>{{ providerName(u.loginProvider) }}</td>
+                            <td>
+                                @if (u.lastPlatform) {
+                                <span class="platform" [attr.data-platform]="u.lastPlatform">
+                                    <mat-icon>{{ platformIcon(u.lastPlatform) }}</mat-icon>{{ platformLabel(u) }}
+                                </span>
+                                <div class="cell-sub">
+                                    @if (u.lastSeenAt) { seen {{ u.lastSeenAt | date:'d MMM, HH:mm' }} }
+                                    @if (u.appVersion) { · v{{ u.appVersion }} }
+                                </div>
+                                } @else { — }
+                            </td>
                             <td>{{ u.createdAt | date:'d MMM y' }}<div class="cell-sub">{{ u.accountAgeDays }} days</div></td>
                             <td><span class="state" [attr.data-state]="u.statusName">{{ u.statusName }}</span></td>
                             <td class="row-actions">
@@ -344,7 +364,7 @@
                             </td>
                         </tr>
                         } @empty {
-                        <tr><td colspan="10" class="empty">{{ usersLoaded ? 'No users match.' : 'Loading…' }}</td></tr>
+                        <tr><td colspan="11" class="empty">{{ usersLoaded ? 'No users match.' : 'Loading…' }}</td></tr>
                         }
                     </tbody>
                 </table>
@@ -355,6 +375,58 @@
                 <button type="button" class="btn small ghost" [disabled]="userPage <= 1" (click)="goToUserPage(userPage - 1)">Previous</button>
                 <span>Page {{ userPage }} of {{ userPageCount }}</span>
                 <button type="button" class="btn small ghost" [disabled]="userPage >= userPageCount" (click)="goToUserPage(userPage + 1)">Next</button>
+            </div>
+            }
+        </section>
+        }
+
+        <!-- ═════════ CHAT MODERATION ═════════ -->
+        @if (tab === 'chat') {
+        <section>
+            <div class="section-head">
+                <h1>Community chat</h1>
+                <button type="button" class="btn ghost" (click)="loadChat()"><mat-icon>refresh</mat-icon> Refresh</button>
+            </div>
+            <p class="bulk-bar">
+                <span>Newest first. Remove hides a message from everyone; Mute stops that user posting and removes everything they posted.</span>
+            </p>
+
+            <div class="panel table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>User</th><th>Message</th><th>From</th><th>Sent</th><th>State</th><th></th></tr>
+                    </thead>
+                    <tbody>
+                        @for (m of chatMessages; track m.id) {
+                        <tr [class.removed-row]="m.isDeleted">
+                            <td>
+                                <div class="cell-main">{{ m.fullName || m.email }}</div>
+                                <div class="cell-sub">{{ m.email }} · #{{ m.userId }} · {{ m.countryCode }}</div>
+                            </td>
+                            <td class="chat-text">{{ m.message }}</td>
+                            <td><span class="platform"><mat-icon>{{ platformIcon(m.platform) }}</mat-icon>{{ m.platform || '—' }}</span></td>
+                            <td>{{ m.createdAt | date:'d MMM, HH:mm' }}</td>
+                            <td>
+                                @if (m.isDeleted) { <span class="state" data-state="Blocked">Removed</span> }
+                                @else { <span class="state" data-state="Active">Visible</span> }
+                                @if (m.isMuted) { <span class="state" data-state="Blocked">User muted</span> }
+                            </td>
+                            <td class="row-actions">
+                                <button type="button" class="btn small" [class.danger]="!m.isDeleted" [class.ghost]="m.isDeleted" [disabled]="busy"
+                                    (click)="removeChat(m)">{{ m.isDeleted ? 'Restore' : 'Remove' }}</button>
+                                <button type="button" class="btn small ghost" [disabled]="busy" (click)="muteChat(m)">{{ m.isMuted ? 'Unmute' : 'Mute user' }}</button>
+                            </td>
+                        </tr>
+                        } @empty {
+                        <tr><td colspan="6" class="empty">{{ chatLoaded ? 'No chat messages yet.' : 'Loading…' }}</td></tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            @if (chatHasMore) {
+            <div class="pager">
+                <button type="button" class="btn small ghost" (click)="loadChat(true)">Load older messages</button>
             </div>
             }
         </section>

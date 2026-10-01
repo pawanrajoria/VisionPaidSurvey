@@ -17,11 +17,27 @@
       "day_other": "{{count}} dagen"
     },
     "weekday": {
-      "Mon": "Ma", "Tue": "Di", "Wed": "Wo", "Thu": "Do", "Fri": "Vr", "Sat": "Za", "Sun": "Zo"
+      "Mon": "Ma",
+      "Tue": "Di",
+      "Wed": "Wo",
+      "Thu": "Do",
+      "Fri": "Vr",
+      "Sat": "Za",
+      "Sun": "Zo"
     },
     "month": {
-      "1": "Januari", "2": "Februari", "3": "Maart", "4": "April", "5": "Mei", "6": "Juni",
-      "7": "Juli", "8": "Augustus", "9": "September", "10": "Oktober", "11": "November", "12": "December"
+      "1": "Januari",
+      "2": "Februari",
+      "3": "Maart",
+      "4": "April",
+      "5": "Mei",
+      "6": "Juni",
+      "7": "Juli",
+      "8": "Augustus",
+      "9": "September",
+      "10": "Oktober",
+      "11": "November",
+      "12": "December"
     },
     "earn": {
       "earnOn": "Verdien op",
@@ -47,7 +63,9 @@
       "checkSurvey": "Rond je eerste enquête af",
       "checkOffer": "Voltooi je eerste aanbieding",
       "checkInvite": "Nodig een vriend uit",
-      "checkCashout": "Laat je eerste beloning uitbetalen"
+      "checkCashout": "Laat je eerste beloning uitbetalen",
+      "balance": "Saldo:",
+      "claimReward": "Beloning claimen"
     },
     "streak": {
       "title": "Reeksvoortgang",
@@ -262,6 +280,30 @@
     },
     "limit": {
       "notice": "Sommige enquêtes zijn voorlopig verborgen."
+    },
+    "chat": {
+      "title": "Communitychat",
+      "short": "Chat",
+      "subtitle": "Deel tips en meningen met andere leden. Blijf vriendelijk.",
+      "placeholder": "Schrijf een bericht…",
+      "send": "Verzenden",
+      "empty": "Nog geen berichten. Zeg hallo!",
+      "unavailable": "De chat is nu niet beschikbaar.",
+      "muted": "Je kunt de chat lezen, maar nu geen berichten plaatsen.",
+      "older": "Oudere berichten laden",
+      "rules": "Geen links, e-mailadressen of telefoonnummers. Berichten die de regels overtreden worden verwijderd.",
+      "remove": "Verwijderen",
+      "you": "Jij",
+      "failed": "Verzenden mislukt. Probeer het opnieuw.",
+      "onApp": "Verzonden vanuit de app",
+      "newMessages": "Nieuwe berichten: {{count}}",
+      "level": "Lvl {{level}}"
+    },
+    "promo": {
+      "today": "Topaanbieding van vandaag",
+      "earn": "Verdien {{points}} punten",
+      "cta": "Nu starten",
+      "later": "Misschien later"
     }
   }
 }

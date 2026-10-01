@@ -82,7 +82,7 @@
  }
 
 // ============================================================
-// pocketsfull "Ledger" content-page design tokens
+// profitpiller "Ledger" content-page design tokens
 // (Blog / Guides / Gift Cards - see src/app/components/blog/theme/_tokens.scss
 // for the mixins that consume these. Defined once here, globally, rather
 // than per-component, so they aren't duplicated into every component's
@@ -126,4 +126,27 @@
   --pp-space-4: 16px;
   --pp-space-5: 24px;
   --pp-space-6: 32px;
+}
+
+// Earn page detail sheets (streak / daily check-in / getting started).
+.engage-sheet-panel .mat-mdc-dialog-surface {
+  border-radius: 20px !important;
+  overflow: auto;
+}
+
+.engage-sheet-bottom .mat-mdc-dialog-surface {
+  border-radius: 20px 20px 0 0 !important;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+// Images that carry width/height attributes (to reserve their space while loading) must keep
+// their proportions when CSS narrows them - otherwise they stretch on small screens.
+// :where() keeps the specificity at zero so any component rule that sets a height still wins.
+:where(img[width][height]) {
+  max-width: 100%;
+  height: auto;
+}
+
+.chat-open app-live-payout {
+  display: none;
 }

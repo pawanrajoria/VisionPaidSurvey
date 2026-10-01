@@ -60,5 +60,31 @@
         "dateofbirth.required": "जन्म तिथि आवश्यक है।",
         "gender.required": "लिंग आवश्यक है।",
         "zip_code.required": "डाक कोड आवश्यक है।"
+    },
+    "contact": {
+        "heading": {
+            "subtitle": "कोई सवाल है? हम आपकी मदद के लिए यहाँ हैं!",
+            "title": "आज ही Profit Piller से जुड़ें"
+        },
+        "emailUs": {
+            "title": "हमें ईमेल करें",
+            "address": "support@profitpiller.com"
+        },
+        "callUs": {
+            "title": "हमें कॉल करें",
+            "number": "+91-8876654356"
+        },
+        "headOffice": {
+            "title": "मुख्य कार्यालय",
+            "address": "Spaze ITech Park, Sector-49,Gurgaon, Haryana – 122001, India"
+        },
+        "form": {
+            "title": "हमसे संपर्क करें",
+            "nameLabel": "नाम",
+            "emailLabel": "ईमेल",
+            "phoneLabel": "फ़ोन नंबर",
+            "messageLabel": "संदेश",
+            "submitButton": "संदेश भेजें"
+        }
     }
 }

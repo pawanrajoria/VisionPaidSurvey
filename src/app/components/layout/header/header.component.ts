@@ -107,6 +107,10 @@ export class HeaderComponent {
 
   }
 
+  goToChat() {
+    this.router.navigate(['app/chat']);
+  }
+
   goToAdmin() {
     this.router.navigate(['admin']);
   }

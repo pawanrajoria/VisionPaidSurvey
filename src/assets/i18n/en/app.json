@@ -17,11 +17,27 @@
       "day_other": "{{count}} Days"
     },
     "weekday": {
-      "Mon": "Mon", "Tue": "Tue", "Wed": "Wed", "Thu": "Thu", "Fri": "Fri", "Sat": "Sat", "Sun": "Sun"
+      "Mon": "Mon",
+      "Tue": "Tue",
+      "Wed": "Wed",
+      "Thu": "Thu",
+      "Fri": "Fri",
+      "Sat": "Sat",
+      "Sun": "Sun"
     },
     "month": {
-      "1": "January", "2": "February", "3": "March", "4": "April", "5": "May", "6": "June",
-      "7": "July", "8": "August", "9": "September", "10": "October", "11": "November", "12": "December"
+      "1": "January",
+      "2": "February",
+      "3": "March",
+      "4": "April",
+      "5": "May",
+      "6": "June",
+      "7": "July",
+      "8": "August",
+      "9": "September",
+      "10": "October",
+      "11": "November",
+      "12": "December"
     },
     "earn": {
       "earnOn": "Earn on",
@@ -47,7 +63,9 @@
       "checkSurvey": "Finish your first survey",
       "checkOffer": "Complete your first offer",
       "checkInvite": "Invite a friend",
-      "checkCashout": "Cash out your first reward"
+      "checkCashout": "Cash out your first reward",
+      "balance": "Balance:",
+      "claimReward": "Claim reward"
     },
     "streak": {
       "title": "Streak Progress",
@@ -262,6 +280,30 @@
     },
     "limit": {
       "notice": "Some surveys are hidden for now."
+    },
+    "chat": {
+      "title": "Community chat",
+      "short": "Chat",
+      "subtitle": "Share tips and opinions with other members. Be kind.",
+      "placeholder": "Write a message…",
+      "send": "Send",
+      "empty": "No messages yet. Say hello!",
+      "unavailable": "Chat is not available right now.",
+      "muted": "You can read the chat but cannot post right now.",
+      "older": "Load older messages",
+      "rules": "No links, emails or phone numbers. Messages that break the rules are removed.",
+      "remove": "Remove",
+      "you": "You",
+      "failed": "Could not send. Please try again.",
+      "onApp": "Sent from the app",
+      "newMessages": "New messages: {{count}}",
+      "level": "Lvl {{level}}"
+    },
+    "promo": {
+      "today": "Today's top offer",
+      "earn": "Earn {{points}} points",
+      "cta": "Start now",
+      "later": "Maybe later"
     }
   }
 }

@@ -16,7 +16,7 @@
 
 .two-row-grid {
   display: grid;
-  grid-template-rows: repeat(2, 1fr); // Strict 2 rows
+  grid-template-rows: repeat(2, auto); // 2 rows, each only as tall as its cards
   grid-auto-flow: column; // Force horizontal expansion
   grid-auto-columns: 280px; // Width of each item
   gap: 12px;
@@ -111,7 +111,7 @@
   .offer-card,
   .survey-card {
     background: #105749;
-    width: 100px;
+    width: 116px;
     border-radius: 14px;
     color: #ffffff;
     transition: 0.3s ease;
@@ -122,9 +122,13 @@
     cursor: pointer;
 
     img {
+      // Square and cropped to fit: "fill" stretched every non-square artwork.
+      display: block;
       width: 100%;
-      height: 75px;
-      object-fit: fill;
+      height: auto;
+      aspect-ratio: 1;
+      object-fit: cover;
+      background: rgba(255, 255, 255, 0.08);
     }
 
     .card-body {
@@ -158,7 +162,8 @@
       padding: 0px !important;
       line-height: 12px;
       margin: 0px 10px;
-      height: 70px;
+      height: auto;
+      padding-bottom: 8px !important;
 
       h3 {
         font-size: 13px;
@@ -373,11 +378,18 @@
 
   .details {
     flex: 1;
+    min-width: 0;
 
     h3 {
       margin: 0 0 6px 0;
       font-size: 0.95rem;
       font-weight: 600;
+      line-height: 1.3;
+      // Long survey names made one card (and its whole row) several times taller.
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .stats-row {
@@ -617,5 +629,55 @@
         }
       }
     }
+  }
+}
+
+// ───────── Phone layout ─────────
+@media (max-width: 600px) {
+  .earn-page-wrapper {
+    padding-bottom: 88px; // room for the floating "Live Payouts" button
+  }
+
+  .section-header {
+    gap: 8px;
+    margin-bottom: 6px;
+
+    .section-title {
+      min-width: 0;
+      font-size: 17px !important;
+    }
+
+    .actions {
+      flex-shrink: 0;
+
+      // Lists scroll by swipe on touch screens; the arrows only pushed the title onto two lines.
+      button[mat-icon-button] {
+        display: none;
+      }
+    }
+
+    .view-all {
+      white-space: nowrap;
+      padding: 8px 4px;
+    }
+  }
+
+  .two-row-grid {
+    grid-auto-columns: 78vw;
+    gap: 10px;
+  }
+
+  .survey-card-mini .survey-content {
+    padding: 12px;
+  }
+
+  .top-filters-container {
+    padding: 4px 12px;
+  }
+
+  .section-container.mt-5,
+  .section-container-surveywall.mt-5,
+  .quick-actions-container.mt-5 {
+    margin-top: 1.5rem !important;
   }
 }

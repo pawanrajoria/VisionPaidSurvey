@@ -1,33 +1,36 @@
 {
-  "footer": {
-    "trust": "Cemerlang",
-    "copyright": "© 2026 Profit Piller. Hak cipta terpelihara.",
-    "product_of": "Produk oleh",
-    "platform": {
-      "title": "Platform",
-      "login": "Log masuk atau Daftar",
-      "about": "Tentang ProfitPiller",
-      "contact": "Hubungi Kami",
-      "help": "Bantuan"
-    },
-    "legal": {
-      "title": "Perundangan",
-      "privacy": "Dasar Privasi",
-      "terms": "Terma & Syarat",
-      "cookie": "Dasar Kuki",
-      "dns": "Jangan jual maklumat saya"
-    },
-    "explore": {
-      "title": "Terokai Lagi",
-      "cash": "Jana wang daripada tinjauan",
-      "gift": "Kad hadiah",
-      "amazon": "Kad hadiah Amazon",
-      "paypal": "Ganjaran PayPal",
-      "visa": "Kad hadiah Visa"
-    },
-    "follow": {
-      "title": "Ikuti Kami",
-      "download": "Muat turun aplikasi kami"
+    "footer": {
+        "trust": "Cemerlang",
+        "copyright": "© 2026 Profit Piller. Hak cipta terpelihara.",
+        "product_of": "Produk oleh",
+        "platform": {
+            "title": "Platform",
+            "login": "Log masuk atau Daftar",
+            "about": "Tentang ProfitPiller",
+            "contact": "Hubungi Kami",
+            "help": "Bantuan",
+            "blog": "Blog",
+            "guides": "Panduan",
+            "gift_cards": "Kad Hadiah"
+        },
+        "legal": {
+            "title": "Perundangan",
+            "privacy": "Dasar Privasi",
+            "terms": "Terma & Syarat",
+            "cookie": "Dasar Kuki",
+            "dns": "Jangan jual maklumat saya"
+        },
+        "explore": {
+            "title": "Terokai Lagi",
+            "cash": "Jana wang daripada tinjauan",
+            "gift": "Kad hadiah",
+            "amazon": "Kad hadiah Amazon",
+            "paypal": "Ganjaran PayPal",
+            "visa": "Kad hadiah Visa"
+        },
+        "follow": {
+            "title": "Ikuti Kami",
+            "download": "Muat turun aplikasi kami"
+        }
     }
-  }
 }

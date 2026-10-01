@@ -3,7 +3,7 @@
         "heading": {
             "subtitle": "FAQ",
             "title": "Perguntas Frequentes (FAQs)",
-            "description": "Consulte as perguntas mais comuns que os utilizadores fazem sobre a utilização do <strong>pocketsfull</strong> e como começar a ganhar."
+            "description": "Consulte as perguntas mais comuns que os utilizadores fazem sobre a utilização do <strong>profitpiller</strong> e como começar a ganhar."
         },
         "checkAllQuestions": "Ver todas as perguntas",
         "needHelp": {
@@ -14,7 +14,7 @@
             "q0": {
                 "question": "Como posso ganhar dinheiro com inquéritos remunerados?",
                 "answer": {
-                    "0": "O pocketsfull é um site gratuito onde pode ganhar dinheiro real ao responder a inquéritos remunerados.",
+                    "0": "O profitpiller é um site gratuito onde pode ganhar dinheiro real ao responder a inquéritos remunerados.",
                     "1": "Basta inscrever-se com o seu e-mail e começar a ganhar hoje mesmo. A maioria dos utilizadores levanta o seu primeiro dinheiro no próprio dia!",
                     "2": "Pode responder a inquéritos a qualquer momento a partir do seu telemóvel ou computador."
                 }
@@ -22,7 +22,7 @@
             "q1": {
                 "question": "Como funciona o preenchimento de inquéritos?",
                 "answer": {
-                    "0": "Primeiro, inscreva-se no pocketsfull — é gratuito e requer apenas o seu endereço de e-mail.",
+                    "0": "Primeiro, inscreva-se no profitpiller — é gratuito e requer apenas o seu endereço de e-mail.",
                     "1": "Após iniciar sessão, verá uma lista de inquéritos disponíveis com detalhes sobre a duração e o pagamento.",
                     "2": "Clique num inquérito, complete algumas perguntas de qualificação e, em seguida, termine o inquérito principal.",
                     "3": "Após a conclusão, será recompensado com pontos, que podem ser trocados instantaneamente."
@@ -39,14 +39,14 @@
             "q3": {
                 "question": "Quanto dinheiro posso ganhar?",
                 "answer": {
-                    "0": "O pocketsfull não é um emprego a tempo inteiro, mas com apenas 30–60 minutos por dia, pode ganhar o suficiente para pequenos luxos do dia a dia.",
+                    "0": "O profitpiller não é um emprego a tempo inteiro, mas com apenas 30–60 minutos por dia, pode ganhar o suficiente para pequenos luxos do dia a dia.",
                     "1": "Consulte as nossas estatísticas em direto para ver o que outros utilizadores ganharam ontem!"
                 }
             },
             "q4": {
-                "question": "O pocketsfull paga melhor do que outros sites?",
+                "question": "O profitpiller paga melhor do que outros sites?",
                 "answer": {
-                    "0": "Sim! Em média, o pocketsfull paga até 150% mais pelos mesmos inquéritos.",
+                    "0": "Sim! Em média, o profitpiller paga até 150% mais pelos mesmos inquéritos.",
                     "1": "Focamo-nos em recompensar os nossos utilizadores em vez de gastar em marketing pesado."
                 }
             },
@@ -86,7 +86,7 @@
             "q9": {
                 "question": "Como posso ganhar dinheiro com inquéritos e ofertas?",
                 "answer": {
-                    "0": "O pocketsfull permite-lhe ganhar recompensas reais ao completar inquéritos online e explorar ofertas especiais.",
+                    "0": "O profitpiller permite-lhe ganhar recompensas reais ao completar inquéritos online e explorar ofertas especiais.",
                     "1": "Escolha o que lhe interessa, complete-o e ganhe pontos que pode trocar por dinheiro ou cartões-presente."
                 }
             },
@@ -114,7 +114,7 @@
             "q13": {
                 "question": "Posso escolher quais os inquéritos ou ofertas completar?",
                 "answer": {
-                    "0": "Sim! O pocketsfull permite-lhe escolher entre uma vasta gama de inquéritos e ofertas.",
+                    "0": "Sim! O profitpiller permite-lhe escolher entre uma vasta gama de inquéritos e ofertas.",
                     "1": "Está sempre no controlo do que completa."
                 }
             },

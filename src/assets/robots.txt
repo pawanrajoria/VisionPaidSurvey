@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pocketsfull.com/sitemap.xml
+Sitemap: https://profitpiller.com/sitemap.xml

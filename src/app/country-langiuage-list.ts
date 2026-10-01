@@ -116,6 +116,9 @@ export const LOCALE_COUNTRY_MAP: Record<string, string> = {
   'kk': 'kz',
   'kk-kz': 'kz',
 
+  'ka': 'ge',
+  'ka-ge': 'ge',
+
   // Asian
   'zh': 'cn',
   'zh-cn': 'cn',
@@ -329,6 +332,7 @@ export const SUPPORTED_LOCALES: { hreflang: string; urlPrefix: string }[] = [
   { hreflang: 'ru-RU', urlPrefix: 'ru-ru' },
   { hreflang: 'uk-UA', urlPrefix: 'uk-ua' },
   { hreflang: 'kk-KZ', urlPrefix: 'kk-kz' },
+  { hreflang: 'ka-GE', urlPrefix: 'ka-ge' }, // Georgia (translated: assets/i18n/ka)
 
   // Asian
   { hreflang: 'zh-CN', urlPrefix: 'zh-cn' },

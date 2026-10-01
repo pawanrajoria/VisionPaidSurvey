@@ -60,5 +60,31 @@
         "dateofbirth.required": "出生日期是必填项。",
         "gender.required": "性别是必填项。",
         "zip_code.required": "邮政编码是必填项。"
+    },
+    "contact": {
+        "heading": {
+            "subtitle": "有疑问？我们随时为您提供帮助！",
+            "title": "立即联系 Profit Piller"
+        },
+        "emailUs": {
+            "title": "发送邮件",
+            "address": "support@profitpiller.com"
+        },
+        "callUs": {
+            "title": "致电我们",
+            "number": "+91-8876654356"
+        },
+        "headOffice": {
+            "title": "总部地址",
+            "address": "Spaze ITech Park, Sector-49,Gurgaon, Haryana – 122001, India"
+        },
+        "form": {
+            "title": "与我们取得联系",
+            "nameLabel": "姓名",
+            "emailLabel": "电子邮箱",
+            "phoneLabel": "电话号码",
+            "messageLabel": "留言",
+            "submitButton": "发送留言"
+        }
     }
 }

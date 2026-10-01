@@ -4,6 +4,6 @@ export const environment = {
     RECAPTCHA_V3_SITE_KEY:'6LdHEIgsAAAAANPKW__IwUSBwvoRhOx622ARZEyg',
     // Public identity of the site. Canonical URLs, hreflang, Open Graph, JSON-LD and
     // sitemap.xml are all generated from these two values (see src/app/site.config.ts).
-    BRAND_NAME: 'pocketsfull',
-    BASE_URL: 'https://pocketsfull.com'
+    BRAND_NAME: 'profitpiller',
+    BASE_URL: 'https://profitpiller.com'
 };
