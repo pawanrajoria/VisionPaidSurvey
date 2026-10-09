@@ -28,6 +28,27 @@
         @if (newDay($index)) {
         <div class="day-divider"><span>{{ m.createdAt | date:'mediumDate' }}</span></div>
         }
+        @if (m.kind === 'welcome') {
+        <!-- Automatic "joined the community" message: a centred card with a one-tap welcome -->
+        <div class="welcome-row">
+            <div class="welcome-card" [class.mine]="m.isMine">
+                <span class="welcome-avatar" [style.--tier]="tierColor(m.level)" aria-hidden="true">{{ m.name.charAt(0) }}</span>
+                <p>
+                    @if (m.isMine) { {{ 'app.chat.joinedMe' | translate }} }
+                    @else { {{ 'app.chat.joined' | translate:{ name: m.name } }} }
+                    @if (flag(m.countryCode)) { <span class="flag" aria-hidden="true">{{ flag(m.countryCode) }}</span> }
+                </p>
+                @if (!m.isMine && reactionEmojis.includes('🎉') && !muted) {
+                <button type="button" class="welcome-btn" [class.done]="hasReacted(m, '🎉')" [attr.aria-pressed]="hasReacted(m, '🎉')" (click)="react(m, '🎉')">
+                    🎉 {{ 'app.chat.welcomeBtn' | translate }}
+                    @if (welcomeCount(m) > 0) { <b>{{ welcomeCount(m) }}</b> }
+                </button>
+                } @else if (welcomeCount(m) > 0) {
+                <span class="welcome-count">🎉 {{ welcomeCount(m) }}</span>
+                }
+            </div>
+        </div>
+        } @else {
         <article class="msg" [class.mine]="m.isMine" [class.jumbo]="isJumbo(m)">
             @if (!m.isMine) {
             <span class="avatar" [style.--tier]="tierColor(m.level)" aria-hidden="true">{{ m.name.charAt(0) }}</span>
@@ -79,6 +100,7 @@
                 }
             </div>
         </article>
+        }
         } @empty {
         <div class="chat-state">
             <mat-icon>waving_hand</mat-icon>

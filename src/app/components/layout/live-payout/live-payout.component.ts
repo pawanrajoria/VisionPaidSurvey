@@ -1,119 +1,100 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, inject, OnDestroy, OnInit } from "@angular/core";
 import { SharedModule } from "../../../shared.module";
+import { BaseComponent } from "../../../base.component";
+import { EngagementService } from "../../home/engagement/engagement.service";
+import { ILiveFeed, ILiveFeedItem } from "../../home/engagement/engagement.vm";
 
-interface Activity {
-    user: string;
-    amount: number;
-    time: string;
-}
-
+/**
+ * "Live payouts": real recent earnings and cash-outs from members (names masked by the API),
+ * with today's totals. Refreshes while the page is visible; a new entry pops up as a short toast
+ * above the button when the panel is closed.
+ */
 @Component({
     selector: 'app-live-payout',
     imports: [SharedModule],
     templateUrl: './live-payout.component.html',
     styleUrls: ['./live-payout.component.scss']
 })
-export class LivepayoutComponent implements OnInit, OnDestroy {
+export class LivepayoutComponent extends BaseComponent implements OnInit, OnDestroy {
+    private readonly engagement = inject(EngagementService);
 
-    recentActivities: Activity[] = [];
-    isExpanded = false; // Controls visibility
-    private tickerInterval: any;
+    private static readonly OPEN_REFRESH_MS = 20000;
+    private static readonly CLOSED_REFRESH_MS = 60000;
 
-    // Dynamic generated users
-    private names: string[] = [];
+    isExpanded = false;
+    loaded = false;
+    feed: ILiveFeed | null = null;
+    /** Entries that arrived on the last refresh; they slide in highlighted. */
+    fresh = new Set<string>();
+    toast: ILiveFeedItem | null = null;
+    now = Date.now();
 
-    private amounts = [10, 100, 89, 67, 45, 50, 250, 300, 150, 75, 120, 200];
-    private times = ['Just now', '2 sec ago', '5 sec ago', '10 sec ago'];
-
-    // Username generator pools
-    private prefixes = [
-        'User', 'Member', 'Earn', 'Cash', 'Reward', 'Survey', 'Task',
-        'Quick', 'Daily', 'Bonus', 'Coin', 'Pay', 'Win', 'Smart', 'Fast'
-    ];
-
-    private suffixes = [
-        'Pro', 'Hub', 'King', 'Master', 'Player', 'Buddy',
-        'Flow', 'Zone', 'Point', 'Star', 'Edge', 'Pulse'
-    ];
+    private timer: ReturnType<typeof setTimeout> | null = null;
+    private toastTimer: ReturnType<typeof setTimeout> | null = null;
 
     ngOnInit() {
-
-        this.names = this.generateBulkUsers(1000);
-
-        // preload
-        for (let i = 0; i < 3; i++) {
-            this.addRandomActivity();
-        }
-
-        // start dynamic ticker
-        this.startTicker();
+        if (!this.isBrowser) return;
+        this.refresh();
     }
 
     toggleTicker() {
         this.isExpanded = !this.isExpanded;
+        this.toast = null;
+        if (this.isExpanded) this.refresh();
     }
 
-    private startTicker() {
-        const randomDelay = this.getRandomDelay();
-
-        this.tickerInterval = setTimeout(() => {
-            this.addRandomActivity();
-            this.startTicker(); // recursive call → keeps it running
-        }, randomDelay);
+    key(item: ILiveFeedItem): string {
+        return `${item.kind}|${item.name}|${item.atUtc}|${item.points}`;
     }
 
-    private getRandomDelay(): number {
-        // between 3 sec to 9 sec (natural feel)
-        return Math.floor(Math.random() * 6000) + 3000;
-    }
-
-    private addRandomActivity() {
-        const newActivity: Activity = {
-            user: this.getRandomUser(),
-            amount: this.getRandomAmount(),
-            time: this.getRandomTime()
-        };
-
-        this.recentActivities.unshift(newActivity);
-
-        // Increased limit to 100 as requested
-        if (this.recentActivities.length > 100) {
-            this.recentActivities.pop();
+    private async refresh() {
+        if (this.timer) clearTimeout(this.timer);
+        const hidden = this.doc?.visibilityState === 'hidden';
+        if (!hidden || !this.loaded) {
+            const next = await this.engagement.getLiveFeed();
+            if (next) this.apply(next);
+            this.loaded = true;
         }
+        this.now = Date.now();
+        this.timer = setTimeout(() => this.refresh(),
+            this.isExpanded ? LivepayoutComponent.OPEN_REFRESH_MS : LivepayoutComponent.CLOSED_REFRESH_MS);
     }
 
-    private getRandomUser(): string {
-        return this.names[Math.floor(Math.random() * this.names.length)];
+    private apply(next: ILiveFeed) {
+        const known = new Set((this.feed?.items ?? []).map(i => this.key(i)));
+        const arrived = this.feed ? next.items.filter(i => !known.has(this.key(i))) : [];
+        this.fresh = new Set(arrived.map(i => this.key(i)));
+        this.feed = next;
+
+        const newest = arrived.find(i => !i.isMe);
+        if (newest && !this.isExpanded) this.showToast(newest);
     }
 
-    private getRandomAmount(): number {
-        return this.amounts[Math.floor(Math.random() * this.amounts.length)];
+    private showToast(item: ILiveFeedItem) {
+        this.toast = item;
+        if (this.toastTimer) clearTimeout(this.toastTimer);
+        this.toastTimer = setTimeout(() => this.toast = null, 5000);
     }
 
-    private getRandomTime(): string {
-        return this.times[Math.floor(Math.random() * this.times.length)];
+    ago(item: ILiveFeedItem): string {
+        const seconds = Math.max(0, Math.round((this.now - new Date(item.atUtc).getTime()) / 1000));
+        if (seconds < 60) return 'just now';
+        const minutes = Math.round(seconds / 60);
+        if (minutes < 60) return `${minutes} min ago`;
+        const hours = Math.round(minutes / 60);
+        if (hours < 24) return `${hours} h ago`;
+        const days = Math.round(hours / 24);
+        return days === 1 ? 'yesterday' : `${days} days ago`;
     }
 
-    private generateUsername(): string {
-        const prefix = this.prefixes[Math.floor(Math.random() * this.prefixes.length)];
-        const suffix = this.suffixes[Math.floor(Math.random() * this.suffixes.length)];
-        const number = Math.floor(Math.random() * 9000 + 100);
-        return `${prefix}${suffix}_${number}`;
-    }
-
-    private generateBulkUsers(count: number = 1000): string[] {
-        const users = new Set<string>();
-
-        while (users.size < count) {
-            users.add(this.generateUsername());
-        }
-
-        return Array.from(users);
+    /** "IN" -> 🇮🇳 */
+    flag(code: string): string {
+        if (!code || code.length !== 2) return '';
+        return String.fromCodePoint(...code.toUpperCase().split('').map(c => 0x1F1A5 + c.charCodeAt(0)));
     }
 
     ngOnDestroy() {
-        if (this.tickerInterval) {
-            clearInterval(this.tickerInterval);
-        }
+        if (this.timer) clearTimeout(this.timer);
+        if (this.toastTimer) clearTimeout(this.toastTimer);
     }
 }

@@ -168,3 +168,25 @@ export interface IPriorityOffer {
 
 /** sessionStorage flag: the user chose "later" - don't force the welcome flow again this session. */
 export const ONBOARDING_SKIPPED_KEY = 'onboardingSkipped';
+
+/** Real recent earnings and cash-outs for the "Live payouts" panel (names masked by the API). */
+export interface ILiveFeed {
+    earnersToday: number;
+    pointsEarnedToday: number;
+    cashoutsThisWeek: number;
+    paidOutThisWeekUsd: number;
+    items: ILiveFeedItem[];
+}
+
+export interface ILiveFeedItem {
+    /** earn | cashout */
+    kind: string;
+    name: string;
+    countryCode: string;
+    points: number;
+    amountUsd: number;
+    /** Survey | Offer | Offer wall | PayPal | Gift card | UPI */
+    via: string;
+    isMe: boolean;
+    atUtc: string;
+}

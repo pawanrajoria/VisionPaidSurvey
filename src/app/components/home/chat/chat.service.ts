@@ -14,6 +14,8 @@ export interface IChatMessage {
     isMine: boolean;
     /** web | android | ios */
     platform: string;
+    /** '' = a normal message, 'welcome' = the automatic "joined the community" message. */
+    kind?: string;
     reactions?: IChatReaction[];
 }
 

@@ -1,24 +1,82 @@
-<div class="live-payout-wrapper">
-    <div class="payout-list-container" *ngIf="isExpanded && recentActivities.length > 0">
-        <div class="list-header">
-            Recent Payouts
-            <span class="close-btn" (click)="toggleTicker()">×</span>
-        </div>
-        <div class="scroll-area">
-            <div class="ticker-card-mini" *ngFor="let act of recentActivities">
-                <div class="pulse-indicator"></div>&nbsp;&nbsp;
-                <div class="ticker-content">
-                    <span class="user-name">{{ act.user }}</span>
-                    <span class="action-text"> earned </span>
-                    <span class="amount">{{ act.amount }} pts</span>
-                </div>
+<div class="lp">
+    @if (isExpanded) {
+    <div class="lp-panel" role="dialog" aria-label="Live payouts">
+        <header class="lp-head">
+            <div class="lp-title">
+                <span class="live-badge"><span class="dot"></span>LIVE</span>
+                <h3>Live payouts</h3>
+                <p>Real earnings from Profitpiller members</p>
+            </div>
+            <button type="button" class="lp-close" (click)="toggleTicker()" aria-label="Close">
+                <mat-icon>close</mat-icon>
+            </button>
+        </header>
+
+        <div class="lp-stats">
+            <div>
+                <b>{{ (feed?.earnersToday ?? 0) | number }}</b>
+                <span>earning today</span>
+            </div>
+            <div>
+                <b>{{ (feed?.pointsEarnedToday ?? 0) | number:'1.0-0' }}</b>
+                <span>pts earned today</span>
+            </div>
+            <div>
+                <b>{{ (feed?.paidOutThisWeekUsd ?? 0) | currency:'USD':'symbol':'1.0-0' }}</b>
+                <span>cashed out this week</span>
             </div>
         </div>
-    </div>
 
-    <button class="fab-toggle" (click)="toggleTicker()" [class.active]="isExpanded">
-        <div class="pulse-indicator" *ngIf="!isExpanded"></div>
-        <span *ngIf="!isExpanded">Live Payouts</span>
-        <span *ngIf="isExpanded">Hide</span>
+        <div class="lp-list" aria-live="polite">
+            @for (item of feed?.items ?? []; track key(item)) {
+            <div class="lp-item" [class.cash]="item.kind === 'cashout'" [class.me]="item.isMe" [class.fresh]="fresh.has(key(item))">
+                <span class="av" aria-hidden="true">
+                    @if (item.kind === 'cashout') { <mat-icon>payments</mat-icon> } @else { {{ item.name.charAt(0) }} }
+                    @if (flag(item.countryCode)) { <i>{{ flag(item.countryCode) }}</i> }
+                </span>
+                <div class="txt">
+                    <p><strong>{{ item.name }}</strong> {{ item.kind === 'cashout' ? 'cashed out' : 'earned' }}</p>
+                    <small>{{ item.via }} · {{ ago(item) }}</small>
+                </div>
+                <span class="amt">
+                    @if (item.kind === 'cashout') { {{ item.amountUsd | currency:'USD':'symbol':'1.0-2' }} }
+                    @else { +{{ item.points | number:'1.0-0' }} <small>pts</small> }
+                </span>
+            </div>
+            } @empty {
+            <div class="lp-empty">
+                @if (loaded) {
+                <span>🚀</span>
+                <p>No payouts in the last few days yet.<br>Complete a survey and be the first on the board!</p>
+                } @else {
+                <p>Loading…</p>
+                }
+            </div>
+            }
+        </div>
+
+        <a class="lp-cta" [routerLink]="['/', currentLocale, 'app', 'survey']" (click)="toggleTicker()">
+            <mat-icon>bolt</mat-icon>Start earning now
+        </a>
+    </div>
+    }
+
+    @if (toast && !isExpanded) {
+    <button type="button" class="lp-toast" (click)="toggleTicker()">
+        <span class="av sm" [class.cash]="toast.kind === 'cashout'">{{ flag(toast.countryCode) || toast.name.charAt(0) }}</span>
+        <span><strong>{{ toast.name }}</strong>
+            {{ toast.kind === 'cashout' ? 'cashed out' : 'earned' }}
+            <b>@if (toast.kind === 'cashout') { {{ toast.amountUsd | currency:'USD':'symbol':'1.0-2' }} } @else { +{{ toast.points | number:'1.0-0' }} pts }</b>
+        </span>
+    </button>
+    }
+
+    <button type="button" class="lp-fab" (click)="toggleTicker()" [class.active]="isExpanded" [attr.aria-expanded]="isExpanded">
+        @if (isExpanded) {
+        <mat-icon>close</mat-icon><span>Hide</span>
+        } @else {
+        <span class="dot"></span><span>Live payouts</span>
+        @if (feed?.earnersToday) { <b class="count" title="Members earning today">{{ feed!.earnersToday }}</b> }
+        }
     </button>
 </div>

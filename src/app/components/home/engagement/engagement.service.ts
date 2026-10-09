@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 import { ConfigService } from "../../../config.service";
-import { IBonusResult, ICompleteOnboardingRequest, IEngagementSummary, ILeaderboard, IPriorityOffer, IUserSettings } from "./engagement.vm";
+import { IBonusResult, ICompleteOnboardingRequest, IEngagementSummary, ILeaderboard, ILiveFeed, IPriorityOffer, IUserSettings } from "./engagement.vm";
 
 /** Calls made with this header never show the full-screen loader or an error toast. */
 export const BACKGROUND = { headers: new HttpHeaders({ 'X-Background': 'true' }) };
@@ -58,6 +58,16 @@ export class EngagementService {
             this.http.post<IBonusResult>(this.config.baseUrl + "engagement/streak-draw", {}));
         this.clear();
         return result;
+    }
+
+    /** Resolves to null (never throws) when the API is unreachable or does not have the feed yet. */
+    async getLiveFeed(): Promise<ILiveFeed | null> {
+        try {
+            return await firstValueFrom(
+                this.http.get<ILiveFeed>(this.config.baseUrl + "engagement/live-feed", BACKGROUND));
+        } catch {
+            return null;
+        }
     }
 
     async getLeaderboard(): Promise<ILeaderboard | null> {

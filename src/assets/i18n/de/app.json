@@ -297,6 +297,9 @@
     "chat": {
       "title": "Community-Chat",
       "short": "Chat",
+      "joined": "{{name}} ist der Community beigetreten – sag Hallo! 👋",
+      "joinedMe": "Du bist der Community beigetreten – willkommen! 🎉",
+      "welcomeBtn": "Willkommen",
       "subtitle": "Teilen Sie Tipps und Meinungen mit anderen Mitgliedern. Bleiben Sie freundlich.",
       "placeholder": "Nachricht schreiben…",
       "send": "Senden",

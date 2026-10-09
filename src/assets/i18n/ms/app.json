@@ -297,6 +297,9 @@
     "chat": {
       "title": "Sembang komuniti",
       "short": "Sembang",
+      "joined": "{{name}} menyertai komuniti - ucapkan hai! 👋",
+      "joinedMe": "Anda menyertai komuniti - selamat datang! 🎉",
+      "welcomeBtn": "Selamat datang",
       "subtitle": "Kongsi tip dan pendapat dengan ahli lain. Bersopanlah.",
       "placeholder": "Tulis mesej…",
       "send": "Hantar",

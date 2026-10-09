@@ -297,6 +297,9 @@
     "chat": {
       "title": "社区聊天",
       "short": "聊天",
+      "joined": "{{name}} 加入了社区，打个招呼吧！👋",
+      "joinedMe": "你已加入社区，欢迎！🎉",
+      "welcomeBtn": "欢迎",
       "subtitle": "与其他成员分享技巧和看法。请友善交流。",
       "placeholder": "输入消息…",
       "send": "发送",

@@ -198,6 +198,10 @@ export class ChatComponent extends BaseComponent implements OnInit, OnDestroy {
         this.reactingTo = 0;
     }
 
+    welcomeCount(message: IChatMessage): number {
+        return message.reactions?.find(r => r.emoji === '🎉')?.count ?? 0;
+    }
+
     hasReacted(message: IChatMessage, emoji: string): boolean {
         return !!message.reactions?.some(r => r.emoji === emoji && r.mine);
     }
