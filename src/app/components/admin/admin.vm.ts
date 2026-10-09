@@ -192,6 +192,24 @@ export interface AdminEarningsSummaryDto {
     completes: number;
     rejections: number;
     byProvider: AdminProfitLineDto[];
+    firstSurveyTest?: AdminFirstSurveyTestDto | null;
+}
+
+export interface AdminTestGroupDto {
+    users: number;
+    profitPerUser: number;
+    /** % that completed a second survey. */
+    repeatPercent: number;
+}
+
+/** First-survey bonus A/B test: keep the bonus only while incrementalProfitPerUser stays above 0. */
+export interface AdminFirstSurveyTestDto {
+    enabled: boolean;
+    bonusUsd: number;
+    treatmentPercent: number;
+    withBonus: AdminTestGroupDto;
+    withoutBonus: AdminTestGroupDto;
+    incrementalProfitPerUser: number;
 }
 
 export interface AdminBonusReportDto {

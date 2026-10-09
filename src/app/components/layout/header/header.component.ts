@@ -152,6 +152,13 @@ export class HeaderComponent {
     }
   }
 
+  /** Days of streak still needed for the next badge (0 = all badges earned). */
+  get nextBadgeDays(): number {
+    const s = this.summary?.streak;
+    const next = (s?.badges ?? []).find(b => !b.earned);
+    return next && s ? Math.max(1, next.days - s.current) : 0;
+  }
+
   get streakDays(): number[] {
     const every = this.summary?.daily?.streakBonusEveryDays ?? 7;
     return Array.from({ length: every }, (_, i) => i + 1);

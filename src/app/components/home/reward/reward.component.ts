@@ -72,7 +72,16 @@ export class RewardComponent {
 
     /** Points needed for the first cashout, or 0 when the rule does not apply to this user. */
     get firstCashoutMinPoints(): number {
-        return this.cashoutRule?.isFirstCashout ? this.cashoutRule.firstMinimumPoints : 0;
+        const r = this.cashoutRule;
+        if (!r) return 0;
+        return Math.max(r.minimumPoints ?? 0, r.isFirstCashout ? r.firstMinimumPoints : 0);
+    }
+
+    /** USD of the minimum above (every cashout, and the first one if it is higher). */
+    get cashoutMinUsd(): number {
+        const r = this.cashoutRule;
+        if (!r) return 0;
+        return Math.max(r.minimumUsd ?? 0, r.isFirstCashout ? r.firstMinimumUsd : 0);
     }
 
     async ngOnInit() {
@@ -227,7 +236,7 @@ export class RewardComponent {
         // The API enforces this too; checking here saves the user a failed request.
         if (this.firstCashoutMinPoints > 0 && Number(option.points) < this.firstCashoutMinPoints) {
             this.snackBar.open(
-                this.translate.instant('app.cashout.firstNoteLong', { usd: this.cashoutRule?.firstMinimumUsd, points: this.firstCashoutMinPoints }),
+                this.translate.instant('app.cashout.minNote', { usd: this.cashoutMinUsd, points: this.firstCashoutMinPoints }),
                 'OK',
                 { duration: 5000, verticalPosition: 'bottom' }
             );

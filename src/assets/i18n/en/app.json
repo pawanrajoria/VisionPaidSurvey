@@ -86,7 +86,19 @@
       "comeBack": "Come back tomorrow",
       "bonusIn": "+{{points}} bonus points in {{days}} days.",
       "bonusReady": "Streak bonus is ready today!",
-      "dayStreak": "{{count}}-day streak."
+      "dayStreak": "{{count}}-day streak.",
+      "subtitleVisit": "Visit or check in every day to keep your streak",
+      "badgesTitle": "Streak badges",
+      "nextBadge": "{{days}} more days to your next badge",
+      "allBadges": "You have every streak badge!",
+      "checkIn": "Check in today",
+      "checkedIn": "Checked in today",
+      "badge_starter": "Warm-up",
+      "badge_week": "One week",
+      "badge_fortnight": "Two weeks",
+      "badge_month": "Monthly hero",
+      "badge_century": "100-day legend",
+      "daysShort": "{{days}} days"
     },
     "tier": {
       "levels": "Levels",
@@ -258,7 +270,8 @@
     },
     "cashout": {
       "firstNote": "Your first cashout must be at least $ {{usd}} USD ({{points}} points).",
-      "firstNoteLong": "Your first cashout must be at least $ {{usd}} USD ({{points}} points). After that, smaller amounts are available."
+      "firstNoteLong": "Your first cashout must be at least $ {{usd}} USD ({{points}} points). After that, smaller amounts are available.",
+      "minNote": "The minimum withdrawal is $ {{usd}} USD ({{points}} points)."
     },
     "settings": {
       "timeZone": "Change time zone",

@@ -86,7 +86,19 @@
       "comeBack": "Volte amanhã",
       "bonusIn": "+{{points}} pontos de bônus em {{days}} dias.",
       "bonusReady": "O bônus de sequência está pronto hoje!",
-      "dayStreak": "Sequência de {{count}} dias."
+      "dayStreak": "Sequência de {{count}} dias.",
+      "subtitleVisit": "Visite ou faça check-in todos os dias para manter sua sequência",
+      "badgesTitle": "Medalhas de sequência",
+      "nextBadge": "Faltam {{days}} dias para sua próxima medalha",
+      "allBadges": "Você tem todas as medalhas de sequência!",
+      "checkIn": "Fazer check-in hoje",
+      "checkedIn": "Check-in feito hoje",
+      "badge_starter": "Aquecimento",
+      "badge_week": "Uma semana",
+      "badge_fortnight": "Duas semanas",
+      "badge_month": "Herói do mês",
+      "badge_century": "Lenda dos 100 dias",
+      "daysShort": "{{days}} dias"
     },
     "tier": {
       "levels": "Níveis",
@@ -258,7 +270,8 @@
     },
     "cashout": {
       "firstNote": "Seu primeiro saque deve ser de pelo menos $ {{usd}} USD ({{points}} pontos).",
-      "firstNoteLong": "Seu primeiro saque deve ser de pelo menos $ {{usd}} USD ({{points}} pontos). Depois disso, valores menores ficam disponíveis."
+      "firstNoteLong": "Seu primeiro saque deve ser de pelo menos $ {{usd}} USD ({{points}} pontos). Depois disso, valores menores ficam disponíveis.",
+      "minNote": "O saque mínimo é de $ {{usd}} USD ({{points}} pontos)."
     },
     "settings": {
       "timeZone": "Alterar fuso horário",

@@ -86,7 +86,19 @@
       "comeBack": "Revenez demain",
       "bonusIn": "+{{points}} points bonus dans {{days}} jours.",
       "bonusReady": "Le bonus de série est prêt aujourd'hui !",
-      "dayStreak": "Série de {{count}} jours."
+      "dayStreak": "Série de {{count}} jours.",
+      "subtitleVisit": "Passez ou faites votre check-in chaque jour pour garder votre série",
+      "badgesTitle": "Badges de série",
+      "nextBadge": "Encore {{days}} jours avant votre prochain badge",
+      "allBadges": "Vous avez tous les badges de série !",
+      "checkIn": "Faire mon check-in",
+      "checkedIn": "Check-in fait aujourd'hui",
+      "badge_starter": "Échauffement",
+      "badge_week": "Une semaine",
+      "badge_fortnight": "Deux semaines",
+      "badge_month": "Héros du mois",
+      "badge_century": "Légende des 100 jours",
+      "daysShort": "{{days}} jours"
     },
     "tier": {
       "levels": "Niveaux",
@@ -258,7 +270,8 @@
     },
     "cashout": {
       "firstNote": "Votre premier retrait doit être d'au moins $ {{usd}} USD ({{points}} points).",
-      "firstNoteLong": "Votre premier retrait doit être d'au moins $ {{usd}} USD ({{points}} points). Ensuite, des montants plus petits sont possibles."
+      "firstNoteLong": "Votre premier retrait doit être d'au moins $ {{usd}} USD ({{points}} points). Ensuite, des montants plus petits sont possibles.",
+      "minNote": "Le retrait minimum est de $ {{usd}} USD ({{points}} points)."
     },
     "settings": {
       "timeZone": "Changer de fuseau horaire",

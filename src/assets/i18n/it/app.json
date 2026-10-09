@@ -86,7 +86,19 @@
       "comeBack": "Torna domani",
       "bonusIn": "+{{points}} punti bonus tra {{days}} giorni.",
       "bonusReady": "Il bonus della serie è pronto oggi!",
-      "dayStreak": "Serie di {{count}} giorni."
+      "dayStreak": "Serie di {{count}} giorni.",
+      "subtitleVisit": "Visita o fai check-in ogni giorno per mantenere la serie",
+      "badgesTitle": "Badge della serie",
+      "nextBadge": "Ancora {{days}} giorni al prossimo badge",
+      "allBadges": "Hai tutti i badge della serie!",
+      "checkIn": "Fai check-in oggi",
+      "checkedIn": "Check-in fatto oggi",
+      "badge_starter": "Riscaldamento",
+      "badge_week": "Una settimana",
+      "badge_fortnight": "Due settimane",
+      "badge_month": "Eroe del mese",
+      "badge_century": "Leggenda dei 100 giorni",
+      "daysShort": "{{days}} giorni"
     },
     "tier": {
       "levels": "Livelli",
@@ -258,7 +270,8 @@
     },
     "cashout": {
       "firstNote": "Il tuo primo prelievo deve essere di almeno $ {{usd}} USD ({{points}} punti).",
-      "firstNoteLong": "Il tuo primo prelievo deve essere di almeno $ {{usd}} USD ({{points}} punti). In seguito saranno disponibili importi più piccoli."
+      "firstNoteLong": "Il tuo primo prelievo deve essere di almeno $ {{usd}} USD ({{points}} punti). In seguito saranno disponibili importi più piccoli.",
+      "minNote": "Il prelievo minimo è di $ {{usd}} USD ({{points}} punti)."
     },
     "settings": {
       "timeZone": "Cambia fuso orario",

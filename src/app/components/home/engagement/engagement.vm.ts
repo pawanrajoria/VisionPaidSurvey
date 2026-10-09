@@ -43,10 +43,20 @@ export interface IStreakStatus {
     daysToDraw: number;
     drawsAvailable: number;
     maxPrizePoints: number;
+    /** False: the streak pays no cash; it earns badges instead of a prize draw. */
+    cashPrizes?: boolean;
+    badges?: IStreakBadge[];
     surveysCompleted: number;
     leaderboardThreshold: number;
     leaderboardUnlocked: boolean;
     surveysToUnlock: number;
+}
+
+export interface IStreakBadge {
+    days: number;
+    /** starter | week | fortnight | month | century */
+    key: string;
+    earned: boolean;
 }
 
 export interface ISurveyLimit {
@@ -61,6 +71,9 @@ export interface ICashoutRule {
     isFirstCashout: boolean;
     firstMinimumUsd: number;
     firstMinimumPoints: number;
+    /** Minimum for every cashout. */
+    minimumUsd?: number;
+    minimumPoints?: number;
 }
 
 export interface IEngagementSummary {

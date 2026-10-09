@@ -86,7 +86,19 @@
       "comeBack": "Kembali esok",
       "bonusIn": "+{{points}} mata bonus dalam {{days}} hari.",
       "bonusReady": "Bonus rentetan sedia hari ini!",
-      "dayStreak": "Rentetan {{count}} hari."
+      "dayStreak": "Rentetan {{count}} hari.",
+      "subtitleVisit": "Lawati atau daftar masuk setiap hari untuk kekalkan rentetan anda",
+      "badgesTitle": "Lencana rentetan",
+      "nextBadge": "{{days}} hari lagi ke lencana seterusnya",
+      "allBadges": "Anda ada semua lencana rentetan!",
+      "checkIn": "Daftar masuk hari ini",
+      "checkedIn": "Sudah daftar masuk hari ini",
+      "badge_starter": "Memanaskan badan",
+      "badge_week": "Seminggu",
+      "badge_fortnight": "Dua minggu",
+      "badge_month": "Wira bulanan",
+      "badge_century": "Lagenda 100 hari",
+      "daysShort": "{{days}} hari"
     },
     "tier": {
       "levels": "Tahap",
@@ -258,7 +270,8 @@
     },
     "cashout": {
       "firstNote": "Tunai keluar pertama anda mestilah sekurang-kurangnya $ {{usd}} USD ({{points}} mata).",
-      "firstNoteLong": "Tunai keluar pertama anda mestilah sekurang-kurangnya $ {{usd}} USD ({{points}} mata). Selepas itu, jumlah yang lebih kecil boleh dikeluarkan."
+      "firstNoteLong": "Tunai keluar pertama anda mestilah sekurang-kurangnya $ {{usd}} USD ({{points}} mata). Selepas itu, jumlah yang lebih kecil boleh dikeluarkan.",
+      "minNote": "Pengeluaran minimum ialah $ {{usd}} USD ({{points}} mata)."
     },
     "settings": {
       "timeZone": "Tukar zon waktu",

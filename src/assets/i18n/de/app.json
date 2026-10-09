@@ -86,7 +86,19 @@
       "comeBack": "Kommen Sie morgen wieder",
       "bonusIn": "+{{points}} Bonuspunkte in {{days}} Tagen.",
       "bonusReady": "Der Serienbonus ist heute bereit!",
-      "dayStreak": "{{count}}-Tage-Serie."
+      "dayStreak": "{{count}}-Tage-Serie.",
+      "subtitleVisit": "Besuche uns oder checke jeden Tag ein, um deine Serie zu halten",
+      "badgesTitle": "Serien-Abzeichen",
+      "nextBadge": "Noch {{days}} Tage bis zum nächsten Abzeichen",
+      "allBadges": "Du hast alle Serien-Abzeichen!",
+      "checkIn": "Heute einchecken",
+      "checkedIn": "Heute eingecheckt",
+      "badge_starter": "Aufwärmen",
+      "badge_week": "Eine Woche",
+      "badge_fortnight": "Zwei Wochen",
+      "badge_month": "Monatsheld",
+      "badge_century": "100-Tage-Legende",
+      "daysShort": "{{days}} Tage"
     },
     "tier": {
       "levels": "Level",
@@ -258,7 +270,8 @@
     },
     "cashout": {
       "firstNote": "Ihre erste Auszahlung muss mindestens $ {{usd}} USD ({{points}} Punkte) betragen.",
-      "firstNoteLong": "Ihre erste Auszahlung muss mindestens $ {{usd}} USD ({{points}} Punkte) betragen. Danach sind auch kleinere Beträge möglich."
+      "firstNoteLong": "Ihre erste Auszahlung muss mindestens $ {{usd}} USD ({{points}} Punkte) betragen. Danach sind auch kleinere Beträge möglich.",
+      "minNote": "Die Mindestauszahlung beträgt $ {{usd}} USD ({{points}} Punkte)."
     },
     "settings": {
       "timeZone": "Zeitzone ändern",

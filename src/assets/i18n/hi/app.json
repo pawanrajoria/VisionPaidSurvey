@@ -86,7 +86,19 @@
       "comeBack": "कल फिर आएँ",
       "bonusIn": "{{days}} दिन में +{{points}} बोनस पॉइंट्स।",
       "bonusReady": "स्ट्रीक बोनस आज तैयार है!",
-      "dayStreak": "{{count}} दिन की स्ट्रीक।"
+      "dayStreak": "{{count}} दिन की स्ट्रीक।",
+      "subtitleVisit": "अपनी स्ट्रीक बनाए रखने के लिए रोज़ आएं या चेक-इन करें",
+      "badgesTitle": "स्ट्रीक बैज",
+      "nextBadge": "अगले बैज तक {{days}} दिन और",
+      "allBadges": "आपके पास सभी स्ट्रीक बैज हैं!",
+      "checkIn": "आज चेक-इन करें",
+      "checkedIn": "आज चेक-इन हो गया",
+      "badge_starter": "शुरुआत",
+      "badge_week": "एक हफ़्ता",
+      "badge_fortnight": "दो हफ़्ते",
+      "badge_month": "महीने का हीरो",
+      "badge_century": "100 दिन का लीजेंड",
+      "daysShort": "{{days}} दिन"
     },
     "tier": {
       "levels": "लेवल",
@@ -258,7 +270,8 @@
     },
     "cashout": {
       "firstNote": "आपका पहला कैशआउट कम से कम $ {{usd}} USD ({{points}} पॉइंट्स) का होना चाहिए।",
-      "firstNoteLong": "आपका पहला कैशआउट कम से कम $ {{usd}} USD ({{points}} पॉइंट्स) का होना चाहिए। उसके बाद छोटी रक़म भी निकाली जा सकती है।"
+      "firstNoteLong": "आपका पहला कैशआउट कम से कम $ {{usd}} USD ({{points}} पॉइंट्स) का होना चाहिए। उसके बाद छोटी रक़म भी निकाली जा सकती है।",
+      "minNote": "न्यूनतम निकासी $ {{usd}} USD ({{points}} पॉइंट्स) है।"
     },
     "settings": {
       "timeZone": "टाइम ज़ोन बदलें",

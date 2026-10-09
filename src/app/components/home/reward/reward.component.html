@@ -30,7 +30,7 @@
         @if (firstCashoutMinPoints > 0) {
         <p class="first-cashout-note" role="note">
             <mat-icon>info</mat-icon>
-            {{ 'app.cashout.firstNote' | translate:{ usd: cashoutRule?.firstMinimumUsd, points: (firstCashoutMinPoints | number:'1.0-0') } }}
+            {{ 'app.cashout.minNote' | translate:{ usd: cashoutMinUsd, points: (firstCashoutMinPoints | number:'1.0-0') } }}
         </p>
         }
 

@@ -34,7 +34,7 @@
         @if (summary.daily?.available) {
         <button type="button" class="pill daily" [class.alert]="!summary.daily.claimedToday" (click)="openSheet(dailySheet)"
             [attr.aria-label]="'app.streak.dailyTitle' | translate" [title]="'app.streak.dailyTitle' | translate">
-            <span>+{{ summary.daily.todayPoints }}</span>
+            @if (summary.daily.todayPoints > 0) { <span>+{{ summary.daily.todayPoints }}</span> }
             <mat-icon>{{ summary.daily.claimedToday ? 'check_circle' : 'event_available' }}</mat-icon>
         </button>
         }
@@ -207,7 +207,7 @@
         <div class="engage-head">
             <div>
                 <h2><mat-icon>local_fire_department</mat-icon> {{ 'app.streak.title' | translate }}</h2>
-                <p>{{ 'app.streak.subtitle' | translate }}</p>
+                <p>{{ (summary.streak.cashPrizes ? 'app.streak.subtitle' : 'app.streak.subtitleVisit') | translate }}</p>
             </div>
             <div class="streak-count">
                 <strong>{{ summary.streak.current }}</strong>
@@ -224,6 +224,7 @@
             }
         </ol>
 
+        @if (summary.streak.cashPrizes) {
         <div class="streak-reward">
             <mat-icon>redeem</mat-icon>
             <div>
@@ -231,8 +232,34 @@
                 <span>{{ 'app.streak.rewardSub' | translate:{ days: summary.streak.drawEveryDays } }}</span>
             </div>
         </div>
+        } @else if (summary.streak.badges?.length) {
+        <div class="streak-badges">
+            <strong>{{ 'app.streak.badgesTitle' | translate }}</strong>
+            <ul>
+                @for (b of summary.streak.badges; track b.key) {
+                <li [class.earned]="b.earned">
+                    <span class="badge-icon"><mat-icon>{{ b.earned ? 'military_tech' : 'lock' }}</mat-icon></span>
+                    <span class="badge-name">{{ 'app.streak.badge_' + b.key | translate }}</span>
+                    <small>{{ 'app.streak.daysShort' | translate:{ days: b.days } }}</small>
+                </li>
+                }
+            </ul>
+            <span class="badge-next">
+                @if (nextBadgeDays > 0) { {{ 'app.streak.nextBadge' | translate:{ days: nextBadgeDays } }} }
+                @else { {{ 'app.streak.allBadges' | translate }} }
+            </span>
+        </div>
+        }
 
-        @if (summary.streak.drawsAvailable > 0) {
+        @if (!summary.streak.cashPrizes) {
+        @if (summary.daily?.available && !summary.daily.claimedToday) {
+        <button type="button" class="claim-btn wide" [disabled]="claimingDaily" (click)="claimDaily()">
+            {{ claimingDaily ? ('app.streak.claiming' | translate) : ('app.streak.checkIn' | translate) }}
+        </button>
+        } @else {
+        <p class="streak-foot"><mat-icon>check_circle</mat-icon> {{ 'app.streak.checkedIn' | translate }}</p>
+        }
+        } @else if (summary.streak.drawsAvailable > 0) {
         <button type="button" class="claim-btn wide" [disabled]="drawing" (click)="drawPrize()">
             @if (drawing) { {{ 'app.streak.drawing' | translate }} }
             @else if (summary.streak.drawsAvailable > 1) { {{ 'app.streak.drawLeft' | translate:{ count: summary.streak.drawsAvailable } }} }
@@ -260,9 +287,9 @@
                 <h2><mat-icon>local_fire_department</mat-icon> {{ 'app.streak.dailyTitle' | translate }}</h2>
                 <p>
                     @if (summary.daily.streak > 0) { {{ 'app.streak.dayStreak' | translate:{ count: summary.daily.streak } }} }
-                    @if (summary.daily.daysToStreakBonus > 0) {
+                    @if (summary.daily.streakBonusPoints > 0 && summary.daily.daysToStreakBonus > 0) {
                     {{ 'app.streak.bonusIn' | translate:{ points: summary.daily.streakBonusPoints, days: summary.daily.daysToStreakBonus } }}
-                    } @else if (!summary.daily.claimedToday) {
+                    } @else if (summary.daily.streakBonusPoints > 0 && !summary.daily.claimedToday) {
                     {{ 'app.streak.bonusReady' | translate }}
                     }
                 </p>
@@ -272,14 +299,14 @@
                 @if (summary.daily.claimedToday) {
                 <mat-icon>check_circle</mat-icon> {{ 'app.streak.comeBack' | translate }}
                 } @else {
-                {{ claimingDaily ? ('app.streak.claiming' | translate) : ('app.streak.claim' | translate:{ points: summary.daily.todayPoints }) }}
+                {{ claimingDaily ? ('app.streak.claiming' | translate) : summary.daily.todayPoints > 0 ? ('app.streak.claim' | translate:{ points: summary.daily.todayPoints }) : ('app.streak.checkIn' | translate) }}
                 }
             </button>
         </div>
         <ol class="streak-dots" aria-hidden="true">
             @for (d of streakDays; track d) {
-            <li [class.done]="d <= streakPosition" [class.bonus]="d === streakDays.length">
-                @if (d === streakDays.length) { <mat-icon>redeem</mat-icon> } @else { {{ d }} }
+            <li [class.done]="d <= streakPosition" [class.bonus]="d === streakDays.length && summary.daily.streakBonusPoints > 0">
+                @if (d === streakDays.length && summary.daily.streakBonusPoints > 0) { <mat-icon>redeem</mat-icon> } @else { {{ d }} }
             </li>
             }
         </ol>

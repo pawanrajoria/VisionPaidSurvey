@@ -86,7 +86,19 @@
       "comeBack": "明天再来",
       "bonusIn": "{{days}} 天后可得 +{{points}} 奖励积分。",
       "bonusReady": "今天可领取连续奖励！",
-      "dayStreak": "已连续 {{count}} 天。"
+      "dayStreak": "已连续 {{count}} 天。",
+      "subtitleVisit": "每天访问或签到即可保持连续天数",
+      "badgesTitle": "连续徽章",
+      "nextBadge": "距离下一个徽章还有 {{days}} 天",
+      "allBadges": "你已获得全部连续徽章！",
+      "checkIn": "今天签到",
+      "checkedIn": "今天已签到",
+      "badge_starter": "热身",
+      "badge_week": "一周",
+      "badge_fortnight": "两周",
+      "badge_month": "月度英雄",
+      "badge_century": "百日传奇",
+      "daysShort": "{{days}} 天"
     },
     "tier": {
       "levels": "等级",
@@ -258,7 +270,8 @@
     },
     "cashout": {
       "firstNote": "首次提现金额不得低于 $ {{usd}} USD（{{points}} 积分）。",
-      "firstNoteLong": "首次提现金额不得低于 $ {{usd}} USD（{{points}} 积分）。之后可提现更小的金额。"
+      "firstNoteLong": "首次提现金额不得低于 $ {{usd}} USD（{{points}} 积分）。之后可提现更小的金额。",
+      "minNote": "最低提现金额为 $ {{usd}} USD（{{points}} 积分）。"
     },
     "settings": {
       "timeZone": "更改时区",

@@ -86,7 +86,19 @@
       "comeBack": "Vuelve mañana",
       "bonusIn": "+{{points}} puntos extra en {{days}} días.",
       "bonusReady": "¡El bono de racha está listo hoy!",
-      "dayStreak": "Racha de {{count}} días."
+      "dayStreak": "Racha de {{count}} días.",
+      "subtitleVisit": "Visita o haz check-in cada día para mantener tu racha",
+      "badgesTitle": "Insignias de racha",
+      "nextBadge": "Faltan {{days}} días para tu próxima insignia",
+      "allBadges": "¡Tienes todas las insignias de racha!",
+      "checkIn": "Hacer check-in hoy",
+      "checkedIn": "Check-in hecho hoy",
+      "badge_starter": "Calentamiento",
+      "badge_week": "Una semana",
+      "badge_fortnight": "Dos semanas",
+      "badge_month": "Héroe del mes",
+      "badge_century": "Leyenda de 100 días",
+      "daysShort": "{{days}} días"
     },
     "tier": {
       "levels": "Niveles",
@@ -258,7 +270,8 @@
     },
     "cashout": {
       "firstNote": "Tu primer cobro debe ser de al menos $ {{usd}} USD ({{points}} puntos).",
-      "firstNoteLong": "Tu primer cobro debe ser de al menos $ {{usd}} USD ({{points}} puntos). Después podrás cobrar importes menores."
+      "firstNoteLong": "Tu primer cobro debe ser de al menos $ {{usd}} USD ({{points}} puntos). Después podrás cobrar importes menores.",
+      "minNote": "El retiro mínimo es de $ {{usd}} USD ({{points}} puntos)."
     },
     "settings": {
       "timeZone": "Cambiar zona horaria",

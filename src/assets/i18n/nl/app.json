@@ -86,7 +86,19 @@
       "comeBack": "Kom morgen terug",
       "bonusIn": "+{{points}} bonuspunten over {{days}} dagen.",
       "bonusReady": "De reeksbonus staat vandaag klaar!",
-      "dayStreak": "Reeks van {{count}} dagen."
+      "dayStreak": "Reeks van {{count}} dagen.",
+      "subtitleVisit": "Kom elke dag langs of check in om je reeks te houden",
+      "badgesTitle": "Reeksbadges",
+      "nextBadge": "Nog {{days}} dagen tot je volgende badge",
+      "allBadges": "Je hebt alle reeksbadges!",
+      "checkIn": "Vandaag inchecken",
+      "checkedIn": "Vandaag ingecheckt",
+      "badge_starter": "Opwarmer",
+      "badge_week": "Eén week",
+      "badge_fortnight": "Twee weken",
+      "badge_month": "Maandheld",
+      "badge_century": "100-dagenlegende",
+      "daysShort": "{{days}} dagen"
     },
     "tier": {
       "levels": "Levels",
@@ -258,7 +270,8 @@
     },
     "cashout": {
       "firstNote": "Je eerste uitbetaling moet minimaal $ {{usd}} USD ({{points}} punten) zijn.",
-      "firstNoteLong": "Je eerste uitbetaling moet minimaal $ {{usd}} USD ({{points}} punten) zijn. Daarna zijn kleinere bedragen mogelijk."
+      "firstNoteLong": "Je eerste uitbetaling moet minimaal $ {{usd}} USD ({{points}} punten) zijn. Daarna zijn kleinere bedragen mogelijk.",
+      "minNote": "De minimale uitbetaling is $ {{usd}} USD ({{points}} punten)."
     },
     "settings": {
       "timeZone": "Tijdzone wijzigen",

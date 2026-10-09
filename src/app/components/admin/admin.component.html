@@ -635,6 +635,32 @@
             }
             }
 
+            @if (earningsSummary?.firstSurveyTest; as t) {
+            <div class="panel ab-test">
+                <div class="ab-head">
+                    <div>
+                        <h3>First-survey bonus test</h3>
+                        <p class="hint">${{ t.bonusUsd | number:'1.2-2' }} after the first confirmed survey for {{ t.treatmentPercent }}% of new earners
+                            @if (!t.enabled) { · <strong>switched off</strong> }. Users whose first survey is in this period.</p>
+                    </div>
+                    @if (t.withBonus.users > 0 && t.withoutBonus.users > 0) {
+                    <span class="verdict" [class.good]="t.incrementalProfitPerUser > 0" [class.bad]="t.incrementalProfitPerUser <= 0">
+                        {{ t.incrementalProfitPerUser > 0 ? 'Keep it' : 'Not paying off' }}:
+                        {{ t.incrementalProfitPerUser >= 0 ? '+' : '' }}${{ t.incrementalProfitPerUser | number:'1.2-3' }} profit / user
+                    </span>
+                    } @else {
+                    <span class="verdict">Not enough users yet</span>
+                    }
+                </div>
+                <div class="ab-groups">
+                    <div><span class="kpi-label">With bonus</span><strong>${{ t.withBonus.profitPerUser | number:'1.2-3' }}</strong>
+                        <small>profit / user · {{ t.withBonus.users | number }} users · {{ t.withBonus.repeatPercent }}% came back</small></div>
+                    <div><span class="kpi-label">Without bonus</span><strong>${{ t.withoutBonus.profitPerUser | number:'1.2-3' }}</strong>
+                        <small>profit / user · {{ t.withoutBonus.users | number }} users · {{ t.withoutBonus.repeatPercent }}% came back</small></div>
+                </div>
+            </div>
+            }
+
             <div class="section-head compact">
                 <div>
                     <h2>Bonuses paid</h2>

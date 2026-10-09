@@ -904,3 +904,48 @@ tbody tr[data-rejection="block"]:hover td { background: #fbdcd8; }
   .old { background: $brand; }
   .earn { background: #2fb37a; }
 }
+
+// ───────────── Earnings: first-survey bonus A/B test ─────────────
+.ab-test { margin-top: 12px; padding: 16px; }
+
+.ab-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+
+  h3 { margin: 0; font-size: 15px; }
+  .hint { margin: 4px 0 0; color: $muted; font-size: 12px; }
+}
+
+.verdict {
+  padding: 6px 12px;
+  border-radius: 16px;
+  background: #f1f5f4;
+  color: $muted;
+  font-size: 12px;
+  font-weight: 700;
+
+  &.good { background: #e3f4ee; color: #0f7a4f; }
+  &.bad { background: #fdecea; color: $danger; }
+}
+
+.ab-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 12px;
+    border-radius: 10px;
+    background: #f7faf9;
+  }
+
+  strong { font-size: 20px; }
+  small { color: $muted; font-size: 12px; }
+}
