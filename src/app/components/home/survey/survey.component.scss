@@ -228,3 +228,59 @@
     overflow: visible;
     /* Changed from hidden to show the tag overlapping the top */
 }
+.survey-limit-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  border: 1px solid #f0d58a;
+  border-radius: 12px;
+  background: #fff8e1;
+  color: #5c4500;
+  font-size: 14px;
+  line-height: 1.45;
+
+  mat-icon {
+    flex-shrink: 0;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    color: #b98900;
+  }
+}
+
+// ───────── Phone layout ─────────
+// Fixed 168px cards left a single narrow column with clipped names; two equal columns use the full width.
+@media (max-width: 600px) {
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: 0 2px;
+    }
+
+    .custom-card {
+        width: auto;
+        min-width: 0;
+
+        .top-bar {
+            gap: 6px;
+
+            .left {
+                flex-shrink: 0;
+                white-space: nowrap;
+            }
+
+            .right {
+                min-width: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 340px) {
+    .card-container {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}

@@ -1,12 +1,12 @@
 import { Component, OnInit } from "@angular/core";
-import { SharedModule } from "../../../shared.module";
+import { PublicSharedModule } from "../../../public-shared.module";
 import { MessageService } from "../../layout/message/message.service";
 import { MessageVM } from "../../layout/message/message.vm";
 import { HelpService } from "../../home/help/help.service";
 
 @Component({
     selector: 'app-root-contactus',
-    imports: [SharedModule],
+    imports: [PublicSharedModule],
     templateUrl: './root-contactus.component.html',
     styleUrls: ['./root-contactus.component.scss']
 })

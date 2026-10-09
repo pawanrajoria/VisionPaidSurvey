@@ -18,12 +18,12 @@
 
   <header class="pp-gc-hero">
     <div class="pp-gc-hero__media">
-      <img [src]="c.heroImage" [alt]="c.title" width="1200" height="500" />
+      <img loading="lazy" [src]="c.heroImage" [alt]="c.title" width="1200" height="500" />
     </div>
 
     <div class="pp-gc-hero__panel">
       <div class="pp-gc-hero__brand">
-        <img [src]="c.logoUrl" [alt]="c.brand" class="pp-logo" />
+        <img loading="lazy" [src]="c.logoUrl" [alt]="c.brand" class="pp-logo" />
         <div>
           <h1>{{ c.title }}</h1>
           <div class="pp-rating">

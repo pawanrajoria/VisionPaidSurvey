@@ -21,7 +21,7 @@ import { MatProgressSpinner } from "@angular/material/progress-spinner";
     MatButtonModule,
     MatIconModule,
     MatProgressSpinner
-],
+  ],
   template: `
 
    <div class="completed-container">
@@ -138,8 +138,8 @@ import { MatProgressSpinner } from "@angular/material/progress-spinner";
 })
 export class CompletedComponent extends BaseComponent {
 
-  redirectLink:string="";
-  isLoading=false;
+  redirectLink: string = "";
+  isLoading = false;
 
   constructor(private respondentService: RespondentService, private helperService: HelperService,
     private localStorageService: LocalStorageService
@@ -157,7 +157,7 @@ export class CompletedComponent extends BaseComponent {
     if (!this.localStorageService.getItem('LandedUrl'))
       return;
 
-    self.isLoading=true;
+    self.isLoading = true;
 
     const duid = await this.helperService.getOrInitializeDuid();
 
@@ -176,14 +176,17 @@ export class CompletedComponent extends BaseComponent {
       request.requestUrl = request.requestUrl.replace("/#/", "/");
     }
 
-    const ourputUrl: RespondentEndSurveyResponseVM = await self.respondentService.completeRespondent(request);
-    if (!!ourputUrl && !!ourputUrl.requestUrl) {
-      if (this.win) {
+    // On failure both buttons used to stay disabled forever (isLoading never reset).
+    try {
+      const ourputUrl: RespondentEndSurveyResponseVM = await self.respondentService.completeRespondent(request);
+      if (!!ourputUrl && !!ourputUrl.requestUrl) {
         this.redirectLink = ourputUrl.requestUrl;
       }
+    } catch {
+      this.redirectLink = '';
+    } finally {
+      self.isLoading = false;
     }
-    
-    self.isLoading=false;
   }
 
 
@@ -195,7 +198,8 @@ export class CompletedComponent extends BaseComponent {
 
   finish(): void {
     if (!!this.win) {
-      window.close();
+      // Without a return link, go to the home page rather than reloading this one.
+      window.location.href = this.redirectLink || window.location.origin;
     }
   }
 }

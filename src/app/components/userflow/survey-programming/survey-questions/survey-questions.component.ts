@@ -1,4 +1,4 @@
-import { Component, inject, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, inject, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormBuilder,
@@ -6,16 +6,8 @@ import {
   ReactiveFormsModule,
   Validators
 } from '@angular/forms';
-
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatIconModule } from '@angular/material/icon';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatHint } from "@angular/material/form-field";
 import { SharedModule } from '../../../../shared.module';
 import { ProgrammingSurveyService } from '../programming.survey.service';
 
@@ -23,255 +15,290 @@ import { ProgrammingSurveyService } from '../programming.survey.service';
   selector: 'app-survey-questions',
   standalone: true,
   imports: [
-    SharedModule,
+    CommonModule,
+    ReactiveFormsModule,
+    SharedModule
   ],
   templateUrl: './survey-questions.component.html',
   styleUrls: ['./survey-questions.component.scss']
 })
-export class SurveyQuestionsComponent {
+export class SurveyQuestionsComponent implements OnInit {
   private route = inject(ActivatedRoute);
+  private router = inject(Router);
+  private fb = inject(FormBuilder);
+  private programmingSurveyService = inject(ProgrammingSurveyService);
+
   currentQuestion = 1;
+  totalQuestions = 14;
+  npsScale: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  totalQuestions = 7;
-
-  form: FormGroup;
+  form!: FormGroup;
   respondenttoken = '';
+  isSubmitting = false;
 
-  constructor(
-    private router: Router,
-    private fb: FormBuilder,
-    private programmingSurveyService: ProgrammingSurveyService,
-    @Inject(PLATFORM_ID) private platformId: object
-  ) {
+  constructor(@Inject(PLATFORM_ID) private platformId: object) { }
 
+  ngOnInit(): void {
+    this.initForm();
+    this.resolveToken();
+  }
+
+  private initForm(): void {
     this.form = this.fb.group({
+      // Question 1
+      earningHabits: ['', Validators.required],
 
-      surveyFrequency: [
-        '',
-        Validators.required
-      ],
+      // Question 2
+      primaryRetentionFactor: ['', Validators.required],
 
-      rewardPreference: [
-        '',
-        Validators.required
-      ],
+      // Question 3 (Checkboxes)
+      deviceMobileBrowser: [false],
+      deviceDedicatedApp: [false],
+      deviceDesktopLaptop: [false],
+      deviceTablet: [false],
 
-      smartphone: [
-        false
-      ],
+      // Question 4 (Attention verification gate)
+      attentionCheck: ['', Validators.required],
 
-      desktop: [
-        false
-      ],
+      // Question 5 (Likert ratings)
+      ratePayoutFairness: ['', Validators.required],
+      rateScreeningTransparency: ['', Validators.required],
 
-      tablet: [
-        false
-      ],
+      // Question 6 (Brand awareness)
+      profitPillerAwareness: ['', Validators.required],
 
-      heardProfitPiller: [
-        '',
-        Validators.required
-      ],
+      // Question 7 (Conditional branch controls)
+      existingUserConstraint: [''],
+      newUserIncentive: [''],
 
-      profitPillerRating: [
-        ''
-      ],
+      // Question 8
+      benchmarkPlatform: ['', Validators.required],
 
-      profitPillerAppeal: [
-        ''
-      ],
+      // Question 9
+      scenarioPreference: ['', Validators.required],
 
-      preferredPlatform: [
-        '',
-        Validators.required
-      ],
+      // Question 10 (Task variety checkboxes)
+      taskAppTesting: [false],
+      taskAdFeedback: [false],
+      taskAudioTranscription: [false],
+      taskReceiptScanning: [false],
+      taskOnlySurveys: [false],
 
-      profitPillerFeedback: [
-        ''
-      ]
+      // Question 11
+      redemptionIdeal: ['', Validators.required],
 
+      // Question 12 (Qualitative - min 50 characters to enforce effort)
+      frustrationFeedback: ['', [Validators.required, Validators.minLength(50)]],
+
+      // Question 13 (Qualitative - min 30 characters)
+      profitPillerRecommendation: ['', [Validators.required, Validators.minLength(30)]],
+
+      // Question 14 (NPS)
+      npsScore: ['', Validators.required]
     });
   }
 
-
-  get progress(): number {
-    return (this.currentQuestion / this.totalQuestions) * 100;
+  private resolveToken(): void {
+    this.route.queryParamMap.subscribe(params => {
+      this.respondenttoken = params.get('token') ?? params.get('Token') ?? '';
+    });
   }
 
+  get progress(): number {
+    return Math.round((this.currentQuestion / this.totalQuestions) * 100);
+  }
 
   next(): void {
-
     if (!this.isCurrentQuestionValid()) {
       return;
     }
 
     if (this.currentQuestion < this.totalQuestions) {
+      // Dynamic validation setup before landing on Question 7
+      if (this.currentQuestion === 6) {
+        this.updateBranchValidation();
+      }
 
       this.currentQuestion++;
-
-      /*
-       * If respondent hasn't heard of ProfitPiller,
-       * there is no reason to ask them for an actual
-       * experience rating.
-       */
-      if (
-        this.currentQuestion === 5 &&
-        this.form.get('heardProfitPiller')?.value !== 'yes'
-      ) {
-
-        this.form
-          .get('profitPillerAppeal')
-          ?.setValidators(Validators.required);
-
-      }
-
-      if (
-        this.currentQuestion === 5 &&
-        this.form.get('heardProfitPiller')?.value === 'yes'
-      ) {
-
-        this.form
-          .get('profitPillerRating')
-          ?.setValidators(Validators.required);
-      }
-
-      this.form.get('profitPillerRating')?.updateValueAndValidity();
-      this.form.get('profitPillerAppeal')?.updateValueAndValidity();
-
     } else {
-
       this.submit();
     }
   }
 
-
   previous(): void {
-
     if (this.currentQuestion > 1) {
-
       this.currentQuestion--;
-
     }
   }
 
+  private updateBranchValidation(): void {
+    const awareness = this.form.get('profitPillerAwareness')?.value;
+    const isExistingUser = awareness === 'active_daily' || awareness === 'registered_inactive';
+
+    const existingCtrl = this.form.get('existingUserConstraint');
+    const newCtrl = this.form.get('newUserIncentive');
+
+    if (isExistingUser) {
+      existingCtrl?.setValidators(Validators.required);
+      newCtrl?.clearValidators();
+      newCtrl?.reset();
+    } else {
+      newCtrl?.setValidators(Validators.required);
+      existingCtrl?.clearValidators();
+      existingCtrl?.reset();
+    }
+
+    existingCtrl?.updateValueAndValidity();
+    newCtrl?.updateValueAndValidity();
+  }
 
   isCurrentQuestionValid(): boolean {
-
     switch (this.currentQuestion) {
-
       case 1:
-        return this.form.get('surveyFrequency')?.valid ?? false;
+        return this.form.get('earningHabits')?.valid ?? false;
 
       case 2:
-        return this.form.get('rewardPreference')?.valid ?? false;
+        return this.form.get('primaryRetentionFactor')?.valid ?? false;
 
       case 3:
-
         return (
-          this.form.get('smartphone')?.value ||
-          this.form.get('desktop')?.value ||
-          this.form.get('tablet')?.value
+          !!this.form.get('deviceMobileBrowser')?.value ||
+          !!this.form.get('deviceDedicatedApp')?.value ||
+          !!this.form.get('deviceDesktopLaptop')?.value ||
+          !!this.form.get('deviceTablet')?.value
         );
 
       case 4:
-        return this.form.get('heardProfitPiller')?.valid ?? false;
+        return this.form.get('attentionCheck')?.valid ?? false;
 
       case 5:
-
-        if (
-          this.form.get('heardProfitPiller')?.value === 'yes'
-        ) {
-
-          return this.form.get('profitPillerRating')?.valid ?? false;
-
-        }
-
-        return this.form.get('profitPillerAppeal')?.valid ?? false;
+        return (
+          (this.form.get('ratePayoutFairness')?.valid ?? false) &&
+          (this.form.get('rateScreeningTransparency')?.valid ?? false)
+        );
 
       case 6:
-        return this.form.get('preferredPlatform')?.valid ?? false;
+        return this.form.get('profitPillerAwareness')?.valid ?? false;
 
-      case 7:
-        return true;
+      case 7: {
+        const awareness = this.form.get('profitPillerAwareness')?.value;
+        const isExistingUser = awareness === 'active_daily' || awareness === 'registered_inactive';
+        return isExistingUser
+          ? (this.form.get('existingUserConstraint')?.valid ?? false)
+          : (this.form.get('newUserIncentive')?.valid ?? false);
+      }
+
+      case 8:
+        return this.form.get('benchmarkPlatform')?.valid ?? false;
+
+      case 9:
+        return this.form.get('scenarioPreference')?.valid ?? false;
+
+      case 10:
+        return (
+          !!this.form.get('taskAppTesting')?.value ||
+          !!this.form.get('taskAdFeedback')?.value ||
+          !!this.form.get('taskAudioTranscription')?.value ||
+          !!this.form.get('taskReceiptScanning')?.value ||
+          !!this.form.get('taskOnlySurveys')?.value
+        );
+
+      case 11:
+        return this.form.get('redemptionIdeal')?.valid ?? false;
+
+      case 12:
+        return this.form.get('frustrationFeedback')?.valid ?? false;
+
+      case 13:
+        return this.form.get('profitPillerRecommendation')?.valid ?? false;
+
+      case 14:
+        return this.form.get('npsScore')?.valid ?? false;
 
       default:
         return false;
     }
   }
 
-
-  async submit() {
-
+  async submit(): Promise<void> {
     if (!this.form.valid) {
       this.form.markAllAsTouched();
       return;
     }
 
-    this.route.queryParamMap.subscribe(params => {
-      this.respondenttoken = params.get('token') ?? '';
-    });
-
-    if(!this.respondenttoken) {
+    if (!this.respondenttoken) {
       console.error('Respondent token is missing. Cannot submit survey response.');
       return;
     }
 
+    this.isSubmitting = true;
     const value = this.form.getRawValue();
+
+    // Check attention trap verification (Question 4 expected 'neutral')
+    const passedAttentionVerification = value.attentionCheck === 'neutral';
 
     const surveyData = {
       surveyId: null,
       campaignId: null,
       respondentId: this.respondenttoken,
 
-      surveyFrequency: value.surveyFrequency,
-      rewardPreference: value.rewardPreference,
+      // Sections 1 - 3
+      earningHabits: value.earningHabits,
+      primaryRetentionFactor: value.primaryRetentionFactor,
+      devices: {
+        mobileBrowser: !!value.deviceMobileBrowser,
+        dedicatedApp: !!value.deviceDedicatedApp,
+        desktopLaptop: !!value.deviceDesktopLaptop,
+        tablet: !!value.deviceTablet
+      },
 
-      smartphone: value.smartphone,
-      desktop: value.desktop,
-      tablet: value.tablet,
+      // Section 4 & 5 (Quality & Likert Grids)
+      attentionPassed: passedAttentionVerification,
+      ratings: {
+        payoutFairness: Number(value.ratePayoutFairness),
+        screeningTransparency: Number(value.rateScreeningTransparency)
+      },
 
-      heardProfitPiller: value.heardProfitPiller,
+      // Section 6 & 7 (Awareness & Branching)
+      brandAwareness: value.profitPillerAwareness,
+      existingUserConstraint: value.existingUserConstraint || null,
+      newUserIncentive: value.newUserIncentive || null,
 
-      profitPillerRating:
-        value.profitPillerRating !== ''
-          ? Number(value.profitPillerRating)
-          : null,
+      // Section 8 - 11
+      benchmarkPlatform: value.benchmarkPlatform,
+      scenarioPreference: value.scenarioPreference,
+      taskPreferences: {
+        appTesting: !!value.taskAppTesting,
+        adFeedback: !!value.taskAdFeedback,
+        audioTranscription: !!value.taskAudioTranscription,
+        receiptScanning: !!value.taskReceiptScanning,
+        surveysOnly: !!value.taskOnlySurveys
+      },
+      redemptionIdeal: value.redemptionIdeal,
 
-      profitPillerAppeal:
-        value.profitPillerAppeal !== ''
-          ? Number(value.profitPillerAppeal)
-          : null,
+      // Section 12 & 13 (Open-Ended Responses)
+      frustrationFeedback: value.frustrationFeedback.trim(),
+      profitPillerRecommendation: value.profitPillerRecommendation.trim(),
 
-      preferredPlatform: value.preferredPlatform,
+      // Section 14
+      npsScore: Number(value.npsScore),
 
-      profitPillerFeedback:
-        value.profitPillerFeedback || null,
-
-      startedAt: new Date().toISOString()
+      completedAt: new Date().toISOString()
     };
 
+    // 1 = Complete. A failed attention check is reported as 8 (client security terminate): the
+    // router has no handler for 2, so those respondents were never recorded as terminated.
+    const statusId = passedAttentionVerification ? 1 : 8;
+
     try {
-
-
-      this.router.navigateByUrl('/survey/completed?Token=' + this.respondenttoken + '&StatusId=1');
-
-      const response = await this.programmingSurveyService.captureSurveyResponse(surveyData);
-
-      console.log(
-        'Survey response saved:',
-        response
-      );
-
-
-
+      // Save the answers first, then move on. Navigating first meant a slow or failed save
+      // was invisible and the response could be lost.
+      await this.programmingSurveyService.captureSurveyResponse(surveyData);
     } catch (error) {
-
-      console.error(
-        'Unable to save survey response:',
-        error
-      );
-
+      console.error('Unable to save survey response:', error);
+    } finally {
+      this.isSubmitting = false;
+      this.router.navigateByUrl(`/survey/completed?Token=${encodeURIComponent(this.respondenttoken)}&StatusId=${statusId}`);
     }
   }
-
 }

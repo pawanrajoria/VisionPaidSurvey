@@ -1,33 +1,36 @@
 {
-  "footer": {
-    "trust": "Eccellente",
-    "copyright": "© 2026 Profit Piller. Tutti i diritti riservati.",
-    "product_of": "Un prodotto di",
-    "platform": {
-      "title": "Piattaforma",
-      "login": "Accedi o Registrati",
-      "about": "Informazioni su ProfitPiller",
-      "contact": "Contattaci",
-      "help": "Aiuto"
-    },
-    "legal": {
-      "title": "Legale",
-      "privacy": "Informativa sulla privacy",
-      "terms": "Termini e condizioni",
-      "cookie": "Politica sui cookie",
-      "dns": "Non vendere le mie informazioni"
-    },
-    "explore": {
-      "title": "Esplora di più",
-      "cash": "Guadagna con i sondaggi",
-      "gift": "Carte regalo",
-      "amazon": "Carte regalo Amazon",
-      "paypal": "Ricompense PayPal",
-      "visa": "Carte regalo Visa"
-    },
-    "follow": {
-      "title": "Seguici",
-      "download": "Scarica la nostra app"
+    "footer": {
+        "trust": "Eccellente",
+        "copyright": "© 2026 Profit Piller. Tutti i diritti riservati.",
+        "product_of": "Un prodotto di",
+        "platform": {
+            "title": "Piattaforma",
+            "login": "Accedi o Registrati",
+            "about": "Informazioni su ProfitPiller",
+            "contact": "Contattaci",
+            "help": "Aiuto",
+            "blog": "Blog",
+            "guides": "Guide",
+            "gift_cards": "Buoni regalo"
+        },
+        "legal": {
+            "title": "Legale",
+            "privacy": "Informativa sulla privacy",
+            "terms": "Termini e condizioni",
+            "cookie": "Politica sui cookie",
+            "dns": "Non vendere le mie informazioni"
+        },
+        "explore": {
+            "title": "Esplora di più",
+            "cash": "Guadagna con i sondaggi",
+            "gift": "Carte regalo",
+            "amazon": "Carte regalo Amazon",
+            "paypal": "Ricompense PayPal",
+            "visa": "Carte regalo Visa"
+        },
+        "follow": {
+            "title": "Seguici",
+            "download": "Scarica la nostra app"
+        }
     }
-  }
 }

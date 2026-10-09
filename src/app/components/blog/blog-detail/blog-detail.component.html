@@ -19,7 +19,7 @@
 
   <header class="pp-article-hero">
     <div class="pp-article-hero__media">
-      <img [src]="p.coverImage" [alt]="p.title" width="1200" height="600" />
+      <img loading="lazy" [src]="p.coverImage" [alt]="p.title" width="1200" height="600" />
       <span class="pp-value-tag" *ngIf="p.estimatedEarnings">{{ p.estimatedEarnings }}</span>
     </div>
     <div class="pp-article-hero__meta">
@@ -30,7 +30,7 @@
       <h1>{{ p.title }}</h1>
       <p class="pp-excerpt">{{ p.excerpt }}</p>
       <div class="pp-byline">
-        <img [src]="p.author.avatar" [alt]="p.author.name" class="pp-avatar" />
+        <img loading="lazy" [src]="p.author.avatar" [alt]="p.author.name" class="pp-avatar" />
         <div>
           <strong>{{ p.author.name }}</strong>
           <div class="pp-byline__dates">

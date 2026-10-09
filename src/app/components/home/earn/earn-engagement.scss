@@ -1,0 +1,546 @@
+// Styles for the engagement blocks at the top of the Earn page
+// (profile banner, priority offers, offer of the day). The balance, streak, daily check-in
+// and getting-started pills live in the header: layout/header/header-engagement.scss.
+$brand: #105749;
+$brand-dark: #0b3d33;
+$gold: #f5b301;
+$ink: #14231f;
+$muted: #5d6d68;
+$line: #dfe7e4;
+
+.profile-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: linear-gradient(120deg, $brand 0%, $brand-dark 100%);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(16, 87, 73, 0.22);
+
+  .banner-coin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  .banner-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+
+    strong {
+      font-size: 16px;
+      line-height: 1.3;
+    }
+
+    small {
+      font-size: 13px;
+      opacity: 0.85;
+    }
+  }
+
+  .banner-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: $gold;
+    color: #3a2a00;
+    font-size: 14px;
+    font-weight: 700;
+
+    mat-icon {
+      font-size: 18px;
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &:focus-visible {
+    outline: 3px solid $gold;
+    outline-offset: 2px;
+  }
+}
+
+.priority-section {
+  margin-bottom: 22px;
+  padding: 0; // a global "section" rule adds 30px above and below otherwise
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 20px;
+    font-weight: 700;
+    color: $ink;
+
+    .bolt {
+      color: #e08600;
+    }
+
+    .title-note {
+      margin-left: 4px;
+      color: $muted;
+      font-size: 13px;
+      font-weight: 400;
+    }
+  }
+}
+
+.priority-slider {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 340px);
+  gap: 12px;
+  padding: 10px 2px 6px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.priority-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 14px 14px;
+  border: 2px solid $gold;
+  border-radius: 16px;
+  background: linear-gradient(160deg, #fffaf0 0%, #ffffff 60%);
+  color: $ink;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  scroll-snap-align: start;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(224, 134, 0, 0.22);
+  }
+
+  &:focus-visible {
+    outline: 3px solid $brand;
+    outline-offset: 2px;
+  }
+}
+
+.priority-tag {
+  position: absolute;
+  top: -11px;
+  left: 14px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #d9480f;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px rgba(217, 72, 15, 0.35);
+}
+
+.priority-media {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: 14px;
+  background: rgba(16, 87, 73, 0.08);
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  mat-icon {
+    font-size: 34px;
+    width: 34px;
+    height: 34px;
+    color: $brand;
+  }
+}
+
+.priority-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.priority-title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.priority-desc {
+  color: $muted;
+  font-size: 12.5px;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.priority-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.priority-points {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 800;
+  color: $brand;
+  font-variant-numeric: tabular-nums;
+}
+
+.priority-go {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: auto;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: $brand;
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+
+  mat-icon {
+    font-size: 15px;
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.claim-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  height: 40px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 12px;
+  background: $brand;
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+
+  &:hover:not(:disabled) {
+    background: $brand-dark;
+  }
+
+  &:disabled {
+    background: #e8efed;
+    color: $muted;
+    cursor: default;
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba(16, 87, 73, 0.4);
+    outline-offset: 2px;
+  }
+}
+
+@media (max-width: 520px) {
+  .profile-banner .banner-text small {
+    display: none;
+  }
+
+  .priority-slider {
+    grid-auto-columns: 86%;
+  }
+
+  .claim-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .priority-card,
+  .priority-slider {
+    transition: none;
+    scroll-behavior: auto;
+  }
+}
+
+// ───────── Survey-limit notice ─────────
+.limit-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border: 1px solid #f0d58a;
+  border-radius: 12px;
+  background: #fff8e1;
+  color: #5c4500;
+  font-size: 14px;
+  line-height: 1.45;
+
+  mat-icon {
+    flex-shrink: 0;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    color: #b98900;
+  }
+}
+
+.claim-btn.wide {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-decoration: none;
+}
+
+.sheet-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: #f1f5f4;
+  color: $ink;
+  cursor: pointer;
+
+  mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba(16, 87, 73, 0.4);
+  }
+}
+
+// The notice is one line until tapped.
+button.limit-notice {
+  width: 100%;
+  align-items: center;
+  font: inherit;
+  font-size: 13.5px;
+  text-align: left;
+  cursor: pointer;
+
+  span {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .more {
+    color: #8a6a00;
+  }
+
+  &.open span {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-banner {
+    gap: 10px;
+    margin-bottom: 12px;
+    padding: 10px 12px;
+
+    .banner-coin {
+      width: 38px;
+      height: 38px;
+    }
+
+    .banner-text strong {
+      font-size: 14px;
+    }
+
+    .banner-cta {
+      padding: 7px 12px;
+      font-size: 13px;
+    }
+  }
+
+  .priority-section {
+    margin-bottom: 14px;
+
+    .section-title {
+      flex-wrap: wrap;
+      font-size: 17px;
+
+      .title-note {
+        flex-basis: 100%;
+        margin-left: 30px;
+        font-size: 12px;
+      }
+    }
+
+    .actions {
+      display: none; // swipe instead of arrow buttons on touch screens
+    }
+  }
+
+  .priority-card {
+    padding: 16px 12px 12px;
+  }
+
+  .priority-media {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+// ───────── Offer of the day popup ─────────
+.promo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 22px 18px;
+  color: $ink;
+  text-align: center;
+
+  h2 {
+    margin: 2px 0 6px;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  p {
+    margin: 0 0 10px;
+    color: $muted;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+}
+
+.promo-tag {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #d9480f;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.promo-img {
+  width: 112px;
+  height: 112px;
+  margin: 14px 0 12px;
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow: 0 10px 24px rgba(16, 87, 73, 0.18);
+
+  &.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(16, 87, 73, 0.08);
+    color: $brand;
+
+    mat-icon {
+      font-size: 52px;
+      width: 52px;
+      height: 52px;
+    }
+  }
+}
+
+.promo-kicker {
+  color: #c2410c;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.promo-points {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0 16px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #fff8e1;
+  color: #7a5900;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.promo .claim-btn.wide {
+  height: 48px;
+  font-size: 15px;
+}
+
+.promo-later {
+  min-height: 40px;
+  margin-top: 6px;
+  border: 0;
+  background: transparent;
+  color: $muted;
+  font: inherit;
+  font-size: 13.5px;
+  cursor: pointer;
+}

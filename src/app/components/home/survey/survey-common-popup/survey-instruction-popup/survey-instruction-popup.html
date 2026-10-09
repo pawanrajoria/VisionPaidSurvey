@@ -3,54 +3,52 @@
         <div class="header-icon-box">
             <mat-icon>assignment_turned_in</mat-icon>
         </div>
-        <h2 mat-dialog-title>Qualification</h2>
-        <button mat-icon-button (click)="closeQualification()" class="close-btn">
+        <h2 mat-dialog-title>{{ 'app.survey.instruction.title' | translate }}</h2>
+        <button mat-icon-button (click)="closeQualification()" class="close-btn" [attr.aria-label]="'app.common.close' | translate">
             <mat-icon>close</mat-icon>
         </button>
     </div>
 
     <mat-dialog-content class="modal-body">
         <div class="intro-text">
-            <h3>Share your opinion</h3>
-            <span class="privacy-badge">Your responses are completely anonymous</span>
+            <h3>{{ 'app.survey.instruction.share' | translate }}</h3>
+            <span class="privacy-badge">{{ 'app.survey.instruction.anonymous' | translate }}</span>
         </div>
 
         <div class="rules-container">
             <div class="rule-card">
                 <div class="rule-header">
                     <mat-icon>groups</mat-icon>
-                    <h4>Participation</h4>
+                    <h4>{{ 'app.survey.instruction.participation' | translate }}</h4>
                 </div>
-                <p>Before starting a survey, you might need to answer a few short questions to check if you're a match
-                    for the survey’s requirements.</p>
+                <p>{{ 'app.survey.instruction.participationText' | translate }}</p>
             </div>
 
             <div class="rule-card">
                 <div class="rule-header">
                     <mat-icon>verified_user</mat-icon>
-                    <h4>Honesty</h4>
+                    <h4>{{ 'app.survey.instruction.honesty' | translate }}</h4>
                 </div>
-                <p>Please answer truthfully and thoughtfully. False or inconsistent responses may result in
-                    disqualification from future surveys.</p>
+                <p>{{ 'app.survey.instruction.honestyText' | translate }}</p>
             </div>
 
             <div class="rule-card">
                 <div class="rule-header">
                     <mat-icon>security</mat-icon>
-                    <h4>Data Protection</h4>
+                    <h4>{{ 'app.survey.instruction.data' | translate }}</h4>
                 </div>
-                <p>We respect your privacy. Information like your device info or IP address may be collected but is
-                    handled securely and used only for survey relevance. Your identity will remain anonymous.</p>
+                <p>{{ 'app.survey.instruction.dataText' | translate }}</p>
             </div>
         </div>
     </mat-dialog-content>
 
     <mat-dialog-actions align="center" class="modal-footer">
         <p class="policy-agreement">
-            By taking this survey you accept our <a href="/privacy-policy" target="_blank">Privacy Policy</a>
+            {{ 'app.survey.instruction.accept' | translate }}
+            <a href="/privacy-policy" target="_blank">{{ 'app.survey.instruction.privacy' | translate }}</a>
         </p>
         <button mat-flat-button class="start-btn" (click)="startSurvey()">
-            START THIS SURVEY
+            {{ 'app.survey.instruction.start' | translate }}
         </button>
     </mat-dialog-actions>
 </div>

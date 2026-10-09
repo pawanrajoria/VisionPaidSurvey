@@ -1,0 +1,150 @@
+<div class="welcome-page">
+    <div class="welcome-card">
+
+        <div class="welcome-top">
+            <div class="reward-pill" aria-hidden="true">
+                <img src="/assets/images/homepagelogo.png" alt="" width="20" height="20">
+                {{ 'app.welcome.rewardPill' | translate:{ points: rewardPoints } }}
+            </div>
+            <div class="progress-track" role="progressbar" [attr.aria-valuenow]="progress" aria-valuemin="0"
+                aria-valuemax="100" [attr.aria-label]="'app.welcome.title' | translate">
+                <div class="progress-fill" [style.width.%]="progress"></div>
+            </div>
+            @if (!loading && !finished) {
+            <span class="step-count">{{ 'app.welcome.step' | translate:{ step: step + 1, total: totalSteps } }}</span>
+            }
+        </div>
+
+        @if (loading) {
+        <div class="welcome-body center">
+            <mat-spinner diameter="36"></mat-spinner>
+            <p class="muted">{{ 'app.welcome.ready' | translate }}</p>
+        </div>
+        }
+
+        <!-- STEP 0: basics -->
+        @if (!loading && !finished && step === 0) {
+        <div class="welcome-body">
+            <h1>{{ 'app.welcome.title' | translate }}</h1>
+            <p class="lead">{{ 'app.welcome.lead' | translate:{ points: rewardPoints } }}</p>
+
+            <fieldset class="field">
+                <legend>{{ 'app.welcome.iAm' | translate }}</legend>
+                <div class="chip-row">
+                    @for (g of genders; track g.value) {
+                    <button type="button" class="chip" [class.selected]="gender === g.value"
+                        [attr.aria-pressed]="gender === g.value" (click)="gender = g.value">
+                        <mat-icon>{{ g.icon }}</mat-icon>{{ g.label | translate }}
+                    </button>
+                    }
+                </div>
+            </fieldset>
+
+            <fieldset class="field">
+                <legend>{{ 'app.welcome.dob' | translate }}</legend>
+                <div class="dob-row">
+                    <select [(ngModel)]="day" [attr.aria-label]="'app.welcome.day' | translate">
+                        <option [ngValue]="null" disabled>{{ 'app.welcome.day' | translate }}</option>
+                        @for (d of days; track d) { <option [ngValue]="d">{{ d }}</option> }
+                    </select>
+                    <select [(ngModel)]="month" [attr.aria-label]="'app.welcome.month' | translate">
+                        <option [ngValue]="null" disabled>{{ 'app.welcome.month' | translate }}</option>
+                        @for (m of months; track m) { <option [ngValue]="m">{{ 'app.month.' + m | translate }}</option> }
+                    </select>
+                    <select [(ngModel)]="year" [attr.aria-label]="'app.welcome.year' | translate">
+                        <option [ngValue]="null" disabled>{{ 'app.welcome.year' | translate }}</option>
+                        @for (y of years; track y) { <option [ngValue]="y">{{ y }}</option> }
+                    </select>
+                </div>
+            </fieldset>
+
+            <div class="field">
+                <label for="welcome-zip">{{ 'app.welcome.zip' | translate }}</label>
+                <input id="welcome-zip" type="text" [(ngModel)]="zip" maxlength="20" autocomplete="postal-code"
+                    placeholder="110001">
+            </div>
+
+            @if (error) { <p class="error" role="alert">{{ error }}</p> }
+
+            <div class="actions">
+                <button type="button" class="btn-primary" [disabled]="saving" (click)="continueFromBasics()">
+                    @if (questions.length) { {{ 'app.common.continue' | translate }} }
+                    @else { {{ 'app.welcome.claim' | translate:{ points: rewardPoints } }} }
+                </button>
+                <button type="button" class="btn-link" [disabled]="saving" (click)="later()">
+                    {{ 'app.welcome.later' | translate }}
+                </button>
+            </div>
+        </div>
+        }
+
+        <!-- STEP 1..n: profile questions -->
+        @if (!loading && !finished && activeQuestion; as q) {
+        <div class="welcome-body">
+            <h2>{{ q.questionName }}</h2>
+            @if (isMulti) { <p class="muted">{{ 'app.welcome.selectAll' | translate }}</p> }
+
+            @if (isSingle || isMulti) {
+            <div class="option-list">
+                @for (a of q.answers; track trackAnswer($index, a)) {
+                <button type="button" class="option" [class.selected]="a.isSelected" [attr.aria-pressed]="a.isSelected"
+                    (click)="isSingle ? selectSingle(a) : toggleMulti(a)">
+                    <span class="mark" [class.square]="isMulti">
+                        @if (a.isSelected) { <mat-icon>check</mat-icon> }
+                    </span>
+                    <span>{{ a.answerName }}</span>
+                </button>
+                }
+            </div>
+            }
+
+            @if (isNumber || isText) {
+            @for (a of q.answers; track $index) {
+            <div class="field">
+                <input [type]="isNumber ? 'number' : 'text'" [(ngModel)]="a.answerText"
+                    [placeholder]="'app.welcome.typeAnswer' | translate" [attr.aria-label]="q.questionName">
+            </div>
+            }
+            }
+
+            @if (error) { <p class="error" role="alert">{{ error }}</p> }
+
+            <div class="actions">
+                <button type="button" class="btn-primary" [disabled]="!canSubmitQuestion || saving"
+                    (click)="submitQuestion()">
+                    @if (saving) { {{ 'app.common.saving' | translate }} }
+                    @else if (step === questions.length) { {{ 'app.welcome.finishClaim' | translate }} }
+                    @else { {{ 'app.common.next' | translate }} }
+                </button>
+                <div class="secondary-actions">
+                    <button type="button" class="btn-link" [disabled]="saving" (click)="back()">
+                        {{ 'app.common.back' | translate }}
+                    </button>
+                    <button type="button" class="btn-link" [disabled]="saving" (click)="skipQuestion()">
+                        {{ 'app.welcome.skip' | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+        }
+
+        <!-- DONE -->
+        @if (finished) {
+        <div class="welcome-body center">
+            <div class="burst" aria-hidden="true"><mat-icon>celebration</mat-icon></div>
+            @if (awardedPoints > 0) {
+            <h1>{{ 'app.welcome.wonTitle' | translate:{ points: awardedPoints } }}</h1>
+            <p class="lead">{{ 'app.welcome.wonSub' | translate }}</p>
+            } @else {
+            <h1>{{ 'app.welcome.savedTitle' | translate }}</h1>
+            <p class="lead">{{ resultMessage }}</p>
+            }
+            <div class="actions">
+                <button type="button" class="btn-primary" (click)="goToEarn()">
+                    {{ 'app.welcome.startEarning' | translate }}
+                </button>
+            </div>
+        </div>
+        }
+    </div>
+</div>

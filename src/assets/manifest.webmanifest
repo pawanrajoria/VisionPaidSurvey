@@ -1,6 +1,6 @@
 {
-  "name": "ProfitPiller",
-  "short_name": "ProfitPiller",
+  "name": "profitpiller",
+  "short_name": "profitpiller",
   "id": "/",
   "start_url": "/",
   "display": "standalone",

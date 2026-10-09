@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { ISurveyVM } from "./survey.vm";
 import { ConfigService } from "../../../config.service";
+import { Subject } from "rxjs";
 
 @Injectable({ providedIn: 'root' })
 export class SurveyService {
@@ -18,19 +19,26 @@ export class SurveyService {
     ];
 
     surveyspartners = [
+        { id: 21, name: 'PrimeEarn', logo: 'assets/images/partners/prime.png', rating: 5, bonus: 50, description: 'PrimeEarn', max: "10K" },
+        { id: 20, name: 'TheoremReach', logo: 'assets/images/partners/theoremreach.svg', rating: 5, bonus: 50, description: 'TheoremReach', max: "5K" },
         { id: 9, name: 'CPX Research', logo: 'assets/images/partners/logo-cpx-reserach-green.svg', rating: 4.5, bonus: 50, max: "4K" },
         { id: 2, name: 'Bit Lab', logo: 'assets/images/partners/BitLabsWhiteLogo.png', rating: 5, bonus: 50, description: 'RevU+', max: "3K" },
         { id: 10, name: 'SaySo', logo: 'assets/images/partners/sayso.webp', rating: 3.8, bonus: 50, description: 'RevU+', max: "5K" },
-        { id: 18, name: 'Dynata', logo: 'assets/images/partners/dynata.jpg', rating: 5, bonus: 50, description: 'Dynata', max: "10K" },
-        { id: 20, name: 'TheoremReach', logo: 'assets/images/partners/theoremreach.svg', rating: 5, bonus: 50, description: 'TheoremReach', max: "5K" },
-        { id: 21, name: 'PrimeEarn', logo: 'assets/images/partners/prime.png', rating: 5, bonus: 50, description: 'PrimeEarn', max: "10K" }
+        { id: 18, name: 'Dynata', logo: 'assets/images/partners/dynata.jpg', rating: 5, bonus: 50, description: 'Dynata', max: "10K" }
     ];
+
+    private refreshSurveys$ = new Subject<void>();
+    refresh$ = this.refreshSurveys$.asObservable();
 
     constructor(private http: HttpClient, private config: ConfigService) {
     }
 
-    async getSurveys(): Promise<any> {
-        return await this.http.get<any>(this.config.baseUrl + "survey/get-surveys").toPromise();
+    triggerSurveyRefresh() {
+        this.refreshSurveys$.next();
+    }
+
+    async getSurveys(background = false): Promise<any> {
+        return await this.http.get<any>(this.config.baseUrl + "survey/get-surveys", background ? { headers: { "X-Background": "true" } } : {}).toPromise();
     }
 
     // async getSurveys(): Promise<Array<ISurveyVM>> {

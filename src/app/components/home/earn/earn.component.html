@@ -1,10 +1,109 @@
 <div class="earn-page-wrapper">
     <div class="container-fluid py-3 py-md-4">
 
+        <!-- Admin-chosen offer of the day, shown once a day as a popup the user can close -->
+        <ng-template #promoTpl>
+            @if (promo; as p) {
+            <div class="promo">
+                <button type="button" class="sheet-close" (click)="closePromo()" [attr.aria-label]="'app.common.close' | translate"><mat-icon>close</mat-icon></button>
+                <span class="promo-tag">{{ p.tag || ('app.promo.today' | translate) }}</span>
+                @if (p.imageUrl) {
+                <img class="promo-img" [src]="p.imageUrl" alt="" (error)="hidePriorityImage(p)">
+                } @else {
+                <span class="promo-img icon"><mat-icon>redeem</mat-icon></span>
+                }
+                <small class="promo-kicker">{{ 'app.promo.today' | translate }}</small>
+                <h2>{{ p.title }}</h2>
+                @if (p.description) { <p>{{ p.description }}</p> }
+                @if (p.points > 0) {
+                <div class="promo-points">
+                    <img src="/assets/images/homepagelogo.png" alt="" width="20" height="20">
+                    {{ 'app.promo.earn' | translate:{ points: (p.points | number:'1.0-0') } }}
+                </div>
+                }
+                <button type="button" class="claim-btn wide" (click)="acceptPromo()">
+                    {{ 'app.promo.cta' | translate }} <mat-icon>arrow_forward</mat-icon>
+                </button>
+                <button type="button" class="promo-later" (click)="closePromo()">{{ 'app.promo.later' | translate }}</button>
+            </div>
+            }
+        </ng-template>
+
+        <!-- Welcome bonus still unclaimed -->
+        @if (showProfileBanner) {
+        <a class="profile-banner" [routerLink]="['/', currentLocale, 'app', 'welcome']">
+            <span class="banner-coin"><img src="/assets/images/homepagelogo.png" alt="" width="28" height="28"></span>
+            <span class="banner-text">
+                <strong>{{ 'app.earn.profileBannerTitle' | translate:{ points: summary?.onboarding?.rewardPoints } }}</strong>
+                <small>{{ 'app.earn.profileBannerSub' | translate }}</small>
+            </span>
+            <span class="banner-cta">{{ 'app.common.start' | translate }} <mat-icon>arrow_forward</mat-icon></span>
+        </a>
+        }
+
+        <!-- Admin-curated, country-wise priority offers -->
+        @if (priorityOffers.length > 0) {
+        <section class="priority-section" [attr.aria-label]="'app.earn.priorityOffers' | translate">
+            <div class="section-header">
+                <div class="section-title">
+                    <mat-icon class="bolt">bolt</mat-icon> {{ 'app.earn.priorityOffers' | translate }}
+                    <span class="title-note">{{ 'app.earn.priorityNote' | translate }}</span>
+                </div>
+                @if (priorityOffers.length > 2) {
+                <div class="actions">
+                    <button mat-icon-button (click)="scrollLeft('prioritySlider')" aria-label="Scroll left">
+                        <mat-icon>chevron_left</mat-icon>
+                    </button>
+                    <button mat-icon-button (click)="scrollRight('prioritySlider')" aria-label="Scroll right">
+                        <mat-icon>chevron_right</mat-icon>
+                    </button>
+                </div>
+                }
+            </div>
+            <div #prioritySlider class="priority-slider">
+                @for (offer of priorityOffers; track offer.id) {
+                <button type="button" class="priority-card" (click)="openPriorityOffer(offer)">
+                    <span class="priority-tag">{{ offer.tag }}</span>
+                    <span class="priority-media">
+                        @if (offer.imageUrl) {
+                        <img [src]="offer.imageUrl" alt="" loading="lazy" width="72" height="72"
+                            (error)="hidePriorityImage(offer)">
+                        } @else {
+                        <mat-icon>redeem</mat-icon>
+                        }
+                    </span>
+                    <span class="priority-body">
+                        <span class="priority-title">{{ offer.title }}</span>
+                        @if (offer.description) { <span class="priority-desc">{{ offer.description }}</span> }
+                        <span class="priority-foot">
+                            @if (offer.points > 0) {
+                            <span class="priority-points">
+                                <img src="/assets/images/homepagelogo.png" alt="" width="16" height="16">
+                                {{ 'app.earn.pointsCount' | translate:{ points: (offer.points | number:'1.0-0') } }}
+                            </span>
+                            }
+                            <span class="priority-go">{{ 'app.common.start' | translate }} <mat-icon>arrow_forward</mat-icon></span>
+                        </span>
+                    </span>
+                </button>
+                }
+            </div>
+        </section>
+        }
+
+        <!-- Why some surveys are hidden (new-account limit, proxy detected) -->
+        @if (surveyNotice) {
+        <button type="button" class="limit-notice" [class.open]="noticeOpen" (click)="noticeOpen = !noticeOpen" [attr.aria-expanded]="noticeOpen">
+            <mat-icon>info</mat-icon>
+            <span>{{ surveyNotice }}</span>
+            <mat-icon class="more">{{ noticeOpen ? 'expand_less' : 'expand_more' }}</mat-icon>
+        </button>
+        }
+
         <div class="row mb-4">
             <div class="col-12 d-flex justify-content-center">
                 <div class="top-filters-container">
-                    <span class="d-none d-sm-inline">Earn on</span>
+                    <span class="d-none d-sm-inline">{{ 'app.earn.earnOn' | translate }}</span>
                     <mat-button-toggle-group name="Change Devices" [(ngModel)]="selectedDeviceType"
                         (change)="filterItems()" class="toggle-group" multiple>
                         <mat-button-toggle value="Android"><i-tabler
@@ -20,14 +119,14 @@
                 <div class="section-container">
                     <div class="section-header">
                         <div class="section-title">
-                            <mat-icon color="accent">whatshot</mat-icon> Gaming Offers
+                            <mat-icon color="accent">whatshot</mat-icon> {{ 'app.earn.gamingOffers' | translate }}
                         </div>
                         <div class="actions">
-                            <span class="view-all" [routerLink]="['/', currentLocale, 'app', 'offers']">View All</span>
-                            <button mat-icon-button (click)="scrollLeft('gamingSlider')">
+                            <span class="view-all" [routerLink]="['/', currentLocale, 'app', 'offers']">{{ 'app.common.viewAll' | translate }}</span>
+                            <button mat-icon-button (click)="scrollLeft('gamingSlider')" aria-label="Scroll left">
                                 <mat-icon>chevron_left</mat-icon>
                             </button>
-                            <button mat-icon-button (click)="scrollRight('gamingSlider')">
+                            <button mat-icon-button (click)="scrollRight('gamingSlider')" aria-label="Scroll right">
                                 <mat-icon>chevron_right</mat-icon>
                             </button>
                         </div>
@@ -39,12 +138,12 @@
                         }@else{
                         <mat-card class="offer-card" *ngFor="let offer of gamingOffers"
                             (click)="openOfferDialog(offer)">
-                            <img mat-card-image [src]="offer.imageUrl" alt="{{offer.offerName}}">
+                            <img loading="lazy" mat-card-image [src]="offer.imageUrl" alt="{{offer.offerName}}">
                             <mat-card-content class="card-content">
                                 <h3>{{offer.offerName}}</h3>
                                 <p>{{offer.providerName}}</p>
                                 <span class="price">
-                                    <img class="logocoin" src="/assets/images/logo.png" alt="" />
+                                    <img loading="lazy" class="logocoin" src="/assets/images/homepagelogo.png" alt=""  width="200" height="200"/>
                                     {{offer.points}}
                                 </span>
                             </mat-card-content>
@@ -58,14 +157,14 @@
                 <div class="section-container">
                     <div class="section-header">
                         <div class="section-title">
-                            <mat-icon color="accent">local_offer</mat-icon> Other Offers
+                            <mat-icon color="accent">local_offer</mat-icon> {{ 'app.earn.otherOffers' | translate }}
                         </div>
                         <div class="actions">
-                            <span class="view-all">View All</span>
-                            <button mat-icon-button (click)="scrollLeft('offerSlider')">
+                            <span class="view-all">{{ 'app.common.viewAll' | translate }}</span>
+                            <button mat-icon-button (click)="scrollLeft('offerSlider')" aria-label="Scroll left">
                                 <mat-icon>chevron_left</mat-icon>
                             </button>
-                            <button mat-icon-button (click)="scrollRight('offerSlider')">
+                            <button mat-icon-button (click)="scrollRight('offerSlider')" aria-label="Scroll right">
                                 <mat-icon>chevron_right</mat-icon>
                             </button>
                         </div>
@@ -75,12 +174,12 @@
                         <app-empty-skelten></app-empty-skelten>
                         }@else{
                         <mat-card class="offer-card" *ngFor="let offer of otherOffers" (click)="openOfferDialog(offer)">
-                            <img mat-card-image [src]="offer.imageUrl" alt="{{offer.offerName}}">
+                            <img loading="lazy" mat-card-image [src]="offer.imageUrl" alt="{{offer.offerName}}">
                             <mat-card-content class="card-content">
                                 <h3>{{offer.offerName}}</h3>
                                 <p>{{offer.providerName}}</p>
                                 <span class="price">
-                                    <img class="logocoin" src="/assets/images/logo.png" alt="" />
+                                    <img loading="lazy" class="logocoin" src="/assets/images/homepagelogo.png" alt=""  width="200" height="200"/>
                                     {{offer.points}}
                                 </span>
                             </mat-card-content>
@@ -93,13 +192,13 @@
 
         <div class="section-container mt-5" *ngIf="featuredSurveys.length > 0">
             <div class="section-header">
-                <div class="section-title"><mat-icon color="primary">assignment</mat-icon> Featured Surveys</div>
+                <div class="section-title"><mat-icon color="primary">assignment</mat-icon> {{ 'app.earn.featuredSurveys' | translate }}</div>
                 <div class="actions">
-                    <span class="view-all" [routerLink]="['/', currentLocale, 'app', 'survey']">View All</span>
+                    <span class="view-all" [routerLink]="['/', currentLocale, 'app', 'survey']">{{ 'app.common.viewAll' | translate }}</span>
                     <button mat-icon-button
-                        (click)="scrollLeft('surveySlider')"><mat-icon>chevron_left</mat-icon></button>
+                        (click)="scrollLeft('surveySlider')" aria-label="Scroll left"><mat-icon>chevron_left</mat-icon></button>
                     <button mat-icon-button
-                        (click)="scrollRight('surveySlider')"><mat-icon>chevron_right</mat-icon></button>
+                        (click)="scrollRight('surveySlider')" aria-label="Scroll right"><mat-icon>chevron_right</mat-icon></button>
                 </div>
             </div>
             <div #surveySlider class="horizontal-scroll-container">
@@ -117,11 +216,11 @@
 
                                 <div class="stats-row">
                                     <div class="points">
-                                        <img src="/assets/images/logo.png" alt="points"> {{item.points}}
+                                        <img loading="lazy" src="/assets/images/homepagelogo.png" alt="points" width="200" height="200"> {{item.points}}
                                     </div>
                                     <div class="loi-info">
                                         <mat-icon>schedule</mat-icon>
-                                        <span>{{item.loi}} min</span>
+                                        <span>{{item.loi}} {{ 'app.common.min' | translate }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -139,12 +238,12 @@
 
         <div class="section-container mt-5">
             <div class="section-header">
-                <div class="section-title"><mat-icon color="primary">stars</mat-icon> Top Partners</div>
+                <div class="section-title"><mat-icon color="primary">stars</mat-icon> {{ 'app.earn.topPartners' | translate }}</div>
                 <div class="actions">
                     <button mat-icon-button
-                        (click)="scrollLeft('partnerSlider')"><mat-icon>chevron_left</mat-icon></button>
+                        (click)="scrollLeft('partnerSlider')" aria-label="Scroll left"><mat-icon>chevron_left</mat-icon></button>
                     <button mat-icon-button
-                        (click)="scrollRight('partnerSlider')"><mat-icon>chevron_right</mat-icon></button>
+                        (click)="scrollRight('partnerSlider')" aria-label="Scroll right"><mat-icon>chevron_right</mat-icon></button>
                 </div>
             </div>
             <div #partnerSlider class="horizontal-scroll-container">
@@ -153,10 +252,10 @@
                         [style.background]="partner.gradient || '#105749'" (click)="goToPartner(partner)">
 
                         <div class="status-badge" [ngClass]="partner.tagClass">
-                            {{ partner.tag || 'Popular' }}
+                            {{ partner.tag || ('app.earn.popular' | translate) }}
                         </div>
 
-                        <img [src]="partner.logo" class="partner-logo">
+                        <img loading="lazy" [src]="partner.logo" class="partner-logo">
 
                         <div class="partner-info">
                             <span class="label">{{ partner.name }}</span>
@@ -164,8 +263,8 @@
                                 <span class="rating">
                                     <mat-icon>star</mat-icon> {{ partner.rating }}
                                 </span>
-                                <span class="earn-limit">Up to <img class="logocoin" src="/assets/images/logo.png"
-                                        alt="" /> {{ partner.max }}
+                                <span class="earn-limit">{{ 'app.earn.upTo' | translate }} <img loading="lazy" class="logocoin" src="/assets/images/homepagelogo.png"
+                                        alt=""  width="200" height="200"/> {{ partner.max }}
                                 </span>
                             </div>
                         </div>
@@ -179,13 +278,13 @@
             <div class="section-header">
                 <div class="section-title">
                     <mat-icon color="accent">assignment</mat-icon>
-                    <span>Survey Partners</span>
+                    <span>{{ 'app.earn.surveyPartners' | translate }}</span>
                 </div>
                 <div class="actions">
                     <button mat-icon-button
-                        (click)="scrollLeft('surveyWallSlider')"><mat-icon>chevron_left</mat-icon></button>
+                        (click)="scrollLeft('surveyWallSlider')" aria-label="Scroll left"><mat-icon>chevron_left</mat-icon></button>
                     <button mat-icon-button
-                        (click)="scrollRight('surveyWallSlider')"><mat-icon>chevron_right</mat-icon></button>
+                        (click)="scrollRight('surveyWallSlider')" aria-label="Scroll right"><mat-icon>chevron_right</mat-icon></button>
                 </div>
             </div>
 
@@ -195,7 +294,7 @@
 
                     <div class="surveywallcard-top">
                         <div class="surveywallcard-logo">
-                            <img [src]="partner.logo" [alt]="partner.name">
+                            <img loading="lazy" [src]="partner.logo" [alt]="partner.name">
                         </div>
                         <div class="surveywallcard-name">
                             <strong>{{partner.name}}</strong>
@@ -210,7 +309,7 @@
 
                         <div class="survey-info">
                             <span class="count">{{ partner.max }}+</span>
-                            <span class="label">Surveys</span>
+                            <span class="label">{{ 'app.earn.surveys' | translate }}</span>
                         </div>
 
                         <mat-icon class="go-btn">chevron_right</mat-icon>
@@ -222,15 +321,15 @@
         <div class="quick-actions-container mt-5">
             <div class="action-item" [routerLink]="['/', currentLocale, 'app', 'cashout']">
                 <div class="icon-circle red"><mat-icon>redeem</mat-icon></div>
-                <span>Daily</span>
+                <span>{{ 'app.earn.daily' | translate }}</span>
             </div>
             <div class="action-item" [routerLink]="['/', currentLocale, 'app', 'refer']">
                 <div class="icon-circle blue"><mat-icon>group_add</mat-icon></div>
-                <span>Invite</span>
+                <span>{{ 'app.earn.invite' | translate }}</span>
             </div>
             <div class="action-item" [routerLink]="['/', currentLocale, 'app', 'account','activity']">
                 <div class="icon-circle green"><mat-icon>history</mat-icon></div>
-                <span>History</span>
+                <span>{{ 'app.earn.history' | translate }}</span>
             </div>
         </div>
     </div>

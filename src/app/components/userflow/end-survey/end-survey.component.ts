@@ -39,7 +39,6 @@ export class EndSurveyComponent extends BaseComponent {
   handleCpxMessage(encoded: string) {
     const decoded = this.decodeMessageId(encoded);
     const code = Number(decoded);
-    debugger;
     return code;
   }
 
@@ -54,16 +53,16 @@ export class EndSurveyComponent extends BaseComponent {
 
     // const transData = await self.respondentService.callCPXSurveyResponseApi(transactionId);
     // debugger;
-    const ourputUrl: RespondentEndSurveyResponseVM = await self.respondentService.endRespondent(token, transactionId, statusId);
-    if (!!ourputUrl && !!ourputUrl.requestUrl) {
-      if (this.win) {
-        this.win.location.href = ourputUrl.requestUrl;
-      }
+    // A failed status lookup used to leave the visitor on "Waiting for response..." forever.
+    let ourputUrl: RespondentEndSurveyResponseVM | null = null;
+    try {
+      ourputUrl = await self.respondentService.endRespondent(token, transactionId, statusId);
+    } catch {
+      ourputUrl = null;
     }
-    else {
-      if (this.win) {
-        this.win.location.href = "https://profitpiller.com";
-      }
+
+    if (this.win) {
+      this.win.location.href = ourputUrl?.requestUrl || this.win.location.origin;
     }
 
     self.isLoading = false;

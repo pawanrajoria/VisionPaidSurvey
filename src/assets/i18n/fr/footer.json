@@ -1,33 +1,36 @@
 {
-  "footer": {
-    "trust": "Excellent",
-    "copyright": "© 2026 Profit Piller. Tous droits réservés.",
-    "product_of": "Un produit de",
-    "platform": {
-      "title": "Plateforme",
-      "login": "Se connecter ou s'inscrire",
-      "about": "À propos de ProfitPiller",
-      "contact": "Contactez-nous",
-      "help": "Aide"
-    },
-    "legal": {
-      "title": "Légal",
-      "privacy": "Politique de confidentialité",
-      "terms": "Conditions générales",
-      "cookie": "Politique des cookies",
-      "dns": "Ne pas vendre mes informations"
-    },
-    "explore": {
-      "title": "Explorer plus",
-      "cash": "Gagner de l'argent avec des sondages",
-      "gift": "Cartes cadeaux",
-      "amazon": "Cartes cadeaux Amazon",
-      "paypal": "Récompenses PayPal",
-      "visa": "Cartes cadeaux Visa"
-    },
-    "follow": {
-      "title": "Suivez-nous",
-      "download": "Télécharger l'application"
+    "footer": {
+        "trust": "Excellent",
+        "copyright": "© 2026 Profit Piller. Tous droits réservés.",
+        "product_of": "Un produit de",
+        "platform": {
+            "title": "Plateforme",
+            "login": "Se connecter ou s'inscrire",
+            "about": "À propos de ProfitPiller",
+            "contact": "Contactez-nous",
+            "help": "Aide",
+            "blog": "Blog",
+            "guides": "Guides",
+            "gift_cards": "Cartes cadeaux"
+        },
+        "legal": {
+            "title": "Légal",
+            "privacy": "Politique de confidentialité",
+            "terms": "Conditions générales",
+            "cookie": "Politique des cookies",
+            "dns": "Ne pas vendre mes informations"
+        },
+        "explore": {
+            "title": "Explorer plus",
+            "cash": "Gagner de l'argent avec des sondages",
+            "gift": "Cartes cadeaux",
+            "amazon": "Cartes cadeaux Amazon",
+            "paypal": "Récompenses PayPal",
+            "visa": "Cartes cadeaux Visa"
+        },
+        "follow": {
+            "title": "Suivez-nous",
+            "download": "Télécharger l'application"
+        }
     }
-  }
 }

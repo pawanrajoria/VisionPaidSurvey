@@ -1,33 +1,36 @@
 {
-  "footer": {
-    "trust": "Excelente",
-    "copyright": "© 2026 Profit Piller. Todos os direitos reservados.",
-    "product_of": "Um produto de",
-    "platform": {
-      "title": "Plataforma",
-      "login": "Entrar ou Registar-se",
-      "about": "Sobre o ProfitPiller",
-      "contact": "Contacte-nos",
-      "help": "Ajuda"
-    },
-    "legal": {
-      "title": "Legal",
-      "privacy": "Política de Privacidade",
-      "terms": "Termos e Condições",
-      "cookie": "Política de Cookies",
-      "dns": "Não vender as minhas informações"
-    },
-    "explore": {
-      "title": "Explorar Mais",
-      "cash": "Ganhar dinheiro com inquéritos",
-      "gift": "Cartões-presente",
-      "amazon": "Cartões-presente Amazon",
-      "paypal": "Recompensas PayPal",
-      "visa": "Cartões-presente Visa"
-    },
-    "follow": {
-      "title": "Siga-nos",
-      "download": "Descarregar a nossa aplicação"
+    "footer": {
+        "trust": "Excelente",
+        "copyright": "© 2026 Profit Piller. Todos os direitos reservados.",
+        "product_of": "Um produto de",
+        "platform": {
+            "title": "Plataforma",
+            "login": "Entrar ou Registar-se",
+            "about": "Sobre o profitpiller",
+            "contact": "Contacte-nos",
+            "help": "Ajuda",
+            "blog": "Blog",
+            "guides": "Guias",
+            "gift_cards": "Cartões-presente"
+        },
+        "legal": {
+            "title": "Legal",
+            "privacy": "Política de Privacidade",
+            "terms": "Termos e Condições",
+            "cookie": "Política de Cookies",
+            "dns": "Não vender as minhas informações"
+        },
+        "explore": {
+            "title": "Explorar Mais",
+            "cash": "Ganhar dinheiro com inquéritos",
+            "gift": "Cartões-presente",
+            "amazon": "Cartões-presente Amazon",
+            "paypal": "Recompensas PayPal",
+            "visa": "Cartões-presente Visa"
+        },
+        "follow": {
+            "title": "Siga-nos",
+            "download": "Descarregar a nossa aplicação"
+        }
     }
-  }
 }

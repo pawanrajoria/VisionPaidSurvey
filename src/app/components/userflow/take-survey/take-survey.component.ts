@@ -11,7 +11,7 @@ import { LocalStorageService } from '../../../localstorage.service';
 import { HelperService } from '../helper.service';
 import { SharedModule } from '../../../shared.module';
 import { QuestionComponent } from './question/question.component';
-import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from "@angular/material/dialog";
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 import { Iso639Map } from '../../../supporteslanguage';
 import { BaseSurveyComponent } from '../../../base.survey.component';
 
@@ -25,12 +25,13 @@ import { BaseSurveyComponent } from '../../../base.survey.component';
 export class TakeSurveyComponent extends BaseSurveyComponent {
   @ViewChild('drawer') public drawer?: MatDrawer;
 
-
-  dialogRef = inject(MatDialogRef<TakeSurveyComponent>, {
-    optional: true
-  });
-
+  dialogRef = inject(MatDialogRef<TakeSurveyComponent>, { optional: true });
   private dialogData = inject(MAT_DIALOG_DATA, { optional: true });
+
+  // Exposes whether this component is running in a popup or as a full page
+  get isDialog(): boolean {
+    return !!this.dialogRef;
+  }
 
   classname: string = '';
   country: string = '';
@@ -71,8 +72,6 @@ export class TakeSurveyComponent extends BaseSurveyComponent {
   async getSurvey(): Promise<void> {
     const duid = await this.helperService.getOrInitializeDuid();
 
-
-
     let landedUrl: string = this.localStorageService.getItem('LandedUrl') || '';
     if (this.win && landedUrl.length !== this.win.location.href.length) {
       landedUrl = this.win.location.href;
@@ -90,28 +89,46 @@ export class TakeSurveyComponent extends BaseSurveyComponent {
       languageCode: this.isBrowser ? this.getLang3(navigator.language) : 'eng'
     };
 
-    this.respondentData = await this.respondentService.enterRespondent(request);
+    let entry: RespondentEntryResponseVM | null = null;
+    try {
+      entry = await this.respondentService.enterRespondent(request);
+    } catch {
+      entry = null;
+    }
 
     if (
-      !!this.respondentData &&
-      !this.respondentData.isFailed &&
-      !this.respondentData.redirectUrl &&
-      !!this.respondentData.qualifications
+      !!entry &&
+      !entry.isFailed &&
+      !entry.redirectUrl &&
+      !!entry.qualifications &&
+      entry.qualifications.length > 0
     ) {
-      this.respondentData.qualifications = this.respondentData.qualifications.sort((a, b) =>
+      this.respondentData = entry;
+      this.respondentData.qualifications = entry.qualifications.sort((a, b) =>
         a.orderId < b.orderId ? -1 : 1
       );
       this.qualification = this.respondentData.qualifications[this.qualificationIndex];
     } else {
-      const redirect = this.respondentData?.redirectUrl || 'https://profitpiller.com';
-
-      if (!!this.dialogRef && !!this.respondentData && this.respondentData.isQualified) {
-        this.dialogRef?.close({ role: 'qualify', data: redirect });
-        // this.qualifySurvey(redirect);
-      } else {
-        if (this.win) this.win.location.href = redirect;
-      }
+      if (entry) this.respondentData = entry;
+      this.leave(entry);
     }
+  }
+
+  /**
+   * Ends the screener. Every outcome is handled, including a failed request and a response
+   * with neither flag set - those used to leave the dialog open and blank, or (worse) sent the
+   * whole app to the marketing site from inside a dialog.
+   */
+  private leave(response: RespondentEntryResponseVM | null): void {
+    const redirect = response?.redirectUrl || '';
+
+    if (this.dialogRef) {
+      const qualified = !!response && !response.isFailed && (response.isQualified || !!redirect);
+      this.dialogRef.close({ role: qualified ? 'qualify' : 'disquality', data: redirect });
+      return;
+    }
+
+    if (this.win) this.win.location.href = redirect || this.win.location.origin;
   }
 
   async submitSurvey(answerRequest: RespondentSubmitVM): Promise<void> {
@@ -122,7 +139,12 @@ export class TakeSurveyComponent extends BaseSurveyComponent {
       answerRequest.isLast = true;
     }
 
-    const response = await this.respondentService.submitRespondent(answerRequest);
+    let response: RespondentEntryResponseVM | null = null;
+    try {
+      response = await this.respondentService.submitRespondent(answerRequest);
+    } catch {
+      response = null;
+    }
 
     if (!!response && !response.isFailed && !response.redirectUrl) {
       this.qualificationIndex++;
@@ -133,14 +155,7 @@ export class TakeSurveyComponent extends BaseSurveyComponent {
         this.qualification = this.respondentData.qualifications[this.qualificationIndex];
       }
     } else {
-      const redirect = response?.redirectUrl || 'https://profitpiller.com';
-
-      if (!!this.dialogRef && !!this.respondentData && this.respondentData.isQualified) {
-        // this.qualifySurvey(redirect);
-        this.dialogRef?.close({ role: 'qualify', data: redirect });
-      } else {
-        if (this.win) this.win.location.href = redirect;
-      }
+      this.leave(response);
     }
   }
 

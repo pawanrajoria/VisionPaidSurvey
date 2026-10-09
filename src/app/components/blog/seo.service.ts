@@ -1,6 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { DOCUMENT } from '@angular/common';
+import { BRAND_NAME, SITE_URL } from '../../site.config';
 
 export interface SeoData {
   title: string;
@@ -28,10 +29,10 @@ export class BlogSeoService {
   private readonly meta = inject(Meta);
   private readonly titleService = inject(Title);
   private readonly doc = inject(DOCUMENT);
-  private readonly siteUrl = 'https://profitpiller.com';
+  private readonly siteUrl = SITE_URL;
 
   apply(data: SeoData): void {
-    const fullTitle = data.title.length > 60 ? data.title : `${data.title} | ProfitPiller`;
+    const fullTitle = data.title.length > 60 ? data.title : `${data.title} | ${BRAND_NAME}`;
     this.titleService.setTitle(fullTitle);
 
     this.setTag('name', 'description', data.description);

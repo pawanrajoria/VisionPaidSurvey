@@ -36,7 +36,33 @@ export class HelperService {
     return this.initializeDuid();
   }
 
-  private initializeDuid(): Promise<string> {
+  private fingerprintScript: Promise<void> | null = null;
+
+  /**
+   * Loads /assets/js/fingerprint.js on demand. It used to be a <script> in index.html,
+   * so its font/canvas probing (about a second of forced layout on a phone) ran on
+   * every page view, including public pages that never use the device id.
+   */
+  private loadFingerprintScript(): Promise<void> {
+    const win = typeof window !== 'undefined' ? (window as any) : null;
+    if (!win || typeof win.getDuid === 'function') return Promise.resolve();
+
+    if (!this.fingerprintScript) {
+      this.fingerprintScript = new Promise<void>((resolve) => {
+        const script = document.createElement('script');
+        script.src = '/assets/js/fingerprint.js';
+        script.async = true;
+        script.onload = () => resolve();
+        script.onerror = () => { this.fingerprintScript = null; resolve(); };
+        document.head.appendChild(script);
+      });
+    }
+    return this.fingerprintScript;
+  }
+
+  private async initializeDuid(): Promise<string> {
+    await this.loadFingerprintScript();
+
     return new Promise((resolve) => {
       // Safety check for window usage
       const win = typeof window !== 'undefined' ? (window as any) : null;

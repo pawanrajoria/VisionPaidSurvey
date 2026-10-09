@@ -1,33 +1,36 @@
 {
-  "footer": {
-    "trust": "Uitstekend",
-    "copyright": "© 2026 Profit Piller. Alle rechten voorbehouden.",
-    "product_of": "Een product van",
-    "platform": {
-      "title": "Platform",
-      "login": "Inloggen of Registreren",
-      "about": "Over ProfitPiller",
-      "contact": "Contact",
-      "help": "Help"
-    },
-    "legal": {
-      "title": "Juridisch",
-      "privacy": "Privacybeleid",
-      "terms": "Algemene voorwaarden",
-      "cookie": "Cookiebeleid",
-      "dns": "Verkoop mijn gegevens niet"
-    },
-    "explore": {
-      "title": "Ontdek meer",
-      "cash": "Geld verdienen met enquêtes",
-      "gift": "Cadeaubonnen",
-      "amazon": "Amazon cadeaubonnen",
-      "paypal": "PayPal beloningen",
-      "visa": "Visa cadeaubonnen"
-    },
-    "follow": {
-      "title": "Volg ons",
-      "download": "Download onze app"
+    "footer": {
+        "trust": "Uitstekend",
+        "copyright": "© 2026 Profit Piller. Alle rechten voorbehouden.",
+        "product_of": "Een product van",
+        "platform": {
+            "title": "Platform",
+            "login": "Inloggen of Registreren",
+            "about": "Over profitpiller",
+            "contact": "Contact",
+            "help": "Help",
+            "blog": "Blog",
+            "guides": "Handleidingen",
+            "gift_cards": "Cadeaubonnen"
+        },
+        "legal": {
+            "title": "Juridisch",
+            "privacy": "Privacybeleid",
+            "terms": "Algemene voorwaarden",
+            "cookie": "Cookiebeleid",
+            "dns": "Verkoop mijn gegevens niet"
+        },
+        "explore": {
+            "title": "Ontdek meer",
+            "cash": "Geld verdienen met enquêtes",
+            "gift": "Cadeaubonnen",
+            "amazon": "Amazon cadeaubonnen",
+            "paypal": "PayPal beloningen",
+            "visa": "Visa cadeaubonnen"
+        },
+        "follow": {
+            "title": "Volg ons",
+            "download": "Download onze app"
+        }
     }
-  }
 }

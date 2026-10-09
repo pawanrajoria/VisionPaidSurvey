@@ -51,18 +51,18 @@
         </div>
         <div class="col-lg-5">
             <div class="illustration">
-                <img src="assets/images/refer.jpg">
+                <img loading="lazy" src="assets/images/refer.jpg" width="2000" height="2000">
             </div>
         </div>
         <div class="col-12">
             <div class="refer-stats">
                 <div class="box">
                     <mat-icon>star_border</mat-icon>
-                    <h4>0<span>Points {{ 'refer.Earned' | translate }}</span></h4>
+                    <h4>{{ referDetails.totalEarning | number:'1.0-0' }}<span>Points {{ 'refer.Earned' | translate }}</span></h4>
                 </div>
                 <div class="box">
                     <mat-icon>supervised_user_circle</mat-icon>
-                    <h4>0<span>Points {{ 'refer.Earned' | translate }}</span></h4>
+                    <h4>{{ referDetails.totalUser | number }}<span>{{ 'app.refer.friendsJoined' | translate }}</span></h4>
                 </div>
             </div>
         </div>

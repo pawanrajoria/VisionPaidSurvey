@@ -1,3 +1,4 @@
+import { SITE_URL } from '../../../site.config';
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, ActivatedRoute, Router } from '@angular/router';
@@ -86,12 +87,12 @@ export class BlogDetailComponent implements OnInit {
           datePublished: post.publishedAt,
           dateModified: post.updatedAt,
           authorName: post.author.name,
-          url: `https://profitpiller.com${url}`,
+          url: `${SITE_URL}${url}`,
         }),
         this.seo.breadcrumbJsonLd([
-          { name: 'Home', url: 'https://profitpiller.com/' },
-          { name: 'Blog', url: 'https://profitpiller.com/blog' },
-          { name: post.title, url: `https://profitpiller.com${url}` },
+          { name: 'Home', url: SITE_URL + '/' },
+          { name: 'Blog', url: SITE_URL + '/blog' },
+          { name: post.title, url: `${SITE_URL}${url}` },
         ]),
       ],
     });

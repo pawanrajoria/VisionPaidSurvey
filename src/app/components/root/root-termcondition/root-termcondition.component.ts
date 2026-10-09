@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { SharedModule } from "../../../shared.module";
+import { PublicSharedModule } from "../../../public-shared.module";
 
 @Component({
     selector: 'app-root-termcondition',
-    imports: [SharedModule],
+    imports: [PublicSharedModule],
     templateUrl: './root-termcondition.component.html',
     styleUrls: ['./root-termcondition.component.scss']
 })

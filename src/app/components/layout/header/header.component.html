@@ -1,25 +1,58 @@
 <!-- Mobile Menu -->
 <mat-toolbar class="balance-card">
-    <button mat-icon-button (click)="toggleMobileNav.emit()" class="d-flex d-lg-none justify-content-center">
+    <button mat-icon-button (click)="toggleMobileNav.emit()" class="d-flex d-lg-none justify-content-center" aria-label="Open menu">
         <i-tabler name="menu-2" class="icon-20 d-flex"></i-tabler>
     </button>
-    <div class="balance-left">
-        <button mat-icon-button class="hide-on-mobile">
-            <mat-icon>account_balance_wallet</mat-icon>
+    <!-- Wallet balance; tapping it opens cashout -->
+    <a class="hdr-balance" [routerLink]="['/', currentLocale, 'app', 'cashout']"
+        [title]="'app.earn.claimReward' | translate">
+        <span class="wallet" aria-hidden="true"><mat-icon>account_balance_wallet</mat-icon></span>
+        <span class="bal">
+            <small>{{ 'app.earn.balance' | translate }}</small>
+            <strong>
+                {{ userBalanceInfo.balance ?? 0 | number:'1.0-0' }} {{ 'app.common.points' | translate }}
+                @if (userBalanceInfo.currencyAmount) { <span class="usd">(≈ {{ userBalanceInfo.currencyAmount }})</span> }
+            </strong>
+        </span>
+    </a>
+
+    <!-- Leaderboard, streak, daily check-in, getting started and level: one row of pills
+         (a second, full-width row on small screens); the details open in a sheet on tap -->
+    <div class="hdr-pills">
+        <a class="pill" [routerLink]="['/', currentLocale, 'app', 'leaderboard']"
+            [attr.aria-label]="'app.leaderboard.topEarners' | translate" [title]="'app.leaderboard.topEarners' | translate">
+            <mat-icon>emoji_events</mat-icon>
+        </a>
+        @if (summary) {
+        @if (summary.streak?.available) {
+        <button type="button" class="pill streak" [class.lit]="summary.streak.current > 0"
+            [class.alert]="summary.streak.drawsAvailable > 0" (click)="openSheet(streakSheet)"
+            [attr.aria-label]="'app.streak.title' | translate" [title]="'app.streak.current' | translate">
+            <span>{{ summary.streak.current }}</span><mat-icon>local_fire_department</mat-icon>
         </button>
-        <div class="balance-text">
-            <div class="value">{{userBalanceInfo.balance}} Points
-                <div class="hide-on-mobile d-inline">≈ {{userBalanceInfo.currencyAmount}}</div>
-            </div>
-        </div>
+        }
+        @if (summary.daily?.available) {
+        <button type="button" class="pill daily" [class.alert]="!summary.daily.claimedToday" (click)="openSheet(dailySheet)"
+            [attr.aria-label]="'app.streak.dailyTitle' | translate" [title]="'app.streak.dailyTitle' | translate">
+            <span>+{{ summary.daily.todayPoints }}</span>
+            <mat-icon>{{ summary.daily.claimedToday ? 'check_circle' : 'event_available' }}</mat-icon>
+        </button>
+        }
+        @if (showChecklist) {
+        <button type="button" class="pill tasks" (click)="openSheet(checklistSheet)"
+            [attr.aria-label]="'app.earn.gettingStarted' | translate" [title]="'app.earn.gettingStarted' | translate">
+            <mat-icon>flag</mat-icon><span>{{ checklistDone }}/{{ checklist.length }}</span>
+        </button>
+        }
+        }
+        <button type="button" class="pill level" [matMenuTriggerFor]="levelMenu">
+            <mat-icon>workspace_premium</mat-icon>
+            <span class="lvl-full">{{ 'app.tier.level' | translate:{ level: userBalanceInfo.userLevel || 1 } }}</span>
+            <span class="lvl-num">{{ userBalanceInfo.userLevel || 1 }}</span>
+        </button>
     </div>
 
     <div class="balance-right">
-
-        <button mat-stroked-button color="secondary" [matMenuTriggerFor]="levelMenu" class="fab-extended level-btn">
-            <mat-icon class="fab-icon">emoji_events</mat-icon>
-            <span>{{userBalanceInfo.userLevel}}</span>
-        </button>
 
         <mat-menu #levelMenu="matMenu" class="levelCard">
             <mat-card class="level-card">
@@ -50,7 +83,11 @@
             </mat-card>
         </mat-menu>
 
-        <button mat-icon-button [matMenuTriggerFor]="notificationMenu">
+        <button mat-icon-button (click)="goToChat()" [attr.aria-label]="'app.chat.title' | translate" [title]="'app.chat.title' | translate">
+            <mat-icon>forum</mat-icon>
+        </button>
+
+        <button mat-icon-button [matMenuTriggerFor]="notificationMenu" aria-label="Notifications">
             <mat-icon [matBadge]="notificationCount" matBadgeColor="warn" [matBadgeHidden]="notificationCount === 0">
                 notifications
             </mat-icon>
@@ -67,7 +104,7 @@
             @if (notificationHistory.length > 0) {
             <div class="notification-list">
                 @for (msg of notificationHistory; track msg.id) {
-                <button mat-menu-item class="notification-item">
+                <button mat-menu-item class="notification-item" (click)="openNotification.emit(msg.url || msg.data?.url || '')">
                     <div class="d-flex align-items-center">
                         <mat-icon color="primary" class="m-r-12">circle_notifications</mat-icon>
                         <div>
@@ -87,8 +124,8 @@
         </mat-menu>
 
 
-        <button mat-mini-fab [matMenuTriggerFor]="profilemenu" aria-label="Notifications">
-            <img src="/assets/images/profile/user-1.jpg" class="rounded-circle object-cover d-block" width="35" />
+        <button mat-mini-fab [matMenuTriggerFor]="profilemenu" aria-label="Account menu">
+            <img loading="lazy" src="/assets/images/profile/user-1.jpg" class="rounded-circle object-cover d-block" width="35" />
         </button>
         <mat-menu #profilemenu="matMenu" class="cardWithShadow topbar-dd">
             <button mat-menu-item (click)="changeReward()">
@@ -96,6 +133,11 @@
                         class="icon-18 d-flex"></i-tabler></mat-icon>
                 {{ 'Cashout Reward' | translate }}
             </button>
+            @if (isAdmin) {
+            <button mat-menu-item (click)="goToAdmin()">
+                <mat-icon class="d-flex align-items-center">admin_panel_settings</mat-icon>Admin console
+            </button>
+            }
             <button mat-menu-item (click)="goToAccount()">
                 <mat-icon class="d-flex align-items-center"><i-tabler name="user"
                         class="icon-18 d-flex"></i-tabler></mat-icon>{{ 'My Account' | translate }}
@@ -115,7 +157,7 @@
 <mat-toolbar class="topbar gap-10">
 
 
-  <button mat-icon-button (click)="toggleMobileNav.emit()" class="d-flex d-lg-none justify-content-center">
+  <button mat-icon-button (click)="toggleMobileNav.emit()" class="d-flex d-lg-none justify-content-center" aria-label="Open menu">
     <i-tabler name="menu-2" class="icon-20 d-flex"></i-tabler>
   </button>
 
@@ -135,7 +177,7 @@
     Check Pro Template
   </a>
   <button mat-mini-fab [matMenuTriggerFor]="profilemenu" aria-label="Notifications">
-    <img src="/assets/images/profile/user-1.jpg" class="rounded-circle object-cover d-block" width="35" />
+    <img loading="lazy" src="/assets/images/profile/user-1.jpg" class="rounded-circle object-cover d-block" width="35" />
   </button>
   <mat-menu #profilemenu="matMenu" class="cardWithShadow topbar-dd">
     <button mat-menu-item>
@@ -157,11 +199,123 @@
   </mat-menu>
 </mat-toolbar> -->
 
+<!-- Sheets opened from the header pills -->
+<ng-template #streakSheet>
+    @if (summary) {
+    <section class="engage-card streak sheet" [attr.aria-label]="'app.streak.title' | translate">
+        <button type="button" class="sheet-close" (click)="closeSheet()" [attr.aria-label]="'app.common.close' | translate"><mat-icon>close</mat-icon></button>
+        <div class="engage-head">
+            <div>
+                <h2><mat-icon>local_fire_department</mat-icon> {{ 'app.streak.title' | translate }}</h2>
+                <p>{{ 'app.streak.subtitle' | translate }}</p>
+            </div>
+            <div class="streak-count">
+                <strong>{{ summary.streak.current }}</strong>
+                <span>{{ 'app.streak.current' | translate }}</span>
+            </div>
+        </div>
+
+        <ol class="streak-week">
+            @for (d of summary.streak.week; track d.date) {
+            <li [class.done]="d.done" [class.today]="d.isToday">
+                <span class="dot">@if (d.done) { <mat-icon>check</mat-icon> }</span>
+                <span class="day">{{ 'app.weekday.' + d.label | translate }}</span>
+            </li>
+            }
+        </ol>
+
+        <div class="streak-reward">
+            <mat-icon>redeem</mat-icon>
+            <div>
+                <strong>{{ 'app.streak.rewardTitle' | translate:{ points: (summary.streak.maxPrizePoints | number) } }}</strong>
+                <span>{{ 'app.streak.rewardSub' | translate:{ days: summary.streak.drawEveryDays } }}</span>
+            </div>
+        </div>
+
+        @if (summary.streak.drawsAvailable > 0) {
+        <button type="button" class="claim-btn wide" [disabled]="drawing" (click)="drawPrize()">
+            @if (drawing) { {{ 'app.streak.drawing' | translate }} }
+            @else if (summary.streak.drawsAvailable > 1) { {{ 'app.streak.drawLeft' | translate:{ count: summary.streak.drawsAvailable } }} }
+            @else { {{ 'app.streak.draw' | translate }} }
+        </button>
+        } @else if (!summary.streak.completedToday) {
+        <a class="claim-btn wide" [routerLink]="['/', currentLocale, 'app', 'survey']" (click)="closeSheet()">
+            {{ (summary.streak.current > 0 ? 'app.streak.keep' : 'app.streak.begin') | translate }}
+        </a>
+        } @else {
+        <p class="streak-foot">
+            {{ 'app.streak.doneToday' | translate:{ days: summary.streak.daysToDraw } }}
+        </p>
+        }
+    </section>
+    }
+</ng-template>
+
+<ng-template #dailySheet>
+    @if (summary) {
+    <section class="engage-card daily sheet" [attr.aria-label]="'app.streak.dailyTitle' | translate">
+        <button type="button" class="sheet-close" (click)="closeSheet()" [attr.aria-label]="'app.common.close' | translate"><mat-icon>close</mat-icon></button>
+        <div class="engage-head">
+            <div>
+                <h2><mat-icon>local_fire_department</mat-icon> {{ 'app.streak.dailyTitle' | translate }}</h2>
+                <p>
+                    @if (summary.daily.streak > 0) { {{ 'app.streak.dayStreak' | translate:{ count: summary.daily.streak } }} }
+                    @if (summary.daily.daysToStreakBonus > 0) {
+                    {{ 'app.streak.bonusIn' | translate:{ points: summary.daily.streakBonusPoints, days: summary.daily.daysToStreakBonus } }}
+                    } @else if (!summary.daily.claimedToday) {
+                    {{ 'app.streak.bonusReady' | translate }}
+                    }
+                </p>
+            </div>
+            <button type="button" class="claim-btn" [disabled]="summary.daily.claimedToday || claimingDaily"
+                (click)="claimDaily()">
+                @if (summary.daily.claimedToday) {
+                <mat-icon>check_circle</mat-icon> {{ 'app.streak.comeBack' | translate }}
+                } @else {
+                {{ claimingDaily ? ('app.streak.claiming' | translate) : ('app.streak.claim' | translate:{ points: summary.daily.todayPoints }) }}
+                }
+            </button>
+        </div>
+        <ol class="streak-dots" aria-hidden="true">
+            @for (d of streakDays; track d) {
+            <li [class.done]="d <= streakPosition" [class.bonus]="d === streakDays.length">
+                @if (d === streakDays.length) { <mat-icon>redeem</mat-icon> } @else { {{ d }} }
+            </li>
+            }
+        </ol>
+    </section>
+    }
+</ng-template>
+
+<ng-template #checklistSheet>
+    <section class="engage-card checklist sheet" [attr.aria-label]="'app.earn.gettingStarted' | translate">
+        <button type="button" class="sheet-close" (click)="closeSheet()" [attr.aria-label]="'app.common.close' | translate"><mat-icon>close</mat-icon></button>
+        <div class="engage-head">
+            <div>
+                <h2><mat-icon>flag</mat-icon> {{ 'app.earn.gettingStarted' | translate }}</h2>
+                <p>{{ 'app.earn.doneOf' | translate:{ done: checklistDone, total: checklist.length } }}</p>
+            </div>
+            <div class="mini-progress" aria-hidden="true">
+                <div [style.width.%]="(checklistDone / checklist.length) * 100"></div>
+            </div>
+        </div>
+        <ul>
+            @for (item of checklist; track item.label) {
+            <li [class.done]="item.done">
+                <mat-icon>{{ item.done ? 'check_circle' : 'radio_button_unchecked' }}</mat-icon>
+                @if (item.done) { <span>{{ item.label | translate }}</span> }
+                @else { <a [routerLink]="item.link" (click)="closeSheet()">{{ item.label | translate }}</a> }
+            </li>
+            }
+        </ul>
+    </section>
+</ng-template>
+
 <ng-template #Qualify class="happen-modal"><button (click)="closeQualify()" class="close">X</button>
     <mat-card appearance="outlined" class="custom-card text-center">
         <mat-card-content class="qualify-sec">
             <div class="icon">
-                <img src="assets/images/icon/quality.png">
+                <img loading="lazy" src="assets/images/icon/quality.png" width="128" height="128">
             </div>
             <h3>You Didn't Qualify This Time</h3>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the

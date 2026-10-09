@@ -18,9 +18,12 @@ import { GoogleService } from './components/auth/google.service';
 import { VersionCheckService } from './version-check.service';
 import { GoogleAuthProvider } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AiSupportWidgetComponent } from './components/ai-support/ai-support-widget.component';
 import { AuthService } from './components/auth/auth.service';
 import { LOCALE_COUNTRY_MAP, SUPPORTED_LOCALE_CODES } from './country-langiuage-list';
 import { GtmService } from './gtm.service';
+import { BRAND_NAME, absoluteUrl } from './site.config';
+import { languageForLocale } from './i18n-languages';
 import { isPlatformBrowser } from '@angular/common';
 
 function resolveLocaleSlug(rawLang: string): string {
@@ -79,7 +82,7 @@ function parseLocaleFromUrl(url: string): { locale: string; cleanPath: string } 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SharedModule],
+  imports: [RouterOutlet, SharedModule, AiSupportWidgetComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
 })
@@ -115,7 +118,11 @@ export class AppComponent extends BaseComponent implements OnInit {
       this.localStorageService.setItem('LandedUrl', this.win.location.href);
     }
 
-    await this.helperService.getOrInitializeDuid();
+    // The device id is only needed inside the signed-in / survey areas. Creating it is
+    // expensive, so public pages skip it, and it never delays the rest of start-up.
+    if (this.isBrowser && this.win && /^\/[a-z]{2}-[a-z]{2}\/(app|auth|admin|survey|offerwall|surveyresult)(\/|$)/.test(this.win.location.pathname)) {
+      this.helperService.getOrInitializeDuid();
+    }
 
     this.detectAndSetLanguage();
 
@@ -136,23 +143,42 @@ export class AppComponent extends BaseComponent implements OnInit {
         const { locale, cleanPath } = parseLocaleFromUrl(event.urlAfterRedirects);
         const baseLang = locale.split('-')[0];
 
-        if (SUPPORTED_LOCALE_CODES.has(baseLang)) {
-          this.translate.use(baseLang);
+        // Switch the UI language whenever the locale in the URL changes. The old check compared a
+        // bare language ("de") against a set of full locale slugs ("de-de"), so it never matched:
+        // the language was only ever set once at start-up, and never on the server.
+        const uiLanguage = languageForLocale(locale);
+        if (this.translate.currentLang !== uiLanguage) {
+          this.translate.use(uiLanguage);
+        }
+        if (SUPPORTED_LOCALE_CODES.has(locale)) {
           this.localStorageService.setItem('lang', baseLang);
           this.localStorageService.setItem('locale', locale);
         }
 
-        const pageTitle = this.titleService.getTitle() || 'ProfitPiller';
-        const description = this.metaService.getTag('name=description')?.content || pageTitle;
+        // Per-page SEO. Each route declares `data: { title, description, keywords }`;
+        // until now that data was never read, so every page shipped the same generic
+        // <title>/description from index.html. Pages that build their own SEO after
+        // loading content (blog, guides, landing pages) have no route title and keep
+        // whatever their component has already set.
+        const data = this.deepestRouteData();
+        const path = cleanPath.split(/[?#]/)[0];
+        const isPrivate = /^\/(app|admin|auth|survey|offerwall|surveyresult|redirecttoapk)(\/|$)/.test(path)
+          || data['statusCode'] === 404;
 
-        this.seoService.updateMetaData(
-          pageTitle,
+        const pageTitle = data['title'] || this.titleService.getTitle() || BRAND_NAME;
+        const description = data['description']
+          || this.metaService.getTag('name=description')?.content
+          || pageTitle;
+
+        this.seoService.apply({
+          title: pageTitle,
           description,
-          `https://profitpiller.com/${locale}${cleanPath}`,
-          undefined,
-          locale
-        );
-        this.seoService.updateHreflang(cleanPath, locale);
+          url: absoluteUrl(`/${locale}${path}`),
+          locale,
+          keywords: Array.isArray(data['keywords']) ? data['keywords'] : undefined,
+          indexable: !isPrivate
+        });
+        this.seoService.updateHreflang(path, locale, !isPrivate);
       });
 
     // ─── Handle Google OAuth redirect hash ──────────────────────────────────
@@ -166,6 +192,13 @@ export class AppComponent extends BaseComponent implements OnInit {
         }
       }
     }
+  }
+
+  /** `data` of the innermost activated route (where page titles are declared). */
+  private deepestRouteData(): Record<string, any> {
+    let route = this.router.routerState.snapshot.root;
+    while (route.firstChild) route = route.firstChild;
+    return route.data ?? {};
   }
 
   // ─── Language switcher ────────────────────────────────────────────────────
@@ -222,11 +255,10 @@ export class AppComponent extends BaseComponent implements OnInit {
 
     const baseLang = locale.split('-')[0];
 
-    this.translate.use(baseLang).subscribe({
+    // Locales without their own translation files (for example sv-se) are shown in English
+    // rather than requesting 20+ files that do not exist.
+    this.translate.use(languageForLocale(locale)).subscribe({
       next: () => {
-        console.log(
-          `Translations loaded for: ${baseLang} (locale: ${locale})`
-        );
 
         this.translationsLoaded = true;
 

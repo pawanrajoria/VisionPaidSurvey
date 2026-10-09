@@ -95,9 +95,22 @@ export class SurveyRedirectsComponent implements OnInit, OnDestroy {
     }
 
     goToSurvey(): void {
-        if (isPlatformBrowser(this.platformId) && this.redirectUrl) {
-            this.document.location.href = this.redirectUrl;
+        if (!isPlatformBrowser(this.platformId)) return;
+
+        // The target comes from the query string, so only real web addresses are followed
+        // (never javascript: or data: links). With no usable target the visitor goes to the
+        // home page; previously the page sat on "Redirecting in 0s" forever.
+        let target = '';
+        try {
+            const parsed = new URL(this.redirectUrl, this.document.location.origin);
+            if (this.redirectUrl && (parsed.protocol === 'https:' || parsed.protocol === 'http:')) {
+                target = parsed.href;
+            }
+        } catch {
+            target = '';
         }
+
+        this.document.location.href = target || this.document.location.origin;
     }
 
     ngOnDestroy(): void {

@@ -8,7 +8,7 @@ import { SharedModule } from '../../../shared.module';
   template: `
     <a  [routerLink]="['/', currentLocale, 'app', 'earn']" class="logodark">
       <img
-        src="./assets/images/logo.png"
+        src="./assets/images/homepagelogo.png"
         class="align-middle m-2"
         alt="logo"
       />

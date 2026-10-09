@@ -13,6 +13,7 @@
                     <mat-list-item>Loading...</mat-list-item>
                     }
                 </mat-nav-list>
+                <app-notify-card></app-notify-card>
             </ng-scrollbar>
         </div>
     </mat-sidenav>
@@ -26,7 +27,7 @@
                     <strong>{{ activeNotification.title }}</strong>
                     <p>{{ activeNotification.body }}</p>
                 </div>
-                <button mat-icon-button (click)="activeNotification = null">
+                <button mat-icon-button (click)="activeNotification = null" aria-label="Dismiss notification">
                     <mat-icon>close</mat-icon>
                 </button>
             </div>
@@ -35,7 +36,7 @@
 
         <app-header [showToggle]="!isOver" [notificationCount]="notificationHistory.length"
             [notificationHistory]="notificationHistory" (toggleMobileNav)="sidenav.toggle()"
-            (removeNotification)="clearNotifications()">
+            (removeNotification)="clearNotifications()" (openNotification)="openNotificationUrl($event)">
         </app-header>
 
         <main class="pageWrapper maxWidth">

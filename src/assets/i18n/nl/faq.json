@@ -3,7 +3,7 @@
         "heading": {
             "subtitle": "FAQ",
             "title": "Veelgestelde vragen (FAQs)",
-            "description": "Bekijk de meest voorkomende vragen die gebruikers stellen over het gebruik van <strong>ProfitPiller</strong> en hoe ze kunnen beginnen met verdienen."
+            "description": "Bekijk de meest voorkomende vragen die gebruikers stellen over het gebruik van <strong>profitpiller</strong> en hoe ze kunnen beginnen met verdienen."
         },
         "checkAllQuestions": "Bekijk alle vragen",
         "needHelp": {
@@ -14,7 +14,7 @@
             "q0": {
                 "question": "Hoe kan ik geld verdienen met betaalde enquêtes?",
                 "answer": {
-                    "0": "ProfitPiller is een gratis website waar u echt geld kunt verdienen met het invullen van betaalde enquêtes.",
+                    "0": "profitpiller is een gratis website waar u echt geld kunt verdienen met het invullen van betaalde enquêtes.",
                     "1": "Meld u eenvoudig aan met uw e-mailadres en begin vandaag nog met verdienen. De meeste gebruikers nemen hun eerste geld op dezelfde dag op!",
                     "2": "U kunt op elk gewenst moment enquêtes invullen vanaf uw telefoon of computer."
                 }
@@ -22,7 +22,7 @@
             "q1": {
                 "question": "Hoe werkt het invullen van enquêtes?",
                 "answer": {
-                    "0": "Meld u eerst aan voor ProfitPiller — het is gratis en vereist alleen uw e-mailadres.",
+                    "0": "Meld u eerst aan voor profitpiller — het is gratis en vereist alleen uw e-mailadres.",
                     "1": "Zodra u bent ingelogd, ziet u een lijst met beschikbare enquêtes met details over de duur en de uitbetaling.",
                     "2": "Klik op een enquête, beantwoord een paar kwalificatievragen en voltooi vervolgens de hoofdenquête.",
                     "3": "Na voltooiing wordt u beloond met punten, die direct kunnen worden ingewisseld."
@@ -39,14 +39,14 @@
             "q3": {
                 "question": "Hoeveel geld kan ik verdienen?",
                 "answer": {
-                    "0": "ProfitPiller is geen fulltime baan, maar met slechts 30-60 minuten per dag kunt u genoeg verdienen voor alledaagse luxe.",
+                    "0": "profitpiller is geen fulltime baan, maar met slechts 30-60 minuten per dag kunt u genoeg verdienen voor alledaagse luxe.",
                     "1": "Bekijk onze live statistieken om te zien wat andere gebruikers gisteren hebben verdiend!"
                 }
             },
             "q4": {
-                "question": "Betaalt ProfitPiller beter dan andere websites?",
+                "question": "Betaalt profitpiller beter dan andere websites?",
                 "answer": {
-                    "0": "Ja! Gemiddeld betaalt ProfitPiller tot 150% meer voor dezelfde enquêtes.",
+                    "0": "Ja! Gemiddeld betaalt profitpiller tot 150% meer voor dezelfde enquêtes.",
                     "1": "Wij richten ons op het belonen van onze gebruikers in plaats van geld uit te geven aan zware marketing."
                 }
             },
@@ -86,7 +86,7 @@
             "q9": {
                 "question": "Hoe kan ik geld verdienen met enquêtes en aanbiedingen?",
                 "answer": {
-                    "0": "Met ProfitPiller kunt u echte beloningen verdienen door online enquêtes in te vullen en speciale aanbiedingen te verkennen.",
+                    "0": "Met profitpiller kunt u echte beloningen verdienen door online enquêtes in te vullen en speciale aanbiedingen te verkennen.",
                     "1": "Kies wat u interesseert, voltooi het en verdien punten die u kunt inwisselen voor geld of cadeaubonnen."
                 }
             },
@@ -114,7 +114,7 @@
             "q13": {
                 "question": "Kan ik kiezen welke enquêtes of aanbiedingen ik voltooi?",
                 "answer": {
-                    "0": "Ja! ProfitPiller laat u kiezen uit een breed scala aan enquêtes en aanbiedingen.",
+                    "0": "Ja! profitpiller laat u kiezen uit een breed scala aan enquêtes en aanbiedingen.",
                     "1": "U heeft altijd de controle over wat u voltooit."
                 }
             },

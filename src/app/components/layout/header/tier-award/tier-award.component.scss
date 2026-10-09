@@ -183,3 +183,22 @@
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
+// Current tier marker in the levels dialog
+.chain-item.is-current .rank-card {
+  border-width: 2px;
+  border-style: solid;
+}
+
+.you-are-here {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #105749;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}

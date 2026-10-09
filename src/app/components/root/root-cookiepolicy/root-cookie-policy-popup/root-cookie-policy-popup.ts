@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { SharedModule } from '../../../../shared.module';
+import { PublicSharedModule } from '../../../../public-shared.module';
 import { MatSnackBarRef } from '@angular/material/snack-bar';
 import { LocalStorageService } from '../../../../localstorage.service';
 import { BaseComponent } from '../../../../base.component';
 
 @Component({
     selector: 'app-root-cookie-policy-popup',
-    imports: [SharedModule],
+    imports: [PublicSharedModule],
     templateUrl: './root-cookie-policy-popup.html',
     styleUrls: ['./root-cookie-policy-popup.scss']
 })

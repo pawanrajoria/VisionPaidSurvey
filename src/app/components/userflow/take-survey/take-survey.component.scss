@@ -1,61 +1,205 @@
-.container {
+/* =========================================================
+   FULL PAGE MODE (Preserved)
+   ========================================================= */
+.page-mode {
+  .survey-body-container {
     margin-top: 30px;
     max-width: 100% !important;
 
     .loader {
-        top: 50%;
-        position: fixed;
-        text-align: center;
-        width: 100%;
+      top: 50%;
+      position: fixed;
+      text-align: center;
+      width: 100%;
     }
+  }
 
-    &.header {
-        max-width: 1320px !important;
-        margin-top: 0px;
-    }
-}
-
-.section {
+  .section {
     background-color: #105749 !important;
     height: 60px;
-}
+  }
 
-.spText {
+  .spText {
     font-size: small;
     font-weight: 500;
     display: flex;
     justify-content: center;
-}
+  }
 
-.headerText {
+  .headerText {
     font-size: 20px;
     font-weight: 600;
     color: #ffffffd6;
     font-family: auto;
-}
+  }
 
-
-@media (max-width:767px) {
-
-    .container {
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-}
-
-.m-header {
+  .m-header {
     height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--primary-color);
 
-    a {
-        img {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin: auto;
-        }
+    a img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: auto;
     }
+  }
+
+  @media (max-width: 767px) {
+    .survey-body-container {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+/* =========================================================
+   POPUP / DIALOG MODE
+   ========================================================= */
+:host {
+  display: block;
+  width: 100%;
+}
+
+.take-survey-wrapper.is-dialog {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  /* Header */
+  .dialog-header {
+    background: linear-gradient(135deg, #105749 0%, #0d4338 100%);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+    flex-shrink: 0;
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      .header-icon {
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+        color: #6ee7b7;
+      }
+
+      .header-title {
+        margin: 0;
+        font-size: 1.05rem;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        line-height: 1.2;
+      }
+
+      .header-subtitle {
+        font-size: 0.72rem;
+        color: rgba(255, 255, 255, 0.8);
+        display: block;
+        margin-top: 2px;
+      }
+    }
+
+    .close-btn {
+      color: rgba(255, 255, 255, 0.75);
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+
+  /* Scrollable Body */
+  .dialog-scroll-body {
+    padding: 20px !important;
+    max-height: 70vh;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  /* Flatten inner layout shown in DevTools */
+  app-question {
+    display: block;
+    width: 100%;
+
+    ::ng-deep {
+      /* 1. Neutralize form wrappers and bootstrap container */
+      form.form-horizontal,
+      .custom-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      /* 2. Flatten bootstrap row */
+      .row {
+        margin: 0 !important;
+        display: block !important;
+        width: 100% !important;
+      }
+
+      /* 3. Force col-md-6 to occupy full modal width */
+      .col-md-6,
+      .col-md-6.m-auto {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      /* 4. Remove inner card styling so it merges into dialog */
+      mat-card.mat-mdc-card,
+      mat-card.c-card--outlined,
+      mat-card.mat-mdc-card-outlined {
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+      }
+
+      /* 5. Clean up title */
+      mat-card-title.mat-mdc-card-title {
+        font-size: 1.05rem !important;
+        line-height: 1.4 !important;
+        font-weight: 600 !important;
+        color: #2d3748 !important;
+        margin-bottom: 16px !important;
+        display: block !important;
+      }
+
+      /* 6. Form fields & inputs stretch completely */
+      .mat-mdc-form-field,
+      mat-form-field,
+      .search-box,
+      input[type="text"] {
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      /* 7. Constrain checkbox/option lists so they don't break dialog bounds */
+      .options-list,
+      .checkbox-group,
+      .mat-mdc-selection-list {
+        max-height: 240px;
+        overflow-y: auto;
+      }
+    }
+  }
 }

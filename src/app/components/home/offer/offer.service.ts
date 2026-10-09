@@ -8,8 +8,8 @@ export class OfferService {
     constructor(private http: HttpClient, private config: ConfigService) {
     }
 
-    async getOffers(): Promise<any> {
-        return await this.http.get<any>(this.config.baseUrl + "offer/get-offers").toPromise();
+    async getOffers(background = false): Promise<any> {
+        return await this.http.get<any>(this.config.baseUrl + "offer/get-offers", background ? { headers: { "X-Background": "true" } } : {}).toPromise();
     }
 
     async getOfferWallDetailById(id:number): Promise<any> {

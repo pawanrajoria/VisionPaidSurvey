@@ -1,12 +1,12 @@
 import { Component, OnInit } from "@angular/core";
-import { SharedModule } from "../../../shared.module";
+import { PublicSharedModule } from "../../../public-shared.module";
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { BaseComponent } from "../../../base.component";
 
 @Component({
     selector: 'app-root-footer',
-    imports: [SharedModule,MatIconModule],
+    imports: [PublicSharedModule,MatIconModule],
     templateUrl: './root-footer.component.html',
     styleUrls: ['./root-footer.component.scss']
 })

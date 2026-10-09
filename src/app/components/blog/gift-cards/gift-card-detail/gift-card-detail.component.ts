@@ -1,3 +1,4 @@
+import { SITE_URL } from '../../../../site.config';
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, ActivatedRoute } from '@angular/router';
@@ -67,7 +68,7 @@ export class GiftCardDetailComponent implements OnInit {
           name: card.title,
           description: card.metaDescription || card.shortDescription,
           image: card.heroImage,
-          url: `https://profitpiller.com${url}`,
+          url: `${SITE_URL}${url}`,
           lowPrice: Math.min(...amounts),
           highPrice: Math.max(...amounts),
           currency: card.denominations[0]?.currency ?? 'USD',
@@ -75,9 +76,9 @@ export class GiftCardDetailComponent implements OnInit {
           reviewCount: card.reviewCount,
         }),
         this.seo.breadcrumbJsonLd([
-          { name: 'Home', url: 'https://profitpiller.com/' },
-          { name: 'Gift Cards', url: 'https://profitpiller.com/gift-cards' },
-          { name: card.title, url: `https://profitpiller.com${url}` },
+          { name: 'Home', url: SITE_URL + '/' },
+          { name: 'Gift Cards', url: SITE_URL + '/gift-cards' },
+          { name: card.title, url: `${SITE_URL}${url}` },
         ]),
       ],
     });

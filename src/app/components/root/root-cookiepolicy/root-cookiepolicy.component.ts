@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { SharedModule } from "../../../shared.module";
+import { PublicSharedModule } from "../../../public-shared.module";
 
 @Component({
     selector: 'app-root-cookiepolicy',
-    imports: [SharedModule],
+    imports: [PublicSharedModule],
     templateUrl: './root-cookiepolicy.component.html',
     styleUrls: ['./root-cookiepolicy.component.scss']
 })

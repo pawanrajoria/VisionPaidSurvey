@@ -5,7 +5,7 @@
                 <div class="panel">
                     <div class="user-heading">
                         <a href="javascript://">
-                            <img src="assets/images/icon/happy-smiling.jpg">
+                            <img loading="lazy" src="assets/images/icon/happy-smiling.jpg" alt="Profile photo" width="980" height="980">
                         </a>
                         <h1>{{ 'account.hey_text' | translate }} <strong>{{ userInfo.name }}</strong></h1>
                         <p>{{ userInfo.emailId }}</p>
@@ -59,6 +59,34 @@
                     </div>
                 </div>
                 <hr>
+                @if (streak) {
+                <div class="account-streak">
+                    <div class="stat">
+                        <strong>{{ (streak.longest === 1 ? 'app.common.day_one' : 'app.common.day_other') | translate:{ count: streak.longest } }}</strong>
+                        <span>{{ 'app.streak.longest' | translate }}</span>
+                    </div>
+                    <div class="stat">
+                        <strong>{{ (streak.current === 1 ? 'app.common.day_one' : 'app.common.day_other') | translate:{ count: streak.current } }}</strong>
+                        <span>{{ 'app.streak.current' | translate }}</span>
+                    </div>
+                    <div class="stat">
+                        <strong [style.color]="tier.color">{{ 'app.tier.' + tier.key | translate }}</strong>
+                        <span>{{ 'app.tier.tierLevel' | translate:{ level: userBalanceInfo.userLevel || 1 } }}</span>
+                    </div>
+                    <a class="board" [class.locked]="!streak.leaderboardUnlocked" [routerLink]="['/', currentLocale, 'app', 'leaderboard']">
+                        <mat-icon>{{ streak.leaderboardUnlocked ? 'emoji_events' : 'lock' }}</mat-icon>
+                        <span>
+                            @if (streak.leaderboardUnlocked) {
+                            <strong>{{ 'app.leaderboard.unlocked' | translate }}</strong>
+                            <small>{{ 'app.leaderboard.unlockedSub' | translate }}</small>
+                            } @else {
+                            <strong>{{ 'app.leaderboard.lockedTitle' | translate }}</strong>
+                            <small>{{ (streak.surveysToUnlock === 1 ? 'app.leaderboard.lockedShort_one' : 'app.leaderboard.lockedShort_other') | translate:{ count: streak.surveysToUnlock } }}</small>
+                            }
+                        </span>
+                    </a>
+                </div>
+                }
                 <mat-nav-list>
                     <ul>
 

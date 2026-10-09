@@ -1,8 +1,8 @@
 .footer-container {
-  background: #f8fafc url('/assets/images/backgrounds/footer.png');
+  background: #f8fafc url("/assets/images/backgrounds/footer.png");
   border-top: 1px solid #e5e7eb;
   padding: 60px 20px;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
 }
 
 .footer-content {
@@ -20,7 +20,7 @@
   align-items: flex-start;
 
   .logo {
-    height: 60px;
+    // height: 60px;
     margin-bottom: 1rem;
   }
 
@@ -59,14 +59,14 @@
   gap: 10px;
   padding: 10px 14px;
 
-background: linear-gradient(90deg, #145c4b 0%, #7ebf76 100%);
+  background: linear-gradient(90deg, #145c4b 0%, #7ebf76 100%);
   border-radius: 999px;
 
   text-decoration: none;
   color: #ffffff;
 
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-  transition: .25s ease;
+  transition: 0.25s ease;
 }
 
 .trustpilot-inline a:hover {
@@ -108,7 +108,6 @@ background: linear-gradient(90deg, #145c4b 0%, #7ebf76 100%);
   font-size: 15px;
 }
 
-
 /* LINKS */
 .footer-links {
   display: grid;
@@ -129,7 +128,7 @@ background: linear-gradient(90deg, #145c4b 0%, #7ebf76 100%);
   color: #64748b;
   margin-bottom: 12px;
   text-decoration: none;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .footer-column a:hover {
@@ -152,8 +151,8 @@ background: linear-gradient(90deg, #145c4b 0%, #7ebf76 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, .06);
-  transition: .25s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: 0.25s;
 }
 
 .social-icons a:hover {
@@ -167,8 +166,12 @@ background: linear-gradient(90deg, #145c4b 0%, #7ebf76 100%);
 }
 
 .app-badge img {
+  transition: 0.25s;
   height: 56px;
-  transition: .25s;
+  width: 100%;
+  margin-top: -17px;
+  margin-left: -10px;
+  transition: 0.25s;
 }
 
 .app-badge img:hover {

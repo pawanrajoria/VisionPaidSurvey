@@ -1,33 +1,36 @@
 {
-  "footer": {
-    "trust": "Ausgezeichnet",
-    "copyright": "© 2026 Profit Piller. Alle Rechte vorbehalten.",
-    "product_of": "Ein Produkt von",
-    "platform": {
-      "title": "Plattform",
-      "login": "Anmelden oder Registrieren",
-      "about": "Über ProfitPiller",
-      "contact": "Kontakt",
-      "help": "Hilfe"
-    },
-    "legal": {
-      "title": "Rechtliches",
-      "privacy": "Datenschutzrichtlinie",
-      "terms": "Allgemeine Geschäftsbedingungen",
-      "cookie": "Cookie-Richtlinie",
-      "dns": "Meine Daten nicht verkaufen"
-    },
-    "explore": {
-      "title": "Mehr entdecken",
-      "cash": "Geld mit Umfragen verdienen",
-      "gift": "Geschenkkarten",
-      "amazon": "Amazon Geschenkkarten",
-      "paypal": "PayPal Belohnungen",
-      "visa": "Visa Geschenkkarten"
-    },
-    "follow": {
-      "title": "Folgen Sie uns",
-      "download": "App herunterladen"
+    "footer": {
+        "trust": "Ausgezeichnet",
+        "copyright": "© 2026 Profit Piller. Alle Rechte vorbehalten.",
+        "product_of": "Ein Produkt von",
+        "platform": {
+            "title": "Plattform",
+            "login": "Anmelden oder Registrieren",
+            "about": "Über ProfitPiller",
+            "contact": "Kontakt",
+            "help": "Hilfe",
+            "blog": "Blog",
+            "guides": "Ratgeber",
+            "gift_cards": "Geschenkkarten"
+        },
+        "legal": {
+            "title": "Rechtliches",
+            "privacy": "Datenschutzrichtlinie",
+            "terms": "Allgemeine Geschäftsbedingungen",
+            "cookie": "Cookie-Richtlinie",
+            "dns": "Meine Daten nicht verkaufen"
+        },
+        "explore": {
+            "title": "Mehr entdecken",
+            "cash": "Geld mit Umfragen verdienen",
+            "gift": "Geschenkkarten",
+            "amazon": "Amazon Geschenkkarten",
+            "paypal": "PayPal Belohnungen",
+            "visa": "Visa Geschenkkarten"
+        },
+        "follow": {
+            "title": "Folgen Sie uns",
+            "download": "App herunterladen"
+        }
     }
-  }
 }

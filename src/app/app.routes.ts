@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './components/auth/auth.guard';
 import { langRedirectGuard } from './lang.redirect.guard';
+import { onboardingGuard } from './components/home/welcome/onboarding.guard';
+import { adminGuard } from './components/admin/admin.guard';
 
 export const routes: Routes = [
 
@@ -21,6 +23,7 @@ export const routes: Routes = [
       {
         path: 'admin',
         loadComponent: () => import('./components/admin/admin.component').then(m => m.AdminComponent),
+        canActivate: [authGuard, adminGuard],
         children: [
           { path: '', redirectTo: 'user-admin-dashboard', pathMatch: 'full' },
           {
@@ -55,11 +58,13 @@ export const routes: Routes = [
         children: [
           { path: '', redirectTo: 'earn', pathMatch: 'full' },
           { path: 'instruction', loadChildren: () => import('./components/home/instruction/instruction.route').then(m => m.InstructionRoutes) },
-          { path: 'earn', loadChildren: () => import('./components/home/earn/earn.route').then(m => m.EarnRoutes) },
+          { path: 'welcome', loadChildren: () => import('./components/home/welcome/welcome.route').then(m => m.WelcomeRoutes) },
+          { path: 'earn', canActivate: [onboardingGuard], loadChildren: () => import('./components/home/earn/earn.route').then(m => m.EarnRoutes) },
           { path: 'survey', loadChildren: () => import('./components/home/survey/survey.route').then(m => m.SurveyRoutes) },
           { path: 'offers', loadChildren: () => import('./components/home/offer/offer.route').then(m => m.OfferRoutes) },
           { path: 'offerwall', loadChildren: () => import('./components/home/offer-wall/offer-wall.route').then(m => m.OfferWallRoutes) },
           { path: 'cashout', loadChildren: () => import('./components/home/reward/reward.route').then(m => m.RewardRoutes) },
+          { path: 'chat', loadChildren: () => import('./components/home/chat/chat.route').then(m => m.ChatRoutes) },
           { path: 'leaderboard', loadChildren: () => import('./components/home/leaderboard/leaderboard.route').then(m => m.LeaderboardRoutes) },
           { path: 'account', loadChildren: () => import('./components/home/profile/profile.route').then(m => m.ProfileRoutes) },
           { path: 'help', loadChildren: () => import('./components/home/help/help.route').then(m => m.HelpRoutes) },
@@ -106,7 +111,9 @@ export const routes: Routes = [
           { path: 'getSurveyInventory', loadChildren: () => import('./components/userflow/survey-status/survey-status.route').then(m => m.surveyStatusRoutes) },
           { path: 'takeSurvey', loadChildren: () => import('./components/userflow/take-survey/take-survey.route').then(m => m.takeSurveyRoutes) },
           // { path: 'surveybycampaign', loadChildren: () => import('./components/userflow/take-survey/take-survey.route').then(m => m.takeSurveyRoutes) },
-          { path: 'endsurvey', loadChildren: () => import('./components/userflow/end-survey/end-survey.route').then(m => m.endSurveyRoutes) },
+          { path: 'userflowendsurvey', loadChildren: () => import('./components/userflow/end-survey/end-survey.route').then(m => m.endSurveyRoutes) },
+          { path: 'endsurvey', loadChildren: () => import('./components/userflow/complete-survey/complete-survey.route').then(m => m.completeSurveyRoutes) },
+
 
 
           { path: 'welcome', loadComponent: () => import('./components/userflow/survey-programming/welcome/welcome.component').then(m => m.WelcomeComponent) },

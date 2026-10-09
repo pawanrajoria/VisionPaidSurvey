@@ -1,48 +1,20 @@
-.balance-card {
+// The toolbar grows to a second row when the pills do not fit beside the balance.
+.mat-toolbar.balance-card {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
-    padding: 16px;
+    gap: 8px 12px;
+    height: auto;
+    min-height: 64px;
+    padding: 8px 16px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-}
-
-.balance-left {
-    display: flex;
-    align-items: center;
-
-    .wallet-icon {
-        font-size: 32px;
-        margin-right: 12px;
-    }
-
-    .balance-text {
-        .label {
-            font-size: 14px;
-            color: #666;
-        }
-
-        .value {
-            font-weight: bold;
-            font-size: 18px;
-        }
-    }
 }
 
 .balance-right {
     display: flex;
-    gap: 10px;
-
-    .streak {
-        min-width: 40px;
-        font-weight: bold;
-    }
-
-    .level {
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-    }
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 4px;
 }
 
 .fab-icon-button {

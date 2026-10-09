@@ -1,92 +1,298 @@
 {
-  "privacyPolicy": {
-    "heading": {
-      "title": "Datenschutzerklärung",
-      "intro": "Ihre Privatsphäre ist uns wichtig. Es ist die Politik von Profit Piller, Ihre Privatsphäre in Bezug auf alle Informationen zu respektieren, die wir von Ihnen auf unserer Website, https://www.profitpiller.com, und anderen Websites, die wir besitzen und betreiben, sammeln.",
-      "effectiveDate": "Gültigkeitsdatum: 6. Mai 2026"
-    },
-    "section1": {
-      "title": "1. Details, die wir sammeln",
-      "accessLogs": {
-        "subtitle": "Zugriffsprotokolle",
-        "description": "Wenn Sie die Profitpiller-Plattform durchsuchen, können unsere Server automatisch Standarddaten erfassen, die von Ihrem Internetbrowser gesendet werden. Dies kann die Internetprotokoll-(IP)-Adresse Ihres Systems, den Namen und die Version des Browsers, besuchte Seiten, Zeitstempel Ihres Besuchs, die Dauer des Aufenthalts auf jeder Seite und zusätzliche technische Details umfassen."
-      },
-      "deviceInformation": {
-        "subtitle": "Geräteinformationen",
-        "description": "Wir können auch Informationen im Zusammenhang mit dem Gerät sammeln, das Sie für den Zugriff auf unsere Plattform verwenden. Dies kann die Gerätekategorie, das Betriebssystem, eindeutige Identifikatoren, Konfigurationseinstellungen und Standortdaten umfassen. Die genauen gesammelten Daten hängen von den spezifischen Präferenzen und Berechtigungen ab, die auf Ihrem Gerät und Ihrer Software festgelegt sind. Für weitere Einblicke empfehlen wir, die Datenschutzpraktiken Ihres Geräte- oder Softwareanbieters zu überprüfen, um zu verstehen, welche Daten sie mit uns teilen."
-      },
-      "userInformation": {
-        "subtitle": "Benutzerinformationen",
-        "description": "Persönliche Informationen, die Sie uns freiwillig über unsere Plattform zur Verfügung stellen, wie Vor- und Nachname, E-Mail-Adresse, Geburtsdatum, Telefonnummer, Wohnadresse, Profilinformationen und andere demografische Informationen, können ebenfalls gesammelt werden."
-      }
-    },
-    "section2": {
-      "title": "2. Rechtsgrundlage für die Datenverarbeitung",
-      "description": "Wir werden Ihre persönlichen Daten rechtmäßig, fair und transparent verarbeiten. Wir sammeln und verarbeiten Informationen über Sie nur, wenn wir eine Rechtsgrundlage dafür haben. Diese Rechtsgrundlagen hängen davon ab, welche Dienste Sie nutzen und wie Sie sie nutzen, was bedeutet, dass wir Ihre Informationen nur sammeln und verwenden, wenn:"
-    },
-    "section3": {
-      "title": "3. Arten von Daten, die wir sammeln",
-      "subtitle": "Um Ihnen unsere Dienste bereitzustellen, sammeln wir Informationen, die in die folgenden Kategorien fallen:",
-      "a": "Identifikationsinformationen: Name, E-Mail-Adresse, Telefonnummer, Postanschrift.",
-      "b": "Technische Informationen: IP-Adresse, Geräteidentifikatoren, Browsertyp, Zugriffsprotokolle.",
-      "c": "Demografische Informationen: Geschlecht, Alter, Einkommen, Bildungsniveau."
-    },
-    "section4": {
-      "title": "4. Wie wir die Informationen verwenden",
-      "a": "Bereitstellung und Verbesserung unserer Dienste.",
-      "b": "Analyse des Benutzerverhaltens zur Verbesserung unserer Plattform.",
-      "c": "Personalisierung Ihrer Erfahrung und der Belohnungen, die Sie erhalten.",
-      "d": "Kommunikation mit Ihnen über Dienste, Updates und Werbeaktionen.",
-      "e": "Einhaltung gesetzlicher Verpflichtungen und Sicherheit."
-    },
-    "section5": {
-      "title": "5. Sicherheit Ihrer Daten",
-      "description": "Wir setzen modernste Sicherheitsmaßnahmen ein, um Ihre persönlichen Daten vor unbefugtem Zugriff, Änderung, Offenlegung oder Zerstörung zu schützen. Firewalls, Verschlüsselung und Zugriffskontrollprotokolle stellen sicher, dass Ihre Informationen sicher bleiben."
-    },
-    "section6": {
-      "title": "6. Speicherung und internationale Übertragungen",
-      "description": "Profitpiller kann Ihre persönlichen Daten in anderen Ländern als Ihrem eigenen speichern oder verarbeiten. Diese Übertragungen werden unter Einhaltung geeigneter rechtlicher Rahmenbedingungen und Schutzmaßnahmen durchgeführt, um ein Sicherheitsniveau zu gewährleisten, das dem in Ihrem Heimatland entspricht."
-    },
-    "section7": {
-      "title": "7. Ihre Datenschutzrechte",
-      "description": "Sie haben das Recht, eine Kopie Ihrer persönlichen Daten anzufordern, die wir besitzen, der Nutzung zu widersprechen, eine Korrektur oder Einschränkung ihrer Verarbeitung zu verlangen und in bestimmten Fällen die Löschung Ihrer persönlichen Daten zu beantragen."
-    },
-    "section8": {
-      "title": "8. Verwendung von Cookies",
-      "description": "Wir verwenden 'Cookies', um Informationen über Ihre Aktivitäten auf unserer Website zu sammeln und Ihre Erfahrung zu verbessern. Ein Cookie ist eine kleine Datendatei, die eine Website auf Ihrem Computer oder Mobilgerät speichert. Weitere Details finden Sie in unserer Cookie-Richtlinie."
-    },
-    "section9": {
-      "title": "9. Datenschutz von Kindern",
-      "description": "Unsere Dienste sind nicht für Personen unter 18 Jahren gedacht. Wir sammeln wissentlich keine Daten von Kindern. Wenn wir feststellen, dass wir Informationen von einem Minderjährigen gesammelt haben, werden wir Maßnahmen ergreifen, um diese umgehend zu löschen."
-    },
-    "section10": {
-      "title": "10. Offenlegung von Daten durch den Benutzer",
-      "description": "Alle Informationen, die Sie freiwillig in öffentlichen Bereichen unserer Website oder Plattform offenlegen, wie Blog-Kommentare oder Foren, können von anderen Benutzern eingesehen werden. Wir sind nicht verantwortlich dafür, wie Dritte solche Informationen verwenden."
-    },
-    "section11": {
-      "title": "11. Datenaufbewahrung",
-      "description": "Wir speichern Ihre persönlichen Daten nur so lange, wie es zur Bereitstellung unserer Dienste und aus legitimen geschäftlichen und rechtlichen Gründen erforderlich ist. Sobald sie nicht mehr benötigt werden, werden wir sie sicher löschen oder anonymisieren."
-    },
-    "section12": {
-      "title": "12. Ausübung Ihrer Rechte",
-      "description": "Um Ihre Rechte auszuüben oder bei Fragen zu dieser Richtlinie, kontaktieren Sie uns bitte per E-Mail unter <a href=\"mailto:privacy@profitpiller.com\">privacy@profitpiller.com</a>. Anfragen müssen so eingereicht werden, dass wir Ihre Identität überprüfen können, in der Regel über Ihr Konto oder eine andere Kontaktmethode Ihrer Wahl."
-    },
-    "section13": {
-      "title": "13. Einschränkungen unserer Datenschutzerklärung",
-      "description": "Die Profitpiller-Website kann Links zu externen Websites oder Diensten enthalten, die nicht von uns verwaltet werden. Bitte beachten Sie, dass wir nicht für den Inhalt, die Praktiken oder die Richtlinien von Plattformen Dritter verantwortlich sind und Sie ermutigen, deren Datenschutzbestimmungen unabhängig zu überprüfen."
-    },
-    "section14": {
-      "title": "14. Aktualisierungen dieser Datenschutzerklärung",
-      "description1": "Profitpiller behält sich das Recht vor, diese Datenschutzerklärung jederzeit zu ändern, um sie an sich entwickelnde rechtliche, operative oder Branchenstandards anzupassen. Wir werden geeignete Schritte unternehmen, um Benutzer über wesentliche Aktualisierungen zu informieren, in der Regel über unsere Website. Die fortgesetzte Nutzung unserer Dienste nach Überarbeitungen gilt als Ihre Anerkennung und Annahme der aktualisierten Richtlinienbedingungen.",
-      "description2": "In Fällen, in denen Änderungen die Art und Weise, wie wir Ihre persönlichen Daten verarbeiten, erheblich beeinflussen – wie die Änderung der Rechtsgrundlage für die Verarbeitung – werden wir Ihre erneute Zustimmung einholen, bevor wir mit den überarbeiteten Praktiken fortfahren."
-    },
-    "dataProtectionOfficer": {
-      "title": "Datenschutzbeauftragter",
-      "name": "Bogdan Pashynskyi",
-      "email": "dpo@profitpiller.com",
-      "company": "Legal Nodes Ltd",
-      "companyNumber": "Unternehmensnummer: 11668206",
-      "address": "Adresse: 90a High Street, Berkhamsted, Hertfordshire, England, HP4 2BL"
+    "privacyPolicy": {
+        "heading": {
+            "title": "Datenschutzerklärung",
+            "intro": "Ihre Privatsphäre ist uns wichtig. Es ist die Politik von Profit Piller, Ihre Privatsphäre in Bezug auf alle Informationen zu respektieren, die wir von Ihnen auf unserer Website, https://www.profitpiller.com, und anderen Websites, die wir besitzen und betreiben, sammeln.",
+            "effectiveDate": "Gültigkeitsdatum: 6. Mai 2026"
+        },
+        "section1": {
+            "title": "1. Details, die wir sammeln",
+            "accessLogs": {
+                "subtitle": "Zugriffsprotokolle",
+                "description": "Wenn Sie die Profitpiller-Plattform durchsuchen, können unsere Server automatisch Standarddaten erfassen, die von Ihrem Internetbrowser gesendet werden. Dies kann die Internetprotokoll-(IP)-Adresse Ihres Systems, den Namen und die Version des Browsers, besuchte Seiten, Zeitstempel Ihres Besuchs, die Dauer des Aufenthalts auf jeder Seite und zusätzliche technische Details umfassen."
+            },
+            "deviceInformation": {
+                "subtitle": "Geräteinformationen",
+                "description": "Wir können auch Informationen im Zusammenhang mit dem Gerät sammeln, das Sie für den Zugriff auf unsere Plattform verwenden. Dies kann die Gerätekategorie, das Betriebssystem, eindeutige Identifikatoren, Konfigurationseinstellungen und Standortdaten umfassen. Die genauen gesammelten Daten hängen von den spezifischen Präferenzen und Berechtigungen ab, die auf Ihrem Gerät und Ihrer Software festgelegt sind. Für weitere Einblicke empfehlen wir, die Datenschutzpraktiken Ihres Geräte- oder Softwareanbieters zu überprüfen, um zu verstehen, welche Daten sie mit uns teilen."
+            },
+            "userInformation": {
+                "subtitle": "Benutzerinformationen",
+                "description": "Persönliche Informationen, die Sie uns freiwillig über unsere Plattform zur Verfügung stellen, wie Vor- und Nachname, E-Mail-Adresse, Geburtsdatum, Telefonnummer, Wohnadresse, Profilinformationen und andere demografische Informationen, können ebenfalls gesammelt werden.",
+                "intro": "Wir können personenbezogene Angaben von Ihnen erfragen, zum Beispiel Ihre:",
+                "email": "E-Mail-Adresse",
+                "demographicData": "Um Ihnen passende Umfragen zuordnen zu können, erheben wir gegebenenfalls weitere demografische Daten, etwa Ihre Postleitzahl, Ihre Geschlechtsidentität, Ihren Familienstand, Ihren Bildungsabschluss, berufsbezogene Angaben sowie nicht personenbeziehbare Haushaltsdaten wie die Anzahl der Haushaltsmitglieder, das Gesamteinkommen, Altersgruppen usw."
+            }
+        },
+        "section2": {
+            "title": "2. Rechtsgrundlage für die Datenverarbeitung",
+            "description": "Wir werden Ihre persönlichen Daten rechtmäßig, fair und transparent verarbeiten. Wir sammeln und verarbeiten Informationen über Sie nur, wenn wir eine Rechtsgrundlage dafür haben. Diese Rechtsgrundlagen hängen davon ab, welche Dienste Sie nutzen und wie Sie sie nutzen, was bedeutet, dass wir Ihre Informationen nur sammeln und verwenden, wenn:",
+            "paragraph1": "Bei Profitpiller verarbeiten wir Ihre personenbezogenen Daten rechtmäßig, nach Treu und Glauben und in vollständig transparenter Weise. Wir erheben und nutzen Ihre Daten nur, wenn hierfür eine gültige Rechtsgrundlage besteht.",
+            "paragraph2": "Die Rechtsgrundlage für die Verarbeitung Ihrer Daten hängt davon ab, welche Dienste Sie in Anspruch nehmen und wie Sie diese nutzen. Das bedeutet, dass wir Ihre Daten nur erheben und verwenden, wenn:",
+            "point1": "dies für die Erfüllung eines Vertrags, dessen Vertragspartei Sie sind, oder zur Durchführung vorvertraglicher Maßnahmen auf Ihre Anfrage hin erforderlich ist (zum Beispiel, wenn wir eine von Ihnen angeforderte Leistung erbringen);",
+            "point2": "dies der Wahrung eines berechtigten geschäftlichen Interesses dient (sofern Ihre Rechte auf Schutz der Privatsphäre nicht überwiegen), etwa für Forschung und Innovation, zur Vermarktung unserer Angebote oder zur Verteidigung unserer Rechtsansprüche und Interessen;",
+            "point3": "Sie uns hierfür ausdrücklich Ihre Einwilligung für einen bestimmten Zweck erteilt haben (zum Beispiel für den Erhalt unseres Newsletters); oder",
+            "point4": "wir Ihre Daten verarbeiten müssen, um einer rechtlichen Verpflichtung nachzukommen.",
+            "consentWithdrawal": "Wenn Sie uns Ihre Einwilligung zur Nutzung Ihrer Daten für einen bestimmten Zweck erteilen, können Sie diese jederzeit widerrufen (die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung bleibt hiervon unberührt).",
+            "dataRetentionSecurity": "Wir speichern personenbezogene Daten nicht länger als erforderlich. Solange sich Ihre Daten in unserem Besitz befinden, schützen wir sie mit wirtschaftlich angemessenen Maßnahmen vor Verlust, Diebstahl, unbefugtem Zugriff, Offenlegung, Vervielfältigung, Missbrauch oder Veränderung. Bitte beachten Sie jedoch, dass keine Methode der elektronischen Übertragung oder Speicherung vollkommen sicher ist und wir keinen absoluten Schutz Ihrer Daten garantieren können.",
+            "accountClosure": "Soweit erforderlich, können wir Ihre personenbezogenen Daten aufbewahren, um rechtliche Verpflichtungen zu erfüllen oder Ihre lebenswichtigen Interessen bzw. die einer anderen Person zu schützen. Wird Ihr Konto geschlossen – durch Sie oder durch Profitpiller –, behalten wir uns das Recht vor, Ihre Daten im Einklang mit den geltenden Datenschutzgesetzen zu löschen oder zu anonymisieren, um den fortwährenden Schutz Ihrer Informationen sicherzustellen."
+        },
+        "section3": {
+            "title": "3. Arten von Daten, die wir sammeln",
+            "subtitle": "Um Ihnen unsere Dienste bereitzustellen, sammeln wir Informationen, die in die folgenden Kategorien fallen:",
+            "a": "Identifikationsinformationen: Name, E-Mail-Adresse, Telefonnummer, Postanschrift.",
+            "b": "Technische Informationen: IP-Adresse, Geräteidentifikatoren, Browsertyp, Zugriffsprotokolle.",
+            "c": "Demografische Informationen: Geschlecht, Alter, Einkommen, Bildungsniveau.",
+            "intro": "Profitpiller kann Informationen zu den nachstehend aufgeführten Zwecken erheben, speichern, nutzen und weitergeben. Personenbezogene Daten werden nicht in einer Weise verarbeitet, die mit diesen Zwecken unvereinbar ist:",
+            "point1": "um Ihnen auf Grundlage Ihres demografischen Profils und der Zielgruppenanforderungen der jeweiligen Umfragen passende Umfragen zuzuordnen;",
+            "point2": "um Ihnen zu ermöglichen, Ihre Nutzung unserer Plattform anzupassen oder zu personalisieren;",
+            "point3": "um Ihnen Zugang zu unserer Website, den zugehörigen mobilen Apps und den verknüpften Social-Media-Kanälen bereitzustellen;",
+            "point4": "um mit Ihnen in Kontakt zu treten und wirksam mit Ihnen zu kommunizieren;",
+            "point5": "für die interne Dokumentation und allgemeine Verwaltungsaufgaben;",
+            "point6": "für Analysen, Marktforschung und Maßnahmen zur Geschäftsentwicklung, einschließlich der Pflege und Verbesserung unserer Website, unserer Apps und unseres Online-Auftritts;",
+            "point7": "für Werbung und Marketing, einschließlich der Zusendung von Werbeinhalten zu unseren Diensten und Angeboten sowie zu Produkten Dritter, die für Sie von Interesse sein könnten;",
+            "point8": "um unseren rechtlichen Verpflichtungen nachzukommen und etwaige Rechtsfragen oder Streitigkeiten zu bearbeiten oder beizulegen."
+        },
+        "section4": {
+            "title": "4. Wie wir die Informationen verwenden",
+            "a": "Bereitstellung und Verbesserung unserer Dienste.",
+            "b": "Analyse des Benutzerverhaltens zur Verbesserung unserer Plattform.",
+            "c": "Personalisierung Ihrer Erfahrung und der Belohnungen, die Sie erhalten.",
+            "d": "Kommunikation mit Ihnen über Dienste, Updates und Werbeaktionen.",
+            "e": "Einhaltung gesetzlicher Verpflichtungen und Sicherheit.",
+            "intro": "Profitpiller kann personenbezogene Daten an folgende Empfänger weitergeben:",
+            "point1": "externe Dienstleister, damit diese ihre Leistungen erbringen können; hierzu zählen unter anderem IT-Dienstleister, Cloud-Speicherdienste, Hosting- und Serveranbieter, Werbenetzwerke, Analysedienste, Systeme zur Fehlerüberwachung, Inkassodienste, Anbieter von technischem Support, Marketing- und Werbeagenturen, professionelle Berater sowie Zahlungsdienstleister;",
+            "point2": "unsere Mitarbeiter, freien Auftragnehmer und verbundenen Unternehmen;",
+            "point3": "Sponsoren oder Veranstalter von Gewinnspielen und Verlosungen, die wir durchführen;",
+            "point4": "Dritte, einschließlich Vertreter oder Subunternehmer, die uns dabei unterstützen, Ihnen Inhalte, Produkte, Dienstleistungen oder Werbemitteilungen bereitzustellen;",
+            "point5": "Kunden, Marktforschungsunternehmen, Partneragenturen und Umfrage-Marktplätze, die uns Umfragen zur Verfügung stellen."
+        },
+        "section5": {
+            "title": "5. Sicherheit Ihrer Daten",
+            "description": "Wir setzen modernste Sicherheitsmaßnahmen ein, um Ihre persönlichen Daten vor unbefugtem Zugriff, Änderung, Offenlegung oder Zerstörung zu schützen. Firewalls, Verschlüsselung und Zugriffskontrollprotokolle stellen sicher, dass Ihre Informationen sicher bleiben.",
+            "paragraph1": "Die von Profitpiller erhobenen personenbezogenen Daten können in den Vereinigten Staaten oder in jedem anderen Land gespeichert und verarbeitet werden, in dem wir, unsere verbundenen Unternehmen, Partner oder externen Dienstleister Einrichtungen unterhalten. Indem Sie uns Ihre personenbezogenen Daten mitteilen, erklären Sie sich mit der Übermittlung und Offenlegung dieser Daten an Stellen in anderen Ländern einverstanden.",
+            "paragraph2": "Bei der Übermittlung personenbezogener Daten aus dem Europäischen Wirtschaftsraum (EWR) an Orte außerhalb des EWR stellen wir sicher, dass geeignete Garantien bestehen. Dazu können die von der Europäischen Kommission genehmigten Standardvertragsklauseln, verbindliche interne Datenschutzvorschriften oder andere rechtmäßige Übermittlungsmechanismen gehören.",
+            "paragraph3": "Soweit wir personenbezogene Daten aus Rechtsordnungen außerhalb des EWR in andere internationale Regionen übermitteln, nehmen Sie zur Kenntnis, dass Empfänger in diesen Regionen möglicherweise keinen Datenschutzvorschriften unterliegen, die denen Ihres Landes gleichwertig sind. Damit können gewisse Risiken verbunden sein, insbesondere wenn solche Dritte Handlungen vornehmen, die gegen unsere lokalen Datenschutzgesetze verstoßen würden; dies kann Ihre Möglichkeiten einschränken, Rechtsbehelfe nach dem Datenschutzrecht unserer Rechtsordnung geltend zu machen."
+        },
+        "section6": {
+            "title": "6. Speicherung und internationale Übertragungen",
+            "description": "Profitpiller kann Ihre persönlichen Daten in anderen Ländern als Ihrem eigenen speichern oder verarbeiten. Diese Übertragungen werden unter Einhaltung geeigneter rechtlicher Rahmenbedingungen und Schutzmaßnahmen durchgeführt, um ein Sicherheitsniveau zu gewährleisten, das dem in Ihrem Heimatland entspricht.",
+            "choicePermission": {
+                "subtitle": "Wahlmöglichkeit und Einwilligung:",
+                "description": "Indem Sie Profitpiller Ihre personenbezogenen Daten übermitteln, erkennen Sie an und erklären sich damit einverstanden, dass wir Ihre Daten gemäß dieser Datenschutzerklärung erheben, speichern, nutzen und weitergeben. Wenn Sie unter 16 Jahre alt sind, müssen Sie über die Erlaubnis eines Elternteils oder Erziehungsberechtigten für den Zugriff auf diese Website und deren Nutzung verfügen und – soweit gesetzlich zulässig – bestätigen, dass diese Erlaubnis vorliegt und dass Ihr Elternteil oder Erziehungsberechtigter der Weitergabe Ihrer personenbezogenen Daten an uns zugestimmt hat. Die Angabe Ihrer personenbezogenen Daten ist freiwillig; wenn Sie darauf verzichten, können Sie bestimmte Bereiche unserer Plattform oder unsere Dienste jedoch möglicherweise nur eingeschränkt nutzen."
+            },
+            "externalSources": {
+                "subtitle": "Informationen aus externen Quellen:",
+                "description": "Erhalten wir Ihre personenbezogenen Daten von Dritten, behandeln wir diese gemäß dieser Datenschutzerklärung. Wenn Sie Profitpiller personenbezogene Daten einer anderen Person übermitteln, versichern Sie, dass Sie von dieser Person dazu ermächtigt wurden, ihre Daten an uns weiterzugeben."
+            },
+            "limitationsRestrictions": {
+                "subtitle": "Beschränkungen und Einschränkungen:",
+                "description": "Sie können die Erhebung oder Nutzung Ihrer personenbezogenen Daten einschränken. Wenn Sie zuvor dem Erhalt von Direktwerbung von uns zugestimmt haben, können Sie diese Einwilligung jederzeit über die unten angegebenen Kontaktdaten widerrufen. Wenn Sie uns auffordern, die Verarbeitung Ihrer personenbezogenen Daten einzuschränken, erläutern wir Ihnen, wie sich dies auf Ihren Zugang zu unserer Plattform und unseren Diensten auswirken kann."
+            },
+            "accessDataTransferability": {
+                "subtitle": "Auskunft und Datenübertragbarkeit:",
+                "description": "Sie haben das Recht, Auskunft über die personenbezogenen Daten zu verlangen, die Profitpiller über Sie gespeichert hat. Auf Anfrage stellen wir Ihnen eine digitale Kopie zur Verfügung – in der Regel im CSV-Format oder in einem anderen maschinenlesbaren Format. Sie können außerdem verlangen, dass wir Ihre personenbezogenen Daten aus unseren Unterlagen löschen oder an einen anderen Anbieter Ihrer Wahl übermitteln."
+            }
+        },
+        "section7": {
+            "title": "7. Ihre Datenschutzrechte",
+            "description": "Sie haben das Recht, eine Kopie Ihrer persönlichen Daten anzufordern, die wir besitzen, der Nutzung zu widersprechen, eine Korrektur oder Einschränkung ihrer Verarbeitung zu verlangen und in bestimmten Fällen die Löschung Ihrer persönlichen Daten zu beantragen."
+        },
+        "section8": {
+            "title": "8. Verwendung von Cookies",
+            "description": "Wir verwenden 'Cookies', um Informationen über Ihre Aktivitäten auf unserer Website zu sammeln und Ihre Erfahrung zu verbessern. Ein Cookie ist eine kleine Datendatei, die eine Website auf Ihrem Computer oder Mobilgerät speichert. Weitere Details finden Sie in unserer Cookie-Richtlinie."
+        },
+        "section9": {
+            "title": "9. Datenschutz von Kindern",
+            "description": "Unsere Dienste sind nicht für Personen unter 18 Jahren gedacht. Wir sammeln wissentlich keine Daten von Kindern. Wenn wir feststellen, dass wir Informationen von einem Minderjährigen gesammelt haben, werden wir Maßnahmen ergreifen, um diese umgehend zu löschen.",
+            "legalGroundsTitle": "Rechtsgrundlagen für die Verarbeitung personenbezogener Daten nach der DSGVO",
+            "legalGroundsIntro": "Profitpiller kann Ihre personenbezogenen Daten auf folgenden Rechtsgrundlagen verarbeiten:",
+            "consent": {
+                "title": "Einwilligung:",
+                "description": "Sie haben ausdrücklich in die Verarbeitung Ihrer personenbezogenen Daten für einen oder mehrere bestimmte Zwecke eingewilligt."
+            },
+            "contractualNecessity": {
+                "title": "Vertragserfüllung:",
+                "description": "Die Daten sind für die Erfüllung eines Vertrags mit Ihnen oder zur Durchführung vorvertraglicher Maßnahmen erforderlich."
+            },
+            "legalCompliance": {
+                "title": "Rechtliche Verpflichtung:",
+                "description": "Die Verarbeitung ist erforderlich, um unsere Pflichten nach geltendem Recht zu erfüllen."
+            },
+            "vitalInterests": {
+                "title": "Lebenswichtige Interessen:",
+                "description": "Die Verarbeitung ist erforderlich, um Ihre lebenswichtigen Interessen oder die einer anderen Person zu schützen."
+            },
+            "publicDuty": {
+                "title": "Öffentliche Aufgabe:",
+                "description": "Die Verarbeitung ist für die Wahrnehmung einer Aufgabe erforderlich, die im öffentlichen Interesse liegt oder in Ausübung öffentlicher Gewalt erfolgt."
+            },
+            "legitimateInterests": {
+                "title": "Berechtigte Interessen:",
+                "description": "Die Verarbeitung dient der Wahrung eines berechtigten Interesses von Profitpiller, sofern Ihre Datenschutzrechte nicht überwiegen."
+            },
+            "legalBasisExplanation": "Auf Wunsch erläutern wir Ihnen gern, welche Rechtsgrundlage im Einzelnen für Ihre Daten gilt, einschließlich der Frage, ob die Bereitstellung gesetzlich oder vertraglich vorgeschrieben oder für einen Vertragsabschluss erforderlich ist.",
+            "yourRightsTitle": "Ihre Rechte nach der DSGVO",
+            "yourRightsIntro": "Profitpiller verpflichtet sich, die durch die DSGVO gewährten Datenschutzrechte zu wahren. Wenn Sie sich in der EU befinden, stehen Ihnen folgende Rechte zu:",
+            "access": {
+                "title": "Auskunft:",
+                "description": "Sie können verlangen, die bei uns über Sie gespeicherten personenbezogenen Daten einzusehen, zu aktualisieren oder zu löschen."
+            },
+            "rectification": {
+                "title": "Berichtigung:",
+                "description": "Sie können die Berichtigung unrichtiger oder unvollständiger Daten verlangen, die wir über Sie gespeichert haben."
+            },
+            "objection": {
+                "title": "Widerspruch:",
+                "description": "Sie können der Verarbeitung Ihrer Daten widersprechen, wenn diese auf Grundlage berechtigter Interessen oder zu Zwecken der Direktwerbung erfolgt."
+            },
+            "erasure": {
+                "title": "Löschung:",
+                "description": "Sie können die Löschung Ihrer Daten verlangen, wenn diese für den Zweck, für den wir sie erhoben haben, nicht mehr erforderlich sind."
+            },
+            "dataPortability": {
+                "title": "Datenübertragbarkeit:",
+                "description": "Sie können Ihre Daten in einem gängigen, maschinenlesbaren Format anfordern, um sie an einen anderen Dienst zu übertragen."
+            },
+            "withdrawalOfConsent": {
+                "title": "Widerruf der Einwilligung:",
+                "description": "Sie können Ihre Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung bleibt davon unberührt."
+            },
+            "exercisingRightsTitle": "Ausübung Ihrer Rechte nach der DSGVO",
+            "exercisingRightsDescription1": "Um Ihre Rechte auszuüben, kontaktieren Sie uns bitte über die in dieser Datenschutzerklärung genannten Wege. Wir können einen Nachweis Ihrer Identität verlangen. Wir bemühen uns, innerhalb eines Monats zu antworten. Sollte mehr Zeit erforderlich sein, informieren wir Sie darüber und können die Frist um bis zu zwei weitere Monate verlängern.",
+            "exercisingRightsDescription2": "Wenn Sie der Ansicht sind, dass Ihre Rechte verletzt wurden, können Sie Beschwerde bei der für Sie zuständigen Datenschutzaufsichtsbehörde einlegen."
+        },
+        "section10": {
+            "title": "10. Offenlegung von Daten durch den Benutzer",
+            "description": "Alle Informationen, die Sie freiwillig in öffentlichen Bereichen unserer Website oder Plattform offenlegen, wie Blog-Kommentare oder Foren, können von anderen Benutzern eingesehen werden. Wir sind nicht verantwortlich dafür, wie Dritte solche Informationen verwenden.",
+            "yourRightsTitle": "Ihre Rechte nach dem CCPA",
+            "yourRightsIntro": "Wenn Sie Ihren Wohnsitz in Kalifornien haben, stehen Ihnen nach dem California Consumer Privacy Act (CCPA) folgende Rechte zu:",
+            "rightToNotice": {
+                "title": "Recht auf Information:",
+                "description": "Sie erfahren, welche Kategorien von Daten erhoben werden und zu welchen Zwecken sie verwendet werden."
+            },
+            "rightToAccess": {
+                "title": "Recht auf Auskunft:",
+                "description": "Sie können Auskunft über Ihre personenbezogenen Daten verlangen, die in den letzten 12 Monaten erhoben und an Dritte weitergegeben wurden."
+            },
+            "rightToOptOut": {
+                "title": "Recht auf Opt-out:",
+                "description": "Sie können verlangen, dass Ihre Daten nicht an Dritte verkauft werden."
+            },
+            "rightToKnow": {
+                "title": "Recht auf Kenntnis:",
+                "description": "Sie können Auskunft über Herkunft, Zweck und Weitergabe Ihrer personenbezogenen Daten verlangen."
+            },
+            "rightToDelete": {
+                "title": "Recht auf Löschung:",
+                "description": "Sie können verlangen, dass Ihre Daten aus unseren Unterlagen gelöscht werden."
+            },
+            "rightToNonDiscrimination": {
+                "title": "Recht auf Nichtdiskriminierung:",
+                "description": "Sie haben Anspruch auf gleiche Leistungen und Preise, unabhängig davon, ob Sie Ihre Datenschutzrechte ausüben."
+            },
+            "exercisingRightsTitle": "Ausübung Ihrer Rechte nach dem CCPA",
+            "exercisingRightsDescription": "Einwohner Kaliforniens können ihre Anfrage per E-Mail, telefonisch oder über unsere Webseite „Meine personenbezogenen Daten nicht verkaufen“ an uns richten. Wir antworten innerhalb von 45 Tagen; diese Frist kann bei Bedarf einmalig um weitere 45 Tage verlängert werden. Zum Schutz Ihrer Daten kann eine Identitätsprüfung erforderlich sein."
+        },
+        "section11": {
+            "title": "11. Datenaufbewahrung",
+            "description": "Wir speichern Ihre persönlichen Daten nur so lange, wie es zur Bereitstellung unserer Dienste und aus legitimen geschäftlichen und rechtlichen Gründen erforderlich ist. Sobald sie nicht mehr benötigt werden, werden wir sie sicher löschen oder anonymisieren.",
+            "infoForConsumers": "Informationen für Verbraucher in Virginia",
+            "infoForConsumersDescription": "Dieser Abschnitt gilt für Einwohner Virginias gemäß dem Virginia Consumer Data Protection Act (VCDPA). Soweit anwendbar, hat er Vorrang vor widersprüchlichen Abschnitten dieser Datenschutzerklärung.",
+            "personalDataHandled": {
+                "title": "Personenbezogene Daten, die wir verarbeiten",
+                "description": "Profitpiller kann Daten wie Ihre E-Mail-Adresse erheben. Bevor wir weitere Kategorien personenbezogener Daten erheben, informieren wir Sie darüber."
+            },
+            "whyProcessData": {
+                "title": "Warum wir Ihre Daten verarbeiten",
+                "description": "Unsere Verarbeitungszwecke sind in den Abschnitten „Informationen, die wir erheben“ und „Rechtsgrundlagen der Verarbeitung“ näher beschrieben. Ohne Ihre Einwilligung verwenden wir Ihre Daten nicht für Zwecke, die damit in keinem Zusammenhang stehen."
+            },
+            "yourRightsTitle": "Ihre Rechte nach dem VCDPA",
+            "access": {
+                "title": "Auskunft:",
+                "description": "Sie können sich bestätigen lassen, ob wir Daten über Sie verarbeiten, und diese einsehen."
+            },
+            "correction": {
+                "title": "Berichtigung:",
+                "description": "Sie können unrichtige personenbezogene Daten berichtigen lassen."
+            },
+            "deletion": {
+                "title": "Löschung:",
+                "description": "Sie können die Löschung Ihrer personenbezogenen Daten verlangen."
+            },
+            "dataPortability": {
+                "title": "Datenübertragbarkeit:",
+                "description": "Sie können Ihre Daten in einem übertragbaren Format erhalten."
+            },
+            "optOut": {
+                "title": "Opt-out:",
+                "description": "Sie können der Verwendung Ihrer Daten für zielgerichtete Werbung oder Profiling widersprechen."
+            },
+            "nonDiscrimination": {
+                "title": "Nichtdiskriminierung:",
+                "description": "Die Ausübung Ihrer Datenschutzrechte hat für Sie keine Nachteile."
+            },
+            "submittingRequestsTitle": "Anfragen einreichen",
+            "submittingRequestsDescription": "Um Ihre Rechte auszuüben, kontaktieren Sie uns bitte über die in dieser Datenschutzerklärung genannten Wege. Zur Bearbeitung einer Anfrage müssen wir Ihre Identität überprüfen. Erwachsene können Anfragen im Namen ihrer Kinder stellen.",
+            "timelinesAppealsTitle": "Fristen und Rechtsbehelfe",
+            "timelinesAppealsDescription": "Wir antworten innerhalb von 45 Tagen nach Eingang einer gültigen Anfrage. In komplexen Fällen kann die Bearbeitung bis zu 90 Tage dauern. Lehnen wir Ihre Anfrage ab, können Sie Widerspruch einlegen; über diesen entscheiden wir innerhalb von 60 Tagen. Bei erneuter Ablehnung können Sie sich an den Generalstaatsanwalt von Virginia wenden."
+        },
+        "section12": {
+            "title": "12. Ausübung Ihrer Rechte",
+            "description": "Um Ihre Rechte auszuüben oder bei Fragen zu dieser Richtlinie, kontaktieren Sie uns bitte per E-Mail unter <a href=\"mailto:privacy@profitpiller.com\">privacy@profitpiller.com</a>. Anfragen müssen so eingereicht werden, dass wir Ihre Identität überprüfen können, in der Regel über Ihr Konto oder eine andere Kontaktmethode Ihrer Wahl.",
+            "intro": "Das brasilianische Datenschutzgesetz Lei Geral de Proteção de Dados (LGPD) gewährt Nutzern mit Wohnsitz in Brasilien folgende Rechte:",
+            "confirmation": {
+                "title": "Bestätigung:",
+                "description": "Sie können sich bestätigen lassen, ob wir Ihre Daten verarbeiten."
+            },
+            "access": {
+                "title": "Auskunft:",
+                "description": "Sie können einsehen, welche personenbezogenen Daten uns vorliegen und an wen sie weitergegeben werden."
+            },
+            "correction": {
+                "title": "Berichtigung:",
+                "description": "Sie können veraltete oder unrichtige Daten aktualisieren lassen."
+            },
+            "anonymizationDeletion": {
+                "title": "Anonymisierung oder Löschung:",
+                "description": "Sie können die Löschung oder Sperrung nicht erforderlicher Daten verlangen."
+            },
+            "portability": {
+                "title": "Übertragbarkeit:",
+                "description": "Sie können Ihre Daten an einen anderen Anbieter übertragen lassen."
+            },
+            "erasure": {
+                "title": "Löschung:",
+                "description": "Sie können Daten löschen lassen, die auf Grundlage Ihrer Einwilligung verarbeitet wurden."
+            },
+            "infoAboutConsent": {
+                "title": "Informationen zur Einwilligung:",
+                "description": "Sie können sich über die Folgen einer Verweigerung der Einwilligung informieren."
+            },
+            "withdrawConsent": {
+                "title": "Widerruf der Einwilligung:",
+                "description": "Sie können eine zuvor erteilte Einwilligung jederzeit widerrufen."
+            },
+            "howToExerciseRightsTitle": "So üben Sie diese Rechte aus",
+            "howToExerciseRightsDescription": "Senden Sie eine überprüfbare Anfrage an: privacy@profitpiller.com. Vor der Bearbeitung Ihrer Anfrage überprüfen wir Ihre Identität.",
+            "responseTimeTitle": "Antwortfrist",
+            "responseTimeDescription": "Wir bemühen uns, innerhalb von 15 Tagen zu antworten, spätestens jedoch innerhalb von 30 Tagen. Wenn Sie ein Konto bei uns haben, können wir Ihnen unsere Antwort über Ihr Konto oder über einen anderen Kontaktweg Ihrer Wahl zukommen lassen."
+        },
+        "section13": {
+            "title": "13. Einschränkungen unserer Datenschutzerklärung",
+            "description": "Die Profitpiller-Website kann Links zu externen Websites oder Diensten enthalten, die nicht von uns verwaltet werden. Bitte beachten Sie, dass wir nicht für den Inhalt, die Praktiken oder die Richtlinien von Plattformen Dritter verantwortlich sind und Sie ermutigen, deren Datenschutzbestimmungen unabhängig zu überprüfen."
+        },
+        "section14": {
+            "title": "14. Aktualisierungen dieser Datenschutzerklärung",
+            "description1": "Profitpiller behält sich das Recht vor, diese Datenschutzerklärung jederzeit zu ändern, um sie an sich entwickelnde rechtliche, operative oder Branchenstandards anzupassen. Wir werden geeignete Schritte unternehmen, um Benutzer über wesentliche Aktualisierungen zu informieren, in der Regel über unsere Website. Die fortgesetzte Nutzung unserer Dienste nach Überarbeitungen gilt als Ihre Anerkennung und Annahme der aktualisierten Richtlinienbedingungen.",
+            "description2": "In Fällen, in denen Änderungen die Art und Weise, wie wir Ihre persönlichen Daten verarbeiten, erheblich beeinflussen – wie die Änderung der Rechtsgrundlage für die Verarbeitung – werden wir Ihre erneute Zustimmung einholen, bevor wir mit den überarbeiteten Praktiken fortfahren."
+        },
+        "dataProtectionOfficer": {
+            "title": "Datenschutzbeauftragter",
+            "name": "Bogdan Pashynskyi",
+            "email": "dpo@profitpiller.com",
+            "company": "Legal Nodes Ltd",
+            "companyNumber": "Unternehmensnummer: 11668206",
+            "address": "Adresse: 90a High Street, Berkhamsted, Hertfordshire, England, HP4 2BL"
+        }
     }
-  }
 }

@@ -49,10 +49,12 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const skipRequest = shouldSkipRequest(req);
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
+  const  platform = "web";
+
   // ✅ Skip for static, SSR, or explicitly excluded requests
   if (skipRequest) {
     return next(req.clone({
-      headers: req.headers.set('X-Timezone', timezone)
+      headers: req.headers.set('X-Timezone', timezone).set('X-Platform', platform)
     }));
   }
 
@@ -62,14 +64,21 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
         ? authtoken.slice(1, -1)
         : authtoken;
 
+      // "X-Background: true" = authenticated call that must not block the page:
+      // no full-screen spinner and no error toast (the caller shows its own
+      // skeleton / fallback). Used by the Earn page and the engagement widgets.
+      const isBackground = req.headers.get('X-Background') === 'true';
+
       const headers = req.headers
         .delete('X-Skip-Loader')
-        .set('X-Timezone', timezone);
+        .delete('X-Background')
+        .set('X-Timezone', timezone)
+        .set('X-Platform', platform);
 
       const authHeaders = token ? headers.set('Authorization', `Bearer ${token}`) : headers;
       const modifiedReq = req.clone({ headers: authHeaders });
 
-      loaderService.show();
+      if (!isBackground) loaderService.show();
 
       return next(modifiedReq).pipe(
         tap(event => {
@@ -79,6 +88,10 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
         }),
         catchError(error => {
           // console.error('Interceptor Error:', error);
+
+          if (isBackground && error.status !== 401) {
+            return throwError(() => error);
+          }
 
           if (error.status === 401) {
             messageService.showMessage(new MessageVM(
@@ -98,7 +111,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
 
           return throwError(() => error);
         }),
-        finalize(() => loaderService.hide())
+        finalize(() => { if (!isBackground) loaderService.hide(); })
       );
     })
   );

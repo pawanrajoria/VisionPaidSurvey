@@ -1,92 +1,298 @@
 {
-  "privacyPolicy": {
-    "heading": {
-      "title": "Dasar Privasi",
-      "intro": "Privasi anda penting bagi kami. Adalah polisi Profit Piller untuk menghormati privasi anda mengenai sebarang maklumat yang kami kumpulkan daripada anda di seluruh laman web kami, https://www.profitpiller.com, dan tapak lain yang kami miliki dan kendalikan.",
-      "effectiveDate": "Tarikh Kuat Kuasa: 6 Mei 2026"
-    },
-    "section1": {
-      "title": "1. Butiran yang Kami Kumpul",
-      "accessLogs": {
-        "subtitle": "Log Akses",
-        "description": "Apabila anda melayari platform Profitpiller, pelayan kami mungkin secara automatik menangkap data standard yang dihantar oleh pelayar internet anda. Ini mungkin termasuk alamat Protokol Internet (IP) sistem anda, nama dan versi pelayar, halaman yang dilawati, cap masa lawatan anda, tempoh masa yang dihabiskan pada setiap halaman, dan butiran teknikal tambahan."
-      },
-      "deviceInformation": {
-        "subtitle": "Maklumat Peranti",
-        "description": "Kami juga mungkin mengumpul maklumat berkaitan peranti yang anda gunakan untuk mengakses platform kami. Ini mungkin melibatkan kategori peranti, sistem pengendalian, pengecam unik, tetapan konfigurasi, dan data lokasi. Data tepat yang dikumpul bergantung pada keutamaan dan keizinan khusus yang ditetapkan pada peranti dan perisian anda. Untuk maklumat lanjut, kami cadangkan menyemak amalan privasi pembekal peranti atau perisian anda untuk memahami data yang mereka kongsi dengan kami."
-      },
-      "userInformation": {
-        "subtitle": "Maklumat Pengguna",
-        "description": "Maklumat peribadi yang anda berikan secara sukarela kepada kami melalui platform kami, seperti nama pertama dan akhir, alamat e-mel, tarikh lahir, nombor telefon, alamat kediaman, maklumat profil dan maklumat demografi lain, juga boleh dikumpul."
-      }
-    },
-    "section2": {
-      "title": "2. Asas Undang-undang untuk Pemprosesan Data",
-      "description": "Kami akan memproses maklumat peribadi anda secara sah, adil, dan telus. Kami mengumpul dan memproses maklumat tentang anda hanya apabila kami mempunyai asas undang-undang untuk berbuat demikian. Asas undang-undang ini bergantung pada perkhidmatan yang anda gunakan dan cara anda menggunakannya, yang bermaksud kami hanya mengumpul dan menggunakan maklumat anda apabila:"
-    },
-    "section3": {
-      "title": "3. Jenis Data yang Kami Kumpul",
-      "subtitle": "Untuk menyediakan perkhidmatan kami kepada anda, kami mengumpul maklumat yang termasuk dalam kategori berikut:",
-      "a": "Maklumat pengenalan: Nama, alamat e-mel, nombor telefon, alamat pos.",
-      "b": "Maklumat teknikal: Alamat IP, pengecam peranti, jenis pelayar, log akses.",
-      "c": "Maklumat demografi: Jantina, umur, pendapatan, tahap pendidikan."
-    },
-    "section4": {
-      "title": "4. Bagaimana Kami Menggunakan Maklumat",
-      "a": "Menyediakan dan menambah baik perkhidmatan kami.",
-      "b": "Menganalisis tingkah laku pengguna untuk menambah baik platform kami.",
-      "c": "Memperibadikan pengalaman anda dan ganjaran yang anda terima.",
-      "d": "Berkomunikasi dengan anda tentang perkhidmatan, kemas kini, dan promosi.",
-      "e": "Mematuhi obligasi undang-undang dan keselamatan."
-    },
-    "section5": {
-      "title": "5. Keselamatan Data Anda",
-      "description": "Kami menggunakan langkah-langkah keselamatan terkini untuk melindungi data peribadi anda daripada akses tanpa kebenaran, pengubahan, pendedahan, atau kemusnahan. Firewall, penyulitan, dan protokol kawalan akses memastikan maklumat anda kekal selamat."
-    },
-    "section6": {
-      "title": "6. Penyimpanan dan Pemindahan Antarabangsa",
-      "description": "Profitpiller mungkin menyimpan atau memproses data peribadi anda di negara selain negara anda. Pemindahan ini dilakukan dengan mematuhi rangka kerja undang-undang dan perlindungan yang sesuai untuk memastikan tahap keselamatan yang setara dengan negara asal anda."
-    },
-    "section7": {
-      "title": "7. Hak Privasi Anda",
-      "description": "Anda mempunyai hak untuk meminta salinan data peribadi anda yang kami pegang, untuk membantah penggunaannya, untuk meminta pembetulan atau sekatan dalam pemprosesannya, dan, dalam beberapa kes, untuk meminta pemadaman data peribadi anda."
-    },
-    "section8": {
-      "title": "8. Penggunaan kuki",
-      "description": "Kami menggunakan 'kuki' untuk mengumpul maklumat tentang aktiviti anda di tapak kami dan untuk meningkatkan pengalaman anda. Kuki ialah fail data kecil yang disimpan oleh laman web pada komputer atau peranti mudah alih anda. Untuk butiran lanjut, sila semak dasar kuki kami."
-    },
-    "section9": {
-      "title": "9. Privasi Kanak-kanak",
-      "description": "Perkhidmatan kami tidak bertujuan untuk individu di bawah umur 18 tahun. Kami tidak sengaja mengumpul data daripada kanak-kanak. Jika kami mendapati kami telah mengumpul maklumat daripada kanak-kanak di bawah umur, kami akan mengambil langkah untuk memadamkannya dengan segera."
-    },
-    "section10": {
-      "title": "10. Pendedahan Data oleh Pengguna",
-      "description": "Sebarang maklumat yang anda dedahkan secara sukarela di kawasan awam laman web atau platform kami, seperti komen blog atau forum, mungkin dilihat oleh pengguna lain. Kami tidak bertanggungjawab untuk cara pihak ketiga mungkin menggunakan maklumat tersebut."
-    },
-    "section11": {
-      "title": "11. Pengekalan Data",
-      "description": "Kami hanya mengekalkan maklumat peribadi anda selama yang diperlukan untuk menyediakan perkhidmatan kami dan untuk alasan perniagaan dan undang-undang yang sah. Sebaik sahaja ia tidak lagi diperlukan, kami akan memadamkannya dengan selamat atau menjadikannya tanpa nama."
-    },
-    "section12": {
-      "title": "12. Melaksanakan Hak Anda",
-      "description": "Untuk melaksanakan hak anda atau untuk sebarang soalan mengenai dasar ini, sila hubungi kami melalui e-mel di <a href=\"mailto:privacy@profitpiller.com\">privacy@profitpiller.com</a>. Permintaan mesti dihantar dalam cara yang membolehkan kami mengesahkan identiti anda, biasanya melalui akaun anda atau kaedah hubungan lain pilihan anda."
-    },
-    "section13": {
-      "title": "13. Batasan Dasar Privasi Kami",
-      "description": "Laman web Profitpiller mungkin menyertakan pautan ke laman web atau perkhidmatan luaran yang tidak diuruskan oleh kami. Sila ambil perhatian bahawa kami tidak bertanggungjawab untuk kandungan, amalan, atau polisi platform pihak ketiga dan menggalakkan anda untuk menyemak terma privasi mereka secara bebas."
-    },
-    "section14": {
-      "title": "14. Kemas Kini kepada Dasar Privasi Ini",
-      "description1": "Profitpiller berhak untuk mengubah suai dasar privasi ini pada bila-bila masa untuk sejajar dengan piawaian undang-undang, operasi, atau industri yang berkembang. Kami akan mengambil langkah yang sesuai untuk memaklumkan pengguna mengenai kemas kini material, biasanya melalui laman web kami. Penggunaan berterusan perkhidmatan kami selepas sebarang semakan akan menjadi pengakuan dan penerimaan anda terhadap terma dasar yang dikemas kini.",
-      "description2": "Dalam kes di mana perubahan secara signifikan mempengaruhi cara kami mengendalikan data peribadi anda—seperti mengubah asas undang-undang untuk pemprosesan—kami akan mendapatkan persetujuan baru anda sebelum meneruskan amalan yang disemak semula."
-    },
-    "dataProtectionOfficer": {
-      "title": "Pegawai Perlindungan Data",
-      "name": "Bogdan Pashynskyi",
-      "email": "dpo@profitpiller.com",
-      "company": "Legal Nodes Ltd",
-      "companyNumber": "Nombor Syarikat: 11668206",
-      "address": "Alamat: 90a High Street, Berkhamsted, Hertfordshire, England, HP4 2BL"
+    "privacyPolicy": {
+        "heading": {
+            "title": "Dasar Privasi",
+            "intro": "Privasi anda penting bagi kami. Adalah polisi Profit Piller untuk menghormati privasi anda mengenai sebarang maklumat yang kami kumpulkan daripada anda di seluruh laman web kami, https://www.profitpiller.com, dan tapak lain yang kami miliki dan kendalikan.",
+            "effectiveDate": "Tarikh Kuat Kuasa: 6 Mei 2026"
+        },
+        "section1": {
+            "title": "1. Butiran yang Kami Kumpul",
+            "accessLogs": {
+                "subtitle": "Log Akses",
+                "description": "Apabila anda melayari platform Profitpiller, pelayan kami mungkin secara automatik menangkap data standard yang dihantar oleh pelayar internet anda. Ini mungkin termasuk alamat Protokol Internet (IP) sistem anda, nama dan versi pelayar, halaman yang dilawati, cap masa lawatan anda, tempoh masa yang dihabiskan pada setiap halaman, dan butiran teknikal tambahan."
+            },
+            "deviceInformation": {
+                "subtitle": "Maklumat Peranti",
+                "description": "Kami juga mungkin mengumpul maklumat berkaitan peranti yang anda gunakan untuk mengakses platform kami. Ini mungkin melibatkan kategori peranti, sistem pengendalian, pengecam unik, tetapan konfigurasi, dan data lokasi. Data tepat yang dikumpul bergantung pada keutamaan dan keizinan khusus yang ditetapkan pada peranti dan perisian anda. Untuk maklumat lanjut, kami cadangkan menyemak amalan privasi pembekal peranti atau perisian anda untuk memahami data yang mereka kongsi dengan kami."
+            },
+            "userInformation": {
+                "subtitle": "Maklumat Pengguna",
+                "description": "Maklumat peribadi yang anda berikan secara sukarela kepada kami melalui platform kami, seperti nama pertama dan akhir, alamat e-mel, tarikh lahir, nombor telefon, alamat kediaman, maklumat profil dan maklumat demografi lain, juga boleh dikumpul.",
+                "intro": "Kami mungkin meminta butiran peribadi anda seperti:",
+                "email": "Alamat e-mel",
+                "demographicData": "Untuk memadankan anda dengan tinjauan yang sesuai secara tepat, kami juga mungkin mengumpul data demografi tambahan seperti poskod, identiti jantina, status perkahwinan, latar belakang pendidikan, butiran berkaitan pekerjaan, serta data isi rumah yang tidak mengenal pasti individu, termasuk bilangan ahli, jumlah pendapatan, kumpulan umur dan sebagainya."
+            }
+        },
+        "section2": {
+            "title": "2. Asas Undang-undang untuk Pemprosesan Data",
+            "description": "Kami akan memproses maklumat peribadi anda secara sah, adil, dan telus. Kami mengumpul dan memproses maklumat tentang anda hanya apabila kami mempunyai asas undang-undang untuk berbuat demikian. Asas undang-undang ini bergantung pada perkhidmatan yang anda gunakan dan cara anda menggunakannya, yang bermaksud kami hanya mengumpul dan menggunakan maklumat anda apabila:",
+            "paragraph1": "Di Profitpiller, kami menguruskan data peribadi anda secara sah, beretika dan telus sepenuhnya. Kami mengumpul dan menggunakan data anda hanya apabila kami mempunyai asas undang-undang yang sah untuk berbuat demikian.",
+            "paragraph2": "Asas undang-undang bagi pemprosesan data anda bergantung pada perkhidmatan yang anda gunakan dan cara anda berinteraksi dengannya. Ini bermakna kami mengumpul dan menggunakan data anda hanya apabila:",
+            "point1": "ia perlu untuk melaksanakan kontrak yang anda menjadi pihak kepadanya, atau untuk mengambil langkah atas permintaan anda sebelum memeterai kontrak tersebut (contohnya, apabila kami menyediakan perkhidmatan yang anda minta);",
+            "point2": "ia memenuhi kepentingan perniagaan yang sah (yang tidak diatasi oleh hak privasi anda), seperti menjalankan penyelidikan dan inovasi, memasarkan tawaran kami, atau mempertahankan tuntutan dan kepentingan undang-undang kami;",
+            "point3": "anda telah memberikan kebenaran yang jelas kepada kami untuk tujuan tertentu (contohnya, bersetuju menerima surat berita kami); atau",
+            "point4": "kami perlu memproses data anda untuk mematuhi kewajipan undang-undang.",
+            "consentWithdrawal": "Jika anda memberikan persetujuan untuk kami menggunakan data anda bagi tujuan tertentu, anda boleh menarik balik persetujuan itu pada bila-bila masa (namun ini tidak menjejaskan sebarang pemprosesan yang telah dijalankan sebelum penarikan balik tersebut).",
+            "dataRetentionSecurity": "Kami tidak menyimpan data peribadi lebih lama daripada yang diperlukan. Sepanjang data anda berada dalam simpanan kami, ia dilindungi dengan langkah-langkah yang munasabah dari segi komersial bagi mencegah kehilangan, kecurian, akses tanpa kebenaran, pendedahan, penyalinan, penyalahgunaan atau pengubahan. Walau bagaimanapun, harap maklum bahawa tiada kaedah penghantaran atau penyimpanan elektronik yang selamat sepenuhnya, dan kami tidak dapat menjamin perlindungan data yang mutlak.",
+            "accountClosure": "Apabila perlu, kami mungkin menyimpan data peribadi anda untuk mematuhi kewajipan undang-undang atau melindungi kepentingan penting anda atau orang lain. Jika akaun anda ditutup — sama ada oleh anda atau oleh Profitpiller — kami berhak untuk memadam atau menjadikan data anda tanpa nama selaras dengan undang-undang privasi data yang berkenaan bagi memastikan maklumat anda terus dilindungi."
+        },
+        "section3": {
+            "title": "3. Jenis Data yang Kami Kumpul",
+            "subtitle": "Untuk menyediakan perkhidmatan kami kepada anda, kami mengumpul maklumat yang termasuk dalam kategori berikut:",
+            "a": "Maklumat pengenalan: Nama, alamat e-mel, nombor telefon, alamat pos.",
+            "b": "Maklumat teknikal: Alamat IP, pengecam peranti, jenis pelayar, log akses.",
+            "c": "Maklumat demografi: Jantina, umur, pendapatan, tahap pendidikan.",
+            "intro": "Profitpiller mungkin mengumpul, menyimpan, menggunakan dan mendedahkan maklumat bagi tujuan yang disenaraikan di bawah. Data peribadi tidak akan diproses dengan cara yang bercanggah dengan tujuan-tujuan ini:",
+            "point1": "untuk memadankan anda dengan tinjauan yang berkaitan berdasarkan profil demografi anda dan keperluan sasaran tinjauan tersebut;",
+            "point2": "untuk membolehkan anda menyesuaikan atau memperibadikan pengalaman anda di platform kami;",
+            "point3": "untuk memberi anda akses kepada laman web kami, aplikasi mudah alih yang berkaitan dan saluran media sosial yang dipautkan;",
+            "point4": "untuk menghubungi dan berkomunikasi dengan anda secara berkesan;",
+            "point5": "untuk tujuan penyimpanan rekod dalaman dan urusan pentadbiran am;",
+            "point6": "untuk menjalankan analitik, penyelidikan pasaran dan aktiviti pembangunan perniagaan, termasuk penyelenggaraan dan penambahbaikan laman web, aplikasi dan saluran dalam talian kami;",
+            "point7": "untuk pengiklanan dan pemasaran, termasuk menghantar bahan promosi tentang perkhidmatan dan tawaran kami, serta produk pihak ketiga yang kami percaya mungkin menarik minat anda;",
+            "point8": "untuk mematuhi kewajipan undang-undang kami dan mengurus atau menyelesaikan sebarang isu atau pertikaian undang-undang yang mungkin timbul."
+        },
+        "section4": {
+            "title": "4. Bagaimana Kami Menggunakan Maklumat",
+            "a": "Menyediakan dan menambah baik perkhidmatan kami.",
+            "b": "Menganalisis tingkah laku pengguna untuk menambah baik platform kami.",
+            "c": "Memperibadikan pengalaman anda dan ganjaran yang anda terima.",
+            "d": "Berkomunikasi dengan anda tentang perkhidmatan, kemas kini, dan promosi.",
+            "e": "Mematuhi obligasi undang-undang dan keselamatan.",
+            "intro": "Profitpiller mungkin berkongsi data peribadi dengan pihak-pihak berikut:",
+            "point1": "penyedia perkhidmatan pihak ketiga bagi membolehkan mereka menjalankan fungsi masing-masing, termasuk (tetapi tidak terhad kepada) penyedia perkhidmatan IT, perkhidmatan storan awan, infrastruktur pengehosan dan pelayan, rangkaian pengiklanan, alat analitik, sistem pemantauan ralat, perkhidmatan kutipan hutang, penyedia sokongan teknikal, agensi pemasaran atau promosi, perunding profesional dan platform pemprosesan pembayaran;",
+            "point2": "kakitangan, kontraktor bebas dan entiti gabungan kami;",
+            "point3": "penaja atau penganjur sebarang peraduan atau cabutan bertuah yang kami jalankan;",
+            "point4": "pihak ketiga, termasuk ejen atau subkontraktor, yang membantu kami menyampaikan kandungan, produk, perkhidmatan atau komunikasi promosi kepada anda;",
+            "point5": "pelanggan, firma penyelidikan, agensi rakan kongsi dan pasaran tinjauan yang membekalkan peluang tinjauan kepada kami."
+        },
+        "section5": {
+            "title": "5. Keselamatan Data Anda",
+            "description": "Kami menggunakan langkah-langkah keselamatan terkini untuk melindungi data peribadi anda daripada akses tanpa kebenaran, pengubahan, pendedahan, atau kemusnahan. Firewall, penyulitan, dan protokol kawalan akses memastikan maklumat anda kekal selamat.",
+            "paragraph1": "Maklumat peribadi yang dikumpul oleh Profitpiller mungkin disimpan dan diproses di Amerika Syarikat atau di mana-mana negara lain tempat kami, sekutu kami, rakan kongsi kami atau penyedia perkhidmatan pihak ketiga mempunyai kemudahan. Dengan memberikan data peribadi anda kepada kami, anda bersetuju dengan pemindahan dan pendedahan data tersebut kepada pihak-pihak di negara lain.",
+            "paragraph2": "Bagi pemindahan maklumat peribadi dari Kawasan Ekonomi Eropah (EEA) ke lokasi di luar EEA, kami akan memastikan langkah perlindungan yang sewajarnya dilaksanakan. Ini mungkin termasuk penggunaan klausa kontrak standard yang diluluskan oleh Suruhanjaya Eropah, peraturan korporat yang mengikat, atau mekanisme pemindahan data lain yang sah.",
+            "paragraph3": "Sekiranya kami memindahkan data peribadi dari bidang kuasa di luar EEA ke rantau antarabangsa lain, anda mengakui bahawa penerima pihak ketiga di rantau tersebut mungkin tidak tertakluk kepada peraturan perlindungan data yang setara dengan peraturan di negara anda. Ini bermakna mungkin terdapat risiko tertentu, terutamanya jika pihak ketiga tersebut melakukan tindakan yang melanggar undang-undang privasi data tempatan kami, yang berpotensi mengehadkan keupayaan anda untuk mendapatkan remedi undang-undang di bawah rangka kerja privasi bidang kuasa kami."
+        },
+        "section6": {
+            "title": "6. Penyimpanan dan Pemindahan Antarabangsa",
+            "description": "Profitpiller mungkin menyimpan atau memproses data peribadi anda di negara selain negara anda. Pemindahan ini dilakukan dengan mematuhi rangka kerja undang-undang dan perlindungan yang sesuai untuk memastikan tahap keselamatan yang setara dengan negara asal anda.",
+            "choicePermission": {
+                "subtitle": "Pilihan dan Kebenaran:",
+                "description": "Dengan memberikan data peribadi anda kepada Profitpiller, anda mengakui dan bersetuju bahawa kami mengumpul, menyimpan, menggunakan dan mendedahkan maklumat anda selaras dengan notis privasi ini. Jika anda berumur bawah 16 tahun, anda mesti mempunyai — dan mengesahkan, setakat yang dibenarkan oleh undang-undang — kebenaran ibu bapa atau penjaga sah anda untuk mengakses dan menggunakan laman web ini, dan mereka telah bersetuju agar anda memberikan data peribadi anda kepada kami. Pemberian maklumat peribadi adalah secara sukarela, tetapi jika anda memilih untuk tidak memberikannya, keupayaan anda untuk menggunakan bahagian tertentu platform kami atau perkhidmatan yang kami tawarkan mungkin terhad."
+            },
+            "externalSources": {
+                "subtitle": "Maklumat daripada Sumber Luar:",
+                "description": "Jika kami memperoleh butiran peribadi anda daripada pihak lain, kami akan mengendalikan data tersebut mengikut dasar privasi ini. Jika anda memberikan data peribadi orang lain kepada Profitpiller, anda mengesahkan bahawa anda mempunyai kebenaran individu tersebut untuk berkongsi maklumatnya dengan kami."
+            },
+            "limitationsRestrictions": {
+                "subtitle": "Had dan Sekatan:",
+                "description": "Anda boleh mengehadkan cara maklumat peribadi anda dikumpul atau digunakan. Jika anda sebelum ini bersetuju menerima komunikasi pemasaran langsung daripada kami, anda boleh menarik balik persetujuan itu pada bila-bila masa dengan menghubungi kami melalui butiran hubungan yang diberikan di bawah. Jika anda meminta kami mengehadkan pemprosesan data peribadi anda, kami akan menerangkan kesannya terhadap akses anda kepada platform dan perkhidmatan kami."
+            },
+            "accessDataTransferability": {
+                "subtitle": "Akses dan Kemudahalihan Data:",
+                "description": "Anda berhak meminta rekod maklumat peribadi yang disimpan oleh Profitpiller tentang anda. Atas permintaan, kami boleh menyediakan salinan digital — lazimnya dalam format CSV atau format lain yang boleh dibaca mesin. Anda juga boleh meminta kami memadam data peribadi anda daripada rekod kami atau memindahkan data tersebut kepada penyedia perkhidmatan lain pilihan anda."
+            }
+        },
+        "section7": {
+            "title": "7. Hak Privasi Anda",
+            "description": "Anda mempunyai hak untuk meminta salinan data peribadi anda yang kami pegang, untuk membantah penggunaannya, untuk meminta pembetulan atau sekatan dalam pemprosesannya, dan, dalam beberapa kes, untuk meminta pemadaman data peribadi anda."
+        },
+        "section8": {
+            "title": "8. Penggunaan kuki",
+            "description": "Kami menggunakan 'kuki' untuk mengumpul maklumat tentang aktiviti anda di tapak kami dan untuk meningkatkan pengalaman anda. Kuki ialah fail data kecil yang disimpan oleh laman web pada komputer atau peranti mudah alih anda. Untuk butiran lanjut, sila semak dasar kuki kami."
+        },
+        "section9": {
+            "title": "9. Privasi Kanak-kanak",
+            "description": "Perkhidmatan kami tidak bertujuan untuk individu di bawah umur 18 tahun. Kami tidak sengaja mengumpul data daripada kanak-kanak. Jika kami mendapati kami telah mengumpul maklumat daripada kanak-kanak di bawah umur, kami akan mengambil langkah untuk memadamkannya dengan segera.",
+            "legalGroundsTitle": "Asas Undang-undang bagi Pengendalian Data Peribadi di bawah GDPR",
+            "legalGroundsIntro": "Profitpiller mungkin memproses data peribadi anda berdasarkan asas undang-undang berikut:",
+            "consent": {
+                "title": "Persetujuan:",
+                "description": "Anda telah bersetuju secara jelas dengan penggunaan maklumat peribadi anda bagi satu atau lebih tujuan tertentu."
+            },
+            "contractualNecessity": {
+                "title": "Keperluan kontrak:",
+                "description": "Maklumat tersebut diperlukan untuk melaksanakan kontrak dengan anda atau untuk mengambil langkah persediaan sebelum memeterai perjanjian."
+            },
+            "legalCompliance": {
+                "title": "Pematuhan undang-undang:",
+                "description": "Pemprosesan diperlukan untuk memenuhi kewajipan kami di bawah undang-undang yang berkenaan."
+            },
+            "vitalInterests": {
+                "title": "Kepentingan penting:",
+                "description": "Pemprosesan diperlukan untuk melindungi kepentingan penting anda atau orang lain."
+            },
+            "publicDuty": {
+                "title": "Tugas awam:",
+                "description": "Pemprosesan diperlukan bagi tugas yang dijalankan demi kepentingan awam atau dalam pelaksanaan kuasa rasmi."
+            },
+            "legitimateInterests": {
+                "title": "Kepentingan sah:",
+                "description": "Pemprosesan menyokong kepentingan sah Profitpiller yang tidak diatasi oleh hak perlindungan data anda."
+            },
+            "legalBasisExplanation": "Jika perlu, kami sedia menerangkan asas undang-undang khusus yang terpakai bagi data anda, termasuk sama ada ia merupakan keperluan undang-undang atau kontrak, atau diperlukan untuk memeterai kontrak.",
+            "yourRightsTitle": "Hak Anda di bawah GDPR",
+            "yourRightsIntro": "Profitpiller komited untuk menghormati hak privasi yang diberikan di bawah GDPR. Jika anda berada di EU, anda boleh menggunakan hak-hak berikut:",
+            "access": {
+                "title": "Akses:",
+                "description": "Anda boleh meminta untuk melihat, mengemas kini atau memadam data peribadi yang kami simpan tentang anda."
+            },
+            "rectification": {
+                "title": "Pembetulan:",
+                "description": "Anda boleh meminta pembetulan bagi sebarang data yang tidak tepat atau tidak lengkap tentang anda."
+            },
+            "objection": {
+                "title": "Bantahan:",
+                "description": "Anda boleh membantah pemprosesan data anda yang dijalankan atas dasar kepentingan sah atau bagi tujuan pemasaran langsung."
+            },
+            "erasure": {
+                "title": "Pemadaman:",
+                "description": "Anda boleh meminta kami memadam data anda jika ia tidak lagi diperlukan bagi tujuan ia dikumpul."
+            },
+            "dataPortability": {
+                "title": "Kemudahalihan data:",
+                "description": "Anda boleh meminta data anda dalam format yang lazim digunakan dan boleh dibaca mesin untuk dipindahkan kepada perkhidmatan lain."
+            },
+            "withdrawalOfConsent": {
+                "title": "Penarikan balik persetujuan:",
+                "description": "Anda boleh menarik balik persetujuan pada bila-bila masa. Ini tidak menjejaskan pemprosesan yang dijalankan sebelum penarikan balik."
+            },
+            "exercisingRightsTitle": "Menggunakan Hak GDPR Anda",
+            "exercisingRightsDescription1": "Untuk menggunakan hak anda, hubungi kami melalui kaedah yang disenaraikan dalam dasar ini. Kami mungkin meminta pengesahan identiti anda. Kami berusaha untuk memberi maklum balas dalam tempoh satu bulan. Jika lebih banyak masa diperlukan, kami akan memaklumkan anda dan mungkin melanjutkan tempoh tersebut sehingga dua bulan lagi.",
+            "exercisingRightsDescription2": "Anda boleh membuat aduan kepada Pihak Berkuasa Perlindungan Data tempatan anda jika anda percaya hak anda telah dicabuli."
+        },
+        "section10": {
+            "title": "10. Pendedahan Data oleh Pengguna",
+            "description": "Sebarang maklumat yang anda dedahkan secara sukarela di kawasan awam laman web atau platform kami, seperti komen blog atau forum, mungkin dilihat oleh pengguna lain. Kami tidak bertanggungjawab untuk cara pihak ketiga mungkin menggunakan maklumat tersebut.",
+            "yourRightsTitle": "Hak Anda di bawah CCPA",
+            "yourRightsIntro": "Jika anda menetap di California, hak-hak berikut terpakai di bawah Akta Privasi Pengguna California (CCPA):",
+            "rightToNotice": {
+                "title": "Hak untuk dimaklumkan:",
+                "description": "Mengetahui kategori data yang dikumpul dan tujuan penggunaannya."
+            },
+            "rightToAccess": {
+                "title": "Hak untuk mengakses:",
+                "description": "Meminta butiran maklumat peribadi anda yang dikumpul dalam tempoh 12 bulan yang lalu dan dikongsi dengan pihak ketiga."
+            },
+            "rightToOptOut": {
+                "title": "Hak untuk menarik diri:",
+                "description": "Anda boleh meminta agar data anda tidak dijual kepada pihak ketiga."
+            },
+            "rightToKnow": {
+                "title": "Hak untuk mengetahui:",
+                "description": "Anda boleh bertanya tentang sumber, tujuan dan perkongsian data peribadi anda."
+            },
+            "rightToDelete": {
+                "title": "Hak untuk memadam:",
+                "description": "Anda boleh meminta agar data anda dipadam daripada rekod kami."
+            },
+            "rightToNonDiscrimination": {
+                "title": "Hak untuk tidak didiskriminasi:",
+                "description": "Anda berhak mendapat perkhidmatan dan harga yang sama, tanpa mengira sama ada anda menggunakan hak privasi anda atau tidak."
+            },
+            "exercisingRightsTitle": "Menggunakan Hak CCPA Anda",
+            "exercisingRightsDescription": "Untuk membuat permintaan, penduduk California boleh menghubungi kami melalui e-mel, telefon atau laman web \"Jangan Jual Maklumat Peribadi Saya\" kami. Kami akan memberi maklum balas dalam tempoh 45 hari, dengan satu kemungkinan lanjutan selama 45 hari jika perlu. Pengesahan mungkin diperlukan untuk melindungi data anda."
+        },
+        "section11": {
+            "title": "11. Pengekalan Data",
+            "description": "Kami hanya mengekalkan maklumat peribadi anda selama yang diperlukan untuk menyediakan perkhidmatan kami dan untuk alasan perniagaan dan undang-undang yang sah. Sebaik sahaja ia tidak lagi diperlukan, kami akan memadamkannya dengan selamat atau menjadikannya tanpa nama.",
+            "infoForConsumers": "Maklumat untuk Pengguna Virginia",
+            "infoForConsumersDescription": "Bahagian ini terpakai kepada penduduk Virginia di bawah Akta Perlindungan Data Pengguna Virginia (VCDPA). Ia mengatasi bahagian yang bercanggah dalam Dasar Privasi ini, jika berkenaan.",
+            "personalDataHandled": {
+                "title": "Data Peribadi yang Kami Kendalikan",
+                "description": "Profitpiller mungkin mengumpul data seperti alamat e-mel anda. Kami akan memaklumkan anda sebelum mengumpul sebarang kategori data peribadi tambahan."
+            },
+            "whyProcessData": {
+                "title": "Sebab Kami Memproses Data Anda",
+                "description": "Tujuan pemprosesan kami diterangkan secara terperinci dalam “Maklumat yang kami kumpul” dan “Asas undang-undang bagi pemprosesan”. Kami tidak akan menggunakan data anda bagi tujuan yang tidak berkaitan tanpa persetujuan anda."
+            },
+            "yourRightsTitle": "Hak Anda di bawah VCDPA",
+            "access": {
+                "title": "Akses:",
+                "description": "Mengesahkan dan melihat data yang kami proses tentang anda."
+            },
+            "correction": {
+                "title": "Pembetulan:",
+                "description": "Membetulkan sebarang data peribadi yang tidak tepat."
+            },
+            "deletion": {
+                "title": "Pemadaman:",
+                "description": "Meminta data peribadi anda dipadam."
+            },
+            "dataPortability": {
+                "title": "Kemudahalihan data:",
+                "description": "Menerima data anda dalam format yang boleh dipindahkan."
+            },
+            "optOut": {
+                "title": "Menarik diri:",
+                "description": "Memilih agar data anda tidak digunakan untuk pengiklanan bersasar atau pemprofilan."
+            },
+            "nonDiscrimination": {
+                "title": "Tiada diskriminasi:",
+                "description": "Kami tidak akan mengenakan sebarang tindakan terhadap anda kerana menggunakan hak privasi anda."
+            },
+            "submittingRequestsTitle": "Mengemukakan Permintaan",
+            "submittingRequestsDescription": "Untuk menggunakan hak anda, hubungi kami melalui kaedah yang disenaraikan dalam dasar ini. Kami perlu mengesahkan identiti anda untuk memproses sebarang permintaan. Orang dewasa boleh mengemukakan permintaan bagi pihak anak mereka.",
+            "timelinesAppealsTitle": "Tempoh Masa dan Rayuan",
+            "timelinesAppealsDescription": "Kami akan memberi maklum balas dalam tempoh 45 hari selepas menerima permintaan yang sah. Bagi kes yang rumit, kami mungkin mengambil masa sehingga 90 hari. Jika kami menolak permintaan anda, anda boleh membuat rayuan, dan kami akan memberi maklum balas terhadap rayuan itu dalam tempoh 60 hari. Jika ditolak sekali lagi, anda boleh menghubungi Peguam Negara Virginia."
+        },
+        "section12": {
+            "title": "12. Melaksanakan Hak Anda",
+            "description": "Untuk melaksanakan hak anda atau untuk sebarang soalan mengenai dasar ini, sila hubungi kami melalui e-mel di <a href=\"mailto:privacy@profitpiller.com\">privacy@profitpiller.com</a>. Permintaan mesti dihantar dalam cara yang membolehkan kami mengesahkan identiti anda, biasanya melalui akaun anda atau kaedah hubungan lain pilihan anda.",
+            "intro": "Lei Geral de Proteção de Dados (LGPD) Brazil memberikan hak-hak berikut kepada pengguna yang menetap di Brazil:",
+            "confirmation": {
+                "title": "Pengesahan:",
+                "description": "Mengesahkan sama ada kami memproses data anda."
+            },
+            "access": {
+                "title": "Akses:",
+                "description": "Menyemak data peribadi yang kami simpan dan dengan siapa ia dikongsi."
+            },
+            "correction": {
+                "title": "Pembetulan:",
+                "description": "Mengemas kini data yang lapuk atau tidak tepat."
+            },
+            "anonymizationDeletion": {
+                "title": "Penganoniman atau Pemadaman:",
+                "description": "Meminta data yang tidak diperlukan dipadam atau disekat."
+            },
+            "portability": {
+                "title": "Kemudahalihan:",
+                "description": "Memindahkan data anda kepada penyedia lain."
+            },
+            "erasure": {
+                "title": "Pemadaman:",
+                "description": "Memadam data yang diproses berdasarkan persetujuan."
+            },
+            "infoAboutConsent": {
+                "title": "Maklumat tentang persetujuan:",
+                "description": "Mengetahui akibat jika anda enggan memberikan persetujuan."
+            },
+            "withdrawConsent": {
+                "title": "Menarik balik persetujuan:",
+                "description": "Membatalkan persetujuan yang telah diberikan pada bila-bila masa."
+            },
+            "howToExerciseRightsTitle": "Cara Menggunakan Hak-hak Ini",
+            "howToExerciseRightsDescription": "Hantar permintaan yang boleh disahkan kepada: privacy@profitpiller.com. Kami akan mengesahkan identiti anda sebelum memproses permintaan anda.",
+            "responseTimeTitle": "Tempoh Maklum Balas",
+            "responseTimeDescription": "Kami berusaha untuk memberi maklum balas dalam tempoh 15 hari dan tidak lewat daripada 30 hari. Jika anda mempunyai akaun dengan kami, kami mungkin menyampaikan maklum balas melalui akaun anda atau kaedah hubungan lain pilihan anda."
+        },
+        "section13": {
+            "title": "13. Batasan Dasar Privasi Kami",
+            "description": "Laman web Profitpiller mungkin menyertakan pautan ke laman web atau perkhidmatan luaran yang tidak diuruskan oleh kami. Sila ambil perhatian bahawa kami tidak bertanggungjawab untuk kandungan, amalan, atau polisi platform pihak ketiga dan menggalakkan anda untuk menyemak terma privasi mereka secara bebas."
+        },
+        "section14": {
+            "title": "14. Kemas Kini kepada Dasar Privasi Ini",
+            "description1": "Profitpiller berhak untuk mengubah suai dasar privasi ini pada bila-bila masa untuk sejajar dengan piawaian undang-undang, operasi, atau industri yang berkembang. Kami akan mengambil langkah yang sesuai untuk memaklumkan pengguna mengenai kemas kini material, biasanya melalui laman web kami. Penggunaan berterusan perkhidmatan kami selepas sebarang semakan akan menjadi pengakuan dan penerimaan anda terhadap terma dasar yang dikemas kini.",
+            "description2": "Dalam kes di mana perubahan secara signifikan mempengaruhi cara kami mengendalikan data peribadi anda—seperti mengubah asas undang-undang untuk pemprosesan—kami akan mendapatkan persetujuan baru anda sebelum meneruskan amalan yang disemak semula."
+        },
+        "dataProtectionOfficer": {
+            "title": "Pegawai Perlindungan Data",
+            "name": "Bogdan Pashynskyi",
+            "email": "dpo@profitpiller.com",
+            "company": "Legal Nodes Ltd",
+            "companyNumber": "Nombor Syarikat: 11668206",
+            "address": "Alamat: 90a High Street, Berkhamsted, Hertfordshire, England, HP4 2BL"
+        }
     }
-  }
 }

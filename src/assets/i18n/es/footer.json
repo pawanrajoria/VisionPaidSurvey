@@ -1,33 +1,36 @@
 {
-  "footer": {
-    "trust": "Excelente",
-    "copyright": "© 2026 Profit Piller. Todos los derechos reservados.",
-    "product_of": "Un producto de",
-    "platform": {
-      "title": "Plataforma",
-      "login": "Iniciar sesión o registrarse",
-      "about": "Sobre ProfitPiller",
-      "contact": "Contáctanos",
-      "help": "Ayuda"
-    },
-    "legal": {
-      "title": "Legal",
-      "privacy": "Política de privacidad",
-      "terms": "Términos y condiciones",
-      "cookie": "Política de cookies",
-      "dns": "No vender mi información"
-    },
-    "explore": {
-      "title": "Explorar más",
-      "cash": "Ganar dinero con encuestas",
-      "gift": "Tarjetas regalo",
-      "amazon": "Tarjetas regalo Amazon",
-      "paypal": "Recompensas PayPal",
-      "visa": "Tarjetas regalo Visa"
-    },
-    "follow": {
-      "title": "Síguenos",
-      "download": "Descargar la app"
+    "footer": {
+        "trust": "Excelente",
+        "copyright": "© 2026 Profit Piller. Todos los derechos reservados.",
+        "product_of": "Un producto de",
+        "platform": {
+            "title": "Plataforma",
+            "login": "Iniciar sesión o registrarse",
+            "about": "Sobre ProfitPiller",
+            "contact": "Contáctanos",
+            "help": "Ayuda",
+            "blog": "Blog",
+            "guides": "Guías",
+            "gift_cards": "Tarjetas de regalo"
+        },
+        "legal": {
+            "title": "Legal",
+            "privacy": "Política de privacidad",
+            "terms": "Términos y condiciones",
+            "cookie": "Política de cookies",
+            "dns": "No vender mi información"
+        },
+        "explore": {
+            "title": "Explorar más",
+            "cash": "Ganar dinero con encuestas",
+            "gift": "Tarjetas regalo",
+            "amazon": "Tarjetas regalo Amazon",
+            "paypal": "Recompensas PayPal",
+            "visa": "Tarjetas regalo Visa"
+        },
+        "follow": {
+            "title": "Síguenos",
+            "download": "Descargar la app"
+        }
     }
-  }
 }

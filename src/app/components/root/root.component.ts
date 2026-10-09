@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, Inject, OnInit, PLATFORM_ID, ViewEncapsulation } from "@angular/core";
-import { SharedModule } from "../../shared.module";
+import { PublicSharedModule } from "../../public-shared.module";
 import { animate, query, stagger, style, transition, trigger } from "@angular/animations";
 import { RootFooterComponent } from "./root-footer/root-footer.component";
 import { RootHeaderComponent } from "./root-header/root-header.component";
@@ -13,7 +13,7 @@ import { DeviceService } from "../../device.service";
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet, SharedModule, RootHeaderComponent, RootFooterComponent, ApkToggleComponent],
+    imports: [RouterOutlet, PublicSharedModule, RootHeaderComponent, RootFooterComponent, ApkToggleComponent],
     templateUrl: './root.component.html',
     styleUrls: ['./root.component.scss'],
     animations: [

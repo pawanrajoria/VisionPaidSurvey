@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener, inject } from "@angular/core";
-import { SharedModule } from "../../../shared.module";
+import { PublicSharedModule } from "../../../public-shared.module";
 import { Router } from "@angular/router";
 import { BaseComponent } from "../../../base.component";
 import { MatDialog } from "@angular/material/dialog";
@@ -7,7 +7,7 @@ import { TranslateComponent } from "../../layout/translator/translator.component
 
 @Component({
     selector: 'app-root-header',
-    imports: [SharedModule],
+    imports: [PublicSharedModule],
     templateUrl: './root-header.component.html',
     styleUrls: ['./root-header.component.scss']
 })

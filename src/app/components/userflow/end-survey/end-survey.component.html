@@ -16,11 +16,8 @@
                     </div>
 
                     <!-- Status Text -->
-                    <h2 class="loading-title">Survey In Progress</h2>
-                    <p class="loading-sub">
-                        You've been redirected to the survey provider.<br>
-                        Please complete the survey and return here.
-                    </p>
+                    <h2 class="loading-title">{{ 'app.status.inProgress' | translate }}</h2>
+                    <p class="loading-sub">{{ 'app.status.inProgressText' | translate }}</p>
 
                     <!-- Progress -->
                     <div class="progress-bar">
@@ -30,7 +27,7 @@
                     <!-- Status Badge -->
                     <div class="status-badge pending">
                         <span class="badge-dot"></span>
-                        Waiting for response...
+                        {{ 'app.status.waiting' | translate }}
                     </div>
 
                     <!-- Info Steps -->
@@ -40,16 +37,10 @@
                                 <mat-icon>open_in_new</mat-icon>
                             </div>
                             <div class="info-text">
-                                <span class="info-title">
-                                    Redirected to vendor
-                                </span>
-                                <span class="info-sub">
-                                    Survey opened in current window
-                                </span>
+                                <span class="info-title">{{ 'app.status.redirected' | translate }}</span>
+                                <span class="info-sub">{{ 'app.status.redirectedSub' | translate }}</span>
                             </div>
-                            <mat-icon class="info-check done">
-                                check_circle
-                            </mat-icon>
+                            <mat-icon class="info-check done">check_circle</mat-icon>
                         </div>
 
                         <div class="info-divider"></div>
@@ -59,16 +50,10 @@
                                 <mat-icon>pending</mat-icon>
                             </div>
                             <div class="info-text">
-                                <span class="info-title">
-                                    Awaiting completion
-                                </span>
-                                <span class="info-sub">
-                                    Checking your survey status
-                                </span>
+                                <span class="info-title">{{ 'app.status.awaiting' | translate }}</span>
+                                <span class="info-sub">{{ 'app.status.awaitingSub' | translate }}</span>
                             </div>
-                            <mat-icon class="info-check spinning">
-                                autorenew
-                            </mat-icon>
+                            <mat-icon class="info-check spinning">autorenew</mat-icon>
                         </div>
 
                         <div class="info-divider"></div>
@@ -78,41 +63,29 @@
                                 <mat-icon>emoji_events</mat-icon>
                             </div>
                             <div class="info-text">
-                                <span class="info-title">
-                                    Points credited
-                                </span>
-                                <span class="info-sub">
-                                    Reward added after completion
-                                </span>
+                                <span class="info-title">{{ 'app.status.credited' | translate }}</span>
+                                <span class="info-sub">{{ 'app.status.creditedSub' | translate }}</span>
                             </div>
-                            <mat-icon class="info-check pending-icon">
-                                radio_button_unchecked
-                            </mat-icon>
+                            <mat-icon class="info-check pending-icon">radio_button_unchecked</mat-icon>
                         </div>
                     </div>
 
                     <!-- Warning Note -->
                     <div class="warning-note">
                         <mat-icon>info_outline</mat-icon>
-                        <span>
-                            Do not close this tab.
-                            We'll update your status automatically
-                            once you return.
-                        </span>
+                        <span>{{ 'app.status.dontClose' | translate }}</span>
                     </div>
 
                     <!-- Divider -->
-                    <div class="divider"><span>or</span></div>
+                    <div class="divider"><span>{{ 'app.status.or' | translate }}</span></div>
 
                     <!-- Explore Link -->
-                    <a href="https://profitpiller.com" target="_blank" class="explore-btn">
+                    <a href="/" target="_blank" rel="noopener" class="explore-btn">
                         <mat-icon>open_in_new</mat-icon>
-                        Explore ProfitPiller Panel
+                        {{ 'app.status.explore' | translate }}
                     </a>
 
-                    <p class="explore-hint">
-                        Opens in a new window
-                    </p>
+                    <p class="explore-hint">{{ 'app.status.newWindow' | translate }}</p>
 
                 </div>
             </div>

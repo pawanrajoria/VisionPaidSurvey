@@ -1,33 +1,36 @@
 {
-  "footer": {
-    "trust": "优秀",
-    "copyright": "© 2026 Profit Piller。保留所有权利。",
-    "product_of": "由以下公司提供",
-    "platform": {
-      "title": "平台",
-      "login": "登录或注册",
-      "about": "关于 ProfitPiller",
-      "contact": "联系我们",
-      "help": "帮助"
-    },
-    "legal": {
-      "title": "法律",
-      "privacy": "隐私政策",
-      "terms": "条款和条件",
-      "cookie": "Cookie 政策",
-      "dns": "不要出售我的信息"
-    },
-    "explore": {
-      "title": "探索更多",
-      "cash": "通过问卷赚钱",
-      "gift": "礼品卡",
-      "amazon": "亚马逊礼品卡",
-      "paypal": "PayPal 奖励",
-      "visa": "Visa 礼品卡"
-    },
-    "follow": {
-      "title": "关注我们",
-      "download": "下载我们的应用"
+    "footer": {
+        "trust": "优秀",
+        "copyright": "© 2026 Profit Piller。保留所有权利。",
+        "product_of": "由以下公司提供",
+        "platform": {
+            "title": "平台",
+            "login": "登录或注册",
+            "about": "关于 profitpiller",
+            "contact": "联系我们",
+            "help": "帮助",
+            "blog": "博客",
+            "guides": "指南",
+            "gift_cards": "礼品卡"
+        },
+        "legal": {
+            "title": "法律",
+            "privacy": "隐私政策",
+            "terms": "条款和条件",
+            "cookie": "Cookie 政策",
+            "dns": "不要出售我的信息"
+        },
+        "explore": {
+            "title": "探索更多",
+            "cash": "通过问卷赚钱",
+            "gift": "礼品卡",
+            "amazon": "亚马逊礼品卡",
+            "paypal": "PayPal 奖励",
+            "visa": "Visa 礼品卡"
+        },
+        "follow": {
+            "title": "关注我们",
+            "download": "下载我们的应用"
+        }
     }
-  }
 }

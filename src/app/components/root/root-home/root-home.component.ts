@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit, PLATFORM_ID, ViewEncapsulation } from "@angular/core";
 import { animate, query, stagger, style, transition, trigger } from "@angular/animations";
 import { ActivatedRoute, Router } from "@angular/router";
-import { SharedModule } from "../../../shared.module";
+import { PublicSharedModule } from "../../../public-shared.module";
 import { FaqRootComponent } from "../root-faq/root-faq.component";
 import { AuthService } from "../../auth/auth.service";
 import { GoogleLoginDirective } from "../../auth/google.directive";
@@ -14,7 +14,7 @@ import { BaseComponent } from "../../../base.component";
 
 @Component({
     selector: 'app-root-home',
-    imports: [SharedModule, FaqRootComponent],
+    imports: [PublicSharedModule, FaqRootComponent],
     templateUrl: './root-home.component.html',
     styleUrls: ['./root-home.component.scss'],
     animations: [

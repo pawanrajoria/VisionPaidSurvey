@@ -20,7 +20,9 @@ export class ConfigService {
     }
 
     get appUrl() {
-        return this.configs?.AppUrl;
+        // config.json spells this key "appUrl"; reading only "AppUrl" returned undefined and
+        // produced referral links that started with "undefined/".
+        return this.configs?.AppUrl || (this.configs as any)?.appUrl || this.configs?.HostingDomain || (typeof window !== 'undefined' ? window.location.origin : '');
     }
 
     get hostingDomain() {

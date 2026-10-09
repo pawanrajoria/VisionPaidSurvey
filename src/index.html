@@ -3,55 +3,88 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Profitpiller – Opinion Research Platform</title>
+  <title>profitpiller – Opinion Research Platform</title>
   <base href="/">
 
-  <!-- ✅ SEO (Neutral & Safe) -->
+  <!-- Defaults only. The real per-page <title>, description, canonical, Open Graph,
+       Twitter and hreflang tags are written during server rendering from each route's
+       data (see app.ts + seo.service.ts) and replace the values below. -->
   <meta name="description"
-    content="Profitpiller is an online opinion research platform where users can participate in surveys and research studies." />
+    content="profitpiller is an online opinion research platform where users can participate in surveys and research studies." />
   <meta name="robots" content="index, follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="canonical" href="https://www.profitpiller.com" />
+  <meta name="theme-color" content="#105749" />
+  <link rel="canonical" href="https://profitpiller.com" />
 
   <!-- ✅ Trust / Identity -->
   <meta name="author" content="Cralpk Research Pvt Ltd" />
   <meta name="copyright" content="© 2026 Cralpk Research Pvt Ltd" />
   <meta name="contact" content="support@profitpiller.com" />
 
-  <!-- ✅ Open Graph (Neutral) -->
-  <meta property="og:title" content="Profitpiller – Opinion Research Platform" />
+  <!-- ✅ Open Graph (defaults) -->
+  <meta property="og:title" content="profitpiller – Opinion Research Platform" />
   <meta property="og:description"
-    content="Participate in online research surveys and share your opinions on Profitpiller." />
-  <meta property="og:image" content="https://www.profitpiller.com/assets/images/og-image.png" />
-  <meta property="og:url" content="https://www.profitpiller.com" />
+    content="Participate in online research surveys and share your opinions on profitpiller." />
+  <meta property="og:image" content="https://profitpiller.com/assets/images/og-image.png" />
+  <meta property="og:url" content="https://profitpiller.com" />
   <meta property="og:type" content="website" />
 
-  <!-- ✅ Favicon -->
+  <!-- ✅ Icons -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/icons/180.png">
 
   <!--PreLoad Images-->
   <link rel="preload" as="image" href="/assets/images/backgrounds/rh-vps-bg.webp" fetchpriority="high">
 
   <!-- ✅ Fonts -->
+  <!-- PERF: fonts are now loaded non-render-blocking via the preload+swap
+       pattern instead of a plain <link rel="stylesheet">. The noscript
+       fallback keeps fonts working with JS disabled. Roboto was removed
+       entirely — it was imported but never referenced in any stylesheet
+       ($font-family in _variables.scss is "DM Sans"); Material Icons (an
+       icon *font*) is still needed for the ~60 ligature-style <mat-icon>
+       usages in the authenticated/admin areas, just no longer blocking. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap"
-    rel="stylesheet">
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </noscript>
 
+  <!-- PERF: Google Tag Manager used to start downloading and executing in <head>,
+       competing with first paint. It now starts on the visitor's first interaction
+       (scroll / tap / key / pointer move) or 4 seconds after load, whichever comes
+       first. dataLayer exists immediately, so events pushed before that are kept
+       and replayed by GTM once it loads. -->
+  <script>
+    (function (w, d, id) {
+      w.dataLayer = w.dataLayer || [];
+      var started = false;
+      var events = ['pointerdown', 'pointermove', 'keydown', 'touchstart', 'scroll'];
+      function start() {
+        if (started) return;
+        started = true;
+        events.forEach(function (e) { w.removeEventListener(e, start); });
+        w.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var s = d.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtm.js?id=' + id;
+        d.head.appendChild(s);
+      }
+      events.forEach(function (e) { w.addEventListener(e, start, { passive: true, once: true }); });
+      w.addEventListener('load', function () { setTimeout(start, 4000); });
+    })(window, document, 'GTM-5CM7Q4S3');
+  </script>
 
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-5CM7Q4S3');</script>
-
-  <script src="/assets/js/fingerprint.js"></script>
+  <!-- PERF: /assets/js/fingerprint.js is no longer loaded here. It is fetched on demand
+       by HelperService the first time a device id is actually needed (signed-in and
+       survey pages), so public pages do not pay for its font/canvas probing. -->
   <link rel="manifest" href="assets/manifest.webmanifest">
 </head>
 
@@ -63,7 +96,7 @@
   <app-root></app-root>
 
   <noscript>
-    Profitpiller requires JavaScript to function. Please enable JavaScript.
+    profitpiller requires JavaScript to function. Please enable JavaScript.
   </noscript>
 </body>
 

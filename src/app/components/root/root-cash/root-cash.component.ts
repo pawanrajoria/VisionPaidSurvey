@@ -1,11 +1,11 @@
 import { Component, OnInit } from "@angular/core";
-import { SharedModule } from "../../../shared.module";
+import { PublicSharedModule } from "../../../public-shared.module";
 import { FaqRootComponent } from "../root-faq/root-faq.component";
 import { BaseComponent } from "../../../base.component";
 
 @Component({
     selector: 'app-root-cash',
-    imports: [SharedModule, FaqRootComponent],
+    imports: [PublicSharedModule, FaqRootComponent],
     templateUrl: './root-cash.component.html',
     styleUrls: ['./root-cash.component.scss']
 })

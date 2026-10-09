@@ -178,3 +178,16 @@
         }
     }
 }
+// ───────── Phone layout ─────────
+// The headings inherited a line-height smaller than their font size, so wrapped lines overlapped.
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+@media (max-width: 600px) {
+    .head h2 {
+        font-size: 24px !important;
+    }
+}

@@ -10,8 +10,11 @@ import { MessageVM } from "../../layout/message/message.vm";
 import { RedemptionDetailsComponent } from "./redemption-details/redemption-details.component";
 import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { TranslateService } from "@ngx-translate/core";
 import { CasoutFilterByNamePipe } from "./filterByName.pipe";
 import { AccountService } from "../account.service";
+import { EngagementService } from "../engagement/engagement.service";
+import { ICashoutRule } from "../engagement/engagement.vm";
 
 @Component({
     selector: 'app-reward',
@@ -44,6 +47,7 @@ export class RewardComponent {
 
     private rewardService = inject(RewardService);
     private snackBar = inject(MatSnackBar);
+    private translate = inject(TranslateService);
     private dialog = inject(MatDialog);
     private accountService = inject(AccountService);
 
@@ -61,8 +65,19 @@ export class RewardComponent {
     }
 
 
+    private engagement = inject(EngagementService);
+
+    /** First-cashout rule from the API (the first withdrawal has a higher minimum). */
+    cashoutRule: ICashoutRule | null = null;
+
+    /** Points needed for the first cashout, or 0 when the rule does not apply to this user. */
+    get firstCashoutMinPoints(): number {
+        return this.cashoutRule?.isFirstCashout ? this.cashoutRule.firstMinimumPoints : 0;
+    }
+
     async ngOnInit() {
         this.isLoading = true;
+        this.engagement.getSummary().then(summary => this.cashoutRule = summary?.cashout ?? null);
         const response = await this.rewardService.bindRewardInfo({
             productName: this.searchText
         });
@@ -150,6 +165,16 @@ export class RewardComponent {
     }
 
     async handleRewardClick(option: any, item: any) {
+        // The API enforces this too; checking here saves the user a failed request.
+        if (this.firstCashoutMinPoints > 0 && Number(option.points) < this.firstCashoutMinPoints) {
+            this.snackBar.open(
+                this.translate.instant('app.cashout.firstNoteLong', { usd: this.cashoutRule?.firstMinimumUsd, points: this.firstCashoutMinPoints }),
+                'OK',
+                { duration: 5000, verticalPosition: 'bottom' }
+            );
+            return;
+        }
+
         if (option.points > (this.userBalanceInfo.balance ?? 0)) {
             this.snackBar.open(
                 `${item.name} requires ${option.points} pts. You have ${this.userBalanceInfo.balance}.`,

@@ -40,7 +40,8 @@ export class OfferComponent extends BaseComponent implements OnInit {
     }
 
     async getOffers() {
-        this.offers = await this.offerService.getOffers();
+        this.offers = (await this.offerService.getOffers()) ?? [];
+        this.preselectPlatform();
         this.filterItems();
     }
 
@@ -71,9 +72,11 @@ export class OfferComponent extends BaseComponent implements OnInit {
 
         this.filteredOffers = this.offers
             .filter(item => {
+                // An offer without device information is not restricted to a platform.
+                const devices = item.device ?? [];
                 const matchesCategory =
-                    this.selectedDeviceType.length === 0 ||
-                    item.device.some(cat => this.selectedDeviceType.includes(cat));
+                    this.selectedDeviceType.length === 0 || devices.length === 0 ||
+                    devices.some(cat => this.selectedDeviceType.includes(cat));
 
                 const matchesText = item.offerName?.toLowerCase().includes(text);
                 return matchesCategory && matchesText;
@@ -85,6 +88,20 @@ export class OfferComponent extends BaseComponent implements OnInit {
                     return b.points - a.points;
                 }
             });
+    }
+
+    private platformPreselected = false;
+
+    /** Starts the device filter on the visitor's own platform; the chips stay changeable. */
+    private preselectPlatform() {
+        if (this.platformPreselected || !this.isBrowser || !this.nav) return;
+        this.platformPreselected = true;
+        const ua = this.nav.userAgent;
+        const platform = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/i.test(ua) && this.nav.maxTouchPoints > 1) ? 'IOS'
+            : /Android/i.test(ua) ? 'Android' : 'Desktop';
+        if (this.offers.some(o => (o.device ?? []).includes(platform))) {
+            this.selectedDeviceType = [platform];
+        }
     }
 
     get currentDevice(): string {

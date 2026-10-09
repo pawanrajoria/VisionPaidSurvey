@@ -1,3 +1,4 @@
-Sitemap: https://www.profitpiller.com/sitemap.xml
 User-agent: *
 Allow: /
+
+Sitemap: https://profitpiller.com/sitemap.xml

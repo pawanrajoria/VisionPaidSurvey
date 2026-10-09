@@ -60,5 +60,31 @@
         "dateofbirth.required": "დაბადების თარიღი სავალდებულოა.",
         "gender.required": "სქესი სავალდებულოა.",
         "zip_code.required": "საფოსტო კოდი სავალდებულოა."
+    },
+    "contact": {
+        "heading": {
+            "subtitle": "გაქვთ კითხვები? ჩვენ მზად ვართ დაგეხმაროთ!",
+            "title": "დაუკავშირდით Profit Piller-ს დღესვე"
+        },
+        "emailUs": {
+            "title": "მოგვწერეთ",
+            "address": "support@profitpiller.com"
+        },
+        "callUs": {
+            "title": "დაგვირეკეთ",
+            "number": "+91-8876654356"
+        },
+        "headOffice": {
+            "title": "სათავო ოფისი",
+            "address": "Spaze ITech Park, Sector-49,Gurgaon, Haryana – 122001, India"
+        },
+        "form": {
+            "title": "დაგვიკავშირდით",
+            "nameLabel": "სახელი",
+            "emailLabel": "ელფოსტა",
+            "phoneLabel": "ტელეფონის ნომერი",
+            "messageLabel": "შეტყობინება",
+            "submitButton": "შეტყობინების გაგზავნა"
+        }
     }
 }

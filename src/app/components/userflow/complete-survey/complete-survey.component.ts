@@ -45,16 +45,17 @@ export class CompleteSurveyComponent extends BaseComponent {
       request.requestUrl = request.requestUrl.replace("/#/", "/");
     }
 
-    const ourputUrl: RespondentEndSurveyResponseVM = await self.respondentService.completeRespondent(request);
-    if (!!ourputUrl && !!ourputUrl.requestUrl) {
-      if (this.win) {
-        this.win.location.href = ourputUrl.requestUrl;
-      }
+    // If the completion call fails the visitor must still leave this page; it used to stay on
+    // "Loading.." forever.
+    let ourputUrl: RespondentEndSurveyResponseVM | null = null;
+    try {
+      ourputUrl = await self.respondentService.completeRespondent(request);
+    } catch {
+      ourputUrl = null;
     }
-    else {
-      if (this.win) {
-        this.win.location.href = "https://profitpiller.com";
-      }
+
+    if (this.win) {
+      this.win.location.href = ourputUrl?.requestUrl || this.win.location.origin;
     }
   }
 }

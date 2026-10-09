@@ -39,9 +39,13 @@ export class AppNavItemComponent extends BaseComponent implements OnChanges {
 
 
   ngOnChanges() {
-    const url = this.navService.currentUrl();
-    if (this.item.route && url) {
-      this.expanded = url.indexOf(`/${this.item.route}`) === 0;
+    // A group such as "More" stays collapsed until the visitor opens it, or one of its own
+    // pages is the page being shown. Matching the group's route as a prefix kept it open on
+    // every page.
+    const url = (this.navService.currentUrl() ?? '').split('?')[0];
+    const children: NavItem[] = this.item?.children ?? [];
+    if (children.length && url) {
+      this.expanded = children.some(child => !!child.route && (url === `/${child.route}` || url.endsWith(`/${child.route}`)));
       this.ariaExpanded = this.expanded;
     }
   }

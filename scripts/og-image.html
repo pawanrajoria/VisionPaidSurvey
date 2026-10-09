@@ -1,0 +1,70 @@
+<!doctype html>
+<!--
+  Source for src/assets/images/og-image.png (1200 x 630, the size Facebook, X, LinkedIn
+  and WhatsApp use for link previews). To regenerate after changing the logo or the copy:
+
+    chrome --headless=new --hide-scrollbars --window-size=1200,630 ^
+           --screenshot=src/assets/images/og-image.png scripts/og-image.html
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 1200px; height: 630px; overflow: hidden; }
+    body {
+      display: flex;
+      align-items: center;
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: #ffffff;
+      background:
+        radial-gradient(900px 520px at 88% 12%, rgba(245, 179, 1, 0.28), transparent 60%),
+        radial-gradient(700px 500px at 0% 100%, rgba(72, 201, 120, 0.25), transparent 60%),
+        linear-gradient(135deg, #0b3d33 0%, #105749 55%, #0a2f28 100%);
+    }
+    .copy { flex: 1; padding: 0 0 0 76px; }
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    h1 {
+      margin: 26px 0 20px;
+      font-size: 72px;
+      line-height: 1.06;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    h1 span { color: #f5b301; }
+    p { font-size: 28px; line-height: 1.4; color: rgba(255, 255, 255, 0.86); max-width: 600px; }
+    .chips { display: flex; gap: 12px; margin-top: 34px; }
+    .chip {
+      padding: 10px 20px;
+      border-radius: 12px;
+      background: #ffffff;
+      color: #0b3d33;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .art { width: 500px; height: 630px; display: flex; align-items: center; justify-content: center; }
+    .art img { width: 520px; height: 520px; object-fit: contain; filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.35)); }
+  </style>
+</head>
+<body>
+  <div class="copy">
+    <span class="eyebrow">Paid surveys &amp; offers</span>
+    <h1>Get paid for<br><span>your opinion</span></h1>
+    <p>Take surveys, complete offers and cash out to PayPal or gift cards.</p>
+    <div class="chips">
+      <span class="chip">Free to join</span>
+      <span class="chip">Fast payouts</span>
+      <span class="chip">Worldwide</span>
+    </div>
+  </div>
+  <div class="art"><img src="../src/assets/images/logo.png" alt=""></div>
+</body>
+</html>

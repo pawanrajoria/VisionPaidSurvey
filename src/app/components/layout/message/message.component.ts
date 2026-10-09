@@ -14,13 +14,13 @@ export class MessageComponent implements OnInit {
         this.messageService.getMessage().subscribe(data => {
             switch (data.Type) {
                 case "success":
-                    this._snackBar.open(data.Message, "SUCCESS", { duration: 1000, panelClass: ['blue-snackbar'] });
+                    this._snackBar.open(data.Message, "SUCCESS", { duration: 3500, panelClass: ['blue-snackbar'] });
                     break;
                 case "error":
-                    this._snackBar.open(data.Message, "ERROR", { duration: 1000, panelClass: ['red-snackbar'] });
+                    this._snackBar.open(data.Message, "ERROR", { duration: 3500, panelClass: ['red-snackbar'] });
                     break;
                 case "warn":
-                    this._snackBar.open(data.Message, "WARNING", { duration: 1000, panelClass: ['yellow-snackbar'] });
+                    this._snackBar.open(data.Message, "WARNING", { duration: 3500, panelClass: ['yellow-snackbar'] });
                     break;
                 default:
                     break;

@@ -1,0 +1,46 @@
+<div class="premium-disqualify-popup animate-in">
+  <button mat-icon-button class="close-btn" (click)="closeSurvey()" aria-label="Close dialog">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <mat-dialog-content class="premium-body">
+    <!-- Disqualified Icon Orbit -->
+    <div class="icon-orbit warning">
+      <div class="icon-bg">
+        <mat-icon>sentiment_dissatisfied</mat-icon>
+      </div>
+    </div>
+
+    <div class="text-content">
+      <h2>{{ 'app.survey.disqualify.title' | translate }}</h2>
+      <p class="subtitle">{{ 'app.survey.disqualify.text' | translate }}</p>
+    </div>
+
+    <!-- Optional Bonus Reward Pill -->
+    <div class="info-pills">
+      <div class="pill highlight-bonus" *ngIf="earnedBonusCoins > 0">
+        <mat-icon>monetization_on</mat-icon>
+        <span>{{ 'app.survey.disqualify.coins' | translate:{ count: earnedBonusCoins } }}</span>
+      </div>
+      <div class="pill">
+        <mat-icon>schedule</mat-icon>
+        <span>{{ 'app.survey.disqualify.tryLater' | translate }}</span>
+      </div>
+    </div>
+
+    <!-- Action Button -->
+    <button mat-flat-button class="action-btn-main retry" (click)="checkAvailableSurveys()">
+      {{ 'app.survey.disqualify.findNew' | translate }}
+      <mat-icon>refresh</mat-icon>
+    </button>
+
+    <!-- Tip / Info Container -->
+    <div class="pro-tip-container">
+      <div class="tip-header">
+        <mat-icon>info_outline</mat-icon>
+        <span>{{ 'app.survey.disqualify.tip' | translate }}</span>
+      </div>
+      <p>{{ 'app.survey.disqualify.tipText' | translate }}</p>
+    </div>
+  </mat-dialog-content>
+</div>

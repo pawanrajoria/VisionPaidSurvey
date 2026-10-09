@@ -3,11 +3,18 @@
     <div class="header-toolbar">
         <h2 class="header-title">Select Reward</h2>
         @if(isPopup) {
-        <button mat-icon-button (click)="closeModal()" class="close-btn">
+        <button mat-icon-button (click)="closeModal()" class="close-btn" aria-label="Close">
             <mat-icon>cancel</mat-icon>
         </button>
         }
     </div>
+
+    @if (firstCashoutMinPoints > 0) {
+    <p class="first-cashout-note" role="note">
+        <mat-icon>info</mat-icon>
+        {{ 'app.cashout.firstNote' | translate:{ usd: cashoutRule?.firstMinimumUsd, points: (firstCashoutMinPoints | number:'1.0-0') } }}
+    </p>
+    }
 
     <!-- Balance Card -->
     <div class="balance-card">
@@ -27,7 +34,7 @@
     <mat-form-field appearance="outline" class="search-field">
         <mat-icon matPrefix>search</mat-icon>
         <input matInput placeholder="Search brands, gift cards..." [(ngModel)]="searchText" />
-        <button *ngIf="searchText" matSuffix mat-icon-button (click)="searchText = ''">
+        <button *ngIf="searchText" matSuffix mat-icon-button (click)="searchText = ''" aria-label="Clear search">
             <mat-icon>close</mat-icon>
         </button>
     </mat-form-field>
@@ -70,7 +77,7 @@
                 <!-- Panel Header -->
                 <mat-expansion-panel-header class="panel-header">
                     <div class="reward-logo-container">
-                        <img [src]="item.image" [alt]="item.name" />
+                        <img loading="lazy" [src]="item.image" [alt]="item.name" />
                     </div>
                     <mat-panel-title>
                         <div class="panel-title-content">

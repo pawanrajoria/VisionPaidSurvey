@@ -26,7 +26,8 @@ import {
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
-import { isPlatformBrowser } from '@angular/common';
+import { DATE_PIPE_DEFAULT_OPTIONS, isPlatformBrowser } from '@angular/common';
+import { USER_TIME_ZONE_KEY, offsetFor } from './timezones';
 
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MultiTranslateClientHttpLoader } from './multilanguagetranslator';
@@ -35,7 +36,12 @@ import { TablerIconsModule } from 'angular-tabler-icons';
 import * as TablerIcons from 'angular-tabler-icons/icons';
 
 import { NgScrollbarModule } from 'ngx-scrollbar';
-import { SharedModule } from './shared.module';
+// PERF: SharedModule (full Material+CDK) removed from root providers below.
+// It contributed no DI providers here — every component that needs it already
+// imports it directly in its own `imports: []` array. Public/root pages now use
+// PublicSharedModule instead (see public-shared.module.ts) so Material/CDK for
+// features like Datepicker, Table, Stepper, Sidenav, Tabs, Dialog, etc. only
+// ships to the authenticated /app and /admin areas that actually use them.
 
 // ✅ NEW MODULAR FIREBASE IMPORTS
 import { initializeApp as provideInit, provideFirebaseApp } from '@angular/fire/app';
@@ -76,7 +82,17 @@ import {
   IconCheckbox,
   IconCircleDashedCheck,
   IconCertificate2,
-  IconTrophy
+  IconTrophy,
+  // Sidebar nav icons (from backend rolePermissions.iconName) - were missing,
+  // causing every nav item except "Account" to render with no icon at all.
+  IconDotsCircleHorizontal, // More
+  IconHelp,                 // Help
+  IconFriends,              // Refer A Friend
+  IconWalletOff,            // Cashout, Redeem Bonus Code
+  IconNotebook,             // Surveys
+  IconConfetti,             // Offers
+  IconCrown,                // Leaderboard
+  IconCoin                  // Earn
 } from 'angular-tabler-icons/icons';
 
 const firebaseConfig = {
@@ -113,7 +129,15 @@ const icons = {
   IconCheckbox,
   IconCircleDashedCheck,
   IconCertificate2,
-  IconTrophy
+  IconTrophy,
+  IconDotsCircleHorizontal,
+  IconHelp,
+  IconFriends,
+  IconWalletOff,
+  IconNotebook,
+  IconConfetti,
+  IconCrown,
+  IconCoin
 };
 
 function initConfigService() {
@@ -145,6 +169,7 @@ export function multiHttpLoaderFactory(http: HttpClient) {
     { prefix: '/assets/i18n/', suffix: '/cookiepolicy.json' },
     { prefix: '/assets/i18n/', suffix: '/instruction.json' },
     { prefix: '/assets/i18n/', suffix: '/afterloginhelp.json' },
+    { prefix: '/assets/i18n/', suffix: '/app.json' },
   ]);
 };
 
@@ -178,6 +203,21 @@ export const appConfig: ApplicationConfig = {
 
     provideClientHydration(withEventReplay()),
     provideAnimationsAsync(),
+    // Dates are formatted in the time zone the user picked in account settings (stored in
+    // localStorage by the settings dialog / layout); without a choice the browser zone is used.
+    {
+      provide: DATE_PIPE_DEFAULT_OPTIONS,
+      useFactory: (platformId: Object) => {
+        if (!isPlatformBrowser(platformId)) return {};
+        try {
+          const timezone = offsetFor(localStorage.getItem(USER_TIME_ZONE_KEY));
+          return timezone ? { timezone } : {};
+        } catch {
+          return {};
+        }
+      },
+      deps: [PLATFORM_ID],
+    },
 
     // ✅ MODULAR PROVIDERS (Fixes the NG0201 Error)
     provideFirebaseApp(() => provideInit(firebaseConfig)),
@@ -187,11 +227,16 @@ export const appConfig: ApplicationConfig = {
     TranslateService,
 
     importProvidersFrom(
-      SharedModule,
       TablerIconsModule.pick(icons),
       NgScrollbarModule,
 
       // ✅ COMPAT PROVIDERS (Keeps your existing login working)
+      // TODO(perf): AngularFireAuth (compat) is still used directly in ~10 files
+      // (auth.service, login, google/apple/facebook directives, bearer-token
+      // interceptor, root-home, app.ts) alongside the modular provideAuth() below —
+      // meaning both the compat and modular Firebase Auth SDKs ship today. Consolidating
+      // onto the modular API would shrink the bundle further, but touches live auth flows
+      // and needs its own tested migration — out of scope for this pass, flagging for follow-up.
       AngularFireModule.initializeApp(firebaseConfig),
       AngularFireAuthModule,
 
