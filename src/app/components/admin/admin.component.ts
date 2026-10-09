@@ -5,7 +5,7 @@ import { AdminService } from "./admin.service";
 import { AdminDashboardComponent } from "./dashboard/dashboard.component";
 import { MessageService } from "../layout/message/message.service";
 import { MessageVM } from "../layout/message/message.vm";
-import { AdminBonusReportDto, AdminEarningItemDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest } from "./admin.vm";
+import { AdminActivityPeriodDto, AdminBonusReportDto, AdminEarningsSummaryDto, AdminEarningItemDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest } from "./admin.vm";
 import { ChatService, IAdminChatMessage } from "../home/chat/chat.service";
 
 type AdminTab = 'overview' | 'offers' | 'payouts' | 'users' | 'chat' | 'notifications' | 'earnings';
@@ -34,6 +34,8 @@ export class AdminComponent extends BaseComponent implements OnInit {
 
     // Overview
     overview: AdminOverviewDto | null = null;
+    activity: AdminActivityPeriodDto[] = [];
+    readonly activityLabels: Record<string, string> = { today: 'Today', week: 'Last 7 days', month: 'Last 30 days' };
     overviewError = '';
 
     // Priority offers
@@ -132,6 +134,7 @@ export class AdminComponent extends BaseComponent implements OnInit {
 
     // ───────────── Bonus report (Earnings tab) ─────────────
     bonusReport: AdminBonusReportDto | null = null;
+    earningsSummary: AdminEarningsSummaryDto | null = null;
     bonusPeriod = 'week';
     bonusType = '';
     readonly bonusPeriods = [
@@ -143,6 +146,9 @@ export class AdminComponent extends BaseComponent implements OnInit {
 
     async loadBonusReport(period = this.bonusPeriod) {
         this.bonusPeriod = period;
+        this.adminService.getEarningsSummary(period)
+            .then(s => this.earningsSummary = s)
+            .catch(() => { /* the interceptor already showed the reason */ });
         try {
             this.bonusReport = await this.adminService.getBonusReport(period);
             if (this.bonusType && !this.bonusReport.byType.some(t => t.typeName === this.bonusType)) this.bonusType = '';
@@ -161,11 +167,17 @@ export class AdminComponent extends BaseComponent implements OnInit {
     // ───────────── Overview ─────────────
     async loadOverview() {
         this.overviewError = '';
+        this.adminService.getActivity().then(a => this.activity = a ?? []).catch(() => this.activity = []);
         try {
             this.overview = await this.adminService.getOverview();
         } catch {
             this.overviewError = 'The overview could not be loaded.';
         }
+    }
+
+    /** Share of the period's active users, for the bars in the activity grid. */
+    percentOf(part: number, a: AdminActivityPeriodDto): number {
+        return a.active > 0 ? Math.round(part * 100 / a.active) : 0;
     }
 
     get maxSignups(): number {

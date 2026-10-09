@@ -38,8 +38,23 @@ export class OfferPopupDialog extends BaseComponent implements OnInit {
         super(); // initializes isBrowser, win, nav, doc
     }
 
+    /** The network's steps, or - when it sends none (single-step offers) - steps built from the offer itself. */
+    steps: { name: string; points: number }[] = [];
+
     ngOnInit(): void {
-        // Optional: fetch additional tasks or logic on init
+        const tasks = (this.offer.tasks ?? []).filter(t => !!t?.name);
+        if (tasks.length) {
+            this.steps = tasks.map(t => ({ name: t.name ?? '', points: Number(t.points) || 0 }));
+            return;
+        }
+        const goal = (this.offer.requirements || this.offer.description || 'Complete the offer as described').trim();
+        this.steps = [
+            { name: 'Tap the button below to open the offer', points: 0 },
+            { name: goal, points: Number(this.offer.points) > 0 ? Number(this.offer.points) : 0 },
+            { name: this.offer.confirmationTime
+                ? `Points are added to your balance after confirmation (${this.offer.confirmationTime})`
+                : 'Points are added to your balance once the partner confirms it', points: 0 }
+        ];
     }
 
     earn(): void {

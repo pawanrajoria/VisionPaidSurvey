@@ -50,7 +50,25 @@ export class OfferComponent extends BaseComponent implements OnInit {
         this.filterItems();
     }
 
+    /** Offers this browser opened, newest first - the "My Offers" tab. */
+    private readonly myOffersKey = 'my_offer_ids';
+
+    private get myOfferIds(): number[] {
+        if (!this.isBrowser) return [];
+        try { return JSON.parse(localStorage.getItem(this.myOffersKey) ?? '[]'); } catch { return []; }
+    }
+
+    private rememberOffer(id: number) {
+        if (!this.isBrowser) return;
+        try {
+            const ids = [id, ...this.myOfferIds.filter(x => x !== id)].slice(0, 100);
+            localStorage.setItem(this.myOffersKey, JSON.stringify(ids));
+        } catch { /* storage blocked */ }
+    }
+
     openDialog(item: IOfferResponseDto) {
+        this.rememberOffer(item.offerId);
+
         let dialogWidth = '600px';
 
         if (this.isBrowser && this.breakpointObserver.isMatched('(max-width: 600px)')) {
@@ -69,6 +87,15 @@ export class OfferComponent extends BaseComponent implements OnInit {
 
     filterItems() {
         const text = this.searchTxt.toLowerCase();
+
+        // "My Offers" used to show every offer: it now lists the ones opened here, newest first.
+        if (this.offerType === 'My Offers') {
+            const order = new Map(this.myOfferIds.map((id, i) => [id, i]));
+            this.filteredOffers = this.offers
+                .filter(o => order.has(o.offerId) && (o.offerName ?? '').toLowerCase().includes(text))
+                .sort((a, b) => order.get(a.offerId)! - order.get(b.offerId)!);
+            return;
+        }
 
         this.filteredOffers = this.offers
             .filter(item => {

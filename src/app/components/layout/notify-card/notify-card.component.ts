@@ -10,14 +10,20 @@ const DISMISS_DAYS = 7;
 
 /**
  * Sidebar card: "want the latest offers? turn on notifications".
- * Shown only while the browser can still be asked (permission "default"); once the visitor
- * allowed or blocked notifications there is nothing left for the card to do.
+ * Always in the menu: the clickable picture while notifications are off (with how to unblock them
+ * when the browser blocked the site), one line once they are on, and one line after "x".
  */
 @Component({
     selector: 'app-notify-card',
     imports: [SharedModule],
     template: `
-    @if (visible) {
+    @if (permission === 'granted') {
+    <div class="notify-compact on hide-menu"><mat-icon>notifications_active</mat-icon>Notifications are on</div>
+    } @else if (permission !== 'unsupported' && dismissed) {
+    <button type="button" class="notify-compact hide-menu" (click)="expand()">
+        <mat-icon>notifications</mat-icon>Get updates &amp; offer alerts
+    </button>
+    } @else if (permission !== 'unsupported') {
     <aside class="notify-card hide-menu" aria-label="Offer notifications">
         <button type="button" class="notify-close" (click)="dismiss()" aria-label="Not now">
             <mat-icon>close</mat-icon>
@@ -39,6 +45,25 @@ const DISMISS_DAYS = 7;
     </aside>
     }`,
     styles: [`
+    .notify-compact {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: calc(100% - 28px);
+        margin: 12px 14px 18px;
+        padding: 10px 12px;
+        border: 1px solid #dfe7e4;
+        border-radius: 12px;
+        background: #f3f9f7;
+        color: #105749;
+        font: inherit;
+        font-size: 13px;
+        font-weight: 600;
+        text-align: left;
+        cursor: pointer;
+    }
+    .notify-compact.on { cursor: default; color: #0f7a4f; }
+    .notify-compact mat-icon { width: 18px; height: 18px; font-size: 18px; }
     .notify-card {
         position: relative;
         display: block;
@@ -141,14 +166,20 @@ export class NotifyCardComponent extends BaseComponent implements OnInit, OnDest
     /** The visitor pressed "Enable" here and the browser (or they) said no. */
     blocked = false;
 
-    get visible(): boolean {
-        return !this.dismissed && (this.permission === 'default' || this.blocked);
+    /** "x" only shrinks the card to one line; the picture is always one click away. */
+    expand() {
+        this.dismissed = false;
+        try { localStorage.removeItem(DISMISS_KEY); } catch { /* storage blocked */ }
     }
 
     ngOnInit() {
         if (!this.isBrowser) return;
         this.dismissed = this.recentlyDismissed();
-        this.subscription = this.notifications.permission$.subscribe(p => this.permission = p);
+        this.subscription = this.notifications.permission$.subscribe(p => {
+            this.permission = p;
+            // Blocked earlier (or in another tab): show how to allow it again instead of a dead button.
+            this.blocked = p === 'denied';
+        });
     }
 
     ngOnDestroy() {

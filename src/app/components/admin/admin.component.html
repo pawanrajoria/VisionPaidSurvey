@@ -33,7 +33,41 @@
 
             @if (overviewError) { <p class="notice error">{{ overviewError }}</p> }
 
+            @if (activity.length) {
+            <h2 class="sub-head">Active users</h2>
+            <div class="activity-grid">
+                @for (a of activity; track a.period) {
+                <div class="activity-card">
+                    <div class="activity-top">
+                        <span class="kpi-label">{{ activityLabels[a.period] }}</span>
+                        <span class="activity-value">{{ a.active | number }}</span>
+                        <span class="kpi-sub">active users</span>
+                    </div>
+                    <div class="split">
+                        <div class="split-line">
+                            <span>Returning (old users)</span><strong>{{ a.returning | number }}</strong>
+                        </div>
+                        <div class="split-bar"><span class="old" [style.width.%]="percentOf(a.returning, a)"></span></div>
+                        <div class="split-line muted">
+                            <span>New sign-ups</span><strong>{{ a.new | number }}</strong>
+                        </div>
+                    </div>
+                    <div class="split">
+                        <div class="split-line">
+                            <span>Earned</span><strong class="money-pos">{{ a.earned | number }}</strong>
+                        </div>
+                        <div class="split-bar"><span class="earn" [style.width.%]="percentOf(a.earned, a)"></span></div>
+                        <div class="split-line muted">
+                            <span>Did not earn</span><strong>{{ a.notEarned | number }}</strong>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+            }
+
             @if (overview; as o) {
+            <h2 class="sub-head">Totals</h2>
             <div class="kpi-grid">
                 <div class="kpi">
                     <span class="kpi-label">Total users</span>
@@ -544,13 +578,67 @@
         <section class="bonus-report">
             <div class="section-head">
                 <div>
-                    <h1>Bonuses paid</h1>
-                    <p class="hint">Every bonus with the user who got it. Referral bonuses also show the friend whose earning paid them.</p>
+                    <h1>Earnings &amp; profit</h1>
+                    <p class="hint">What the survey / offer networks paid us, what users earned, what bonuses cost and the profit left.</p>
                 </div>
                 <div class="seg" role="group" aria-label="Period">
                     @for (p of bonusPeriods; track p.value) {
                     <button type="button" [class.active]="bonusPeriod === p.value" (click)="loadBonusReport(p.value)">{{ p.label }}</button>
                     }
+                </div>
+            </div>
+
+            @if (earningsSummary; as e) {
+            <div class="money-grid">
+                <div class="money-card">
+                    <span class="label">Revenue</span>
+                    <span class="value">${{ e.netRevenue | number:'1.2-2' }}</span>
+                    <span class="sub">${{ e.revenue | number:'1.2-2' }} earned · ${{ e.revenueReversed | number:'1.2-2' }} charged back</span>
+                </div>
+                <div class="money-card">
+                    <span class="label">User earnings</span>
+                    <span class="value">${{ e.netUserEarnings | number:'1.2-2' }}</span>
+                    <span class="sub">{{ e.completes | number }} completes · {{ e.rejections | number }} rejections</span>
+                </div>
+                <div class="money-card">
+                    <span class="label">Bonus cost</span>
+                    <span class="value money-neg">${{ e.bonusCost | number:'1.2-2' }}</span>
+                    <span class="sub">daily, profile, streak, referral, level</span>
+                </div>
+                <div class="money-card profit" [class.loss]="e.profit < 0">
+                    <span class="label">Profit</span>
+                    <span class="value">${{ e.profit | number:'1.2-2' }}</span>
+                    <span class="sub">{{ e.marginPercent | number:'1.0-1' }}% of revenue</span>
+                </div>
+            </div>
+
+            @if (e.byProvider.length) {
+            <div class="panel table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Network</th><th class="num">Completes</th><th class="num">Rejections</th><th class="num">Revenue</th><th class="num">Paid to users</th><th class="num">Profit</th></tr>
+                    </thead>
+                    <tbody>
+                        @for (n of e.byProvider; track n.providerName) {
+                        <tr>
+                            <td class="cell-main">{{ n.providerName }}</td>
+                            <td class="num">{{ n.completes | number }}</td>
+                            <td class="num">{{ n.rejections | number }}</td>
+                            <td class="num">${{ n.revenue - n.revenueReversed | number:'1.2-2' }}</td>
+                            <td class="num">${{ n.userEarnings - n.userReversed | number:'1.2-2' }}</td>
+                            <td class="num" [class.money-pos]="n.profit >= 0" [class.money-neg]="n.profit < 0">${{ n.profit | number:'1.2-2' }}</td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            }
+            }
+
+            <div class="section-head compact">
+                <div>
+                    <h2>Bonuses paid</h2>
+                    <p class="hint">Every bonus with the user who got it. Referral bonuses also show the friend whose earning paid them.</p>
                 </div>
             </div>
 

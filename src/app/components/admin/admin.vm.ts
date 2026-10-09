@@ -153,6 +153,47 @@ export interface AdminUserDetailDto {
     history: AdminEarningItemDto[];
 }
 
+/** Users active today / last 7 days / last 30 days. */
+export interface AdminActivityPeriodDto {
+    period: 'today' | 'week' | 'month';
+    active: number;
+    /** Active and signed up before the period (came back). */
+    returning: number;
+    /** Active and signed up during the period. */
+    new: number;
+    /** Active and earned from a survey / offer in the period. */
+    earned: number;
+    notEarned: number;
+}
+
+export interface AdminProfitLineDto {
+    providerName: string;
+    revenue: number;
+    revenueReversed: number;
+    userEarnings: number;
+    userReversed: number;
+    profit: number;
+    completes: number;
+    rejections: number;
+}
+
+/** Money in (network revenue) and out (user payouts, bonuses) for a period, in USD. */
+export interface AdminEarningsSummaryDto {
+    period: string;
+    revenue: number;
+    revenueReversed: number;
+    netRevenue: number;
+    userEarnings: number;
+    userReversed: number;
+    netUserEarnings: number;
+    bonusCost: number;
+    profit: number;
+    marginPercent: number;
+    completes: number;
+    rejections: number;
+    byProvider: AdminProfitLineDto[];
+}
+
 export interface AdminBonusReportDto {
     period: string;
     total: number;

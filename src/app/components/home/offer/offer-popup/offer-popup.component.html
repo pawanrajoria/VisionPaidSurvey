@@ -41,14 +41,17 @@
 
     </div>
 
-    <h3 class="rewards-heading">Rewards</h3>
+    <h3 class="rewards-heading">How to earn</h3>
 
-    <div class="rewards-list">
-        <mat-card class="reward-item" *ngFor="let reward of offer.tasks">
-            <span class="reward-points">{{ reward.points }} Points</span>
-            <span class="reward-desc">{{ reward.name }}</span>
-        </mat-card>
-    </div>
+    <ol class="steps-list">
+        @for (step of steps; track $index) {
+        <li class="step-item">
+            <span class="step-no">{{ $index + 1 }}</span>
+            <span class="step-text">{{ step.name }}</span>
+            @if (step.points > 0) { <span class="reward-points">+{{ step.points }}</span> }
+        </li>
+        }
+    </ol>
 
     <h3 class="rewards-heading">Description</h3>
     <div class="rewards-list">
@@ -67,12 +70,12 @@
 
     <h3 class="rewards-heading" *ngIf="!!offer.expireTime">Expired On</h3>
     <div class="rewards-list" *ngIf="!!offer.expireTime">
-        <span class="reward-desc">{{ offer.expireTime | date:'dd-MM-yyyy HH:MM:SS' }}</span>
+        <span class="reward-desc">{{ offer.expireTime | date:'dd-MM-yyyy HH:mm' }}</span>
     </div>
 </mat-dialog-content>
 
 <mat-dialog-actions align="end" class="footer">
     <button mat-flat-button color="primary" class="earn-button btn-theme" (click)="earn()">
-        Earn {{ offer.points }} Points
+        {{ offer.points > 0 ? 'Earn ' + offer.points + ' Points' : 'Start offer' }}
     </button>
 </mat-dialog-actions>

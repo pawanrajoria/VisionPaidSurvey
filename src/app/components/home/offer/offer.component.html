@@ -21,6 +21,9 @@
             </mat-button-toggle>
         </mat-button-toggle-group>
     </div>
+    @if (offerType === 'My Offers' && filteredOffers.length === 0) {
+    <p class="empty-note">Offers you open are kept here so you can finish them later.</p>
+    }
     <div class="offer-grid">
         <mat-card class="offer-card" *ngFor="let offer of filteredOffers" (click)="openDialog(offer)">
             <div class="offer-content">

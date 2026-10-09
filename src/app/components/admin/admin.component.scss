@@ -824,3 +824,83 @@ tbody tr[data-rejection="block"]:hover td { background: #fbdcd8; }
 
 @keyframes slide-in { from { transform: translateX(40px); opacity: 0; } to { transform: none; opacity: 1; } }
 @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+// ───────────── Earnings: revenue / payouts / bonus cost / profit ─────────────
+.money-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.money-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px 16px;
+  border: 1px solid $line;
+  border-radius: 12px;
+  background: #fff;
+
+  .label { color: $muted; font-size: 12px; font-weight: 600; }
+  .value { font-size: 24px; font-weight: 700; color: $ink; }
+  .sub { color: $muted; font-size: 12px; }
+
+  &.profit {
+    border-color: rgba(15, 122, 79, 0.35);
+    background: #f0faf5;
+    .value { color: #0f7a4f; }
+  }
+
+  &.profit.loss {
+    border-color: rgba(179, 38, 30, 0.35);
+    background: #fdf1f0;
+    .value { color: $danger; }
+  }
+}
+
+.section-head.compact h2 { margin: 18px 0 0; font-size: 17px; font-weight: 700; }
+
+// ───────────── Overview: active users grid ─────────────
+.sub-head { margin: 4px 0 10px; font-size: 16px; font-weight: 700; }
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.activity-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid $line;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.activity-top { display: flex; flex-direction: column; gap: 2px; }
+.activity-value { font-size: 28px; font-weight: 700; color: $ink; }
+
+.split { display: flex; flex-direction: column; gap: 4px; }
+
+.split-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+
+  &.muted { color: $muted; }
+}
+
+.split-bar {
+  height: 6px;
+  border-radius: 3px;
+  background: #e8efed;
+  overflow: hidden;
+
+  span { display: block; height: 100%; border-radius: 3px; }
+  .old { background: $brand; }
+  .earn { background: #2fb37a; }
+}
