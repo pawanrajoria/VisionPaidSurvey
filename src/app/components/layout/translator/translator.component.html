@@ -2,10 +2,14 @@
     <div class="header">
         <img loading="lazy" src="/assets/images/icon/world-map.png" width="256" height="142">
         <h2>Select Country and Language</h2>
+        @if (currentLanguageName) {
+        <p class="current-lang">Current language: <strong>{{ currentLanguageName }}</strong></p>
+        }
     </div>
     <div class="translate-box m-t-24">
         <mat-accordion class="accordion">
             <mat-expansion-panel class="accordion-item" *ngFor="let country of countryLanguages"
+                [expanded]="country.id === selectedCountryId" [class.active-country]="country.id === selectedCountryId"
                 (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
                 <mat-expansion-panel-header class="accordion-header">
                     <div class="accordion-button">
@@ -13,13 +17,15 @@
                             <img loading="lazy" [src]="country.flagUrl" />
                         </div>
                         <span>{{ country.countryName }}</span>
+                        @if (country.id === selectedCountryId) { <mat-icon class="active-check">check_circle</mat-icon> }
                     </div>
                 </mat-expansion-panel-header>
                 <div class="accordion-collapse">
                     <p>Select Language</p>
-                    <mat-radio-group class="form-radio" aria-label="Select a language">
+                    <mat-radio-group class="form-radio" aria-label="Select a language"
+                        [value]="country.id === selectedCountryId ? selectedLanguageId : null">
                         <mat-radio-button *ngFor="let lang of country.languages" [value]="lang.id"
-                            (change)="onLanguageSelect(lang.code, lang.id)">
+                            (change)="onLanguageSelect(lang.code, lang.id, country.id)">
                             {{ lang.name }}
                         </mat-radio-button>
                     </mat-radio-group>
