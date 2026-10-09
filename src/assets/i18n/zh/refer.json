@@ -32,6 +32,33 @@
     "heading": {
       "subtitle": "兑换您的奖励代码以获得特别优惠。",
       "title": "兑换奖励代码"
+    },
+    "extra": {
+      "how_title": "使用方法",
+      "step1_t": "获取代码",
+      "step1_d": "代码来自好友邀请、我们的邮件和通知以及特别活动。",
+      "step2_t": "在上方输入",
+      "step2_d": "输入或粘贴代码，然后点击兑换。每个代码每个账户只能使用一次。",
+      "step3_t": "多赚 10%",
+      "step3_d": "在接下来的 24 小时内，每份通过审核的问卷和任务都多付 10%。",
+      "find_title": "在哪里获取代码",
+      "find_notify_t": "开启通知",
+      "find_notify_d": "新代码和限时加成会以通知形式发送。",
+      "find_friend_t": "问问好友",
+      "find_friend_d": "每位会员都有邀请码 - 用好友的代码开始。",
+      "find_share_t": "分享你的代码",
+      "find_share_d": "邀请好友，并从他们完成的任务中赚取佣金。",
+      "use_title": "充分利用你的奖励",
+      "use_surveys": "参与问卷",
+      "use_surveys_d": "优先显示报酬最高的",
+      "use_offers": "边玩边赚",
+      "use_offers_d": "奖励丰厚的游戏和应用任务",
+      "use_streak": "每日连续",
+      "use_streak_d": "每天回来，提升排行榜名次",
+      "use_cashout": "提现",
+      "use_cashout_d": "PayPal、UPI 和礼品卡",
+      "tip": "提示：在开始做问卷前兑换代码，让 24 小时奖励覆盖尽可能多的完成任务。",
+      "go": "前往"
     }
   }
 }

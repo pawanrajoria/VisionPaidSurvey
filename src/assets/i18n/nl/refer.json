@@ -32,6 +32,33 @@
     "heading": {
       "subtitle": "Wissel uw bonuscode in om een speciale aanbieding te ontvangen.",
       "title": "Bonuscode inwisselen"
+    },
+    "extra": {
+      "how_title": "Zo werkt het",
+      "step1_t": "Krijg een code",
+      "step1_d": "Codes komen van de uitnodiging van een vriend, onze e-mails en meldingen, en speciale acties.",
+      "step2_t": "Vul hem hierboven in",
+      "step2_d": "Typ of plak de code en tik op Inwisselen. Elke code werkt één keer per account.",
+      "step3_t": "Verdien 10% extra",
+      "step3_d": "De komende 24 uur levert elke goedgekeurde enquête en aanbieding 10% meer op.",
+      "find_title": "Waar vind je codes",
+      "find_notify_t": "Zet meldingen aan",
+      "find_notify_d": "Nieuwe codes en tijdelijke boosts komen binnen als melding.",
+      "find_friend_t": "Vraag het een vriend",
+      "find_friend_d": "Elk lid heeft een uitnodigingscode - begin met de code van een vriend.",
+      "find_share_t": "Deel je eigen code",
+      "find_share_d": "Nodig vrienden uit en verdien commissie op wat zij voltooien.",
+      "use_title": "Haal het meeste uit je bonus",
+      "use_surveys": "Enquêtes invullen",
+      "use_surveys_d": "Best betalende eerst",
+      "use_offers": "Spelen & verdienen",
+      "use_offers_d": "Games en app-aanbiedingen met hoge beloningen",
+      "use_streak": "Dagelijkse reeks",
+      "use_streak_d": "Kom elke dag terug en stijg op het klassement",
+      "use_cashout": "Uitbetalen",
+      "use_cashout_d": "PayPal, UPI en cadeaukaarten",
+      "tip": "Tip: wissel een code in vlak voor een enquêtesessie, zodat de 24-uursbonus zoveel mogelijk voltooiingen dekt.",
+      "go": "Ga"
     }
   }
 }

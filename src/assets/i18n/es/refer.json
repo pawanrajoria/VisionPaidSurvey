@@ -32,6 +32,33 @@
     "heading": {
       "subtitle": "Canjea tu código de bono para obtener una oferta especial.",
       "title": "Canjear código de bono"
+    },
+    "extra": {
+      "how_title": "Cómo funciona",
+      "step1_t": "Consigue un código",
+      "step1_d": "Los códigos llegan por la invitación de un amigo, nuestros correos y notificaciones, y promociones especiales.",
+      "step2_t": "Introdúcelo arriba",
+      "step2_d": "Escribe o pega el código y pulsa Canjear. Cada código funciona una vez por cuenta.",
+      "step3_t": "Gana un 10 % extra",
+      "step3_d": "Durante las próximas 24 horas, cada encuesta y oferta aprobada paga un 10 % más.",
+      "find_title": "Dónde encontrar códigos",
+      "find_notify_t": "Activa las notificaciones",
+      "find_notify_d": "Los códigos nuevos y los impulsos por tiempo limitado llegan como alertas.",
+      "find_friend_t": "Pregunta a un amigo",
+      "find_friend_d": "Cada miembro tiene un código de invitación: empieza con el de un amigo.",
+      "find_share_t": "Comparte tu propio código",
+      "find_share_d": "Invita a amigos y gana una comisión por lo que completen.",
+      "use_title": "Aprovecha al máximo tu bono",
+      "use_surveys": "Responde encuestas",
+      "use_surveys_d": "Primero las mejor pagadas",
+      "use_offers": "Juega y gana",
+      "use_offers_d": "Juegos y ofertas de apps con grandes recompensas",
+      "use_streak": "Racha diaria",
+      "use_streak_d": "Vuelve cada día y sube en la clasificación",
+      "use_cashout": "Retirar",
+      "use_cashout_d": "PayPal, UPI y tarjetas regalo",
+      "tip": "Consejo: canjea un código justo antes de una sesión de encuestas para que el bono de 24 horas cubra el mayor número de completados.",
+      "go": "Ir"
     }
   }
 }

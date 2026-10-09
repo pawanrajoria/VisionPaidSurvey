@@ -1,8 +1,8 @@
-<mat-card class="card-bottom cardWithShadow overflow-hidden"  [routerLink]="['/', currentLocale, 'app', 'refer']">
+<mat-card class="card-bottom cardWithShadow overflow-hidden">
     <div class="bg-primary p-x-24 p-y-10 text-white">
         <mat-card-title class="d-flex align-items-center gap-10">
-            <!-- A11y: was an <a> with no href/click - not a real link, and had no accessible name. Converted to a button; TODO verify this back-chevron is supposed to be wired to an action (looks inert either way). -->
-            <button type="button" mat-icon-button class="text-white d-flex justify-content-center" aria-label="Back">
+            <button type="button" mat-icon-button class="text-white d-flex justify-content-center" aria-label="Back"
+                [routerLink]="['/', currentLocale, 'app', 'earn']">
                 <i-tabler name="chevron-left" class="icon-18 d-flex">
                 </i-tabler>
             </button> {{ 'redeem.heading.title' | translate }}</mat-card-title>
@@ -16,7 +16,7 @@
             <div class="col-6">
                 <mat-form-field appearance="outline" class="w-100">
                     <mat-label>{{ 'redeem.bonus_code' | translate }}</mat-label>
-                    <input matInput placeholder="{{ 'redeem.enter_code' | translate }}" [(ngModel)]="bonusCode">
+                    <input matInput placeholder="{{ 'redeem.enter_code' | translate }}" [(ngModel)]="bonusCode" (keyup.enter)="redeemBonus()">
                 </mat-form-field>
             </div>
             <div class="col-6">
@@ -27,3 +27,63 @@
         </div>
     </div>
 </mat-card>
+
+<!-- How it works -->
+<div class="rb-section">
+    <h2 class="rb-title">{{ 'redeem.extra.how_title' | translate }}</h2>
+    <div class="rb-steps">
+        @for (step of steps; track step.n) {
+        <div class="rb-step">
+            <span class="rb-step-no">{{ step.n }}</span>
+            <mat-icon class="rb-step-icon">{{ step.icon }}</mat-icon>
+            <strong>{{ 'redeem.extra.step' + step.n + '_t' | translate }}</strong>
+            <p>{{ 'redeem.extra.step' + step.n + '_d' | translate }}</p>
+        </div>
+        }
+    </div>
+</div>
+
+<!-- Where to find codes -->
+<div class="rb-section">
+    <h2 class="rb-title">{{ 'redeem.extra.find_title' | translate }}</h2>
+    <div class="rb-find">
+        <div class="rb-find-card">
+            <span class="rb-find-icon bell"><mat-icon>notifications_active</mat-icon></span>
+            <div>
+                <strong>{{ 'redeem.extra.find_notify_t' | translate }}</strong>
+                <p>{{ 'redeem.extra.find_notify_d' | translate }}</p>
+            </div>
+        </div>
+        <div class="rb-find-card">
+            <span class="rb-find-icon friend"><mat-icon>group</mat-icon></span>
+            <div>
+                <strong>{{ 'redeem.extra.find_friend_t' | translate }}</strong>
+                <p>{{ 'redeem.extra.find_friend_d' | translate }}</p>
+            </div>
+        </div>
+        <a class="rb-find-card link" [routerLink]="['/', currentLocale, 'app', 'refer']">
+            <span class="rb-find-icon share"><mat-icon>share</mat-icon></span>
+            <div>
+                <strong>{{ 'redeem.extra.find_share_t' | translate }}</strong>
+                <p>{{ 'redeem.extra.find_share_d' | translate }}</p>
+            </div>
+            <mat-icon class="rb-arrow">chevron_right</mat-icon>
+        </a>
+    </div>
+</div>
+
+<!-- Ways to use the bonus -->
+<div class="rb-section">
+    <h2 class="rb-title">{{ 'redeem.extra.use_title' | translate }}</h2>
+    <div class="rb-actions">
+        @for (a of actions; track a.key) {
+        <a class="rb-action" [routerLink]="['/', currentLocale, 'app', a.route]" [style.--accent]="a.color">
+            <span class="rb-action-icon"><mat-icon>{{ a.icon }}</mat-icon></span>
+            <strong>{{ 'redeem.extra.' + a.key | translate }}</strong>
+            <small>{{ 'redeem.extra.' + a.key + '_d' | translate }}</small>
+            <span class="rb-go">{{ 'redeem.extra.go' | translate }} <mat-icon>arrow_forward</mat-icon></span>
+        </a>
+        }
+    </div>
+    <p class="rb-tip"><mat-icon>lightbulb</mat-icon>{{ 'redeem.extra.tip' | translate }}</p>
+</div>

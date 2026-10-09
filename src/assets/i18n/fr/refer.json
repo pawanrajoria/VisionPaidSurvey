@@ -32,6 +32,33 @@
     "heading": {
       "subtitle": "Utilisez votre code bonus pour obtenir une offre spéciale.",
       "title": "Utiliser le code bonus"
+    },
+    "extra": {
+      "how_title": "Comment ça marche",
+      "step1_t": "Obtenez un code",
+      "step1_d": "Les codes viennent de l'invitation d'un ami, de nos e-mails et notifications, et de promotions spéciales.",
+      "step2_t": "Saisissez-le ci-dessus",
+      "step2_d": "Tapez ou collez le code puis appuyez sur Utiliser. Chaque code fonctionne une fois par compte.",
+      "step3_t": "Gagnez 10 % de plus",
+      "step3_d": "Pendant les 24 prochaines heures, chaque sondage et offre validés rapportent 10 % de plus.",
+      "find_title": "Où trouver des codes",
+      "find_notify_t": "Activez les notifications",
+      "find_notify_d": "Les nouveaux codes et les boosts limités arrivent sous forme d'alertes.",
+      "find_friend_t": "Demandez à un ami",
+      "find_friend_d": "Chaque membre a un code d'invitation : commencez avec celui d'un ami.",
+      "find_share_t": "Partagez votre code",
+      "find_share_d": "Invitez des amis et touchez une commission sur ce qu'ils complètent.",
+      "use_title": "Profitez au maximum de votre bonus",
+      "use_surveys": "Répondre aux sondages",
+      "use_surveys_d": "Les mieux payés d'abord",
+      "use_offers": "Jouer et gagner",
+      "use_offers_d": "Jeux et offres d'applis très bien récompensés",
+      "use_streak": "Série quotidienne",
+      "use_streak_d": "Revenez chaque jour et grimpez au classement",
+      "use_cashout": "Retirer",
+      "use_cashout_d": "PayPal, UPI et cartes cadeaux",
+      "tip": "Astuce : utilisez un code juste avant une session de sondages pour que le bonus de 24 heures couvre le plus de complétions possible.",
+      "go": "Aller"
     }
   }
 }

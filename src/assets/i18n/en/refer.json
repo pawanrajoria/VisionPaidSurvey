@@ -32,6 +32,33 @@
         "heading": {
             "subtitle": "Enter your bonus code below to receive a 10% bonus valid for 24 hours.",
             "title": "Redeem Bonus Code"
+        },
+        "extra": {
+            "how_title": "How it works",
+            "step1_t": "Get a code",
+            "step1_d": "Codes come from a friend's invite, our emails and notifications, and special promotions.",
+            "step2_t": "Enter it above",
+            "step2_d": "Type or paste the code and tap Redeem. Each code works once per account.",
+            "step3_t": "Earn 10% extra",
+            "step3_d": "For the next 24 hours every approved survey and offer pays 10% more.",
+            "find_title": "Where to find codes",
+            "find_notify_t": "Turn on notifications",
+            "find_notify_d": "New codes and limited-time boosts arrive as alerts.",
+            "find_friend_t": "Ask a friend",
+            "find_friend_d": "Every member has an invite code - start with a friend's code.",
+            "find_share_t": "Share your own code",
+            "find_share_d": "Invite friends and earn a commission on what they complete.",
+            "use_title": "Make the most of your bonus",
+            "use_surveys": "Take surveys",
+            "use_surveys_d": "Best-paying matches first",
+            "use_offers": "Play & earn",
+            "use_offers_d": "Games and app offers with big rewards",
+            "use_streak": "Daily streak",
+            "use_streak_d": "Come back every day and climb the leaderboard",
+            "use_cashout": "Cash out",
+            "use_cashout_d": "PayPal, UPI and gift cards",
+            "tip": "Tip: redeem a code right before a survey session so the 24-hour bonus covers as many completions as possible.",
+            "go": "Go"
         }
     }
 }

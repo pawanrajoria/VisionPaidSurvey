@@ -32,6 +32,33 @@
     "heading": {
       "subtitle": "Tebus kod bonus anda untuk mendapatkan tawaran istimewa.",
       "title": "Tebus Kod Bonus"
+    },
+    "extra": {
+      "how_title": "Cara ia berfungsi",
+      "step1_t": "Dapatkan kod",
+      "step1_d": "Kod datang daripada jemputan rakan, e-mel dan pemberitahuan kami, serta promosi khas.",
+      "step2_t": "Masukkan di atas",
+      "step2_d": "Taip atau tampal kod dan ketik Tebus. Setiap kod berfungsi sekali bagi setiap akaun.",
+      "step3_t": "Dapat 10% lebih",
+      "step3_d": "Selama 24 jam berikutnya setiap tinjauan dan tawaran yang diluluskan membayar 10% lebih.",
+      "find_title": "Di mana mencari kod",
+      "find_notify_t": "Hidupkan pemberitahuan",
+      "find_notify_d": "Kod baharu dan rangsangan masa terhad tiba sebagai makluman.",
+      "find_friend_t": "Tanya rakan",
+      "find_friend_d": "Setiap ahli ada kod jemputan - mulakan dengan kod rakan.",
+      "find_share_t": "Kongsi kod anda sendiri",
+      "find_share_d": "Jemput rakan dan dapatkan komisen atas apa yang mereka siapkan.",
+      "use_title": "Manfaatkan bonus anda sepenuhnya",
+      "use_surveys": "Jawab tinjauan",
+      "use_surveys_d": "Bayaran tertinggi dahulu",
+      "use_offers": "Main & dapatkan",
+      "use_offers_d": "Permainan dan tawaran aplikasi dengan ganjaran besar",
+      "use_streak": "Rentetan harian",
+      "use_streak_d": "Kembali setiap hari dan naik papan pendahulu",
+      "use_cashout": "Tunaikan",
+      "use_cashout_d": "PayPal, UPI dan kad hadiah",
+      "tip": "Petua: tebus kod sejurus sebelum sesi tinjauan supaya bonus 24 jam meliputi sebanyak mungkin penyiapan.",
+      "go": "Pergi"
     }
   }
 }

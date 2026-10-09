@@ -32,6 +32,33 @@
     "heading": {
       "subtitle": "Resgate seu código de bônus para obter uma oferta especial.",
       "title": "Resgatar Código de Bônus"
+    },
+    "extra": {
+      "how_title": "Como funciona",
+      "step1_t": "Obtenha um código",
+      "step1_d": "Os códigos vêm do convite de um amigo, dos nossos e-mails e notificações e de promoções especiais.",
+      "step2_t": "Digite acima",
+      "step2_d": "Digite ou cole o código e toque em Resgatar. Cada código funciona uma vez por conta.",
+      "step3_t": "Ganhe 10% a mais",
+      "step3_d": "Nas próximas 24 horas, cada pesquisa e oferta aprovada paga 10% a mais.",
+      "find_title": "Onde encontrar códigos",
+      "find_notify_t": "Ative as notificações",
+      "find_notify_d": "Novos códigos e bônus por tempo limitado chegam como alertas.",
+      "find_friend_t": "Peça a um amigo",
+      "find_friend_d": "Todo membro tem um código de convite - comece com o de um amigo.",
+      "find_share_t": "Compartilhe seu código",
+      "find_share_d": "Convide amigos e ganhe comissão sobre o que eles concluírem.",
+      "use_title": "Aproveite ao máximo seu bônus",
+      "use_surveys": "Responda pesquisas",
+      "use_surveys_d": "As que pagam mais primeiro",
+      "use_offers": "Jogue e ganhe",
+      "use_offers_d": "Jogos e ofertas de apps com grandes recompensas",
+      "use_streak": "Sequência diária",
+      "use_streak_d": "Volte todo dia e suba no ranking",
+      "use_cashout": "Sacar",
+      "use_cashout_d": "PayPal, UPI e cartões-presente",
+      "tip": "Dica: resgate um código logo antes de uma sessão de pesquisas para que o bônus de 24 horas cubra o máximo de conclusões.",
+      "go": "Ir"
     }
   }
 }

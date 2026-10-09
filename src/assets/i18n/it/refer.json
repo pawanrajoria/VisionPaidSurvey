@@ -32,6 +32,33 @@
     "heading": {
       "subtitle": "Riscatta il tuo codice bonus per ottenere un'offerta speciale.",
       "title": "Riscatta codice bonus"
+    },
+    "extra": {
+      "how_title": "Come funziona",
+      "step1_t": "Ottieni un codice",
+      "step1_d": "I codici arrivano dall'invito di un amico, dalle nostre email e notifiche e da promozioni speciali.",
+      "step2_t": "Inseriscilo qui sopra",
+      "step2_d": "Digita o incolla il codice e tocca Riscatta. Ogni codice funziona una volta per account.",
+      "step3_t": "Guadagna il 10% in più",
+      "step3_d": "Per le prossime 24 ore ogni sondaggio e offerta approvati pagano il 10% in più.",
+      "find_title": "Dove trovare i codici",
+      "find_notify_t": "Attiva le notifiche",
+      "find_notify_d": "Nuovi codici e boost a tempo limitato arrivano come avvisi.",
+      "find_friend_t": "Chiedi a un amico",
+      "find_friend_d": "Ogni membro ha un codice invito: inizia con quello di un amico.",
+      "find_share_t": "Condividi il tuo codice",
+      "find_share_d": "Invita amici e guadagna una commissione su ciò che completano.",
+      "use_title": "Sfrutta al massimo il tuo bonus",
+      "use_surveys": "Fai sondaggi",
+      "use_surveys_d": "Prima quelli meglio pagati",
+      "use_offers": "Gioca e guadagna",
+      "use_offers_d": "Giochi e offerte di app con grandi premi",
+      "use_streak": "Serie giornaliera",
+      "use_streak_d": "Torna ogni giorno e scala la classifica",
+      "use_cashout": "Preleva",
+      "use_cashout_d": "PayPal, UPI e carte regalo",
+      "tip": "Consiglio: riscatta un codice subito prima di una sessione di sondaggi, così il bonus di 24 ore copre più completamenti possibili.",
+      "go": "Vai"
     }
   }
 }

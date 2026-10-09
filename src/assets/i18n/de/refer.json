@@ -32,6 +32,33 @@
     "heading": {
       "subtitle": "Lösen Sie Ihren Bonuscode ein, um ein Sonderangebot zu erhalten.",
       "title": "Bonuscode einlösen"
+    },
+    "extra": {
+      "how_title": "So funktioniert es",
+      "step1_t": "Code erhalten",
+      "step1_d": "Codes bekommst du über die Einladung eines Freundes, unsere E-Mails und Benachrichtigungen sowie Sonderaktionen.",
+      "step2_t": "Oben eingeben",
+      "step2_d": "Code eingeben oder einfügen und auf Einlösen tippen. Jeder Code funktioniert einmal pro Konto.",
+      "step3_t": "10 % extra verdienen",
+      "step3_d": "In den nächsten 24 Stunden bringt jede bestätigte Umfrage und jedes Angebot 10 % mehr.",
+      "find_title": "Wo du Codes findest",
+      "find_notify_t": "Benachrichtigungen aktivieren",
+      "find_notify_d": "Neue Codes und zeitlich begrenzte Boosts kommen als Benachrichtigung.",
+      "find_friend_t": "Frag einen Freund",
+      "find_friend_d": "Jedes Mitglied hat einen Einladungscode - starte mit dem Code eines Freundes.",
+      "find_share_t": "Teile deinen eigenen Code",
+      "find_share_d": "Lade Freunde ein und verdiene eine Provision auf ihre Abschlüsse.",
+      "use_title": "Hol das Beste aus deinem Bonus",
+      "use_surveys": "Umfragen machen",
+      "use_surveys_d": "Die bestbezahlten Treffer zuerst",
+      "use_offers": "Spielen & verdienen",
+      "use_offers_d": "Spiele und App-Angebote mit hohen Prämien",
+      "use_streak": "Tägliche Serie",
+      "use_streak_d": "Komm jeden Tag zurück und steig in der Rangliste auf",
+      "use_cashout": "Auszahlen",
+      "use_cashout_d": "PayPal, UPI und Geschenkkarten",
+      "tip": "Tipp: Löse einen Code direkt vor einer Umfrage-Session ein, damit der 24-Stunden-Bonus möglichst viele Abschlüsse abdeckt.",
+      "go": "Los"
     }
   }
 }
