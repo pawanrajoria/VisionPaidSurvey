@@ -34,9 +34,10 @@ export class ProfileComponent extends BaseComponent implements OnInit {
     }
 
     async ngOnInit() {
+        // The streak loads on its own: a problem with the profile request must not hide it.
+        this.engagement.getSummary().then(summary => this.streak = summary?.streak ?? null).catch(() => { });
         await this.getProfileInfo();
         await this.bindUserHeading();
-        this.streak = (await this.engagement.getSummary())?.streak ?? null;
     }
 
     get userBalanceInfo() {
@@ -54,12 +55,12 @@ export class ProfileComponent extends BaseComponent implements OnInit {
         const self = this;
         self.userHeading = [
             { icon: 'activity', subtitle: 'Activity', title: '' },
-            { icon: 'circle-dotted-letter-c', subtitle: 'Points Earned', title: self.userInfo.totalPointEarned.toString() },
-            { icon: 'gift', subtitle: 'Rewards Redeemed', title: self.userInfo.totalRewardRedeemed.toString() },
-            { icon: 'checkbox', subtitle: 'Survey Completed', title: self.userInfo.totalSurveyCompleted.toString() },
-            { icon: 'circle-dashed-check', subtitle: 'Offer Completed', title: self.userInfo.totalOfferCompleted.toString() },
+            { icon: 'circle-dotted-letter-c', subtitle: 'Points Earned', title: String(self.userInfo?.totalPointEarned ?? 0) },
+            { icon: 'gift', subtitle: 'Rewards Redeemed', title: String(self.userInfo?.totalRewardRedeemed ?? 0) },
+            { icon: 'checkbox', subtitle: 'Survey Completed', title: String(self.userInfo?.totalSurveyCompleted ?? 0) },
+            { icon: 'circle-dashed-check', subtitle: 'Offer Completed', title: String(self.userInfo?.totalOfferCompleted ?? 0) },
             { icon: 'certificate-2', subtitle: 'Achievements Earned', title: '0' },
-            { icon: 'trophy', subtitle: 'Leaderboard Level', title: self.userInfo.level.toString() }
+            { icon: 'trophy', subtitle: 'Leaderboard Level', title: String(self.userInfo?.level ?? 0) }
         ]
     }
 

@@ -61,6 +61,7 @@
                 <hr>
                 @if (streak) {
                 <div class="account-streak">
+                    <div class="stat-strip">
                     <div class="stat">
                         <strong>{{ (streak.longest === 1 ? 'app.common.day_one' : 'app.common.day_other') | translate:{ count: streak.longest } }}</strong>
                         <span>{{ 'app.streak.longest' | translate }}</span>
@@ -72,6 +73,7 @@
                     <div class="stat">
                         <strong [style.color]="tier.color">{{ 'app.tier.' + tier.key | translate }}</strong>
                         <span>{{ 'app.tier.tierLevel' | translate:{ level: userBalanceInfo.userLevel || 1 } }}</span>
+                    </div>
                     </div>
                     <a class="board" [class.locked]="!streak.leaderboardUnlocked" [routerLink]="['/', currentLocale, 'app', 'leaderboard']">
                         <mat-icon>{{ streak.leaderboardUnlocked ? 'emoji_events' : 'lock' }}</mat-icon>

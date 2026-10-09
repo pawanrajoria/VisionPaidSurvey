@@ -241,47 +241,64 @@
 
 // Streak / tier / leaderboard strip on the account page
 .account-streak {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  padding: 0 16px 16px;
+  // One slim strip (longest | current | tier) and a one-line leaderboard link: it used to be
+  // three tall cards plus a banner, stacked one per row on phones.
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 8px;
+  padding: 0 16px 12px;
 
   .stat {
+    flex: 1 1 0;
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 2px;
-    padding: 12px;
-    border: 1px solid #dfe7e4;
-    border-radius: 12px;
-    background: #fff;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 6px 4px;
+    border: 0;
+    background: none;
+    text-align: center;
+
+    & + .stat { border-left: 1px solid #dfe7e4; }
 
     strong {
-      font-size: 18px;
+      font-size: 15px;
+      line-height: 1.2;
       color: #14231f;
       font-variant-numeric: tabular-nums;
+      white-space: nowrap;
     }
 
     span {
-      font-size: 12px;
+      font-size: 11px;
       color: #5d6d68;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
     }
   }
 
   .board {
-    grid-column: 1 / -1;
+    flex: 1 1 100%;
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px 14px;
-    border-radius: 12px;
-    background: rgba(16, 87, 73, 0.08);
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: rgba(16, 87, 73, 0.06);
     color: #14231f;
     text-decoration: none;
+    font-size: 13px;
 
-    mat-icon { color: #105749; }
+    mat-icon { flex-shrink: 0; width: 18px; height: 18px; font-size: 18px; color: #105749; }
 
-    span { display: flex; flex-direction: column; }
-    small { color: #5d6d68; }
+    span { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 6px; min-width: 0; }
+    strong { font-size: 13px; }
+    small { color: #5d6d68; font-size: 12px; }
 
     &.locked {
       background: #f1f5f4;
@@ -289,8 +306,12 @@
       mat-icon { color: #7a8a85; }
     }
   }
+}
 
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr;
-  }
+.account-streak .stat-strip {
+  flex: 1 1 100%;
+  display: flex;
+  border: 1px solid #dfe7e4;
+  border-radius: 10px;
+  background: #fff;
 }
