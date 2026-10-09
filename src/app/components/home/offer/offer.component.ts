@@ -6,6 +6,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { OfferPopupDialog } from './offer-popup/offer-popup.component';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { BaseComponent } from '../../../base.component';
+import { Router } from '@angular/router';
+import { EngagementService } from '../engagement/engagement.service';
+import { IPriorityOffer } from '../engagement/engagement.vm';
 
 @Component({
     selector: 'app-offer',
@@ -30,13 +33,48 @@ export class OfferComponent extends BaseComponent implements OnInit {
     readonly dialog = inject(MatDialog);
     readonly offerService = inject(OfferService);
     readonly breakpointObserver = inject(BreakpointObserver);
+    private readonly engagement = inject(EngagementService);
+    private readonly router = inject(Router);
+
+    /** Special offers uploaded from the admin console (same list as the Earn page and the app). */
+    specialOffers: IPriorityOffer[] = [];
 
     constructor() {
         super(); // calls BaseComponent constructor and binds browser globals
     }
 
     async ngOnInit(): Promise<void> {
+        this.loadSpecialOffers();
         await this.getOffers();
+    }
+
+    async loadSpecialOffers() {
+        if (!this.isBrowser) return;
+        const offers = await this.engagement.getPriorityOffers();
+        const device = this.specialDevice;
+        this.specialOffers = offers.filter(o => !o.device || o.device === 'All' || o.device === device);
+    }
+
+    /** Desktop | Android | IOS - the Device values an admin can pick for a special offer. */
+    private get specialDevice(): string {
+        const ua = this.nav?.userAgent ?? '';
+        if (/iPhone|iPad|iPod/i.test(ua) || (/Macintosh/i.test(ua) && (this.nav?.maxTouchPoints ?? 0) > 1)) return 'IOS';
+        if (/Android/i.test(ua)) return 'Android';
+        return 'Desktop';
+    }
+
+    openSpecialOffer(offer: IPriorityOffer) {
+        // Open first, track second: a window opened after an await is treated as a popup and blocked.
+        if (offer.isInternal) {
+            this.router.navigateByUrl(`/${this.currentLocale}${offer.clickUrl}`);
+        } else {
+            this.win?.open(offer.clickUrl, '_blank', 'noopener');
+        }
+        this.engagement.trackPriorityClick(offer.id);
+    }
+
+    hideSpecialImage(offer: IPriorityOffer) {
+        offer.imageUrl = null;
     }
 
     async getOffers() {

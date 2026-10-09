@@ -90,7 +90,10 @@ export class NotificationService {
       const messaging = await this.messaging();
       if (!messaging) return;
       const { getToken } = await import('firebase/messaging');
-      const registration = await navigator.serviceWorker.register('/firebase-messaging-sw.js');
+      // Its own scope: at "/" it replaced the app's ngsw-worker.js (one worker per scope) and the
+      // two kept swapping, so a push often reached a worker that cannot display it. This is the
+      // scope Firebase itself uses by default.
+      const registration = await navigator.serviceWorker.register('/firebase-messaging-sw.js', { scope: '/firebase-cloud-messaging-push-scope' });
       const token = await getToken(messaging, { vapidKey: VAPID_KEY, serviceWorkerRegistration: registration });
       if (!token) return;
 

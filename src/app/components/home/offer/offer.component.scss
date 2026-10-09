@@ -149,3 +149,134 @@
         color: var(--mat-sys-secondary);
     }
 }
+// Special offers uploaded from the admin console (same look as the app)
+.special-strip {
+    margin: 8px 0 18px;
+
+    h2 {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin: 0 0 10px;
+        font-size: 17px;
+        font-weight: 800;
+
+        mat-icon {
+            color: #d4a106;
+        }
+    }
+}
+
+.special-scroller {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+}
+
+.special-card {
+    flex: 0 0 240px;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border: none;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 4px 14px rgba(16, 87, 73, 0.1);
+    text-align: left;
+    font: inherit;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 22px rgba(16, 87, 73, 0.18);
+    }
+}
+
+.special-media {
+    position: relative;
+    height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #105749, #21927b);
+    color: rgba(255, 255, 255, 0.85);
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    mat-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 36px;
+    }
+}
+
+.special-tag {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    padding: 2px 9px;
+    border-radius: 999px;
+    background: #d4a106;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.special-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 12px 12px;
+}
+
+.special-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.special-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.special-points {
+    color: #105749;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.special-go {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #105749;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+
+    mat-icon {
+        width: 14px;
+        height: 14px;
+        font-size: 14px;
+    }
+}

@@ -702,3 +702,173 @@ tbody tr[data-rejection="block"]:hover td { background: #fbdcd8; }
     box-shadow: 0 0 0 3px rgba(16, 87, 73, 0.18);
   }
 }
+
+// ───────────── Users: open a user in full ─────────────
+.user-link {
+  cursor: pointer;
+
+  &:hover .cell-main {
+    color: $brand;
+    text-decoration: underline;
+  }
+
+  .open-icon {
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+    vertical-align: -2px;
+    opacity: 0.45;
+  }
+}
+
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.45);
+  animation: drawerFade 0.2s ease both;
+}
+
+.user-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1001;
+  width: min(760px, 100vw);
+  overflow-y: auto;
+  padding: 20px;
+  background: #f6f8f7;
+  box-shadow: -12px 0 32px rgba(0, 0, 0, 0.18);
+  animation: drawerIn 0.25s cubic-bezier(0.33, 1, 0.68, 1) both;
+
+  h2 {
+    margin: 0 0 4px;
+    padding-right: 40px;
+  }
+
+  h3 {
+    margin: 0;
+    padding: 14px 16px 6px;
+    font-size: 15px;
+  }
+
+  .panel {
+    margin-top: 14px;
+  }
+
+  .kpi-grid.compact {
+    margin-top: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+.drawer-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+.drawer-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-right: 12px;
+
+  h3 {
+    padding-bottom: 14px;
+  }
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  padding: 4px 12px;
+  border: 1px solid $line;
+  border-radius: 999px;
+  background: #fff;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+
+  &.active {
+    border-color: $brand;
+    background: $brand;
+    color: #fff;
+  }
+}
+
+.kind {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #e8f3ef;
+  color: $brand;
+
+  &[data-kind='bonus'] {
+    background: #fff4d6;
+    color: #8a5a00;
+  }
+
+  &[data-kind='rejection'] {
+    background: #fde8e8;
+    color: #b42318;
+  }
+}
+
+td.negative {
+  color: #b42318;
+}
+
+// Bonuses tab: the per-type cards filter the table
+.kpi-button {
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    border-color: $brand;
+  }
+
+  &.selected {
+    border-color: $brand;
+    box-shadow: 0 0 0 2px rgba(16, 87, 73, 0.15);
+  }
+}
+
+@keyframes drawerIn {
+  from {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes drawerFade {
+  from {
+    opacity: 0;
+  }
+}

@@ -22,7 +22,8 @@
     <div class="metric-card" 
          *ngFor="let item of stats" 
          [class.active]="selectedValueTabIndex === item.id"
-         (click)="selectedValueTabIndex = item.id">
+         [attr.title]="item.hint || null"
+         (click)="selectStat(item)">
       <div class="metric-icon">
         <mat-icon>{{ item.icon }}</mat-icon>
       </div>

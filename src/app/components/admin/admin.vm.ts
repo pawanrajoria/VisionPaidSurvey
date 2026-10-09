@@ -100,7 +100,20 @@ export interface AdminUserDto {
     profileCompleted: boolean;
     completed: number;
     rejected: number;
+    /** USD. Approved survey / offer earnings, bonuses excluded. */
+    totalEarned: number;
+    /** USD. Level, profile, daily, streak, referral... */
+    totalBonus: number;
+    bonusCount: number;
+    /** USD taken back by rejections. */
+    rejectedAmount: number;
+    /** USD paid out. */
+    withdrawn: number;
+    lastEarningAt: string | null;
+    /** Rejection score in percent. */
     rejectionRate: number;
+    /** Low | Medium | High */
+    riskLevel: string;
     fraudDecision: string;
     loginProvider: string;
     /** web | android | ios - the client the user was last seen on. */
@@ -110,6 +123,61 @@ export interface AdminUserDto {
     appVersion: string;
     lastSeenAt: string | null;
     accountAgeDays: number;
+    /** "1y 2m", "5m 12d", "9d" */
+    accountAge: string;
+}
+
+/** One earning, bonus or rejection. */
+export interface AdminEarningDto {
+    id: number;
+    userId: number;
+    email: string;
+    fullName: string;
+    countryCode: string;
+    /** USD; negative for a rejection. */
+    amount: number;
+    source: number;
+    /** "Level bonus", "Referral commission", "Survey", "Survey rejected"... */
+    type: string;
+    /** earning | bonus | rejection */
+    kind: 'earning' | 'bonus' | 'rejection';
+    status: string;
+    transactionId: string | null;
+    createDate: string;
+}
+
+export interface AdminBonusTypeDto {
+    source: number;
+    type: string;
+    count: number;
+    users: number;
+    amount: number;
+}
+
+export interface AdminBonusListDto {
+    total: number;
+    page: number;
+    pageSize: number;
+    totalAmount: number;
+    byType: AdminBonusTypeDto[];
+    rows: AdminEarningDto[];
+}
+
+export interface AdminUserSourceDto {
+    source: number;
+    type: string;
+    isBonus: boolean;
+    count: number;
+    amount: number;
+    rejectedCount: number;
+    rejectedAmount: number;
+}
+
+export interface AdminUserDetailDto {
+    user: AdminUserDto;
+    bySource: AdminUserSourceDto[];
+    earnings: AdminEarningDto[];
+    payouts: AdminPayoutDto[];
 }
 
 export interface AdminUserListDto {

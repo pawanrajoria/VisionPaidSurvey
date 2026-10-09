@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 import { ConfigService } from "../../config.service";
 import { BACKGROUND } from "../home/engagement/engagement.service";
-import { AdminOverviewDto, AdminPayoutDto, AdminUserListDto, BulkUserActionResultDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest, SendNotificationResult } from "./admin.vm";
+import { AdminBonusListDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserListDto, BulkUserActionResultDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest, SendNotificationResult } from "./admin.vm";
 
 @Injectable({ providedIn: 'root' })
 export class AdminService {
@@ -43,6 +43,20 @@ export class AdminService {
         if (status !== null) params = params.set('status', status);
         if (minRejection !== null) params = params.set('minRejection', minRejection);
         return await firstValueFrom(this.http.get<AdminUserListDto>(this.base + "users", { params }));
+    }
+
+    /** Everything about one user: totals, per-type breakdown, every earning / bonus / rejection, payouts. */
+    async getUserDetail(userId: number): Promise<AdminUserDetailDto> {
+        return await firstValueFrom(this.http.get<AdminUserDetailDto>(`${this.base}users/${userId}`));
+    }
+
+    /** Which bonus went to which user. source: 4 level, 5 profile, 6 daily, 7 streak, 8 referral, 1 survey attempt. */
+    async getBonuses(filter: { source: number | null; days: number; search: string; userId: number | null }, page: number, pageSize: number): Promise<AdminBonusListDto> {
+        let params = new HttpParams().set('page', page).set('pageSize', pageSize).set('days', filter.days);
+        if (filter.source !== null) params = params.set('source', filter.source);
+        if (filter.userId !== null) params = params.set('userId', filter.userId);
+        if (filter.search.trim()) params = params.set('search', filter.search.trim());
+        return await firstValueFrom(this.http.get<AdminBonusListDto>(this.base + "bonuses", { params }));
     }
 
     async setUserBlocked(userId: number, blocked: boolean): Promise<{ isSuccess: boolean; message: string }> {

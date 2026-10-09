@@ -21,6 +21,33 @@
             </mat-button-toggle>
         </mat-button-toggle-group>
     </div>
+    @if (specialOffers.length > 0 && !searchTxt) {
+    <section class="special-strip" aria-label="Special offers">
+        <h2><mat-icon>auto_awesome</mat-icon> Special offers</h2>
+        <div class="special-scroller">
+            @for (offer of specialOffers; track offer.id) {
+            <button type="button" class="special-card" (click)="openSpecialOffer(offer)">
+                <span class="special-media">
+                    @if (offer.imageUrl) {
+                    <img [src]="offer.imageUrl" alt="" loading="lazy" (error)="hideSpecialImage(offer)">
+                    } @else {
+                    <mat-icon>rocket_launch</mat-icon>
+                    }
+                    <span class="special-tag">{{ offer.tag || 'Special' }}</span>
+                </span>
+                <span class="special-body">
+                    <span class="special-title">{{ offer.title }}</span>
+                    <span class="special-foot">
+                        @if (offer.points > 0) { <span class="special-points">{{ offer.points | number:'1.0-0' }} points</span> }
+                        <span class="special-go">Start <mat-icon>arrow_forward</mat-icon></span>
+                    </span>
+                </span>
+            </button>
+            }
+        </div>
+    </section>
+    }
+
     <div class="offer-grid">
         <mat-card class="offer-card" *ngFor="let offer of filteredOffers" (click)="openDialog(offer)">
             <div class="offer-content">

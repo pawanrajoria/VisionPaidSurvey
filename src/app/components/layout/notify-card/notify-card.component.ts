@@ -22,11 +22,13 @@ const DISMISS_DAYS = 7;
         <button type="button" class="notify-close" (click)="dismiss()" aria-label="Not now">
             <mat-icon>close</mat-icon>
         </button>
-        <img src="/assets/images/notify-offers.svg" alt="" width="240" height="140" loading="lazy" />
-        <strong>Never miss a new offer</strong>
-        <p>Turn on notifications and we'll tell you the moment high-paying offers and surveys go live.</p>
+        <button type="button" class="notify-art" [disabled]="busy || blocked" (click)="enable()" aria-label="Enable notifications">
+            <img src="/assets/images/notify-offers.svg" alt="" width="240" height="140" loading="lazy" />
+        </button>
+        <strong>Want proper updates &amp; notifications?</strong>
+        <p>Click below and allow notifications on this browser. We'll tell you the moment high-paying offers, bonuses and payouts arrive.</p>
         @if (blocked) {
-        <p class="notify-note">Notifications are blocked for this site. Allow them from the lock icon in your browser's address bar.</p>
+        <p class="notify-note">Notifications are blocked for this site. Click the lock icon in your browser's address bar, allow Notifications, then reload the page.</p>
         } @else {
         <button type="button" class="notify-btn" [disabled]="busy" (click)="enable()">
             <mat-icon>notifications_active</mat-icon>{{ busy ? 'One moment…' : 'Enable notifications' }}
@@ -45,6 +47,19 @@ const DISMISS_DAYS = 7;
         background: #f3f9f7;
         color: #14231f;
     }
+    .notify-art {
+        display: block;
+        width: 100%;
+        padding: 0;
+        border: 0;
+        border-radius: 12px;
+        background: none;
+        cursor: pointer;
+        overflow: hidden;
+        transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .notify-art:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(16, 87, 73, .25); }
+    .notify-art:disabled { cursor: default; }
     img {
         display: block;
         width: 100%;
@@ -114,13 +129,17 @@ export class NotifyCardComponent extends BaseComponent implements OnInit, OnDest
     blocked = false;
 
     get visible(): boolean {
-        return !this.dismissed && (this.permission === 'default' || this.blocked);
+        // "denied" too: a visitor who blocked notifications earlier sees how to switch them back on.
+        return !this.dismissed && (this.permission === 'default' || this.permission === 'denied' || this.blocked);
     }
 
     ngOnInit() {
         if (!this.isBrowser) return;
         this.dismissed = this.recentlyDismissed();
-        this.subscription = this.notifications.permission$.subscribe(p => this.permission = p);
+        this.subscription = this.notifications.permission$.subscribe(p => {
+            this.permission = p;
+            this.blocked = p === 'denied';
+        });
     }
 
     ngOnDestroy() {

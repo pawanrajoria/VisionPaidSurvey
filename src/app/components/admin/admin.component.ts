@@ -5,10 +5,10 @@ import { AdminService } from "./admin.service";
 import { AdminDashboardComponent } from "./dashboard/dashboard.component";
 import { MessageService } from "../layout/message/message.service";
 import { MessageVM } from "../layout/message/message.vm";
-import { AdminOverviewDto, AdminPayoutDto, AdminUserDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest } from "./admin.vm";
+import { AdminBonusListDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest } from "./admin.vm";
 import { ChatService, IAdminChatMessage } from "../home/chat/chat.service";
 
-type AdminTab = 'overview' | 'offers' | 'payouts' | 'users' | 'chat' | 'notifications' | 'earnings';
+type AdminTab = 'overview' | 'offers' | 'payouts' | 'users' | 'bonuses' | 'chat' | 'notifications' | 'earnings';
 
 const PAYOUT_PENDING = 1, PAYOUT_COMPLETED = 2, PAYOUT_REJECTED = 4;
 const USER_BLOCKED = 3;
@@ -22,9 +22,10 @@ const USER_BLOCKED = 3;
 export class AdminComponent extends BaseComponent implements OnInit {
     readonly tabs: { id: AdminTab; label: string; icon: string }[] = [
         { id: 'overview', label: 'Overview', icon: 'insights' },
-        { id: 'offers', label: 'Priority offers', icon: 'local_offer' },
+        { id: 'offers', label: 'Special offers', icon: 'local_offer' },
         { id: 'payouts', label: 'Payouts', icon: 'payments' },
         { id: 'users', label: 'Users', icon: 'group' },
+        { id: 'bonuses', label: 'Bonuses', icon: 'redeem' },
         { id: 'chat', label: 'Chat', icon: 'forum' },
         { id: 'notifications', label: 'Notifications', icon: 'campaign' },
         { id: 'earnings', label: 'Earnings', icon: 'monitoring' }
@@ -89,6 +90,7 @@ export class AdminComponent extends BaseComponent implements OnInit {
         if (tab === 'offers' && !this.offersLoaded) await this.loadOffers();
         if (tab === 'payouts' && !this.payoutsLoaded) await this.loadPayouts();
         if (tab === 'users' && !this.usersLoaded) await this.loadUsers();
+        if (tab === 'bonuses' && !this.bonuses) await this.loadBonuses();
         if (tab === 'chat') await this.loadChat();
         if (tab === 'notifications') await this.loadNotifications();
     }
@@ -278,6 +280,94 @@ export class AdminComponent extends BaseComponent implements OnInit {
             const visible = new Set(this.users.map(u => u.id));
             this.selectedUserIds.forEach(id => { if (!visible.has(id)) this.selectedUserIds.delete(id); });
         } catch { /* toast already shown */ }
+    }
+
+    // One user in full (opens from the Users table)
+    userDetail: AdminUserDetailDto | null = null;
+    userDetailLoading = false;
+    userDetailFilter: 'all' | 'earning' | 'bonus' | 'rejection' = 'all';
+
+    async openUser(u: AdminUserDto) {
+        this.userDetail = null;
+        this.userDetailFilter = 'all';
+        this.userDetailLoading = true;
+        try {
+            this.userDetail = await this.adminService.getUserDetail(u.id);
+        } catch { /* toast already shown */ } finally {
+            this.userDetailLoading = false;
+        }
+    }
+
+    closeUser() {
+        this.userDetail = null;
+        this.userDetailLoading = false;
+    }
+
+    get userDetailRows() {
+        const rows = this.userDetail?.earnings ?? [];
+        return this.userDetailFilter === 'all' ? rows : rows.filter(r => r.kind === this.userDetailFilter);
+    }
+
+    /** All bonuses of the open user in the Bonuses tab. */
+    async showUserBonuses(userId: number) {
+        this.closeUser();
+        this.bonusFilter = { source: null, days: 0, search: '', userId };
+        this.bonusPage = 1;
+        this.tab = 'bonuses';
+        await this.loadBonuses();
+    }
+
+    // ───────────── Bonuses: which bonus went to which user ─────────────
+    bonuses: AdminBonusListDto | null = null;
+    bonusFilter: { source: number | null; days: number; search: string; userId: number | null } = { source: null, days: 30, search: '', userId: null };
+    bonusPage = 1;
+    readonly bonusPageSize = 50;
+    readonly bonusSources = [
+        { value: 4, label: 'Level bonus' },
+        { value: 5, label: 'Profile (welcome) bonus' },
+        { value: 6, label: 'Daily check-in bonus' },
+        { value: 7, label: 'Streak prize' },
+        { value: 8, label: 'Referral commission' },
+        { value: 1, label: 'Survey attempt bonus' }
+    ];
+    readonly bonusPeriods = [
+        { value: 1, label: 'Today' },
+        { value: 7, label: 'Last 7 days' },
+        { value: 30, label: 'Last 30 days' },
+        { value: 90, label: 'Last 90 days' },
+        { value: 0, label: 'All time' }
+    ];
+
+    async loadBonuses() {
+        try {
+            this.bonuses = await this.adminService.getBonuses(this.bonusFilter, this.bonusPage, this.bonusPageSize);
+        } catch { /* toast already shown */ }
+    }
+
+    async openBonusesFromDashboard(e: { source: number; days: number }) {
+        this.bonusFilter = { source: e.source, days: e.days, search: '', userId: null };
+        this.bonusPage = 1;
+        this.tab = 'bonuses';
+        await this.loadBonuses();
+    }
+
+    async searchBonuses() {
+        this.bonusPage = 1;
+        await this.loadBonuses();
+    }
+
+    async clearBonusUser() {
+        this.bonusFilter = { ...this.bonusFilter, userId: null };
+        await this.searchBonuses();
+    }
+
+    get bonusPageCount(): number {
+        return this.bonuses ? Math.max(1, Math.ceil(this.bonuses.total / this.bonusPageSize)) : 1;
+    }
+
+    async goToBonusPage(page: number) {
+        this.bonusPage = Math.min(Math.max(1, page), this.bonusPageCount);
+        await this.loadBonuses();
     }
 
     /** 'block' = at/above the disable threshold, 'warn' = above the highlight threshold. */

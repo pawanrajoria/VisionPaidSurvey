@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output, ViewChild } from "@angular/core";
 import { SharedModule } from "../../../shared.module";
 import { AdminEarningResponseDto } from "../admin.vm";
 import { AdminService } from "../admin.service";
@@ -12,6 +12,8 @@ import { MatSort } from "@angular/material/sort";
 })
 export class AdminDashboardComponent implements OnInit {
     @ViewChild(MatSort) sort!: MatSort;
+    /** A bonus card was clicked: show who got that bonus (admin Bonuses tab). source = Earnings.Source. */
+    @Output() openBonuses = new EventEmitter<{ source: number; days: number }>();
     timePeriod: string = 'day';
     selectedTabIndex = 0;
     selectedValueTabIndex = 0;
@@ -38,10 +40,18 @@ export class AdminDashboardComponent implements OnInit {
             { id:0,label: "Total Users", value: this.adminData.totalUsers, icon: 'person' },
             { id:1,label: "Earning", value: '$' + this.adminData.earning, icon: 'account_balance_wallet' },
             { id:2,label: 'Rejection', value: '$' + this.adminData.rejection, icon: 'leaderboard' },
-            { id:3,label: 'Level bonus', value: '$' + this.adminData.levelBonusEarn, icon: 'shopping_cart' },
-            { id:4,label: 'Referral bonus', value: '$' + this.adminData.refrelEarn, icon: 'shopping_cart' },
+            { id:3,label: 'Level bonus', value: '$' + this.adminData.levelBonusEarn, icon: 'shopping_cart', bonusSource: 4, hint: 'Click to see who got it' },
+            { id:4,label: 'Referral bonus', value: '$' + this.adminData.refrelEarn, icon: 'shopping_cart', bonusSource: 8, hint: 'Click to see who got it' },
         ];
     };
+
+    selectStat(item: { id: number; bonusSource?: number }) {
+        this.selectedValueTabIndex = item.id;
+        if (item.bonusSource) {
+            const days = this.timePeriod === 'week' ? 7 : this.timePeriod === 'month' ? 30 : this.timePeriod === 'year' ? 365 : 1;
+            this.openBonuses.emit({ source: item.bonusSource, days });
+        }
+    }
 
     charts = [
         { title: 'Website Views', subtitle: 'Last Campaign Performance', image: 'assets/img/chart1.png', update: 'Campaign sent 2 days ago' },
