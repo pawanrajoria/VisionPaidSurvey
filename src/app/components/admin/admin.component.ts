@@ -5,7 +5,7 @@ import { AdminService } from "./admin.service";
 import { AdminDashboardComponent } from "./dashboard/dashboard.component";
 import { MessageService } from "../layout/message/message.service";
 import { MessageVM } from "../layout/message/message.vm";
-import { AdminOverviewDto, AdminPayoutDto, AdminUserDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest } from "./admin.vm";
+import { AdminBonusReportDto, AdminEarningItemDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest } from "./admin.vm";
 import { ChatService, IAdminChatMessage } from "../home/chat/chat.service";
 
 type AdminTab = 'overview' | 'offers' | 'payouts' | 'users' | 'chat' | 'notifications' | 'earnings';
@@ -91,6 +91,67 @@ export class AdminComponent extends BaseComponent implements OnInit {
         if (tab === 'users' && !this.usersLoaded) await this.loadUsers();
         if (tab === 'chat') await this.loadChat();
         if (tab === 'notifications') await this.loadNotifications();
+        if (tab === 'earnings' && !this.bonusReport) await this.loadBonusReport();
+    }
+
+    // ───────────── User detail drawer ─────────────
+    detail: AdminUserDetailDto | null = null;
+    detailLoading = false;
+    detailFilter: 'all' | 'earning' | 'rejection' | 'bonus' = 'all';
+
+    async openUser(userId: number) {
+        this.detailLoading = true;
+        this.detailFilter = 'all';
+        this.detail = null;
+        try {
+            this.detail = await this.adminService.getUserDetail(userId);
+        } catch { /* the interceptor already showed the reason */ } finally {
+            this.detailLoading = false;
+        }
+    }
+
+    closeUser() {
+        this.detail = null;
+        this.detailLoading = false;
+    }
+
+    get detailHistory(): AdminEarningItemDto[] {
+        const rows = this.detail?.history ?? [];
+        return this.detailFilter === 'all' ? rows : rows.filter(r => r.kind === this.detailFilter);
+    }
+
+    /** "1 year 2 months", "3 months", "12 days" */
+    accountAge(days: number): string {
+        if (days < 31) return `${days} day${days === 1 ? '' : 's'}`;
+        const years = Math.floor(days / 365), months = Math.floor((days % 365) / 30);
+        const parts = [];
+        if (years) parts.push(`${years} year${years === 1 ? '' : 's'}`);
+        if (months) parts.push(`${months} month${months === 1 ? '' : 's'}`);
+        return parts.join(' ') || `${days} days`;
+    }
+
+    // ───────────── Bonus report (Earnings tab) ─────────────
+    bonusReport: AdminBonusReportDto | null = null;
+    bonusPeriod = 'week';
+    bonusType = '';
+    readonly bonusPeriods = [
+        { value: 'day', label: 'Today' },
+        { value: 'week', label: '7 days' },
+        { value: 'month', label: '30 days' },
+        { value: 'year', label: '12 months' }
+    ];
+
+    async loadBonusReport(period = this.bonusPeriod) {
+        this.bonusPeriod = period;
+        try {
+            this.bonusReport = await this.adminService.getBonusReport(period);
+            if (this.bonusType && !this.bonusReport.byType.some(t => t.typeName === this.bonusType)) this.bonusType = '';
+        } catch { /* the interceptor already showed the reason */ }
+    }
+
+    get bonusItems(): AdminEarningItemDto[] {
+        const items = this.bonusReport?.items ?? [];
+        return this.bonusType ? items.filter(i => i.typeName === this.bonusType) : items;
     }
 
     private toast(message: string, type: 'success' | 'error' = 'success') {

@@ -317,8 +317,9 @@
                                 <input type="checkbox" [checked]="allSelected" [disabled]="selectableUsers.length === 0"
                                     (change)="toggleAllUsers()" aria-label="Select all users that can be disabled">
                             </th>
-                            <th>User</th><th>Country</th><th class="num">Rejection</th><th class="num">Level</th><th class="num">Balance</th>
-                            <th>Sign-in</th><th>Uses</th><th>Joined</th><th>Status</th><th></th>
+                            <th>User</th><th>Country</th><th class="num">Earned</th><th class="num">Rejected</th><th class="num">Bonus</th>
+                            <th class="num">Rejection score</th><th class="num">Level</th><th class="num">Balance</th>
+                            <th>Sign-in</th><th>Uses</th><th>Account age</th><th>Status</th><th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -329,13 +330,21 @@
                                     (change)="toggleUser(u)" [attr.aria-label]="'Select ' + u.email">
                             </td>
                             <td>
-                                <div class="cell-main">{{ u.fullName || u.email }}</div>
+                                <button type="button" class="link-btn cell-main" (click)="openUser(u.id)">{{ u.fullName || u.email }}</button>
                                 <div class="cell-sub">
                                     {{ u.email }} · #{{ u.id }}
                                     @if (u.fraudDecision && u.fraudDecision !== 'ALLOW') { · <span class="risk">risk: {{ u.fraudDecision }}</span> }
                                 </div>
                             </td>
                             <td>{{ u.countryCode }}</td>
+                            <td class="num money-pos">${{ u.earnedAmount | number:'1.2-2' }}</td>
+                            <td class="num">
+                                <span [class.money-neg]="u.rejectedAmount > 0">${{ u.rejectedAmount | number:'1.2-2' }}</span>
+                            </td>
+                            <td class="num">
+                                ${{ u.bonusAmount | number:'1.2-2' }}
+                                <div class="cell-sub">{{ u.bonusCount }} bonus{{ u.bonusCount === 1 ? '' : 'es' }}</div>
+                            </td>
                             <td class="num">
                                 <span class="rejection" [attr.data-level]="rejectionLevel(u)">{{ u.rejectionRate | number:'1.0-1' }}%</span>
                                 <div class="cell-sub">{{ u.rejected }} of {{ u.completed }}</div>
@@ -354,9 +363,10 @@
                                 </div>
                                 } @else { — }
                             </td>
-                            <td>{{ u.createdAt | date:'d MMM y' }}<div class="cell-sub">{{ u.accountAgeDays }} days</div></td>
+                            <td>{{ accountAge(u.accountAgeDays) }}<div class="cell-sub">since {{ u.createdAt | date:'d MMM y' }}</div></td>
                             <td><span class="state" [attr.data-state]="u.statusName">{{ u.statusName }}</span></td>
                             <td class="row-actions">
+                                <button type="button" class="btn small ghost" (click)="openUser(u.id)">Details</button>
                                 @if (u.status === 1 || u.status === 3) {
                                 <button type="button" class="btn small" [class.danger]="!isBlocked(u)" [class.ghost]="isBlocked(u)"
                                     [disabled]="busy" (click)="toggleBlock(u)">{{ isBlocked(u) ? 'Unblock' : 'Block' }}</button>
@@ -364,7 +374,7 @@
                             </td>
                         </tr>
                         } @empty {
-                        <tr><td colspan="11" class="empty">{{ usersLoaded ? 'No users match.' : 'Loading…' }}</td></tr>
+                        <tr><td colspan="14" class="empty">{{ usersLoaded ? 'No users match.' : 'Loading…' }}</td></tr>
                         }
                     </tbody>
                 </table>
@@ -531,7 +541,151 @@
 
         <!-- ═════════ EARNINGS (existing dashboard) ═════════ -->
         @if (tab === 'earnings') {
+        <section class="bonus-report">
+            <div class="section-head">
+                <div>
+                    <h1>Bonuses paid</h1>
+                    <p class="hint">Every bonus with the user who got it. Referral bonuses also show the friend whose earning paid them.</p>
+                </div>
+                <div class="seg" role="group" aria-label="Period">
+                    @for (p of bonusPeriods; track p.value) {
+                    <button type="button" [class.active]="bonusPeriod === p.value" (click)="loadBonusReport(p.value)">{{ p.label }}</button>
+                    }
+                </div>
+            </div>
+
+            @if (bonusReport; as r) {
+            <div class="bonus-types">
+                <button type="button" class="bonus-type" [class.active]="!bonusType" (click)="bonusType = ''">
+                    <span class="label">All bonuses</span>
+                    <span class="value">${{ r.total | number:'1.2-2' }}</span>
+                    <span class="sub">{{ r.count }} paid</span>
+                </button>
+                @for (t of r.byType; track t.typeName) {
+                <button type="button" class="bonus-type" [class.active]="bonusType === t.typeName" (click)="bonusType = t.typeName">
+                    <span class="label">{{ t.typeName }}</span>
+                    <span class="value">${{ t.amount | number:'1.2-2' }}</span>
+                    <span class="sub">{{ t.count }} paid</span>
+                </button>
+                }
+            </div>
+
+            <div class="panel table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>When</th><th>User</th><th>Bonus</th><th class="num">Amount</th><th>Because of</th></tr>
+                    </thead>
+                    <tbody>
+                        @for (b of bonusItems; track b.id) {
+                        <tr>
+                            <td>{{ b.createdAt | date:'d MMM, HH:mm' }}</td>
+                            <td>
+                                <button type="button" class="link-btn cell-main" (click)="openUser(b.userId)">{{ b.fullName || b.email }}</button>
+                                <div class="cell-sub">{{ b.email }} · #{{ b.userId }} · {{ b.countryCode }}</div>
+                            </td>
+                            <td><span class="tag">{{ b.typeName }}</span></td>
+                            <td class="num money-pos">${{ b.amount | number:'1.2-4' }}</td>
+                            <td>
+                                @if (b.fromUserId) {
+                                friend <button type="button" class="link-btn" (click)="openUser(b.fromUserId)">{{ b.fromName || b.fromEmail }}</button>
+                                <div class="cell-sub">{{ b.fromEmail }} · #{{ b.fromUserId }}@if (b.providerName) { · {{ b.providerName }} }</div>
+                                } @else if (b.providerName) {
+                                {{ b.providerName }}<div class="cell-sub">{{ b.status }}</div>
+                                } @else {
+                                <span class="cell-sub">{{ b.status || '—' }}</span>
+                                }
+                            </td>
+                        </tr>
+                        } @empty {
+                        <tr><td colspan="5" class="empty">No bonuses in this period.</td></tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            @if (r.count > r.items.length) { <p class="hint">Showing the latest {{ r.items.length }} of {{ r.count }}.</p> }
+            } @else {
+            <p class="hint">Loading…</p>
+            }
+        </section>
+
         <app-admindashboard></app-admindashboard>
         }
     </main>
+
+    <!-- ═════════ USER DETAIL DRAWER ═════════ -->
+    @if (detail || detailLoading) {
+    <div class="drawer-backdrop" (click)="closeUser()"></div>
+    <aside class="drawer" role="dialog" aria-modal="true" aria-label="User details">
+        <header class="drawer-head">
+            <div>
+                <h2>{{ detail?.user?.fullName || detail?.user?.email || 'Loading…' }}</h2>
+                @if (detail; as d) {
+                <p class="hint">{{ d.user.email }} · #{{ d.user.id }} · {{ d.user.countryCode }} · {{ d.user.statusName }}</p>
+                }
+            </div>
+            <button type="button" class="btn small ghost" (click)="closeUser()" aria-label="Close"><mat-icon>close</mat-icon></button>
+        </header>
+
+        @if (detail; as d) {
+        <div class="detail-kpis">
+            <div class="kpi"><span class="kpi-label">Earned</span><span class="kpi-value money-pos">${{ d.user.earnedAmount | number:'1.2-2' }}</span><span class="kpi-sub">{{ d.user.completed }} completes</span></div>
+            <div class="kpi"><span class="kpi-label">Rejected</span><span class="kpi-value money-neg">${{ d.user.rejectedAmount | number:'1.2-2' }}</span><span class="kpi-sub">{{ d.user.rejected }} rejections</span></div>
+            <div class="kpi"><span class="kpi-label">Bonuses</span><span class="kpi-value">${{ d.user.bonusAmount | number:'1.2-2' }}</span><span class="kpi-sub">{{ d.user.bonusCount }} paid</span></div>
+            <div class="kpi"><span class="kpi-label">Rejection score</span>
+                <span class="kpi-value"><span class="rejection" [attr.data-level]="rejectionLevel(d.user)">{{ d.user.rejectionRate | number:'1.0-1' }}%</span></span>
+                <span class="kpi-sub">{{ d.user.rejected }} of {{ d.user.completed }}@if (d.user.fraudDecision) { · fraud check: {{ d.user.fraudDecision }} }</span></div>
+            <div class="kpi"><span class="kpi-label">Balance</span><span class="kpi-value">${{ d.user.balance | number:'1.2-2' }}</span><span class="kpi-sub">level {{ d.user.currentLevel ?? 0 }}</span></div>
+            <div class="kpi"><span class="kpi-label">Account age</span><span class="kpi-value small-value">{{ accountAge(d.user.accountAgeDays) }}</span><span class="kpi-sub">joined {{ d.user.createdAt | date:'d MMM y' }}</span></div>
+        </div>
+
+        <div class="detail-split">
+            <div class="panel">
+                <h3>Bonuses by type</h3>
+                @for (b of d.bonuses; track b.typeName) {
+                <div class="split-row"><span>{{ b.typeName }} <small>×{{ b.count }}</small></span><strong>${{ b.amount | number:'1.2-4' }}</strong></div>
+                } @empty { <p class="hint">No bonuses yet.</p> }
+            </div>
+            <div class="panel">
+                <h3>Earnings by source</h3>
+                @for (b of d.earningsBySource; track b.typeName) {
+                <div class="split-row"><span>{{ b.typeName }} <small>×{{ b.count }}</small></span><strong [class.money-neg]="b.amount < 0">${{ b.amount | number:'1.2-4' }}</strong></div>
+                } @empty { <p class="hint">No earnings yet.</p> }
+            </div>
+        </div>
+
+        <div class="section-head compact">
+            <h3>History</h3>
+            <div class="seg" role="group" aria-label="Filter history">
+                <button type="button" [class.active]="detailFilter === 'all'" (click)="detailFilter = 'all'">All</button>
+                <button type="button" [class.active]="detailFilter === 'earning'" (click)="detailFilter = 'earning'">Earnings</button>
+                <button type="button" [class.active]="detailFilter === 'rejection'" (click)="detailFilter = 'rejection'">Rejections</button>
+                <button type="button" [class.active]="detailFilter === 'bonus'" (click)="detailFilter = 'bonus'">Bonuses</button>
+            </div>
+        </div>
+        <div class="panel table-wrap">
+            <table>
+                <thead><tr><th>When</th><th>Type</th><th>Source</th><th class="num">Amount</th></tr></thead>
+                <tbody>
+                    @for (h of detailHistory; track h.id) {
+                    <tr [attr.data-kind]="h.kind">
+                        <td>{{ h.createdAt | date:'d MMM y, HH:mm' }}</td>
+                        <td><span class="tag" [attr.data-kind]="h.kind">{{ h.typeName }}</span></td>
+                        <td>
+                            @if (h.fromUserId) { from friend {{ h.fromName || h.fromEmail }} (#{{ h.fromUserId }}) }
+                            @else { {{ h.providerName || '—' }} }
+                            <div class="cell-sub">{{ h.status }}@if (h.transactionId) { · {{ h.transactionId }} }</div>
+                        </td>
+                        <td class="num" [class.money-neg]="h.amount < 0" [class.money-pos]="h.amount > 0">${{ h.amount | number:'1.2-4' }}</td>
+                    </tr>
+                    } @empty {
+                    <tr><td colspan="4" class="empty">Nothing here.</td></tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        } @else {
+        <p class="hint">Loading…</p>
+        }
+    </aside>
+    }
 </div>

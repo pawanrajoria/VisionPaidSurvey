@@ -101,6 +101,13 @@ export interface AdminUserDto {
     completed: number;
     rejected: number;
     rejectionRate: number;
+    /** USD from surveys/offers (bonuses not included). */
+    earnedAmount: number;
+    /** USD taken back by rejections. */
+    rejectedAmount: number;
+    /** USD received as bonuses of every kind. */
+    bonusAmount: number;
+    bonusCount: number;
     fraudDecision: string;
     loginProvider: string;
     /** web | android | ios - the client the user was last seen on. */
@@ -110,6 +117,48 @@ export interface AdminUserDto {
     appVersion: string;
     lastSeenAt: string | null;
     accountAgeDays: number;
+}
+
+/** One ledger row (earning, rejection or bonus). */
+export interface AdminEarningItemDto {
+    id: number;
+    userId: number;
+    email: string;
+    fullName: string;
+    countryCode: string;
+    amount: number;
+    kind: 'earning' | 'rejection' | 'bonus' | 'pending';
+    /** "Survey", "Daily bonus", "Referral bonus", ... */
+    typeName: string;
+    status: string;
+    providerName: string | null;
+    transactionId: string | null;
+    createdAt: string;
+    /** Referral bonus: the friend whose earning paid it. */
+    fromUserId: number | null;
+    fromEmail: string | null;
+    fromName: string | null;
+}
+
+export interface AdminAmountByTypeDto {
+    typeName: string;
+    count: number;
+    amount: number;
+}
+
+export interface AdminUserDetailDto {
+    user: AdminUserDto;
+    bonuses: AdminAmountByTypeDto[];
+    earningsBySource: AdminAmountByTypeDto[];
+    history: AdminEarningItemDto[];
+}
+
+export interface AdminBonusReportDto {
+    period: string;
+    total: number;
+    count: number;
+    byType: AdminAmountByTypeDto[];
+    items: AdminEarningItemDto[];
 }
 
 export interface AdminUserListDto {

@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 import { ConfigService } from "../../config.service";
 import { BACKGROUND } from "../home/engagement/engagement.service";
-import { AdminOverviewDto, AdminPayoutDto, AdminUserListDto, BulkUserActionResultDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest, SendNotificationResult } from "./admin.vm";
+import { AdminBonusReportDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserListDto, BulkUserActionResultDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest, SendNotificationResult } from "./admin.vm";
 
 @Injectable({ providedIn: 'root' })
 export class AdminService {
@@ -43,6 +43,17 @@ export class AdminService {
         if (status !== null) params = params.set('status', status);
         if (minRejection !== null) params = params.set('minRejection', minRejection);
         return await firstValueFrom(this.http.get<AdminUserListDto>(this.base + "users", { params }));
+    }
+
+    /** Earnings, rejections and every bonus of one user, with where each one came from. */
+    async getUserDetail(userId: number): Promise<AdminUserDetailDto> {
+        return await firstValueFrom(this.http.get<AdminUserDetailDto>(`${this.base}users/${userId}`));
+    }
+
+    /** Which bonus was paid to which user in the period (day | week | month | year). */
+    async getBonusReport(period: string): Promise<AdminBonusReportDto> {
+        const params = new HttpParams().set('period', period);
+        return await firstValueFrom(this.http.get<AdminBonusReportDto>(this.base + "bonuses", { params }));
     }
 
     async setUserBlocked(userId: number, blocked: boolean): Promise<{ isSuccess: boolean; message: string }> {

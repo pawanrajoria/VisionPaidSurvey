@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 178" role="img" aria-label="Ringing bell: click to enable notifications for updates and new offers">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#17715f"/>
+      <stop offset="1" stop-color="#0b3d33"/>
+    </linearGradient>
+    <linearGradient id="bell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd24a"/>
+      <stop offset="1" stop-color="#f5a301"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="240" height="178" rx="16" fill="url(#bg)"/>
+  <circle cx="206" cy="18" r="46" fill="#ffffff" opacity=".06"/>
+  <circle cx="24" cy="128" r="40" fill="#ffffff" opacity=".05"/>
+
+  <!-- sound waves -->
+  <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="3" opacity=".55">
+    <path d="M72 50c-8 8-8 26 0 34"/>
+    <path d="M60 42c-13 13-13 37 0 50" opacity=".6"/>
+    <path d="M168 50c8 8 8 26 0 34"/>
+    <path d="M180 42c13 13 13 37 0 50" opacity=".6"/>
+  </g>
+
+  <!-- bell -->
+  <g transform="rotate(-8 120 70)">
+    <rect x="114" y="26" width="12" height="12" rx="6" fill="#f5a301"/>
+    <path d="M120 34c-18 0-30 13-30 31v14c0 6-3 10-8 14h76c-5-4-8-8-8-14V65c0-18-12-31-30-31z" fill="url(#bell)"/>
+    <path d="M104 46c6-6 14-8 22-6" fill="none" stroke="#fff3c4" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+    <rect x="80" y="91" width="80" height="8" rx="4" fill="#e08e00"/>
+    <path d="M110 101a10 10 0 0 0 20 0z" fill="#e08e00"/>
+  </g>
+
+  <!-- "new" badge -->
+  <circle cx="152" cy="40" r="15" fill="#ff5a4e" stroke="#0b3d33" stroke-width="3"/>
+  <text x="152" y="45" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff">1</text>
+
+  <!-- coins -->
+  <g>
+    <circle cx="44" cy="104" r="13" fill="#f5b301" stroke="#fff3c4" stroke-width="2"/>
+    <text x="44" y="109" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#7a5600">$</text>
+    <circle cx="200" cy="100" r="10" fill="#f5b301" stroke="#fff3c4" stroke-width="2"/>
+    <text x="200" y="104" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#7a5600">$</text>
+    <circle cx="214" cy="62" r="6" fill="#f5b301" opacity=".8"/>
+    <circle cx="30" cy="40" r="5" fill="#f5b301" opacity=".8"/>
+  </g>
+  <!-- call to action on the image itself -->
+  <rect x="10" y="128" width="220" height="42" rx="11" fill="#ffffff"/>
+  <text x="120" y="145" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="700" fill="#0b3d33">Want updates &amp; offer alerts?</text>
+  <text x="120" y="161" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" fill="#17715f">&#128276; Click here to enable notifications</text>
+</svg>
