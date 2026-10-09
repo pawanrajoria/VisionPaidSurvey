@@ -41,7 +41,7 @@ export class RewardComponent {
     isLoading = true;
 
     selectedRewardCategory!: RedemptionOption;
-    selectedCategory!: RewardCategory;
+    selectedCategory: any = null;
 
     skeletonArray = [1, 2];
 
@@ -84,6 +84,7 @@ export class RewardComponent {
         if (response?.isSuccess) {
             this.allRewards = this.processRewards(response.data);
             this.loadInitialItems();
+
         }
         this.isLoading = false;
     }
@@ -158,6 +159,64 @@ export class RewardComponent {
                 upiId: card?.upiId || '',
             }))
         };
+    }
+
+    /** '' = every category, otherwise a category name (chips above the grid). */
+    activeCategory = '';
+
+    get balance(): number {
+        return Number(this.userBalanceInfo.balance ?? 0) || 0;
+    }
+
+    get visibleCategories(): RewardCategory[] {
+        return this.allRewards.filter(c => c.items.length > 0 && (!this.activeCategory || c.name === this.activeCategory));
+    }
+
+    minPoints(item: any): number {
+        const points = (item.options ?? []).map((o: any) => Number(o.points) || 0).filter((p: number) => p > 0);
+        return points.length ? Math.min(...points) : 0;
+    }
+
+    canAfford(item: any): boolean {
+        const min = this.minPoints(item);
+        return min > 0 && this.balance >= Math.max(min, this.firstCashoutMinPoints);
+    }
+
+    /** Points of the cheapest reward the user can claim (the first cash out may have a higher minimum). */
+    get cheapestPoints(): number {
+        const all = this.allRewards.flatMap(c => c.items).map(i => this.minPoints(i)).filter(p => p > 0);
+        if (!all.length) return 0;
+        return Math.max(Math.min(...all), this.firstCashoutMinPoints);
+    }
+
+    get goalPercent(): number {
+        const goal = this.cheapestPoints;
+        return goal > 0 ? Math.min(100, Math.round(this.balance * 100 / goal)) : 0;
+    }
+
+    /** Logos that failed to load show the first letter instead. */
+    brokenImages: Record<number, boolean> = {};
+
+    /**
+     * The method whose amounts are shown: the one picked, or - until the user picks one - the first
+     * they can afford (the balance arrives after the page, so this cannot be decided once on load).
+     */
+    get activeItem(): any {
+        if (this.selectedCategory) return this.selectedCategory;
+        return this.allRewards.flatMap(c => c.items).find(i => this.canAfford(i)) ?? null;
+    }
+
+    selectItem(item: any) {
+        if (this.activeItem?.id !== item.id || !this.selectedCategory) {
+            this.selectedCategory = item;
+            this.selectedRewardCategory = undefined as any;
+        }
+        // Phones: the amounts are below the grid.
+        if (this.isBrowser()) setTimeout(() => document.querySelector('.picker')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' }));
+    }
+
+    private isBrowser(): boolean {
+        return typeof document !== 'undefined';
     }
 
     closeModal() {

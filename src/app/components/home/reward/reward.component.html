@@ -1,139 +1,140 @@
-<!-- Header -->
-<div class="cashout-header">
-    <div class="header-toolbar">
-        <h2 class="header-title">Select Reward</h2>
-        @if(isPopup) {
-        <button mat-icon-button (click)="closeModal()" class="close-btn" aria-label="Close">
-            <mat-icon>cancel</mat-icon>
-        </button>
-        }
-    </div>
+<div class="cashout" [class.in-popup]="isPopup">
 
-    @if (firstCashoutMinPoints > 0) {
-    <p class="first-cashout-note" role="note">
-        <mat-icon>info</mat-icon>
-        {{ 'app.cashout.firstNote' | translate:{ usd: cashoutRule?.firstMinimumUsd, points: (firstCashoutMinPoints | number:'1.0-0') } }}
-    </p>
-    }
-
-    <!-- Balance Card -->
-    <div class="balance-card">
-        <div class="balance-info">
-            <span class="label">Available Balance</span>
-            <h2 class="points">
-                {{ userBalanceInfo.balance }}
-                <span>Points</span>
-            </h2>
-        </div>
-        <div class="currency-equivalent">
-            ≈ {{ userBalanceInfo.currencyAmount }}
-        </div>
-    </div>
-
-    <!-- Search -->
-    <mat-form-field appearance="outline" class="search-field">
-        <mat-icon matPrefix>search</mat-icon>
-        <input matInput placeholder="Search brands, gift cards..." [(ngModel)]="searchText" />
-        <button *ngIf="searchText" matSuffix mat-icon-button (click)="searchText = ''" aria-label="Clear search">
-            <mat-icon>close</mat-icon>
-        </button>
-    </mat-form-field>
-</div>
-
-<!-- Content -->
-<div [class]="isPopup?'cashout-content':'cashout-content-main'" (scroll)="onScroll($event)">
-
-    <!-- Skeleton Loading -->
-    @if (isLoading) {
-    <div class="reward-list-container">
-        @for (cat of skeletonArray; track cat) {
-        <div class="skeleton-category-divider"></div>
-        @for (item of skeletonArray; track item) {
-        <div class="skeleton-accordion-item"></div>
-        }
-        }
-    </div>
-    } @else {
-
-    <!-- Rewards List -->
-    <div class="reward-list-container">
-        @for (category of rewardsCategories; track category.name) {
-
-        <!-- Category Header -->
-        <div class="category-divider">
-            <mat-icon>{{ category.icon }}</mat-icon>
-            <span class="category-name">{{ category.name }}</span>
-            <span class="category-count">{{ category.count }}</span>
-        </div>
-
-        <!-- Accordion -->
-        <mat-accordion class="item-accordion-group" multi="false">
-            @for (
-            item of category.items | cashoutFilterByName: searchText;
-            track item.id
-            ) {
-            <mat-expansion-panel class="reward-panel">
-
-                <!-- Panel Header -->
-                <mat-expansion-panel-header class="panel-header">
-                    <div class="reward-logo-container">
-                        <img loading="lazy" [src]="item.image" [alt]="item.name" />
-                    </div>
-                    <mat-panel-title>
-                        <div class="panel-title-content">
-                            <span class="item-name">{{ item.name }}</span>
-                            <span class="item-subtext">{{ item.subText }}</span>
-                        </div>
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-
-                <!-- Panel Content -->
-                <div class="accordion-content">
-                    <div class="options-grid">
-                        @for (option of item.options; track option.points) {
-                        <div class="reward-box" [class.locked]="option.points > (userBalanceInfo.balance ?? 0)"
-                            [class.active]="
-                      selectedRewardCategory?.productId == item.id &&
-                      selectedRewardCategory?.points == option.points
-                    " (click)="handleRewardClick(option, item)" [matTooltip]="
-                      option.points > (userBalanceInfo.balance ?? 0)
-                        ? 'Insufficient points'
-                        : ''
-                    ">
-
-                            <!-- Lock Overlay -->
-                            @if (option.points > (userBalanceInfo.balance ?? 0)) {
-                            <div class="lock-overlay">
-                                <mat-icon>lock</mat-icon>
-                            </div>
-                            }
-
-                            <div class="box-inner">
-                                <span class="currency-val">
-                                    {{ option.value | currency: item.currencyCode : 'symbol' }}
-                                </span>
-                                <span class="point-val">{{ option.points }} pts</span>
-                            </div>
-
-                        </div>
-                        }
-                    </div>
-                </div>
-
-            </mat-expansion-panel>
+    <!-- Header: title, balance and how close the user is to a cash out -->
+    <header class="cashout-head">
+        <div class="head-row">
+            <h2 class="head-title">Cash out</h2>
+            @if (isPopup) {
+            <button mat-icon-button (click)="closeModal()" class="close-btn" aria-label="Close">
+                <mat-icon>close</mat-icon>
+            </button>
             }
-        </mat-accordion>
+        </div>
 
+        <div class="balance-card">
+            <div class="balance-main">
+                <span class="balance-label">Available balance</span>
+                <span class="balance-points">{{ balance | number }} <small>points</small></span>
+                <span class="balance-money">≈ {{ userBalanceInfo.currencyAmount }}</span>
+            </div>
+            <div class="balance-goal">
+                @if (cheapestPoints > 0 && balance < cheapestPoints) {
+                <span class="goal-text">{{ cheapestPoints - balance | number }} points to your first reward</span>
+                <div class="goal-bar"><span [style.width.%]="goalPercent"></span></div>
+                } @else if (cheapestPoints > 0) {
+                <span class="goal-ready"><mat-icon>check_circle</mat-icon> You can cash out now</span>
+                }
+            </div>
+        </div>
+
+        @if (firstCashoutMinPoints > 0) {
+        <p class="first-cashout-note" role="note">
+            <mat-icon>info</mat-icon>
+            {{ 'app.cashout.firstNote' | translate:{ usd: cashoutRule?.firstMinimumUsd, points: (firstCashoutMinPoints | number:'1.0-0') } }}
+        </p>
         }
+
+        <div class="filter-row">
+            <div class="chips" role="tablist" aria-label="Reward type">
+                <button type="button" role="tab" class="chip" [class.active]="activeCategory === ''" (click)="activeCategory = ''">All</button>
+                @for (category of rewardsCategories; track category.name) {
+                @if (category.count > 0) {
+                <button type="button" role="tab" class="chip" [class.active]="activeCategory === category.name"
+                    (click)="activeCategory = category.name">
+                    <mat-icon>{{ category.icon }}</mat-icon>{{ category.name }} <span class="chip-count">{{ category.count }}</span>
+                </button>
+                }
+                }
+            </div>
+            <label class="search">
+                <mat-icon>search</mat-icon>
+                <input type="search" placeholder="Search PayPal, Amazon, UPI..." [(ngModel)]="searchText" aria-label="Search rewards" />
+            </label>
+        </div>
+    </header>
+
+    <div class="cashout-body">
+
+        <!-- Payout methods -->
+        <div class="methods">
+            @if (isLoading) {
+            <div class="method-grid">
+                @for (i of [1,2,3,4,5,6]; track i) { <div class="method-tile skeleton"></div> }
+            </div>
+            } @else {
+            @for (category of visibleCategories; track category.name) {
+            @if ((category.items | cashoutFilterByName: searchText).length > 0) {
+            <h3 class="group-title"><mat-icon>{{ category.icon }}</mat-icon>{{ category.name }}</h3>
+            <div class="method-grid">
+                @for (item of category.items | cashoutFilterByName: searchText; track item.id) {
+                <button type="button" class="method-tile" [class.selected]="activeItem?.id === item.id"
+                    [class.unaffordable]="!canAfford(item)" (click)="selectItem(item)">
+                    @if (canAfford(item)) { <span class="tile-badge">Available</span> }
+                    <span class="tile-logo">
+                        @if (!brokenImages[item.id]) {
+                        <img loading="lazy" [src]="item.image" [alt]="item.name" (error)="brokenImages[item.id] = true" />
+                        } @else {
+                        <span class="logo-letter">{{ item.name.charAt(0) }}</span>
+                        }
+                    </span>
+                    <span class="tile-name">{{ item.name }}</span>
+                    <span class="tile-sub">from {{ minPoints(item) | number }} pts</span>
+                </button>
+                }
+            </div>
+            }
+            } @empty {
+            <p class="empty">No rewards available right now.</p>
+            }
+            }
+        </div>
+
+        <!-- Amounts of the chosen method + claim -->
+        <aside class="picker" [class.open]="!!activeItem">
+            @if (activeItem; as item) {
+            <div class="picker-head">
+                <span class="tile-logo small">
+                    @if (!brokenImages[item.id]) { <img [src]="item.image" [alt]="item.name" (error)="brokenImages[item.id] = true" /> }
+                    @else { <span class="logo-letter">{{ item.name.charAt(0) }}</span> }
+                </span>
+                <div>
+                    <span class="picker-title">{{ item.name }}</span>
+                    <span class="picker-sub">Choose an amount</span>
+                </div>
+            </div>
+
+            <div class="amount-grid">
+                @for (option of item.options; track option.points) {
+                <button type="button" class="amount" [class.active]="selectedRewardCategory?.productId == item.id && selectedRewardCategory?.points == option.points"
+                    [class.locked]="option.points > balance" (click)="handleRewardClick(option, item)"
+                    [matTooltip]="option.points > balance ? 'Need ' + (option.points - balance) + ' more points' : ''">
+                    <span class="amount-value">{{ option.value | currency: item.currencyCode : 'symbol' }}</span>
+                    <span class="amount-points">
+                        @if (option.points > balance) { <mat-icon>lock</mat-icon> }
+                        {{ option.points | number }} pts
+                    </span>
+                </button>
+                }
+            </div>
+
+            <div class="picker-foot">
+                @if (selectedRewardCategory && selectedRewardCategory.productId == item.id) {
+                <p class="summary">You get <strong>{{ selectedRewardCategory.value | currency: item.currencyCode : 'symbol' }}</strong>
+                    for <strong>{{ selectedRewardCategory.points | number }}</strong> points</p>
+                } @else {
+                <p class="summary muted">Pick an amount you have enough points for.</p>
+                }
+                <button mat-flat-button color="primary" class="claim-button"
+                    [disabled]="!selectedRewardCategory || selectedRewardCategory.productId != item.id" (click)="onSelectReward()">
+                    Claim reward
+                </button>
+            </div>
+            } @else {
+            <div class="picker-empty">
+                <mat-icon>redeem</mat-icon>
+                <p>Choose a payout method to see the amounts.</p>
+            </div>
+            }
+        </aside>
     </div>
-
-    }
-</div>
-
-<!-- Footer -->
-<div class="cashout-footer">
-    <button mat-flat-button color="primary" class="claim-button" [disabled]="!selectedRewardCategory"
-        (click)="onSelectReward()">
-        Claim Reward
-    </button>
 </div>
