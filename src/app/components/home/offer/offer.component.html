@@ -6,54 +6,63 @@
 <mat-tab-nav-panel #tabPanel>
     <div class="top-bar-wrapper">
         <mat-form-field appearance="outline" class="search-field">
-            <input matInput placeholder="Search" [(ngModel)]="searchTxt" (input)="filterItems()" />
+            <mat-icon matPrefix>search</mat-icon>
+            <input matInput placeholder="Search offers" [(ngModel)]="searchTxt" (input)="filterItems()" />
         </mat-form-field>
 
-        <mat-button-toggle-group name="Change Devices" [(ngModel)]="selectedDeviceType" (change)="filterItems()" class="toggle-group" multiple>
-            <mat-button-toggle value="Android">
-                <i-tabler name="brand-android" class="fill-black"></i-tabler>
-            </mat-button-toggle>
-            <mat-button-toggle value="IOS">
-                <i-tabler name="brand-apple" class="fill-black"></i-tabler>
-            </mat-button-toggle>
-            <mat-button-toggle value="Desktop">
-                <i-tabler name="device-imac" class="fill-black"></i-tabler>
-            </mat-button-toggle>
+        <mat-button-toggle-group name="Change Devices" [(ngModel)]="selectedDeviceType" (change)="filterItems()"
+            class="toggle-group" multiple [hideMultipleSelectionIndicator]="true" aria-label="Device">
+            <mat-button-toggle value="Android"><mat-icon>android</mat-icon><span>Android</span></mat-button-toggle>
+            <mat-button-toggle value="IOS"><mat-icon>apple</mat-icon><span>iOS</span></mat-button-toggle>
+            <mat-button-toggle value="Desktop"><mat-icon>desktop_windows</mat-icon><span>Desktop</span></mat-button-toggle>
         </mat-button-toggle-group>
     </div>
+
+    @if (offers.length) {
+    <p class="result-note">{{ filteredOffers.length }} {{ filteredOffers.length === 1 ? 'offer' : 'offers' }}
+        @if (selectedDeviceType.length) { for {{ deviceLabel }} }</p>
+    }
+
     @if (offerType === 'My Offers' && filteredOffers.length === 0) {
     <p class="empty-note">Offers you open are kept here so you can finish them later.</p>
     }
     <div class="offer-grid">
-        <mat-card class="offer-card" *ngFor="let offer of filteredOffers" (click)="openDialog(offer)">
-            <div class="offer-content">
-                <div>
-                    <div class="offer-image">
-                        <img loading="lazy" [src]="offer.imageUrl" alt="Offer" />
-
-                        <div class="platform-icon">
-                            @if(offer?.device?.includes('Android')) {<mat-icon>android</mat-icon>}
-@if(offer?.device?.includes('IOS')) {<mat-icon>apple</mat-icon>}
-@if(offer?.device?.includes('Desktop')) {<mat-icon>desktop_windows</mat-icon>}
-
-                        </div>
-                    </div>
-                    <div class="category">{{ offer.description }}</div>
+        @for (offer of filteredOffers; track offer.offerId) {
+        <mat-card class="offer-card" (click)="openDialog(offer)" tabindex="0" (keydown.enter)="openDialog(offer)">
+            @if (topOfferIds.has(offer.offerId)) { <span class="top-tag">🔥 Top payout</span> }
+            <div class="oc-top">
+                <div class="oc-img">
+                    @if (offer.imageUrl) {
+                    <img loading="lazy" [src]="offer.imageUrl" [alt]="offer.offerName" (error)="offer.imageUrl = null" />
+                    } @else {
+                    <span>{{ (offer.offerName || '?').charAt(0) }}</span>
+                    }
                 </div>
-                <div class="offer-details">
-                    <div class="title">{{ offer.offerName }}</div>
-                    <div class="points">
-                        <div class="value">{{ offer.points }} <span class="label">Points</span></div>
-
-                    </div>
-                    <div class="stars">
-                        <mat-icon *ngFor="let i of [1,2,3,4,5]" class="star" [ngClass]="{ filled: i <= offer.rating }">star</mat-icon>
+                <div class="oc-head">
+                    <div class="oc-title" [title]="offer.offerName">{{ offer.offerName }}</div>
+                    <div class="oc-meta">
+                        @if (offer.providerName) { <span>{{ offer.providerName }}</span> }
+                        @if (offer.rating > 0) {
+                        <span class="oc-rating"><mat-icon>star</mat-icon>{{ offer.rating | number:'1.0-1' }}</span>
+                        }
                     </div>
                 </div>
+            </div>
 
+            @if (offer.description) {
+            <p class="oc-desc">{{ offer.description }}</p>
+            }
 
+            <div class="oc-foot">
+                <span class="oc-devices">
+                    @if (runsOn(offer, 'Android')) { <mat-icon title="Android">android</mat-icon> }
+                    @if (runsOn(offer, 'IOS')) { <mat-icon title="iOS">apple</mat-icon> }
+                    @if (runsOn(offer, 'Desktop')) { <mat-icon title="Desktop">desktop_windows</mat-icon> }
+                </span>
+                <span class="oc-points">+{{ offer.points | number }} <small>pts</small></span>
             </div>
         </mat-card>
+        }
     </div>
 
 </mat-tab-nav-panel>

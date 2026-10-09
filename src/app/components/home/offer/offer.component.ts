@@ -85,7 +85,21 @@ export class OfferComponent extends BaseComponent implements OnInit {
         });
     }
 
+    /** The three best-paying offers get a "Top payout" tag. */
+    topOfferIds = new Set<number>();
+
+    /** Device lists can be missing on offers from some networks. */
+    runsOn(offer: IOfferResponseDto, device: string): boolean {
+        return (offer.device as string[] | null)?.includes(device) ?? false;
+    }
+
+    get deviceLabel(): string {
+        return this.selectedDeviceType.map(d => d === 'IOS' ? 'iOS' : d).join(' & ');
+    }
+
     filterItems() {
+        this.topOfferIds = new Set([...this.offers].sort((a, b) => b.points - a.points).slice(0, 3).map(o => o.offerId));
+
         const text = this.searchTxt.toLowerCase();
 
         // "My Offers" used to show every offer: it now lists the ones opened here, newest first.
