@@ -43,77 +43,16 @@
                         <div class="trending-nows-aera">
                             <div class="live-payouts"><span class="blink"></span> {{ 'header.livePayouts' | translate }}
                             </div>
+                            <!-- Real completed cash-outs (api/app/recent-payouts); without any, the real payout methods. -->
                             <div class="card-list">
+                                @for (p of payouts; track $index) {
                                 <div class="payout-item">
-                                    <div class="d-flex"><img loading="lazy" src="assets/images/icon/amazon.png" width="20"
-                                            class="payout-item-img" alt="Amazon">
-                                        <span class="title m-l-2">{{ 'header.payoutItem.paypal' | translate }}</span>
+                                    <div class="d-flex"><img loading="lazy" [src]="iconFor(p.method)" width="20" class="payout-item-img" [alt]="p.method">
+                                        <span class="title m-l-2">{{ p.method }}</span>
                                     </div>
-                                    <span class="price">£5</span>
+                                    @if (p.amountUsd > 0) { <span class="price">{{ p.amountUsd | currency:'USD':'symbol':'1.0-2' }}</span> }
                                 </div>
-                                <div class="payout-item">
-                                    <div class="d-flex"><img loading="lazy" src="assets/images/icon/paypal.png" width="20"
-                                            class="payout-item-img" alt="PayPal">
-                                        <span class="title m-l-2">{{ 'header.payoutItem.paypal' | translate }}</span>
-                                    </div>
-                                    <span class="price">£5</span>
-                                </div>
-                                <div class="payout-item">
-                                    <div class="d-flex"><img loading="lazy" src="assets/images/icon/amazon.png" width="20"
-                                            class="payout-item-img" alt="Amazon">
-                                        <span class="title m-l-2">{{ 'header.payoutItem.paypal' | translate }}</span>
-                                    </div>
-                                    <span class="price">£5</span>
-                                </div>
-                                <div class="payout-item">
-                                    <div class="d-flex"><img loading="lazy" src="assets/images/icon/amazon.png" width="20"
-                                            class="payout-item-img" alt="Amazon">
-                                        <span class="title m-l-2">{{ 'header.payoutItem.paypal' | translate }}</span>
-                                    </div>
-                                    <span class="price">£5</span>
-                                </div>
-                                <div class="payout-item">
-                                    <div class="d-flex"><img loading="lazy" src="assets/images/icon/paypal.png" width="20"
-                                            class="payout-item-img" alt="PayPal">
-                                        <span class="title m-l-2">{{ 'header.payoutItem.paypal' | translate }}</span>
-                                    </div>
-                                    <span class="price">£5</span>
-                                </div>
-                                <div class="payout-item">
-                                    <div class="d-flex"><img loading="lazy" src="assets/images/icon/amazon.png" width="20"
-                                            class="payout-item-img" alt="Amazon">
-                                        <span class="title m-l-2">{{ 'header.payoutItem.paypal' | translate }}</span>
-                                    </div>
-                                    <span class="price">£5</span>
-                                </div>
-                                <div class="payout-item">
-                                    <div class="d-flex"><img loading="lazy" src="assets/images/icon/amazon.png" width="20"
-                                            class="payout-item-img" alt="Amazon">
-                                        <span class="title m-l-2">{{ 'header.payoutItem.paypal' | translate }}</span>
-                                    </div>
-                                    <span class="price">£5</span>
-                                </div>
-                                <div class="payout-item">
-                                    <div class="d-flex"><img loading="lazy" src="assets/images/icon/paypal.png" width="20"
-                                            class="payout-item-img" alt="PayPal">
-                                        <span class="title m-l-2">{{ 'header.payoutItem.paypal' | translate }}</span>
-                                    </div>
-                                    <span class="price">£5</span>
-                                </div>
-                                <div class="payout-item">
-                                    <div class="d-flex"><img loading="lazy" src="assets/images/icon/amazon.png" width="20"
-                                            class="payout-item-img" alt="Amazon">
-                                        <span class="title m-l-2">{{ 'header.payoutItem.paypal' | translate }}</span>
-                                    </div>
-                                    <span class="price">£5</span>
-                                </div>
-                                <div class="payout-item">
-                                    <div class="d-flex"><img loading="lazy" src="assets/images/icon/amazon.png" width="20"
-                                            class="payout-item-img" alt="Amazon">
-                                        <span class="title m-l-2">{{ 'header.payoutItem.paypal' | translate }}</span>
-                                    </div>
-                                    <span class="price">£5</span>
-                                </div>
+                                }
                             </div>
                         </div>
                     </div>

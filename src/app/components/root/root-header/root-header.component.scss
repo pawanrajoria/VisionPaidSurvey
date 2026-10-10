@@ -165,6 +165,7 @@
 
 .live-payout {
     width: 100%;
+    overflow: hidden;
     border-top: 1px solid #30755c;
     border-bottom: 1px solid #30755c;
     .trending-nows-aera {
@@ -202,6 +203,8 @@
             }
         }
         .card-list {
+            flex: 1;
+            min-width: 0;
             display: flex;
             align-items: center;
             justify-content: flex-start;
