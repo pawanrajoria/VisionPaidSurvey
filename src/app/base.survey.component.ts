@@ -1,3 +1,4 @@
+import { SUPPORTED_LOCALE_CODES } from './country-langiuage-list';
 import { inject } from '@angular/core';
 import { BrowserService } from './browser.service';
 import { UserService } from './components/layout/user.service';
@@ -21,7 +22,17 @@ export abstract class BaseSurveyComponent {
     readonly userService = inject(UserService);
     readonly activateRoutelang = inject(ActivatedRoute);
     // readonly currentLang = this.getLangFromRoute(this.activateRoutelang);
-    readonly currentLocale = this.getLocaleFromRoute(this.activateRoutelang);
+    private readonly localeRouter = inject(Router);
+
+    /**
+     * Locale slug of the page on screen ("hi-in"). A getter, not a value captured once: the
+     * header, menu and other long-lived components otherwise kept linking to the locale they
+     * were created under, which switched the language back after the member changed it.
+     */
+    get currentLocale(): string {
+        const first = (this.localeRouter.url || '').split(/[/?#]/).filter(Boolean)[0]?.toLowerCase();
+        return first && SUPPORTED_LOCALE_CODES.has(first) ? first : this.getLocaleFromRoute(this.activateRoutelang);
+    }
     readonly dialog = inject(MatDialog);
     readonly fraudService = inject(FraudService);
     protected readonly translateService = inject(TranslateService);

@@ -446,7 +446,9 @@
       "select": "选择语言",
       "selectAria": "选择一种语言",
       "apply": "确定",
-      "pleaseSelect": "请选择一种语言"
+      "pleaseSelect": "请选择一种语言",
+      "preferredTitle": "选择你的首选语言",
+      "preferredText": "Profitpiller 将在所有页面和设备上使用此语言。你可以随时更改。"
     },
     "redemption": {
       "title": "兑换详情",

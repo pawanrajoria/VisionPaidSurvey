@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './components/auth/auth.guard';
 import { langRedirectGuard } from './lang.redirect.guard';
+import { rootLocaleGuard } from './root-locale.guard';
 import { onboardingGuard } from './components/home/welcome/onboarding.guard';
 import { adminGuard } from './components/admin/admin.guard';
 
@@ -151,5 +152,6 @@ export const routes: Routes = [
 
   // 🔁 FALLBACK
   // { path: '**', canActivate: [langRedirectGuard], children: [] }
-  { path: '', pathMatch: 'full', redirectTo: 'en-us' },
+  // The bare domain opens in the saved / browser language (see root-locale.guard.ts).
+  { path: '', pathMatch: 'full', canActivate: [rootLocaleGuard], children: [] },
 ];

@@ -1,7 +1,12 @@
 <mat-dialog-content class="translate-sec">
     <div class="header">
         <img loading="lazy" src="/assets/images/icon/world-map.png" width="256" height="142">
+        @if (firstTime) {
+        <h2>{{ 'app.lang.preferredTitle' | translate }}</h2>
+        <p class="current-lang">{{ 'app.lang.preferredText' | translate }}</p>
+        } @else {
         <h2>{{ 'app.lang.title' | translate }}</h2>
+        }
         @if (currentLanguageName) {
         <p class="current-lang">{{ 'app.lang.current' | translate }} <strong>{{ currentLanguageName }}</strong></p>
         }

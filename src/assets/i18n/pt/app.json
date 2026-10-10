@@ -446,7 +446,9 @@
       "select": "Selecione o idioma",
       "selectAria": "Selecione um idioma",
       "apply": "Selecionar",
-      "pleaseSelect": "Selecione um idioma"
+      "pleaseSelect": "Selecione um idioma",
+      "preferredTitle": "Escolha seu idioma preferido",
+      "preferredText": "O Profitpiller vai abrir neste idioma em todas as páginas e dispositivos. Você pode mudar quando quiser."
     },
     "redemption": {
       "title": "Detalhes do resgate",

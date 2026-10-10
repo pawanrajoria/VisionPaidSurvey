@@ -446,7 +446,9 @@
       "select": "Seleziona la lingua",
       "selectAria": "Seleziona una lingua",
       "apply": "Seleziona",
-      "pleaseSelect": "Seleziona una lingua"
+      "pleaseSelect": "Seleziona una lingua",
+      "preferredTitle": "Scegli la tua lingua preferita",
+      "preferredText": "Profitpiller si aprirà in questa lingua su ogni pagina e dispositivo. Puoi cambiarla quando vuoi."
     },
     "redemption": {
       "title": "Dettagli del riscatto",

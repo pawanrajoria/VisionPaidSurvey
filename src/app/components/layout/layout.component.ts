@@ -1,3 +1,7 @@
+import { LanguagePreferenceService } from '../../language-preference.service';
+import { TranslateComponent } from './translator/translator.component';
+import { MatDialog } from '@angular/material/dialog';
+import { firstValueFrom } from 'rxjs';
 import {
     AfterViewInit,
     Component,
@@ -8,6 +12,7 @@ import {
     PLATFORM_ID,
     ChangeDetectorRef
 } from '@angular/core';
+import { inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { MatSidenav, MatSidenavContent } from '@angular/material/sidenav';
 import { Router, NavigationEnd } from '@angular/router';
@@ -68,6 +73,9 @@ export class LayoutComponent extends BaseComponent implements AfterViewInit, OnD
     private swMessageHandler = (event: MessageEvent) => {
         if (event.data?.type === 'notification-click') this.ngZone.run(() => this.openNotificationUrl(event.data.url));
     };
+
+    private readonly languagePreference = inject(LanguagePreferenceService);
+    private readonly languageDialog = inject(MatDialog);
 
     get isOver(): boolean {
         return this.isMobileScreen;
@@ -133,6 +141,12 @@ export class LayoutComponent extends BaseComponent implements AfterViewInit, OnD
     }
 
     private initBrowserFlow() {
+        // Once per sign-in: open the account's saved language, or ask a member who never chose.
+        this.languagePreference.syncAfterSignIn(() => {
+            const ref = this.languageDialog.open(TranslateComponent, { data: { firstTime: true }, disableClose: false });
+            return firstValueFrom(ref.afterClosed()).then(code => (code as string | null) ?? null);
+        });
+
         // Use setTimeout to move execution out of the current change detection cycle
         setTimeout(async () => {
             // ✅ FIX 1: Populate menus and profile (This fixes the "Loading..." issue)

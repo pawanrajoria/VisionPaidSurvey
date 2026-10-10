@@ -446,7 +446,9 @@
       "select": "Sprache auswählen",
       "selectAria": "Wähle eine Sprache",
       "apply": "Auswählen",
-      "pleaseSelect": "Bitte wähle eine Sprache"
+      "pleaseSelect": "Bitte wähle eine Sprache",
+      "preferredTitle": "Wähle deine bevorzugte Sprache",
+      "preferredText": "Profitpiller öffnet sich auf jeder Seite und jedem Gerät in dieser Sprache. Du kannst sie jederzeit ändern."
     },
     "redemption": {
       "title": "Einlösedetails",

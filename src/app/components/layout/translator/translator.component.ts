@@ -1,7 +1,8 @@
 import { Component, inject, OnInit, signal } from "@angular/core";
 import { SharedModule } from "../../../shared.module";
 import { COUNTRY_LANGUAGE_LIST } from "../../root/root-header/country-languages.const";
-import { MatDialog } from "@angular/material/dialog";
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from "@angular/material/dialog";
+import { LanguagePreferenceService } from "../../../language-preference.service";
 import { TranslateService } from "@ngx-translate/core";
 import { MessageService } from "../message/message.service";
 import { MessageVM } from "../message/message.vm";
@@ -26,6 +27,10 @@ export class TranslateComponent implements OnInit {
 
     readonly dialog = inject(MatDialog);
     readonly panelOpenState = signal(false);
+    private readonly preference = inject(LanguagePreferenceService);
+    private readonly dialogRef = inject(MatDialogRef<TranslateComponent>, { optional: true });
+    /** Opened after sign-in for a member who has not chosen a language yet. */
+    readonly firstTime = !!inject<{ firstTime?: boolean } | null>(MAT_DIALOG_DATA, { optional: true })?.firstTime;
 
     constructor(private translate: TranslateService,
         private messageService: MessageService
@@ -62,21 +67,26 @@ export class TranslateComponent implements OnInit {
         this.selectedCountryId = countryId;
     }
 
-    changeLanguage() {
+    async changeLanguage() {
         if (!this.selectedLanguageCode) {
             this.messageService.showMessage(new MessageVM(this.translate.instant('app.lang.pleaseSelect'), "success"));
             return;
         }
 
-        this.translate.use(this.selectedLanguageCode); // switch language
         try {
             localStorage.setItem(PICKED_KEY, JSON.stringify({ countryId: this.selectedCountryId, languageId: this.selectedLanguageId, code: this.selectedLanguageCode }));
         } catch { /* storage blocked */ }
-        this.dialog.closeAll();
+
+        // Moves the page to the new locale URL, remembers it and saves it on the account, so the
+        // language stays on every page, after a refresh and on other devices.
+        const country = this.countryLanguages.find(c => c.id === this.selectedCountryId);
+        const code = this.selectedLanguageCode;
+        if (this.dialogRef) this.dialogRef.close(code); else this.dialog.closeAll();
+        await this.preference.apply(code, country?.countryCode);
     }
 
     closeTranslate() {
-        this.dialog.closeAll();
+        if (this.dialogRef) this.dialogRef.close(null); else this.dialog.closeAll();
     }
 
 }

@@ -446,7 +446,9 @@
       "select": "Pilih Bahasa",
       "selectAria": "Pilih bahasa",
       "apply": "Pilih",
-      "pleaseSelect": "Sila pilih bahasa"
+      "pleaseSelect": "Sila pilih bahasa",
+      "preferredTitle": "Pilih bahasa pilihan anda",
+      "preferredText": "Profitpiller akan dibuka dalam bahasa ini di setiap halaman dan peranti. Anda boleh menukarnya bila-bila masa."
     },
     "redemption": {
       "title": "Butiran Penebusan",

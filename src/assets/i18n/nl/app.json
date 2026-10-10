@@ -446,7 +446,9 @@
       "select": "Kies taal",
       "selectAria": "Kies een taal",
       "apply": "Kiezen",
-      "pleaseSelect": "Kies een taal"
+      "pleaseSelect": "Kies een taal",
+      "preferredTitle": "Kies je voorkeurstaal",
+      "preferredText": "Profitpiller opent op elke pagina en elk apparaat in deze taal. Je kunt dit altijd wijzigen."
     },
     "redemption": {
       "title": "Inwisselgegevens",

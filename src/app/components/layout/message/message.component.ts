@@ -22,6 +22,7 @@ export class MessageComponent implements OnInit {
                     this._snackBar.open(data.Message, this.translate.instant('app.toast.error'), { duration: 3500, panelClass: ['red-snackbar'] });
                     break;
                 case "warn":
+                case "warning":
                     this._snackBar.open(data.Message, this.translate.instant('app.toast.warning'), { duration: 3500, panelClass: ['yellow-snackbar'] });
                     break;
                 default:

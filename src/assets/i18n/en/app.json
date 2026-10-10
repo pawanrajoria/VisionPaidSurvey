@@ -446,7 +446,9 @@
       "select": "Select Language",
       "selectAria": "Select a language",
       "apply": "Select",
-      "pleaseSelect": "Please select a language"
+      "pleaseSelect": "Please select a language",
+      "preferredTitle": "Choose your preferred language",
+      "preferredText": "Profitpiller will open in this language on every page and every device. You can change it any time."
     },
     "redemption": {
       "title": "Redemption Details",
