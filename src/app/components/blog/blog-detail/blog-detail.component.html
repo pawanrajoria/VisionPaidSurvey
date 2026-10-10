@@ -6,47 +6,57 @@
   <mat-icon>search_off</mat-icon>
   <h1>We couldn't find that article</h1>
   <p>It may have been moved or the link is out of date.</p>
-  <a mat-flat-button color="primary" routerLink="/blog">Browse the blog</a>
+  <a class="pp-btn" [routerLink]="['/', locale, section]">Browse the {{ section === 'guides' ? 'guides' : 'blog' }}</a>
 </div>
 
 <ng-container *ngIf="post() as p">
-  <nav class="pp-breadcrumb" aria-label="Breadcrumb">
-    <a routerLink="/">Home</a> <span>/</span>
-    <a routerLink="/blog">Blog</a> <span>/</span>
-    <a [routerLink]="['/blog/category', p.category]">{{ p.category }}</a> <span>/</span>
-    <span class="pp-breadcrumb__current">{{ p.title }}</span>
-  </nav>
+  <div class="pp-hero">
+    <div class="pp-hero__inner">
+      <nav class="pp-breadcrumb" aria-label="Breadcrumb">
+        <a [routerLink]="['/', locale]">Home</a>
+        <mat-icon aria-hidden="true">chevron_right</mat-icon>
+        <a [routerLink]="['/', locale, section]">{{ section === 'guides' ? 'Guides' : 'Blog' }}</a>
+        <ng-container *ngIf="section === 'blog'">
+          <mat-icon aria-hidden="true">chevron_right</mat-icon>
+          <a [routerLink]="['/', locale, 'blog', 'category', p.category]">{{ categoryLabel(p.category) }}</a>
+        </ng-container>
+      </nav>
 
-  <header class="pp-article-hero">
-    <div class="pp-article-hero__media">
-      <img loading="lazy" [src]="p.coverImage" [alt]="p.title" width="1200" height="600" />
-      <span class="pp-value-tag" *ngIf="p.estimatedEarnings">{{ p.estimatedEarnings }}</span>
-    </div>
-    <div class="pp-article-hero__meta">
-      <mat-chip-set>
-        <mat-chip disabled>{{ p.category }}</mat-chip>
-        <mat-chip disabled *ngFor="let tag of p.tags">#{{ tag }}</mat-chip>
-      </mat-chip-set>
+      <span class="pp-eyebrow">{{ categoryLabel(p.category) }}</span>
       <h1>{{ p.title }}</h1>
       <p class="pp-excerpt">{{ p.excerpt }}</p>
+
       <div class="pp-byline">
-        <img loading="lazy" [src]="p.author.avatar" [alt]="p.author.name" class="pp-avatar" />
+        <img loading="lazy" [src]="p.author.avatar" [alt]="p.author.name" class="pp-avatar" width="40" height="40" />
         <div>
           <strong>{{ p.author.name }}</strong>
           <div class="pp-byline__dates">
-            Published {{ p.publishedAt | date:'mediumDate' }} &middot; Updated {{ p.updatedAt | date:'mediumDate' }} &middot; {{ p.readMinutes }} min read
+            Updated {{ p.updatedAt | date: 'mediumDate' }} &middot; {{ p.readMinutes }} min read
           </div>
         </div>
       </div>
     </div>
-  </header>
+  </div>
+
+  <div class="pp-cover-wrap">
+    <div class="pp-cover">
+      <pp-cover-art [title]="p.title" [category]="p.category" [seed]="seed(p.id)" [alt]="p.title"></pp-cover-art>
+    </div>
+  </div>
 
   <div class="pp-article-layout">
-    <aside class="pp-toc" *ngIf="toc().length">
-      <h2>On this page</h2>
-      <ol>
-        <li *ngFor="let item of toc()"><a [href]="'#' + item.id">{{ item.text }}</a></li>
-      </ol>
+    <aside class="pp-aside">
+      <div class="pp-toc" *ngIf="toc().length">
+        <h2>On this page</h2>
+        <ol>
+          <li *ngFor="let item of toc()"><a [href]="'#' + item.id" (click)="scrollTo($event, item.id)">{{ item.text }}</a></li>
+        </ol>
+      </div>
+      <div class="pp-side-cta">
+        <strong>Cash out from $5</strong>
+        <span>PayPal, UPI or gift cards - earned with surveys and offers.</span>
+        <a class="pp-btn pp-btn--small" [routerLink]="['/', locale, 'auth', 'login']">Join free</a>
+      </div>
     </aside>
 
     <article class="pp-content">
@@ -55,18 +65,18 @@
 
         <p *ngIf="block.type === 'paragraph'">{{ block.text }}</p>
 
-        <ul *ngIf="block.type === 'list'">
-          <li *ngFor="let item of block.items">{{ item }}</li>
+        <ul class="pp-steps" *ngIf="block.type === 'list'">
+          <li *ngFor="let item of block.items; let i = index"><span class="pp-steps__n">{{ i + 1 }}</span><span>{{ item }}</span></li>
         </ul>
 
         <div class="pp-callout pp-callout--tip" *ngIf="block.type === 'tip'">
           <mat-icon>lightbulb</mat-icon>
-          <p>{{ block.text }}</p>
+          <div><strong>Tip</strong><p>{{ block.text }}</p></div>
         </div>
 
         <div class="pp-callout pp-callout--warning" *ngIf="block.type === 'warning'">
-          <mat-icon>warning</mat-icon>
-          <p>{{ block.text }}</p>
+          <mat-icon>report</mat-icon>
+          <div><strong>Good to know</strong><p>{{ block.text }}</p></div>
         </div>
 
         <div class="pp-table-wrap" *ngIf="block.type === 'table'">
@@ -87,8 +97,8 @@
           <figcaption *ngIf="block.imageAlt">{{ block.imageAlt }}</figcaption>
         </figure>
 
-        <section class="pp-faq" *ngIf="block.type === 'faq'">
-          <h2>Frequently Asked Questions</h2>
+        <div class="pp-faq" *ngIf="block.type === 'faq'">
+          <h2 id="faq">Frequently Asked Questions</h2>
           <mat-accordion multi>
             <mat-expansion-panel *ngFor="let faq of block.faqs">
               <mat-expansion-panel-header>
@@ -97,18 +107,33 @@
               <p>{{ faq.answer }}</p>
             </mat-expansion-panel>
           </mat-accordion>
-        </section>
+        </div>
       </ng-container>
+
+      <div class="pp-cta">
+        <div class="pp-cta__text">
+          <h2>Start earning on Profitpiller</h2>
+          <p>Free to join. Take surveys, try offers and cash out from $5 - on the web or with the Android app.</p>
+        </div>
+        <div class="pp-cta__actions">
+          <a class="pp-btn" [routerLink]="['/', locale, 'auth', 'login']">Sign up free</a>
+          <a class="pp-btn pp-btn--ghost" [href]="playStoreUrl" target="_blank" rel="noopener">
+            <mat-icon>android</mat-icon> Get the app
+          </a>
+        </div>
+      </div>
     </article>
   </div>
 
-  <section class="pp-related" *ngIf="related().length">
-    <h2>Related Articles</h2>
+  <div class="pp-related" *ngIf="related().length">
+    <h2>Related {{ section === 'guides' ? 'guides' : 'articles' }}</h2>
     <div class="pp-related__grid">
-      <a class="pp-related__card" *ngFor="let r of related()" [routerLink]="['/blog', r.slug]">
-        <img [src]="r.coverImage" [alt]="r.title" loading="lazy" />
+      <a class="pp-related__card" *ngFor="let r of related()" [routerLink]="['/', locale, section, r.slug]">
+        <div class="pp-related__media">
+          <pp-cover-art [title]="r.title" [category]="r.category" [seed]="seed(r.id)" [alt]="r.title"></pp-cover-art>
+        </div>
         <span>{{ r.title }}</span>
       </a>
     </div>
-  </section>
+  </div>
 </ng-container>

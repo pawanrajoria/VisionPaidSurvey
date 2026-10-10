@@ -3,6 +3,8 @@
         "trust": "优秀",
         "copyright": "© 2026 Profit Piller。保留所有权利。",
         "product_of": "由以下公司提供",
+        "tagline": "分享观点即可获得奖励。通过问卷、优惠任务和任务墙赚取积分，满 5 美元即可通过 PayPal、UPI 或礼品卡提现。",
+        "min_cashout": "满 5 美元即可提现",
         "platform": {
             "title": "平台",
             "login": "登录或注册",
@@ -31,6 +33,12 @@
         "follow": {
             "title": "关注我们",
             "download": "下载我们的应用"
+        },
+        "app": {
+            "title": "下载应用",
+            "text": "使用 Profitpiller 安卓应用，随时随地参与问卷、保持连续签到并提现。",
+            "get_it_on": "下载自",
+            "free_android": "安卓版免费"
         }
     }
 }

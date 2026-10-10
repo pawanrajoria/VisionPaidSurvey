@@ -3,6 +3,8 @@
         "trust": "Excellent",
         "copyright": "© 2026 Profit Piller. Tous droits réservés.",
         "product_of": "Un produit de",
+        "tagline": "Soyez récompensé pour vos opinions. Gagnez des points avec des sondages, des offres et des murs d’offres, puis retirez dès 5 $ via PayPal, UPI ou des cartes cadeaux.",
+        "min_cashout": "Retrait dès 5 $",
         "platform": {
             "title": "Plateforme",
             "login": "Se connecter ou s'inscrire",
@@ -31,6 +33,12 @@
         "follow": {
             "title": "Suivez-nous",
             "download": "Télécharger l'application"
+        },
+        "app": {
+            "title": "Téléchargez l’app",
+            "text": "Répondez à des sondages, gardez votre série active et retirez vos gains où que vous soyez avec l’app Profitpiller pour Android.",
+            "get_it_on": "Disponible sur",
+            "free_android": "Gratuit sur Android"
         }
     }
 }

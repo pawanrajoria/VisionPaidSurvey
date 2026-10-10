@@ -1,105 +1,118 @@
 @use '../theme/tokens' as *;
 
 :host {
-  display: block;
-  background: var(--pp-bg);
-  color: var(--pp-text);
-  font-family: var(--pp-font-body);
+  @include pp-brand-tokens;
   min-height: 100vh;
 }
 
 .pp-hero {
-  padding: var(--pp-space-6) var(--pp-space-4) var(--pp-space-5);
-  background:
-    radial-gradient(circle at 15% 20%, rgba(41, 211, 192, 0.10), transparent 45%),
-    radial-gradient(circle at 85% 0%, rgba(245, 185, 66, 0.08), transparent 40%);
-  border-bottom: 1px solid var(--pp-border);
+  @include pp-hero-band;
+  padding: 56px 16px 64px;
 
   &__inner {
-    max-width: 760px;
+    position: relative;
+    max-width: 780px;
     margin: 0 auto;
     text-align: center;
   }
 
+  h1 {
+    font-family: var(--pp-font-display);
+    font-size: clamp(1.9rem, 5vw, 3rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+    margin: 16px 0 0;
+    color: #ffffff;
+  }
+
   &__lede {
-    color: var(--pp-text-muted);
+    color: #cdeee0;
     font-size: 1.05rem;
-    margin: var(--pp-space-3) 0 var(--pp-space-4);
-    line-height: 1.6;
+    line-height: 1.65;
+    margin: 14px auto 26px;
+    max-width: 640px;
+  }
+
+  &__facts {
+    list-style: none;
+    padding: 0;
+    margin: 22px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #d1fae5;
+
+    li { display: inline-flex; align-items: center; gap: 6px; }
+    mat-icon { font-size: 18px; width: 18px; height: 18px; color: var(--pp-gold); }
   }
 }
 
 .pp-eyebrow {
-  font-family: var(--pp-font-mono);
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--pp-accent);
-}
-
-h1 {
-  font-family: var(--pp-font-display);
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  margin: var(--pp-space-2) 0 0;
+  @include pp-eyebrow;
+  mat-icon { font-size: 16px; width: 16px; height: 16px; }
 }
 
 .pp-search {
-  width: 100%;
-  max-width: 480px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 0 16px;
+  height: 52px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  color: var(--pp-text-faint);
+
+  input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font: inherit;
+    font-size: 15px;
+    color: var(--pp-text);
+  }
+
+  &:focus-within { box-shadow: 0 0 0 3px var(--pp-gold), 0 12px 30px rgba(0, 0, 0, 0.18); }
+}
+
+.pp-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.pp-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px 56px;
 }
 
 .pp-category-rail {
-  display: flex;
-  gap: var(--pp-space-2);
-  overflow-x: auto;
-  padding: var(--pp-space-4);
-  max-width: 1200px;
-  margin: 0 auto;
-
-  &::-webkit-scrollbar { height: 4px; }
-}
-
-.pp-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  white-space: nowrap;
-  padding: 8px 16px;
-  border-radius: 999px;
-  border: 1px solid var(--pp-border);
-  color: var(--pp-text-muted);
-  text-decoration: none;
-  font-size: 0.85rem;
-  transition: all .15s ease;
-
-  mat-icon { font-size: 18px; width: 18px; height: 18px; }
-
-  &:hover { border-color: var(--pp-accent-dim); color: var(--pp-text); }
-
-  &--active {
-    background: var(--pp-accent);
-    border-color: var(--pp-accent);
-    color: #06201C;
-    font-weight: 600;
-  }
-}
-
-.pp-grid-wrap {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--pp-space-4) var(--pp-space-6);
+  @include pp-chip-rail;
+  margin-bottom: 18px;
 }
 
 .pp-loading {
   display: flex;
   justify-content: center;
-  padding: var(--pp-space-6);
+  padding: 48px;
 }
 
 .pp-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: var(--pp-space-4);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 22px;
 }
 
 .pp-post-card {
@@ -111,27 +124,30 @@ h1 {
 
   &__media {
     position: relative;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 1200 / 630;
     overflow: hidden;
-    img { width: 100%; height: 100%; object-fit: cover; }
   }
 
   &__body {
-    padding: var(--pp-space-3);
+    padding: 16px 18px 18px;
     display: flex;
     flex-direction: column;
-    gap: var(--pp-space-2);
+    gap: 8px;
+    flex: 1;
 
     h3 {
       font-family: var(--pp-font-display);
-      font-size: 1.1rem;
-      margin: 0;
+      font-size: 1.08rem;
+      font-weight: 800;
       line-height: 1.35;
+      margin: 0;
+      color: var(--pp-text);
     }
 
     p {
       color: var(--pp-text-muted);
       font-size: 0.9rem;
+      line-height: 1.55;
       margin: 0;
       display: -webkit-box;
       -webkit-line-clamp: 2;
@@ -142,30 +158,50 @@ h1 {
 
   &__meta {
     display: flex;
-    align-items: center;
-    gap: 6px;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid var(--pp-border);
     color: var(--pp-text-faint);
-    font-size: 0.78rem;
-    margin-top: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    span { display: inline-flex; align-items: center; gap: 4px; }
+    mat-icon { font-size: 16px; width: 16px; height: 16px; color: var(--pp-accent-dim); }
   }
+
+  &:hover h3 { color: var(--pp-accent); }
 }
 
-.pp-value-tag { @include pp-value-tag; }
-
-.pp-avatar {
-  width: 20px; height: 20px; border-radius: 50%; object-fit: cover;
+.pp-cat {
+  align-self: flex-start;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--pp-mint-50);
+  border: 1px solid var(--pp-mint-200);
+  color: var(--pp-green-700);
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
-
-.pp-dot { opacity: .6; }
 
 .pp-empty {
   text-align: center;
   color: var(--pp-text-muted);
-  padding: var(--pp-space-6) 0;
+  padding: 48px 0;
 }
 
-::ng-deep .mat-mdc-paginator {
-  background: transparent;
+:host ::ng-deep .mat-mdc-paginator {
+  margin-top: 28px;
+  border-radius: var(--pp-radius-md);
+  background: var(--pp-surface);
+  border: 1px solid var(--pp-border);
   color: var(--pp-text-muted);
-  margin-top: var(--pp-space-4);
+}
+
+@media (max-width: 600px) {
+  .pp-hero { padding: 40px 16px 44px; }
+  .pp-grid { gap: 16px; }
 }

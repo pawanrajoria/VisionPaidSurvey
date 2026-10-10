@@ -3,6 +3,8 @@
     "trust": "Excellent",
     "copyright": "© 2026 Profit Piller. All rights reserved.",
     "product_of": "A product of",
+    "tagline": "Get paid for your opinions. Earn points from surveys, offers and offer walls, then cash out from $5 via PayPal, UPI or gift cards.",
+    "min_cashout": "Cash out from $5",
     "platform": {
       "title": "Platform",
       "login": "Log In or Sign Up",
@@ -31,6 +33,12 @@
     "follow": {
       "title": "Follow Us",
       "download": "Download Our App"
+    },
+    "app": {
+      "title": "Get the app",
+      "text": "Take surveys, keep your streak alive and cash out on the go with the Profitpiller Android app.",
+      "get_it_on": "Get it on",
+      "free_android": "Free on Android"
     }
   }
 }

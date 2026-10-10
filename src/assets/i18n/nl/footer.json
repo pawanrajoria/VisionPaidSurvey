@@ -3,6 +3,8 @@
         "trust": "Uitstekend",
         "copyright": "© 2026 Profit Piller. Alle rechten voorbehouden.",
         "product_of": "Een product van",
+        "tagline": "Word beloond voor je mening. Verdien punten met enquêtes, aanbiedingen en offerwalls en laat vanaf $ 5 uitbetalen via PayPal, UPI of cadeaubonnen.",
+        "min_cashout": "Uitbetalen vanaf $ 5",
         "platform": {
             "title": "Platform",
             "login": "Inloggen of Registreren",
@@ -31,6 +33,12 @@
         "follow": {
             "title": "Volg ons",
             "download": "Download onze app"
+        },
+        "app": {
+            "title": "Download de app",
+            "text": "Vul enquêtes in, houd je reeks vast en laat onderweg uitbetalen met de Profitpiller-app voor Android.",
+            "get_it_on": "Ontdek het op",
+            "free_android": "Gratis voor Android"
         }
     }
 }

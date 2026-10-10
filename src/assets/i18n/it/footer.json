@@ -3,6 +3,8 @@
         "trust": "Eccellente",
         "copyright": "© 2026 Profit Piller. Tutti i diritti riservati.",
         "product_of": "Un prodotto di",
+        "tagline": "Fatti premiare per le tue opinioni. Guadagna punti con sondaggi, offerte e offerwall, poi preleva da 5 $ tramite PayPal, UPI o carte regalo.",
+        "min_cashout": "Prelievo da 5 $",
         "platform": {
             "title": "Piattaforma",
             "login": "Accedi o Registrati",
@@ -31,6 +33,12 @@
         "follow": {
             "title": "Seguici",
             "download": "Scarica la nostra app"
+        },
+        "app": {
+            "title": "Scarica l’app",
+            "text": "Partecipa ai sondaggi, mantieni la tua serie e preleva ovunque tu sia con l’app Profitpiller per Android.",
+            "get_it_on": "Disponibile su",
+            "free_android": "Gratis su Android"
         }
     }
 }

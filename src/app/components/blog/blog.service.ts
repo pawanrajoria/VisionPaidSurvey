@@ -54,7 +54,7 @@ export class BlogService {
     return of(items);
   }
 
-  search(query: string): Observable<BlogPostSummary[]> {
-    return of(searchBlogSummaries(query));
+  search(query: string, category?: BlogCategory): Observable<BlogPostSummary[]> {
+    return of(searchBlogSummaries(query, 24, category));
   }
 }

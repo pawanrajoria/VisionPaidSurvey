@@ -5,95 +5,130 @@
 <div class="pp-not-found" *ngIf="notFound()">
   <mat-icon>search_off</mat-icon>
   <h1>We couldn't find that gift card</h1>
-  <a mat-flat-button color="primary" routerLink="/gift-cards">Browse gift cards</a>
+  <a class="pp-btn" [routerLink]="['/', locale, 'gift-cards']">Browse gift cards</a>
 </div>
 
 <ng-container *ngIf="card() as c">
-  <nav class="pp-breadcrumb" aria-label="Breadcrumb">
-    <a routerLink="/">Home</a> <span>/</span>
-    <a routerLink="/gift-cards">Gift Cards</a> <span>/</span>
-    <a [routerLink]="['/gift-cards/category', c.category]">{{ c.category }}</a> <span>/</span>
-    <span class="pp-breadcrumb__current">{{ c.title }}</span>
-  </nav>
-
-  <header class="pp-gc-hero">
-    <div class="pp-gc-hero__media">
-      <img loading="lazy" [src]="c.heroImage" [alt]="c.title" width="1200" height="500" />
+  <div class="pp-hero">
+    <div class="pp-hero__inner">
+      <nav class="pp-breadcrumb" aria-label="Breadcrumb">
+        <a [routerLink]="['/', locale]">Home</a>
+        <mat-icon aria-hidden="true">chevron_right</mat-icon>
+        <a [routerLink]="['/', locale, 'gift-cards']">Gift Cards</a>
+        <mat-icon aria-hidden="true">chevron_right</mat-icon>
+        <a [routerLink]="['/', locale, 'gift-cards', 'category', c.category]">{{ categoryLabel(c.category) }}</a>
+      </nav>
+      <span class="pp-eyebrow"><mat-icon>redeem</mat-icon> Gift card reward</span>
+      <h1>{{ c.title }}</h1>
+      <p class="pp-lede">{{ c.shortDescription }}</p>
     </div>
+  </div>
 
-    <div class="pp-gc-hero__panel">
-      <div class="pp-gc-hero__brand">
-        <img loading="lazy" [src]="c.logoUrl" [alt]="c.brand" class="pp-logo" />
-        <div>
-          <h1>{{ c.title }}</h1>
-          <div class="pp-rating">
-            <mat-icon>star</mat-icon>
-            <span>{{ c.rating }}</span>
-            <span class="pp-dot">&middot;</span>
-            <span>{{ c.reviewCount | number }} reviews</span>
+  <div class="pp-main">
+    <div class="pp-top">
+      <div class="pp-cover">
+        <pp-cover-art
+          [title]="c.brand + ' gift card'"
+          [category]="c.category"
+          [seed]="seed(c.id)"
+          icon="giftcard"
+          [brand]="c.brand"
+          [amount]="money(selectedDenom()?.amount ?? 0, selectedDenom()?.currency ?? 'USD')"
+          [eyebrow]="categoryLabel(c.category)"
+          [alt]="c.title"
+        ></pp-cover-art>
+      </div>
+
+      <div class="pp-panel">
+        <ul class="pp-facts">
+          <li><mat-icon>payments</mat-icon> Cash-outs from $5</li>
+          <li><mat-icon>mail</mat-icon> Digital code</li>
+          <li><mat-icon>public</mat-icon> {{ c.countriesAvailable.join(', ') }} storefront</li>
+        </ul>
+
+        <div class="pp-denoms">
+          <span class="pp-denoms__label">Face values ({{ c.denominations[0]?.currency }})</span>
+          <div class="pp-denoms__grid">
+            <button
+              *ngFor="let d of c.denominations"
+              type="button"
+              class="pp-denom"
+              [class.pp-denom--active]="selectedDenom() === d"
+              [attr.aria-pressed]="selectedDenom() === d"
+              (click)="selectDenom(d)"
+            >{{ money(d.amount, d.currency) }}</button>
           </div>
         </div>
-      </div>
 
-      <p class="pp-short-desc">{{ c.shortDescription }}</p>
+        <p class="pp-note">
+          <mat-icon>info</mat-icon>
+          The point price and the brands available to you are shown on the Cashout page in your account.
+        </p>
 
-      <div class="pp-denoms">
-        <span class="pp-denoms__label">Choose an amount</span>
-        <div class="pp-denoms__grid">
-          <button
-            *ngFor="let d of c.denominations"
-            type="button"
-            class="pp-denom"
-            [class.pp-denom--active]="selectedDenom() === d"
-            [disabled]="!d.inStock"
-            (click)="selectDenom(d)"
-          >
-            {{ d.amount | currency:d.currency }}
-            <small>{{ d.pointsRequired | number }} pts</small>
-          </button>
-        </div>
-      </div>
-
-      <a mat-flat-button color="accent" class="pp-redeem-btn" routerLink="/wallet">
-        <mat-icon>redeem</mat-icon>
-        Redeem for {{ selectedDenom()?.pointsRequired | number }} points
-      </a>
-
-      <div class="pp-countries" *ngIf="c.countriesAvailable?.length">
-        <mat-icon>public</mat-icon>
-        <span>Available in {{ c.countriesAvailable.length }} countries</span>
+        <a class="pp-btn pp-btn--block" [routerLink]="['/', locale, 'auth', 'login']">
+          <mat-icon>redeem</mat-icon>
+          Start earning to redeem {{ money(selectedDenom()?.amount ?? 0, selectedDenom()?.currency ?? 'USD') }}
+        </a>
+        <a class="pp-app-link" [href]="playStoreUrl" target="_blank" rel="noopener">
+          <mat-icon>android</mat-icon> Also on the Profitpiller Android app
+        </a>
       </div>
     </div>
-  </header>
 
-  <section class="pp-section">
-    <h2>About {{ c.brand }}</h2>
-    <p>{{ c.longDescription }}</p>
-  </section>
+    <div class="pp-card-section">
+      <h2>About this reward</h2>
+      <p>{{ c.longDescription }}</p>
+    </div>
 
-  <section class="pp-section" *ngIf="c.howToRedeem?.length">
-    <h2>How to Redeem</h2>
-    <ol class="pp-steps">
-      <li *ngFor="let step of c.howToRedeem">{{ step }}</li>
-    </ol>
-  </section>
+    <div class="pp-card-section">
+      <h2>How to earn the points</h2>
+      <div class="pp-earn">
+        <div class="pp-earn__item" *ngFor="let w of earnWays">
+          <mat-icon>{{ w.icon }}</mat-icon>
+          <strong>{{ w.title }}</strong>
+          <span>{{ w.text }}</span>
+        </div>
+      </div>
+      <p class="pp-small">Earnings vary with survey availability, your country and your profile - think of it as extra rewards for your spare time.</p>
+    </div>
 
-  <section class="pp-section" *ngIf="c.termsAndConditions?.length">
-    <h2>Terms &amp; Conditions</h2>
-    <ul class="pp-terms">
-      <li *ngFor="let term of c.termsAndConditions">{{ term }}</li>
-    </ul>
-  </section>
+    <div class="pp-card-section" *ngIf="c.howToRedeem?.length">
+      <h2>How to redeem</h2>
+      <ol class="pp-steps">
+        <li *ngFor="let step of c.howToRedeem; let i = index"><span class="pp-steps__n">{{ i + 1 }}</span><span>{{ step }}</span></li>
+      </ol>
+    </div>
 
-  <section class="pp-section" *ngIf="c.faqs?.length">
-    <h2>Frequently Asked Questions</h2>
-    <mat-accordion multi>
-      <mat-expansion-panel *ngFor="let faq of c.faqs">
-        <mat-expansion-panel-header>
-          <mat-panel-title>{{ faq.question }}</mat-panel-title>
-        </mat-expansion-panel-header>
-        <p>{{ faq.answer }}</p>
-      </mat-expansion-panel>
-    </mat-accordion>
-  </section>
+    <div class="pp-card-section" *ngIf="c.faqs?.length">
+      <h2>Frequently asked questions</h2>
+      <mat-accordion multi>
+        <mat-expansion-panel *ngFor="let faq of c.faqs">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{ faq.question }}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{ faq.answer }}</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+
+    <div class="pp-card-section" *ngIf="c.termsAndConditions?.length">
+      <h2>Terms</h2>
+      <ul class="pp-terms">
+        <li *ngFor="let term of c.termsAndConditions">{{ term }}</li>
+      </ul>
+    </div>
+
+    <div class="pp-related" *ngIf="related().length">
+      <h2>More {{ c.brand }} gift cards</h2>
+      <div class="pp-related__grid">
+        <a class="pp-related__card" *ngFor="let r of related()" [routerLink]="['/', locale, 'gift-cards', r.slug]">
+          <div class="pp-related__media">
+            <pp-cover-art [title]="r.title" [category]="r.category" [seed]="seed(r.id)" icon="giftcard"
+              [brand]="r.brand" [amount]="amount(r)" [showTitle]="false" [alt]="r.title"></pp-cover-art>
+          </div>
+          <span>{{ r.title }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
 </ng-container>

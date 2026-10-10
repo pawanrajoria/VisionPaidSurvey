@@ -3,6 +3,8 @@
         "trust": "Excelente",
         "copyright": "© 2026 Profit Piller. Todos os direitos reservados.",
         "product_of": "Um produto de",
+        "tagline": "Seja recompensado pelas suas opiniões. Ganhe pontos com pesquisas, ofertas e murais de ofertas e resgate a partir de US$ 5 via PayPal, UPI ou cartões-presente.",
+        "min_cashout": "Resgate a partir de US$ 5",
         "platform": {
             "title": "Plataforma",
             "login": "Entrar ou Registar-se",
@@ -31,6 +33,12 @@
         "follow": {
             "title": "Siga-nos",
             "download": "Descarregar a nossa aplicação"
+        },
+        "app": {
+            "title": "Baixe o app",
+            "text": "Responda pesquisas, mantenha sua sequência e resgate onde estiver com o app Profitpiller para Android.",
+            "get_it_on": "Disponível no",
+            "free_android": "Grátis no Android"
         }
     }
 }

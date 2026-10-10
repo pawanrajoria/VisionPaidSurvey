@@ -3,22 +3,31 @@ import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, ActivatedRoute } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatChipsModule } from '@angular/material/chips';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { switchMap } from 'rxjs';
 import { BlogGiftCardService } from '../gift-card.service';
 import { BlogSeoService } from '../../seo.service';
-import { GiftCard, GiftCardDenomination } from '../gift-card.model';
+import { GiftCard, GiftCardCategory, GiftCardDenomination, GiftCardSummary } from '../gift-card.model';
+import { CoverArtComponent } from '../../cover-art/cover-art.component';
+import { coverLabelFor } from '../../cover-art/cover-art';
+import { PLAY_STORE_URL, routeLocale, seedFromId } from '../../locale';
+import { giftCardAmount, giftCardAmountLabel } from '../gift-card-format';
 
+/** Ways to earn the points a gift card is redeemed with. */
+const EARN_WAYS = [
+  { icon: 'assignment', title: 'Paid surveys', text: 'Share your opinion in surveys matched to your profile.' },
+  { icon: 'local_offer', title: 'Offers', text: 'Try apps, games and sign-ups that pay points on completion.' },
+  { icon: 'view_module', title: 'Offer walls', text: 'Browse partner walls with hundreds of extra tasks.' },
+  { icon: 'local_fire_department', title: 'Daily streak', text: 'Keep a streak going to unlock badges and milestones.' },
+];
 
 @Component({
   selector: 'pp-gift-card-detail',
   standalone: true,
   imports: [
-    CommonModule, RouterLink, MatIconModule, MatButtonModule, MatChipsModule,
-    MatExpansionModule, MatProgressSpinnerModule,
+    CommonModule, RouterLink, MatIconModule, MatExpansionModule, MatProgressSpinnerModule,
+    CoverArtComponent,
   ],
   templateUrl: './gift-card-detail.component.html',
   styleUrl: './gift-card-detail.component.scss',
@@ -28,7 +37,12 @@ export class GiftCardDetailComponent implements OnInit {
   private readonly giftCardService = inject(BlogGiftCardService);
   private readonly seo = inject(BlogSeoService);
 
+  readonly locale = routeLocale(this.route);
+  readonly playStoreUrl = PLAY_STORE_URL;
+  readonly earnWays = EARN_WAYS;
+
   readonly card = signal<GiftCard | null>(null);
+  readonly related = signal<GiftCardSummary[]>([]);
   readonly loading = signal(true);
   readonly notFound = signal(false);
   readonly selectedDenom = signal<GiftCardDenomination | null>(null);
@@ -39,9 +53,12 @@ export class GiftCardDetailComponent implements OnInit {
       .subscribe({
         next: card => {
           this.card.set(card);
-          this.selectedDenom.set(card.denominations.find(d => d.inStock) ?? card.denominations[0] ?? null);
+          const amount = giftCardAmount(card);
+          this.selectedDenom.set(card.denominations.find(d => d.amount === amount) ?? card.denominations[0] ?? null);
+          this.notFound.set(false);
           this.loading.set(false);
           this.applySeo(card);
+          this.giftCardService.getRelated(card.relatedSlugs).subscribe(r => this.related.set(r));
         },
         error: () => {
           this.notFound.set(true);
@@ -54,13 +71,29 @@ export class GiftCardDetailComponent implements OnInit {
     this.selectedDenom.set(d);
   }
 
+  money(amount: number, currency: string): string {
+    return giftCardAmountLabel(amount, currency);
+  }
+
+  amount(card: GiftCardSummary): string {
+    return giftCardAmountLabel(giftCardAmount(card), card.denominations[0]?.currency ?? 'USD');
+  }
+
+  categoryLabel(category: GiftCardCategory): string {
+    return coverLabelFor(category);
+  }
+
+  seed(id: string): number {
+    return seedFromId(id);
+  }
+
   private applySeo(card: GiftCard): void {
-    const url = `/gift-cards/${card.slug}`;
-    const amounts = card.denominations.map(d => d.amount);
+    const path = `/gift-cards/${card.slug}`;
+    const url = `${SITE_URL}/${this.locale}${path}`;
     this.seo.apply({
-      title: card.metaTitle || `${card.title} — Redeem With Points`,
+      title: card.metaTitle || `${card.title} - Redeem With Points`,
       description: card.metaDescription || card.shortDescription,
-      canonicalPath: url,
+      canonicalPath: path,
       image: card.heroImage,
       type: 'product',
       jsonLd: [
@@ -68,17 +101,13 @@ export class GiftCardDetailComponent implements OnInit {
           name: card.title,
           description: card.metaDescription || card.shortDescription,
           image: card.heroImage,
-          url: `${SITE_URL}${url}`,
-          lowPrice: Math.min(...amounts),
-          highPrice: Math.max(...amounts),
-          currency: card.denominations[0]?.currency ?? 'USD',
-          ratingValue: card.rating,
-          reviewCount: card.reviewCount,
+          url,
+          brand: card.brand,
         }),
         this.seo.breadcrumbJsonLd([
-          { name: 'Home', url: SITE_URL + '/' },
-          { name: 'Gift Cards', url: SITE_URL + '/gift-cards' },
-          { name: card.title, url: `${SITE_URL}${url}` },
+          { name: 'Home', url: `${SITE_URL}/${this.locale}` },
+          { name: 'Gift Cards', url: `${SITE_URL}/${this.locale}/gift-cards` },
+          { name: card.title, url },
         ]),
       ],
     });

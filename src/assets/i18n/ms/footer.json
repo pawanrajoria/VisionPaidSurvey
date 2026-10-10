@@ -3,6 +3,8 @@
         "trust": "Cemerlang",
         "copyright": "© 2026 Profit Piller. Hak cipta terpelihara.",
         "product_of": "Produk oleh",
+        "tagline": "Dapatkan ganjaran untuk pendapat anda. Kumpul mata daripada tinjauan, tawaran dan dinding tawaran, kemudian tunaikan dari $5 melalui PayPal, UPI atau kad hadiah.",
+        "min_cashout": "Tunaikan dari $5",
         "platform": {
             "title": "Platform",
             "login": "Log masuk atau Daftar",
@@ -31,6 +33,12 @@
         "follow": {
             "title": "Ikuti Kami",
             "download": "Muat turun aplikasi kami"
+        },
+        "app": {
+            "title": "Dapatkan aplikasi",
+            "text": "Jawab tinjauan, kekalkan streak anda dan tunaikan ganjaran di mana-mana sahaja dengan aplikasi Android Profitpiller.",
+            "get_it_on": "Dapatkan di",
+            "free_android": "Percuma di Android"
         }
     }
 }

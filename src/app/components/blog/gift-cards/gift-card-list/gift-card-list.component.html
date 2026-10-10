@@ -1,37 +1,43 @@
-<section class="pp-hero">
+<div class="pp-hero">
   <div class="pp-hero__inner">
-    <span class="pp-eyebrow">Redeem Your Points</span>
+    <span class="pp-eyebrow"><mat-icon>redeem</mat-icon> Redeem your points</span>
     <h1>{{ heading() }}</h1>
     <p class="pp-hero__lede">
-      Turn your wallet balance into real gift cards, crypto, and prepaid cards.
-      Instant delivery, verified brands, transparent point pricing.
+      Earn points on Profitpiller with surveys, offers and offer walls, then swap them for gift cards from
+      brands like Amazon, Visa and Google Play. Cash-outs start at $5 and the catalogue depends on your country.
     </p>
+    <ol class="pp-how" aria-label="How it works">
+      <li><span>1</span> Earn points</li>
+      <li><span>2</span> Reach $5</li>
+      <li><span>3</span> Pick a gift card</li>
+    </ol>
   </div>
-</section>
+</div>
 
-<nav class="pp-category-rail" aria-label="Gift card categories">
-  <a class="pp-chip" [class.pp-chip--active]="activeCategory() === null" routerLink="/gift-cards">All</a>
-  <a
-    *ngFor="let cat of categories"
-    class="pp-chip"
-    [class.pp-chip--active]="activeCategory() === cat.value"
-    [routerLink]="['/gift-cards/category', cat.value]"
-  >
-    <mat-icon>{{ cat.icon }}</mat-icon>
-    {{ cat.label }}
-  </a>
-</nav>
+<div class="pp-body">
+  <nav class="pp-category-rail" aria-label="Gift card categories">
+    <a class="pp-chip" [class.pp-chip--active]="activeCategory() === null" [routerLink]="['/', locale, 'gift-cards']">
+      <mat-icon>apps</mat-icon> All
+    </a>
+    <a
+      *ngFor="let cat of categories"
+      class="pp-chip"
+      [class.pp-chip--active]="activeCategory() === cat.value"
+      [routerLink]="['/', locale, 'gift-cards', 'category', cat.value]"
+    >
+      <mat-icon>{{ cat.icon }}</mat-icon>
+      {{ cat.label }}
+    </a>
+  </nav>
 
-<section class="pp-toolbar">
-  <mat-button-toggle-group [value]="sort()" (change)="onSortChange($event.value)">
-    <mat-button-toggle value="popular">Popular</mat-button-toggle>
-    <mat-button-toggle value="rating">Top Rated</mat-button-toggle>
-    <mat-button-toggle value="az">A–Z</mat-button-toggle>
-  </mat-button-toggle-group>
-  <span class="pp-count">{{ totalItems() | number }} gift cards</span>
-</section>
+  <div class="pp-toolbar">
+    <span class="pp-count">{{ totalItems() | number }} gift card pages</span>
+    <div class="pp-sort" role="group" aria-label="Sort gift cards">
+      <button type="button" [class.pp-sort--on]="sort() === 'popular'" [attr.aria-pressed]="sort() === 'popular'" (click)="onSortChange('popular')">Popular</button>
+      <button type="button" [class.pp-sort--on]="sort() === 'az'" [attr.aria-pressed]="sort() === 'az'" (click)="onSortChange('az')">A-Z</button>
+    </div>
+  </div>
 
-<section class="pp-grid-wrap">
   <div class="pp-loading" *ngIf="loading()">
     <mat-spinner diameter="36"></mat-spinner>
   </div>
@@ -40,21 +46,28 @@
     <a
       class="pp-gc-card"
       *ngFor="let card of cards(); trackBy: trackBySlug"
-      [routerLink]="['/gift-cards', card.slug]"
+      [routerLink]="['/', locale, 'gift-cards', card.slug]"
     >
-      <div class="pp-gc-card__logo">
-        <img [src]="card.logoUrl" [alt]="card.brand" loading="lazy" />
+      <div class="pp-gc-card__media">
+        <pp-cover-art
+          [title]="card.title"
+          [category]="card.category"
+          [seed]="seed(card)"
+          icon="giftcard"
+          [brand]="card.brand"
+          [amount]="amount(card)"
+          [showTitle]="false"
+          [alt]="card.title"
+        ></pp-cover-art>
       </div>
-      <h3>{{ card.title }}</h3>
-      <p>{{ card.shortDescription }}</p>
-      <div class="pp-gc-card__rating">
-        <mat-icon>star</mat-icon>
-        <span>{{ card.rating }}</span>
-        <span class="pp-dot">&middot;</span>
-        <span>{{ card.reviewCount | number }} reviews</span>
-      </div>
-      <div class="pp-gc-card__price">
-        {{ minPrice(card) | currency }} – {{ maxPrice(card) | currency }}
+      <div class="pp-gc-card__body">
+        <span class="pp-cat">{{ categoryLabel(card.category) }}</span>
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.shortDescription }}</p>
+        <div class="pp-gc-card__foot">
+          <span class="pp-face">{{ amount(card) }}</span>
+          <span class="pp-go">View <mat-icon>arrow_forward</mat-icon></span>
+        </div>
       </div>
     </a>
   </div>
@@ -68,4 +81,4 @@
     (page)="onPage($event)"
     aria-label="Select page of gift cards"
   ></mat-paginator>
-</section>
+</div>

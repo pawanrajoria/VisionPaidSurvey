@@ -3,8 +3,9 @@ import { Observable, of } from 'rxjs';
 import { Paginated } from '../blog.service';
 import { GiftCard, GiftCardCategory, GiftCardSummary } from './gift-card.model';
 import {
-  listGiftCardSummaries, getGiftCardBySlug, listGiftCardCategories,
+  listGiftCardSummaries, getGiftCardBySlug, listGiftCardCategories, generateGiftCardSummary,
 } from './gift-card-content.generator';
+import { parseIndexFromSlug } from '../content-engine.core';
 
 /**
  * Zero-storage: every gift card page is computed on the fly by
@@ -31,6 +32,14 @@ export class BlogGiftCardService {
       return new Observable<GiftCard>(sub => sub.error(new Error(`No gift card for slug "${slug}"`)));
     }
     return of(card);
+  }
+
+  getRelated(slugs: string[]): Observable<GiftCardSummary[]> {
+    const items = slugs
+      .map(parseIndexFromSlug)
+      .filter((i): i is number => i !== null)
+      .map(generateGiftCardSummary);
+    return of(items);
   }
 
   getCategories(): Observable<{ category: GiftCardCategory; label: string; count: number }[]> {

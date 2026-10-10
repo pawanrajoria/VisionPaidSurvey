@@ -3,6 +3,8 @@
         "trust": "Ausgezeichnet",
         "copyright": "© 2026 Profit Piller. Alle Rechte vorbehalten.",
         "product_of": "Ein Produkt von",
+        "tagline": "Werde für deine Meinung belohnt. Sammle Punkte mit Umfragen, Angeboten und Offerwalls und lass dir ab 5 $ per PayPal, UPI oder Geschenkkarten auszahlen.",
+        "min_cashout": "Auszahlung ab 5 $",
         "platform": {
             "title": "Plattform",
             "login": "Anmelden oder Registrieren",
@@ -31,6 +33,12 @@
         "follow": {
             "title": "Folgen Sie uns",
             "download": "App herunterladen"
+        },
+        "app": {
+            "title": "Hol dir die App",
+            "text": "Nimm an Umfragen teil, halte deine Serie am Leben und lass dir unterwegs mit der Profitpiller-App für Android auszahlen.",
+            "get_it_on": "Jetzt bei",
+            "free_android": "Kostenlos für Android"
         }
     }
 }
