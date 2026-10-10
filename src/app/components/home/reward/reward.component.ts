@@ -1,4 +1,4 @@
-import { afterNextRender, ChangeDetectorRef, Component, ElementRef, inject, OnInit, signal, ViewChild } from "@angular/core";
+import { afterNextRender, ChangeDetectorRef, Component, ElementRef, inject, OnDestroy, OnInit, signal, ViewChild } from "@angular/core";
 import { SharedModule } from "../../../shared.module";
 import { MatPaginator } from "@angular/material/paginator";
 import { animate, state, style, transition, trigger } from "@angular/animations";
@@ -31,7 +31,7 @@ import { ICashoutRule } from "../engagement/engagement.vm";
         ])
     ]
 })
-export class RewardComponent {
+export class RewardComponent implements OnDestroy {
     searchText = '';
     allRewards: RewardCategory[] = [];
     rewardsCategories: RewardCategory[] = [];
@@ -215,13 +215,32 @@ export class RewardComponent {
         return this.allRewards.flatMap(c => c.items).find(i => this.canAfford(i)) ?? null;
     }
 
+    /**
+     * Narrow layouts (phones and the cash-out drawer) show the amounts in a bottom sheet over the
+     * list. It used to sit below every gift card, and picking one scrolled the page to the bottom.
+     */
+    sheetOpen = false;
+
     selectItem(item: any) {
         if (this.activeItem?.id !== item.id || !this.selectedCategory) {
             this.selectedCategory = item;
             this.selectedRewardCategory = undefined as any;
         }
-        // Phones: the amounts are below the grid.
-        if (this.isBrowser()) setTimeout(() => document.querySelector('.picker')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' }));
+        this.setSheet(true);
+    }
+
+    closeSheet() {
+        this.setSheet(false);
+    }
+
+    /** The floating Live payouts button would cover the sheet's Claim button, so it hides meanwhile. */
+    private setSheet(open: boolean) {
+        this.sheetOpen = open;
+        if (this.isBrowser()) document.body.classList.toggle('cashout-sheet-open', open);
+    }
+
+    ngOnDestroy() {
+        if (this.isBrowser()) document.body.classList.remove('cashout-sheet-open');
     }
 
     private isBrowser(): boolean {

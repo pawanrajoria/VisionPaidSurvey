@@ -7,6 +7,7 @@ $line: #e2e8e5;
 :host { display: block; }
 
 .cashout {
+  container: cashout / inline-size;
   max-width: 1200px;
   margin: 0 auto;
   padding: 16px;
@@ -404,23 +405,66 @@ $line: #e2e8e5;
 
 .empty { color: $muted; text-align: center; padding: 30px 0; }
 
-// ── Phones / narrow screens: picker goes below, claim stays reachable ──
-@media (max-width: 900px) {
+// Sheet-only parts are hidden in the wide (side panel) layout.
+.sheet-backdrop, .sheet-handle, .sheet-close { display: none; }
+.picker-names { flex: 1; min-width: 0; }
+
+// ── Narrow (phones, and the cash-out drawer): the amounts open as a bottom sheet ──
+// A container query, so the drawer (narrow at any screen size) gets this layout too.
+@container cashout (max-width: 900px) {
   .cashout-body { grid-template-columns: 1fr; }
+  .method-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
 
-  .picker {
-    position: static;
+  .sheet-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 950; // above the Live payouts button (900), below dialogs (1000)
+    background: rgba(8, 30, 25, 0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
 
-    &:not(.open) { display: none; }
+    &.show { opacity: 1; pointer-events: auto; }
   }
 
-  .method-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+  .picker {
+    position: fixed;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 951;
+    max-height: 82%;
+    overflow-y: auto;
+    padding: 10px 16px calc(16px + env(safe-area-inset-bottom));
+    border: 0;
+    border-radius: 22px 22px 0 0;
+    box-shadow: 0 -12px 32px rgba(8, 30, 25, 0.22);
+    transform: translateY(105%);
+    transition: transform .3s cubic-bezier(.2, .8, .2, 1);
+    visibility: hidden;
+
+    &.sheet-open { transform: none; visibility: visible; }
+  }
+
+  .sheet-handle {
+    display: block;
+    width: 40px;
+    height: 4px;
+    margin: 0 auto 4px;
+    border-radius: 2px;
+    background: #d5dfdb;
+  }
+
+  .sheet-close { display: inline-flex; flex-shrink: 0; color: $muted; }
 
   .picker-foot {
     position: sticky;
-    bottom: 0;
+    bottom: calc(-16px - env(safe-area-inset-bottom));
+    margin: 0 -16px;
+    padding: 10px 16px 4px;
     background: #fff;
-    padding-bottom: 4px;
   }
 }
 

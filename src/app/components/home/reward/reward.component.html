@@ -90,17 +90,23 @@
         </div>
 
         <!-- Amounts of the chosen method + claim -->
-        <aside class="picker" [class.open]="!!activeItem">
+        <!-- Narrow layouts: tapping outside the sheet closes it -->
+        <div class="sheet-backdrop" [class.show]="sheetOpen" (click)="closeSheet()"></div>
+        <aside class="picker" [class.open]="!!activeItem" [class.sheet-open]="sheetOpen">
+            <span class="sheet-handle" aria-hidden="true"></span>
             @if (activeItem; as item) {
             <div class="picker-head">
                 <span class="tile-logo small">
                     @if (!brokenImages[item.id]) { <img [src]="item.image" [alt]="item.name" (error)="brokenImages[item.id] = true" /> }
                     @else { <span class="logo-letter">{{ item.name.charAt(0) }}</span> }
                 </span>
-                <div>
+                <div class="picker-names">
                     <span class="picker-title">{{ item.name }}</span>
                     <span class="picker-sub">{{ 'app.cashout.chooseAmount' | translate }}</span>
                 </div>
+                <button type="button" mat-icon-button class="sheet-close" (click)="closeSheet()" [attr.aria-label]="'app.common.close' | translate">
+                    <mat-icon>close</mat-icon>
+                </button>
             </div>
 
             <div class="amount-grid">
