@@ -105,6 +105,9 @@ export class SurveyRedirectsComponent implements OnInit, OnDestroy {
             const parsed = new URL(this.redirectUrl, this.document.location.origin);
             if (this.redirectUrl && (parsed.protocol === 'https:' || parsed.protocol === 'http:')) {
                 target = parsed.href;
+            } else if (/^myapp:\/\/survey(\?|$)/i.test(this.redirectUrl)) {
+                // The Android app's own link: it closes the in-app browser and shows the survey result there.
+                target = this.redirectUrl;
             }
         } catch {
             target = '';
