@@ -100,5 +100,20 @@
   },
   "common": {
     "learnMore": "了解更多"
+  },
+  "seoLanding": {
+    "howToEarn": "如何赚钱",
+    "paymentMethods": "支付方式",
+    "topLocations": "热门地区",
+    "faqs": "常见问题",
+    "download": "下载应用，开始赚钱"
+  },
+  "imageAlt": {
+    "more": "还有更多"
+  },
+  "rewardCategory": {
+    "cash": "现金",
+    "giftCards": "礼品卡",
+    "donations": "捐赠"
   }
 }

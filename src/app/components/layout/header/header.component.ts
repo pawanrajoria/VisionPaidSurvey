@@ -23,6 +23,7 @@ import { EngagementService } from '../../home/engagement/engagement.service';
 import { IEngagementSummary } from '../../home/engagement/engagement.vm';
 import { MessageService } from '../message/message.service';
 import { MessageVM } from '../message/message.vm';
+import { TranslateService } from '@ngx-translate/core';
 import { SUPPORTED_LOCALE_CODES } from '../../../country-langiuage-list';
 import { SelectRewardComponent } from '../../home/reward/select-reward/select-reward.component';
 import { TierAwardComponent } from "./tier-award/tier-award.component";
@@ -77,6 +78,7 @@ export class HeaderComponent {
   // ───────────── Streak, daily check-in and getting-started pills ─────────────
   private readonly engagement = inject(EngagementService);
   private readonly messageService = inject(MessageService);
+  private readonly translate = inject(TranslateService);
   private readonly route = inject(ActivatedRoute);
   private sheetRef: MatDialogRef<unknown> | null = null;
 
@@ -144,7 +146,7 @@ export class HeaderComponent {
   }
 
   private async afterBonus(result: { message: string; isSuccess: boolean } | null) {
-    this.messageService.showMessage(new MessageVM(result?.message ?? 'Done', result?.isSuccess ? 'success' : 'warn'));
+    this.messageService.showMessage(new MessageVM(result?.message ?? this.translate.instant('app.common.done'), result?.isSuccess ? 'success' : 'warn'));
     await this.loadEngagement(true);
     if (result?.isSuccess) {
       const info = await this.accountService.getuserinfo();

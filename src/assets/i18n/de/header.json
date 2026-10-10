@@ -36,6 +36,8 @@
                 "description": "Schalten Sie frühen Zugang frei &...",
                 "range": "31+"
             }
-        }
+        },
+        "getApp": "ProfitPiller-App holen",
+        "scanToDownload": "ZUM HERUNTERLADEN SCANNEN"
     }
 }

@@ -1,13 +1,13 @@
 <div class="lp">
     @if (isExpanded) {
-    <div class="lp-panel" role="dialog" aria-label="Live payouts">
+    <div class="lp-panel" role="dialog" [attr.aria-label]="'app.live.title' | translate">
         <header class="lp-head">
             <div class="lp-title">
-                <span class="live-badge"><span class="dot"></span>LIVE</span>
-                <h3>Live payouts</h3>
-                <p>Real earnings from Profitpiller members</p>
+                <span class="live-badge"><span class="dot"></span>{{ 'app.live.badge' | translate }}</span>
+                <h3>{{ 'app.live.title' | translate }}</h3>
+                <p>{{ 'app.live.subtitle' | translate }}</p>
             </div>
-            <button type="button" class="lp-close" (click)="toggleTicker()" aria-label="Close">
+            <button type="button" class="lp-close" (click)="toggleTicker()" [attr.aria-label]="'app.common.close' | translate">
                 <mat-icon>close</mat-icon>
             </button>
         </header>
@@ -15,15 +15,15 @@
         <div class="lp-stats">
             <div>
                 <b>{{ (feed?.earnersToday ?? 0) | number }}</b>
-                <span>earning today</span>
+                <span>{{ 'app.live.earningToday' | translate }}</span>
             </div>
             <div>
                 <b>{{ (feed?.pointsEarnedToday ?? 0) | number:'1.0-0' }}</b>
-                <span>pts earned today</span>
+                <span>{{ 'app.live.ptsToday' | translate }}</span>
             </div>
             <div>
                 <b>{{ (feed?.paidOutThisWeekUsd ?? 0) | currency:'USD':'symbol':'1.0-0' }}</b>
-                <span>cashed out this week</span>
+                <span>{{ 'app.live.cashedWeek' | translate }}</span>
             </div>
         </div>
 
@@ -35,28 +35,28 @@
                     @if (flag(item.countryCode)) { <i>{{ flag(item.countryCode) }}</i> }
                 </span>
                 <div class="txt">
-                    <p><strong>{{ item.name }}</strong> {{ item.kind === 'cashout' ? 'cashed out' : 'earned' }}</p>
+                    <p><strong>{{ item.name }}</strong> {{ (item.kind === 'cashout' ? 'app.live.cashedOut' : 'app.live.earned') | translate }}</p>
                     <small>{{ item.via }} · {{ ago(item) }}</small>
                 </div>
                 <span class="amt">
                     @if (item.kind === 'cashout') { {{ item.amountUsd | currency:'USD':'symbol':'1.0-2' }} }
-                    @else { +{{ item.points | number:'1.0-0' }} <small>pts</small> }
+                    @else { +{{ item.points | number:'1.0-0' }} <small>{{ 'app.common.pts' | translate }}</small> }
                 </span>
             </div>
             } @empty {
             <div class="lp-empty">
                 @if (loaded) {
                 <span>🚀</span>
-                <p>No payouts in the last few days yet.<br>Complete a survey and be the first on the board!</p>
+                <p>{{ 'app.live.empty' | translate }}<br>{{ 'app.live.emptyCta' | translate }}</p>
                 } @else {
-                <p>Loading…</p>
+                <p>{{ 'app.common.loading' | translate }}</p>
                 }
             </div>
             }
         </div>
 
         <a class="lp-cta" [routerLink]="['/', currentLocale, 'app', 'survey']" (click)="toggleTicker()">
-            <mat-icon>bolt</mat-icon>Start earning now
+            <mat-icon>bolt</mat-icon>{{ 'app.live.startEarning' | translate }}
         </a>
     </div>
     }
@@ -65,18 +65,18 @@
     <button type="button" class="lp-toast" (click)="toggleTicker()">
         <span class="av sm" [class.cash]="toast.kind === 'cashout'">{{ flag(toast.countryCode) || toast.name.charAt(0) }}</span>
         <span><strong>{{ toast.name }}</strong>
-            {{ toast.kind === 'cashout' ? 'cashed out' : 'earned' }}
-            <b>@if (toast.kind === 'cashout') { {{ toast.amountUsd | currency:'USD':'symbol':'1.0-2' }} } @else { +{{ toast.points | number:'1.0-0' }} pts }</b>
+            {{ (toast.kind === 'cashout' ? 'app.live.cashedOut' : 'app.live.earned') | translate }}
+            <b>@if (toast.kind === 'cashout') { {{ toast.amountUsd | currency:'USD':'symbol':'1.0-2' }} } @else { +{{ toast.points | number:'1.0-0' }} {{ 'app.common.pts' | translate }} }</b>
         </span>
     </button>
     }
 
     <button type="button" class="lp-fab" (click)="toggleTicker()" [class.active]="isExpanded" [attr.aria-expanded]="isExpanded">
         @if (isExpanded) {
-        <mat-icon>close</mat-icon><span>Hide</span>
+        <mat-icon>close</mat-icon><span>{{ 'app.live.hide' | translate }}</span>
         } @else {
-        <span class="dot"></span><span>Live payouts</span>
-        @if (feed?.earnersToday) { <b class="count" title="Members earning today">{{ feed!.earnersToday }}</b> }
+        <span class="dot"></span><span>{{ 'app.live.title' | translate }}</span>
+        @if (feed?.earnersToday) { <b class="count" [title]="'app.live.membersToday' | translate">{{ feed!.earnersToday }}</b> }
         }
     </button>
 </div>

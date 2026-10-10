@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { HelpService } from "../help.service";
 import { MessageService } from "../../../layout/message/message.service";
 import { MessageVM } from "../../../layout/message/message.vm";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-ask-question',
@@ -16,7 +17,8 @@ export class AskQuestionComponent implements OnInit {
     questionForm: FormGroup;
     selectedFile: File | null = null;
 
-    constructor(private fb: FormBuilder, private helpService: HelpService, private message: MessageService) {
+    constructor(private fb: FormBuilder, private helpService: HelpService, private message: MessageService,
+        private translate: TranslateService) {
         this.questionForm = this.fb.group({
             email: ['', [Validators.required, Validators.email]],
             message: ['', Validators.required],
@@ -33,7 +35,7 @@ export class AskQuestionComponent implements OnInit {
             if (file.size <= 1024 * 1024) {
                 this.selectedFile = file;
             } else {
-                alert('File must be smaller than 1MB');
+                alert(this.translate.instant('app.help.fileTooLarge'));
             }
         }
     }

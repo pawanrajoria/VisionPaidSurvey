@@ -36,6 +36,8 @@
                 "description": "Ontgrendel vroege toegang &...",
                 "range": "31+"
             }
-        }
+        },
+        "getApp": "Download de ProfitPiller-app",
+        "scanToDownload": "SCAN OM TE DOWNLOADEN"
     }
 }

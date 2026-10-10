@@ -1,8 +1,10 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  template: `<p>Signing in...</p>`
+  imports: [TranslateModule],
+  template: `<p>{{ 'app.common.signingIn' | translate }}</p>`
 })
 export class AuthCallbackComponent implements OnInit {
 

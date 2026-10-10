@@ -5,6 +5,7 @@ import { questionTypeComponents, QuestionTypeConstant } from '../../../../const'
 import { ZipService } from '../../../../zip.service';
 import { SharedModule } from '../../../../../../shared.module';
 import { SessionStorageService } from '../../../../../../sessionstorage.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'question-builder',
@@ -18,7 +19,8 @@ export class QuestionBuilderComponent implements OnInit, OnChanges {
   questionRoot!: QuestionRootDirective;
 
   constructor(private zipService: ZipService, private componentFactoryResolver: ComponentFactoryResolver,
-    private sessionStorageService: SessionStorageService
+    private sessionStorageService: SessionStorageService,
+    private translate: TranslateService
   ) {
   }
 
@@ -88,7 +90,7 @@ export class QuestionBuilderComponent implements OnInit, OnChanges {
         return filterData.ErrorMessage;
     }
 
-    return "Please provide valid zip code.";
+    return this.translate.instant('app.survey.invalidZip');
   }
 
   ngOnChanges(changes: SimpleChanges): void {

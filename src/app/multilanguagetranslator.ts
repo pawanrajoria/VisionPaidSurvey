@@ -18,8 +18,24 @@ export class MultiTranslateClientHttpLoader implements TranslateLoader {
 
     return forkJoin(requests).pipe(
       map((response: any[]) => {
-        return response.reduce((acc, current) => ({ ...acc, ...current }), {});
+        return response.reduce((acc, current) => deepMerge(acc, current), {});
       }),
     );
   }
+}
+
+/**
+ * Several files share top-level sections (e.g. "common"); a shallow spread let the last file
+ * replace the whole section, so keys from earlier files went missing. Merge nested objects instead.
+ */
+export function deepMerge(target: any, source: any): any {
+  const out: any = { ...target };
+  for (const key of Object.keys(source ?? {})) {
+    const value = source[key];
+    out[key] = value && typeof value === 'object' && !Array.isArray(value)
+      && out[key] && typeof out[key] === 'object' && !Array.isArray(out[key])
+      ? deepMerge(out[key], value)
+      : value;
+  }
+  return out;
 }

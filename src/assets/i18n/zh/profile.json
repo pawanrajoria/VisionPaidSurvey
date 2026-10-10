@@ -47,7 +47,26 @@
             "Household & Family": "家庭",
             "Lifestyle & Health": "生活方式与健康",
             "Media & Technology": "媒体与技术",
-            "Travel & Leisure": "旅游与休闲"
-        }
+            "Travel & Leisure": "旅游与休闲",
+            "set_password": "设置密码"
+        },
+        "profile_photo": "头像",
+        "years_old": "{{age}} 岁",
+        "date": "日期",
+        "balance": "余额",
+        "screenout": "甄别淘汰",
+        "tab_rewards": "奖励",
+        "tab_transactions": "交易",
+        "tab_pending": "待处理",
+        "redeem_by": "兑换方式",
+        "approved_on": "批准日期",
+        "search_options": "搜索选项…",
+        "your_answer": "你的回答",
+        "type_here": "在此输入…",
+        "submit_answer": "提交答案",
+        "gender_1": "男",
+        "gender_2": "女",
+        "gender_0": "其他",
+        "profile_updated": "资料更新成功"
     }
 }

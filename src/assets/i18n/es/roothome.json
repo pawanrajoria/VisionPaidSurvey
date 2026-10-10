@@ -100,5 +100,20 @@
   },
   "common": {
     "learnMore": "Aprender más"
+  },
+  "seoLanding": {
+    "howToEarn": "Cómo ganar dinero",
+    "paymentMethods": "Métodos de pago",
+    "topLocations": "Ubicaciones principales",
+    "faqs": "Preguntas frecuentes",
+    "download": "Descarga la app y empieza a ganar"
+  },
+  "imageAlt": {
+    "more": "Y muchas más"
+  },
+  "rewardCategory": {
+    "cash": "Efectivo",
+    "giftCards": "Tarjetas regalo",
+    "donations": "Donaciones"
   }
 }

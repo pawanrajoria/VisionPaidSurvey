@@ -36,6 +36,8 @@
                 "description": "解锁抢先体验 &...",
                 "range": "31+"
             }
-        }
+        },
+        "getApp": "获取 ProfitPiller 应用",
+        "scanToDownload": "扫码下载"
     }
 }

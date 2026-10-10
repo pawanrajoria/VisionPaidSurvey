@@ -1,5 +1,6 @@
 import { HttpInterceptorFn, HttpRequest, HttpResponse } from '@angular/common/http';
-import { inject } from '@angular/core';
+import { inject, Injector } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { catchError, finalize, switchMap, tap } from 'rxjs/operators';
 import { from, throwError } from 'rxjs';
 import { AuthService } from './auth.service';
@@ -45,6 +46,9 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const accountService = inject(AccountService);
   const messageService = inject(MessageService);
   const router = inject(Router);
+  const injector = inject(Injector);
+  // Resolved only when an error toast is shown, so translation loading never depends on this interceptor.
+  const t = (key: string) => injector.get(TranslateService).instant(key);
 
   const skipRequest = shouldSkipRequest(req);
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -95,7 +99,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
 
           if (error.status === 401) {
             messageService.showMessage(new MessageVM(
-              error.status === 401 ? "Unauthorized! Redirecting to login..." : "Something went wrong.",
+              error.status === 401 ? t('app.errors.unauthorized') : t('app.errors.generic'),
               "error"
             ));
             authService.logOut();
@@ -106,7 +110,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
           } else if (error.error && typeof error.error === 'object' && 'message' in error.error) {
             messageService.showMessage(new MessageVM(error.error.message, "error"));
           } else {
-            messageService.showMessage(new MessageVM("Some error occurred! Please try again later.", "error"));
+            messageService.showMessage(new MessageVM(t('app.errors.tryLater'), "error"));
           }
 
           return throwError(() => error);

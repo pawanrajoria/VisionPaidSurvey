@@ -14,7 +14,15 @@
       "submit": "Absenden",
       "close": "Schließen",
       "day_one": "{{count}} Tag",
-      "day_other": "{{count}} Tage"
+      "day_other": "{{count}} Tage",
+      "redirecting": "Weiterleitung…",
+      "done": "Erledigt",
+      "scrollLeft": "Nach links scrollen",
+      "scrollRight": "Nach rechts scrollen",
+      "search": "Suchen",
+      "signingIn": "Anmeldung läuft…",
+      "redirectingStore": "Weiterleitung zum Store…",
+      "ok": "OK"
     },
     "weekday": {
       "Mon": "Mo",
@@ -65,7 +73,12 @@
       "checkInvite": "Einen Freund einladen",
       "checkCashout": "Erste Prämie auszahlen",
       "balance": "Guthaben:",
-      "claimReward": "Prämie einlösen"
+      "claimReward": "Prämie einlösen",
+      "tagTopRated": "Top bewertet",
+      "tagQuickEasy": "Schnell & einfach",
+      "tagHighPaying": "Gut bezahlt",
+      "tagNew": "Neu",
+      "tagHot": "Heiß"
     },
     "streak": {
       "title": "Serien-Fortschritt",
@@ -118,7 +131,8 @@
       "bronzePerk": "Sie sind auf dem Weg – verdienen Sie weiter, um Silber zu erreichen.",
       "silverPerk": "Genießen Sie jede Woche einen besonderen Bonustag",
       "goldPerk": "Erhalten Sie Zugang zu exklusiven Prämienrabatten",
-      "diamondPerk": "Früher Zugang zu neuen Funktionen und Premium-Angeboten"
+      "diamondPerk": "Früher Zugang zu neuen Funktionen und Premium-Angeboten",
+      "lvl": "Lvl {{level}}"
     },
     "leaderboard": {
       "loading": "Bestenliste wird geladen…",
@@ -230,7 +244,9 @@
       "screener": {
         "title": "Profil-Umfrage",
         "sub": "Beantworten Sie ein paar kurze Fragen, um passende Umfragen zu erhalten"
-      }
+      },
+      "browserNotSupported": "Browser wird nicht unterstützt",
+      "invalidZip": "Bitte gib eine gültige Postleitzahl ein."
     },
     "status": {
       "completeTitle": "Umfrage erfolgreich abgeschlossen!",
@@ -271,7 +287,26 @@
     "cashout": {
       "firstNote": "Ihre erste Auszahlung muss mindestens $ {{usd}} USD ({{points}} Punkte) betragen.",
       "firstNoteLong": "Ihre erste Auszahlung muss mindestens $ {{usd}} USD ({{points}} Punkte) betragen. Danach sind auch kleinere Beträge möglich.",
-      "minNote": "Die Mindestauszahlung beträgt $ {{usd}} USD ({{points}} Punkte)."
+      "minNote": "Die Mindestauszahlung beträgt $ {{usd}} USD ({{points}} Punkte).",
+      "title": "Auszahlen",
+      "available": "Verfügbares Guthaben",
+      "points": "Punkte",
+      "toFirst": "Noch {{points}} Punkte bis zu deiner ersten Prämie",
+      "canCashOut": "Du kannst jetzt auszahlen",
+      "rewardType": "Prämienart",
+      "all": "Alle",
+      "searchPlaceholder": "PayPal, Amazon, UPI suchen…",
+      "searchAria": "Prämien suchen",
+      "availableBadge": "Verfügbar",
+      "fromPts": "ab {{points}} Pkt.",
+      "none": "Derzeit sind keine Prämien verfügbar.",
+      "chooseAmount": "Betrag wählen",
+      "needMore": "Noch {{points}} Punkte nötig",
+      "youGet": "Du erhältst <strong>{{value}}</strong> für <strong>{{points}}</strong> Punkte",
+      "pickAmount": "Wähle einen Betrag, für den du genug Punkte hast.",
+      "claim": "Prämie einlösen",
+      "chooseMethod": "Wähle eine Auszahlungsmethode, um die Beträge zu sehen.",
+      "requires": "{{name}} erfordert {{points}} Pkt. Du hast {{balance}}."
     },
     "settings": {
       "timeZone": "Zeitzone ändern",
@@ -286,7 +321,9 @@
       "noPassword": "Sie haben sich mit einem Social-Media-Konto angemeldet, daher gibt es kein aktuelles Passwort. Legen Sie unten eines fest, um sich auch mit E-Mail und Passwort anzumelden.",
       "deleteWarning": "Dadurch wird Ihr Konto dauerhaft geschlossen. Ihr Punkteguthaben geht verloren.",
       "passwordShort": "Das neue Passwort muss mindestens 6 Zeichen lang sein.",
-      "passwordMismatch": "Neues Passwort und Bestätigung stimmen nicht überein."
+      "passwordMismatch": "Neues Passwort und Bestätigung stimmen nicht überein.",
+      "timeZoneError": "Die Zeitzone konnte nicht gespeichert werden.",
+      "passwordMismatchConfirm": "Passwort und Passwortbestätigung stimmen nicht überein"
     },
     "refer": {
       "friendsJoined": "Beigetretene Freunde"
@@ -313,13 +350,163 @@
       "failed": "Senden fehlgeschlagen. Bitte versuchen Sie es erneut.",
       "onApp": "Aus der App gesendet",
       "newMessages": "Neue Nachrichten: {{count}}",
-      "level": "Lvl {{level}}"
+      "level": "Lvl {{level}}",
+      "addReaction": "Reaktion hinzufügen",
+      "pickReaction": "Reaktion auswählen",
+      "quickEmoji": "Schnell-Emoji",
+      "emoji": "Emoji"
     },
     "promo": {
       "today": "Top-Angebot des Tages",
       "earn": "{{points}} Punkte verdienen",
       "cta": "Jetzt starten",
       "later": "Vielleicht später"
+    },
+    "offers": {
+      "tabBest": "Passendste Angebote",
+      "tabPoints": "Angebote mit den meisten Punkten",
+      "tabMine": "Meine Angebote",
+      "search": "Angebote suchen",
+      "device": "Gerät",
+      "desktop": "Desktop",
+      "countOne": "{{count}} Angebot",
+      "countOther": "{{count}} Angebote",
+      "countForOne": "{{count}} Angebot für {{device}}",
+      "countForOther": "{{count}} Angebote für {{device}}",
+      "mineEmpty": "Angebote, die du öffnest, werden hier gespeichert, damit du sie später abschließen kannst.",
+      "topPayout": "Top-Auszahlung",
+      "howToEarn": "So verdienst du",
+      "description": "Beschreibung",
+      "requirements": "Voraussetzungen",
+      "confirmationTime": "Bestätigungszeit",
+      "expiresOn": "Läuft ab am",
+      "earnPoints": "{{points}} Punkte verdienen",
+      "startOffer": "Angebot starten",
+      "stepGoal": "Schließe das Angebot wie beschrieben ab",
+      "stepOpen": "Tippe auf die Schaltfläche unten, um das Angebot zu öffnen",
+      "stepConfirmAfter": "Die Punkte werden deinem Guthaben nach der Bestätigung gutgeschrieben ({{time}})",
+      "stepConfirm": "Die Punkte werden deinem Guthaben gutgeschrieben, sobald der Partner es bestätigt",
+      "qrScan": "Scanne den QR-Code mit deinem Handy.",
+      "availableDevices": "Verfügbare Geräte",
+      "qrCopyHint": "Alternativ kannst du die URL in den Browser deines Handys kopieren",
+      "copy": "Kopieren"
+    },
+    "live": {
+      "badge": "LIVE",
+      "title": "Live-Auszahlungen",
+      "subtitle": "Echte Einnahmen von Profitpiller-Mitgliedern",
+      "earningToday": "verdienen heute",
+      "ptsToday": "heute verdiente Punkte",
+      "cashedWeek": "diese Woche ausgezahlt",
+      "cashedOut": "hat ausgezahlt",
+      "earned": "hat verdient",
+      "empty": "In den letzten Tagen gab es noch keine Auszahlungen.",
+      "emptyCta": "Schließe eine Umfrage ab und sei der Erste auf der Liste!",
+      "startEarning": "Jetzt verdienen",
+      "hide": "Ausblenden",
+      "membersToday": "Mitglieder, die heute verdienen",
+      "justNow": "gerade eben",
+      "minAgo": "vor {{count}} Min.",
+      "hoursAgo": "vor {{count}} Std.",
+      "yesterday": "gestern",
+      "daysAgo": "vor {{count}} Tagen"
+    },
+    "nav": {
+      "changeLanguage": "Sprache ändern",
+      "closeMenu": "Menü schließen",
+      "openMenu": "Menü öffnen",
+      "accountMenu": "Kontomenü",
+      "adminConsole": "Admin-Konsole"
+    },
+    "notifications": {
+      "title": "Benachrichtigungen",
+      "clearAll": "Alle löschen",
+      "none": "Keine neuen Benachrichtigungen",
+      "single": "Benachrichtigung",
+      "dismiss": "Benachrichtigung schließen"
+    },
+    "footer": {
+      "designedBy": "Design & Entwicklung von"
+    },
+    "notify": {
+      "on": "Benachrichtigungen sind aktiviert",
+      "compact": "Updates & Angebotshinweise erhalten",
+      "aria": "Angebotsbenachrichtigungen",
+      "notNow": "Nicht jetzt",
+      "enableAria": "Benachrichtigungen für Updates und neue Angebote aktivieren",
+      "title": "Erhalte aktuelle Updates & Benachrichtigungen",
+      "body": "Klicke auf das Bild oder die Schaltfläche, um Benachrichtigungen in diesem Browser zu aktivieren – wir sagen dir sofort Bescheid, wenn es neue Angebote, Boni und Auszahlungen gibt.",
+      "blocked": "Benachrichtigungen sind für diese Website blockiert. Erlaube sie über das Schloss-Symbol in der Adressleiste deines Browsers.",
+      "busy": "Einen Moment…",
+      "enable": "Benachrichtigungen aktivieren"
+    },
+    "lang": {
+      "title": "Land und Sprache auswählen",
+      "current": "Aktuelle Sprache:",
+      "select": "Sprache auswählen",
+      "selectAria": "Wähle eine Sprache",
+      "apply": "Auswählen",
+      "pleaseSelect": "Bitte wähle eine Sprache"
+    },
+    "redemption": {
+      "title": "Einlösedetails",
+      "paypalTitle": "PayPal-Verifizierung:",
+      "hours48": "48 Stunden",
+      "paypal1": "Stelle sicher, dass deine PayPal-E-Mail verifiziert ist.",
+      "paypal2": "Erste Einlösungen erfordern eine Sicherheitsprüfung.",
+      "upiTitle": "UPI-Überweisung:",
+      "within24": "Innerhalb von 24 Stunden",
+      "upi1": "Stelle sicher, dass UPI mit einem aktiven Bankkonto verknüpft ist.",
+      "upi2": "Gib die richtige VPA ein (z. B. name@upi).",
+      "giftTitle": "Zustellung der E-Geschenkkarte:",
+      "hours24to48": "24 – 48 Stunden",
+      "gift1": "Der Gutscheincode wird direkt an deine registrierte E-Mail gesendet.",
+      "gift2": "Nicht erstattungsfähig und nicht übertragbar.",
+      "upiLabel": "UPI-ID (VPA)",
+      "paypalEmail": "PayPal-E-Mail",
+      "recipientEmail": "E-Mail des Empfängers",
+      "emailNote": "Diese E-Mail-Adresse kann nicht geändert werden. Wenn du deine E-Mail-Adresse aktualisieren musst, wende dich bitte an das Support-Team oder erstelle ein Ticket im Bereich Hilfe & Support.",
+      "confirm": "Einlösung bestätigen",
+      "enterUpi": "Bitte gib deine UPI-ID ein",
+      "enterEmail": "Bitte gib deine E-Mail-Adresse ein"
+    },
+    "help": {
+      "fileTooLarge": "Die Datei muss kleiner als 1 MB sein"
+    },
+    "notFound": {
+      "title": "Seite nicht gefunden",
+      "message": "Hoppla! Die gesuchte Seite existiert nicht oder wurde verschoben.",
+      "home": "Zur Startseite",
+      "back": "Zurück",
+      "debugPath": "Debug-Pfad:"
+    },
+    "premium": {
+      "title": "Premium-Zugang",
+      "intro": "Halte dein Konto in guter Qualität, um exklusive Umfragen und gut zahlende Kunden freizuschalten.",
+      "item1": "Verdiene erfolgreich mindestens <strong>$5</strong>",
+      "item2": "Schließe mindestens <strong>5 Umfragen</strong> ab",
+      "item3": "Halte eine <strong>niedrige Ablehnungsquote</strong>",
+      "item4": "Erhalte <strong>eine erfolgreiche Auszahlung</strong>",
+      "item5": "Halte dein Konto <strong>aktiv & echt</strong>",
+      "gotIt": "Verstanden ({{seconds}} s)"
+    },
+    "errors": {
+      "unauthorized": "Nicht autorisiert! Weiterleitung zur Anmeldung…",
+      "generic": "Etwas ist schiefgelaufen.",
+      "tryLater": "Ein Fehler ist aufgetreten! Bitte versuche es später erneut.",
+      "accountExists": "Ein Konto mit dieser E-Mail existiert bereits. Bitte melde dich so an wie zuvor (Google oder E-Mail und Passwort).",
+      "providerUnavailable": "Die Anmeldung mit {{provider}} ist noch nicht verfügbar. Bitte nutze Google oder deine E-Mail.",
+      "popupBlocked": "Dein Browser hat das Anmeldefenster blockiert. Bitte erlaube Pop-ups und versuche es erneut.",
+      "providerFailed": "Die Anmeldung mit {{provider}} ist fehlgeschlagen. Bitte versuche es erneut."
+    },
+    "contactForm": {
+      "thanks": "Danke für deine Nachricht! Wir melden uns bald bei dir.",
+      "required": "Bitte fülle alle Pflichtfelder aus."
+    },
+    "toast": {
+      "success": "ERFOLG",
+      "error": "FEHLER",
+      "warning": "WARNUNG"
     }
   }
 }

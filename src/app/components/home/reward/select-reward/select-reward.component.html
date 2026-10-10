@@ -3,7 +3,7 @@
     <div class="reward-container">
         <div class="d-flex align-items-center justify-content-between m-b-16">
             <h3 class="text-center"> {{ 'Redeem Points' | translate }}</h3>
-            <button mat-icon-button mat-dialog-close aria-label="Close">
+            <button mat-icon-button mat-dialog-close [attr.aria-label]="'app.common.close' | translate">
                 <i-tabler name="x" class="x icon-20"></i-tabler>
             </button>
         </div>
@@ -30,7 +30,7 @@
                                     <div>
                                         <div class="reward-title">{{ card.name }}</div>
                                         <div class="reward-subtitle"> {{ 'From' | translate }} {{ card.minPoints }}
-                                            points</div>
+                                            {{ 'app.cashout.points' | translate }}</div>
                                     </div>
                                 </div>
                             </mat-panel-title>
@@ -45,7 +45,7 @@
                                     (click)="selectChilOption(option, $event,card,1)">
                                     <div class="text-lg font-semibold">{{ option.amount | currency: card.currencyCode :
                                         'symbol' }}</div>
-                                    <div class="text-sm text-gray-500">{{ option.points }} points</div>
+                                    <div class="text-sm text-gray-500">{{ option.points }} {{ 'app.cashout.points' | translate }}</div>
                                     <mat-icon class="lock-icon">lock</mat-icon>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
         <div class="section m-y-1rem">
             <div class="section-header">
                 <mat-icon>card_giftcard</mat-icon>
-                <span>Gift Cards ({{ filteredGiftCards.length }})</span>
+                <span>{{ 'Gift Cards' | translate }} ({{ filteredGiftCards.length }})</span>
             </div>
             @for (card of filteredGiftCards; track card.productId) {
             <div class="section-content">
@@ -72,7 +72,7 @@
                                     <div>
                                         <div class="reward-title">{{ card.name }}</div>
                                         <div class="reward-subtitle"> {{ 'From' | translate }} {{ card.minPoints }}
-                                            points</div>
+                                            {{ 'app.cashout.points' | translate }}</div>
                                     </div>
                                 </div>
                             </mat-panel-title>
@@ -87,7 +87,7 @@
                                     (click)="selectChilOption(option, $event,card,2)">
                                     <div class="text-lg font-semibold">{{ option.amount | currency: card.currencyCode :
                                         'symbol' }}</div>
-                                    <div class="text-sm text-gray-500">{{ option.points }} points</div>
+                                    <div class="text-sm text-gray-500">{{ option.points }} {{ 'app.cashout.points' | translate }}</div>
                                     <mat-icon class="lock-icon">lock</mat-icon>
                                 </div>
                             </div>
@@ -108,6 +108,6 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end" class="dialog-footer">
     <button mat-raised-button class="footer-button" *ngIf="selectedChildOptionCard" (click)="onSelectReward()">
-        Select
+        {{ 'app.lang.apply' | translate }}
     </button>
 </mat-dialog-actions>

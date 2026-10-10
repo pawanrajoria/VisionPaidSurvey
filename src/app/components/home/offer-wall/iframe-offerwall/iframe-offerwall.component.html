@@ -1,6 +1,6 @@
 <div mat-dialog-title class="dialog-title">
     <h2 class="f-w-900">{{ data.partner.name }}</h2>
-    <button mat-icon-button aria-label="close dialog" mat-dialog-close (click)="onClose()">
+    <button mat-icon-button [attr.aria-label]="'app.common.close' | translate" mat-dialog-close (click)="onClose()">
         <mat-icon>close</mat-icon>
     </button>
 </div>

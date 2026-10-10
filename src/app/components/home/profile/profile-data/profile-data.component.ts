@@ -8,6 +8,7 @@ import { SearchQuestionPipe } from "../../../userflow/search.pipe";
 import { Router } from "@angular/router";
 import { MessageService } from "../../../layout/message/message.service";
 import { MessageVM } from "../../../layout/message/message.vm";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-profile-data',
@@ -26,7 +27,8 @@ export class ProfileDataComponent extends BaseComponent implements OnInit {
     data: IProfileQuestionDtos[] = [];
 
     constructor(private profileService: ProfileService, private router: Router,
-        private messageService: MessageService
+        private messageService: MessageService,
+        private translate: TranslateService
     ) {
         super();
     }
@@ -90,7 +92,7 @@ export class ProfileDataComponent extends BaseComponent implements OnInit {
 
         const response = await this.profileService.saveProfileQualification(request);
         if (!!response) {
-            this.messageService.showMessage(new MessageVM("Profile updated successfully", "success"));
+            this.messageService.showMessage(new MessageVM(this.translate.instant('account.profile_updated'), "success"));
             await this.getQualifications();
         }
 

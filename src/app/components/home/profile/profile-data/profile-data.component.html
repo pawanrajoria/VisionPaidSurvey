@@ -4,7 +4,7 @@
         <div class="bg-primary p-x-24 p-y-10 text-white">
             <mat-card-title class="d-flex align-items-center gap-10">
                 <!-- A11y: was an <a> with no href/click - not a real link, and had no accessible name. Converted to a button; TODO verify this back-chevron is supposed to be wired to an action (looks inert either way). -->
-            <button type="button" mat-icon-button class="text-white d-flex justify-content-center" aria-label="Back">
+            <button type="button" mat-icon-button class="text-white d-flex justify-content-center" [attr.aria-label]="'app.common.back' | translate">
                     <i-tabler name="chevron-left" class="icon-18 d-flex">
                     </i-tabler>
                 </button>
@@ -43,7 +43,7 @@
                 <div class="search-wrapper" *ngIf="activeQuestion?.typeId === 2 || activeQuestion?.typeId === 3">
                     <mat-form-field appearance="outline" class="full-width custom-search">
                         <mat-icon matPrefix>search</mat-icon>
-                        <input matInput placeholder="Search options..." [(ngModel)]="searchText" autocomplete="off">
+                        <input matInput [placeholder]="'account.search_options' | translate" [(ngModel)]="searchText" autocomplete="off">
                     </mat-form-field>
                 </div>
 
@@ -74,8 +74,8 @@
                     <div *ngIf="activeQuestion?.typeId === 10 " class="p-t-10">
                         @for (item of filteredAnswers; track $index) {
                         <mat-form-field appearance="outline" class="full-width emerald-field">
-                            <mat-label>Your Answer</mat-label>
-                            <input matInput  [(ngModel)]="item.answerText" placeholder="Type here...">
+                            <mat-label>{{ 'account.your_answer' | translate }}</mat-label>
+                            <input matInput  [(ngModel)]="item.answerText" [placeholder]="'account.type_here' | translate">
                         </mat-form-field>
                         }
                     </div>
@@ -83,8 +83,8 @@
                     <div *ngIf="activeQuestion?.typeId === 8" class="p-t-10">
                         @for (item of filteredAnswers; track $index) {
                         <mat-form-field appearance="outline" class="full-width emerald-field">
-                            <mat-label>Your Answer</mat-label>
-                            <input matInput type="number" [(ngModel)]="item.answerText" placeholder="Type here...">
+                            <mat-label>{{ 'account.your_answer' | translate }}</mat-label>
+                            <input matInput type="number" [(ngModel)]="item.answerText" [placeholder]="'account.type_here' | translate">
                         </mat-form-field>
                         }
                     </div>
@@ -93,7 +93,7 @@
                 <div class="action-footer">
                     <button mat-flat-button class="btn-submit emerald-gradient" [disabled]="isSubmitDisabled()"
                         (click)="submitAnswer()">
-                        SUBMIT ANSWER
+                        {{ 'account.submit_answer' | translate }}
                     </button>
                 </div>
             </mat-card>

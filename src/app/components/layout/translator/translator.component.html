@@ -1,9 +1,9 @@
 <mat-dialog-content class="translate-sec">
     <div class="header">
         <img loading="lazy" src="/assets/images/icon/world-map.png" width="256" height="142">
-        <h2>Select Country and Language</h2>
+        <h2>{{ 'app.lang.title' | translate }}</h2>
         @if (currentLanguageName) {
-        <p class="current-lang">Current language: <strong>{{ currentLanguageName }}</strong></p>
+        <p class="current-lang">{{ 'app.lang.current' | translate }} <strong>{{ currentLanguageName }}</strong></p>
         }
     </div>
     <div class="translate-box m-t-24">
@@ -21,8 +21,8 @@
                     </div>
                 </mat-expansion-panel-header>
                 <div class="accordion-collapse">
-                    <p>Select Language</p>
-                    <mat-radio-group class="form-radio" aria-label="Select a language"
+                    <p>{{ 'app.lang.select' | translate }}</p>
+                    <mat-radio-group class="form-radio" [attr.aria-label]="'app.lang.selectAria' | translate"
                         [value]="country.id === selectedCountryId ? selectedLanguageId : null">
                         <mat-radio-button *ngFor="let lang of country.languages" [value]="lang.id"
                             (change)="onLanguageSelect(lang.code, lang.id, country.id)">
@@ -38,7 +38,7 @@
 
 <mat-dialog-actions align="end" class="dialog-footer">
     <button mat-raised-button class="btn-theme" (click)="changeLanguage()">
-        Select
+        {{ 'app.lang.apply' | translate }}
     </button>
 </mat-dialog-actions>
 

@@ -26,6 +26,7 @@ import { BaseComponent } from '../../base.component';
 import { NotificationService } from '../../notification.service';
 import { MessageService } from './message/message.service';
 import { MessageVM } from './message/message.vm';
+import { TranslateService } from '@ngx-translate/core';
 import { LivepayoutComponent } from './live-payout/live-payout.component';
 import { GtmService } from '../../gtm.service';
 import { EngagementService } from '../home/engagement/engagement.service';
@@ -79,6 +80,7 @@ export class LayoutComponent extends BaseComponent implements AfterViewInit, OnD
         private accountService: AccountService,
         private notificationService: NotificationService,
         private messageService: MessageService,
+        private translate: TranslateService,
         private ngZone: NgZone,
         private gtm: GtmService,
         private engagementService: EngagementService,
@@ -151,7 +153,7 @@ export class LayoutComponent extends BaseComponent implements AfterViewInit, OnD
                 if (msg) {
                     this.ngZone.run(() => {
                         // FCM payloads are usually nested in 'notification'
-                        const title = msg.notification?.title || msg.title || 'Notification';
+                        const title = msg.notification?.title || msg.title || this.translate.instant('app.notifications.single');
                         const body = msg.notification?.body || msg.body || '';
 
                         this.activeNotification = { title, body };

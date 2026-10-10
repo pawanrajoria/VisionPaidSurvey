@@ -36,6 +36,8 @@
         "description": "Unlock Early Access & Premium Perks",
         "range": "31+"
       }
-    }
+    },
+    "getApp": "Get ProfitPiller App",
+    "scanToDownload": "SCAN TO DOWNLOAD"
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { RespondentService } from '../respondent.service';
 import { RespondentEndSurveyResponseVM, RespondentEndSurveyVM } from '../respondent.vm';
 import { HelperService } from '../helper.service';
@@ -9,6 +10,7 @@ import { BaseComponent } from '../../../base.component';
   selector: 'app-complete-survey',
   templateUrl: './complete-survey.component.html',
   styleUrls: ['./complete-survey.component.scss'],
+  imports: [TranslateModule],
 })
 export class CompleteSurveyComponent extends BaseComponent {
   classname: string = "";

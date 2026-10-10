@@ -1,8 +1,8 @@
 <div [formGroup]="form">
   <mat-form-field appearance="fill" style="width:100%" *ngIf="!!field.qAnswers && field.qAnswers.length>10"
     subscriptSizing="dynamic">
-    <mat-label>Search</mat-label>
-    <input matInput [formControlName]="field.searchingVariable" placeholder="Search" />
+    <mat-label>{{ 'app.common.search' | translate }}</mat-label>
+    <input matInput [formControlName]="field.searchingVariable" [placeholder]="'app.common.search' | translate" />
     <mat-icon class='search-icon' color="primary" matPrefix>search</mat-icon>
   </mat-form-field>
   <div class="fixed-height-container">

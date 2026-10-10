@@ -2,37 +2,37 @@
     <div class="premium-content">
         <div class="header-section">
             <div class="icon-badge">⭐</div>
-            <h2>Premium Access</h2>
-            <p>Maintain a high-quality account to unlock exclusive surveys and high-paying clients.</p>
+            <h2>{{ 'app.premium.title' | translate }}</h2>
+            <p>{{ 'app.premium.intro' | translate }}</p>
         </div>
 
         <div class="checklist">
             <div class="check-item">
                 <span class="dot"></span>
-                <p>Earn at least <strong>$5</strong> successfully</p>
+                <p [innerHTML]="'app.premium.item1' | translate"></p>
             </div>
             <div class="check-item">
                 <span class="dot"></span>
-                <p>Complete at least <strong>5 surveys</strong></p>
+                <p [innerHTML]="'app.premium.item2' | translate"></p>
             </div>
             <div class="check-item">
                 <span class="dot"></span>
-                <p>Maintain a <strong>low rejection rate</strong></p>
+                <p [innerHTML]="'app.premium.item3' | translate"></p>
             </div>
             <div class="check-item">
                 <span class="dot"></span>
-                <p>Receive <strong>one successful payout</strong></p>
+                <p [innerHTML]="'app.premium.item4' | translate"></p>
             </div>
             <div class="check-item">
                 <span class="dot"></span>
-                <p>Keep account <strong>active & genuine</strong></p>
+                <p [innerHTML]="'app.premium.item5' | translate"></p>
             </div>
         </div>
     </div>
 
     <div class="footer-section">
         <button class="confirm-btn" (click)="close()">
-            Got It ({{countdown}}s)
+            {{ 'app.premium.gotIt' | translate:{ seconds: countdown } }}
         </button>
     </div>
 </div>

@@ -26,7 +26,7 @@ export class MultiTranslateServerLoader implements TranslateLoader {
         // Debugging: If this fails, this log will show up in Firebase Console
         if (fs.existsSync(filePath)) {
           const fileContents = fs.readFileSync(filePath, 'utf8');
-          Object.assign(translations, JSON.parse(fileContents));
+          mergeInto(translations, JSON.parse(fileContents));
         } else {
         }
       } catch (e) {
@@ -34,5 +34,18 @@ export class MultiTranslateServerLoader implements TranslateLoader {
     });
 
     return of(translations);
+  }
+}
+
+/** Same as the browser loader: files share sections such as "common", so merge nested objects. */
+function mergeInto(target: any, source: any): void {
+  for (const key of Object.keys(source ?? {})) {
+    const value = source[key];
+    if (value && typeof value === 'object' && !Array.isArray(value)
+      && target[key] && typeof target[key] === 'object' && !Array.isArray(target[key])) {
+      mergeInto(target[key], value);
+    } else {
+      target[key] = value;
+    }
   }
 }

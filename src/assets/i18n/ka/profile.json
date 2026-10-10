@@ -47,7 +47,26 @@
             "Household & Family": "საოჯახო მეურნეობა და ოჯახი",
             "Lifestyle & Health": "ცხოვრების წესი და ჯანმრთელობა",
             "Media & Technology": "მედია და ტექნოლოგია",
-            "Travel & Leisure": "მოგზაურობა და დასვენება"
-        }
+            "Travel & Leisure": "მოგზაურობა და დასვენება",
+            "set_password": "პაროლის დაყენება"
+        },
+        "profile_photo": "პროფილის ფოტო",
+        "years_old": "{{age}} წლის",
+        "date": "თარიღი",
+        "balance": "ბალანსი",
+        "screenout": "გაცრა",
+        "tab_rewards": "ჯილდოები",
+        "tab_transactions": "ტრანზაქციები",
+        "tab_pending": "მოლოდინში",
+        "redeem_by": "გადაცვლის მეთოდი",
+        "approved_on": "დამტკიცდა",
+        "search_options": "ვარიანტების ძიება...",
+        "your_answer": "თქვენი პასუხი",
+        "type_here": "აკრიფეთ აქ...",
+        "submit_answer": "პასუხის გაგზავნა",
+        "gender_1": "მამრობითი",
+        "gender_2": "მდედრობითი",
+        "gender_0": "სხვა",
+        "profile_updated": "პროფილი წარმატებით განახლდა"
     }
 }

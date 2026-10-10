@@ -100,5 +100,20 @@
   },
   "common": {
     "learnMore": "Learn More"
+  },
+  "seoLanding": {
+    "howToEarn": "How to Earn Money",
+    "paymentMethods": "Payment Methods",
+    "topLocations": "Top Locations",
+    "faqs": "FAQs",
+    "download": "Download App & Start Earning"
+  },
+  "imageAlt": {
+    "more": "And many more"
+  },
+  "rewardCategory": {
+    "cash": "Cash",
+    "giftCards": "Gift Cards",
+    "donations": "Donations"
   }
 }

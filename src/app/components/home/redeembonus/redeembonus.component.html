@@ -1,7 +1,7 @@
 <mat-card class="card-bottom cardWithShadow overflow-hidden">
     <div class="bg-primary p-x-24 p-y-10 text-white">
         <mat-card-title class="d-flex align-items-center gap-10">
-            <button type="button" mat-icon-button class="text-white d-flex justify-content-center" aria-label="Back"
+            <button type="button" mat-icon-button class="text-white d-flex justify-content-center" [attr.aria-label]="'app.common.back' | translate"
                 [routerLink]="['/', currentLocale, 'app', 'earn']">
                 <i-tabler name="chevron-left" class="icon-18 d-flex">
                 </i-tabler>

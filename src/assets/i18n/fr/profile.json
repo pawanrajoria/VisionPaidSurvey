@@ -47,7 +47,26 @@
             "Household & Family": "Ménage et Famille",
             "Lifestyle & Health": "Mode de Vie et Santé",
             "Media & Technology": "Médias et Technologie",
-            "Travel & Leisure": "Voyages et Loisirs"
-        }
+            "Travel & Leisure": "Voyages et Loisirs",
+            "set_password": "Définir un mot de passe"
+        },
+        "profile_photo": "Photo de profil",
+        "years_old": "{{age}} ans",
+        "date": "Date",
+        "balance": "Solde",
+        "screenout": "Exclusion",
+        "tab_rewards": "Récompenses",
+        "tab_transactions": "Transactions",
+        "tab_pending": "En attente",
+        "redeem_by": "Échangé via",
+        "approved_on": "Approuvé le",
+        "search_options": "Rechercher des options…",
+        "your_answer": "Votre réponse",
+        "type_here": "Saisissez ici…",
+        "submit_answer": "ENVOYER LA RÉPONSE",
+        "gender_1": "Homme",
+        "gender_2": "Femme",
+        "gender_0": "Autre",
+        "profile_updated": "Profil mis à jour avec succès"
     }
 }

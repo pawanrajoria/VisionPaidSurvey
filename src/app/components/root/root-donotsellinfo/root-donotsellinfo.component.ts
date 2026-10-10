@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { TranslateService } from "@ngx-translate/core";
 import { PublicSharedModule } from "../../../public-shared.module";
 import { MessageService } from "../../layout/message/message.service";
 import { HelpService } from "../../home/help/help.service";
@@ -18,7 +19,8 @@ export class RootDoNotSellInfoComponent implements OnInit {
         message: ''
     };
 
-    constructor(private messageService: MessageService, private helpService: HelpService) {
+    constructor(private messageService: MessageService, private helpService: HelpService,
+        private translate: TranslateService) {
     }
 
 
@@ -34,7 +36,7 @@ export class RootDoNotSellInfoComponent implements OnInit {
 
             const response = await this.helpService.submitDotNotSellInfo(formData)
             if (!!response && response.isSuccess) {
-                this.messageService.showMessage(new MessageVM("Thank you for contacting us! We will get back to you soon.", "success"));
+                this.messageService.showMessage(new MessageVM(this.translate.instant('app.contactForm.thanks'), "success"));
                 this.securityForm = { name: '', email: '', message: '' };
             }
             else {
@@ -43,7 +45,7 @@ export class RootDoNotSellInfoComponent implements OnInit {
 
 
         } else {
-            this.messageService.showMessage(new MessageVM("Please fill in all required fields.", "error"));
+            this.messageService.showMessage(new MessageVM(this.translate.instant('app.contactForm.required'), "error"));
         }
     }
 }

@@ -2,7 +2,7 @@
     <div class="bg-primary p-x-24 p-y-10 text-white">
         <mat-card-title class="d-flex align-items-center gap-10">
             <!-- A11y: was an <a> with no href/click - not a real link, and had no accessible name. Converted to a button; TODO verify this back-chevron is supposed to be wired to an action (looks inert either way). -->
-            <button type="button" mat-icon-button class="text-white d-flex justify-content-center" aria-label="Back">
+            <button type="button" mat-icon-button class="text-white d-flex justify-content-center" [attr.aria-label]="'app.common.back' | translate">
                 <i-tabler name="chevron-left" class="icon-18 d-flex">
                 </i-tabler>
             </button> {{ 'account.headings.reward_transaction' | translate }}</mat-card-title>
@@ -11,16 +11,16 @@
 
 <div class="transaction-tabs">
     <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center" [selectedIndex]="selectedIndex">
-        <mat-tab label="Rewards">
+        <mat-tab [label]="'account.tab_rewards' | translate">
             <div class="transaction-list">
                 <mat-card *ngFor="let txn of pointTransactionInfo?.payoutRequests"
                     [class]="txn.status=='Completed'?'transaction-card green':'transaction-card red'">
                     <div class="transaction-content">
                         <div class="transaction-points">
-                            <div class="points">Points - <strong class="highlight">{{ txn.points }}</strong></div>
-                            <div class="balance">Redeem By - {{ txn.method }}</div>
+                            <div class="points">{{ 'app.common.points' | translate }} - <strong class="highlight">{{ txn.points }}</strong></div>
+                            <div class="balance">{{ 'account.redeem_by' | translate }} - {{ txn.method }}</div>
                             <div class="balance" *ngIf="!!txn.approvedDate">
-                                Approved On - {{ txn.approvedDate | date: 'd MMM yyyy' }}</div>
+                                {{ 'account.approved_on' | translate }} - {{ txn.approvedDate | date: 'd MMM yyyy' }}</div>
                         </div>
 
                         <div class="transaction-status">
@@ -41,14 +41,14 @@
                 </mat-card>
             </div>
         </mat-tab>
-        <mat-tab label="Transactions">
+        <mat-tab [label]="'account.tab_transactions' | translate">
             <div class="transaction-list">
                 <mat-card *ngFor="let txn of pointTransactionInfo?.earnings"
                     [class]="txn.status === 'Completed'?'transaction-card green':'transaction-card'">
                     <div class="transaction-content">
                         <div class="transaction-points">
-                            <div class="points">Points <strong class="highlight">{{ txn.points }}</strong></div>
-                            <div class="balance">Balance {{ txn.balance }}</div>
+                            <div class="points">{{ 'app.common.points' | translate }} <strong class="highlight">{{ txn.points }}</strong></div>
+                            <div class="balance">{{ 'account.balance' | translate }} {{ txn.balance }}</div>
 
                         </div>
 
@@ -59,7 +59,7 @@
                                     class="complete-icon">check_circle</mat-icon>
                                 <mat-icon *ngIf="txn.status !== 'Completed'">sync</mat-icon>
                             </div>
-                            <div class="date">Date {{ txn.earnDate | date: 'd MMM yyyy' }}</div>
+                            <div class="date">{{ 'account.date' | translate }} {{ txn.earnDate | date: 'd MMM yyyy' }}</div>
                         </div>
                     </div>
                 </mat-card>
@@ -69,16 +69,16 @@
                 </mat-card>
             </div>
         </mat-tab>
-        <mat-tab label="Pending">
+        <mat-tab [label]="'account.tab_pending' | translate">
             <div class="transaction-list">
                 <mat-card *ngFor="let txn of pointTransactionInfo?.pendingEarnings"
                     [class]="txn.status=='Completed'?'transaction-card green':'transaction-card'">
                     <div class="transaction-content">
                         <div class="transaction-points">
-                            <div class="points">Points - <strong class="highlight">{{ txn.points }}</strong></div>
-                            <div class="balance">Redeem By - {{ txn.method }}</div>
+                            <div class="points">{{ 'app.common.points' | translate }} - <strong class="highlight">{{ txn.points }}</strong></div>
+                            <div class="balance">{{ 'account.redeem_by' | translate }} - {{ txn.method }}</div>
                             <div class="balance" *ngIf="!!txn.approvedDate">
-                                Approved On - {{ txn.approvedDate | date: 'd MMM yyyy' }}</div>
+                                {{ 'account.approved_on' | translate }} - {{ txn.approvedDate | date: 'd MMM yyyy' }}</div>
                         </div>
 
                         <div class="transaction-status">

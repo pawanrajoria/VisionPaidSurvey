@@ -3,7 +3,7 @@
   </div>
   <video (click)="playVideo()" #videoPlayer style="width: 100%;" (timeupdate)="setProgress($event)" (ended)="vidEnded()" disablePictureInPicture controls controlsList="noplaybackrate nodownload nofullscreen">
     <source [src]="field.src" type="video/mp4" />
-    Browser not supported
+    {{ 'app.survey.browserNotSupported' | translate }}
   </video>
   <button type="button" [class]="isPlaying?'video-player_pause':'video-player_play'" (click)="playVideo()" data-action="click->audio-player#handleTogglePlay">
     <div [class]="isPlaying?'video-player_icon_pause':'video-player_icon_play'"></div>

@@ -6,6 +6,7 @@ import { PayoutMethodEnum } from '../reward.enum';
 import { RewardService } from '../reward.service';
 import { SharedModule } from '../../../../shared.module';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-redemption-details',
@@ -17,6 +18,7 @@ export class RedemptionDetailsComponent {
     
 
     constructor(private messageService: MessageService, private rewardService: RewardService,
+        private translate: TranslateService,
         public dialogRef: MatDialogRef<RedemptionDetailsComponent>,
         @Inject(MAT_DIALOG_DATA) public reward: any
     ) { }
@@ -30,12 +32,12 @@ export class RedemptionDetailsComponent {
 
         if (self.reward.typeId == 3) {
             if (!self.reward.upiId || self.reward.upiId.trim() === '') {
-                self.messageService.showMessage(new MessageVM("Please enter your UPI ID", "warning"));
+                self.messageService.showMessage(new MessageVM(self.translate.instant('app.redemption.enterUpi'), "warning"));
                 return;
             }
         } else {
             if (!self.reward.emailId || self.reward.emailId.trim() === '') {
-                self.messageService.showMessage(new MessageVM("Please enter your Email ID", "warning"));
+                self.messageService.showMessage(new MessageVM(self.translate.instant('app.redemption.enterEmail'), "warning"));
                 return;
             }
         }

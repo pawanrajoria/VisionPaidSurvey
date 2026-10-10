@@ -1,35 +1,34 @@
 <nav mat-tab-nav-bar [tabPanel]="tabPanel" mat-stretch-tabs="false" mat-align-tabs="center" class="nav-tabs">
-    @for (link of links; track link) {
-    <a mat-tab-link (click)="activeLink = link;changeSurveyType(link)" [active]="activeLink == link"> {{link}} </a> }
+    @for (link of links; track link.id) {
+    <a mat-tab-link (click)="activeLink = link.id;changeSurveyType(link.id)" [active]="activeLink == link.id"> {{link.label | translate}} </a> }
 </nav>
 
 <mat-tab-nav-panel #tabPanel>
     <div class="top-bar-wrapper">
         <mat-form-field appearance="outline" class="search-field">
             <mat-icon matPrefix>search</mat-icon>
-            <input matInput placeholder="Search offers" [(ngModel)]="searchTxt" (input)="filterItems()" />
+            <input matInput [placeholder]="'app.offers.search' | translate" [(ngModel)]="searchTxt" (input)="filterItems()" />
         </mat-form-field>
 
         <mat-button-toggle-group name="Change Devices" [(ngModel)]="selectedDeviceType" (change)="filterItems()"
-            class="toggle-group" multiple [hideMultipleSelectionIndicator]="true" aria-label="Device">
+            class="toggle-group" multiple [hideMultipleSelectionIndicator]="true" [attr.aria-label]="'app.offers.device' | translate">
             <mat-button-toggle value="Android"><mat-icon>android</mat-icon><span>Android</span></mat-button-toggle>
             <mat-button-toggle value="IOS"><mat-icon>apple</mat-icon><span>iOS</span></mat-button-toggle>
-            <mat-button-toggle value="Desktop"><mat-icon>desktop_windows</mat-icon><span>Desktop</span></mat-button-toggle>
+            <mat-button-toggle value="Desktop"><mat-icon>desktop_windows</mat-icon><span>{{ 'app.offers.desktop' | translate }}</span></mat-button-toggle>
         </mat-button-toggle-group>
     </div>
 
     @if (offers.length) {
-    <p class="result-note">{{ filteredOffers.length }} {{ filteredOffers.length === 1 ? 'offer' : 'offers' }}
-        @if (selectedDeviceType.length) { for {{ deviceLabel }} }</p>
+    <p class="result-note">@if (selectedDeviceType.length) { {{ (filteredOffers.length === 1 ? 'app.offers.countForOne' : 'app.offers.countForOther') | translate:{ count: filteredOffers.length, device: deviceLabel } }} } @else { {{ (filteredOffers.length === 1 ? 'app.offers.countOne' : 'app.offers.countOther') | translate:{ count: filteredOffers.length } }} }</p>
     }
 
-    @if (offerType === 'My Offers' && filteredOffers.length === 0) {
-    <p class="empty-note">Offers you open are kept here so you can finish them later.</p>
+    @if (offerType === 'mine' && filteredOffers.length === 0) {
+    <p class="empty-note">{{ 'app.offers.mineEmpty' | translate }}</p>
     }
     <div class="offer-grid">
         @for (offer of filteredOffers; track offer.offerId) {
         <mat-card class="offer-card" (click)="openDialog(offer)" tabindex="0" (keydown.enter)="openDialog(offer)">
-            @if (topOfferIds.has(offer.offerId)) { <span class="top-tag">🔥 Top payout</span> }
+            @if (topOfferIds.has(offer.offerId)) { <span class="top-tag">🔥 {{ 'app.offers.topPayout' | translate }}</span> }
             <div class="oc-top">
                 <div class="oc-img">
                     @if (offer.imageUrl) {
@@ -57,9 +56,9 @@
                 <span class="oc-devices">
                     @if (runsOn(offer, 'Android')) { <mat-icon title="Android">android</mat-icon> }
                     @if (runsOn(offer, 'IOS')) { <mat-icon title="iOS">apple</mat-icon> }
-                    @if (runsOn(offer, 'Desktop')) { <mat-icon title="Desktop">desktop_windows</mat-icon> }
+                    @if (runsOn(offer, 'Desktop')) { <mat-icon [title]="'app.offers.desktop' | translate">desktop_windows</mat-icon> }
                 </span>
-                <span class="oc-points">+{{ offer.points | number }} <small>pts</small></span>
+                <span class="oc-points">+{{ offer.points | number }} <small>{{ 'app.common.pts' | translate }}</small></span>
             </div>
         </mat-card>
         }

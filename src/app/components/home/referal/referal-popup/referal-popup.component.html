@@ -15,7 +15,7 @@
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
-    <button mat-icon-button (click)="close()" aria-label="Close">
+    <button mat-icon-button (click)="close()" [attr.aria-label]="'app.common.close' | translate">
         <mat-icon>close</mat-icon>
     </button>
 </mat-dialog-actions>

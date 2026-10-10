@@ -45,7 +45,28 @@
             "Household & Family": "Household & Family",
             "Lifestyle & Health": "Lifestyle & Health",
             "Media & Technology": "Media & Technology",
-            "Travel & Leisure": "Travel & Leisure"
-        }
+            "Travel & Leisure": "Travel & Leisure",
+            "set_password": "Set a Password",
+            "notification": "Notifications",
+            "help_support": "Help & Support"
+        },
+        "profile_photo": "Profile photo",
+        "years_old": "{{age}} years old",
+        "date": "Date",
+        "balance": "Balance",
+        "screenout": "Screenout",
+        "tab_rewards": "Rewards",
+        "tab_transactions": "Transactions",
+        "tab_pending": "Pending",
+        "redeem_by": "Redeem By",
+        "approved_on": "Approved On",
+        "search_options": "Search options...",
+        "your_answer": "Your Answer",
+        "type_here": "Type here...",
+        "submit_answer": "SUBMIT ANSWER",
+        "gender_1": "Male",
+        "gender_2": "Female",
+        "gender_0": "Other",
+        "profile_updated": "Profile updated successfully"
     }
 }

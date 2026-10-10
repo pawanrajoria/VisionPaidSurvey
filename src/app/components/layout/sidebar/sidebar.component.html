@@ -3,13 +3,13 @@
 
   <div class="side-actions">
     <!-- Language: always visible, shows the language in use -->
-    <button type="button" class="lang-chip" (click)="openTranslate()" aria-label="Change language" title="Change language">
+    <button type="button" class="lang-chip" (click)="openTranslate()" [attr.aria-label]="'app.nav.changeLanguage' | translate" [title]="'app.nav.changeLanguage' | translate">
       <mat-icon>language</mat-icon>
       <span>{{ langCode }}</span>
     </button>
 
     @if (showToggle) {
-    <button type="button" class="close-btn" (click)="toggleMobileNav.emit()" aria-label="Close menu">
+    <button type="button" class="close-btn" (click)="toggleMobileNav.emit()" [attr.aria-label]="'app.nav.closeMenu' | translate">
       <mat-icon>close</mat-icon>
     </button>
     }

@@ -100,5 +100,20 @@
   },
   "common": {
     "learnMore": "Ketahui Lebih Lanjut"
+  },
+  "seoLanding": {
+    "howToEarn": "Cara Memperoleh Wang",
+    "paymentMethods": "Kaedah Pembayaran",
+    "topLocations": "Lokasi Utama",
+    "faqs": "Soalan Lazim",
+    "download": "Muat Turun Aplikasi & Mula Memperoleh"
+  },
+  "imageAlt": {
+    "more": "Dan banyak lagi"
+  },
+  "rewardCategory": {
+    "cash": "Tunai",
+    "giftCards": "Kad Hadiah",
+    "donations": "Derma"
   }
 }

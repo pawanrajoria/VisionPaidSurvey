@@ -14,7 +14,15 @@
       "submit": "Submit",
       "close": "Close",
       "day_one": "{{count}} Day",
-      "day_other": "{{count}} Days"
+      "day_other": "{{count}} Days",
+      "redirecting": "Redirecting…",
+      "done": "Done",
+      "scrollLeft": "Scroll left",
+      "scrollRight": "Scroll right",
+      "search": "Search",
+      "signingIn": "Signing in…",
+      "redirectingStore": "Redirecting to store…",
+      "ok": "OK"
     },
     "weekday": {
       "Mon": "Mon",
@@ -65,7 +73,12 @@
       "checkInvite": "Invite a friend",
       "checkCashout": "Cash out your first reward",
       "balance": "Balance:",
-      "claimReward": "Claim reward"
+      "claimReward": "Claim reward",
+      "tagTopRated": "Top Rated",
+      "tagQuickEasy": "Quick & Easy",
+      "tagHighPaying": "High Paying",
+      "tagNew": "New",
+      "tagHot": "Hot"
     },
     "streak": {
       "title": "Streak Progress",
@@ -118,7 +131,8 @@
       "bronzePerk": "You are on your way – keep earning to reach Silver.",
       "silverPerk": "Enjoy a special Bonus Day every week",
       "goldPerk": "Get access to Exclusive Reward Discounts",
-      "diamondPerk": "Early Access to New Features and Premium Offers"
+      "diamondPerk": "Early Access to New Features and Premium Offers",
+      "lvl": "{{level}} lvl"
     },
     "leaderboard": {
       "loading": "Loading leaderboard…",
@@ -230,7 +244,9 @@
       "screener": {
         "title": "Profiling Survey",
         "sub": "Answer a few quick questions to match surveys"
-      }
+      },
+      "browserNotSupported": "Browser not supported",
+      "invalidZip": "Please provide valid zip code."
     },
     "status": {
       "completeTitle": "Survey Successfully Completed!",
@@ -271,7 +287,26 @@
     "cashout": {
       "firstNote": "Your first cashout must be at least $ {{usd}} USD ({{points}} points).",
       "firstNoteLong": "Your first cashout must be at least $ {{usd}} USD ({{points}} points). After that, smaller amounts are available.",
-      "minNote": "The minimum withdrawal is $ {{usd}} USD ({{points}} points)."
+      "minNote": "The minimum withdrawal is $ {{usd}} USD ({{points}} points).",
+      "title": "Cash out",
+      "available": "Available balance",
+      "points": "points",
+      "toFirst": "{{points}} points to your first reward",
+      "canCashOut": "You can cash out now",
+      "rewardType": "Reward type",
+      "all": "All",
+      "searchPlaceholder": "Search PayPal, Amazon, UPI...",
+      "searchAria": "Search rewards",
+      "availableBadge": "Available",
+      "fromPts": "from {{points}} pts",
+      "none": "No rewards available right now.",
+      "chooseAmount": "Choose an amount",
+      "needMore": "Need {{points}} more points",
+      "youGet": "You get <strong>{{value}}</strong> for <strong>{{points}}</strong> points",
+      "pickAmount": "Pick an amount you have enough points for.",
+      "claim": "Claim reward",
+      "chooseMethod": "Choose a payout method to see the amounts.",
+      "requires": "{{name}} requires {{points}} pts. You have {{balance}}."
     },
     "settings": {
       "timeZone": "Change time zone",
@@ -286,7 +321,9 @@
       "noPassword": "You signed in with a social account, so there is no current password. Set one below to also sign in with your email and password.",
       "deleteWarning": "This permanently closes your account. Your points balance will be lost.",
       "passwordShort": "New password must be at least 6 characters.",
-      "passwordMismatch": "New password and confirmation do not match."
+      "passwordMismatch": "New password and confirmation do not match.",
+      "timeZoneError": "Time zone could not be saved.",
+      "passwordMismatchConfirm": "Password and Confirm Password do not match"
     },
     "refer": {
       "friendsJoined": "Friends joined"
@@ -313,13 +350,163 @@
       "failed": "Could not send. Please try again.",
       "onApp": "Sent from the app",
       "newMessages": "New messages: {{count}}",
-      "level": "Lvl {{level}}"
+      "level": "Lvl {{level}}",
+      "addReaction": "Add a reaction",
+      "pickReaction": "Pick a reaction",
+      "quickEmoji": "Quick emoji",
+      "emoji": "Emoji"
     },
     "promo": {
       "today": "Today's top offer",
       "earn": "Earn {{points}} points",
       "cta": "Start now",
       "later": "Maybe later"
+    },
+    "offers": {
+      "tabBest": "Best Match Offers",
+      "tabPoints": "Most Points Offers",
+      "tabMine": "My Offers",
+      "search": "Search offers",
+      "device": "Device",
+      "desktop": "Desktop",
+      "countOne": "{{count}} offer",
+      "countOther": "{{count}} offers",
+      "countForOne": "{{count}} offer for {{device}}",
+      "countForOther": "{{count}} offers for {{device}}",
+      "mineEmpty": "Offers you open are kept here so you can finish them later.",
+      "topPayout": "Top payout",
+      "howToEarn": "How to earn",
+      "description": "Description",
+      "requirements": "Requirements",
+      "confirmationTime": "Confirmation Time",
+      "expiresOn": "Expires On",
+      "earnPoints": "Earn {{points}} Points",
+      "startOffer": "Start offer",
+      "stepGoal": "Complete the offer as described",
+      "stepOpen": "Tap the button below to open the offer",
+      "stepConfirmAfter": "Points are added to your balance after confirmation ({{time}})",
+      "stepConfirm": "Points are added to your balance once the partner confirms it",
+      "qrScan": "Scan the QR Code with your phone.",
+      "availableDevices": "Available Devices",
+      "qrCopyHint": "Alternatively, copy the URL into your mobile browser",
+      "copy": "Copy"
+    },
+    "live": {
+      "badge": "LIVE",
+      "title": "Live payouts",
+      "subtitle": "Real earnings from Profitpiller members",
+      "earningToday": "earning today",
+      "ptsToday": "pts earned today",
+      "cashedWeek": "cashed out this week",
+      "cashedOut": "cashed out",
+      "earned": "earned",
+      "empty": "No payouts in the last few days yet.",
+      "emptyCta": "Complete a survey and be the first on the board!",
+      "startEarning": "Start earning now",
+      "hide": "Hide",
+      "membersToday": "Members earning today",
+      "justNow": "just now",
+      "minAgo": "{{count}} min ago",
+      "hoursAgo": "{{count}} h ago",
+      "yesterday": "yesterday",
+      "daysAgo": "{{count}} days ago"
+    },
+    "nav": {
+      "changeLanguage": "Change language",
+      "closeMenu": "Close menu",
+      "openMenu": "Open menu",
+      "accountMenu": "Account menu",
+      "adminConsole": "Admin console"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "clearAll": "Clear All",
+      "none": "No new notifications",
+      "single": "Notification",
+      "dismiss": "Dismiss notification"
+    },
+    "footer": {
+      "designedBy": "Design & Developed by"
+    },
+    "notify": {
+      "on": "Notifications are on",
+      "compact": "Get updates & offer alerts",
+      "aria": "Offer notifications",
+      "notNow": "Not now",
+      "enableAria": "Enable notifications for updates and new offers",
+      "title": "Get proper updates & notifications",
+      "body": "Click the picture or the button to enable notifications in this browser - we'll tell you the moment new offers, bonuses and payouts happen.",
+      "blocked": "Notifications are blocked for this site. Allow them from the lock icon in your browser's address bar.",
+      "busy": "One moment…",
+      "enable": "Enable notifications"
+    },
+    "lang": {
+      "title": "Select Country and Language",
+      "current": "Current language:",
+      "select": "Select Language",
+      "selectAria": "Select a language",
+      "apply": "Select",
+      "pleaseSelect": "Please select a language"
+    },
+    "redemption": {
+      "title": "Redemption Details",
+      "paypalTitle": "PayPal Verification:",
+      "hours48": "48 Hours",
+      "paypal1": "Ensure your PayPal email is verified.",
+      "paypal2": "First-time redemptions require a security review.",
+      "upiTitle": "UPI Transfer:",
+      "within24": "Within 24 Hours",
+      "upi1": "Ensure UPI is linked to an active bank account.",
+      "upi2": "Enter correct VPA (e.g., name@upi).",
+      "giftTitle": "e-Gift Card Delivery:",
+      "hours24to48": "24 - 48 Hours",
+      "gift1": "Voucher code sent directly to your registered email.",
+      "gift2": "Non-refundable and non-transferable.",
+      "upiLabel": "UPI ID (VPA)",
+      "paypalEmail": "PayPal Email",
+      "recipientEmail": "Recipient Email",
+      "emailNote": "This email address cannot be changed. If you need to update your email address, please contact the Support Team or raise a ticket through the Help & Support section.",
+      "confirm": "Confirm Redemption",
+      "enterUpi": "Please enter your UPI ID",
+      "enterEmail": "Please enter your Email ID"
+    },
+    "help": {
+      "fileTooLarge": "File must be smaller than 1MB"
+    },
+    "notFound": {
+      "title": "Page Not Found",
+      "message": "Oops! The page you're looking for doesn’t exist or has been moved.",
+      "home": "Go to Home",
+      "back": "Go Back",
+      "debugPath": "Debug Path:"
+    },
+    "premium": {
+      "title": "Premium Access",
+      "intro": "Maintain a high-quality account to unlock exclusive surveys and high-paying clients.",
+      "item1": "Earn at least <strong>$5</strong> successfully",
+      "item2": "Complete at least <strong>5 surveys</strong>",
+      "item3": "Maintain a <strong>low rejection rate</strong>",
+      "item4": "Receive <strong>one successful payout</strong>",
+      "item5": "Keep account <strong>active & genuine</strong>",
+      "gotIt": "Got It ({{seconds}}s)"
+    },
+    "errors": {
+      "unauthorized": "Unauthorized! Redirecting to login...",
+      "generic": "Something went wrong.",
+      "tryLater": "Some error occurred! Please try again later.",
+      "accountExists": "An account with this email already exists. Please sign in the way you did before (Google or email and password).",
+      "providerUnavailable": "{{provider}} sign-in is not available yet. Please use Google or your email.",
+      "popupBlocked": "Your browser blocked the sign-in window. Please allow pop-ups and try again.",
+      "providerFailed": "{{provider}} sign-in failed. Please try again."
+    },
+    "contactForm": {
+      "thanks": "Thank you for contacting us! We will get back to you soon.",
+      "required": "Please fill in all required fields."
+    },
+    "toast": {
+      "success": "SUCCESS",
+      "error": "ERROR",
+      "warning": "WARNING"
     }
   }
 }

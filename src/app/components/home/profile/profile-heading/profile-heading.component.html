@@ -2,7 +2,7 @@
     <div class="bg-primary p-x-24 p-y-10 text-white">
         <mat-card-title class="d-flex align-items-center gap-10">
             <!-- A11y: was an <a> with no href/click - not a real link, and had no accessible name. Converted to a button; TODO verify this back-chevron is supposed to be wired to an action (looks inert either way). -->
-            <button type="button" mat-icon-button class="text-white d-flex justify-content-center" aria-label="Back">
+            <button type="button" mat-icon-button class="text-white d-flex justify-content-center" [attr.aria-label]="'app.common.back' | translate">
                 <i-tabler name="chevron-left" class="icon-18 d-flex">
                 </i-tabler>
             </button> {{ 'account.headings.reward_transaction' | translate }} </mat-card-title>
@@ -13,9 +13,9 @@
     <mat-list>
         @for (dataItem of headingData; track dataItem) {
         <mat-list-item>
-            <div matListItemTitle class="f-s-16 f-w-600"><span>Points</span><span
-                    class="text-content d-inline-flex">Screenout </span> </div>
-            <div matListItemLine class="f-s-14"><span>Balance</span> <span class="text-content d-inline-flex">Date
+            <div matListItemTitle class="f-s-16 f-w-600"><span>{{ 'app.common.points' | translate }}</span><span
+                    class="text-content d-inline-flex">{{ 'account.screenout' | translate }} </span> </div>
+            <div matListItemLine class="f-s-14"><span>{{ 'account.balance' | translate }}</span> <span class="text-content d-inline-flex">{{ 'account.date' | translate }}
                 </span></div>
         </mat-list-item>
         }

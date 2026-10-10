@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { TranslateService } from "@ngx-translate/core";
 import { PublicSharedModule } from "../../../public-shared.module";
 import { MessageService } from "../../layout/message/message.service";
 import { MessageVM } from "../../layout/message/message.vm";
@@ -17,7 +18,8 @@ export class RootContactUsComponent implements OnInit {
         phone: '',
         message: ''
     };
-    constructor(private messageService: MessageService, private helpService: HelpService) {
+    constructor(private messageService: MessageService, private helpService: HelpService,
+        private translate: TranslateService) {
         // Initialize contact object if needed
     }
 
@@ -33,7 +35,7 @@ export class RootContactUsComponent implements OnInit {
 
             const response = await this.helpService.submitContactUs(formData)
             if (!!response && response.isSuccess) {
-                this.messageService.showMessage(new MessageVM("Thank you for contacting us! We will get back to you soon.", "success"));
+                this.messageService.showMessage(new MessageVM(this.translate.instant('app.contactForm.thanks'), "success"));
                 this.contact = { name: '', email: '', phone: '', message: '' };
             }
             else {
@@ -42,7 +44,7 @@ export class RootContactUsComponent implements OnInit {
 
 
         } else {
-            this.messageService.showMessage(new MessageVM("Please fill in all required fields.", "error"));
+            this.messageService.showMessage(new MessageVM(this.translate.instant('app.contactForm.required'), "error"));
         }
     }
 

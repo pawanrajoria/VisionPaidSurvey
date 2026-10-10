@@ -100,5 +100,20 @@
   },
   "common": {
     "learnMore": "Mehr erfahren"
+  },
+  "seoLanding": {
+    "howToEarn": "So verdienst du Geld",
+    "paymentMethods": "Zahlungsmethoden",
+    "topLocations": "Beliebte Orte",
+    "faqs": "FAQ",
+    "download": "App herunterladen & loslegen"
+  },
+  "imageAlt": {
+    "more": "Und viele mehr"
+  },
+  "rewardCategory": {
+    "cash": "Bargeld",
+    "giftCards": "Geschenkkarten",
+    "donations": "Spenden"
   }
 }

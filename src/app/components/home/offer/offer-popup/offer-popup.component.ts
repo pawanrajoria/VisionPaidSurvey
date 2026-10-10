@@ -17,6 +17,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { OfferQRDialog } from './offer-qr/offer-qr.component';
 import { ConfigService } from '../../../../config.service';
 import { BaseComponent } from '../../../../base.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: 'dialog-offer-popup',
@@ -31,6 +32,7 @@ export class OfferPopupDialog extends BaseComponent implements OnInit {
     readonly offerService = inject(OfferService);
     readonly configService = inject(ConfigService);
     readonly breakpointObserver = inject(BreakpointObserver);
+    readonly translate = inject(TranslateService);
 
     offerLevels: IOfferTaskResponseDto[] = [];
 
@@ -47,13 +49,14 @@ export class OfferPopupDialog extends BaseComponent implements OnInit {
             this.steps = tasks.map(t => ({ name: t.name ?? '', points: Number(t.points) || 0 }));
             return;
         }
-        const goal = (this.offer.requirements || this.offer.description || 'Complete the offer as described').trim();
+        const t = this.translate;
+        const goal = (this.offer.requirements || this.offer.description || t.instant('app.offers.stepGoal')).trim();
         this.steps = [
-            { name: 'Tap the button below to open the offer', points: 0 },
+            { name: t.instant('app.offers.stepOpen'), points: 0 },
             { name: goal, points: Number(this.offer.points) > 0 ? Number(this.offer.points) : 0 },
             { name: this.offer.confirmationTime
-                ? `Points are added to your balance after confirmation (${this.offer.confirmationTime})`
-                : 'Points are added to your balance once the partner confirms it', points: 0 }
+                ? t.instant('app.offers.stepConfirmAfter', { time: this.offer.confirmationTime })
+                : t.instant('app.offers.stepConfirm'), points: 0 }
         ];
     }
 

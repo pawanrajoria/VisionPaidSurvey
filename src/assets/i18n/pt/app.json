@@ -14,7 +14,15 @@
       "submit": "Enviar",
       "close": "Fechar",
       "day_one": "{{count}} dia",
-      "day_other": "{{count}} dias"
+      "day_other": "{{count}} dias",
+      "redirecting": "Redirecionando…",
+      "done": "Concluído",
+      "scrollLeft": "Rolar para a esquerda",
+      "scrollRight": "Rolar para a direita",
+      "search": "Pesquisar",
+      "signingIn": "Entrando…",
+      "redirectingStore": "Redirecionando para a loja…",
+      "ok": "OK"
     },
     "weekday": {
       "Mon": "Seg",
@@ -65,7 +73,12 @@
       "checkInvite": "Convide um amigo",
       "checkCashout": "Resgate sua primeira recompensa",
       "balance": "Saldo:",
-      "claimReward": "Resgatar recompensa"
+      "claimReward": "Resgatar recompensa",
+      "tagTopRated": "Mais bem avaliado",
+      "tagQuickEasy": "Rápido e fácil",
+      "tagHighPaying": "Paga bem",
+      "tagNew": "Novo",
+      "tagHot": "Em alta"
     },
     "streak": {
       "title": "Progresso da sequência",
@@ -118,7 +131,8 @@
       "bronzePerk": "Você está no caminho – continue ganhando para chegar à Prata.",
       "silverPerk": "Aproveite um dia de bônus especial toda semana",
       "goldPerk": "Tenha acesso a descontos exclusivos em recompensas",
-      "diamondPerk": "Acesso antecipado a novos recursos e ofertas premium"
+      "diamondPerk": "Acesso antecipado a novos recursos e ofertas premium",
+      "lvl": "Nív. {{level}}"
     },
     "leaderboard": {
       "loading": "Carregando a classificação…",
@@ -230,7 +244,9 @@
       "screener": {
         "title": "Pesquisa de perfil",
         "sub": "Responda a algumas perguntas rápidas para encontrar pesquisas adequadas"
-      }
+      },
+      "browserNotSupported": "Navegador não compatível",
+      "invalidZip": "Informe um CEP válido."
     },
     "status": {
       "completeTitle": "Pesquisa concluída com sucesso!",
@@ -271,7 +287,26 @@
     "cashout": {
       "firstNote": "Seu primeiro saque deve ser de pelo menos $ {{usd}} USD ({{points}} pontos).",
       "firstNoteLong": "Seu primeiro saque deve ser de pelo menos $ {{usd}} USD ({{points}} pontos). Depois disso, valores menores ficam disponíveis.",
-      "minNote": "O saque mínimo é de $ {{usd}} USD ({{points}} pontos)."
+      "minNote": "O saque mínimo é de $ {{usd}} USD ({{points}} pontos).",
+      "title": "Sacar",
+      "available": "Saldo disponível",
+      "points": "pontos",
+      "toFirst": "{{points}} pontos para sua primeira recompensa",
+      "canCashOut": "Você já pode sacar",
+      "rewardType": "Tipo de recompensa",
+      "all": "Todos",
+      "searchPlaceholder": "Pesquise PayPal, Amazon, UPI...",
+      "searchAria": "Pesquisar recompensas",
+      "availableBadge": "Disponível",
+      "fromPts": "a partir de {{points}} pts",
+      "none": "Nenhuma recompensa disponível no momento.",
+      "chooseAmount": "Escolha um valor",
+      "needMore": "Faltam {{points}} pontos",
+      "youGet": "Você recebe <strong>{{value}}</strong> por <strong>{{points}}</strong> pontos",
+      "pickAmount": "Escolha um valor para o qual você tenha pontos suficientes.",
+      "claim": "Resgatar recompensa",
+      "chooseMethod": "Escolha um método de pagamento para ver os valores.",
+      "requires": "{{name}} exige {{points}} pts. Você tem {{balance}}."
     },
     "settings": {
       "timeZone": "Alterar fuso horário",
@@ -286,7 +321,9 @@
       "noPassword": "Você entrou com uma conta social, então não há senha atual. Defina uma abaixo para entrar também com e-mail e senha.",
       "deleteWarning": "Isso encerra sua conta permanentemente. Seu saldo de pontos será perdido.",
       "passwordShort": "A nova senha deve ter pelo menos 6 caracteres.",
-      "passwordMismatch": "A nova senha e a confirmação não coincidem."
+      "passwordMismatch": "A nova senha e a confirmação não coincidem.",
+      "timeZoneError": "Não foi possível salvar o fuso horário.",
+      "passwordMismatchConfirm": "A senha e a confirmação não coincidem"
     },
     "refer": {
       "friendsJoined": "Amigos que entraram"
@@ -313,13 +350,163 @@
       "failed": "Não foi possível enviar. Tente novamente.",
       "onApp": "Enviado pelo app",
       "newMessages": "Novas mensagens: {{count}}",
-      "level": "Nv. {{level}}"
+      "level": "Nv. {{level}}",
+      "addReaction": "Adicionar uma reação",
+      "pickReaction": "Escolha uma reação",
+      "quickEmoji": "Emojis rápidos",
+      "emoji": "Emoji"
     },
     "promo": {
       "today": "Melhor oferta de hoje",
       "earn": "Ganhe {{points}} pontos",
       "cta": "Começar agora",
       "later": "Talvez depois"
+    },
+    "offers": {
+      "tabBest": "Ofertas mais compatíveis",
+      "tabPoints": "Ofertas com mais pontos",
+      "tabMine": "Minhas ofertas",
+      "search": "Pesquisar ofertas",
+      "device": "Dispositivo",
+      "desktop": "Computador",
+      "countOne": "{{count}} oferta",
+      "countOther": "{{count}} ofertas",
+      "countForOne": "{{count}} oferta para {{device}}",
+      "countForOther": "{{count}} ofertas para {{device}}",
+      "mineEmpty": "As ofertas que você abrir ficam guardadas aqui para que possa concluí-las depois.",
+      "topPayout": "Maior pagamento",
+      "howToEarn": "Como ganhar",
+      "description": "Descrição",
+      "requirements": "Requisitos",
+      "confirmationTime": "Tempo de confirmação",
+      "expiresOn": "Expira em",
+      "earnPoints": "Ganhe {{points}} pontos",
+      "startOffer": "Iniciar oferta",
+      "stepGoal": "Conclua a oferta conforme descrito",
+      "stepOpen": "Toque no botão abaixo para abrir a oferta",
+      "stepConfirmAfter": "Os pontos são adicionados ao seu saldo após a confirmação ({{time}})",
+      "stepConfirm": "Os pontos são adicionados ao seu saldo assim que o parceiro confirmar",
+      "qrScan": "Escaneie o código QR com seu celular.",
+      "availableDevices": "Dispositivos disponíveis",
+      "qrCopyHint": "Ou copie a URL para o navegador do seu celular",
+      "copy": "Copiar"
+    },
+    "live": {
+      "badge": "AO VIVO",
+      "title": "Pagamentos ao vivo",
+      "subtitle": "Ganhos reais de membros da Profitpiller",
+      "earningToday": "ganhando hoje",
+      "ptsToday": "pts ganhos hoje",
+      "cashedWeek": "sacados esta semana",
+      "cashedOut": "sacou",
+      "earned": "ganhou",
+      "empty": "Ainda não há pagamentos nos últimos dias.",
+      "emptyCta": "Conclua uma pesquisa e seja o primeiro do quadro!",
+      "startEarning": "Comece a ganhar agora",
+      "hide": "Ocultar",
+      "membersToday": "Membros ganhando hoje",
+      "justNow": "agora mesmo",
+      "minAgo": "há {{count}} min",
+      "hoursAgo": "há {{count}} h",
+      "yesterday": "ontem",
+      "daysAgo": "há {{count}} dias"
+    },
+    "nav": {
+      "changeLanguage": "Alterar idioma",
+      "closeMenu": "Fechar menu",
+      "openMenu": "Abrir menu",
+      "accountMenu": "Menu da conta",
+      "adminConsole": "Console de administração"
+    },
+    "notifications": {
+      "title": "Notificações",
+      "clearAll": "Limpar tudo",
+      "none": "Nenhuma notificação nova",
+      "single": "Notificação",
+      "dismiss": "Dispensar notificação"
+    },
+    "footer": {
+      "designedBy": "Design e desenvolvimento por"
+    },
+    "notify": {
+      "on": "As notificações estão ativadas",
+      "compact": "Receba novidades e alertas de ofertas",
+      "aria": "Notificações de ofertas",
+      "notNow": "Agora não",
+      "enableAria": "Ative as notificações para novidades e novas ofertas",
+      "title": "Receba novidades e notificações",
+      "body": "Clique na imagem ou no botão para ativar as notificações neste navegador - avisaremos você assim que surgirem novas ofertas, bônus e pagamentos.",
+      "blocked": "As notificações estão bloqueadas para este site. Permita-as pelo ícone de cadeado na barra de endereços do navegador.",
+      "busy": "Um momento…",
+      "enable": "Ativar notificações"
+    },
+    "lang": {
+      "title": "Selecione país e idioma",
+      "current": "Idioma atual:",
+      "select": "Selecione o idioma",
+      "selectAria": "Selecione um idioma",
+      "apply": "Selecionar",
+      "pleaseSelect": "Selecione um idioma"
+    },
+    "redemption": {
+      "title": "Detalhes do resgate",
+      "paypalTitle": "Verificação do PayPal:",
+      "hours48": "48 horas",
+      "paypal1": "Certifique-se de que seu e-mail do PayPal está verificado.",
+      "paypal2": "Resgates pela primeira vez passam por uma verificação de segurança.",
+      "upiTitle": "Transferência UPI:",
+      "within24": "Em até 24 horas",
+      "upi1": "Certifique-se de que o UPI está vinculado a uma conta bancária ativa.",
+      "upi2": "Informe o VPA correto (ex.: name@upi).",
+      "giftTitle": "Entrega do vale-presente digital:",
+      "hours24to48": "24 - 48 horas",
+      "gift1": "O código do voucher é enviado diretamente para seu e-mail cadastrado.",
+      "gift2": "Não reembolsável e intransferível.",
+      "upiLabel": "ID UPI (VPA)",
+      "paypalEmail": "E-mail do PayPal",
+      "recipientEmail": "E-mail do destinatário",
+      "emailNote": "Este endereço de e-mail não pode ser alterado. Se precisar atualizá-lo, entre em contato com a equipe de suporte ou abra um chamado na seção Ajuda e suporte.",
+      "confirm": "Confirmar resgate",
+      "enterUpi": "Informe seu ID UPI",
+      "enterEmail": "Informe seu e-mail"
+    },
+    "help": {
+      "fileTooLarge": "O arquivo deve ter menos de 1 MB"
+    },
+    "notFound": {
+      "title": "Página não encontrada",
+      "message": "Ops! A página que você procura não existe ou foi movida.",
+      "home": "Ir para o início",
+      "back": "Voltar",
+      "debugPath": "Caminho de depuração:"
+    },
+    "premium": {
+      "title": "Acesso Premium",
+      "intro": "Mantenha uma conta de alta qualidade para desbloquear pesquisas exclusivas e clientes que pagam mais.",
+      "item1": "Ganhe pelo menos <strong>US$ 5</strong> com sucesso",
+      "item2": "Conclua pelo menos <strong>5 pesquisas</strong>",
+      "item3": "Mantenha uma <strong>baixa taxa de rejeição</strong>",
+      "item4": "Receba <strong>um pagamento bem-sucedido</strong>",
+      "item5": "Mantenha a conta <strong>ativa e autêntica</strong>",
+      "gotIt": "Entendi ({{seconds}} s)"
+    },
+    "errors": {
+      "unauthorized": "Não autorizado! Redirecionando para o login...",
+      "generic": "Algo deu errado.",
+      "tryLater": "Ocorreu um erro! Tente novamente mais tarde.",
+      "accountExists": "Já existe uma conta com este e-mail. Entre da mesma forma que antes (Google ou e-mail e senha).",
+      "providerUnavailable": "O login com {{provider}} ainda não está disponível. Use o Google ou seu e-mail.",
+      "popupBlocked": "Seu navegador bloqueou a janela de login. Permita pop-ups e tente novamente.",
+      "providerFailed": "Falha no login com {{provider}}. Tente novamente."
+    },
+    "contactForm": {
+      "thanks": "Obrigado por entrar em contato! Responderemos em breve.",
+      "required": "Preencha todos os campos obrigatórios."
+    },
+    "toast": {
+      "success": "SUCESSO",
+      "error": "ERRO",
+      "warning": "AVISO"
     }
   }
 }

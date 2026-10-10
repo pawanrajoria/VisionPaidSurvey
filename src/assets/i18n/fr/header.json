@@ -36,6 +36,8 @@
                 "description": "Débloquez l'accès anticipé &...",
                 "range": "31+"
             }
-        }
+        },
+        "getApp": "Obtenir l'appli ProfitPiller",
+        "scanToDownload": "SCANNEZ POUR TÉLÉCHARGER"
     }
 }

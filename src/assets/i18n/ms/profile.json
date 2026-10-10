@@ -47,7 +47,26 @@
             "Household & Family": "Isi Rumah & Keluarga",
             "Lifestyle & Health": "Gaya Hidup & Kesihatan",
             "Media & Technology": "Media & Teknologi",
-            "Travel & Leisure": "Pelancongan & Rekreasi"
-        }
+            "Travel & Leisure": "Pelancongan & Rekreasi",
+            "set_password": "Tetapkan Kata Laluan"
+        },
+        "profile_photo": "Foto profil",
+        "years_old": "{{age}} tahun",
+        "date": "Tarikh",
+        "balance": "Baki",
+        "screenout": "Tersingkir",
+        "tab_rewards": "Ganjaran",
+        "tab_transactions": "Transaksi",
+        "tab_pending": "Belum selesai",
+        "redeem_by": "Ditebus melalui",
+        "approved_on": "Diluluskan pada",
+        "search_options": "Cari pilihan...",
+        "your_answer": "Jawapan Anda",
+        "type_here": "Taip di sini...",
+        "submit_answer": "HANTAR JAWAPAN",
+        "gender_1": "Lelaki",
+        "gender_2": "Perempuan",
+        "gender_0": "Lain-lain",
+        "profile_updated": "Profil berjaya dikemas kini"
     }
 }

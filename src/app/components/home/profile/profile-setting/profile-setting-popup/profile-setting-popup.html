@@ -1,4 +1,4 @@
-<h4 mat-dialog-title>{{profileSettingDialogData.title}}</h4>
+<h4 mat-dialog-title>{{ profileSettingDialogData.title | translate }}</h4>
 
 
 <form class="m-t-30" *ngIf="profileSettingDialogData.type==1" [formGroup]="changeUserNameForm"
@@ -165,7 +165,7 @@
         <mat-form-field appearance="outline" color="primary" class="w-100">
             <mat-label>{{ 'account.gender' | translate }}</mat-label>
             <mat-select formControlName="gender">
-                <mat-option *ngFor="let g of genders" [value]="g.value">{{ g.name }}</mat-option>
+                <mat-option *ngFor="let g of genders" [value]="g.value">{{ 'account.gender_' + g.value | translate }}</mat-option>
             </mat-select>
             <mat-error *ngIf="changeUserDetailsForm.get('gender')?.hasError('required')">
                 {{ 'messages.gender.required' | translate }}

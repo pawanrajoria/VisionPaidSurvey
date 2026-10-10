@@ -7,7 +7,7 @@
           <app-questionroot [field]="qualification" [form]="form"></app-questionroot>
           <mat-card-actions class="justify-content-end">
             <button type="Submit" mat-flat-button color="primary" [disabled]="!isValid"
-              class="w-100 btn-theme">Next
+              class="w-100 btn-theme">{{ 'app.common.next' | translate }}
             </button>
           </mat-card-actions>
         </mat-card>

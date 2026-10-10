@@ -1,5 +1,6 @@
 import { Component, inject, OnDestroy, OnInit } from "@angular/core";
 import { SharedModule } from "../../../shared.module";
+import { TranslateService } from "@ngx-translate/core";
 import { BaseComponent } from "../../../base.component";
 import { EngagementService } from "../../home/engagement/engagement.service";
 import { ILiveFeed, ILiveFeedItem } from "../../home/engagement/engagement.vm";
@@ -17,6 +18,7 @@ import { ILiveFeed, ILiveFeedItem } from "../../home/engagement/engagement.vm";
 })
 export class LivepayoutComponent extends BaseComponent implements OnInit, OnDestroy {
     private readonly engagement = inject(EngagementService);
+    private readonly translate = inject(TranslateService);
 
     private static readonly OPEN_REFRESH_MS = 20000;
     private static readonly CLOSED_REFRESH_MS = 60000;
@@ -78,13 +80,14 @@ export class LivepayoutComponent extends BaseComponent implements OnInit, OnDest
 
     ago(item: ILiveFeedItem): string {
         const seconds = Math.max(0, Math.round((this.now - new Date(item.atUtc).getTime()) / 1000));
-        if (seconds < 60) return 'just now';
+        const t = this.translate;
+        if (seconds < 60) return t.instant('app.live.justNow');
         const minutes = Math.round(seconds / 60);
-        if (minutes < 60) return `${minutes} min ago`;
+        if (minutes < 60) return t.instant('app.live.minAgo', { count: minutes });
         const hours = Math.round(minutes / 60);
-        if (hours < 24) return `${hours} h ago`;
+        if (hours < 24) return t.instant('app.live.hoursAgo', { count: hours });
         const days = Math.round(hours / 24);
-        return days === 1 ? 'yesterday' : `${days} days ago`;
+        return days === 1 ? t.instant('app.live.yesterday') : t.instant('app.live.daysAgo', { count: days });
     }
 
     /** "IN" -> 🇮🇳 */

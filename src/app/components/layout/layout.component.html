@@ -10,7 +10,7 @@
                     <app-nav-item [item]="item" (notify)="sidenav.toggle()"></app-nav-item>
                     }
                     } @else {
-                    <mat-list-item>Loading...</mat-list-item>
+                    <mat-list-item>{{ 'app.common.loading' | translate }}</mat-list-item>
                     }
                 </mat-nav-list>
                 <app-notify-card></app-notify-card>
@@ -27,7 +27,7 @@
                     <strong>{{ activeNotification.title }}</strong>
                     <p>{{ activeNotification.body }}</p>
                 </div>
-                <button mat-icon-button (click)="activeNotification = null" aria-label="Dismiss notification">
+                <button mat-icon-button (click)="activeNotification = null" [attr.aria-label]="'app.notifications.dismiss' | translate">
                     <mat-icon>close</mat-icon>
                 </button>
             </div>
@@ -44,7 +44,7 @@
         </main>
 
         <div class="p-16 p-t-8 p-b-30 text-center">
-            Design & Developed by <a class="text-decoration-none" href="https://profitpiller.com/"
+            {{ 'app.footer.designedBy' | translate }} <a class="text-decoration-none" href="https://profitpiller.com/"
                 target="_blank">profitpiller.com</a>
         </div>
     </mat-sidenav-content>

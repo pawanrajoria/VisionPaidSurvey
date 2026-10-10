@@ -74,13 +74,13 @@
                     </div>
 
                     @if (reactionEmojis.length && !muted) {
-                    <button type="button" class="react-btn" aria-label="Add a reaction" title="Add a reaction"
+                    <button type="button" class="react-btn" [attr.aria-label]="'app.chat.addReaction' | translate" [title]="'app.chat.addReaction' | translate"
                         [attr.aria-expanded]="reactingTo === m.id" (click)="toggleReactionPicker(m, $event)">
                         <mat-icon>add_reaction</mat-icon>
                     </button>
                     }
                     @if (reactingTo === m.id) {
-                    <div class="reaction-picker" role="group" aria-label="Pick a reaction" (click)="$event.stopPropagation()">
+                    <div class="reaction-picker" role="group" [attr.aria-label]="'app.chat.pickReaction' | translate" (click)="$event.stopPropagation()">
                         @for (e of reactionEmojis; track e) {
                         <button type="button" [class.active]="hasReacted(m, e)" (click)="react(m, e)">{{ e }}</button>
                         }
@@ -122,7 +122,7 @@
         @if (error) { <p class="send-error" role="alert">{{ error }}</p> }
 
         @if (emojiOpen) {
-        <div class="emoji-panel" role="group" aria-label="Emoji">
+        <div class="emoji-panel" role="group" [attr.aria-label]="'app.chat.emoji' | translate">
             <div class="emoji-tabs">
                 @for (g of emojiGroups; track g.label; let i = $index) {
                 <button type="button" [class.active]="emojiGroup === i" (click)="emojiGroup = i"
@@ -136,7 +136,7 @@
             </div>
         </div>
         } @else {
-        <div class="quick-row" role="group" aria-label="Quick emoji">
+        <div class="quick-row" role="group" [attr.aria-label]="'app.chat.quickEmoji' | translate">
             @for (e of quickEmojis; track e) {
             <button type="button" (click)="insertEmoji(e)">{{ e }}</button>
             }
@@ -145,7 +145,7 @@
 
         <div class="composer-row">
             <button type="button" class="emoji-btn" [class.active]="emojiOpen" (click)="emojiOpen = !emojiOpen"
-                aria-label="Emoji" [attr.aria-expanded]="emojiOpen">
+                [attr.aria-label]="'app.chat.emoji' | translate" [attr.aria-expanded]="emojiOpen">
                 <mat-icon>{{ emojiOpen ? 'keyboard' : 'mood' }}</mat-icon>
             </button>
             <textarea #input [(ngModel)]="draft" rows="1" [maxLength]="maxLength" (keydown)="onKey($event)"

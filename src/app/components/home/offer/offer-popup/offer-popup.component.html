@@ -1,14 +1,14 @@
 <mat-dialog-content class="dialog-content">
     <div class="dialog-header">
         <span class="title">{{ offer.offerName }}</span>
-        <button mat-icon-button mat-dialog-close aria-label="Close">
+        <button mat-icon-button mat-dialog-close [attr.aria-label]="'app.common.close' | translate">
             <mat-icon>close</mat-icon>
         </button>
     </div>
 
     <!-- <div class="d-flex align-items-center justify-content-between m-b-16">
     <h2 class="offer-title">{{ offer.offerName }}</h2>
-    <button mat-icon-button mat-dialog-close aria-label="Close">
+    <button mat-icon-button mat-dialog-close [attr.aria-label]="'app.common.close' | translate">
         <i-tabler name="x" class="x icon-20"></i-tabler>
     </button>
 </div> -->
@@ -27,7 +27,7 @@
 
         <div class="offer-summary">
             <div class="points">
-                <span class="value">{{ offer.points }}</span> Points
+                <span class="value">{{ offer.points }}</span> {{ 'app.common.points' | translate }}
                 <div class="chipupper">
                     <div class="chip" *ngFor="let tag of offer.offerCategory">
                         {{ tag }}
@@ -41,7 +41,7 @@
 
     </div>
 
-    <h3 class="rewards-heading">How to earn</h3>
+    <h3 class="rewards-heading">{{ 'app.offers.howToEarn' | translate }}</h3>
 
     <ol class="steps-list">
         @for (step of steps; track $index) {
@@ -53,22 +53,22 @@
         }
     </ol>
 
-    <h3 class="rewards-heading">Description</h3>
+    <h3 class="rewards-heading">{{ 'app.offers.description' | translate }}</h3>
     <div class="rewards-list">
         <span class="reward-desc">{{ offer.description }}</span>
     </div>
 
-    <h3 class="rewards-heading" *ngIf="!!offer.requirements">Requirements</h3>
+    <h3 class="rewards-heading" *ngIf="!!offer.requirements">{{ 'app.offers.requirements' | translate }}</h3>
     <div class="rewards-list" *ngIf="!!offer.requirements">
         <span class="reward-desc">{{ offer.requirements }}</span>
     </div>
 
-    <h3 class="rewards-heading" *ngIf="!!offer.confirmationTime">Confirmation Time</h3>
+    <h3 class="rewards-heading" *ngIf="!!offer.confirmationTime">{{ 'app.offers.confirmationTime' | translate }}</h3>
     <div class="rewards-list" *ngIf="!!offer.confirmationTime">
         <span class="reward-desc">{{ offer.confirmationTime }}</span>
     </div>
 
-    <h3 class="rewards-heading" *ngIf="!!offer.expireTime">Expired On</h3>
+    <h3 class="rewards-heading" *ngIf="!!offer.expireTime">{{ 'app.offers.expiresOn' | translate }}</h3>
     <div class="rewards-list" *ngIf="!!offer.expireTime">
         <span class="reward-desc">{{ offer.expireTime | date:'dd-MM-yyyy HH:mm' }}</span>
     </div>
@@ -76,6 +76,6 @@
 
 <mat-dialog-actions align="end" class="footer">
     <button mat-flat-button color="primary" class="earn-button btn-theme" (click)="earn()">
-        {{ offer.points > 0 ? 'Earn ' + offer.points + ' Points' : 'Start offer' }}
+        {{ offer.points > 0 ? ('app.offers.earnPoints' | translate:{ points: offer.points }) : ('app.offers.startOffer' | translate) }}
     </button>
 </mat-dialog-actions>

@@ -1,9 +1,11 @@
 import { Component, Inject, OnInit, PLATFORM_ID, Optional, REQUEST } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-redirect',
-  template: `<p>Redirecting to store...</p>`
+  imports: [TranslateModule],
+  template: `<p>{{ 'app.common.redirectingStore' | translate }}</p>`
 })
 export class RedirectComponent implements OnInit {
 

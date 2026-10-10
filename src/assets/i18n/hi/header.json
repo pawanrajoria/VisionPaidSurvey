@@ -36,6 +36,8 @@
                 "description": "जल्दी पहुँच अनलॉक करें &...",
                 "range": "31+"
             }
-        }
+        },
+        "getApp": "ProfitPiller ऐप पाएँ",
+        "scanToDownload": "डाउनलोड करने के लिए स्कैन करें"
     }
 }

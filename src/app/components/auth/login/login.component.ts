@@ -11,6 +11,7 @@ import { GoogleService } from "../google.service";
 import { FacebookAuthProvider, GoogleAuthProvider, OAuthProvider } from "@firebase/auth";
 import { MessageService } from "../../layout/message/message.service";
 import { MessageVM } from "../../layout/message/message.vm";
+import { TranslateService } from "@ngx-translate/core";
 import { FraudService } from "../../../frauddetection.service";
 
 
@@ -31,7 +32,8 @@ export class LoginComponent implements OnInit {
         private sharedDataService: SharedDataService, private activatedRoute: ActivatedRoute,
         private googleAuth: GoogleService, private localStorageService: LocalStorageService,
         private fraudService: FraudService,
-        private angularFireAuth: AngularFireAuth, private messageService: MessageService) {
+        private angularFireAuth: AngularFireAuth, private messageService: MessageService,
+        private translate: TranslateService) {
         this.loginForm = this.fb.group({
             email: ['', [Validators.required, Validators.email]],
             password: ['', Validators.required]
@@ -122,14 +124,15 @@ export class LoginComponent implements OnInit {
             if (!code) return;
 
             const label = kind === 'apple' ? 'Apple' : 'Facebook';
-            const message =
+            const key =
                 code === 'auth/account-exists-with-different-credential'
-                    ? 'An account with this email already exists. Please sign in the way you did before (Google or email and password).'
+                    ? 'app.errors.accountExists'
                     : code === 'auth/operation-not-allowed'
-                        ? `${label} sign-in is not available yet. Please use Google or your email.`
+                        ? 'app.errors.providerUnavailable'
                         : code === 'auth/popup-blocked'
-                            ? 'Your browser blocked the sign-in window. Please allow pop-ups and try again.'
-                            : `${label} sign-in failed. Please try again.`;
+                            ? 'app.errors.popupBlocked'
+                            : 'app.errors.providerFailed';
+            const message = this.translate.instant(key, { provider: label });
             this.messageService.showMessage(new MessageVM(message, 'error'));
         } finally {
             this.socialBusy = false;

@@ -5,22 +5,22 @@
             <mat-icon class="large-icon">error_outline</mat-icon>
 
             <h1 class="code">404</h1>
-            <h2 class="title">Page Not Found</h2>
+            <h2 class="title">{{ 'app.notFound.title' | translate }}</h2>
             <p class="message">
-                Oops! The page you're looking for doesn’t exist or has been moved.
+                {{ 'app.notFound.message' | translate }}
             </p>
 
             <div class="actions">
                 <button mat-raised-button color="primary" routerLink="/">
-                    Go to Home
+                    {{ 'app.notFound.home' | translate }}
                 </button>
                 <button mat-stroked-button color="primary" (click)="goToApp()">
-                    Go Back
+                    {{ 'app.notFound.back' | translate }}
                 </button>
             </div>
 
             <div class="debug-info">
-                <span class="label">Debug Path:</span> {{ currentUrl }}
+                <span class="label">{{ 'app.notFound.debugPath' | translate }}</span> {{ currentUrl }}
             </div>
         </div>
     </div>

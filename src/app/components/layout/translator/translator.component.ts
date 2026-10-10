@@ -64,7 +64,7 @@ export class TranslateComponent implements OnInit {
 
     changeLanguage() {
         if (!this.selectedLanguageCode) {
-            this.messageService.showMessage(new MessageVM("Please select a language", "success"));
+            this.messageService.showMessage(new MessageVM(this.translate.instant('app.lang.pleaseSelect'), "success"));
             return;
         }
 

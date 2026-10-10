@@ -1,9 +1,10 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { Component, OnInit } from '@angular/core';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-premium-user-alert',
-  imports: [MatDialogModule],
+  imports: [MatDialogModule, TranslateModule],
   templateUrl: './premium-user-alert.html',
   styleUrl: './premium-user-alert.scss'
 })

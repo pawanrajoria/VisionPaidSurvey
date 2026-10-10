@@ -100,5 +100,20 @@
   },
   "common": {
     "learnMore": "और जानें"
+  },
+  "seoLanding": {
+    "howToEarn": "पैसे कैसे कमाएँ",
+    "paymentMethods": "भुगतान के तरीके",
+    "topLocations": "प्रमुख स्थान",
+    "faqs": "अक्सर पूछे जाने वाले सवाल",
+    "download": "ऐप डाउनलोड करें और कमाना शुरू करें"
+  },
+  "imageAlt": {
+    "more": "और भी बहुत कुछ"
+  },
+  "rewardCategory": {
+    "cash": "कैश",
+    "giftCards": "गिफ़्ट कार्ड",
+    "donations": "दान"
   }
 }

@@ -14,7 +14,15 @@
       "submit": "Verzenden",
       "close": "Sluiten",
       "day_one": "{{count}} dag",
-      "day_other": "{{count}} dagen"
+      "day_other": "{{count}} dagen",
+      "redirecting": "Doorsturen…",
+      "done": "Klaar",
+      "scrollLeft": "Naar links scrollen",
+      "scrollRight": "Naar rechts scrollen",
+      "search": "Zoeken",
+      "signingIn": "Bezig met inloggen…",
+      "redirectingStore": "Doorsturen naar de store…",
+      "ok": "OK"
     },
     "weekday": {
       "Mon": "Ma",
@@ -65,7 +73,12 @@
       "checkInvite": "Nodig een vriend uit",
       "checkCashout": "Laat je eerste beloning uitbetalen",
       "balance": "Saldo:",
-      "claimReward": "Beloning claimen"
+      "claimReward": "Beloning claimen",
+      "tagTopRated": "Best beoordeeld",
+      "tagQuickEasy": "Snel & makkelijk",
+      "tagHighPaying": "Goed betalend",
+      "tagNew": "Nieuw",
+      "tagHot": "Hot"
     },
     "streak": {
       "title": "Reeksvoortgang",
@@ -118,7 +131,8 @@
       "bronzePerk": "Je bent op weg – blijf verdienen om Zilver te bereiken.",
       "silverPerk": "Geniet elke week van een speciale bonusdag",
       "goldPerk": "Krijg toegang tot exclusieve kortingen op beloningen",
-      "diamondPerk": "Vroege toegang tot nieuwe functies en premium aanbiedingen"
+      "diamondPerk": "Vroege toegang tot nieuwe functies en premium aanbiedingen",
+      "lvl": "Lvl {{level}}"
     },
     "leaderboard": {
       "loading": "Ranglijst laden…",
@@ -230,7 +244,9 @@
       "screener": {
         "title": "Profielenquête",
         "sub": "Beantwoord een paar korte vragen om passende enquêtes te vinden"
-      }
+      },
+      "browserNotSupported": "Browser wordt niet ondersteund",
+      "invalidZip": "Voer een geldige postcode in."
     },
     "status": {
       "completeTitle": "Enquête succesvol voltooid!",
@@ -271,7 +287,26 @@
     "cashout": {
       "firstNote": "Je eerste uitbetaling moet minimaal $ {{usd}} USD ({{points}} punten) zijn.",
       "firstNoteLong": "Je eerste uitbetaling moet minimaal $ {{usd}} USD ({{points}} punten) zijn. Daarna zijn kleinere bedragen mogelijk.",
-      "minNote": "De minimale uitbetaling is $ {{usd}} USD ({{points}} punten)."
+      "minNote": "De minimale uitbetaling is $ {{usd}} USD ({{points}} punten).",
+      "title": "Uitbetalen",
+      "available": "Beschikbaar saldo",
+      "points": "punten",
+      "toFirst": "Nog {{points}} punten tot je eerste beloning",
+      "canCashOut": "Je kunt nu uitbetalen",
+      "rewardType": "Type beloning",
+      "all": "Alle",
+      "searchPlaceholder": "Zoek PayPal, Amazon, UPI...",
+      "searchAria": "Beloningen zoeken",
+      "availableBadge": "Beschikbaar",
+      "fromPts": "vanaf {{points}} pnt",
+      "none": "Er zijn momenteel geen beloningen beschikbaar.",
+      "chooseAmount": "Kies een bedrag",
+      "needMore": "Nog {{points}} punten nodig",
+      "youGet": "Je krijgt <strong>{{value}}</strong> voor <strong>{{points}}</strong> punten",
+      "pickAmount": "Kies een bedrag waarvoor je genoeg punten hebt.",
+      "claim": "Beloning claimen",
+      "chooseMethod": "Kies een uitbetaalmethode om de bedragen te zien.",
+      "requires": "{{name}} vereist {{points}} pnt. Je hebt er {{balance}}."
     },
     "settings": {
       "timeZone": "Tijdzone wijzigen",
@@ -286,7 +321,9 @@
       "noPassword": "Je bent ingelogd met een social account, dus er is geen huidig wachtwoord. Stel er hieronder een in om ook met je e-mail en wachtwoord in te loggen.",
       "deleteWarning": "Hiermee wordt je account definitief gesloten. Je puntensaldo gaat verloren.",
       "passwordShort": "Het nieuwe wachtwoord moet minimaal 6 tekens bevatten.",
-      "passwordMismatch": "Het nieuwe wachtwoord en de bevestiging komen niet overeen."
+      "passwordMismatch": "Het nieuwe wachtwoord en de bevestiging komen niet overeen.",
+      "timeZoneError": "De tijdzone kon niet worden opgeslagen.",
+      "passwordMismatchConfirm": "Wachtwoord en bevestiging komen niet overeen"
     },
     "refer": {
       "friendsJoined": "Aangemelde vrienden"
@@ -313,13 +350,163 @@
       "failed": "Verzenden mislukt. Probeer het opnieuw.",
       "onApp": "Verzonden vanuit de app",
       "newMessages": "Nieuwe berichten: {{count}}",
-      "level": "Lvl {{level}}"
+      "level": "Lvl {{level}}",
+      "addReaction": "Reactie toevoegen",
+      "pickReaction": "Kies een reactie",
+      "quickEmoji": "Snelle emoji",
+      "emoji": "Emoji"
     },
     "promo": {
       "today": "Topaanbieding van vandaag",
       "earn": "Verdien {{points}} punten",
       "cta": "Nu starten",
       "later": "Misschien later"
+    },
+    "offers": {
+      "tabBest": "Best passende aanbiedingen",
+      "tabPoints": "Aanbiedingen met de meeste punten",
+      "tabMine": "Mijn aanbiedingen",
+      "search": "Aanbiedingen zoeken",
+      "device": "Apparaat",
+      "desktop": "Desktop",
+      "countOne": "{{count}} aanbieding",
+      "countOther": "{{count}} aanbiedingen",
+      "countForOne": "{{count}} aanbieding voor {{device}}",
+      "countForOther": "{{count}} aanbiedingen voor {{device}}",
+      "mineEmpty": "Aanbiedingen die je opent, worden hier bewaard zodat je ze later kunt afmaken.",
+      "topPayout": "Hoogste uitbetaling",
+      "howToEarn": "Zo verdien je",
+      "description": "Beschrijving",
+      "requirements": "Vereisten",
+      "confirmationTime": "Bevestigingstijd",
+      "expiresOn": "Verloopt op",
+      "earnPoints": "Verdien {{points}} punten",
+      "startOffer": "Aanbieding starten",
+      "stepGoal": "Voltooi de aanbieding zoals beschreven",
+      "stepOpen": "Tik op de knop hieronder om de aanbieding te openen",
+      "stepConfirmAfter": "Punten worden na bevestiging aan je saldo toegevoegd ({{time}})",
+      "stepConfirm": "Punten worden aan je saldo toegevoegd zodra de partner het bevestigt",
+      "qrScan": "Scan de QR-code met je telefoon.",
+      "availableDevices": "Beschikbare apparaten",
+      "qrCopyHint": "Je kunt de URL ook kopiëren naar de browser op je telefoon",
+      "copy": "Kopiëren"
+    },
+    "live": {
+      "badge": "LIVE",
+      "title": "Live uitbetalingen",
+      "subtitle": "Echte verdiensten van Profitpiller-leden",
+      "earningToday": "verdienen vandaag",
+      "ptsToday": "pnt verdiend vandaag",
+      "cashedWeek": "deze week uitbetaald",
+      "cashedOut": "heeft uitbetaald",
+      "earned": "heeft verdiend",
+      "empty": "Nog geen uitbetalingen in de afgelopen dagen.",
+      "emptyCta": "Vul een enquête in en sta als eerste op het bord!",
+      "startEarning": "Begin nu met verdienen",
+      "hide": "Verbergen",
+      "membersToday": "Leden die vandaag verdienen",
+      "justNow": "zojuist",
+      "minAgo": "{{count}} min geleden",
+      "hoursAgo": "{{count}} u geleden",
+      "yesterday": "gisteren",
+      "daysAgo": "{{count}} dagen geleden"
+    },
+    "nav": {
+      "changeLanguage": "Taal wijzigen",
+      "closeMenu": "Menu sluiten",
+      "openMenu": "Menu openen",
+      "accountMenu": "Accountmenu",
+      "adminConsole": "Beheerconsole"
+    },
+    "notifications": {
+      "title": "Meldingen",
+      "clearAll": "Alles wissen",
+      "none": "Geen nieuwe meldingen",
+      "single": "Melding",
+      "dismiss": "Melding sluiten"
+    },
+    "footer": {
+      "designedBy": "Ontworpen & ontwikkeld door"
+    },
+    "notify": {
+      "on": "Meldingen staan aan",
+      "compact": "Ontvang updates & aanbiedingsmeldingen",
+      "aria": "Aanbiedingsmeldingen",
+      "notNow": "Niet nu",
+      "enableAria": "Meldingen inschakelen voor updates en nieuwe aanbiedingen",
+      "title": "Ontvang updates & meldingen",
+      "body": "Klik op de afbeelding of de knop om meldingen in deze browser in te schakelen - we laten het je meteen weten zodra er nieuwe aanbiedingen, bonussen en uitbetalingen zijn.",
+      "blocked": "Meldingen zijn geblokkeerd voor deze site. Sta ze toe via het slotje in de adresbalk van je browser.",
+      "busy": "Een moment…",
+      "enable": "Meldingen inschakelen"
+    },
+    "lang": {
+      "title": "Kies land en taal",
+      "current": "Huidige taal:",
+      "select": "Kies taal",
+      "selectAria": "Kies een taal",
+      "apply": "Kiezen",
+      "pleaseSelect": "Kies een taal"
+    },
+    "redemption": {
+      "title": "Inwisselgegevens",
+      "paypalTitle": "PayPal-verificatie:",
+      "hours48": "48 uur",
+      "paypal1": "Zorg dat je PayPal-e-mailadres geverifieerd is.",
+      "paypal2": "Eerste inwisselingen vereisen een veiligheidscontrole.",
+      "upiTitle": "UPI-overboeking:",
+      "within24": "Binnen 24 uur",
+      "upi1": "Zorg dat UPI gekoppeld is aan een actieve bankrekening.",
+      "upi2": "Voer de juiste VPA in (bijv. name@upi).",
+      "giftTitle": "Levering e-cadeaukaart:",
+      "hours24to48": "24 - 48 uur",
+      "gift1": "De vouchercode wordt direct naar je geregistreerde e-mailadres gestuurd.",
+      "gift2": "Niet restitueerbaar en niet overdraagbaar.",
+      "upiLabel": "UPI-ID (VPA)",
+      "paypalEmail": "PayPal-e-mailadres",
+      "recipientEmail": "E-mailadres ontvanger",
+      "emailNote": "Dit e-mailadres kan niet worden gewijzigd. Als je je e-mailadres wilt bijwerken, neem dan contact op met het supportteam of maak een ticket aan via Hulp & support.",
+      "confirm": "Inwisseling bevestigen",
+      "enterUpi": "Voer je UPI-ID in",
+      "enterEmail": "Voer je e-mailadres in"
+    },
+    "help": {
+      "fileTooLarge": "Het bestand moet kleiner zijn dan 1 MB"
+    },
+    "notFound": {
+      "title": "Pagina niet gevonden",
+      "message": "Oeps! De pagina die je zoekt bestaat niet of is verplaatst.",
+      "home": "Naar home",
+      "back": "Terug",
+      "debugPath": "Debugpad:"
+    },
+    "premium": {
+      "title": "Premium-toegang",
+      "intro": "Houd je account van hoge kwaliteit om exclusieve enquêtes en goed betalende klanten te ontgrendelen.",
+      "item1": "Verdien met succes minstens <strong>$5</strong>",
+      "item2": "Vul minstens <strong>5 enquêtes</strong> in",
+      "item3": "Houd een <strong>laag afwijzingspercentage</strong>",
+      "item4": "Ontvang <strong>één geslaagde uitbetaling</strong>",
+      "item5": "Houd je account <strong>actief & echt</strong>",
+      "gotIt": "Begrepen ({{seconds}} s)"
+    },
+    "errors": {
+      "unauthorized": "Niet geautoriseerd! Doorsturen naar inloggen...",
+      "generic": "Er is iets misgegaan.",
+      "tryLater": "Er is een fout opgetreden! Probeer het later opnieuw.",
+      "accountExists": "Er bestaat al een account met dit e-mailadres. Log in zoals je eerder deed (Google of e-mail en wachtwoord).",
+      "providerUnavailable": "Inloggen met {{provider}} is nog niet beschikbaar. Gebruik Google of je e-mailadres.",
+      "popupBlocked": "Je browser heeft het inlogvenster geblokkeerd. Sta pop-ups toe en probeer het opnieuw.",
+      "providerFailed": "Inloggen met {{provider}} is mislukt. Probeer het opnieuw."
+    },
+    "contactForm": {
+      "thanks": "Bedankt voor je bericht! We nemen snel contact met je op.",
+      "required": "Vul alle verplichte velden in."
+    },
+    "toast": {
+      "success": "GELUKT",
+      "error": "FOUT",
+      "warning": "WAARSCHUWING"
     }
   }
 }

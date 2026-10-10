@@ -47,7 +47,26 @@
             "Household & Family": "घर और परिवार",
             "Lifestyle & Health": "जीवनशैली और स्वास्थ्य",
             "Media & Technology": "मीडिया और प्रौद्योगिकी",
-            "Travel & Leisure": "यात्रा और अवकाश"
-        }
+            "Travel & Leisure": "यात्रा और अवकाश",
+            "set_password": "पासवर्ड सेट करें"
+        },
+        "profile_photo": "प्रोफ़ाइल फ़ोटो",
+        "years_old": "{{age}} वर्ष",
+        "date": "तारीख",
+        "balance": "बैलेंस",
+        "screenout": "स्क्रीनआउट",
+        "tab_rewards": "रिवॉर्ड",
+        "tab_transactions": "लेन-देन",
+        "tab_pending": "लंबित",
+        "redeem_by": "रिडीम का तरीका",
+        "approved_on": "स्वीकृति की तारीख",
+        "search_options": "विकल्प खोजें...",
+        "your_answer": "आपका जवाब",
+        "type_here": "यहाँ लिखें...",
+        "submit_answer": "जवाब सबमिट करें",
+        "gender_1": "पुरुष",
+        "gender_2": "महिला",
+        "gender_0": "अन्य",
+        "profile_updated": "प्रोफ़ाइल सफलतापूर्वक अपडेट हो गई"
     }
 }

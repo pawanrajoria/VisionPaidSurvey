@@ -42,9 +42,9 @@ export class RootHomeComponent extends BaseComponent implements OnInit {
 
     surveys = [];
     categories = [
-        { name: 'Cash', icon: 'account_balance' },
-        { name: 'Gift Cards', icon: 'card_giftcard' },
-        { name: 'Donations', icon: 'favorite' },
+        { name: 'Cash', key: 'cash', icon: 'account_balance' },
+        { name: 'Gift Cards', key: 'giftCards', icon: 'card_giftcard' },
+        { name: 'Donations', key: 'donations', icon: 'favorite' },
     ];
 
     isLoggedIn: boolean = false;

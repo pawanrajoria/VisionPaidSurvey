@@ -14,7 +14,15 @@
       "submit": "提交",
       "close": "关闭",
       "day_one": "{{count}} 天",
-      "day_other": "{{count}} 天"
+      "day_other": "{{count}} 天",
+      "redirecting": "正在跳转…",
+      "done": "完成",
+      "scrollLeft": "向左滚动",
+      "scrollRight": "向右滚动",
+      "search": "搜索",
+      "signingIn": "正在登录…",
+      "redirectingStore": "正在跳转到应用商店…",
+      "ok": "确定"
     },
     "weekday": {
       "Mon": "周一",
@@ -65,7 +73,12 @@
       "checkInvite": "邀请一位好友",
       "checkCashout": "兑换第一份奖励",
       "balance": "余额：",
-      "claimReward": "领取奖励"
+      "claimReward": "领取奖励",
+      "tagTopRated": "好评最多",
+      "tagQuickEasy": "快速简单",
+      "tagHighPaying": "高收益",
+      "tagNew": "新",
+      "tagHot": "热门"
     },
     "streak": {
       "title": "连续进度",
@@ -118,7 +131,8 @@
       "bronzePerk": "您正在进步——继续赚取积分即可升至白银。",
       "silverPerk": "每周享受一次特别奖励日",
       "goldPerk": "获得专属奖励折扣",
-      "diamondPerk": "抢先体验新功能和高级任务"
+      "diamondPerk": "抢先体验新功能和高级任务",
+      "lvl": "{{level}} 级"
     },
     "leaderboard": {
       "loading": "正在加载排行榜…",
@@ -230,7 +244,9 @@
       "screener": {
         "title": "资料调查",
         "sub": "回答几个简单的问题以匹配调查"
-      }
+      },
+      "browserNotSupported": "不支持此浏览器",
+      "invalidZip": "请输入有效的邮政编码。"
     },
     "status": {
       "completeTitle": "调查已成功完成！",
@@ -271,7 +287,26 @@
     "cashout": {
       "firstNote": "首次提现金额不得低于 $ {{usd}} USD（{{points}} 积分）。",
       "firstNoteLong": "首次提现金额不得低于 $ {{usd}} USD（{{points}} 积分）。之后可提现更小的金额。",
-      "minNote": "最低提现金额为 $ {{usd}} USD（{{points}} 积分）。"
+      "minNote": "最低提现金额为 $ {{usd}} USD（{{points}} 积分）。",
+      "title": "提现",
+      "available": "可用余额",
+      "points": "积分",
+      "toFirst": "距离首个奖励还差 {{points}} 积分",
+      "canCashOut": "你现在可以提现了",
+      "rewardType": "奖励类型",
+      "all": "全部",
+      "searchPlaceholder": "搜索 PayPal、Amazon、UPI…",
+      "searchAria": "搜索奖励",
+      "availableBadge": "可兑换",
+      "fromPts": "{{points}} 积分起",
+      "none": "目前没有可用的奖励。",
+      "chooseAmount": "选择金额",
+      "needMore": "还需 {{points}} 积分",
+      "youGet": "用 <strong>{{points}}</strong> 积分兑换 <strong>{{value}}</strong>",
+      "pickAmount": "请选择积分足够兑换的金额。",
+      "claim": "领取奖励",
+      "chooseMethod": "选择提现方式以查看可兑换金额。",
+      "requires": "{{name}} 需要 {{points}} 积分，你目前有 {{balance}}。"
     },
     "settings": {
       "timeZone": "更改时区",
@@ -286,7 +321,9 @@
       "noPassword": "您是通过社交账号登录的，因此没有当前密码。请在下方设置密码，以便也能使用邮箱和密码登录。",
       "deleteWarning": "此操作将永久关闭您的账户。您的积分余额将会丢失。",
       "passwordShort": "新密码至少需要 6 个字符。",
-      "passwordMismatch": "新密码与确认密码不一致。"
+      "passwordMismatch": "新密码与确认密码不一致。",
+      "timeZoneError": "无法保存时区。",
+      "passwordMismatchConfirm": "密码与确认密码不一致"
     },
     "refer": {
       "friendsJoined": "已加入的好友"
@@ -313,13 +350,163 @@
       "failed": "发送失败，请重试。",
       "onApp": "来自应用",
       "newMessages": "新消息：{{count}}",
-      "level": "{{level}} 级"
+      "level": "{{level}} 级",
+      "addReaction": "添加表情回应",
+      "pickReaction": "选择表情回应",
+      "quickEmoji": "快捷表情",
+      "emoji": "表情"
     },
     "promo": {
       "today": "今日最佳任务",
       "earn": "赚取 {{points}} 积分",
       "cta": "立即开始",
       "later": "以后再说"
+    },
+    "offers": {
+      "tabBest": "最匹配的优惠",
+      "tabPoints": "积分最多的优惠",
+      "tabMine": "我的优惠",
+      "search": "搜索优惠",
+      "device": "设备",
+      "desktop": "桌面端",
+      "countOne": "{{count}} 个优惠",
+      "countOther": "{{count}} 个优惠",
+      "countForOne": "适用于 {{device}} 的 {{count}} 个优惠",
+      "countForOther": "适用于 {{device}} 的 {{count}} 个优惠",
+      "mineEmpty": "你打开过的优惠会保存在这里，方便你稍后完成。",
+      "topPayout": "最高奖励",
+      "howToEarn": "如何赚取",
+      "description": "说明",
+      "requirements": "要求",
+      "confirmationTime": "确认时间",
+      "expiresOn": "到期时间",
+      "earnPoints": "赚取 {{points}} 积分",
+      "startOffer": "开始优惠任务",
+      "stepGoal": "按说明完成该优惠任务",
+      "stepOpen": "点击下方按钮打开该优惠",
+      "stepConfirmAfter": "确认后积分将计入你的余额（{{time}}）",
+      "stepConfirm": "合作方确认后积分将计入你的余额",
+      "qrScan": "用手机扫描二维码。",
+      "availableDevices": "可用设备",
+      "qrCopyHint": "或者，将链接复制到手机浏览器中打开",
+      "copy": "复制"
+    },
+    "live": {
+      "badge": "实时",
+      "title": "实时提现",
+      "subtitle": "Profitpiller 会员的真实收益",
+      "earningToday": "今日赚取人数",
+      "ptsToday": "今日赚取积分",
+      "cashedWeek": "本周已提现",
+      "cashedOut": "已提现",
+      "earned": "已赚取",
+      "empty": "最近几天还没有提现记录。",
+      "emptyCta": "完成一份问卷，成为榜单上的第一人！",
+      "startEarning": "立即开始赚取",
+      "hide": "隐藏",
+      "membersToday": "今日赚取的会员",
+      "justNow": "刚刚",
+      "minAgo": "{{count}} 分钟前",
+      "hoursAgo": "{{count}} 小时前",
+      "yesterday": "昨天",
+      "daysAgo": "{{count}} 天前"
+    },
+    "nav": {
+      "changeLanguage": "更改语言",
+      "closeMenu": "关闭菜单",
+      "openMenu": "打开菜单",
+      "accountMenu": "账户菜单",
+      "adminConsole": "管理控制台"
+    },
+    "notifications": {
+      "title": "通知",
+      "clearAll": "全部清除",
+      "none": "没有新通知",
+      "single": "通知",
+      "dismiss": "关闭通知"
+    },
+    "footer": {
+      "designedBy": "设计与开发："
+    },
+    "notify": {
+      "on": "通知已开启",
+      "compact": "获取更新和优惠提醒",
+      "aria": "优惠通知",
+      "notNow": "以后再说",
+      "enableAria": "开启通知，获取更新和新优惠",
+      "title": "及时获取更新和通知",
+      "body": "点击图片或按钮即可在此浏览器中开启通知——一有新优惠、奖励和提现动态，我们会第一时间告诉你。",
+      "blocked": "此网站的通知已被屏蔽。请通过浏览器地址栏中的锁形图标允许通知。",
+      "busy": "请稍候…",
+      "enable": "开启通知"
+    },
+    "lang": {
+      "title": "选择国家和语言",
+      "current": "当前语言：",
+      "select": "选择语言",
+      "selectAria": "选择一种语言",
+      "apply": "确定",
+      "pleaseSelect": "请选择一种语言"
+    },
+    "redemption": {
+      "title": "兑换详情",
+      "paypalTitle": "PayPal 验证：",
+      "hours48": "48 小时",
+      "paypal1": "请确保你的 PayPal 邮箱已验证。",
+      "paypal2": "首次兑换需要进行安全审核。",
+      "upiTitle": "UPI 转账：",
+      "within24": "24 小时内",
+      "upi1": "请确保 UPI 已绑定有效的银行账户。",
+      "upi2": "请输入正确的 VPA（例如 name@upi）。",
+      "giftTitle": "电子礼品卡发放：",
+      "hours24to48": "24 - 48 小时",
+      "gift1": "兑换码将直接发送到你的注册邮箱。",
+      "gift2": "不可退款，不可转让。",
+      "upiLabel": "UPI ID（VPA）",
+      "paypalEmail": "PayPal 邮箱",
+      "recipientEmail": "收件人邮箱",
+      "emailNote": "此邮箱地址无法更改。如需更新邮箱地址，请联系支持团队或在“帮助与支持”中提交工单。",
+      "confirm": "确认兑换",
+      "enterUpi": "请输入你的 UPI ID",
+      "enterEmail": "请输入你的邮箱"
+    },
+    "help": {
+      "fileTooLarge": "文件必须小于 1MB"
+    },
+    "notFound": {
+      "title": "页面未找到",
+      "message": "哎呀！你要找的页面不存在或已被移动。",
+      "home": "返回首页",
+      "back": "返回",
+      "debugPath": "调试路径："
+    },
+    "premium": {
+      "title": "高级权限",
+      "intro": "保持高质量账户，即可解锁专属问卷和高收益客户。",
+      "item1": "成功赚取至少 <strong>$5</strong>",
+      "item2": "完成至少 <strong>5 份问卷</strong>",
+      "item3": "保持 <strong>较低的拒绝率</strong>",
+      "item4": "成功完成 <strong>一次提现</strong>",
+      "item5": "保持账户 <strong>活跃且真实</strong>",
+      "gotIt": "知道了（{{seconds}} 秒）"
+    },
+    "errors": {
+      "unauthorized": "未授权！正在跳转到登录页…",
+      "generic": "出了点问题。",
+      "tryLater": "发生错误！请稍后再试。",
+      "accountExists": "该邮箱已注册账户。请使用之前的方式登录（Google 或邮箱和密码）。",
+      "providerUnavailable": "暂不支持 {{provider}} 登录，请使用 Google 或邮箱。",
+      "popupBlocked": "浏览器拦截了登录窗口。请允许弹出窗口后重试。",
+      "providerFailed": "{{provider}} 登录失败，请重试。"
+    },
+    "contactForm": {
+      "thanks": "感谢你的联系！我们会尽快回复你。",
+      "required": "请填写所有必填字段。"
+    },
+    "toast": {
+      "success": "成功",
+      "error": "错误",
+      "warning": "警告"
     }
   }
 }

@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { MessageService } from "../../layout/message/message.service";
 import { MessageVM } from "../../layout/message/message.vm";
 import { LocalStorageService } from "../../../localstorage.service";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
     selector: 'app-reset-password',
@@ -18,7 +19,8 @@ export class ResetPasswordComponent implements OnInit {
     rsetForm!: FormGroup;
 
     constructor(private fb: FormBuilder, private message: MessageService, private authService: AuthService,
-        private route: ActivatedRoute, private router: Router, private localStorageService: LocalStorageService
+        private route: ActivatedRoute, private router: Router, private localStorageService: LocalStorageService,
+        private translate: TranslateService
     ) {
         this.rsetForm = this.fb.group({
             password: ['', Validators.required],
@@ -42,7 +44,7 @@ export class ResetPasswordComponent implements OnInit {
         if (self.rsetForm?.invalid) return;
 
         if (self.rsetForm.get('password')?.value !== self.rsetForm.get('confirmPassword')?.value) {
-            return self.message.showMessage(new MessageVM("Password and Confirm Password do not match", "error"));
+            return self.message.showMessage(new MessageVM(self.translate.instant('app.settings.passwordMismatchConfirm'), "error"));
         }
 
         const response = await self.authService.verifyForgotPassword(self.rsetForm.value);

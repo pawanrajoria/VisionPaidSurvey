@@ -100,5 +100,20 @@
   },
   "common": {
     "learnMore": "Meer informatie"
+  },
+  "seoLanding": {
+    "howToEarn": "Zo verdien je geld",
+    "paymentMethods": "Betaalmethoden",
+    "topLocations": "Populaire locaties",
+    "faqs": "Veelgestelde vragen",
+    "download": "Download de app en begin met verdienen"
+  },
+  "imageAlt": {
+    "more": "En nog veel meer"
+  },
+  "rewardCategory": {
+    "cash": "Contant",
+    "giftCards": "Cadeaukaarten",
+    "donations": "Donaties"
   }
 }

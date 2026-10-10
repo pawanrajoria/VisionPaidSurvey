@@ -6,7 +6,7 @@ import { BaseComponent } from "../../../../../base.component";
 @Component({
     selector: 'redirect-offer',
     imports: [SharedModule],
-    template: '<p>Redirecting...</p>'
+    template: `<p>{{ 'app.common.redirecting' | translate }}</p>`
 })
 export class OfferLinkComponent extends BaseComponent implements OnInit {
 

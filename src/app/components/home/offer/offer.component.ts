@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { OfferPopupDialog } from './offer-popup/offer-popup.component';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { BaseComponent } from '../../../base.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-offer',
@@ -20,9 +21,14 @@ export class OfferComponent extends BaseComponent implements OnInit {
     offers: IOfferResponseDto[] = [];
     filteredOffers: IOfferResponseDto[] = [];
 
-    links = ['Best Match Offers', 'Most Points Offers', 'My Offers'];
-    activeLink = this.links[0];
-    offerType = 'Best Match Offers';
+    /** Stable ids drive the logic; only the label is translated. */
+    links = [
+        { id: 'best', label: 'app.offers.tabBest' },
+        { id: 'points', label: 'app.offers.tabPoints' },
+        { id: 'mine', label: 'app.offers.tabMine' }
+    ];
+    activeLink = this.links[0].id;
+    offerType = 'best';
 
     selectedDeviceType: string[] = [];
     searchTxt = '';
@@ -30,6 +36,7 @@ export class OfferComponent extends BaseComponent implements OnInit {
     readonly dialog = inject(MatDialog);
     readonly offerService = inject(OfferService);
     readonly breakpointObserver = inject(BreakpointObserver);
+    readonly translate = inject(TranslateService);
 
     constructor() {
         super(); // calls BaseComponent constructor and binds browser globals
@@ -94,7 +101,9 @@ export class OfferComponent extends BaseComponent implements OnInit {
     }
 
     get deviceLabel(): string {
-        return this.selectedDeviceType.map(d => d === 'IOS' ? 'iOS' : d).join(' & ');
+        return this.selectedDeviceType
+            .map(d => d === 'IOS' ? 'iOS' : d === 'Desktop' ? this.translate.instant('app.offers.desktop') : d)
+            .join(' & ');
     }
 
     filterItems() {
@@ -103,7 +112,7 @@ export class OfferComponent extends BaseComponent implements OnInit {
         const text = this.searchTxt.toLowerCase();
 
         // "My Offers" used to show every offer: it now lists the ones opened here, newest first.
-        if (this.offerType === 'My Offers') {
+        if (this.offerType === 'mine') {
             const order = new Map(this.myOfferIds.map((id, i) => [id, i]));
             this.filteredOffers = this.offers
                 .filter(o => order.has(o.offerId) && (o.offerName ?? '').toLowerCase().includes(text))
@@ -123,7 +132,7 @@ export class OfferComponent extends BaseComponent implements OnInit {
                 return matchesCategory && matchesText;
             })
             .sort((a, b) => {
-                if (this.offerType === 'Best Match Offers') {
+                if (this.offerType === 'best') {
                     return b.offerId - a.offerId;
                 } else {
                     return b.points - a.points;

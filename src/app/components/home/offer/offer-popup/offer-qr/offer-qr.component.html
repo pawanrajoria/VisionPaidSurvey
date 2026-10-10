@@ -1,15 +1,15 @@
 <div mat-dialog-content class="dialog-container">
     <div class="dialog-header">
-        <button mat-icon-button (click)="onBack()" aria-label="Back">
+        <button mat-icon-button (click)="onBack()" [attr.aria-label]="'app.common.back' | translate">
             <mat-icon>arrow_back</mat-icon>
         </button>
         <span class="title">{{ offer.offerName }}</span>
-        <button mat-icon-button (click)="onClose()" aria-label="Close">
+        <button mat-icon-button (click)="onClose()" [attr.aria-label]="'app.common.close' | translate">
             <mat-icon>close</mat-icon>
         </button>
     </div>
 
-    <div class="qr-instruction">Scan the QR Code with your phone.</div>
+    <div class="qr-instruction">{{ 'app.offers.qrScan' | translate }}</div>
 
     <div class="qr-code-wrapper">
         @defer {
@@ -21,7 +21,7 @@
     </div>
 
     <div class="device-info">
-        Available Devices
+        {{ 'app.offers.availableDevices' | translate }}
         <div class="platform-icon">
             @if(offer?.device?.includes('Android')) {<mat-icon>android</mat-icon>}
 @if(offer?.device?.includes('IOS')) {<mat-icon>apple</mat-icon>}
@@ -35,7 +35,7 @@
         <img loading="lazy" [src]="offer.imageUrl" alt="{{ offer.offerName }}" class="app-icon" />
         <div class="app-details">
             <div class="app-name">{{ offer.offerName }}
-                <span class="points-value text-right">{{ offer.points }}</span> Points
+                <span class="points-value text-right">{{ offer.points }}</span> {{ 'app.common.points' | translate }}
             </div>
             <div class="app-desc">{{ offer.description }}</div>
         </div>
@@ -44,7 +44,7 @@
 
 <div class="alt-url-box" mat-dialog-actions>
     <mat-icon class="info-icon">info</mat-icon>
-    <span>Alternatively, copy the URL into your mobile browser</span>
+    <span>{{ 'app.offers.qrCopyHint' | translate }}</span>
 
     <div class="link" title="{{ offer.clickUrl }}">
         <a [href]="offer.clickUrl" target="_blank">{{ offer.clickUrl | slice:0:30 }}...</a>
@@ -52,6 +52,6 @@
 
     <div class="copy-container">
         <input type="text" [value]="offer.clickUrl" readonly>
-        <button mat-raised-button color="primary" (click)="copyToClipboard(offer.clickUrl)">Copy</button>
+        <button mat-raised-button color="primary" (click)="copyToClipboard(offer.clickUrl)">{{ 'app.offers.copy' | translate }}</button>
     </div>
 </div>

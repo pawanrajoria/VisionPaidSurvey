@@ -51,10 +51,10 @@
                 </div>
                 @if (priorityOffers.length > 2) {
                 <div class="actions">
-                    <button mat-icon-button (click)="scrollLeft('prioritySlider')" aria-label="Scroll left">
+                    <button mat-icon-button (click)="scrollLeft('prioritySlider')" [attr.aria-label]="'app.common.scrollLeft' | translate">
                         <mat-icon>chevron_left</mat-icon>
                     </button>
-                    <button mat-icon-button (click)="scrollRight('prioritySlider')" aria-label="Scroll right">
+                    <button mat-icon-button (click)="scrollRight('prioritySlider')" [attr.aria-label]="'app.common.scrollRight' | translate">
                         <mat-icon>chevron_right</mat-icon>
                     </button>
                 </div>
@@ -123,10 +123,10 @@
                         </div>
                         <div class="actions">
                             <span class="view-all" [routerLink]="['/', currentLocale, 'app', 'offers']">{{ 'app.common.viewAll' | translate }}</span>
-                            <button mat-icon-button (click)="scrollLeft('gamingSlider')" aria-label="Scroll left">
+                            <button mat-icon-button (click)="scrollLeft('gamingSlider')" [attr.aria-label]="'app.common.scrollLeft' | translate">
                                 <mat-icon>chevron_left</mat-icon>
                             </button>
-                            <button mat-icon-button (click)="scrollRight('gamingSlider')" aria-label="Scroll right">
+                            <button mat-icon-button (click)="scrollRight('gamingSlider')" [attr.aria-label]="'app.common.scrollRight' | translate">
                                 <mat-icon>chevron_right</mat-icon>
                             </button>
                         </div>
@@ -161,10 +161,10 @@
                         </div>
                         <div class="actions">
                             <span class="view-all">{{ 'app.common.viewAll' | translate }}</span>
-                            <button mat-icon-button (click)="scrollLeft('offerSlider')" aria-label="Scroll left">
+                            <button mat-icon-button (click)="scrollLeft('offerSlider')" [attr.aria-label]="'app.common.scrollLeft' | translate">
                                 <mat-icon>chevron_left</mat-icon>
                             </button>
-                            <button mat-icon-button (click)="scrollRight('offerSlider')" aria-label="Scroll right">
+                            <button mat-icon-button (click)="scrollRight('offerSlider')" [attr.aria-label]="'app.common.scrollRight' | translate">
                                 <mat-icon>chevron_right</mat-icon>
                             </button>
                         </div>
@@ -196,9 +196,9 @@
                 <div class="actions">
                     <span class="view-all" [routerLink]="['/', currentLocale, 'app', 'survey']">{{ 'app.common.viewAll' | translate }}</span>
                     <button mat-icon-button
-                        (click)="scrollLeft('surveySlider')" aria-label="Scroll left"><mat-icon>chevron_left</mat-icon></button>
+                        (click)="scrollLeft('surveySlider')" [attr.aria-label]="'app.common.scrollLeft' | translate"><mat-icon>chevron_left</mat-icon></button>
                     <button mat-icon-button
-                        (click)="scrollRight('surveySlider')" aria-label="Scroll right"><mat-icon>chevron_right</mat-icon></button>
+                        (click)="scrollRight('surveySlider')" [attr.aria-label]="'app.common.scrollRight' | translate"><mat-icon>chevron_right</mat-icon></button>
                 </div>
             </div>
             <div #surveySlider class="horizontal-scroll-container">
@@ -216,7 +216,7 @@
 
                                 <div class="stats-row">
                                     <div class="points">
-                                        <img loading="lazy" src="/assets/images/homepagelogo.png" alt="points" width="200" height="200"> {{item.points}}
+                                        <img loading="lazy" src="/assets/images/homepagelogo.png" [alt]="'app.common.points' | translate" width="200" height="200"> {{item.points}}
                                     </div>
                                     <div class="loi-info">
                                         <mat-icon>schedule</mat-icon>
@@ -241,9 +241,9 @@
                 <div class="section-title"><mat-icon color="primary">stars</mat-icon> {{ 'app.earn.topPartners' | translate }}</div>
                 <div class="actions">
                     <button mat-icon-button
-                        (click)="scrollLeft('partnerSlider')" aria-label="Scroll left"><mat-icon>chevron_left</mat-icon></button>
+                        (click)="scrollLeft('partnerSlider')" [attr.aria-label]="'app.common.scrollLeft' | translate"><mat-icon>chevron_left</mat-icon></button>
                     <button mat-icon-button
-                        (click)="scrollRight('partnerSlider')" aria-label="Scroll right"><mat-icon>chevron_right</mat-icon></button>
+                        (click)="scrollRight('partnerSlider')" [attr.aria-label]="'app.common.scrollRight' | translate"><mat-icon>chevron_right</mat-icon></button>
                 </div>
             </div>
             <div #partnerSlider class="horizontal-scroll-container">
@@ -252,7 +252,7 @@
                         [style.background]="partner.gradient || '#105749'" (click)="goToPartner(partner)">
 
                         <div class="status-badge" [ngClass]="partner.tagClass">
-                            {{ partner.tag || ('app.earn.popular' | translate) }}
+                            {{ (partner.tag || 'app.earn.popular') | translate }}
                         </div>
 
                         <img loading="lazy" [src]="partner.logo" class="partner-logo">
@@ -282,9 +282,9 @@
                 </div>
                 <div class="actions">
                     <button mat-icon-button
-                        (click)="scrollLeft('surveyWallSlider')" aria-label="Scroll left"><mat-icon>chevron_left</mat-icon></button>
+                        (click)="scrollLeft('surveyWallSlider')" [attr.aria-label]="'app.common.scrollLeft' | translate"><mat-icon>chevron_left</mat-icon></button>
                     <button mat-icon-button
-                        (click)="scrollRight('surveyWallSlider')" aria-label="Scroll right"><mat-icon>chevron_right</mat-icon></button>
+                        (click)="scrollRight('surveyWallSlider')" [attr.aria-label]="'app.common.scrollRight' | translate"><mat-icon>chevron_right</mat-icon></button>
                 </div>
             </div>
 

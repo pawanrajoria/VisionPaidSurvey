@@ -36,6 +36,8 @@
                 "description": "Buka Kunci Akses Awal &...",
                 "range": "31+"
             }
-        }
+        },
+        "getApp": "Dapatkan Aplikasi ProfitPiller",
+        "scanToDownload": "IMBAS UNTUK MUAT TURUN"
     }
 }

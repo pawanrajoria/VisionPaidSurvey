@@ -14,7 +14,15 @@
       "submit": "Hantar",
       "close": "Tutup",
       "day_one": "{{count}} Hari",
-      "day_other": "{{count}} Hari"
+      "day_other": "{{count}} Hari",
+      "redirecting": "Mengubah hala…",
+      "done": "Selesai",
+      "scrollLeft": "Tatal ke kiri",
+      "scrollRight": "Tatal ke kanan",
+      "search": "Cari",
+      "signingIn": "Sedang log masuk…",
+      "redirectingStore": "Mengubah hala ke kedai…",
+      "ok": "OK"
     },
     "weekday": {
       "Mon": "Isn",
@@ -65,7 +73,12 @@
       "checkInvite": "Jemput rakan",
       "checkCashout": "Tunaikan ganjaran pertama anda",
       "balance": "Baki:",
-      "claimReward": "Tuntut ganjaran"
+      "claimReward": "Tuntut ganjaran",
+      "tagTopRated": "Penilaian Tertinggi",
+      "tagQuickEasy": "Pantas & Mudah",
+      "tagHighPaying": "Bayaran Tinggi",
+      "tagNew": "Baharu",
+      "tagHot": "Hangat"
     },
     "streak": {
       "title": "Kemajuan Rentetan",
@@ -118,7 +131,8 @@
       "bronzePerk": "Anda sedang maju – teruskan menjana untuk mencapai Perak.",
       "silverPerk": "Nikmati Hari Bonus istimewa setiap minggu",
       "goldPerk": "Dapatkan akses kepada Diskaun Ganjaran Eksklusif",
-      "diamondPerk": "Akses awal kepada ciri baharu dan tawaran premium"
+      "diamondPerk": "Akses awal kepada ciri baharu dan tawaran premium",
+      "lvl": "Tahap {{level}}"
     },
     "leaderboard": {
       "loading": "Memuatkan papan pendahulu…",
@@ -230,7 +244,9 @@
       "screener": {
         "title": "Tinjauan Profil",
         "sub": "Jawab beberapa soalan ringkas untuk memadankan tinjauan"
-      }
+      },
+      "browserNotSupported": "Pelayar tidak disokong",
+      "invalidZip": "Sila berikan poskod yang sah."
     },
     "status": {
       "completeTitle": "Tinjauan Berjaya Diselesaikan!",
@@ -271,7 +287,26 @@
     "cashout": {
       "firstNote": "Tunai keluar pertama anda mestilah sekurang-kurangnya $ {{usd}} USD ({{points}} mata).",
       "firstNoteLong": "Tunai keluar pertama anda mestilah sekurang-kurangnya $ {{usd}} USD ({{points}} mata). Selepas itu, jumlah yang lebih kecil boleh dikeluarkan.",
-      "minNote": "Pengeluaran minimum ialah $ {{usd}} USD ({{points}} mata)."
+      "minNote": "Pengeluaran minimum ialah $ {{usd}} USD ({{points}} mata).",
+      "title": "Keluarkan wang",
+      "available": "Baki tersedia",
+      "points": "mata",
+      "toFirst": "{{points}} mata lagi untuk ganjaran pertama anda",
+      "canCashOut": "Anda boleh mengeluarkan wang sekarang",
+      "rewardType": "Jenis ganjaran",
+      "all": "Semua",
+      "searchPlaceholder": "Cari PayPal, Amazon, UPI...",
+      "searchAria": "Cari ganjaran",
+      "availableBadge": "Tersedia",
+      "fromPts": "dari {{points}} mata",
+      "none": "Tiada ganjaran tersedia buat masa ini.",
+      "chooseAmount": "Pilih jumlah",
+      "needMore": "Perlukan {{points}} mata lagi",
+      "youGet": "Anda mendapat <strong>{{value}}</strong> untuk <strong>{{points}}</strong> mata",
+      "pickAmount": "Pilih jumlah yang mencukupi dengan mata anda.",
+      "claim": "Tuntut ganjaran",
+      "chooseMethod": "Pilih kaedah pembayaran untuk melihat jumlahnya.",
+      "requires": "{{name}} memerlukan {{points}} mata. Anda ada {{balance}}."
     },
     "settings": {
       "timeZone": "Tukar zon waktu",
@@ -286,7 +321,9 @@
       "noPassword": "Anda log masuk dengan akaun sosial, jadi tiada kata laluan semasa. Tetapkan satu di bawah untuk turut log masuk dengan e-mel dan kata laluan.",
       "deleteWarning": "Ini akan menutup akaun anda secara kekal. Baki mata anda akan hilang.",
       "passwordShort": "Kata laluan baharu mestilah sekurang-kurangnya 6 aksara.",
-      "passwordMismatch": "Kata laluan baharu dan pengesahan tidak sepadan."
+      "passwordMismatch": "Kata laluan baharu dan pengesahan tidak sepadan.",
+      "timeZoneError": "Zon waktu tidak dapat disimpan.",
+      "passwordMismatchConfirm": "Kata laluan dan pengesahan kata laluan tidak sepadan"
     },
     "refer": {
       "friendsJoined": "Rakan yang menyertai"
@@ -313,13 +350,163 @@
       "failed": "Tidak dapat menghantar. Sila cuba lagi.",
       "onApp": "Dihantar dari aplikasi",
       "newMessages": "Mesej baharu: {{count}}",
-      "level": "Thp {{level}}"
+      "level": "Thp {{level}}",
+      "addReaction": "Tambah reaksi",
+      "pickReaction": "Pilih reaksi",
+      "quickEmoji": "Emoji pantas",
+      "emoji": "Emoji"
     },
     "promo": {
       "today": "Tawaran terbaik hari ini",
       "earn": "Dapatkan {{points}} mata",
       "cta": "Mula sekarang",
       "later": "Mungkin nanti"
+    },
+    "offers": {
+      "tabBest": "Tawaran Paling Sepadan",
+      "tabPoints": "Tawaran Mata Terbanyak",
+      "tabMine": "Tawaran Saya",
+      "search": "Cari tawaran",
+      "device": "Peranti",
+      "desktop": "Desktop",
+      "countOne": "{{count}} tawaran",
+      "countOther": "{{count}} tawaran",
+      "countForOne": "{{count}} tawaran untuk {{device}}",
+      "countForOther": "{{count}} tawaran untuk {{device}}",
+      "mineEmpty": "Tawaran yang anda buka disimpan di sini supaya anda boleh menyelesaikannya kemudian.",
+      "topPayout": "Bayaran tertinggi",
+      "howToEarn": "Cara memperoleh",
+      "description": "Penerangan",
+      "requirements": "Syarat",
+      "confirmationTime": "Masa Pengesahan",
+      "expiresOn": "Tamat Pada",
+      "earnPoints": "Peroleh {{points}} Mata",
+      "startOffer": "Mulakan tawaran",
+      "stepGoal": "Lengkapkan tawaran seperti yang diterangkan",
+      "stepOpen": "Ketik butang di bawah untuk membuka tawaran",
+      "stepConfirmAfter": "Mata ditambah ke baki anda selepas pengesahan ({{time}})",
+      "stepConfirm": "Mata ditambah ke baki anda sebaik sahaja rakan kongsi mengesahkannya",
+      "qrScan": "Imbas Kod QR dengan telefon anda.",
+      "availableDevices": "Peranti Tersedia",
+      "qrCopyHint": "Sebagai alternatif, salin URL ke pelayar mudah alih anda",
+      "copy": "Salin"
+    },
+    "live": {
+      "badge": "LANGSUNG",
+      "title": "Pembayaran langsung",
+      "subtitle": "Pendapatan sebenar ahli Profitpiller",
+      "earningToday": "memperoleh hari ini",
+      "ptsToday": "mata diperoleh hari ini",
+      "cashedWeek": "dikeluarkan minggu ini",
+      "cashedOut": "telah mengeluarkan",
+      "earned": "telah memperoleh",
+      "empty": "Belum ada pembayaran dalam beberapa hari lepas.",
+      "emptyCta": "Lengkapkan tinjauan dan jadilah yang pertama di papan!",
+      "startEarning": "Mula memperoleh sekarang",
+      "hide": "Sembunyi",
+      "membersToday": "Ahli yang memperoleh hari ini",
+      "justNow": "baru sahaja",
+      "minAgo": "{{count}} min lalu",
+      "hoursAgo": "{{count}} jam lalu",
+      "yesterday": "semalam",
+      "daysAgo": "{{count}} hari lalu"
+    },
+    "nav": {
+      "changeLanguage": "Tukar bahasa",
+      "closeMenu": "Tutup menu",
+      "openMenu": "Buka menu",
+      "accountMenu": "Menu akaun",
+      "adminConsole": "Konsol pentadbir"
+    },
+    "notifications": {
+      "title": "Pemberitahuan",
+      "clearAll": "Kosongkan Semua",
+      "none": "Tiada pemberitahuan baharu",
+      "single": "Pemberitahuan",
+      "dismiss": "Tolak pemberitahuan"
+    },
+    "footer": {
+      "designedBy": "Direka & Dibangunkan oleh"
+    },
+    "notify": {
+      "on": "Pemberitahuan dihidupkan",
+      "compact": "Dapatkan kemas kini & makluman tawaran",
+      "aria": "Pemberitahuan tawaran",
+      "notNow": "Bukan sekarang",
+      "enableAria": "Dayakan pemberitahuan untuk kemas kini dan tawaran baharu",
+      "title": "Dapatkan kemas kini & pemberitahuan",
+      "body": "Klik gambar atau butang untuk mendayakan pemberitahuan dalam pelayar ini - kami akan memaklumkan anda sebaik sahaja ada tawaran, bonus dan pembayaran baharu.",
+      "blocked": "Pemberitahuan disekat untuk laman ini. Benarkannya melalui ikon kunci di bar alamat pelayar anda.",
+      "busy": "Sebentar…",
+      "enable": "Dayakan pemberitahuan"
+    },
+    "lang": {
+      "title": "Pilih Negara dan Bahasa",
+      "current": "Bahasa semasa:",
+      "select": "Pilih Bahasa",
+      "selectAria": "Pilih bahasa",
+      "apply": "Pilih",
+      "pleaseSelect": "Sila pilih bahasa"
+    },
+    "redemption": {
+      "title": "Butiran Penebusan",
+      "paypalTitle": "Pengesahan PayPal:",
+      "hours48": "48 Jam",
+      "paypal1": "Pastikan e-mel PayPal anda telah disahkan.",
+      "paypal2": "Penebusan kali pertama memerlukan semakan keselamatan.",
+      "upiTitle": "Pemindahan UPI:",
+      "within24": "Dalam 24 Jam",
+      "upi1": "Pastikan UPI dipautkan ke akaun bank yang aktif.",
+      "upi2": "Masukkan VPA yang betul (cth., name@upi).",
+      "giftTitle": "Penghantaran Kad Hadiah Elektronik:",
+      "hours24to48": "24 - 48 Jam",
+      "gift1": "Kod baucar dihantar terus ke e-mel berdaftar anda.",
+      "gift2": "Tidak boleh dikembalikan dan tidak boleh dipindah milik.",
+      "upiLabel": "ID UPI (VPA)",
+      "paypalEmail": "E-mel PayPal",
+      "recipientEmail": "E-mel Penerima",
+      "emailNote": "Alamat e-mel ini tidak boleh ditukar. Jika anda perlu mengemas kini alamat e-mel anda, sila hubungi Pasukan Sokongan atau buat tiket melalui bahagian Bantuan & Sokongan.",
+      "confirm": "Sahkan Penebusan",
+      "enterUpi": "Sila masukkan ID UPI anda",
+      "enterEmail": "Sila masukkan ID e-mel anda"
+    },
+    "help": {
+      "fileTooLarge": "Fail mestilah lebih kecil daripada 1MB"
+    },
+    "notFound": {
+      "title": "Halaman Tidak Ditemui",
+      "message": "Alamak! Halaman yang anda cari tidak wujud atau telah dialihkan.",
+      "home": "Pergi ke Laman Utama",
+      "back": "Kembali",
+      "debugPath": "Laluan Nyahpepijat:"
+    },
+    "premium": {
+      "title": "Akses Premium",
+      "intro": "Kekalkan akaun berkualiti tinggi untuk membuka tinjauan eksklusif dan pelanggan berbayaran tinggi.",
+      "item1": "Peroleh sekurang-kurangnya <strong>$5</strong> dengan jayanya",
+      "item2": "Lengkapkan sekurang-kurangnya <strong>5 tinjauan</strong>",
+      "item3": "Kekalkan <strong>kadar penolakan yang rendah</strong>",
+      "item4": "Terima <strong>satu pembayaran yang berjaya</strong>",
+      "item5": "Pastikan akaun <strong>aktif & tulen</strong>",
+      "gotIt": "Faham ({{seconds}}s)"
+    },
+    "errors": {
+      "unauthorized": "Tidak dibenarkan! Mengubah hala ke log masuk...",
+      "generic": "Sesuatu tidak kena.",
+      "tryLater": "Ralat berlaku! Sila cuba lagi kemudian.",
+      "accountExists": "Akaun dengan e-mel ini sudah wujud. Sila log masuk seperti sebelum ini (Google atau e-mel dan kata laluan).",
+      "providerUnavailable": "Log masuk {{provider}} belum tersedia. Sila gunakan Google atau e-mel anda.",
+      "popupBlocked": "Pelayar anda menyekat tetingkap log masuk. Sila benarkan pop-up dan cuba lagi.",
+      "providerFailed": "Log masuk {{provider}} gagal. Sila cuba lagi."
+    },
+    "contactForm": {
+      "thanks": "Terima kasih kerana menghubungi kami! Kami akan membalas tidak lama lagi.",
+      "required": "Sila isi semua medan yang diperlukan."
+    },
+    "toast": {
+      "success": "BERJAYA",
+      "error": "RALAT",
+      "warning": "AMARAN"
     }
   }
 }

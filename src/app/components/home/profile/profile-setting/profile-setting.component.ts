@@ -59,19 +59,19 @@ export class ProfileSettingComponent extends BaseComponent implements OnInit {
 
     updateUserName() {
         this.dialog.open(ProfileSettingPopup, {
-            data: { title: 'Change User Name', type: 1, ...this.common }
+            data: { title: 'account.headings.change_username', type: 1, ...this.common }
         });
     }
 
     updateEmail() {
         this.dialog.open(ProfileSettingPopup, {
-            data: { title: 'Change Email', type: 2, ...this.common }
+            data: { title: 'account.headings.change_email', type: 2, ...this.common }
         });
     }
 
     updatePassword() {
         const dialogRef = this.dialog.open(ProfileSettingPopup, {
-            data: { title: this.common.hasPassword ? 'Change Password' : 'Set a Password', type: 3, ...this.common }
+            data: { title: this.common.hasPassword ? 'account.headings.change_password' : 'account.headings.set_password', type: 3, ...this.common }
         });
 
         dialogRef.afterClosed().subscribe(async result => {
@@ -82,13 +82,13 @@ export class ProfileSettingComponent extends BaseComponent implements OnInit {
 
     deleteAccount() {
         this.dialog.open(ProfileSettingPopup, {
-            data: { title: 'Delete Account', type: 4, ...this.common }
+            data: { title: 'account.headings.delete_account', type: 4, ...this.common }
         });
     }
 
     updateBasicInfo() {
         this.dialog.open(ProfileSettingPopup, {
-            data: { title: 'Change Basic Info', type: 5, ...this.common }
+            data: { title: 'account.headings.change_basic_setting', type: 5, ...this.common }
         });
     }
 
@@ -96,7 +96,7 @@ export class ProfileSettingComponent extends BaseComponent implements OnInit {
         const dialogRef = this.dialog.open(ProfileSettingPopup, {
             width: '460px',
             maxWidth: '95vw',
-            data: { title: 'Change Time Zone', type: 6, ...this.common }
+            data: { title: 'app.settings.timeZone', type: 6, ...this.common }
         });
 
         dialogRef.afterClosed().subscribe(result => {

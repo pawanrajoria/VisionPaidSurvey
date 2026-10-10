@@ -47,7 +47,26 @@
             "Household & Family": "Huishouden en Familie",
             "Lifestyle & Health": "Levensstijl en Gezondheid",
             "Media & Technology": "Media en Technologie",
-            "Travel & Leisure": "Reizen en Vrije Tijd"
-        }
+            "Travel & Leisure": "Reizen en Vrije Tijd",
+            "set_password": "Wachtwoord instellen"
+        },
+        "profile_photo": "Profielfoto",
+        "years_old": "{{age}} jaar",
+        "date": "Datum",
+        "balance": "Saldo",
+        "screenout": "Screen-out",
+        "tab_rewards": "Beloningen",
+        "tab_transactions": "Transacties",
+        "tab_pending": "In behandeling",
+        "redeem_by": "Ingewisseld via",
+        "approved_on": "Goedgekeurd op",
+        "search_options": "Opties zoeken...",
+        "your_answer": "Je antwoord",
+        "type_here": "Typ hier...",
+        "submit_answer": "ANTWOORD VERSTUREN",
+        "gender_1": "Man",
+        "gender_2": "Vrouw",
+        "gender_0": "Anders",
+        "profile_updated": "Profiel bijgewerkt"
     }
 }

@@ -109,7 +109,7 @@ export class ProfileSettingPopup {
             this.dialogRef.close('timezone');
         }
         else {
-            this.messageService.showMessage(new MessageVM(response?.message ?? 'Time zone could not be saved.', "error"));
+            this.messageService.showMessage(new MessageVM(response?.message ?? this.translate.instant('app.settings.timeZoneError'), "error"));
         }
     }
 

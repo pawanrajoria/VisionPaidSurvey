@@ -3,9 +3,9 @@
     <!-- Header: title, balance and how close the user is to a cash out -->
     <header class="cashout-head">
         <div class="head-row">
-            <h2 class="head-title">Cash out</h2>
+            <h2 class="head-title">{{ 'app.cashout.title' | translate }}</h2>
             @if (isPopup) {
-            <button mat-icon-button (click)="closeModal()" class="close-btn" aria-label="Close">
+            <button mat-icon-button (click)="closeModal()" class="close-btn" [attr.aria-label]="'app.common.close' | translate">
                 <mat-icon>close</mat-icon>
             </button>
             }
@@ -13,16 +13,16 @@
 
         <div class="balance-card">
             <div class="balance-main">
-                <span class="balance-label">Available balance</span>
-                <span class="balance-points">{{ balance | number }} <small>points</small></span>
+                <span class="balance-label">{{ 'app.cashout.available' | translate }}</span>
+                <span class="balance-points">{{ balance | number }} <small>{{ 'app.cashout.points' | translate }}</small></span>
                 <span class="balance-money">≈ {{ userBalanceInfo.currencyAmount }}</span>
             </div>
             <div class="balance-goal">
                 @if (cheapestPoints > 0 && balance < cheapestPoints) {
-                <span class="goal-text">{{ cheapestPoints - balance | number }} points to your first reward</span>
+                <span class="goal-text">{{ 'app.cashout.toFirst' | translate:{ points: (cheapestPoints - balance | number) } }}</span>
                 <div class="goal-bar"><span [style.width.%]="goalPercent"></span></div>
                 } @else if (cheapestPoints > 0) {
-                <span class="goal-ready"><mat-icon>check_circle</mat-icon> You can cash out now</span>
+                <span class="goal-ready"><mat-icon>check_circle</mat-icon> {{ 'app.cashout.canCashOut' | translate }}</span>
                 }
             </div>
         </div>
@@ -35,20 +35,20 @@
         }
 
         <div class="filter-row">
-            <div class="chips" role="tablist" aria-label="Reward type">
-                <button type="button" role="tab" class="chip" [class.active]="activeCategory === ''" (click)="activeCategory = ''">All</button>
+            <div class="chips" role="tablist" [attr.aria-label]="'app.cashout.rewardType' | translate">
+                <button type="button" role="tab" class="chip" [class.active]="activeCategory === ''" (click)="activeCategory = ''">{{ 'app.cashout.all' | translate }}</button>
                 @for (category of rewardsCategories; track category.name) {
                 @if (category.count > 0) {
                 <button type="button" role="tab" class="chip" [class.active]="activeCategory === category.name"
                     (click)="activeCategory = category.name">
-                    <mat-icon>{{ category.icon }}</mat-icon>{{ category.name }} <span class="chip-count">{{ category.count }}</span>
+                    <mat-icon>{{ category.icon }}</mat-icon>{{ category.name | translate }} <span class="chip-count">{{ category.count }}</span>
                 </button>
                 }
                 }
             </div>
             <label class="search">
                 <mat-icon>search</mat-icon>
-                <input type="search" placeholder="Search PayPal, Amazon, UPI..." [(ngModel)]="searchText" aria-label="Search rewards" />
+                <input type="search" [placeholder]="'app.cashout.searchPlaceholder' | translate" [(ngModel)]="searchText" [attr.aria-label]="'app.cashout.searchAria' | translate" />
             </label>
         </div>
     </header>
@@ -64,12 +64,12 @@
             } @else {
             @for (category of visibleCategories; track category.name) {
             @if ((category.items | cashoutFilterByName: searchText).length > 0) {
-            <h3 class="group-title"><mat-icon>{{ category.icon }}</mat-icon>{{ category.name }}</h3>
+            <h3 class="group-title"><mat-icon>{{ category.icon }}</mat-icon>{{ category.name | translate }}</h3>
             <div class="method-grid">
                 @for (item of category.items | cashoutFilterByName: searchText; track item.id) {
                 <button type="button" class="method-tile" [class.selected]="activeItem?.id === item.id"
                     [class.unaffordable]="!canAfford(item)" (click)="selectItem(item)">
-                    @if (canAfford(item)) { <span class="tile-badge">Available</span> }
+                    @if (canAfford(item)) { <span class="tile-badge">{{ 'app.cashout.availableBadge' | translate }}</span> }
                     <span class="tile-logo">
                         @if (!brokenImages[item.id]) {
                         <img loading="lazy" [src]="item.image" [alt]="item.name" (error)="brokenImages[item.id] = true" />
@@ -78,13 +78,13 @@
                         }
                     </span>
                     <span class="tile-name">{{ item.name }}</span>
-                    <span class="tile-sub">from {{ minPoints(item) | number }} pts</span>
+                    <span class="tile-sub">{{ 'app.cashout.fromPts' | translate:{ points: (minPoints(item) | number) } }}</span>
                 </button>
                 }
             </div>
             }
             } @empty {
-            <p class="empty">No rewards available right now.</p>
+            <p class="empty">{{ 'app.cashout.none' | translate }}</p>
             }
             }
         </div>
@@ -99,7 +99,7 @@
                 </span>
                 <div>
                     <span class="picker-title">{{ item.name }}</span>
-                    <span class="picker-sub">Choose an amount</span>
+                    <span class="picker-sub">{{ 'app.cashout.chooseAmount' | translate }}</span>
                 </div>
             </div>
 
@@ -107,11 +107,11 @@
                 @for (option of item.options; track option.points) {
                 <button type="button" class="amount" [class.active]="selectedRewardCategory?.productId == item.id && selectedRewardCategory?.points == option.points"
                     [class.locked]="option.points > balance" (click)="handleRewardClick(option, item)"
-                    [matTooltip]="option.points > balance ? 'Need ' + (option.points - balance) + ' more points' : ''">
+                    [matTooltip]="option.points > balance ? ('app.cashout.needMore' | translate:{ points: option.points - balance }) : ''">
                     <span class="amount-value">{{ option.value | currency: item.currencyCode : 'symbol' }}</span>
                     <span class="amount-points">
                         @if (option.points > balance) { <mat-icon>lock</mat-icon> }
-                        {{ option.points | number }} pts
+                        {{ option.points | number }} {{ 'app.common.pts' | translate }}
                     </span>
                 </button>
                 }
@@ -119,20 +119,19 @@
 
             <div class="picker-foot">
                 @if (selectedRewardCategory && selectedRewardCategory.productId == item.id) {
-                <p class="summary">You get <strong>{{ selectedRewardCategory.value | currency: item.currencyCode : 'symbol' }}</strong>
-                    for <strong>{{ selectedRewardCategory.points | number }}</strong> points</p>
+                <p class="summary" [innerHTML]="'app.cashout.youGet' | translate:{ value: (selectedRewardCategory.value | currency: item.currencyCode : 'symbol'), points: (selectedRewardCategory.points | number) }"></p>
                 } @else {
-                <p class="summary muted">Pick an amount you have enough points for.</p>
+                <p class="summary muted">{{ 'app.cashout.pickAmount' | translate }}</p>
                 }
                 <button mat-flat-button color="primary" class="claim-button"
                     [disabled]="!selectedRewardCategory || selectedRewardCategory.productId != item.id" (click)="onSelectReward()">
-                    Claim reward
+                    {{ 'app.cashout.claim' | translate }}
                 </button>
             </div>
             } @else {
             <div class="picker-empty">
                 <mat-icon>redeem</mat-icon>
-                <p>Choose a payout method to see the amounts.</p>
+                <p>{{ 'app.cashout.chooseMethod' | translate }}</p>
             </div>
             }
         </aside>

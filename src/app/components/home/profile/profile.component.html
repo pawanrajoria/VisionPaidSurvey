@@ -5,12 +5,12 @@
                 <div class="panel">
                     <div class="user-heading">
                         <a href="javascript://">
-                            <img loading="lazy" src="assets/images/icon/happy-smiling.jpg" alt="Profile photo" width="980" height="980">
+                            <img loading="lazy" src="assets/images/icon/happy-smiling.jpg" [alt]="'account.profile_photo' | translate" width="980" height="980">
                         </a>
                         <h1>{{ 'account.hey_text' | translate }} <strong>{{ userInfo.name }}</strong></h1>
                         <p>{{ userInfo.emailId }}</p>
                         <p class="earn">{{ 'account.earning_text' | translate }} <span><em>{{userBalanceInfo.balance}}
-                                    Points</em></span></p>
+                                    {{ 'app.common.points' | translate }}</em></span></p>
                     </div>
                     <ul class="nav nav-pills nav-stacked">
                         <li>
@@ -49,8 +49,7 @@
                     <div class="bio-graph-info">
                         <h2> {{ 'account.personal_details' | translate }}</h2>
                         <ul>
-                            <li><strong>{{ 'account.age' | translate }}</strong>: {{ getAge(userInfo.dateOfBirth) }}
-                                years old</li>
+                            <li><strong>{{ 'account.age' | translate }}</strong>: {{ 'account.years_old' | translate:{ age: getAge(userInfo.dateOfBirth) } }}</li>
                             <li *ngIf="!!userInfo.dateOfBirth"><strong>{{ 'account.dateOfBirth' | translate }}</strong>:
                                 {{ userInfo.dateOfBirth | date: 'MMM d, y' }}</li>
                             <li><strong>{{ 'account.gender' | translate }}</strong>: {{ userInfo.gender }}</li>

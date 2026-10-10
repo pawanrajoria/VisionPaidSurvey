@@ -18,28 +18,28 @@ const DISMISS_DAYS = 7;
     imports: [SharedModule],
     template: `
     @if (permission === 'granted') {
-    <div class="notify-compact on hide-menu"><mat-icon>notifications_active</mat-icon>Notifications are on</div>
+    <div class="notify-compact on hide-menu"><mat-icon>notifications_active</mat-icon>{{ 'app.notify.on' | translate }}</div>
     } @else if (permission !== 'unsupported' && dismissed) {
     <button type="button" class="notify-compact hide-menu" (click)="expand()">
-        <mat-icon>notifications</mat-icon>Get updates &amp; offer alerts
+        <mat-icon>notifications</mat-icon>{{ 'app.notify.compact' | translate }}
     </button>
     } @else if (permission !== 'unsupported') {
-    <aside class="notify-card hide-menu" aria-label="Offer notifications">
-        <button type="button" class="notify-close" (click)="dismiss()" aria-label="Not now">
+    <aside class="notify-card hide-menu" [attr.aria-label]="'app.notify.aria' | translate">
+        <button type="button" class="notify-close" (click)="dismiss()" [attr.aria-label]="'app.notify.notNow' | translate">
             <mat-icon>close</mat-icon>
         </button>
         <!-- The whole picture is the button: one click asks the browser for permission. -->
         <button type="button" class="notify-image" [disabled]="busy || blocked" (click)="enable()"
-            aria-label="Enable notifications for updates and new offers">
+            [attr.aria-label]="'app.notify.enableAria' | translate">
             <img src="/assets/images/notify-enable.svg" alt="" width="240" height="178" loading="lazy" />
         </button>
-        <strong>Get proper updates &amp; notifications</strong>
-        <p>Click the picture or the button to enable notifications in this browser - we'll tell you the moment new offers, bonuses and payouts happen.</p>
+        <strong>{{ 'app.notify.title' | translate }}</strong>
+        <p>{{ 'app.notify.body' | translate }}</p>
         @if (blocked) {
-        <p class="notify-note">Notifications are blocked for this site. Allow them from the lock icon in your browser's address bar.</p>
+        <p class="notify-note">{{ 'app.notify.blocked' | translate }}</p>
         } @else {
         <button type="button" class="notify-btn" [disabled]="busy" (click)="enable()">
-            <mat-icon>notifications_active</mat-icon>{{ busy ? 'One moment…' : 'Enable notifications' }}
+            <mat-icon>notifications_active</mat-icon>{{ (busy ? 'app.notify.busy' : 'app.notify.enable') | translate }}
         </button>
         }
     </aside>

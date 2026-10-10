@@ -1,10 +1,12 @@
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { QualQuestionVM } from '../../../../../respondent.vm';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'videoquestion',
   templateUrl: './videoquestion.component.html',
-  styleUrls: ["./videoquestion.component.scss"]
+  styleUrls: ["./videoquestion.component.scss"],
+  imports: [TranslateModule]
 })
 export class VideoQuestionComponent implements OnInit, AfterViewInit {
   @Input() field: QualQuestionVM = new QualQuestionVM;

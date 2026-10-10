@@ -237,7 +237,7 @@ export class RewardComponent {
         if (this.firstCashoutMinPoints > 0 && Number(option.points) < this.firstCashoutMinPoints) {
             this.snackBar.open(
                 this.translate.instant('app.cashout.minNote', { usd: this.cashoutMinUsd, points: this.firstCashoutMinPoints }),
-                'OK',
+                this.translate.instant('app.common.ok'),
                 { duration: 5000, verticalPosition: 'bottom' }
             );
             return;
@@ -245,8 +245,8 @@ export class RewardComponent {
 
         if (option.points > (this.userBalanceInfo.balance ?? 0)) {
             this.snackBar.open(
-                `${item.name} requires ${option.points} pts. You have ${this.userBalanceInfo.balance}.`,
-                'OK',
+                this.translate.instant('app.cashout.requires', { name: item.name, points: option.points, balance: this.userBalanceInfo.balance }),
+                this.translate.instant('app.common.ok'),
                 { duration: 2000, verticalPosition: 'bottom' }
             );
             return;
