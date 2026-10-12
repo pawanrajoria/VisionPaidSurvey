@@ -19,7 +19,10 @@ export class OfferLinkComponent extends BaseComponent implements OnInit {
         const target = this.route.snapshot.queryParamMap.get('target');
         if (target) {
             const decoded = decodeURIComponent(target);
-            await this.logUserActivity("Offer", "offerLink", "Click", decoded);
+            // The redirect must not depend on the activity log: the app opens this page in the phone's browser,
+            // where a slow or failed log call left members on "Redirecting…" instead of the offer.
+            const logged = this.logUserActivity("Offer", "offerLink", "Click", decoded).catch(() => { });
+            await Promise.race([logged, new Promise(resolve => setTimeout(resolve, 800))]);
             if (this.win) this.win.location.href = decoded;
         } else {
             // fallback
