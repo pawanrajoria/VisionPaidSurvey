@@ -59,6 +59,9 @@
           <mat-radio-button value="agree">Agree</mat-radio-button>
           <mat-radio-button value="strongly_agree">Strongly Agree</mat-radio-button>
         </mat-radio-group>
+        <p class="attention-error" *ngIf="attentionMismatch" role="alert">
+          Please match your answer – it's not matching. Read the instruction above and select the option it asks for.
+        </p>
       </section>
 
       <!-- SECTION 5: Competitive Platform Grid (Likert Matrix) -->
@@ -137,6 +140,11 @@
           <mat-radio-button value="other">Other platform</mat-radio-button>
           <mat-radio-button value="none">None — all currently suffer from excessive screening</mat-radio-button>
         </mat-radio-group>
+        <div class="other-platform" *ngIf="form.get('benchmarkPlatform')?.value === 'other'">
+          <label for="benchmarkPlatformOther">Please type the platform name</label>
+          <input id="benchmarkPlatformOther" type="text" formControlName="benchmarkPlatformOther" maxlength="150"
+            placeholder="e.g. Freecash, Toluna, Survey Junkie" autocomplete="off" />
+        </div>
       </section>
 
       <!-- SECTION 9: Scenario Evaluation -->

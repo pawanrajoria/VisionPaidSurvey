@@ -36,11 +36,19 @@ export class SurveyQuestionsComponent implements OnInit {
   respondenttoken = '';
   isSubmitting = false;
 
+  /** Question 4 answer that has to be chosen to continue. */
+  readonly attentionExpected = 'neutral';
+  /** Shown on question 4 after Next with a non-matching answer; cleared when the answer changes. */
+  attentionMismatch = false;
+  /** Non-matching tries on question 4 (0 = matched first time, stored as AttentionPassed). */
+  attentionWrongTries = 0;
+
   constructor(@Inject(PLATFORM_ID) private platformId: object) { }
 
   ngOnInit(): void {
     this.initForm();
     this.resolveToken();
+    this.form.get('attentionCheck')?.valueChanges.subscribe(() => this.attentionMismatch = false);
   }
 
   private initForm(): void {
@@ -73,6 +81,8 @@ export class SurveyQuestionsComponent implements OnInit {
 
       // Question 8
       benchmarkPlatform: ['', Validators.required],
+      // Question 8 "Other platform": the platform's name (saved as "other: <name>")
+      benchmarkPlatformOther: ['', Validators.maxLength(150)],
 
       // Question 9
       scenarioPreference: ['', Validators.required],
@@ -104,12 +114,25 @@ export class SurveyQuestionsComponent implements OnInit {
     });
   }
 
+  /** Question 8 "Other platform" name, trimmed. */
+  get benchmarkOtherName(): string {
+    return String(this.form.get('benchmarkPlatformOther')?.value ?? '').trim();
+  }
+
   get progress(): number {
     return Math.round((this.currentQuestion / this.totalQuestions) * 100);
   }
 
   next(): void {
     if (!this.isCurrentQuestionValid()) {
+      return;
+    }
+
+    // Question 4 asks for a specific answer: a different one is asked again on the same question
+    // instead of ending the survey as a security terminate.
+    if (this.currentQuestion === 4 && this.form.get('attentionCheck')?.value !== this.attentionExpected) {
+      this.attentionMismatch = true;
+      this.attentionWrongTries++;
       return;
     }
 
@@ -189,7 +212,10 @@ export class SurveyQuestionsComponent implements OnInit {
       }
 
       case 8:
-        return this.form.get('benchmarkPlatform')?.valid ?? false;
+        // "Other platform" needs the platform's name, so we can track where members come from.
+        return (this.form.get('benchmarkPlatform')?.valid ?? false)
+          && (this.form.get('benchmarkPlatform')?.value !== 'other' || this.benchmarkOtherName.length >= 2)
+          && (this.form.get('benchmarkPlatformOther')?.valid ?? false);
 
       case 9:
         return this.form.get('scenarioPreference')?.valid ?? false;
@@ -234,8 +260,10 @@ export class SurveyQuestionsComponent implements OnInit {
     this.isSubmitting = true;
     const value = this.form.getRawValue();
 
-    // Check attention trap verification (Question 4 expected 'neutral')
-    const passedAttentionVerification = value.attentionCheck === 'neutral';
+    // Question 4 can only be passed with the expected answer (it is asked again otherwise), so this is
+    // always true here. AttentionPassed records whether it matched on the first try, for data quality.
+    const passedAttentionVerification = value.attentionCheck === this.attentionExpected;
+    const matchedFirstTry = passedAttentionVerification && this.attentionWrongTries === 0;
 
     const surveyData = {
       surveyId: null,
@@ -253,7 +281,7 @@ export class SurveyQuestionsComponent implements OnInit {
       },
 
       // Section 4 & 5 (Quality & Likert Grids)
-      attentionPassed: passedAttentionVerification,
+      attentionPassed: matchedFirstTry,
       ratings: {
         payoutFairness: Number(value.ratePayoutFairness),
         screeningTransparency: Number(value.rateScreeningTransparency)
@@ -265,7 +293,7 @@ export class SurveyQuestionsComponent implements OnInit {
       newUserIncentive: value.newUserIncentive || null,
 
       // Section 8 - 11
-      benchmarkPlatform: value.benchmarkPlatform,
+      benchmarkPlatform: value.benchmarkPlatform === 'other' ? `other: ${this.benchmarkOtherName}` : value.benchmarkPlatform,
       scenarioPreference: value.scenarioPreference,
       taskPreferences: {
         appTesting: !!value.taskAppTesting,

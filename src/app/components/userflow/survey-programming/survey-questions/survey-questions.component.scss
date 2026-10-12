@@ -103,3 +103,44 @@ mat-radio-button {
   }
 
 }
+// Question 4: shown when the answer does not match the instruction (asked again instead of terminating)
+.attention-error {
+  margin: 14px 0 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #fdecea;
+  border: 1px solid #f5c2c0;
+  color: #b42318;
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+// Question 8: name of the "Other platform"
+.other-platform {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #344054;
+  }
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid #d0d5dd;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+
+    &:focus {
+      border-color: #1f7a5c;
+      box-shadow: 0 0 0 3px rgba(31, 122, 92, 0.15);
+    }
+  }
+}
