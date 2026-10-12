@@ -282,14 +282,25 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
         const self = this;
         const output = await self.offerService.getOfferWallDetailById(partner.id);
         if (!!output && !!output.iFrameUrl) {
-            this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
+            // Read the screen size once. Subscribing here (never unsubscribed) closed and reopened the offerwall
+            // on every later size change (rotation, browser bar), once more per extra tap.
+            const isPhone = this.breakpointObserver.isMatched(Breakpoints.Handset);
+
+            // Phones: open the offerwall as the page itself, not in a frame. Inside a frame a game's Play /
+            // Install link (Google Play refuses frames, app-store links are blocked from frames) did nothing.
+            if (isPhone && this.isBrowser && this.win) {
+                this.win.location.href = output.iFrameUrl;
+                return;
+            }
+
+            {
 
                 if (this.dialogRef) {
                     this.dialogRef.close();
                 }
 
                 const config = new MatDialogConfig();
-                if (result.matches) {
+                if (isPhone) {
                     // Mobile
                     config.width = '100vw';
                     config.height = '100vh';
@@ -311,7 +322,7 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
                 };
 
                 this.dialogRef = this.dialog.open(IFrameOfferWallDialog, config);
-            });
+            }
         }
 
     }
