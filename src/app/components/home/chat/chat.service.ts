@@ -14,9 +14,20 @@ export interface IChatMessage {
     isMine: boolean;
     /** web | android | ios */
     platform: string;
-    /** '' = a normal message, 'welcome' = the automatic "joined the community" message. */
+    /** '' = a normal message, 'welcome' = the automatic "joined the community" message, 'ai' = the AI assistant's answer. */
     kind?: string;
     reactions?: IChatReaction[];
+    /** The message this one replies to. */
+    replyTo?: IChatReplyPreview | null;
+}
+
+export interface IChatReplyPreview {
+    id: number;
+    name: string;
+    /** Shortened text; empty when that message was removed. */
+    message: string;
+    kind: string;
+    isRemoved: boolean;
 }
 
 export interface IChatReaction {
@@ -45,6 +56,11 @@ export interface IChatFeed {
     /** While polling: current reactions of every message from reactionsFromId on that has any. */
     reactionUpdates?: { messageId: number; reactions: IChatReaction[] }[];
     reactionsFromId?: number;
+    /** Members can reply to messages. */
+    repliesEnabled?: boolean;
+    /** The AI assistant answers questions. */
+    aiEnabled?: boolean;
+    aiName?: string;
 }
 
 export interface IChatSendResult {
@@ -64,6 +80,9 @@ export interface IAdminChatMessage {
     createdAt: string;
     isDeleted: boolean;
     isMuted: boolean;
+    /** '' | 'welcome' | 'ai' (an AI answer, stored under the member who asked). */
+    kind?: string;
+    replyToId?: number | null;
 }
 
 /** Community chat shared by the website and the app. The page polls; nothing here keeps a connection open. */
@@ -81,8 +100,8 @@ export class ChatService {
         return firstValueFrom(this.http.get<IChatFeed>(this.base + "messages", { ...BACKGROUND, params }));
     }
 
-    send(message: string): Promise<IChatSendResult> {
-        return firstValueFrom(this.http.post<IChatSendResult>(this.base + "messages", { message }, BACKGROUND));
+    send(message: string, replyToId?: number | null): Promise<IChatSendResult> {
+        return firstValueFrom(this.http.post<IChatSendResult>(this.base + "messages", { message, replyToId: replyToId || null }, BACKGROUND));
     }
 
     /** Adds the reaction, or takes it back when the user already gave it. */

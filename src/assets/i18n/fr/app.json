@@ -354,7 +354,16 @@
       "addReaction": "Ajouter une réaction",
       "pickReaction": "Choisir une réaction",
       "quickEmoji": "Émojis rapides",
-      "emoji": "Émoji"
+      "emoji": "Émoji",
+      "reply": "Répondre",
+      "replyingTo": "Réponse à {{name}}",
+      "cancelReply": "Annuler la réponse",
+      "replyRemoved": "Message supprimé",
+      "aiBadge": "IA",
+      "aiTyping": "{{name}} écrit…",
+      "aiNotClear": "Toujours pas clair ?",
+      "aiRaiseQuery": "Envoyer une demande au support",
+      "aiHint": "Une question ? Posez-la ici : {{name}} répond dans votre langue."
     },
     "promo": {
       "today": "Meilleure offre du jour",

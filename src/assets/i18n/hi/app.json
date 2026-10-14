@@ -354,7 +354,16 @@
       "addReaction": "प्रतिक्रिया जोड़ें",
       "pickReaction": "कोई प्रतिक्रिया चुनें",
       "quickEmoji": "झटपट इमोजी",
-      "emoji": "इमोजी"
+      "emoji": "इमोजी",
+      "reply": "जवाब दें",
+      "replyingTo": "{{name}} को जवाब",
+      "cancelReply": "जवाब रद्द करें",
+      "replyRemoved": "संदेश हटाया गया",
+      "aiBadge": "AI",
+      "aiTyping": "{{name}} लिख रहा है…",
+      "aiNotClear": "अब भी समझ नहीं आया?",
+      "aiRaiseQuery": "सपोर्ट से सवाल पूछें",
+      "aiHint": "कोई सवाल है? यहाँ पूछें - {{name}} आपकी भाषा में जवाब देगा।"
     },
     "promo": {
       "today": "आज का टॉप ऑफ़र",

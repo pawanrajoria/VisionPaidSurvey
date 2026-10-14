@@ -354,7 +354,16 @@
       "addReaction": "Reactie toevoegen",
       "pickReaction": "Kies een reactie",
       "quickEmoji": "Snelle emoji",
-      "emoji": "Emoji"
+      "emoji": "Emoji",
+      "reply": "Beantwoorden",
+      "replyingTo": "Antwoord aan {{name}}",
+      "cancelReply": "Antwoord annuleren",
+      "replyRemoved": "Bericht verwijderd",
+      "aiBadge": "AI",
+      "aiTyping": "{{name}} typt…",
+      "aiNotClear": "Nog steeds niet duidelijk?",
+      "aiRaiseQuery": "Stel een vraag aan support",
+      "aiHint": "Een vraag? Stel hem hier - {{name}} antwoordt in jouw taal."
     },
     "promo": {
       "today": "Topaanbieding van vandaag",

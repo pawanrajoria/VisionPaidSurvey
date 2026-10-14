@@ -447,7 +447,11 @@
                                 <div class="cell-main">{{ m.fullName || m.email }}</div>
                                 <div class="cell-sub">{{ m.email }} · #{{ m.userId }} · {{ m.countryCode }}</div>
                             </td>
-                            <td class="chat-text">{{ m.message }}</td>
+                            <td class="chat-text">
+                                @if (m.kind === 'ai') { <span class="state" data-state="Active" title="Profitpiller AI's answer to the member's question">AI answer to #{{ m.replyToId }}</span> }
+                                @else if (m.replyToId) { <span class="cell-sub">↩ reply to #{{ m.replyToId }}</span> }
+                                {{ m.message }}
+                            </td>
                             <td><span class="platform"><mat-icon>{{ platformIcon(m.platform) }}</mat-icon>{{ m.platform || '—' }}</span></td>
                             <td>{{ m.createdAt | date:'d MMM, HH:mm' }}</td>
                             <td>
@@ -458,7 +462,9 @@
                             <td class="row-actions">
                                 <button type="button" class="btn small" [class.danger]="!m.isDeleted" [class.ghost]="m.isDeleted" [disabled]="busy"
                                     (click)="removeChat(m)">{{ m.isDeleted ? 'Restore' : 'Remove' }}</button>
+                                @if (m.kind !== 'ai') {
                                 <button type="button" class="btn small ghost" [disabled]="busy" (click)="muteChat(m)">{{ m.isMuted ? 'Unmute' : 'Mute user' }}</button>
+                                }
                             </td>
                         </tr>
                         } @empty {

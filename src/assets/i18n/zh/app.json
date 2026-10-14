@@ -354,7 +354,16 @@
       "addReaction": "添加表情回应",
       "pickReaction": "选择表情回应",
       "quickEmoji": "快捷表情",
-      "emoji": "表情"
+      "emoji": "表情",
+      "reply": "回复",
+      "replyingTo": "回复 {{name}}",
+      "cancelReply": "取消回复",
+      "replyRemoved": "消息已删除",
+      "aiBadge": "AI",
+      "aiTyping": "{{name}} 正在输入…",
+      "aiNotClear": "还是不清楚？",
+      "aiRaiseQuery": "向客服提交问题",
+      "aiHint": "有问题？在这里提问 - {{name}} 会用你的语言回复。"
     },
     "promo": {
       "today": "今日最佳任务",

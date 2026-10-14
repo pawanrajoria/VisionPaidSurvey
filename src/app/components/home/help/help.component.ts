@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, inject } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 import { SharedModule } from "../../../shared.module";
 import { AskQuestionComponent } from "./ask-question/ask-question.component";
 
@@ -16,7 +17,11 @@ export class HelpComponent implements OnInit {
 
     }
 
+    private readonly route = inject(ActivatedRoute);
+
     ngOnInit(): void {
+        // /app/help?ask=1 (the chat's "Raise a query with support") opens the question form straight away.
+        if (this.route.snapshot.queryParamMap.get('ask') === '1') this.showAskQuestion = true;
     }
 
     askQuestion() {

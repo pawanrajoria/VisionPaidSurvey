@@ -354,7 +354,16 @@
       "addReaction": "Tambah reaksi",
       "pickReaction": "Pilih reaksi",
       "quickEmoji": "Emoji pantas",
-      "emoji": "Emoji"
+      "emoji": "Emoji",
+      "reply": "Balas",
+      "replyingTo": "Membalas {{name}}",
+      "cancelReply": "Batal balasan",
+      "replyRemoved": "Mesej dibuang",
+      "aiBadge": "AI",
+      "aiTyping": "{{name}} sedang menaip…",
+      "aiNotClear": "Masih kurang jelas?",
+      "aiRaiseQuery": "Hantar pertanyaan kepada sokongan",
+      "aiHint": "Ada soalan? Tanya di sini - {{name}} membalas dalam bahasa anda."
     },
     "promo": {
       "today": "Tawaran terbaik hari ini",

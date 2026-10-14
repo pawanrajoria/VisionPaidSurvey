@@ -354,7 +354,16 @@
       "addReaction": "რეაქციის დამატება",
       "pickReaction": "აირჩიეთ რეაქცია",
       "quickEmoji": "სწრაფი ემოჯი",
-      "emoji": "ემოჯი"
+      "emoji": "ემოჯი",
+      "reply": "პასუხი",
+      "replyingTo": "პასუხი: {{name}}",
+      "cancelReply": "პასუხის გაუქმება",
+      "replyRemoved": "შეტყობინება წაშლილია",
+      "aiBadge": "AI",
+      "aiTyping": "{{name}} წერს…",
+      "aiNotClear": "ისევ გაუგებარია?",
+      "aiRaiseQuery": "მიმართეთ მხარდაჭერას",
+      "aiHint": "გაქვთ კითხვა? დასვით აქ - {{name}} გიპასუხებთ თქვენს ენაზე."
     },
     "promo": {
       "today": "დღის საუკეთესო შეთავაზება",

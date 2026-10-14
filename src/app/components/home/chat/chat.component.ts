@@ -48,6 +48,16 @@ export class ChatComponent extends BaseComponent implements OnInit, OnDestroy {
     readonly quickEmojis = QUICK_EMOJIS;
     private readonly jumboCache = new Map<number, boolean>();
 
+    /** Replies and the AI assistant (both need DatabaseScripts/013 on the server). */
+    repliesEnabled = false;
+    aiEnabled = false;
+    aiName = 'Profitpiller AI';
+    /** The message the member is replying to. */
+    replyingTo: IChatMessage | null = null;
+    /** Id of the member's question the assistant is answering ("typing…" shown until the answer arrives). */
+    awaitingAiFor = 0;
+    private aiTimer: ReturnType<typeof setTimeout> | undefined;
+
     private timer: ReturnType<typeof setInterval> | undefined;
     private polling = false;
 
@@ -70,6 +80,7 @@ export class ChatComponent extends BaseComponent implements OnInit, OnDestroy {
 
     ngOnDestroy(): void {
         if (this.timer) clearInterval(this.timer);
+        if (this.aiTimer) clearTimeout(this.aiTimer);
         if (this.isBrowser) document.body.classList.remove('chat-open');
     }
 
@@ -84,6 +95,9 @@ export class ChatComponent extends BaseComponent implements OnInit, OnDestroy {
         this.maxLength = feed?.maxLength || 300;
         this.messages = feed?.messages ?? [];
         this.reactionEmojis = feed?.reactionEmojis ?? [];
+        this.repliesEnabled = !!feed?.repliesEnabled;
+        this.aiEnabled = !!feed?.aiEnabled;
+        if (feed?.aiName) this.aiName = feed.aiName;
     }
 
     private async poll() {
@@ -111,6 +125,7 @@ export class ChatComponent extends BaseComponent implements OnInit, OnDestroy {
             if (fresh.length) {
                 const atBottom = this.isNearBottom();
                 this.messages = [...this.messages, ...fresh];
+                if (this.awaitingAiFor && fresh.some(m => m.kind === 'ai' && m.replyTo?.id === this.awaitingAiFor)) this.stopAwaitingAi();
                 if (atBottom) this.scrollToBottom(); else this.unseen += fresh.length;
             }
         } catch {
@@ -145,16 +160,19 @@ export class ChatComponent extends BaseComponent implements OnInit, OnDestroy {
         this.sending = true;
         this.error = '';
         try {
-            const result = await this.chat.send(text);
+            const replyTo = this.replyingTo;
+            const result = await this.chat.send(text, replyTo?.id);
             if (!result?.isSuccess) {
                 this.error = result?.message || this.translate.instant('app.chat.failed');
                 return;
             }
             this.draft = '';
             this.emojiOpen = false;
+            this.replyingTo = null;
             if (result.sent && !this.messages.some(m => m.id === result.sent!.id)) {
                 this.messages = [...this.messages, result.sent];
             }
+            if (result.sent && this.aiEnabled && this.mayGetAiAnswer(result.sent, replyTo)) this.startAwaitingAi(result.sent.id);
             this.unseen = 0;
             this.scrollToBottom();
         } catch {
@@ -170,6 +188,64 @@ export class ChatComponent extends BaseComponent implements OnInit, OnDestroy {
             event.preventDefault();
             this.send();
         }
+    }
+
+    // ───────────── Replies and the AI assistant ─────────────
+
+    startReply(message: IChatMessage, event?: Event) {
+        event?.stopPropagation();
+        this.replyingTo = message;
+        this.reactingTo = 0;
+        setTimeout(() => this.input?.nativeElement.focus());
+    }
+
+    cancelReply() {
+        this.replyingTo = null;
+    }
+
+    /** Name shown for a message: "You", the assistant's name, or the member's. */
+    displayName(message: IChatMessage): string {
+        if (message.kind === 'ai') return this.aiName;
+        return message.isMine ? this.translate.instant('app.chat.you') : message.name;
+    }
+
+    /** Shortened text for the reply bar above the composer. */
+    snippet(text: string): string {
+        const value = (text ?? '').trim();
+        return value.length > 90 ? value.slice(0, 89).trimEnd() + '…' : value;
+    }
+
+    /** Clicking a quote scrolls to the original message (when it is loaded) and briefly highlights it. */
+    goToMessage(id: number) {
+        const el = this.list?.nativeElement.querySelector<HTMLElement>(`[data-msg-id="${id}"]`);
+        if (!el) return;
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.classList.add('flash');
+        setTimeout(() => el.classList.remove('flash'), 1600);
+    }
+
+    /**
+     * Mirrors the server: a reply to the assistant, or a question that is not a reply to another member.
+     * Only decides whether "typing…" is shown; the assistant may still stay silent.
+     */
+    private mayGetAiAnswer(sent: IChatMessage, replyTo: IChatMessage | null): boolean {
+        if (replyTo) return replyTo.kind === 'ai';
+        const text = sent.message.trim();
+        return text.length >= 6 && /[?\u061F]/.test(text);
+    }
+
+    private startAwaitingAi(id: number) {
+        this.stopAwaitingAi();
+        this.awaitingAiFor = id;
+        // Poll a little sooner for the answer, and give up showing "typing…" after a while.
+        setTimeout(() => this.poll(), 2500);
+        this.aiTimer = setTimeout(() => this.stopAwaitingAi(), 30000);
+    }
+
+    private stopAwaitingAi() {
+        this.awaitingAiFor = 0;
+        if (this.aiTimer) clearTimeout(this.aiTimer);
+        this.aiTimer = undefined;
     }
 
     // ───────────── Emoji and reactions ─────────────
@@ -242,7 +318,10 @@ export class ChatComponent extends BaseComponent implements OnInit, OnDestroy {
         if (!this.isAdmin) return;
         try {
             const result = await this.chat.remove(message.id);
-            if (result?.isSuccess) this.messages = this.messages.filter(m => m.id !== message.id);
+            if (result?.isSuccess) {
+                this.messages = this.messages.filter(m => m.id !== message.id);
+                if (this.replyingTo?.id === message.id) this.replyingTo = null;
+            }
         } catch {
             /* the interceptor already told the admin */
         }

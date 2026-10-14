@@ -49,23 +49,46 @@
             </div>
         </div>
         } @else {
-        <article class="msg" [class.mine]="m.isMine" [class.jumbo]="isJumbo(m)">
-            @if (!m.isMine) {
+        <article class="msg" [class.mine]="m.isMine" [class.ai]="m.kind === 'ai'" [class.jumbo]="isJumbo(m)" [attr.data-msg-id]="m.id">
+            @if (m.kind === 'ai') {
+            <span class="avatar ai-avatar" aria-hidden="true"><mat-icon>smart_toy</mat-icon></span>
+            } @else if (!m.isMine) {
             <span class="avatar" [style.--tier]="tierColor(m.level)" aria-hidden="true">{{ m.name.charAt(0) }}</span>
             }
             <div class="msg-body">
                 <div class="bubble">
                     <div class="meta">
-                        <strong>{{ m.isMine ? ('app.chat.you' | translate) : m.name }}</strong>
+                        <strong>{{ displayName(m) }}</strong>
+                        @if (m.kind === 'ai') {
+                        <span class="ai-badge">{{ 'app.chat.aiBadge' | translate }}</span>
+                        } @else {
                         @if (flag(m.countryCode)) { <span class="flag" aria-hidden="true">{{ flag(m.countryCode) }}</span> }
                         <span class="lvl" [style.--tier]="tierColor(m.level)">{{ 'app.chat.level' | translate:{ level: m.level } }}</span>
                         @if (m.platform === 'android' || m.platform === 'ios') {
                         <mat-icon class="on-app" [attr.aria-label]="'app.chat.onApp' | translate" [title]="'app.chat.onApp' | translate">smartphone</mat-icon>
                         }
+                        }
                     </div>
+                    @if (m.replyTo) {
+                    <button type="button" class="quote" [class.removed]="m.replyTo.isRemoved" (click)="goToMessage(m.replyTo.id); $event.stopPropagation()">
+                        <strong>{{ m.replyTo.name }}</strong>
+                        <span>{{ m.replyTo.isRemoved ? ('app.chat.replyRemoved' | translate) : m.replyTo.message }}</span>
+                    </button>
+                    }
                     <p class="text">{{ m.message }}</p>
+                    @if (m.kind === 'ai') {
+                    <p class="ai-support">
+                        {{ 'app.chat.aiNotClear' | translate }}
+                        <a routerLink="/app/help" [queryParams]="{ ask: 1 }">{{ 'app.chat.aiRaiseQuery' | translate }}</a>
+                    </p>
+                    }
                     <div class="foot">
                         <time [attr.datetime]="m.createdAt">{{ m.createdAt | date:'shortTime' }}</time>
+                        @if (repliesEnabled && !muted) {
+                        <button type="button" class="reply-btn" (click)="startReply(m, $event)">
+                            <mat-icon>reply</mat-icon>{{ 'app.chat.reply' | translate }}
+                        </button>
+                        }
                         @if (isAdmin) {
                         <button type="button" class="remove-btn" (click)="remove(m)">
                             <mat-icon>delete</mat-icon>{{ 'app.chat.remove' | translate }}
@@ -107,6 +130,14 @@
             <p>{{ 'app.chat.empty' | translate }}</p>
         </div>
         }
+
+        @if (awaitingAiFor) {
+        <div class="ai-typing" role="status">
+            <span class="avatar ai-avatar" aria-hidden="true"><mat-icon>smart_toy</mat-icon></span>
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span>{{ 'app.chat.aiTyping' | translate:{ name: aiName } }}</span>
+        </div>
+        }
     </div>
 
     @if (unseen > 0) {
@@ -140,6 +171,22 @@
             @for (e of quickEmojis; track e) {
             <button type="button" (click)="insertEmoji(e)">{{ e }}</button>
             }
+        </div>
+        }
+
+        @if (aiEnabled && !replyingTo && !draft) {
+        <p class="ai-hint"><mat-icon aria-hidden="true">smart_toy</mat-icon>{{ 'app.chat.aiHint' | translate:{ name: aiName } }}</p>
+        }
+        @if (replyingTo) {
+        <div class="reply-bar">
+            <mat-icon aria-hidden="true">reply</mat-icon>
+            <div>
+                <strong>{{ 'app.chat.replyingTo' | translate:{ name: displayName(replyingTo) } }}</strong>
+                <span>{{ snippet(replyingTo.message) }}</span>
+            </div>
+            <button type="button" (click)="cancelReply()" [attr.aria-label]="'app.chat.cancelReply' | translate" [title]="'app.chat.cancelReply' | translate">
+                <mat-icon>close</mat-icon>
+            </button>
         </div>
         }
 
