@@ -95,9 +95,13 @@ export class OfferComponent extends BaseComponent implements OnInit {
     /** The three best-paying offers get a "Top payout" tag. */
     topOfferIds = new Set<number>();
 
-    /** Device lists can be missing on offers from some networks. */
+    /** Direct network offers for the member's country, shown first in a compact strip (not repeated in the grid). */
+    priorityOffers: IOfferResponseDto[] = [];
+
+    /** Device lists can be missing on offers from some networks; "All" means every device. */
     runsOn(offer: IOfferResponseDto, device: string): boolean {
-        return (offer.device as string[] | null)?.includes(device) ?? false;
+        const devices = (offer.device as string[] | null) ?? [];
+        return devices.includes(device) || devices.includes('All');
     }
 
     get deviceLabel(): string {
@@ -113,6 +117,7 @@ export class OfferComponent extends BaseComponent implements OnInit {
 
         // "My Offers" used to show every offer: it now lists the ones opened here, newest first.
         if (this.offerType === 'mine') {
+            this.priorityOffers = [];
             const order = new Map(this.myOfferIds.map((id, i) => [id, i]));
             this.filteredOffers = this.offers
                 .filter(o => order.has(o.offerId) && (o.offerName ?? '').toLowerCase().includes(text))
@@ -125,7 +130,7 @@ export class OfferComponent extends BaseComponent implements OnInit {
                 // An offer without device information is not restricted to a platform.
                 const devices = item.device ?? [];
                 const matchesCategory =
-                    this.selectedDeviceType.length === 0 || devices.length === 0 ||
+                    this.selectedDeviceType.length === 0 || devices.length === 0 || devices.includes('All') ||
                     devices.some(cat => this.selectedDeviceType.includes(cat));
 
                 const matchesText = item.offerName?.toLowerCase().includes(text);
@@ -138,6 +143,16 @@ export class OfferComponent extends BaseComponent implements OnInit {
                     return b.points - a.points;
                 }
             });
+
+        this.priorityOffers = this.filteredOffers.filter(o => o.isPriority);
+        this.filteredOffers = this.filteredOffers.filter(o => !o.isPriority);
+    }
+
+    /** "US · UK · +3" - the countries an offer accepts, kept short for the card. */
+    countryLabel(offer: IOfferResponseDto): string {
+        const list = offer.countries ?? [];
+        if (!list.length) return this.translate.instant('app.offers.allCountries');
+        return list.length <= 3 ? list.join(' · ') : `${list.slice(0, 3).join(' · ')} +${list.length - 3}`;
     }
 
     private platformPreselected = false;

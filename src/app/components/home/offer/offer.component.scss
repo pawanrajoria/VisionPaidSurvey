@@ -196,6 +196,141 @@
     to { opacity: 1; transform: none; }
 }
 
+/* Priority offers: small cards, ~7 per row on desktop, 3 per row on phones. */
+.priority {
+    margin: 0 20px 20px;
+    padding: 14px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #f1faf6, #fff8ec);
+    border: 1px solid #dcefe6;
+}
+
+.po-head {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    margin-bottom: 10px;
+    h3 {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #0f5345;
+        mat-icon { width: 20px; height: 20px; font-size: 20px; color: #f59e0b; }
+    }
+    span { font-size: .75rem; color: #6b7c77; }
+}
+
+.po-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+}
+
+.po-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 0;
+    padding: 10px 8px;
+    border: 1px solid #e6eeeb;
+    border-radius: 12px;
+    background: #fff;
+    font: inherit;
+    text-align: center;
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    &:hover, &:focus-visible {
+        transform: translateY(-2px);
+        border-color: #b9e3d2;
+        box-shadow: 0 8px 18px rgba(8, 40, 33, .1);
+        outline: none;
+        .po-points { background: #0f5345; color: #fff; }
+    }
+}
+
+.po-img {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0f5345, #23a37a);
+    color: #fff;
+    font-weight: 800;
+    img { width: 100%; height: 100%; object-fit: cover; background: #fff; }
+}
+
+.po-name {
+    width: 100%;
+    font-size: .8rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #12312a;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.po-type {
+    padding: 1px 7px;
+    border-radius: 8px;
+    background: #eef4ff;
+    color: #3451b2;
+    font-size: .62rem;
+    font-weight: 700;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.po-task {
+    width: 100%;
+    font-size: .66rem;
+    line-height: 1.3;
+    color: #5d6d68;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.po-geo {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    font-size: .62rem;
+    color: #8a9a95;
+    mat-icon { width: 12px; height: 12px; font-size: 12px; }
+}
+
+.po-points {
+    margin-top: auto;
+    padding: 3px 10px;
+    border-radius: 14px;
+    background: #e7f6ef;
+    color: #0f5345;
+    font-size: .85rem;
+    font-weight: 800;
+    transition: background .2s ease, color .2s ease;
+    small { font-size: .62rem; font-weight: 600; opacity: .8; }
+}
+
+@media (max-width: 600px) {
+    .priority { margin: 0 10px 16px; padding: 10px; }
+    .po-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .po-card { padding: 8px 4px; }
+    .po-img { width: 36px; height: 36px; }
+    .po-task { display: none; } /* the task is in the details popup; phones keep the card short */
+}
+
 .empty-note {
     margin: 16px;
     color: #5d6d68;

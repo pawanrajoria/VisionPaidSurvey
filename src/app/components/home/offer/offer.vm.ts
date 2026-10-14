@@ -18,6 +18,12 @@ export interface IOfferResponseDto {
     providerName: string;
     payoutType:string;
     max: number;
+    /** Direct offers from our own affiliate networks: shown first, in the compact "Priority offers" strip. */
+    isPriority?: boolean;
+    /** Countries the offer accepts (empty = all). */
+    countries?: string[] | null;
+    /** Kind of task, e.g. "Survey", "Sign up + confirm email". */
+    paymentModel?: string | null;
 }
 
 export interface IOfferTaskResponseDto {
