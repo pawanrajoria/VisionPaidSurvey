@@ -100,6 +100,7 @@ export const routes: Routes = [
           { path: 'blog', loadChildren: () => import('./components/blog/blog.route').then(m => m.blogRoutes) },
           { path: 'guides', loadChildren: () => import('./components/blog/guides.route').then(m => m.guidesRoutes) },
           { path: 'gift-cards', loadChildren: () => import('./components/blog/gift-cards/gift-cards.route').then(m => m.giftcardsRoutes) },
+           { path: 'quizapp-privacy_policy', loadChildren: () => import('./components/root/root-quizapp-privacypolicy/root-quizapp-privacypolicy.route').then(m => m.rootQuizAppPrivacyPolicyRoutes) },
         ],
       },
 
