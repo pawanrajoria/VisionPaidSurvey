@@ -41,6 +41,11 @@
                 "output": "./"
               },
               {
+                "glob": "app-ads.txt",
+                "input": "./",
+                "output": "./"
+              },
+              {
                 "glob": "adscend.txt",
                 "input": "./",
                 "output": "./"
