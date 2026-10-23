@@ -1,0 +1,27 @@
+// Shared by the ProfitPiller Puzzle privacy policy and data deletion pages.
+:host {
+    display: block;
+    background: #f4f8f2;
+}
+
+.puzzle-policy {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 20px 56px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: #12302a;
+    line-height: 1.6;
+    text-align: left;
+
+    h1 { color: #105749; margin-bottom: 4px; }
+    h2 { color: #105749; margin-top: 32px; font-size: 20px; }
+    .muted { color: #546a63; }
+    a { color: #105749; }
+
+    .steps { background: #fff; border: 2px solid #c7e9b0; border-radius: 14px; padding: 18px 22px 18px 40px; }
+    .steps li { margin: 8px 0; }
+
+    table { border-collapse: collapse; width: 100%; background: #fff; }
+    th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid #dcebd3; vertical-align: top; }
+    th { color: #105749; }
+}

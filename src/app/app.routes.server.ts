@@ -7,6 +7,8 @@ export const serverRoutes: ServerRoute[] = [
   { path: ':lang/contactus', renderMode: RenderMode.Server },
   { path: ':lang/privacy-policy', renderMode: RenderMode.Server },
   { path: ':lang/quizapp-privacy_policy', renderMode: RenderMode.Server },
+  { path: ':lang/puzzle-privacy-policy', renderMode: RenderMode.Server },
+  { path: ':lang/puzzle-data-deletion', renderMode: RenderMode.Server },
   { path: ':lang/terms-conditions', renderMode: RenderMode.Server },
   { path: ':lang/cookie-policy', renderMode: RenderMode.Server },
 

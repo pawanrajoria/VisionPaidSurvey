@@ -101,6 +101,8 @@ export const routes: Routes = [
           { path: 'guides', loadChildren: () => import('./components/blog/guides.route').then(m => m.guidesRoutes) },
           { path: 'gift-cards', loadChildren: () => import('./components/blog/gift-cards/gift-cards.route').then(m => m.giftcardsRoutes) },
            { path: 'quizapp-privacy_policy', loadChildren: () => import('./components/root/root-quizapp-privacypolicy/root-quizapp-privacypolicy.route').then(m => m.rootQuizAppPrivacyPolicyRoutes) },
+          { path: 'puzzle-privacy-policy', loadChildren: () => import('./components/root/root-puzzle-privacypolicy/root-puzzle-privacypolicy.route').then(m => m.rootPuzzlePrivacyPolicyRoutes) },
+          { path: 'puzzle-data-deletion', loadChildren: () => import('./components/root/root-puzzle-datadeletion/root-puzzle-datadeletion.route').then(m => m.rootPuzzleDataDeletionRoutes) },
         ],
       },
 
