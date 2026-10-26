@@ -401,7 +401,9 @@
       "qrScan": "Scan the QR Code with your phone.",
       "availableDevices": "Available Devices",
       "qrCopyHint": "Alternatively, copy the URL into your mobile browser",
-      "copy": "Copy"
+      "copy": "Copy",
+      "converting": "Members are earning",
+      "convertingCount": "{{count}} completed"
     },
     "live": {
       "badge": "LIVE",

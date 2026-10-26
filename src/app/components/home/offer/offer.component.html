@@ -30,7 +30,10 @@
         </div>
         <div class="po-grid">
             @for (offer of priorityOffers; track offer.offerId) {
-            <button type="button" class="po-card" (click)="openDialog(offer)" [title]="offer.offerName">
+            <button type="button" class="po-card" [class.po-card--hot]="offer.isConverting" (click)="openDialog(offer)" [title]="offer.offerName">
+                @if (offer.isConverting) {
+                <span class="po-hot"><span class="po-hot__dot" aria-hidden="true"></span>{{ 'app.offers.converting' | translate }}</span>
+                }
                 <div class="po-img">
                     @if (offer.imageUrl) {
                     <img loading="lazy" [src]="offer.imageUrl" [alt]="offer.offerName" (error)="offer.imageUrl = null" />
@@ -42,6 +45,9 @@
                 @if (offer.paymentModel) { <span class="po-type">{{ offer.paymentModel }}</span> }
                 @if (offer.requirements) { <div class="po-task">{{ offer.requirements }}</div> }
                 <div class="po-geo"><mat-icon>public</mat-icon>{{ countryLabel(offer) }}</div>
+                @if (offer.isConverting && offer.recentConversions) {
+                <div class="po-done"><mat-icon>verified</mat-icon>{{ 'app.offers.convertingCount' | translate:{ count: offer.recentConversions } }}</div>
+                }
                 <span class="po-points">+{{ offer.points | number }} <small>{{ 'app.common.pts' | translate }}</small></span>
             </button>
             }

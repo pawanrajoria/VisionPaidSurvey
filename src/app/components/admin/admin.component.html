@@ -246,6 +246,93 @@
         </section>
         }
 
+        <!-- ═════════ CPAMERCHANT OFFERS ═════════ -->
+        @if (tab === 'network') {
+        <section>
+            <div class="section-head">
+                <div>
+                    <h1>CPAMerchant offers
+                        @if (directOffers) { <span class="muted-count">{{ directOffers.offers.length | number }}</span> }
+                    </h1>
+                    <p class="hint">
+                        Converting offers are shown first on the members' Offers page with a "Converting" badge. Turn off any offer here.
+                        @if (directOffers?.autoPauseMinUsers) {
+                        An offer pauses itself when {{ directOffers?.autoPauseMinUsers }} members have clicked it (at least
+                        {{ directOffers?.autoPauseWaitHours }} h ago) and nobody has converted.
+                        } @else if (directOffers) {
+                        Auto-pause is switched off (DirectOffers:AutoPauseEnabled).
+                        }
+                    </p>
+                </div>
+                <div class="search">
+                    <select name="directCountry" [(ngModel)]="directCountry" (change)="loadDirectOffers()" aria-label="Country">
+                        <option value="">All countries</option>
+                        @for (c of directOffers?.countries ?? []; track c) { <option [value]="c">{{ c }}</option> }
+                    </select>
+                    <div class="seg">
+                        <button type="button" [class.active]="directStatus === 'all'" (click)="directStatus = 'all'">All</button>
+                        <button type="button" [class.active]="directStatus === 'live'" (click)="directStatus = 'live'">Live</button>
+                        <button type="button" [class.active]="directStatus === 'off'" (click)="directStatus = 'off'">
+                            Off / paused @if (directPausedCount) { ({{ directPausedCount }}) }
+                        </button>
+                    </div>
+                    <button type="button" class="btn ghost" [disabled]="directLoading" (click)="loadDirectOffers()"><mat-icon>refresh</mat-icon> Refresh</button>
+                </div>
+            </div>
+
+            @if (directError) { <p class="notice error">{{ directError }}</p> }
+            @if (directOffers && !directOffers.tablesReady) {
+            <p class="notice error">Clicks and on/off are not set up yet. Run DatabaseScripts/014_direct_offer_controls.sql on the database first.</p>
+            }
+
+            <div class="panel table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Offer</th><th>Countries</th><th class="num">Payout</th>
+                            <th class="num" title="CPAMerchant report, last 30 days, all countries">Network clicks / conv.</th>
+                            <th class="num" title="Members tracked by us{{ directCountry ? ' from ' + directCountry : '' }}">Members</th>
+                            <th class="num">Conversions</th><th class="num">CR</th>
+                            <th>State</th><th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (o of directRows; track o.offerId) {
+                        <tr>
+                            <td>
+                                <div class="cell-main">{{ o.name }} <span class="tag">{{ o.type }}</span>
+                                    @if (o.isConverting) { <span class="tag">Converting</span> }
+                                </div>
+                                <div class="cell-sub">#{{ o.offerId }}@if (o.lastClickAt) { · last click {{ o.lastClickAt | date:'d MMM, HH:mm' }} }</div>
+                                @if (o.disabledReason) {
+                                <div class="cell-sub">{{ o.disabledReason }}@if (o.disabledAt) { · {{ o.disabledAt | date:'d MMM, HH:mm' }} }</div>
+                                }
+                            </td>
+                            <td [title]="o.countries.join(', ')">{{ directCountries(o) }}</td>
+                            <td class="num">{{ o.payoutUsd | currency:'USD':'symbol':'1.2-2' }}</td>
+                            <td class="num">{{ o.networkClicks | number }} / {{ o.networkConversions | number }}</td>
+                            <td class="num">{{ o.users | number }}</td>
+                            <td class="num">{{ o.conversions | number }}</td>
+                            <td class="num">{{ o.users ? (o.conversionRate + '%') : '–' }}</td>
+                            <td><span class="state" [attr.data-state]="o.isDisabled ? 'Blocked' : 'Live'">{{ directState(o) }}</span></td>
+                            <td class="row-actions">
+                                <button type="button" class="btn small" [class.ghost]="!o.isDisabled" [class.primary]="o.isDisabled"
+                                    [disabled]="busy || (directOffers && !directOffers.tablesReady)" (click)="toggleDirectOffer(o)">
+                                    {{ o.isDisabled ? 'Turn on' : 'Turn off' }}
+                                </button>
+                            </td>
+                        </tr>
+                        } @empty {
+                        <tr><td colspan="9" class="empty">
+                            {{ directLoading || !directOffers ? 'Loading…' : (directCountry ? 'No CPAMerchant offers for ' + directCountry + '.' : 'No CPAMerchant offers. Check the CpaMerchant API key on the server.') }}
+                        </td></tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        }
+
         <!-- ═════════ PAYOUTS ═════════ -->
         @if (tab === 'payouts') {
         <section>

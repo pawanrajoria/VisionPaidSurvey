@@ -401,7 +401,9 @@
       "qrScan": "Imbas Kod QR dengan telefon anda.",
       "availableDevices": "Peranti Tersedia",
       "qrCopyHint": "Sebagai alternatif, salin URL ke pelayar mudah alih anda",
-      "copy": "Salin"
+      "copy": "Salin",
+      "converting": "Ahli sedang menjana",
+      "convertingCount": "{{count}} selesai"
     },
     "live": {
       "badge": "LANGSUNG",

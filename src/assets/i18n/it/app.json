@@ -401,7 +401,9 @@
       "qrScan": "Scansiona il codice QR con il telefono.",
       "availableDevices": "Dispositivi disponibili",
       "qrCopyHint": "In alternativa, copia l'URL nel browser del telefono",
-      "copy": "Copia"
+      "copy": "Copia",
+      "converting": "I membri stanno guadagnando",
+      "convertingCount": "{{count}} completate"
     },
     "live": {
       "badge": "LIVE",

@@ -401,7 +401,9 @@
       "qrScan": "अपने फ़ोन से QR कोड स्कैन करें।",
       "availableDevices": "उपलब्ध डिवाइस",
       "qrCopyHint": "या फिर URL को अपने मोबाइल ब्राउज़र में कॉपी करें",
-      "copy": "कॉपी करें"
+      "copy": "कॉपी करें",
+      "converting": "सदस्य कमा रहे हैं",
+      "convertingCount": "{{count}} पूरे हुए"
     },
     "live": {
       "badge": "लाइव",

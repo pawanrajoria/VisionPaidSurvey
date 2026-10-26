@@ -246,6 +246,44 @@ export interface AdminPayoutDto {
     balance: number;
 }
 
+/** A CPAMerchant offer with its clicks, conversions and on/off state. */
+export interface DirectOfferAdminDto {
+    offerId: string;
+    name: string;
+    type: string;
+    imageUrl: string | null;
+    /** What the network pays; the member gets the client's PayoutCut share. */
+    payoutUsd: number;
+    /** Empty = every country. */
+    countries: string[];
+    clicks: number;
+    users: number;
+    conversions: number;
+    conversionRate: number;
+    lastClickAt: string | null;
+    /** From CPAMerchant's own report, last 30 days, all countries. */
+    networkClicks: number;
+    networkConversions: number;
+    /** Converted recently: shown first to members with a "Converting" badge. */
+    isConverting: boolean;
+    isDisabled: boolean;
+    /** Admin | Auto */
+    disabledBy: string | null;
+    disabledReason: string | null;
+    disabledAt: string | null;
+}
+
+export interface DirectOfferAdminListDto {
+    provider: string;
+    /** False until DatabaseScripts/014_direct_offer_controls.sql has been run. */
+    tablesReady: boolean;
+    /** 0 = auto-pause switched off. */
+    autoPauseMinUsers: number;
+    autoPauseWaitHours: number;
+    countries: string[];
+    offers: DirectOfferAdminDto[];
+}
+
 export interface PriorityOfferAdminDto {
     id: number;
     title: string;

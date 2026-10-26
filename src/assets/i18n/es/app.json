@@ -401,7 +401,9 @@
       "qrScan": "Escanea el código QR con tu teléfono.",
       "availableDevices": "Dispositivos disponibles",
       "qrCopyHint": "También puedes copiar la URL en el navegador de tu móvil",
-      "copy": "Copiar"
+      "copy": "Copiar",
+      "converting": "Los miembros están ganando",
+      "convertingCount": "{{count}} completadas"
     },
     "live": {
       "badge": "EN VIVO",

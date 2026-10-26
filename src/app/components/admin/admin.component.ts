@@ -5,10 +5,10 @@ import { AdminService } from "./admin.service";
 import { AdminDashboardComponent } from "./dashboard/dashboard.component";
 import { MessageService } from "../layout/message/message.service";
 import { MessageVM } from "../layout/message/message.vm";
-import { AdminActivityPeriodDto, AdminBonusReportDto, AdminEarningsSummaryDto, AdminEarningItemDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest } from "./admin.vm";
+import { AdminActivityPeriodDto, AdminBonusReportDto, AdminEarningsSummaryDto, AdminEarningItemDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserDto, DirectOfferAdminDto, DirectOfferAdminListDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest } from "./admin.vm";
 import { ChatService, IAdminChatMessage } from "../home/chat/chat.service";
 
-type AdminTab = 'overview' | 'offers' | 'payouts' | 'users' | 'chat' | 'notifications' | 'earnings';
+type AdminTab = 'overview' | 'offers' | 'network' | 'payouts' | 'users' | 'chat' | 'notifications' | 'earnings';
 
 const PAYOUT_PENDING = 1, PAYOUT_COMPLETED = 2, PAYOUT_REJECTED = 4;
 const USER_BLOCKED = 3;
@@ -23,6 +23,7 @@ export class AdminComponent extends BaseComponent implements OnInit {
     readonly tabs: { id: AdminTab; label: string; icon: string }[] = [
         { id: 'overview', label: 'Overview', icon: 'insights' },
         { id: 'offers', label: 'Priority offers', icon: 'local_offer' },
+        { id: 'network', label: 'CPAMerchant offers', icon: 'hub' },
         { id: 'payouts', label: 'Payouts', icon: 'payments' },
         { id: 'users', label: 'Users', icon: 'group' },
         { id: 'chat', label: 'Chat', icon: 'forum' },
@@ -89,6 +90,7 @@ export class AdminComponent extends BaseComponent implements OnInit {
         this.tab = tab;
         if (tab === 'overview' && !this.overview) await this.loadOverview();
         if (tab === 'offers' && !this.offersLoaded) await this.loadOffers();
+        if (tab === 'network' && !this.directOffers) await this.loadDirectOffers();
         if (tab === 'payouts' && !this.payoutsLoaded) await this.loadPayouts();
         if (tab === 'users' && !this.usersLoaded) await this.loadUsers();
         if (tab === 'chat') await this.loadChat();
@@ -187,6 +189,61 @@ export class AdminComponent extends BaseComponent implements OnInit {
     get profileCompletionRate(): number {
         const o = this.overview;
         return o && o.activeUsers > 0 ? Math.round((o.onboardingCompleted / o.activeUsers) * 100) : 0;
+    }
+
+    // ───────────── CPAMerchant (direct network) offers ─────────────
+    directOffers: DirectOfferAdminListDto | null = null;
+    directCountry = '';
+    directStatus: 'all' | 'live' | 'off' = 'all';
+    directError = '';
+    directLoading = false;
+
+    async loadDirectOffers() {
+        this.directError = '';
+        this.directLoading = true;
+        try {
+            this.directOffers = await this.adminService.getDirectOffers(this.directCountry);
+        } catch {
+            this.directError = 'The CPAMerchant offers could not be loaded.';
+        } finally {
+            this.directLoading = false;
+        }
+    }
+
+    get directRows(): DirectOfferAdminDto[] {
+        const rows = this.directOffers?.offers ?? [];
+        if (this.directStatus === 'live') return rows.filter(o => !o.isDisabled);
+        if (this.directStatus === 'off') return rows.filter(o => o.isDisabled);
+        return rows;
+    }
+
+    get directPausedCount(): number {
+        return (this.directOffers?.offers ?? []).filter(o => o.isDisabled).length;
+    }
+
+    directState(offer: DirectOfferAdminDto): string {
+        if (!offer.isDisabled) return 'Live';
+        return offer.disabledBy === 'Auto' ? 'Auto-paused' : 'Off';
+    }
+
+    /** "US, CA, GB +12" so a long country list stays on one line. */
+    directCountries(offer: DirectOfferAdminDto): string {
+        if (!offer.countries.length) return 'All';
+        return offer.countries.length > 4 ? `${offer.countries.slice(0, 4).join(', ')} +${offer.countries.length - 4}` : offer.countries.join(', ');
+    }
+
+    async toggleDirectOffer(offer: DirectOfferAdminDto) {
+        if (this.busy) return;
+        const enable = offer.isDisabled;
+        if (!enable && !this.win?.confirm(`Turn off "${offer.name}"? Members will stop seeing it right away.`)) return;
+        this.busy = true;
+        try {
+            await this.adminService.setDirectOfferEnabled(offer.offerId, enable);
+            this.toast(enable ? 'Offer turned on. Its no-conversion count starts again from now.' : 'Offer turned off.');
+            await this.loadDirectOffers();
+        } catch { /* toast already shown */ } finally {
+            this.busy = false;
+        }
     }
 
     // ───────────── Priority offers ─────────────

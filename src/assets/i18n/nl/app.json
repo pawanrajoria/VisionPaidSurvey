@@ -401,7 +401,9 @@
       "qrScan": "Scan de QR-code met je telefoon.",
       "availableDevices": "Beschikbare apparaten",
       "qrCopyHint": "Je kunt de URL ook kopiëren naar de browser op je telefoon",
-      "copy": "Kopiëren"
+      "copy": "Kopiëren",
+      "converting": "Leden verdienen hier",
+      "convertingCount": "{{count}} voltooid"
     },
     "live": {
       "badge": "LIVE",

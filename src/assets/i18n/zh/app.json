@@ -401,7 +401,9 @@
       "qrScan": "用手机扫描二维码。",
       "availableDevices": "可用设备",
       "qrCopyHint": "或者，将链接复制到手机浏览器中打开",
-      "copy": "复制"
+      "copy": "复制",
+      "converting": "会员正在赚取",
+      "convertingCount": "已完成 {{count}} 次"
     },
     "live": {
       "badge": "实时",

@@ -24,6 +24,11 @@ export interface IOfferResponseDto {
     countries?: string[] | null;
     /** Kind of task, e.g. "Survey", "Sign up + confirm email". */
     paymentModel?: string | null;
+    /** Members have recently completed it: shown first with an animated "Converting" badge. */
+    isConverting?: boolean;
+    /** Completions in the last 30 days. */
+    recentConversions?: number;
+    conversionRate?: number | null;
 }
 
 export interface IOfferTaskResponseDto {

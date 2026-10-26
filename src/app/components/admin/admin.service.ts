@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 import { ConfigService } from "../../config.service";
 import { BACKGROUND } from "../home/engagement/engagement.service";
-import { AdminActivityPeriodDto, AdminBonusReportDto, AdminEarningsSummaryDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserListDto, BulkUserActionResultDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest, SendNotificationResult } from "./admin.vm";
+import { AdminActivityPeriodDto, AdminBonusReportDto, AdminEarningsSummaryDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserListDto, BulkUserActionResultDto, DirectOfferAdminListDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest, SendNotificationResult } from "./admin.vm";
 
 @Injectable({ providedIn: 'root' })
 export class AdminService {
@@ -93,6 +93,17 @@ export class AdminService {
 
     async savePriorityOffer(offer: PriorityOfferAdminDto): Promise<PriorityOfferAdminDto> {
         return await firstValueFrom(this.http.post<PriorityOfferAdminDto>(this.base + "priority-offers", offer));
+    }
+
+    /** CPAMerchant offers with clicks, conversions and state; country is an ISO code, empty for all. */
+    async getDirectOffers(country: string): Promise<DirectOfferAdminListDto> {
+        let params = new HttpParams();
+        if (country) params = params.set('country', country);
+        return await firstValueFrom(this.http.get<DirectOfferAdminListDto>(this.base + "direct-offers", { params }));
+    }
+
+    async setDirectOfferEnabled(offerId: string, enabled: boolean): Promise<{ isSuccess: boolean; message: string }> {
+        return await firstValueFrom(this.http.post<any>(`${this.base}direct-offers/${encodeURIComponent(offerId)}/status`, { enabled }));
     }
 
     // ───────────── Notifications (push + in-app list, website and app) ─────────────

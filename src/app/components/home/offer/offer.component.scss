@@ -323,6 +323,92 @@
     small { font-size: .62rem; font-weight: 600; opacity: .8; }
 }
 
+/* Converting offers: glowing animated border, a pulsing badge and a light sweep across the card. */
+.po-card--hot {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    background:
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(120deg, #10b981, #f59e0b, #ef4444, #10b981) border-box;
+    background-size: 100% 100%, 300% 300%;
+    animation: po-border 4s linear infinite, po-glow 2.4s ease-in-out infinite;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -70%;
+        width: 45%;
+        height: 100%;
+        background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .75), transparent);
+        transform: skewX(-20deg);
+        animation: po-shine 3.2s ease-in-out infinite;
+        pointer-events: none;
+    }
+
+    .po-points { background: linear-gradient(135deg, #10b981, #0f766e); color: #fff; }
+}
+
+.po-hot {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ef4444, #f97316);
+    color: #fff;
+    font-size: .6rem;
+    font-weight: 800;
+    letter-spacing: .02em;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    animation: po-bounce 2.4s ease-in-out infinite;
+
+    &__dot {
+        flex: none;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #fff;
+        animation: po-pulse 1.4s ease-out infinite;
+    }
+}
+
+.po-done {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    font-size: .62rem;
+    font-weight: 700;
+    color: #0f766e;
+    mat-icon { width: 12px; height: 12px; font-size: 12px; }
+}
+
+@keyframes po-border { to { background-position: 0 0, 300% 0; } }
+@keyframes po-glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, .0); }
+    50% { box-shadow: 0 0 16px 2px rgba(16, 185, 129, .35); }
+}
+@keyframes po-shine {
+    0%, 55% { left: -70%; }
+    100% { left: 130%; }
+}
+@keyframes po-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
+}
+@keyframes po-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, .8); }
+    100% { box-shadow: 0 0 0 6px rgba(255, 255, 255, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .po-card--hot, .po-card--hot::after, .po-hot, .po-hot__dot { animation: none; }
+}
+
 @media (max-width: 600px) {
     .priority { margin: 0 10px 16px; padding: 10px; }
     .po-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }

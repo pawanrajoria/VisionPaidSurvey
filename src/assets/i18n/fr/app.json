@@ -401,7 +401,9 @@
       "qrScan": "Scannez le QR code avec votre téléphone.",
       "availableDevices": "Appareils disponibles",
       "qrCopyHint": "Vous pouvez aussi copier l'URL dans le navigateur de votre mobile",
-      "copy": "Copier"
+      "copy": "Copier",
+      "converting": "Les membres gagnent ici",
+      "convertingCount": "{{count}} terminées"
     },
     "live": {
       "badge": "EN DIRECT",

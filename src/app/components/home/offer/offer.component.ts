@@ -144,7 +144,9 @@ export class OfferComponent extends BaseComponent implements OnInit {
                 }
             });
 
-        this.priorityOffers = this.filteredOffers.filter(o => o.isPriority);
+        // Offers members are actually completing come first, best converting first.
+        this.priorityOffers = this.filteredOffers.filter(o => o.isPriority)
+            .sort((a, b) => Number(!!b.isConverting) - Number(!!a.isConverting) || (b.conversionRate ?? 0) - (a.conversionRate ?? 0));
         this.filteredOffers = this.filteredOffers.filter(o => !o.isPriority);
     }
 
