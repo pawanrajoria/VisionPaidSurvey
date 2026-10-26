@@ -6,7 +6,8 @@ import { existsSync } from 'fs';
 export const ssr = functions.https.onRequest({
   region: 'us-central1',
   maxInstances: 10,
-  memory: "2GiB",
+  memory: "1GiB",
+  concurrency: 80,
   cpu: 1
 }, async (req, res) => {
   // Look for dist inside the functions folder itself

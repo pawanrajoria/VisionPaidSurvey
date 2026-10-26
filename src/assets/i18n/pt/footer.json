@@ -39,6 +39,14 @@
             "text": "Responda pesquisas, mantenha sua sequência e resgate onde estiver com o app Profitpiller para Android.",
             "get_it_on": "Disponível no",
             "free_android": "Grátis no Android"
+        },
+        "apps": {
+            "eyebrow": "Apps Android gratuitos",
+            "title": "Ganhe e jogue no seu celular",
+            "text": "Três apps gratuitos da ProfitPiller. Escolha como quer ganhar: pesquisas, quizzes ou quebra-cabeças.",
+            "surveys_text": "Responda pesquisas e ofertas pagas, acompanhe seus pontos e resgate a partir de US$ 5.",
+            "quiz_text": "Responda perguntas de quiz todos os dias, suba no ranking e ganhe prêmios.",
+            "puzzle_text": "Resolva quebra-cabeças relaxantes, supere seu melhor tempo e acumule pontos."
         }
     }
 }

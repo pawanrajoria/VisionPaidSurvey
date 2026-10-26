@@ -39,6 +39,14 @@
             "text": "Répondez à des sondages, gardez votre série active et retirez vos gains où que vous soyez avec l’app Profitpiller pour Android.",
             "get_it_on": "Disponible sur",
             "free_android": "Gratuit sur Android"
+        },
+        "apps": {
+            "eyebrow": "Applis Android gratuites",
+            "title": "Gagnez et jouez sur votre téléphone",
+            "text": "Trois applis ProfitPiller gratuites. Choisissez comment gagner : sondages, quiz ou puzzles.",
+            "surveys_text": "Répondez à des sondages et offres rémunérés, suivez vos points et retirez dès 5 $.",
+            "quiz_text": "Répondez au quiz du jour, grimpez au classement et gagnez des récompenses.",
+            "puzzle_text": "Résolvez des puzzles relaxants, battez votre meilleur temps et cumulez des points."
         }
     }
 }

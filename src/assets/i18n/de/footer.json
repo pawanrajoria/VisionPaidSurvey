@@ -39,6 +39,14 @@
             "text": "Nimm an Umfragen teil, halte deine Serie am Leben und lass dir unterwegs mit der Profitpiller-App für Android auszahlen.",
             "get_it_on": "Jetzt bei",
             "free_android": "Kostenlos für Android"
+        },
+        "apps": {
+            "eyebrow": "Kostenlose Android-Apps",
+            "title": "Verdienen und spielen auf dem Handy",
+            "text": "Drei kostenlose ProfitPiller-Apps. Wähle, wie du verdienen möchtest: Umfragen, Quiz oder Puzzles.",
+            "surveys_text": "Nimm an bezahlten Umfragen und Angeboten teil, verfolge deine Punkte und lass dir ab 5 $ auszahlen.",
+            "quiz_text": "Beantworte tägliche Quizfragen, steig in der Rangliste auf und gewinne Prämien.",
+            "puzzle_text": "Löse entspannende Puzzles, schlag deine Bestzeit und sammle Punkte."
         }
     }
 }

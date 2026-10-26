@@ -3,6 +3,7 @@
 import { HttpClient } from '@angular/common/http';
 import { TranslateLoader } from '@ngx-translate/core';
 import { Observable, forkJoin, map } from 'rxjs';
+import { environment } from '../environments/environment';
 
 export class MultiTranslateClientHttpLoader implements TranslateLoader {
   constructor(
@@ -12,7 +13,8 @@ export class MultiTranslateClientHttpLoader implements TranslateLoader {
 
   public getTranslation(lang: string): Observable<any> {
     const requests = this.resources.map((config) => {
-      const path = `${config.prefix}${lang}${config.suffix}`;
+      // The version busts the 30-day browser cache on i18n JSON (firebase.json) when new keys ship.
+      const path = `${config.prefix}${lang}${config.suffix}?v=${environment.appVersion}`;
       return this.http.get(path);
     });
 

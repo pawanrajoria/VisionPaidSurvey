@@ -39,6 +39,14 @@
             "text": "使用 Profitpiller 安卓应用，随时随地参与问卷、保持连续签到并提现。",
             "get_it_on": "下载自",
             "free_android": "安卓版免费"
+        },
+        "apps": {
+            "eyebrow": "免费 Android 应用",
+            "title": "用手机边玩边赚",
+            "text": "ProfitPiller 的三款免费应用，选择你喜欢的赚钱方式：问卷、答题或拼图。",
+            "surveys_text": "参与有偿问卷和任务，查看积分，满 5 美元即可提现。",
+            "quiz_text": "每天回答趣味问答，冲上排行榜，赢取奖励。",
+            "puzzle_text": "玩轻松的拼图，刷新最佳用时，赚取积分。"
         }
     }
 }

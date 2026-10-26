@@ -39,6 +39,14 @@
             "text": "Responde encuestas, mantén tu racha y retira tus ganancias desde cualquier lugar con la app de Profitpiller para Android.",
             "get_it_on": "Disponible en",
             "free_android": "Gratis en Android"
+        },
+        "apps": {
+            "eyebrow": "Apps gratis para Android",
+            "title": "Gana y juega en tu móvil",
+            "text": "Tres apps gratis de ProfitPiller. Elige cómo quieres ganar: encuestas, trivias o puzles.",
+            "surveys_text": "Responde encuestas y ofertas pagadas, sigue tus puntos y cobra desde $5.",
+            "quiz_text": "Responde preguntas de trivia cada día, sube en la clasificación y gana premios.",
+            "puzzle_text": "Resuelve puzles relajantes, supera tu mejor tiempo y acumula puntos."
         }
     }
 }

@@ -40,6 +40,14 @@
     ],
     "rewrites": [
       {
+        "regex": "^/([a-z]{2}-[a-z]{2}/)?(surveyresult|survey|offerwall|app|admin)(/.*)?$",
+        "destination": "/index.csr.html"
+      },
+      {
+        "regex": "^/([a-z]{2}-[a-z]{2}/)?auth/(link|callback|paypalcallback)(/.*)?$",
+        "destination": "/index.csr.html"
+      },
+      {
         "source": "**",
         "function": "ssr"
       }

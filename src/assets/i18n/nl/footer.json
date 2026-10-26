@@ -39,6 +39,14 @@
             "text": "Vul enquêtes in, houd je reeks vast en laat onderweg uitbetalen met de Profitpiller-app voor Android.",
             "get_it_on": "Ontdek het op",
             "free_android": "Gratis voor Android"
+        },
+        "apps": {
+            "eyebrow": "Gratis Android-apps",
+            "title": "Verdien en speel op je telefoon",
+            "text": "Drie gratis ProfitPiller-apps. Kies hoe je wilt verdienen: enquêtes, quizzen of puzzels.",
+            "surveys_text": "Vul betaalde enquêtes en aanbiedingen in, volg je punten en laat vanaf $5 uitbetalen.",
+            "quiz_text": "Beantwoord dagelijkse quizvragen, klim op het klassement en win beloningen.",
+            "puzzle_text": "Los ontspannende puzzels op, verbeter je beste tijd en verzamel punten."
         }
     }
 }

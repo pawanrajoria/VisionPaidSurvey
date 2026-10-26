@@ -39,6 +39,14 @@
       "text": "Take surveys, keep your streak alive and cash out on the go with the Profitpiller Android app.",
       "get_it_on": "Get it on",
       "free_android": "Free on Android"
+    },
+    "apps": {
+      "eyebrow": "Free Android apps",
+      "title": "Earn and play on your phone",
+      "text": "Three free ProfitPiller apps. Pick how you like to earn: surveys, quizzes or puzzles.",
+      "surveys_text": "Take paid surveys and offers, track your points and cash out from $5.",
+      "quiz_text": "Answer daily trivia questions, climb the leaderboard and win rewards.",
+      "puzzle_text": "Solve relaxing puzzles, beat your best time and collect points."
     }
   }
 }
