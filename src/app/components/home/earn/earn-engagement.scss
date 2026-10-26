@@ -73,22 +73,24 @@ $line: #dfe7e4;
   }
 }
 
+// Priority offers: one short, swipeable row at the top of Earn so it never pushes the page down much.
 .priority-section {
-  margin-bottom: 22px;
+  margin-bottom: 16px;
   padding: 0; // a global "section" rule adds 30px above and below otherwise
 
   .section-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
+    gap: 8px;
+    margin-bottom: 4px;
   }
 
   .section-title {
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 20px;
+    margin-right: auto;
+    font-size: 18px;
     font-weight: 700;
     color: $ink;
 
@@ -99,18 +101,34 @@ $line: #dfe7e4;
     .title-note {
       margin-left: 4px;
       color: $muted;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 400;
     }
+  }
+
+  .view-all {
+    color: $brand;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .actions {
+    display: flex;
   }
 }
 
 .priority-slider {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(280px, 340px);
-  gap: 12px;
-  padding: 10px 2px 6px;
+  grid-auto-columns: minmax(232px, 262px);
+  gap: 10px;
+  padding: 12px 2px 4px;
   overflow-x: auto;
   scroll-behavior: smooth;
   scroll-snap-type: x proximity;
@@ -124,10 +142,10 @@ $line: #dfe7e4;
   position: relative;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 18px 14px 14px;
-  border: 2px solid $gold;
-  border-radius: 16px;
+  gap: 10px;
+  padding: 22px 12px 10px; // room for the tag along the top edge
+  border: 1.5px solid $gold;
+  border-radius: 14px;
   background: linear-gradient(160deg, #fffaf0 0%, #ffffff 60%);
   color: $ink;
   font: inherit;
@@ -137,29 +155,76 @@ $line: #dfe7e4;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(224, 134, 0, 0.22);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(224, 134, 0, 0.2);
   }
 
   &:focus-visible {
     outline: 3px solid $brand;
     outline-offset: 2px;
   }
+
+  // Members are completing it: moving gradient border, soft glow and a light sweep.
+  &--hot {
+    overflow: hidden;
+    border-color: transparent;
+    background:
+      linear-gradient(160deg, #f0fdf7 0%, #ffffff 65%) padding-box,
+      linear-gradient(120deg, #10b981, #f59e0b, #ef4444, #10b981) border-box;
+    background-size: 100% 100%, 300% 300%;
+    animation: pc-border 4s linear infinite, pc-glow 2.4s ease-in-out infinite;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -70%;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+      transform: skewX(-20deg);
+      animation: pc-shine 3.2s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .priority-go {
+      background: linear-gradient(135deg, #10b981, #0f766e);
+    }
+  }
 }
 
 .priority-tag {
   position: absolute;
-  top: -11px;
-  left: 14px;
-  padding: 3px 10px;
-  border-radius: 999px;
+  top: -1px;
+  left: 12px;
+  max-width: calc(100% - 24px);
+  padding: 2px 9px;
+  border-radius: 0 0 8px 8px;
   background: #d9480f;
   color: #fff;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  box-shadow: 0 2px 6px rgba(217, 72, 15, 0.35);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &.hot {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: linear-gradient(135deg, #ef4444, #f97316);
+  }
+
+  .hot-dot {
+    flex: none;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    animation: pc-pulse 1.4s ease-out infinite;
+  }
 }
 
 .priority-media {
@@ -167,9 +232,9 @@ $line: #dfe7e4;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 72px;
-  height: 72px;
-  border-radius: 14px;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
   background: rgba(16, 87, 73, 0.08);
   overflow: hidden;
 
@@ -180,39 +245,59 @@ $line: #dfe7e4;
   }
 
   mat-icon {
-    font-size: 34px;
-    width: 34px;
-    height: 34px;
+    font-size: 26px;
+    width: 26px;
+    height: 26px;
     color: $brand;
+  }
+
+  .initial {
+    color: $brand;
+    font-size: 20px;
+    font-weight: 800;
   }
 }
 
 .priority-body {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
   flex: 1;
   min-width: 0;
 }
 
+.priority-title,
+.priority-desc {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .priority-title {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   line-height: 1.3;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .priority-desc {
   color: $muted;
-  font-size: 12.5px;
+  font-size: 12px;
   line-height: 1.35;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+
+  &.done {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    color: #0f766e;
+    font-weight: 700;
+
+    mat-icon {
+      flex: none;
+      font-size: 14px;
+      width: 14px;
+      height: 14px;
+    }
+  }
 }
 
 .priority-foot {
@@ -226,11 +311,12 @@ $line: #dfe7e4;
 .priority-points {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  font-size: 14px;
+  gap: 4px;
+  font-size: 13px;
   font-weight: 800;
   color: $brand;
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 .priority-go {
@@ -238,18 +324,32 @@ $line: #dfe7e4;
   align-items: center;
   gap: 2px;
   margin-left: auto;
-  padding: 5px 12px;
+  padding: 4px 10px;
   border-radius: 999px;
   background: $brand;
   color: #fff;
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 700;
 
   mat-icon {
-    font-size: 15px;
-    width: 15px;
-    height: 15px;
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
   }
+}
+
+@keyframes pc-border { to { background-position: 0 0, 300% 0; } }
+@keyframes pc-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  50% { box-shadow: 0 0 14px 1px rgba(16, 185, 129, 0.35); }
+}
+@keyframes pc-shine {
+  0%, 55% { left: -70%; }
+  100% { left: 130%; }
+}
+@keyframes pc-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8); }
+  100% { box-shadow: 0 0 0 6px rgba(255, 255, 255, 0); }
 }
 
 .claim-btn {
@@ -295,8 +395,9 @@ $line: #dfe7e4;
     display: none;
   }
 
+  // Most of a second card peeks in, so members see the row scrolls.
   .priority-slider {
-    grid-auto-columns: 86%;
+    grid-auto-columns: 78%;
   }
 
   .claim-btn {
@@ -311,6 +412,12 @@ $line: #dfe7e4;
   .priority-slider {
     transition: none;
     scroll-behavior: auto;
+  }
+
+  .priority-card--hot,
+  .priority-card--hot::after,
+  .priority-tag .hot-dot {
+    animation: none;
   }
 }
 
@@ -418,16 +525,13 @@ button.limit-notice {
   }
 
   .priority-section {
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 
     .section-title {
-      flex-wrap: wrap;
-      font-size: 17px;
+      font-size: 16px;
 
       .title-note {
-        flex-basis: 100%;
-        margin-left: 30px;
-        font-size: 12px;
+        display: none; // keeps the header to one line on phones
       }
     }
 
@@ -436,13 +540,9 @@ button.limit-notice {
     }
   }
 
-  .priority-card {
-    padding: 16px 12px 12px;
-  }
-
   .priority-media {
-    width: 60px;
-    height: 60px;
+    width: 44px;
+    height: 44px;
   }
 }
 

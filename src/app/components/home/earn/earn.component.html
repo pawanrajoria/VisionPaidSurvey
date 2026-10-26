@@ -41,15 +41,18 @@
         </a>
         }
 
-        <!-- Admin-curated, country-wise priority offers -->
-        @if (priorityOffers.length > 0) {
+        <!-- Priority offers: admin-curated ones, then direct network offers (converting first), in one swipeable row -->
+        @if (priorityOffers.length + networkPriorityOffers.length > 0) {
         <section class="priority-section" [attr.aria-label]="'app.earn.priorityOffers' | translate">
             <div class="section-header">
                 <div class="section-title">
                     <mat-icon class="bolt">bolt</mat-icon> {{ 'app.earn.priorityOffers' | translate }}
                     <span class="title-note">{{ 'app.earn.priorityNote' | translate }}</span>
                 </div>
-                @if (priorityOffers.length > 2) {
+                @if (networkPriorityOffers.length) {
+                <a class="view-all" [routerLink]="['/', currentLocale, 'app', 'offers']">{{ 'app.common.viewAll' | translate }}</a>
+                }
+                @if (priorityOffers.length + networkPriorityOffers.length > 2) {
                 <div class="actions">
                     <button mat-icon-button (click)="scrollLeft('prioritySlider')" [attr.aria-label]="'app.common.scrollLeft' | translate">
                         <mat-icon>chevron_left</mat-icon>
@@ -82,6 +85,37 @@
                                 {{ 'app.earn.pointsCount' | translate:{ points: (offer.points | number:'1.0-0') } }}
                             </span>
                             }
+                            <span class="priority-go">{{ 'app.common.start' | translate }} <mat-icon>arrow_forward</mat-icon></span>
+                        </span>
+                    </span>
+                </button>
+                }
+                @for (offer of networkPriorityOffers; track offer.offerId) {
+                <button type="button" class="priority-card" [class.priority-card--hot]="offer.isConverting" (click)="openOfferDialog(offer)">
+                    @if (offer.isConverting) {
+                    <span class="priority-tag hot"><span class="hot-dot" aria-hidden="true"></span>{{ 'app.offers.converting' | translate }}</span>
+                    } @else if (offer.paymentModel) {
+                    <span class="priority-tag">{{ offer.paymentModel }}</span>
+                    }
+                    <span class="priority-media">
+                        @if (offer.imageUrl) {
+                        <img [src]="offer.imageUrl" alt="" loading="lazy" width="48" height="48" (error)="offer.imageUrl = null">
+                        } @else {
+                        <span class="initial">{{ (offer.offerName || '?').charAt(0) }}</span>
+                        }
+                    </span>
+                    <span class="priority-body">
+                        <span class="priority-title">{{ offer.offerName }}</span>
+                        @if (offer.isConverting && offer.recentConversions) {
+                        <span class="priority-desc done"><mat-icon>verified</mat-icon>{{ 'app.offers.convertingCount' | translate:{ count: offer.recentConversions } }}</span>
+                        } @else if (offer.requirements) {
+                        <span class="priority-desc">{{ offer.requirements }}</span>
+                        }
+                        <span class="priority-foot">
+                            <span class="priority-points">
+                                <img src="/assets/images/homepagelogo.png" alt="" width="16" height="16">
+                                {{ 'app.earn.pointsCount' | translate:{ points: (offer.points | number:'1.0-0') } }}
+                            </span>
                             <span class="priority-go">{{ 'app.common.start' | translate }} <mat-icon>arrow_forward</mat-icon></span>
                         </span>
                     </span>

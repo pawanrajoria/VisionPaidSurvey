@@ -67,6 +67,9 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
     readonly router = inject(Router);
 
     priorityOffers: IPriorityOffer[] = [];
+    /** Direct network (CPAMerchant) offers for the priority row: converting ones first, capped so the row stays short. */
+    networkPriorityOffers: IOfferResponseDto[] = [];
+    private readonly maxNetworkPriority = 10;
     summary: IEngagementSummary | null = null;
 
     constructor(private breakpointObserver: BreakpointObserver) {
@@ -89,6 +92,10 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
     async getOffers() {
         try {
             this.offers = (await this.offerService.getOffers(true)) ?? [];
+            this.networkPriorityOffers = this.offers
+                .filter(o => o.isPriority)
+                .sort((a, b) => Number(!!b.isConverting) - Number(!!a.isConverting) || (b.conversionRate ?? 0) - (a.conversionRate ?? 0))
+                .slice(0, this.maxNetworkPriority);
             this.preselectPlatform();
         } catch {
             this.offers = [];
