@@ -1,0 +1,61 @@
+{
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run build"
+      ]
+    }
+  ],
+  "hosting": {
+    "public": "dist/VisionPaidSurvey/browser",
+    "ignore": [
+      "firebase.json",
+      "firebase.static.json",
+      "**/.*",
+      "**/node_modules/**",
+      "index.html"
+    ],
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "headers": [
+      {
+        "source": "**/*.@(js|css)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(png|jpg|jpeg|gif|webp|svg|woff2|ico|json)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=2592000"
+          }
+        ]
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/api/**",
+        "function": "ssr"
+      },
+      {
+        "source": "/sitemap.xml",
+        "function": "ssr"
+      },
+      {
+        "source": "/sitemap-pages.xml",
+        "function": "ssr"
+      },
+      {
+        "source": "**",
+        "destination": "/index.csr.html"
+      }
+    ]
+  }
+}

@@ -12,6 +12,7 @@
     "public": "dist/VisionPaidSurvey/browser",
     "ignore": [
       "firebase.json",
+      "firebase.static.json",
       "**/.*",
       "**/node_modules/**",
       "index.html"

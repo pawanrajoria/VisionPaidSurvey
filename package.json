@@ -9,8 +9,10 @@
     "test": "ng test",
     "serve:ssr": "node dist/VisionPaidSurvey/server/server.mjs",
     "build:ssr": "ng build",
+    "site:build": "node scripts/site.mjs build",
+    "site:deploy": "node scripts/site.mjs deploy",
     "copy-dist": "(if exist functions\\dist rd /s /q functions\\dist) && xcopy dist functions\\dist /E /I /Q /Y",
-    "deploy-all": "npm run build:ssr && npm run copy-dist && firebase deploy --only functions,hosting"
+    "deploy-all": "node scripts/site.mjs deploy"
   },
   "prettier": {
     "overrides": [
