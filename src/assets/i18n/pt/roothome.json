@@ -3,12 +3,12 @@
     "title": "Dinheiro fácil por opiniões diárias!",
     "description": "Suas opiniões ajudam as marcas a melhorar — e elas estão prontas para pagar por elas. Responda a pesquisas, complete ofertas simples e ganhe recompensas reais sem esforço.",
     "offer1": {
-      "title": "Ganhe ${{amount}} pela sua opinião — Não é necessária experiência!",
-      "subtitle": "{{surveys}} pesquisas esperando por você."
+      "title": "Ganhe até ${{amount}} por pesquisa — sem experiência!",
+      "subtitle": "Novas pesquisas todos os dias."
     },
     "offer2": {
-      "title": "${{amount}} ganhos ontem por usuários médios",
-      "subtitle": "Você pode ser o próximo! Retire a partir de ${{minPayout}}"
+      "title": "Saque a partir de apenas ${{amount}}",
+      "subtitle": "Receba via PayPal, UPI ou cartões-presente."
     },
     "login": {
       "title": "Ganhe dinheiro compartilhando sua opinião",
@@ -30,8 +30,8 @@
     "description": "Ao compartilhar suas opiniões sobre tópicos em alta, marcas de limpeza confiáveis ou seus programas favoritos, você pode transformar opiniões em renda com o aplicativo de pesquisas e ofertas Profit Piller."
   },
   "choose": {
-    "title": "Tem opiniões? Transforme-as em dinheiro-aqui mesmo.",
-    "description": "Responda a pesquisas empolgantes no Profit Piller e retire seus ganhos instantaneamente — como dinheiro em espécie ou cartões-presente.",
+    "title": "Tem opiniões? Transforme-as em dinheiro aqui mesmo.",
+    "description": "Responda pesquisas interessantes no Profit Piller e saque seus ganhos em dinheiro ou cartões-presente.",
     "step1": {
       "title": "Cadastre-se",
       "subtitle": "Junte-se agora – É grátis"
@@ -53,7 +53,7 @@
   },
   "howItWorks": {
     "title": "Ganhe dinheiro online com pesquisas e ofertas – disponível em <span class=\"highlight f-w-900\">todo o mundo.</span>",
-    "subtitle": "Responda a pesquisas empolgantes, seja recompensado rapidamente. Retire dinheiro ou resgate cartões-presente imediatamente com Profit Piller.",
+    "subtitle": "Responda pesquisas interessantes e seja recompensado. Saque dinheiro ou resgate cartões-presente com o Profit Piller.",
     "playGames": {
       "title": "Jogar jogos",
       "subtitle": "Ganhe por jogo",
@@ -62,7 +62,7 @@
     "takeSurveys": {
       "title": "Fazer pesquisas",
       "subtitle": "Ganhe por pesquisa de 2-10 min",
-      "price": "$1.80 - $100"
+      "price": "$0.50 - $3"
     },
     "completeOffers": {
       "title": "Completar ofertas",
@@ -75,9 +75,9 @@
     "subtitle": "Cada pesquisa e oferta que você completa pode colocar dinheiro no seu bolso — apenas imagine!",
     "valueTime": {
       "title": "Nós valorizamos seu tempo — e na <span class=\"highlight\">Profit Piller</span>, nós o recompensamos.",
-      "description": "Com nosso baixo pagamento mínimo, você pode sacar no mesmo dia — sem espera. Suas recompensas, do seu jeito."
+      "description": "Com nosso saque mínimo de apenas $5, você pode sacar assim que atingir esse valor. Suas recompensas, do seu jeito."
     },
-    "infoBadge": "Em média, leva apenas {{minutes}} minutos para ganhar seu primeiro pagamento!",
+    "infoBadge": "A maioria das pesquisas leva apenas {{minutes}} minutos.",
     "step1": {
       "strong": "Comece se inscrevendo, depois escolha as pesquisas pagas e ofertas que você gostaria de fazer.",
       "paragraph": "Com centenas de pesquisas e ofertas disponíveis, você pode ganhar jogando, compartilhando o que você compra ou falando sobre os times que você ama."

@@ -3,12 +3,12 @@
     "title": "日常意见轻松换现金！",
     "description": "您的想法帮助品牌改进——他们愿意为此付费。参加调查，完成简单的任务，轻松赚取真正的奖励。",
     "offer1": {
-      "title": "分享您的意见即可赚取 ${{amount}} — 无需经验！",
-      "subtitle": "{{surveys}} 份调查正等着您。"
+      "title": "每份调查最高可赚 ${{amount}}，无需任何经验！",
+      "subtitle": "每天都有新调查。"
     },
     "offer2": {
-      "title": "普通用户昨天赚取了 ${{amount}}",
-      "subtitle": "您可能是下一个！最低 ${{minPayout}} 即可提现"
+      "title": "最低 ${{amount}} 即可提现",
+      "subtitle": "通过 PayPal、UPI 或礼品卡收款。"
     },
     "login": {
       "title": "分享您的意见即可赚取现金",
@@ -30,8 +30,8 @@
     "description": "通过在 Profit Piller 调查和任务应用上分享您对热门话题、值得信赖的清洁品牌或您喜爱的节目的看法，您可以将意见转化为收入。"
   },
   "choose": {
-    "title": "有意见？将它们变成金钱-就在这里。",
-    "description": "在 Profit Piller 上参加激动人心的调查，并立即提取您的收入——作为现金或礼品卡。",
+    "title": "有意见？就在这里把它们变成钱。",
+    "description": "在 Profit Piller 上参与有趣的调查，并以现金或礼品卡形式提取收益。",
     "step1": {
       "title": "注册",
       "subtitle": "立即加入 – 它是免费的"
@@ -53,7 +53,7 @@
   },
   "howItWorks": {
     "title": "通过调查和任务在线赚钱 – 在<span class=\"highlight f-w-900\">世界各地</span>可用。",
-    "subtitle": "参加激动人心的调查，快速获得奖励。使用 Profit Piller 立即提现或兑换礼品卡。",
+    "subtitle": "参与有趣的调查并获得奖励。通过 Profit Piller 提现或兑换礼品卡。",
     "playGames": {
       "title": "玩游戏",
       "subtitle": "按次游戏赚取",
@@ -62,7 +62,7 @@
     "takeSurveys": {
       "title": "做调查",
       "subtitle": "按次 2-10 分钟的调查赚取",
-      "price": "$1.80 - $100"
+      "price": "$0.50 - $3"
     },
     "completeOffers": {
       "title": "完成任务",
@@ -75,9 +75,9 @@
     "subtitle": "您完成的每一次调查和任务都可能将钱放进您的口袋——想象一下！",
     "valueTime": {
       "title": "我们重视您的时间——在 <span class=\"highlight\">Profit Piller</span>，我们奖励您的时间。",
-      "description": "凭借我们超低的最低支付额，您可以在同一天提现——无需等待。您的奖励，由您做主。"
+      "description": "我们的最低提现额仅为 $5，达到后即可提现。你的奖励，由你做主。"
     },
-    "infoBadge": "平均而言，只需 {{minutes}} 分钟即可赚取您的第一笔付款！",
+    "infoBadge": "大多数调查只需 {{minutes}} 分钟即可完成。",
     "step1": {
       "strong": "首先注册，然后选择您想做的付费调查和任务。",
       "paragraph": "有数百份调查和任务可用，您可以通过玩游戏、分享您的购物心得或谈论您喜爱的球队来赚钱。"

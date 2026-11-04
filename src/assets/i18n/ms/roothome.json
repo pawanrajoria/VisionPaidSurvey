@@ -3,12 +3,12 @@
     "title": "Wang Tunai Mudah untuk Pendapat Harian!",
     "description": "Pendapat anda membantu jenama bertambah baik — dan mereka bersedia untuk membayarnya. Jawab tinjauan, selesaikan tawaran mudah, dan dapatkan ganjaran sebenar tanpa usaha.",
     "offer1": {
-      "title": "Dapatkan ${{amount}} untuk Pendapat Anda — Tiada Pengalaman Diperlukan!",
-      "subtitle": "{{surveys}} tinjauan menunggu anda."
+      "title": "Peroleh sehingga ${{amount}} setiap tinjauan — tiada pengalaman diperlukan!",
+      "subtitle": "Tinjauan baharu ditambah setiap hari."
     },
     "offer2": {
-      "title": "${{amount}} diperoleh semalam oleh pengguna purata",
-      "subtitle": "Anda boleh menjadi yang seterusnya! Tunai keluar dari ${{minPayout}}"
+      "title": "Tunaikan dari hanya ${{amount}}",
+      "subtitle": "Dibayar melalui PayPal, UPI atau kad hadiah."
     },
     "login": {
       "title": "Dapatkan Wang Tunai dengan Berkongsi Pendapat Anda",
@@ -30,8 +30,8 @@
     "description": "Dengan berkongsi pendapat anda tentang topik tren, jenama pembersihan yang dipercayai, atau rancangan kegemaran anda, anda boleh mengubah pendapat menjadi pendapatan dengan aplikasi tinjauan dan tawaran Profit Piller."
   },
   "choose": {
-    "title": "Ada pendapat? Ubah ia menjadi wang-betul-betul di sini.",
-    "description": "Jawab tinjauan yang menarik di Profit Piller dan keluarkan pendapatan anda serta-merta — sebagai wang tunai atau kad hadiah.",
+    "title": "Ada pendapat? Ubah ia menjadi wang di sini.",
+    "description": "Jawab tinjauan menarik di Profit Piller dan keluarkan pendapatan anda sebagai tunai atau kad hadiah.",
     "step1": {
       "title": "Daftar",
       "subtitle": "Sertai Sekarang – Ia Percuma"
@@ -53,7 +53,7 @@
   },
   "howItWorks": {
     "title": "Dapatkan wang secara dalam talian dengan tinjauan dan tawaran – tersedia di <span class=\"highlight f-w-900\">seluruh dunia.</span>",
-    "subtitle": "Jawab tinjauan yang menarik, dapatkan ganjaran dengan pantas. Tunai keluar atau tebus kad hadiah dengan segera dengan Profit Piller.",
+    "subtitle": "Jawab tinjauan menarik dan dapatkan ganjaran. Tunaikan atau tebus kad hadiah dengan Profit Piller.",
     "playGames": {
       "title": "Main permainan",
       "subtitle": "Dapatkan per permainan",
@@ -62,7 +62,7 @@
     "takeSurveys": {
       "title": "Ambil tinjauan",
       "subtitle": "Dapatkan per tinjauan 2-10 min",
-      "price": "$1.80 - $100"
+      "price": "$0.50 - $3"
     },
     "completeOffers": {
       "title": "Selesaikan tawaran",
@@ -75,9 +75,9 @@
     "subtitle": "Setiap tinjauan dan tawaran yang anda selesaikan boleh meletakkan wang di dalam poket anda — bayangkan!",
     "valueTime": {
       "title": "Kami menghargai masa anda — dan di <span class=\"highlight\">Profit Piller</span>, kami memberikannya ganjaran.",
-      "description": "Dengan pembayaran minimum kami yang rendah, anda boleh mengeluarkan wang pada hari yang sama — tanpa menunggu. Ganjaran anda, cara anda."
+      "description": "Dengan pembayaran minimum serendah $5, anda boleh tunaikan sebaik sahaja mencapainya. Ganjaran anda, cara anda."
     },
-    "infoBadge": "Secara purata, ia hanya mengambil masa {{minutes}} minit untuk mendapatkan pembayaran pertama anda!",
+    "infoBadge": "Kebanyakan tinjauan hanya mengambil masa {{minutes}} minit.",
     "step1": {
       "strong": "Mulakan dengan mendaftar, kemudian pilih tinjauan berbayar dan tawaran yang anda ingin ambil.",
       "paragraph": "Dengan ratusan tinjauan dan tawaran yang tersedia, anda boleh mendapatkan wang dengan bermain permainan, berkongsi apa yang anda beli, atau bercakap tentang pasukan yang anda suka."

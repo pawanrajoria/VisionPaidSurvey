@@ -3,12 +3,12 @@
     "title": "¡Dinero fácil por opiniones cotidianas!",
     "description": "Tus pensamientos ayudan a las marcas a mejorar, y están listas para pagar por ellos. Responde encuestas, completa ofertas sencillas y gana recompensas reales sin esfuerzo.",
     "offer1": {
-      "title": "Gana ${{amount}} por tu opinión — ¡No se necesita experiencia!",
-      "subtitle": "{{surveys}} encuestas esperando por ti."
+      "title": "Gana hasta ${{amount}} por encuesta, ¡sin experiencia!",
+      "subtitle": "Nuevas encuestas cada día."
     },
     "offer2": {
-      "title": "${{amount}} ganados ayer por usuarios promedio",
-      "subtitle": "¡Tú podrías ser el siguiente! Retira a partir de ${{minPayout}}"
+      "title": "Retira desde solo ${{amount}}",
+      "subtitle": "Cobra por PayPal, UPI o tarjetas de regalo."
     },
     "login": {
       "title": "Gana dinero compartiendo tu opinión",
@@ -30,8 +30,8 @@
     "description": "Al compartir tus pensamientos sobre temas de actualidad, marcas de limpieza de confianza o tus programas favoritos, puedes convertir tus opiniones en ingresos con la aplicación de encuestas y ofertas Profit Piller."
   },
   "choose": {
-    "title": "¿Tienes opiniones? Conviértelas en dinero-aquí mismo.",
-    "description": "Responde emocionantes encuestas en Profit Piller y retira tus ganancias al instante — como dinero en efectivo o tarjetas de regalo.",
+    "title": "¿Tienes opiniones? Conviértelas en dinero aquí mismo.",
+    "description": "Responde encuestas interesantes en Profit Piller y retira tus ganancias en efectivo o tarjetas de regalo.",
     "step1": {
       "title": "Regístrate",
       "subtitle": "Únete ahora – Es gratis"
@@ -53,7 +53,7 @@
   },
   "howItWorks": {
     "title": "Gana dinero en línea con encuestas y ofertas – disponible en <span class=\"highlight f-w-900\">todo el mundo.</span>",
-    "subtitle": "Responde encuestas emocionantes, obtén recompensas rápidamente. Retira dinero o canjea tarjetas de regalo de inmediato con Profit Piller.",
+    "subtitle": "Responde encuestas interesantes y recibe recompensas. Retira dinero o canjea tarjetas de regalo con Profit Piller.",
     "playGames": {
       "title": "Jugar juegos",
       "subtitle": "Gana por juego",
@@ -62,7 +62,7 @@
     "takeSurveys": {
       "title": "Responder encuestas",
       "subtitle": "Gana por encuesta de 2-10 min",
-      "price": "$1.80 - $100"
+      "price": "$0.50 - $3"
     },
     "completeOffers": {
       "title": "Completar ofertas",
@@ -75,9 +75,9 @@
     "subtitle": "Cada encuesta y oferta que completes podría poner dinero en tu bolsillo — ¡solo imagínalo!",
     "valueTime": {
       "title": "Valoramos tu tiempo — y en <span class=\"highlight\">Profit Piller</span>, lo recompensamos.",
-      "description": "Con nuestro bajo pago mínimo, puedes retirar el mismo día — sin esperas. Tus recompensas, a tu manera."
+      "description": "Con nuestro pago mínimo de solo 5 $, puedes retirar en cuanto lo alcances. Tus recompensas, a tu manera."
     },
-    "infoBadge": "En promedio, ¡solo se necesitan {{minutes}} minutos para ganar tu primer pago!",
+    "infoBadge": "La mayoría de las encuestas solo toman {{minutes}} minutos.",
     "step1": {
       "strong": "Empieza por registrarte, luego elige las encuestas pagadas y las ofertas que te gustaría tomar.",
       "paragraph": "Con cientos de encuestas y ofertas disponibles, puedes ganar dinero jugando, compartiendo lo que compras o hablando de los equipos que te encantan."

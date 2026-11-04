@@ -67,6 +67,12 @@
         "gender_1": "Lelaki",
         "gender_2": "Perempuan",
         "gender_0": "Lain-lain",
-        "profile_updated": "Profil berjaya dikemas kini"
+        "profile_updated": "Profil berjaya dikemas kini",
+        "review": {
+            "title": "Sudah dibayar? Kongsikan dengan orang lain",
+            "text": "Ulasan ringkas membantu ahli baharu mempercayai ProfitPiller.",
+            "trustpilot": "Ulas di Trustpilot",
+            "playstore": "Nilai aplikasi"
+        }
     }
 }

@@ -67,6 +67,12 @@
         "gender_1": "Männlich",
         "gender_2": "Weiblich",
         "gender_0": "Divers",
-        "profile_updated": "Profil erfolgreich aktualisiert"
+        "profile_updated": "Profil erfolgreich aktualisiert",
+        "review": {
+            "title": "Ausgezahlt bekommen? Erzählen Sie es weiter",
+            "text": "Eine kurze Bewertung hilft neuen Mitgliedern, ProfitPiller zu vertrauen.",
+            "trustpilot": "Auf Trustpilot bewerten",
+            "playstore": "App bewerten"
+        }
     }
 }

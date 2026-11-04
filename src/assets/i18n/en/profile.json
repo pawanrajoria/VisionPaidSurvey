@@ -67,6 +67,12 @@
         "gender_1": "Male",
         "gender_2": "Female",
         "gender_0": "Other",
-        "profile_updated": "Profile updated successfully"
+        "profile_updated": "Profile updated successfully",
+        "review": {
+            "title": "Got paid? Tell others about it",
+            "text": "A quick review helps new members trust ProfitPiller.",
+            "trustpilot": "Review on Trustpilot",
+            "playstore": "Rate the app"
+        }
     }
 }

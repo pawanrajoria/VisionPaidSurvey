@@ -49,6 +49,9 @@ export class RootHomeComponent extends BaseComponent implements OnInit {
 
     isLoggedIn: boolean = false;
 
+    /** Hero figures, shared by the desktop and mobile blocks so both always show the same numbers. */
+    readonly heroStats = { maxPerSurvey: 3, minPayout: 5, surveyMinutes: '2–10' };
+
     rewards: Record<string, { amount: string; label: string; logo: string }[]> = {
         Cash: [
             { amount: '$5 – $10', label: 'PayPal', logo: '/assets/images/gift-cards/paypal.png' },

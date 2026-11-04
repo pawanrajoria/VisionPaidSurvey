@@ -3,12 +3,12 @@
     "title": "Easy Cash for Everyday Opinions!",
     "description": "Your thoughts help brands improve — and they’re ready to pay for them. Take surveys, complete simple offers, and earn real rewards effortlessly.",
     "offer1": {
-      "title": "Earn ${{amount}} for Your Opinion — No Experience Needed!",
-      "subtitle": "{{surveys}} surveys waiting for you."
+      "title": "Earn up to ${{amount}} per survey — no experience needed!",
+      "subtitle": "New surveys added every day."
     },
     "offer2": {
-      "title": "${{amount}} earned yesterday by average users",
-      "subtitle": "You could be next! Cash out from ${{minPayout}}"
+      "title": "Cash out from just ${{amount}}",
+      "subtitle": "Get paid via PayPal, UPI or gift cards."
     },
     "login": {
       "title": "Earn Cash by Sharing Your Opinion",
@@ -30,8 +30,8 @@
     "description": "By sharing your thoughts on trending topics, trusted cleaning brands, or your favorite shows, you can turn opinions into income with the Profit Piller survey and offer app."
   },
   "choose": {
-    "title": "Got opinions? Turn them into money-right here.",
-    "description": "Take exciting surveys on Profit Piller and withdraw your earnings instantly — as cash or gift cards.",
+    "title": "Got opinions? Turn them into money right here.",
+    "description": "Take exciting surveys on Profit Piller and withdraw your earnings as cash or gift cards.",
     "step1": {
       "title": "Sign up",
       "subtitle": "Join Now – It’s Free"
@@ -52,8 +52,8 @@
     }
   },
   "howItWorks": {
-    "title": "Make money online with surveys and offer – available across <span class=\"highlight f-w-900\">the world.</span>",
-    "subtitle": "Take exciting surveys, get rewarded fast. Cash out or redeem gift cards immediately with Profit Piller.",
+    "title": "Make money online with surveys and offers – available across <span class=\"highlight f-w-900\">the world.</span>",
+    "subtitle": "Take exciting surveys and get rewarded. Cash out or redeem gift cards with Profit Piller.",
     "playGames": {
       "title": "Play games",
       "subtitle": "Earn per game",
@@ -62,7 +62,7 @@
     "takeSurveys": {
       "title": "Take surveys",
       "subtitle": "Earn per 2-10 min survey",
-      "price": "$1.80 - $100"
+      "price": "$0.50 - $3"
     },
     "completeOffers": {
       "title": "Complete offers",
@@ -75,12 +75,12 @@
     "subtitle": "Every survey and offer you complete could put money in your pocket — just imagine!",
     "valueTime": {
       "title": "We value your time — and at <span class=\"highlight\">Profit Piller</span>, we reward it.",
-      "description": "With our low minimum payout, you can cash out on the same day — no waiting. Your rewards, your way."
+      "description": "With our low $5 minimum payout, you can cash out as soon as you reach it. Your rewards, your way."
     },
-    "infoBadge": "On average, it takes just {{minutes}} minutes to earn your first payout!",
+    "infoBadge": "Most surveys take just {{minutes}} minutes to complete.",
     "step1": {
-      "strong": "Start by signing up, then pick the paid surveys and offer you’d like to take.",
-      "paragraph": "With hundreds of surveys and offer available, you can earn by playing games, sharing what you shop for, or talking about the teams you love."
+      "strong": "Start by signing up, then pick the paid surveys and offers you’d like to take.",
+      "paragraph": "With hundreds of surveys and offers available, you can earn by playing games, sharing what you shop for, or talking about the teams you love."
     },
     "step2": {
       "strong": "Earn points every time you complete a survey — it’s that simple!",

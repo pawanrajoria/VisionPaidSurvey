@@ -67,6 +67,12 @@
         "gender_1": "Man",
         "gender_2": "Vrouw",
         "gender_0": "Anders",
-        "profile_updated": "Profiel bijgewerkt"
+        "profile_updated": "Profiel bijgewerkt",
+        "review": {
+            "title": "Uitbetaald gekregen? Vertel het verder",
+            "text": "Een korte review helpt nieuwe leden ProfitPiller te vertrouwen.",
+            "trustpilot": "Review op Trustpilot",
+            "playstore": "Beoordeel de app"
+        }
     }
 }

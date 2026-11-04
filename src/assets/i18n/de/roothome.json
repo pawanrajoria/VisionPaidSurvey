@@ -3,12 +3,12 @@
     "title": "Einfach Geld für alltägliche Meinungen!",
     "description": "Ihre Gedanken helfen Marken, sich zu verbessern — und sie sind bereit, dafür zu bezahlen. Nehmen Sie an Umfragen teil, schließen Sie einfache Angebote ab und verdienen Sie mühelos echte Belohnungen.",
     "offer1": {
-      "title": "Verdienen Sie ${{amount}} für Ihre Meinung — Keine Erfahrung erforderlich!",
-      "subtitle": "{{surveys}} Umfragen warten auf Sie."
+      "title": "Verdienen Sie bis zu ${{amount}} pro Umfrage – keine Erfahrung nötig!",
+      "subtitle": "Jeden Tag neue Umfragen."
     },
     "offer2": {
-      "title": "${{amount}} gestern von durchschnittlichen Benutzern verdient",
-      "subtitle": "Sie könnten der Nächste sein! Auszahlung ab ${{minPayout}}"
+      "title": "Auszahlung schon ab ${{amount}}",
+      "subtitle": "Erhalten Sie Ihr Geld per PayPal, UPI oder Geschenkkarte."
     },
     "login": {
       "title": "Verdienen Sie Geld, indem Sie Ihre Meinung teilen",
@@ -30,8 +30,8 @@
     "description": "Indem Sie Ihre Gedanken zu Trendthemen, vertrauenswürdigen Reinigungsmarken oder Ihren Lieblingssendungen teilen, können Sie mit der Profit Piller Umfrage- und Angebots-App Meinungen in Einkommen verwandeln."
   },
   "choose": {
-    "title": "Haben Sie Meinungen? Verwandeln Sie sie in Geld-hier.",
-    "description": "Nehmen Sie an spannenden Umfragen auf Profit Piller teil und lassen Sie sich Ihre Einnahmen sofort auszahlen — als Bargeld oder Geschenkkarten.",
+    "title": "Haben Sie Meinungen? Verwandeln Sie sie genau hier in Geld.",
+    "description": "Nehmen Sie an spannenden Umfragen auf Profit Piller teil und lassen Sie sich Ihre Einnahmen als Bargeld oder Geschenkkarten auszahlen.",
     "step1": {
       "title": "Anmelden",
       "subtitle": "Jetzt beitreten – Es ist kostenlos"
@@ -53,7 +53,7 @@
   },
   "howItWorks": {
     "title": "Verdienen Sie online Geld mit Umfragen und Angeboten – verfügbar auf der <span class=\"highlight f-w-900\">ganzen Welt.</span>",
-    "subtitle": "Nehmen Sie an spannenden Umfragen teil, werden Sie schnell belohnt. Lassen Sie sich mit Profit Piller sofort auszahlen oder lösen Sie Geschenkkarten ein.",
+    "subtitle": "Nehmen Sie an spannenden Umfragen teil und werden Sie belohnt. Lassen Sie sich mit Profit Piller auszahlen oder lösen Sie Geschenkkarten ein.",
     "playGames": {
       "title": "Spiele spielen",
       "subtitle": "Verdienen Sie pro Spiel",
@@ -62,7 +62,7 @@
     "takeSurveys": {
       "title": "Umfragen machen",
       "subtitle": "Verdienen Sie pro 2-10 Min Umfrage",
-      "price": "$1.80 - $100"
+      "price": "$0.50 - $3"
     },
     "completeOffers": {
       "title": "Angebote abschließen",
@@ -75,9 +75,9 @@
     "subtitle": "Jede Umfrage und jedes Angebot, das Sie abschließen, könnte Geld in Ihre Tasche bringen — stellen Sie sich das vor!",
     "valueTime": {
       "title": "Wir schätzen Ihre Zeit — und bei <span class=\"highlight\">Profit Piller</span> belohnen wir sie.",
-      "description": "Mit unserer niedrigen Mindestauszahlung können Sie noch am selben Tag auszahlen — ohne Wartezeit. Ihre Belohnungen, Ihr Weg."
+      "description": "Dank unserer niedrigen Mindestauszahlung von 5 $ können Sie auszahlen, sobald Sie sie erreicht haben. Ihre Belohnungen, Ihre Wahl."
     },
-    "infoBadge": "Im Durchschnitt dauert es nur {{minutes}} Minuten, um Ihre erste Auszahlung zu verdienen!",
+    "infoBadge": "Die meisten Umfragen dauern nur {{minutes}} Minuten.",
     "step1": {
       "strong": "Beginnen Sie mit der Anmeldung, dann wählen Sie die bezahlten Umfragen und Angebote aus, die Sie annehmen möchten.",
       "paragraph": "Mit Hunderten von Umfragen und Angeboten können Sie Geld verdienen, indem Sie Spiele spielen, Ihre Einkäufe teilen oder über die Teams sprechen, die Sie lieben."

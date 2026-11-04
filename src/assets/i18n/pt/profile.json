@@ -67,6 +67,12 @@
         "gender_1": "Masculino",
         "gender_2": "Feminino",
         "gender_0": "Outro",
-        "profile_updated": "Perfil atualizado com sucesso"
+        "profile_updated": "Perfil atualizado com sucesso",
+        "review": {
+            "title": "Já recebeu? Conte para os outros",
+            "text": "Uma avaliação rápida ajuda novos membros a confiar no ProfitPiller.",
+            "trustpilot": "Avaliar no Trustpilot",
+            "playstore": "Avaliar o app"
+        }
     }
 }

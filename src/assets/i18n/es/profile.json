@@ -67,6 +67,12 @@
         "gender_1": "Hombre",
         "gender_2": "Mujer",
         "gender_0": "Otro",
-        "profile_updated": "Perfil actualizado correctamente"
+        "profile_updated": "Perfil actualizado correctamente",
+        "review": {
+            "title": "¿Ya cobraste? Cuéntaselo a otros",
+            "text": "Una reseña rápida ayuda a los nuevos miembros a confiar en ProfitPiller.",
+            "trustpilot": "Opinar en Trustpilot",
+            "playstore": "Valorar la app"
+        }
     }
 }

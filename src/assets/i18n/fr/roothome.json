@@ -3,12 +3,12 @@
     "title": "De l'argent facile pour des opinions de tous les jours !",
     "description": "Vos pensées aident les marques à s'améliorer — et elles sont prêtes à les payer. Répondez à des sondages, complétez des offres simples et gagnez de vraies récompenses sans effort.",
     "offer1": {
-      "title": "Gagnez ${{amount}} pour votre opinion — Aucune expérience requise !",
-      "subtitle": "{{surveys}} sondages vous attendent."
+      "title": "Gagnez jusqu'à ${{amount}} par sondage, sans expérience !",
+      "subtitle": "De nouveaux sondages chaque jour."
     },
     "offer2": {
-      "title": "${{amount}} gagnés hier par les utilisateurs moyens",
-      "subtitle": "Vous pourriez être le prochain ! Encaissez à partir de ${{minPayout}}"
+      "title": "Encaissez dès ${{amount}}",
+      "subtitle": "Soyez payé par PayPal, UPI ou carte cadeau."
     },
     "login": {
       "title": "Gagnez de l'argent en partageant votre opinion",
@@ -30,8 +30,8 @@
     "description": "En partageant vos pensées sur des sujets d'actualité, des marques de nettoyage de confiance ou vos émissions préférées, vous pouvez transformer vos opinions en revenus avec l'application de sondages et d'offres Profit Piller."
   },
   "choose": {
-    "title": "Vous avez des opinions ? Transformez-les en argent-ici.",
-    "description": "Répondez à des sondages passionnants sur Profit Piller et retirez vos gains instantanément — en espèces ou en cartes-cadeaux.",
+    "title": "Vous avez des opinions ? Transformez-les en argent, ici même.",
+    "description": "Répondez à des sondages passionnants sur Profit Piller et retirez vos gains en espèces ou en cartes cadeaux.",
     "step1": {
       "title": "Inscrivez-vous",
       "subtitle": "Rejoignez-nous maintenant – C'est gratuit"
@@ -53,7 +53,7 @@
   },
   "howItWorks": {
     "title": "Gagnez de l'argent en ligne avec des sondages et des offres – disponibles dans <span class=\"highlight f-w-900\">le monde entier.</span>",
-    "subtitle": "Répondez à des sondages passionnants, soyez récompensé rapidement. Encaissez ou échangez des cartes-cadeaux immédiatement avec Profit Piller.",
+    "subtitle": "Répondez à des sondages passionnants et soyez récompensé. Encaissez ou échangez des cartes cadeaux avec Profit Piller.",
     "playGames": {
       "title": "Jouer à des jeux",
       "subtitle": "Gagnez par jeu",
@@ -62,7 +62,7 @@
     "takeSurveys": {
       "title": "Répondre à des sondages",
       "subtitle": "Gagnez par sondage de 2-10 min",
-      "price": "$1.80 - $100"
+      "price": "$0.50 - $3"
     },
     "completeOffers": {
       "title": "Compléter des offres",
@@ -75,9 +75,9 @@
     "subtitle": "Chaque sondage et offre que vous complétez pourrait mettre de l'argent dans votre poche — imaginez un peu !",
     "valueTime": {
       "title": "Nous valorisons votre temps — et chez <span class=\"highlight\">Profit Piller</span>, nous le récompensons.",
-      "description": "Avec notre faible paiement minimum, vous pouvez encaisser le même jour — pas d'attente. Vos récompenses, à votre manière."
+      "description": "Grâce à notre faible seuil de paiement de 5 $, vous pouvez encaisser dès que vous l'atteignez. Vos récompenses, à votre façon."
     },
-    "infoBadge": "En moyenne, il ne faut que {{minutes}} minutes pour gagner votre premier paiement !",
+    "infoBadge": "La plupart des sondages ne prennent que {{minutes}} minutes.",
     "step1": {
       "strong": "Commencez par vous inscrire, puis choisissez les sondages rémunérés et les offres que vous souhaitez prendre.",
       "paragraph": "Avec des centaines de sondages et d'offres disponibles, vous pouvez gagner de l'argent en jouant à des jeux, en partageant ce que vous achetez ou en parlant des équipes que vous aimez."

@@ -4,6 +4,7 @@ import { ProfileService } from "../profile.service";
 import { IProfileActivityEarningVM } from "./point-activity.vm";
 import { ActivatedRoute } from "@angular/router";
 import { BaseComponent } from "../../../../base.component";
+import { PLAY_STORE_URL } from "../../../blog/locale";
 
 @Component({
     selector: 'app-point-activity',
@@ -14,6 +15,12 @@ import { BaseComponent } from "../../../../base.component";
 export class PointActivityComponent extends BaseComponent implements OnInit {
     pointTransactionInfo!: IProfileActivityEarningVM;
     selectedIndex = 0;
+    readonly trustpilotReviewUrl = 'https://www.trustpilot.com/evaluate/profitpiller.com';
+    readonly playStoreUrl = PLAY_STORE_URL;
+
+    get hasCompletedPayout(): boolean {
+        return !!this.pointTransactionInfo?.payoutRequests?.some(p => p.status === 'Completed');
+    }
 
     constructor(private profileService: ProfileService, private route: ActivatedRoute,
     ) {

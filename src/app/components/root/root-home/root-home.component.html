@@ -18,8 +18,8 @@
                                 <div class="rh-hero-left-offerC">
                                     <div class="icon"><img loading="lazy" src="/assets/images/icon/doller.png" alt="" width="64" height="64"></div>
                                     <div>
-                                        <h3>{{ 'hero.offer1.title' | translate:{ amount: 3 } }}</h3>
-                                        <p>{{ 'hero.offer1.subtitle' | translate:{ surveys: 276 } }}</p>
+                                        <h3>{{ 'hero.offer1.title' | translate:{ amount: heroStats.maxPerSurvey } }}</h3>
+                                        <p>{{ 'hero.offer1.subtitle' | translate }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -27,8 +27,8 @@
                                 <div class="rh-hero-left-offerC">
                                     <div class="icon"><img loading="lazy" src="/assets/images/icon/money.png" alt="" width="64" height="64"></div>
                                     <div>
-                                        <h3>{{ 'hero.offer2.title' | translate:{ amount: 50 } }}</h3>
-                                        <p>{{ 'hero.offer2.subtitle' | translate:{ minPayout: 5 } }}</p>
+                                        <h3>{{ 'hero.offer2.title' | translate:{ amount: heroStats.minPayout } }}</h3>
+                                        <p>{{ 'hero.offer2.subtitle' | translate }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -99,8 +99,8 @@
                                 <div class="rh-hero-left-offerC">
                                     <div class="icon"><img loading="lazy" src="assets/images/icon/doller.png" alt="" width="64" height="64"></div>
                                     <div>
-                                        <h3>{{ 'hero.offer1.title' | translate:{ amount: 425 } }}</h3>
-                                        <p>{{ 'hero.offer1.subtitle' | translate:{ surveys: 276 } }}</p>
+                                        <h3>{{ 'hero.offer1.title' | translate:{ amount: heroStats.maxPerSurvey } }}</h3>
+                                        <p>{{ 'hero.offer1.subtitle' | translate }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -108,8 +108,8 @@
                                 <div class="rh-hero-left-offerC">
                                     <div class="icon"><img loading="lazy" src="assets/images/icon/money.png" alt="" width="64" height="64"></div>
                                     <div>
-                                        <h3>{{ 'hero.offer2.title' | translate:{ amount: 966 } }}</h3>
-                                        <p>{{ 'hero.offer2.subtitle' | translate:{ minPayout: 425 } }}</p>
+                                        <h3>{{ 'hero.offer2.title' | translate:{ amount: heroStats.minPayout } }}</h3>
+                                        <p>{{ 'hero.offer2.subtitle' | translate }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -314,7 +314,7 @@
 
                     <div class="info-badge">
                         <mat-icon>schedule</mat-icon>
-                        <span>{{ 'landing.infoBadge' | translate:{ minutes: 15 } }}</span>
+                        <span>{{ 'landing.infoBadge' | translate:{ minutes: heroStats.surveyMinutes } }}</span>
                     </div>
 
                     <div class="steps">

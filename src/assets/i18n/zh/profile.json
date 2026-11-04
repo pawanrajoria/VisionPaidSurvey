@@ -67,6 +67,12 @@
         "gender_1": "男",
         "gender_2": "女",
         "gender_0": "其他",
-        "profile_updated": "资料更新成功"
+        "profile_updated": "资料更新成功",
+        "review": {
+            "title": "已经收到付款？告诉其他人吧",
+            "text": "一条简短的评价能帮助新会员信任 ProfitPiller。",
+            "trustpilot": "在 Trustpilot 上评价",
+            "playstore": "为应用评分"
+        }
     }
 }

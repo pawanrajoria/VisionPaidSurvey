@@ -67,6 +67,12 @@
         "gender_1": "Homme",
         "gender_2": "Femme",
         "gender_0": "Autre",
-        "profile_updated": "Profil mis à jour avec succès"
+        "profile_updated": "Profil mis à jour avec succès",
+        "review": {
+            "title": "Vous avez été payé ? Faites-le savoir",
+            "text": "Un avis rapide aide les nouveaux membres à faire confiance à ProfitPiller.",
+            "trustpilot": "Laisser un avis sur Trustpilot",
+            "playstore": "Noter l'application"
+        }
     }
 }

@@ -13,6 +13,19 @@
     <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center" [selectedIndex]="selectedIndex">
         <mat-tab [label]="'account.tab_rewards' | translate">
             <div class="transaction-list">
+                <!-- Members who have actually been paid are asked for a review -->
+                <mat-card *ngIf="hasCompletedPayout" class="review-ask">
+                    <div class="review-ask__text">
+                        <strong>{{ 'account.review.title' | translate }}</strong>
+                        <span>{{ 'account.review.text' | translate }}</span>
+                    </div>
+                    <div class="review-ask__actions">
+                        <a mat-flat-button color="primary" [href]="trustpilotReviewUrl" target="_blank"
+                            rel="noopener">{{ 'account.review.trustpilot' | translate }}</a>
+                        <a mat-stroked-button [href]="playStoreUrl" target="_blank"
+                            rel="noopener">{{ 'account.review.playstore' | translate }}</a>
+                    </div>
+                </mat-card>
                 <mat-card *ngFor="let txn of pointTransactionInfo?.payoutRequests"
                     [class]="txn.status=='Completed'?'transaction-card green':'transaction-card red'">
                     <div class="transaction-content">

@@ -3,12 +3,12 @@
     "title": "Denaro facile per le opinioni di tutti i giorni!",
     "description": "Le tue opinioni aiutano i marchi a migliorare — e sono pronti a pagarle. Partecipa a sondaggi, completa offerte semplici e guadagna ricompense reali senza sforzo.",
     "offer1": {
-      "title": "Guadagna ${{amount}} per la tua opinione — Nessuna esperienza richiesta!",
-      "subtitle": "{{surveys}} sondaggi ti aspettano."
+      "title": "Guadagna fino a ${{amount}} per sondaggio, senza esperienza!",
+      "subtitle": "Nuovi sondaggi ogni giorno."
     },
     "offer2": {
-      "title": "${{amount}} guadagnati ieri dagli utenti medi",
-      "subtitle": "Potresti essere il prossimo! Incassa a partire da ${{minPayout}}"
+      "title": "Preleva da soli ${{amount}}",
+      "subtitle": "Ricevi i pagamenti tramite PayPal, UPI o carte regalo."
     },
     "login": {
       "title": "Guadagna condividendo la tua opinione",
@@ -30,8 +30,8 @@
     "description": "Condividendo i tuoi pensieri su argomenti di tendenza, marchi di pulizia affidabili o i tuoi programmi preferiti, puoi trasformare le tue opinioni in guadagni con l'app di sondaggi e offerte Profit Piller."
   },
   "choose": {
-    "title": "Hai delle opinioni? Trasformale in denaro-proprio qui.",
-    "description": "Partecipa a sondaggi entusiasmanti su Profit Piller e ritira i tuoi guadagni all'istante — come contanti o carte regalo.",
+    "title": "Hai delle opinioni? Trasformale in denaro proprio qui.",
+    "description": "Partecipa a sondaggi interessanti su Profit Piller e preleva i tuoi guadagni in contanti o carte regalo.",
     "step1": {
       "title": "Iscriviti",
       "subtitle": "Iscriviti ora – È gratis"
@@ -53,7 +53,7 @@
   },
   "howItWorks": {
     "title": "Guadagna online con sondaggi e offerte – disponibili in <span class=\"highlight f-w-900\">tutto il mondo.</span>",
-    "subtitle": "Partecipa a sondaggi entusiasmanti, ricevi ricompense velocemente. Incassa o riscatta carte regalo immediatamente con Profit Piller.",
+    "subtitle": "Partecipa a sondaggi interessanti e ricevi premi. Preleva contanti o riscatta carte regalo con Profit Piller.",
     "playGames": {
       "title": "Giocare a giochi",
       "subtitle": "Guadagna per gioco",
@@ -62,7 +62,7 @@
     "takeSurveys": {
       "title": "Partecipa a sondaggi",
       "subtitle": "Guadagna per sondaggio di 2-10 min",
-      "price": "$1.80 - $100"
+      "price": "$0.50 - $3"
     },
     "completeOffers": {
       "title": "Completa offerte",
@@ -75,9 +75,9 @@
     "subtitle": "Ogni sondaggio e offerta che completi potrebbe mettere denaro nelle tue tasche — immagina un po'!",
     "valueTime": {
       "title": "Valorizziamo il tuo tempo — e su <span class=\"highlight\">Profit Piller</span>, lo ricompensiamo.",
-      "description": "Con il nostro basso pagamento minimo, puoi incassare lo stesso giorno — senza aspettare. Le tue ricompense, a modo tuo."
+      "description": "Con la nostra soglia minima di pagamento di soli 5 $, puoi prelevare non appena la raggiungi. I tuoi premi, a modo tuo."
     },
-    "infoBadge": "In media, ci vogliono solo {{minutes}} minuti per guadagnare il tuo primo pagamento!",
+    "infoBadge": "La maggior parte dei sondaggi richiede solo {{minutes}} minuti.",
     "step1": {
       "strong": "Inizia iscrivendoti, poi scegli i sondaggi a pagamento e le offerte che desideri prendere.",
       "paragraph": "Con centinaia di sondaggi e offerte disponibili, puoi guadagnare giocando, condividendo i tuoi acquisti o parlando delle squadre che ami."
