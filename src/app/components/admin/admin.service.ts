@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 import { ConfigService } from "../../config.service";
 import { BACKGROUND } from "../home/engagement/engagement.service";
-import { AdminActivityPeriodDto, AdminBonusReportDto, AdminEarningsSummaryDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserListDto, BulkUserActionResultDto, DirectOfferAdminListDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest, SendNotificationResult } from "./admin.vm";
+import { AcquisitionChannelDto, AdminActivityPeriodDto, AdminBonusReportDto, AdminEarningsSummaryDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserListDto, BulkUserActionResultDto, DirectOfferAdminListDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest, SendNotificationResult } from "./admin.vm";
 
 @Injectable({ providedIn: 'root' })
 export class AdminService {
@@ -60,6 +60,13 @@ export class AdminService {
     async getEarningsSummary(period: string): Promise<AdminEarningsSummaryDto> {
         const params = new HttpParams().set('period', period);
         return await firstValueFrom(this.http.get<AdminEarningsSummaryDto>(this.base + "earnings-summary", { params }));
+    }
+
+    /** Members who signed up in the last `days` days, grouped by the ad / campaign they came from. */
+    async getAcquisitionReport(days: number): Promise<AcquisitionChannelDto[]> {
+        const from = new Date(Date.now() - days * 86_400_000).toISOString().slice(0, 10);
+        const params = new HttpParams().set('from', from);
+        return await firstValueFrom(this.http.get<AcquisitionChannelDto[]>(this.base + "acquisition-report", { params }));
     }
 
     /** Active users today / week / month: returning vs new, earned vs not earned. */

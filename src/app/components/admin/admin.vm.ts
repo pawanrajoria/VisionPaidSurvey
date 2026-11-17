@@ -349,3 +349,22 @@ export interface BulkUserActionResultDto {
     mailsSent: number;
     skipped: string[];
 }
+
+/** One ad channel (utm source / medium / campaign) in GET admin/acquisition-report. Money is USD. */
+export interface AcquisitionChannelDto {
+    /** web | android | ios, or "(none)" */
+    platform: string;
+    source: string;
+    medium: string;
+    campaign: string;
+    signups: number;
+    verified: number;
+    profileDone: number;
+    activeIn7Days: number;
+    blocked: number;
+    surveysCompleted: number;
+    rejections: number;
+    revenue30Days: number;
+    revenue90Days: number;
+    profit: number;
+}

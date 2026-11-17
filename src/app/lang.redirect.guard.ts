@@ -12,7 +12,12 @@ export const langRedirectGuard: CanActivateFn = (
     const router = inject(Router);
     const platformId = inject(PLATFORM_ID);
 
-    const url = state.url;
+    // Read the locale from the path only. With the query string left in, "/hi-in?utm_source=x"
+    // gave a first segment of "hi-in?utm_source=x", so every tagged ad link to a home page
+    // was sent to "/en-us/hi-in?..." (a page that does not exist).
+    const queryStart = state.url.search(/[?#]/);
+    const url = queryStart >= 0 ? state.url.slice(0, queryStart) : state.url;
+    const query = queryStart >= 0 ? state.url.slice(queryStart) : '';
 
     const segments = url.split('/').filter(Boolean);
     const locale = segments[0]?.toLowerCase();
@@ -52,8 +57,8 @@ export const langRedirectGuard: CanActivateFn = (
     // 3. Join the remaining path
     const remainingPath = pathSegments.join('/');
 
-    // 4. Return the new URL
+    // 4. Return the new URL, keeping the query (utm_* / gclid must survive the redirect)
     return router.parseUrl(
-        `/${targetLocale}${remainingPath ? '/' + remainingPath : ''}`
+        `/${targetLocale}${remainingPath ? '/' + remainingPath : ''}${query}`
     );
 };

@@ -22,6 +22,7 @@ import { AiSupportWidgetComponent } from './components/ai-support/ai-support-wid
 import { AuthService } from './components/auth/auth.service';
 import { LOCALE_COUNTRY_MAP, SUPPORTED_LOCALE_CODES } from './country-langiuage-list';
 import { GtmService } from './gtm.service';
+import { AttributionService } from './attribution.service';
 import { BRAND_NAME, absoluteUrl } from './site.config';
 import { languageForLocale } from './i18n-languages';
 import { isPlatformBrowser } from '@angular/common';
@@ -104,6 +105,7 @@ export class AppComponent extends BaseComponent implements OnInit {
     private angularFireAuth: AngularFireAuth,
     private authService: AuthService,
     private gtm: GtmService,
+    private attribution: AttributionService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     super();
@@ -116,6 +118,8 @@ export class AppComponent extends BaseComponent implements OnInit {
     // ✅ SSR-safe: store landing URL
     if (this.isBrowser && this.win) {
       this.localStorageService.setItem('LandedUrl', this.win.location.href);
+      // Which ad / campaign brought the visitor - sent with sign-up (see AttributionService).
+      this.attribution.capture();
     }
 
     // The device id is only needed inside the signed-in / survey areas. Creating it is

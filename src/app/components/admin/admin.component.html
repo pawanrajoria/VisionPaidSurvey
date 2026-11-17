@@ -817,6 +817,68 @@
 
         <app-admindashboard></app-admindashboard>
         }
+
+        <!-- ═════════ TRAFFIC SOURCES (ad channels) ═════════ -->
+        @if (tab === 'traffic') {
+        <section class="bonus-report">
+            <div class="section-head">
+                <div>
+                    <h1>Traffic sources</h1>
+                    <p class="hint">Members who signed up in the period, grouped by the ad or campaign they came from
+                        (utm_source / utm_medium / utm_campaign; for the Android app, the Google Play install referrer). Compare "Revenue / sign-up" with what the ad cost per sign-up.
+                        A channel is worth scaling only when it stays above that cost and its rejection rate stays normal.</p>
+                </div>
+                <div class="seg" role="group" aria-label="Period">
+                    @for (p of acquisitionPeriods; track p.value) {
+                    <button type="button" [class.active]="acquisitionDays === p.value" (click)="loadAcquisition(p.value)">{{ p.label }}</button>
+                    }
+                </div>
+            </div>
+
+            @if (acquisition; as rows) {
+            <div class="panel table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Platform</th><th>Source / medium</th><th>Campaign</th>
+                            <th class="num">Sign-ups</th><th class="num">Verified</th><th class="num">Profile done</th>
+                            <th class="num">Active in 7 days</th><th class="num">Blocked</th>
+                            <th class="num">Surveys</th><th class="num">Rejection rate</th>
+                            <th class="num">Revenue 30d</th><th class="num">Revenue 90d</th>
+                            <th class="num">Revenue / sign-up (90d)</th><th class="num">Profit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (c of rows; track c.platform + c.source + c.medium + c.campaign) {
+                        <tr>
+                            <td>{{ c.platform }}</td>
+                            <td class="cell-main">{{ c.source }} / {{ c.medium }}</td>
+                            <td>{{ c.campaign }}</td>
+                            <td class="num">{{ c.signups | number }}</td>
+                            <td class="num">{{ pct(c.verified, c.signups) }}%</td>
+                            <td class="num">{{ pct(c.profileDone, c.signups) }}%</td>
+                            <td class="num">{{ pct(c.activeIn7Days, c.signups) }}%</td>
+                            <td class="num">{{ c.blocked | number }}</td>
+                            <td class="num">{{ c.surveysCompleted | number }}</td>
+                            <td class="num">{{ rejectionRate(c) }}%</td>
+                            <td class="num">${{ c.revenue30Days | number:'1.2-2' }}</td>
+                            <td class="num">${{ c.revenue90Days | number:'1.2-2' }}</td>
+                            <td class="num">${{ (c.signups ? c.revenue90Days / c.signups : 0) | number:'1.2-2' }}</td>
+                            <td class="num" [class.money-neg]="c.profit < 0">${{ c.profit | number:'1.2-2' }}</td>
+                        </tr>
+                        } @empty {
+                        <tr><td colspan="14" class="empty">No sign-ups in this period.</td></tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <p class="hint">"(none)" = members with no recorded source: the apps, direct visits, and everyone who signed up
+                before tracking started. Revenue 90d is only complete for members who joined at least 90 days ago.</p>
+            } @else {
+            <p class="hint">Loading…</p>
+            }
+        </section>
+        }
     </main>
 
     <!-- ═════════ USER DETAIL DRAWER ═════════ -->

@@ -11,12 +11,16 @@ import { AccountService } from "../home/account.service";
 import { LocalStorageService } from "../../localstorage.service";
 import { isPlatformBrowser } from "@angular/common";
 import { FraudService } from "../../frauddetection.service";
+import { AttributionService } from "../../attribution.service";
+import { GtmService } from "../../gtm.service";
 
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
     private engagementService = inject(EngagementService);
     private adminService = inject(AdminService);
+    private attribution = inject(AttributionService);
+    private gtm = inject(GtmService);
     private allowedMenus: string[] = [];
     private secretKey = "AADD654564ADD";
     private vi = "AADD654564ADD";
@@ -62,8 +66,11 @@ export class AuthService {
     }
 
     async firebaseLogin(request: any): Promise<any> {
+        request = { ...request, acquisition: this.attribution.get() };
         const response = await this.http.post<any>(this.config.baseUrl + "auth/firebase-login", request).toPromise();
         if (!!response && !!response.token) {
+            // Ad conversion (GTM): a first Google / Apple sign-in is the sign-up.
+            this.gtm.pushEvent(response.isNewUser ? 'sign_up' : 'login', { method: 'google', ...this.attributionEventData() });
 
             this.localStorageService.setItem("token", response.token);
             this.router.navigate(['/app']);
@@ -89,11 +96,26 @@ export class AuthService {
     }
 
     async signup(request: any): Promise<any> {
-        return await this.http.post<any>(this.config.baseUrl + "auth/signup", request).toPromise();
+        request = { ...request, acquisition: this.attribution.get() };
+        const response = await this.http.post<any>(this.config.baseUrl + "auth/signup", request).toPromise();
+        // Fired here rather than on the verify link: the link is often opened in a mail app's
+        // browser, which has lost the ad click cookie.
+        if (!!response && response.isSuccess)
+            this.gtm.pushEvent('sign_up', { method: 'email', ...this.attributionEventData() });
+        return response;
     }
 
     async verifysignature(request: any): Promise<any> {
-        return await this.http.post<any>(this.config.baseUrl + "auth/verify-signature", request).toPromise();
+        const response = await this.http.post<any>(this.config.baseUrl + "auth/verify-signature", request).toPromise();
+        if (!!response && response.token)
+            this.gtm.pushEvent('email_verified', { method: 'email' });
+        return response;
+    }
+
+    /** Campaign values for GTM events, so sign-ups can be split by channel in GA4 as well. */
+    private attributionEventData(): Record<string, string> {
+        const a = this.attribution.get();
+        return { signup_source: a?.source ?? '(none)', signup_medium: a?.medium ?? '(none)', signup_campaign: a?.campaign ?? '(none)' };
     }
 
     async resendVerificationLink(request: any): Promise<any> {

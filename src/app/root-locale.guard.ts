@@ -19,7 +19,7 @@ function toLocale(tag: string | null | undefined): string | null {
  * The bare domain ("/") used to always go to /en-us. It now opens in the language the visitor
  * chose before, else their browser language (Accept-Language on the server), else English.
  */
-export const rootLocaleGuard: CanActivateFn = () => {
+export const rootLocaleGuard: CanActivateFn = (route) => {
     const router = inject(Router);
     let locale: string | null = null;
 
@@ -37,5 +37,6 @@ export const rootLocaleGuard: CanActivateFn = () => {
         }
     }
 
-    return router.parseUrl(`/${locale ?? 'en-us'}`);
+    // Keep the query so ad links to the bare domain (?utm_source=..., ?gclid=...) are still credited.
+    return router.createUrlTree(['/', locale ?? 'en-us'], { queryParams: route.queryParams, fragment: route.fragment ?? undefined });
 };

@@ -5,10 +5,10 @@ import { AdminService } from "./admin.service";
 import { AdminDashboardComponent } from "./dashboard/dashboard.component";
 import { MessageService } from "../layout/message/message.service";
 import { MessageVM } from "../layout/message/message.vm";
-import { AdminActivityPeriodDto, AdminBonusReportDto, AdminEarningsSummaryDto, AdminEarningItemDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserDto, DirectOfferAdminDto, DirectOfferAdminListDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest } from "./admin.vm";
+import { AcquisitionChannelDto, AdminActivityPeriodDto, AdminBonusReportDto, AdminEarningsSummaryDto, AdminEarningItemDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserDto, DirectOfferAdminDto, DirectOfferAdminListDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest } from "./admin.vm";
 import { ChatService, IAdminChatMessage } from "../home/chat/chat.service";
 
-type AdminTab = 'overview' | 'offers' | 'network' | 'payouts' | 'users' | 'chat' | 'notifications' | 'earnings';
+type AdminTab = 'overview' | 'offers' | 'network' | 'payouts' | 'users' | 'chat' | 'notifications' | 'earnings' | 'traffic';
 
 const PAYOUT_PENDING = 1, PAYOUT_COMPLETED = 2, PAYOUT_REJECTED = 4;
 const USER_BLOCKED = 3;
@@ -28,7 +28,8 @@ export class AdminComponent extends BaseComponent implements OnInit {
         { id: 'users', label: 'Users', icon: 'group' },
         { id: 'chat', label: 'Chat', icon: 'forum' },
         { id: 'notifications', label: 'Notifications', icon: 'campaign' },
-        { id: 'earnings', label: 'Earnings', icon: 'monitoring' }
+        { id: 'earnings', label: 'Earnings', icon: 'monitoring' },
+        { id: 'traffic', label: 'Traffic sources', icon: 'ads_click' }
     ];
     tab: AdminTab = 'overview';
     busy = false;
@@ -96,6 +97,7 @@ export class AdminComponent extends BaseComponent implements OnInit {
         if (tab === 'chat') await this.loadChat();
         if (tab === 'notifications') await this.loadNotifications();
         if (tab === 'earnings' && !this.bonusReport) await this.loadBonusReport();
+        if (tab === 'traffic' && !this.acquisition) await this.loadAcquisition();
     }
 
     // ───────────── User detail drawer ─────────────
@@ -132,6 +134,33 @@ export class AdminComponent extends BaseComponent implements OnInit {
         if (years) parts.push(`${years} year${years === 1 ? '' : 's'}`);
         if (months) parts.push(`${months} month${months === 1 ? '' : 's'}`);
         return parts.join(' ') || `${days} days`;
+    }
+
+    // ───────────── Traffic sources (ad channels) ─────────────
+    acquisition: AcquisitionChannelDto[] | null = null;
+    acquisitionDays = 90;
+    readonly acquisitionPeriods = [
+        { value: 30, label: '30 days' },
+        { value: 90, label: '90 days' },
+        { value: 180, label: '6 months' },
+        { value: 365, label: '12 months' }
+    ];
+
+    async loadAcquisition(days = this.acquisitionDays) {
+        this.acquisitionDays = days;
+        try {
+            this.acquisition = await this.adminService.getAcquisitionReport(days);
+        } catch { /* the interceptor already showed the reason */ }
+    }
+
+    /** Share of a channel's sign-ups, as a whole percentage. */
+    pct(part: number, whole: number): number {
+        return whole > 0 ? Math.round(part * 100 / whole) : 0;
+    }
+
+    /** Rejections as a share of all survey outcomes (completes + rejections). */
+    rejectionRate(c: AcquisitionChannelDto): number {
+        return this.pct(c.rejections, c.surveysCompleted + c.rejections);
     }
 
     // ───────────── Bonus report (Earnings tab) ─────────────
