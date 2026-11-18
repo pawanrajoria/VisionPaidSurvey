@@ -27,3 +27,26 @@
   border-color: #105749;
   margin-right: 50px;
 }
+/* Round "next" button under the answers, like the partner screeners (PrimeEarn). */
+.next-wrap {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  padding: 12px 0 4px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 40%);
+}
+
+.next-fab.mat-mdc-fab {
+  background: #105749;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 6px 16px rgba(16, 87, 73, 0.35);
+
+  &:disabled {
+    background: #c9d6d2;
+    color: #fff;
+    box-shadow: none;
+  }
+}

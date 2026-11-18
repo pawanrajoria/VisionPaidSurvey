@@ -249,8 +249,8 @@
         "start": "START THIS SURVEY"
       },
       "screener": {
-        "title": "Profiling Survey",
-        "sub": "Answer a few quick questions to match surveys"
+        "title": "Qualification",
+        "sub": "Just a few questions before the survey"
       },
       "browserNotSupported": "Browser not supported",
       "invalidZip": "Please provide valid zip code."

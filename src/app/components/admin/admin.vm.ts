@@ -406,3 +406,57 @@ export interface ExchangeFunnelDto {
     platforms: PlatformFunnelDto[];
     surveys: SurveyFunnelDto[];
 }
+
+/** Survey match alerts (GET admin/survey-alerts, POST admin/survey-alerts/run). Money is USD. */
+export interface SurveyAlertSettingsDto {
+    enabled: boolean;
+    hourUtc: number;
+    maxMembersPerRun: number;
+    activeWithinDays: number;
+    minUsdPayout: number;
+    maxLoi: number;
+    minConversionPercent: number;
+    maxRejectionPercent: number;
+}
+export interface SurveyAlertLogDto {
+    userId: number;
+    email: string;
+    fullName: string;
+    sentOn: string;
+    createdAt: string;
+    usdPayout: number;
+    loi: number;
+    platform: string;
+}
+export interface SurveyAlertStatusDto {
+    settings: SurveyAlertSettingsDto;
+    tablesReady: boolean;
+    sentToday: number;
+    recent: SurveyAlertLogDto[];
+}
+export interface SurveyAlertItemDto {
+    userId: number;
+    platform: string;
+    usdPayout: number;
+    loi: number;
+    title: string;
+    body: string;
+    error?: string | null;
+}
+export interface SurveyAlertRunDto {
+    dryRun: boolean;
+    candidates: number;
+    noMatch: number;
+    sent: number;
+    failed: number;
+    message?: string | null;
+    items: SurveyAlertItemDto[];
+}
+
+/** One survey attempt of a member on the exchange with the screener questions they answered (admin user panel). */
+export interface AdminAnswerDto { qualificationId: number; question: string; answer: string; }
+export interface AdminSurveyAttemptDto {
+    respondentId: number; surveyId: number; surveyName: string; vendorId: number;
+    statusId: number; subStatusId: number; createdDate: string; isProfiling: boolean; answers: AdminAnswerDto[];
+}
+export interface AdminScreenerHistoryDto { attempts: AdminSurveyAttemptDto[]; profile: AdminAnswerDto[]; }

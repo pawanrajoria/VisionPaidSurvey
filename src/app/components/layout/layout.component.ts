@@ -37,6 +37,8 @@ import { GtmService } from '../../gtm.service';
 import { EngagementService } from '../home/engagement/engagement.service';
 import { USER_TIME_ZONE_KEY } from '../../timezones';
 import { NotifyCardComponent } from './notify-card/notify-card.component';
+import { SurveyDisqualifyPopupComponent } from '../home/survey/survey-common-popup/survey-disqualify-popup/survey-disqualify-popup';
+import { SURVEY_RESULT_PARAM, SURVEY_RESULT_TERMINATE } from '../../survey-return';
 
 const MOBILE_VIEW = 'screen and (max-width: 768px)';
 const TABLET_VIEW = 'screen and (min-width: 769px) and (max-width: 1024px)';
@@ -121,6 +123,7 @@ export class LayoutComponent extends BaseComponent implements AfterViewInit, OnD
             this.router.events
                 .pipe(filter((event) => event instanceof NavigationEnd))
                 .subscribe((event) => {
+                    this.showSurveyResultPopup(event.urlAfterRedirects);
                     this.content?.scrollTo({ top: 0 });
                     this.gtm.pushEvent('generate_lead', {
                         page_location: this.gtm.location,
@@ -131,8 +134,23 @@ export class LayoutComponent extends BaseComponent implements AfterViewInit, OnD
         }
     }
 
+    /**
+     * A survey tab the partner screened out comes back here with ?surveyResult=terminate (SurveyStatusComponent):
+     * shows the "Survey Disqualified" popup once and takes the parameter out of the address bar.
+     */
+    private showSurveyResultPopup(url: string): void {
+        if (!isPlatformBrowser(this.platformId)) return;
+        const tree = this.router.parseUrl(url || '');
+        if (tree.queryParams[SURVEY_RESULT_PARAM] !== SURVEY_RESULT_TERMINATE) return;
+
+        this.router.navigate([], { queryParams: { [SURVEY_RESULT_PARAM]: null }, queryParamsHandling: 'merge', replaceUrl: true });
+        if (this.languageDialog.openDialogs.some(d => d.componentInstance instanceof SurveyDisqualifyPopupComponent)) return;
+        this.languageDialog.open(SurveyDisqualifyPopupComponent);
+    }
+
     async ngAfterViewInit() {
         if (isPlatformBrowser(this.platformId)) {
+            this.showSurveyResultPopup(this.router.url);
             this.initBrowserFlow();
         } else {
             this.allowedMenus = this.accountService.getAllowedMenus();

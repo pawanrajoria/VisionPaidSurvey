@@ -1,40 +1,78 @@
+/* Partner-screener look (PrimeEarn): outlined search, each answer a card, the chosen one filled green. */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #d5dbe1;
+  border-radius: 10px;
+  padding: 0 14px;
+  margin-bottom: 14px;
+  background: #fff;
+
+  mat-icon { color: #8a96a3; }
+
+  input {
+    flex: 1;
+    border: none;
+    outline: none;
+    height: 50px;
+    font-size: 1rem;
+    background: transparent;
+  }
+
+  &:focus-within { border-color: #105749; }
+}
+
 .fixed-height-container {
-  max-height:60vh !important;
+  max-height: 50vh;
   overflow: auto;
+  padding-right: 4px;
 }
 
-.fixed-height-container::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
-  border-radius: 10px;
-  background-color: #f5f5f5;
-}
-.fixed-height-container::-webkit-scrollbar-thumb{
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
-}
-.fixed-height-container::-webkit-scrollbar-thumb{
-  background-color: #217b69;
-}
-.fixed-height-container::-webkit-scrollbar{
-  width: 5px;
-  background-color: #f5f5f5;
-}
+.fixed-height-container::-webkit-scrollbar { width: 5px; background-color: #f5f5f5; }
+.fixed-height-container::-webkit-scrollbar-thumb { border-radius: 10px; background-color: #217b69; }
 
-.example-radio-group {
+.option-list {
   display: flex;
   flex-direction: column;
-  margin: 15px 0;
-  align-items: flex-start;
+  gap: 10px;
 }
 
-.mat-mdc-form-field-subscript-wrapper.mat-mdc-form-field-bottom-align {
-  display: none !important;
-}
+.option-card {
+  display: block;
+  width: 100%;
+  border: 1px solid #d5dbe1;
+  border-radius: 10px;
+  background: #fff;
+  transition: background 0.15s, border-color 0.15s;
+  cursor: pointer;
 
-@media (max-width:767px) {
+  &:hover { border-color: #105749; }
 
-  .fixed-height-container {
-    max-height:51vh !important;
-    
+  ::ng-deep .mdc-form-field {
+    width: 100%;
+    padding: 6px 8px;
   }
+
+  ::ng-deep label {
+    flex: 1;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1f2933;
+    padding: 6px 4px;
+  }
+
+  &.selected {
+    background: #105749;
+    border-color: #105749;
+
+    ::ng-deep label { color: #fff; }
+    ::ng-deep .mdc-radio__outer-circle,
+    ::ng-deep .mdc-radio__inner-circle { border-color: #fff !important; }
+  }
+}
+
+@media (max-width: 767px) {
+  .fixed-height-container { max-height: 45vh; }
 }

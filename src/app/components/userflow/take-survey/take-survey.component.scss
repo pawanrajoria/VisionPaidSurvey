@@ -74,50 +74,31 @@
   overflow: hidden;
   box-sizing: border-box;
 
-  /* Header */
+  /* Header: white, centred title, close on the right, divider (partner-screener look) */
   .dialog-header {
-    background: linear-gradient(135deg, #105749 0%, #0d4338 100%);
-    padding: 14px 20px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
     align-items: center;
-    justify-content: space-between;
-    color: #ffffff;
+    padding: 14px 12px 12px;
+    border-bottom: 1px solid #e5e9ed;
+    background: #ffffff;
     flex-shrink: 0;
 
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-
-      .header-icon {
-        font-size: 24px;
-        width: 24px;
-        height: 24px;
-        color: #6ee7b7;
-      }
-
-      .header-title {
-        margin: 0;
-        font-size: 1.05rem;
-        font-weight: 700;
-        letter-spacing: 0.3px;
-        line-height: 1.2;
-      }
-
-      .header-subtitle {
-        font-size: 0.72rem;
-        color: rgba(255, 255, 255, 0.8);
-        display: block;
-        margin-top: 2px;
-      }
+    .header-title {
+      margin: 0;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1f2933;
     }
 
-    .close-btn {
-      color: rgba(255, 255, 255, 0.75);
-      &:hover {
-        color: #ffffff;
-      }
-    }
+    .close-btn { color: #1f2933; }
+  }
+
+  .header-subtitle {
+    margin: 14px 20px 0;
+    font-size: 0.9rem;
+    color: #6b7680;
   }
 
   /* Scrollable Body */
@@ -175,6 +156,12 @@
       }
 
       /* 5. Clean up title */
+      .question-title {
+        font-size: 1.35rem !important;
+        font-weight: 700 !important;
+        color: #1f2933 !important;
+      }
+
       mat-card-title.mat-mdc-card-title {
         font-size: 1.05rem !important;
         line-height: 1.4 !important;
@@ -194,12 +181,7 @@
       }
 
       /* 7. Constrain checkbox/option lists so they don't break dialog bounds */
-      .options-list,
-      .checkbox-group,
-      .mat-mdc-selection-list {
-        max-height: 240px;
-        overflow-y: auto;
-      }
+      .mat-mdc-card-header { padding: 0 !important; }
     }
   }
 }

@@ -249,8 +249,8 @@
         "start": "开始此调查"
       },
       "screener": {
-        "title": "资料调查",
-        "sub": "回答几个简单的问题以匹配调查"
+        "title": "资格筛选",
+        "sub": "开始调查前只需回答几个问题"
       },
       "browserNotSupported": "不支持此浏览器",
       "invalidZip": "请输入有效的邮政编码。"

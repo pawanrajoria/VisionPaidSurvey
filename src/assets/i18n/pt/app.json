@@ -249,8 +249,8 @@
         "start": "INICIAR ESTA PESQUISA"
       },
       "screener": {
-        "title": "Pesquisa de perfil",
-        "sub": "Responda a algumas perguntas rápidas para encontrar pesquisas adequadas"
+        "title": "Qualificação",
+        "sub": "Só algumas perguntas antes da pesquisa"
       },
       "browserNotSupported": "Navegador não compatível",
       "invalidZip": "Informe um CEP válido."

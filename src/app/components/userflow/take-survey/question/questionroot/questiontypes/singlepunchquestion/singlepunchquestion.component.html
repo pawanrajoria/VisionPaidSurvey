@@ -1,14 +1,13 @@
 <div [formGroup]="form" *ngIf="!!form && !!form.controls[field.qKey]">
-  <mat-form-field appearance="fill" style="width:100%" *ngIf="field.qAnswers.length>10" subscriptSizing="dynamic">
-    <mat-label>{{ 'app.common.search' | translate }}</mat-label>
-    <input matInput [formControlName]="field.searchingVariable" [placeholder]="'app.common.search' | translate" />
-    <mat-icon class='search-icon' color="primary" matPrefix>search</mat-icon>
-  </mat-form-field>
+  <div class="search-box" *ngIf="field.qAnswers.length>10">
+    <mat-icon>search</mat-icon>
+    <input type="text" [formControlName]="field.searchingVariable" [placeholder]="'app.common.search' | translate" />
+  </div>
   <div class="fixed-height-container">
-    <mat-radio-group color="primary" class="example-radio-group" [formControlName]="field.qKey">
+    <mat-radio-group color="primary" class="option-list" [formControlName]="field.qKey">
       @for (opt of field.qAnswers | searchQuestion: form.controls['searchingVariable'].value;track opt) {
-      <mat-radio-button class="example-radio-button" [checked]="opt.isChecked" [value]="opt.preCode">
-        {{opt.text}}</mat-radio-button>
+      <mat-radio-button class="option-card" [class.selected]="form.controls[field.qKey].value === opt.preCode"
+        [checked]="opt.isChecked" [value]="opt.preCode">{{opt.text}}</mat-radio-button>
       }
     </mat-radio-group>
   </div>

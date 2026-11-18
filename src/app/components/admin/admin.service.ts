@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 import { ConfigService } from "../../config.service";
 import { BACKGROUND } from "../home/engagement/engagement.service";
-import { AcquisitionChannelDto, AdminActivityPeriodDto, ExchangeFunnelDto, AdminBonusReportDto, AdminEarningsSummaryDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserListDto, BulkUserActionResultDto, DirectOfferAdminListDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest, SendNotificationResult } from "./admin.vm";
+import { AcquisitionChannelDto, AdminActivityPeriodDto, ExchangeFunnelDto, SurveyAlertRunDto, SurveyAlertStatusDto, AdminBonusReportDto, AdminEarningsSummaryDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserListDto, BulkUserActionResultDto, DirectOfferAdminListDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest, SendNotificationResult, AdminScreenerHistoryDto } from "./admin.vm";
 
 @Injectable({ providedIn: 'root' })
 export class AdminService {
@@ -50,6 +50,12 @@ export class AdminService {
         return await firstValueFrom(this.http.get<AdminUserDetailDto>(`${this.base}users/${userId}`));
     }
 
+    /** The member's survey attempts with every screener question and answer, plus their saved profile answers. */
+    async getUserSurveyAnswers(userId: number, days = 90): Promise<AdminScreenerHistoryDto> {
+        const params = new HttpParams().set('days', days);
+        return await firstValueFrom(this.http.get<AdminScreenerHistoryDto>(`${this.base}users/${userId}/survey-answers`, { params }));
+    }
+
     /** Which bonus was paid to which user in the period (day | week | month | year). */
     async getBonusReport(period: string): Promise<AdminBonusReportDto> {
         const params = new HttpParams().set('period', period);
@@ -60,6 +66,17 @@ export class AdminService {
     async getEarningsSummary(period: string): Promise<AdminEarningsSummaryDto> {
         const params = new HttpParams().set('period', period);
         return await firstValueFrom(this.http.get<AdminEarningsSummaryDto>(this.base + "earnings-summary", { params }));
+    }
+
+    /** Survey match alerts: settings of the daily job and what it sent in the last 7 days. */
+    async getSurveyAlerts(): Promise<SurveyAlertStatusDto> {
+        return await firstValueFrom(this.http.get<SurveyAlertStatusDto>(this.base + "survey-alerts"));
+    }
+
+    /** dryRun = true lists who would get which survey; false sends today's alerts now. */
+    async runSurveyAlerts(dryRun: boolean): Promise<SurveyAlertRunDto> {
+        const params = new HttpParams().set('dryRun', dryRun);
+        return await firstValueFrom(this.http.post<SurveyAlertRunDto>(this.base + "survey-alerts/run", {}, { params }));
     }
 
     /** Members' clicks on the survey exchange and what became of them, per platform and survey. */

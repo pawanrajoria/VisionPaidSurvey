@@ -26,6 +26,10 @@
   }
 }
 
+.two-row-grid.one-row {
+  grid-template-rows: auto;
+}
+
 // TOP FILTERS
 .top-filters-container {
   display: flex;

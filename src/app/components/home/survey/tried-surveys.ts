@@ -42,14 +42,24 @@ export function markSurveyTried(survey: SurveyLike) {
 }
 
 /**
- * The best survey to start from an already ranked list: the profiling survey when it is there, else the first one
- * not opened in the last 24 hours. The router entry ("Hot") routes to a new client survey each time, so it is not
- * skipped. Falls back to the top of the list when everything was tried.
+ * Our own exchange inventory: links that go through our exchange carry its survey token (SR). "Start best survey"
+ * only ever uses these, never publisher inventory (CPX and other partner surveys stay in the list for manual picks).
+ */
+export function isOwnInventory(survey: SurveyLike): boolean {
+    return !!survey.isProfileSurvey || /[?&]SR=/i.test(survey.clickUrl ?? '');
+}
+
+/**
+ * The best survey to start from an already ranked list, from our own inventory only: the profiling survey when it is
+ * there, else the first one not opened in the last 24 hours. The router entry ("Hot") routes to a new client survey
+ * each time, so it is not skipped. Falls back to the top own survey when every one was tried; undefined when the
+ * list has no own survey at all.
  */
 export function pickBestSurvey<T extends SurveyLike>(ranked: T[]): T | undefined {
-    if (!ranked.length) return undefined;
-    const profile = ranked.find(s => s.isProfileSurvey);
+    const own = ranked.filter(isOwnInventory);
+    if (!own.length) return undefined;
+    const profile = own.find(s => s.isProfileSurvey);
     if (profile) return profile;
     const tried = read();
-    return ranked.find(s => s.isHot || !tried[surveyKey(s)]) ?? ranked[0];
+    return own.find(s => s.isHot || !tried[surveyKey(s)]) ?? own[0];
 }

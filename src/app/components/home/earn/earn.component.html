@@ -251,7 +251,8 @@
                 </div>
             </div>
             <div #surveySlider class="horizontal-scroll-container">
-                <div class="two-row-grid">
+                <!-- Two rows only when there are enough surveys to fill them; with a few, they sit side by side -->
+                <div class="two-row-grid" [class.one-row]="featuredSurveys.length < 6">
                     <div class="survey-card-mini" *ngFor="let item of featuredSurveys"
                         [ngClass]="{'is-blurred': !item.isProfileSurvey && hasProfileSurvey()}"
                         (click)="!item.isProfileSurvey && hasProfileSurvey() ? null : attemptSurvey(item)">

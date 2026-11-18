@@ -1,18 +1,14 @@
 <div class="take-survey-wrapper" [class.is-dialog]="isDialog" [class.page-mode]="!isDialog">
 
-  <!-- Header (Visible in Dialog Mode) -->
+  <!-- Header (Visible in Dialog Mode): same layout as the partner screeners -->
   <div class="dialog-header" *ngIf="isDialog">
-    <div class="header-left">
-      <mat-icon class="header-icon">badge</mat-icon>
-      <div>
-        <h3 class="header-title">{{ 'app.survey.screener.title' | translate }}</h3>
-        <span class="header-subtitle">{{ 'app.survey.screener.sub' | translate }}</span>
-      </div>
-    </div>
+    <span class="header-spacer"></span>
+    <h3 class="header-title">{{ 'app.survey.screener.title' | translate }}</h3>
     <button mat-icon-button (click)="dialogRef?.close()" class="close-btn" [attr.aria-label]="'app.common.close' | translate">
       <mat-icon>close</mat-icon>
     </button>
   </div>
+  <p class="header-subtitle" *ngIf="isDialog">{{ 'app.survey.screener.sub' | translate }}</p>
 
   <!-- Main Body / Question Area -->
   <div class="survey-body-container" [class.dialog-scroll-body]="isDialog">

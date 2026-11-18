@@ -249,8 +249,8 @@
         "start": "COMMENCER CE SONDAGE"
       },
       "screener": {
-        "title": "Sondage de profil",
-        "sub": "Répondez à quelques questions rapides pour trouver des sondages adaptés"
+        "title": "Qualification",
+        "sub": "Juste quelques questions avant le sondage"
       },
       "browserNotSupported": "Navigateur non pris en charge",
       "invalidZip": "Veuillez indiquer un code postal valide."

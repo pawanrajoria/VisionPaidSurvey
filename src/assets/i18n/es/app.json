@@ -249,8 +249,8 @@
         "start": "EMPEZAR ESTA ENCUESTA"
       },
       "screener": {
-        "title": "Encuesta de perfil",
-        "sub": "Responde unas preguntas rápidas para encontrar encuestas adecuadas"
+        "title": "Calificación",
+        "sub": "Solo unas preguntas antes de la encuesta"
       },
       "browserNotSupported": "Navegador no compatible",
       "invalidZip": "Introduce un código postal válido."

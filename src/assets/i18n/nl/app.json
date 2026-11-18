@@ -249,8 +249,8 @@
         "start": "START DEZE ENQUÊTE"
       },
       "screener": {
-        "title": "Profielenquête",
-        "sub": "Beantwoord een paar korte vragen om passende enquêtes te vinden"
+        "title": "Kwalificatie",
+        "sub": "Nog een paar vragen voor de enquête"
       },
       "browserNotSupported": "Browser wordt niet ondersteund",
       "invalidZip": "Voer een geldige postcode in."

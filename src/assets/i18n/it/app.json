@@ -249,8 +249,8 @@
         "start": "INIZIA QUESTO SONDAGGIO"
       },
       "screener": {
-        "title": "Sondaggio di profilazione",
-        "sub": "Rispondi ad alcune domande veloci per trovare i sondaggi adatti"
+        "title": "Qualificazione",
+        "sub": "Solo qualche domanda prima del sondaggio"
       },
       "browserNotSupported": "Browser non supportato",
       "invalidZip": "Inserisci un CAP valido."

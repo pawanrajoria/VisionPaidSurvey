@@ -249,8 +249,8 @@
         "start": "UMFRAGE STARTEN"
       },
       "screener": {
-        "title": "Profil-Umfrage",
-        "sub": "Beantworten Sie ein paar kurze Fragen, um passende Umfragen zu erhalten"
+        "title": "Qualifizierung",
+        "sub": "Nur ein paar Fragen vor der Umfrage"
       },
       "browserNotSupported": "Browser wird nicht unterstützt",
       "invalidZip": "Bitte gib eine gültige Postleitzahl ein."

@@ -5,7 +5,7 @@ import { AdminService } from "./admin.service";
 import { AdminDashboardComponent } from "./dashboard/dashboard.component";
 import { MessageService } from "../layout/message/message.service";
 import { MessageVM } from "../layout/message/message.vm";
-import { AcquisitionChannelDto, AdminActivityPeriodDto, ExchangeFunnelDto, FunnelCounts, AdminBonusReportDto, AdminEarningsSummaryDto, AdminEarningItemDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserDto, DirectOfferAdminDto, DirectOfferAdminListDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest } from "./admin.vm";
+import { AcquisitionChannelDto, AdminActivityPeriodDto, ExchangeFunnelDto, FunnelCounts, SurveyAlertRunDto, SurveyAlertStatusDto, AdminBonusReportDto, AdminEarningsSummaryDto, AdminEarningItemDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserDto, DirectOfferAdminDto, DirectOfferAdminListDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest, AdminScreenerHistoryDto } from "./admin.vm";
 import { ChatService, IAdminChatMessage } from "../home/chat/chat.service";
 
 type AdminTab = 'overview' | 'offers' | 'network' | 'payouts' | 'users' | 'chat' | 'notifications' | 'earnings' | 'traffic' | 'funnel';
@@ -96,7 +96,7 @@ export class AdminComponent extends BaseComponent implements OnInit {
         if (tab === 'payouts' && !this.payoutsLoaded) await this.loadPayouts();
         if (tab === 'users' && !this.usersLoaded) await this.loadUsers();
         if (tab === 'chat') await this.loadChat();
-        if (tab === 'notifications') await this.loadNotifications();
+        if (tab === 'notifications') { await this.loadNotifications(); this.loadSurveyAlerts(); }
         if (tab === 'earnings' && !this.bonusReport) await this.loadBonusReport();
         if (tab === 'traffic' && !this.acquisition) await this.loadAcquisition();
         if (tab === 'funnel' && !this.funnel) await this.loadFunnel();
@@ -107,10 +107,16 @@ export class AdminComponent extends BaseComponent implements OnInit {
     detailLoading = false;
     detailFilter: 'all' | 'earning' | 'rejection' | 'bonus' = 'all';
 
+    surveyAnswers: AdminScreenerHistoryDto | null = null;
+    surveyAnswersLoading = false;
+    openAttempts = new Set<number>();
+    private surveyAnswersUserId = 0;
+
     async openUser(userId: number) {
         this.detailLoading = true;
         this.detailFilter = 'all';
         this.detail = null;
+        this.loadSurveyAnswers(userId);
         try {
             this.detail = await this.adminService.getUserDetail(userId);
         } catch { /* the interceptor already showed the reason */ } finally {
@@ -118,7 +124,51 @@ export class AdminComponent extends BaseComponent implements OnInit {
         }
     }
 
+    /** Screener questions and answers come from the exchange (a few seconds): loaded beside the detail, not before it. */
+    private async loadSurveyAnswers(userId: number) {
+        this.surveyAnswersUserId = userId;
+        this.surveyAnswers = null;
+        this.openAttempts.clear();
+        this.surveyAnswersLoading = true;
+        try {
+            const result = await this.adminService.getUserSurveyAnswers(userId);
+            if (this.surveyAnswersUserId !== userId) return;   // another user was opened meanwhile
+            this.surveyAnswers = result;
+            // The newest attempt that has answers starts open.
+            const first = result.attempts.find(a => a.answers.length > 0);
+            if (first) this.openAttempts.add(first.respondentId);
+        } catch { /* the interceptor already showed the reason */ } finally {
+            if (this.surveyAnswersUserId === userId) this.surveyAnswersLoading = false;
+        }
+    }
+
+    toggleAttempt(id: number) {
+        if (this.openAttempts.has(id)) this.openAttempts.delete(id); else this.openAttempts.add(id);
+    }
+
+    /** Exchange status of a survey attempt (CommonStatusEnum). */
+    attemptStatus(statusId: number): { label: string; kind: string } {
+        switch (statusId) {
+            case 0: return { label: 'Started', kind: 'neutral' };
+            case 1: return { label: 'Complete', kind: 'earning' };
+            case 2: case 8: return { label: 'Security terminate', kind: 'rejection' };
+            case 3: return { label: 'Screened out', kind: 'rejection' };
+            case 7: return { label: 'Client terminate', kind: 'rejection' };
+            case 9: return { label: 'Dropped / in survey', kind: 'neutral' };
+            case 10: case 11: return { label: 'Over quota', kind: 'bonus' };
+            case 4: return { label: 'Reconciled', kind: 'rejection' };
+            default: return { label: `Status ${statusId}`, kind: 'neutral' };
+        }
+    }
+
+    platformName(vendorId: number): string {
+        return vendorId === 13 ? 'Android' : vendorId === 28 ? 'iOS' : 'Web';
+    }
+
     closeUser() {
+        this.surveyAnswersUserId = 0;
+        this.surveyAnswers = null;
+        this.surveyAnswersLoading = false;
         this.detail = null;
         this.detailLoading = false;
     }
@@ -514,6 +564,28 @@ export class AdminComponent extends BaseComponent implements OnInit {
     }
 
     // ───────────── Notifications ─────────────
+    // ───────────── Survey match alerts (Notifications tab) ─────────────
+    surveyAlerts: SurveyAlertStatusDto | null = null;
+    alertRun: SurveyAlertRunDto | null = null;
+    alertsBusy = false;
+
+    async loadSurveyAlerts() {
+        try {
+            this.surveyAlerts = await this.adminService.getSurveyAlerts();
+        } catch { /* the interceptor already showed the reason */ }
+    }
+
+    async runSurveyAlerts(dryRun: boolean) {
+        if (this.alertsBusy) return;
+        if (!dryRun && !this.win?.confirm('Send today\'s survey alerts now? Each member gets at most one alert a day.')) return;
+        this.alertsBusy = true;
+        try {
+            this.alertRun = await this.adminService.runSurveyAlerts(dryRun);
+            if (!dryRun) await this.loadSurveyAlerts();
+        } catch { /* the interceptor already showed the reason */ }
+        finally { this.alertsBusy = false; }
+    }
+
     async loadNotifications() {
         this.notificationError = '';
         try {

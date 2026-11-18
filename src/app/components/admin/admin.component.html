@@ -663,6 +663,102 @@
                     </tbody>
                 </table>
             </div>
+
+            <!-- ═════════ SURVEY MATCH ALERTS (daily push) ═════════ -->
+            <div class="section-head alerts-head">
+                <div>
+                    <h2 class="sub-head">Survey match alerts</h2>
+                    <p class="hint">Once a day the API pushes each recently active member their best matching survey ("A $0.85 survey (12 min)
+                        matches your profile"), only when it is worth it, and at most once a day per member.</p>
+                </div>
+                <button type="button" class="btn ghost" (click)="loadSurveyAlerts()"><mat-icon>refresh</mat-icon> Refresh</button>
+            </div>
+
+            @if (surveyAlerts; as a) {
+            @if (!a.tablesReady) {
+            <p class="notice error">Survey alerts are not set up yet. Run DatabaseScripts/016_survey_alerts.sql on the database first.</p>
+            }
+            <div class="kpi-grid">
+                <div class="kpi">
+                    <span class="kpi-label">Daily job</span>
+                    <span class="kpi-value" [class.money-pos]="a.settings.enabled" [class.money-neg]="!a.settings.enabled">{{ a.settings.enabled ? 'On' : 'Off' }}</span>
+                    <span class="kpi-sub">{{ a.settings.enabled ? 'runs at ' + a.settings.hourUtc + ':00 UTC' : 'set SurveyAlerts:Enabled = true in appsettings' }}</span>
+                </div>
+                <div class="kpi">
+                    <span class="kpi-label">Sent today</span>
+                    <span class="kpi-value">{{ a.sentToday | number }}</span>
+                    <span class="kpi-sub">up to {{ a.settings.maxMembersPerRun }} members checked per run</span>
+                </div>
+                <div class="kpi">
+                    <span class="kpi-label">Only surveys that</span>
+                    <span class="kpi-value small-value">≥ ${{ a.settings.minUsdPayout | number:'1.2-2' }} · ≤ {{ a.settings.maxLoi }} min</span>
+                    <span class="kpi-sub">convert ≥ {{ a.settings.minConversionPercent }}% · members active in {{ a.settings.activeWithinDays }} days</span>
+                </div>
+            </div>
+
+            <div class="alerts-actions">
+                <button type="button" class="btn ghost" [disabled]="alertsBusy || !a.tablesReady" (click)="runSurveyAlerts(true)">
+                    <mat-icon>visibility</mat-icon> Preview today's alerts
+                </button>
+                <button type="button" class="btn" [disabled]="alertsBusy || !a.tablesReady" (click)="runSurveyAlerts(false)">
+                    <mat-icon>send</mat-icon> Send now
+                </button>
+                @if (alertsBusy) { <span class="hint">Checking each member's live surveys… this can take a minute.</span> }
+            </div>
+
+            @if (alertRun; as r) {
+            <p class="hint">
+                {{ r.dryRun ? 'Preview' : 'Sent' }}: {{ r.candidates }} members checked · {{ r.items.length }} with a good match ·
+                {{ r.noMatch }} without one@if (!r.dryRun) { · {{ r.sent }} sent · {{ r.failed }} failed }
+                @if (r.message) { · {{ r.message }} }
+            </p>
+            @if (r.items.length) {
+            <div class="panel table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Member</th><th>Platform</th><th class="num">Payout</th><th class="num">Length</th><th>Message</th>@if (!r.dryRun) { <th>Result</th> }</tr>
+                    </thead>
+                    <tbody>
+                        @for (i of r.items; track i.userId) {
+                        <tr>
+                            <td class="cell-main">#{{ i.userId }}</td>
+                            <td>{{ i.platform }}</td>
+                            <td class="num">${{ i.usdPayout | number:'1.2-2' }}</td>
+                            <td class="num">{{ i.loi }} min</td>
+                            <td><strong>{{ i.title }}</strong><br><span class="hint">{{ i.body }}</span></td>
+                            @if (!r.dryRun) { <td [class.money-neg]="!!i.error">{{ i.error ? 'Failed' : 'Sent' }}</td> }
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            }
+            }
+
+            <h3 class="sub-head">Sent in the last 7 days</h3>
+            <div class="panel table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>When</th><th>Member</th><th>Platform</th><th class="num">Payout</th><th class="num">Length</th></tr>
+                    </thead>
+                    <tbody>
+                        @for (h of a.recent; track h.userId + h.createdAt) {
+                        <tr>
+                            <td>{{ h.createdAt | date:'d MMM, HH:mm' }}</td>
+                            <td class="cell-main">{{ h.fullName || ('#' + h.userId) }}<br><span class="hint">{{ h.email }}</span></td>
+                            <td>{{ h.platform }}</td>
+                            <td class="num">${{ h.usdPayout | number:'1.2-2' }}</td>
+                            <td class="num">{{ h.loi }} min</td>
+                        </tr>
+                        } @empty {
+                        <tr><td colspan="5" class="empty">No survey alerts sent in the last 7 days.</td></tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            } @else {
+            <p class="hint">Loading survey alerts…</p>
+            }
         </section>
         }
 
@@ -1054,6 +1150,49 @@
                 </tbody>
             </table>
         </div>
+
+        <!-- Survey screener questions and answers (exchange), newest attempt first -->
+        <div class="section-head compact">
+            <h3>Survey answers</h3>
+            <span class="hint">last 90 days · web, Android, iOS</span>
+        </div>
+        @if (surveyAnswersLoading) {
+        <p class="hint">Loading survey answers…</p>
+        } @else if (surveyAnswers) {
+        @if (surveyAnswers.profile.length) {
+        <div class="panel">
+            <h3>Saved profile</h3>
+            @for (p of surveyAnswers.profile; track p.qualificationId) {
+            <div class="split-row"><span>{{ p.question }}</span><strong>{{ p.answer || '—' }}</strong></div>
+            }
+        </div>
+        }
+        <div class="panel attempts">
+            @for (a of surveyAnswers.attempts; track a.respondentId) {
+            <div class="attempt">
+                <button type="button" class="attempt-head" (click)="toggleAttempt(a.respondentId)"
+                    [attr.aria-expanded]="openAttempts.has(a.respondentId)">
+                    <mat-icon>{{ openAttempts.has(a.respondentId) ? 'expand_less' : 'expand_more' }}</mat-icon>
+                    <span class="attempt-name">
+                        {{ a.surveyName }} <small>#{{ a.surveyId }}</small>
+                        @if (a.isProfiling) { <span class="tag" data-kind="bonus">Profiling</span> }
+                    </span>
+                    <span class="tag" [attr.data-kind]="attemptStatus(a.statusId).kind">{{ attemptStatus(a.statusId).label }}</span>
+                    <span class="cell-sub">{{ platformName(a.vendorId) }} · {{ a.createdDate | date:'d MMM y, HH:mm' }} · {{ a.answers.length }} answer{{ a.answers.length === 1 ? '' : 's' }}</span>
+                </button>
+                @if (openAttempts.has(a.respondentId)) {
+                @for (q of a.answers; track q.qualificationId) {
+                <div class="qa-row"><span class="q">{{ q.question }}</span><strong class="ans">{{ q.answer || '—' }}</strong></div>
+                } @empty {
+                <p class="hint qa-row">No screener questions were asked (sent straight to the survey).</p>
+                }
+                }
+            </div>
+            } @empty {
+            <p class="hint">No survey attempts in the last 90 days.</p>
+            }
+        </div>
+        }
         } @else {
         <p class="hint">Loading…</p>
         }

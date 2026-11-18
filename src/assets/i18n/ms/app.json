@@ -249,8 +249,8 @@
         "start": "MULAKAN TINJAUAN INI"
       },
       "screener": {
-        "title": "Tinjauan Profil",
-        "sub": "Jawab beberapa soalan ringkas untuk memadankan tinjauan"
+        "title": "Kelayakan",
+        "sub": "Hanya beberapa soalan sebelum tinjauan"
       },
       "browserNotSupported": "Pelayar tidak disokong",
       "invalidZip": "Sila berikan poskod yang sah."

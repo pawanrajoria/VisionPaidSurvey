@@ -1,4 +1,5 @@
 import { SUPPORTED_LOCALE_CODES } from './country-langiuage-list';
+import { rememberSurveyReturnPath } from './survey-return';
 import { inject } from '@angular/core';
 import { BrowserService } from './browser.service';
 import { UserService } from './components/layout/user.service';
@@ -42,6 +43,8 @@ export abstract class BaseSurveyComponent {
     }
 
     async startSurvey(item: ISurveyVM) {
+        // If the partner screens the member out, the survey tab comes back to this page with a popup.
+        rememberSurveyReturnPath(this.win, this.localeRouter.url);
         try {
             if (item.clickUrl.trim().toLowerCase().indexOf('uf.samplevision.com/takesurvey') > 0 ||
                 item.clickUrl.trim().toLowerCase().indexOf('profitpiller.com/survey/takesurvey') > 0
