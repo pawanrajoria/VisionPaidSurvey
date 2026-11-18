@@ -5,10 +5,10 @@ import { AdminService } from "./admin.service";
 import { AdminDashboardComponent } from "./dashboard/dashboard.component";
 import { MessageService } from "../layout/message/message.service";
 import { MessageVM } from "../layout/message/message.vm";
-import { AcquisitionChannelDto, AdminActivityPeriodDto, AdminBonusReportDto, AdminEarningsSummaryDto, AdminEarningItemDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserDto, DirectOfferAdminDto, DirectOfferAdminListDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest } from "./admin.vm";
+import { AcquisitionChannelDto, AdminActivityPeriodDto, ExchangeFunnelDto, FunnelCounts, AdminBonusReportDto, AdminEarningsSummaryDto, AdminEarningItemDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserDto, DirectOfferAdminDto, DirectOfferAdminListDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest } from "./admin.vm";
 import { ChatService, IAdminChatMessage } from "../home/chat/chat.service";
 
-type AdminTab = 'overview' | 'offers' | 'network' | 'payouts' | 'users' | 'chat' | 'notifications' | 'earnings' | 'traffic';
+type AdminTab = 'overview' | 'offers' | 'network' | 'payouts' | 'users' | 'chat' | 'notifications' | 'earnings' | 'traffic' | 'funnel';
 
 const PAYOUT_PENDING = 1, PAYOUT_COMPLETED = 2, PAYOUT_REJECTED = 4;
 const USER_BLOCKED = 3;
@@ -29,7 +29,8 @@ export class AdminComponent extends BaseComponent implements OnInit {
         { id: 'chat', label: 'Chat', icon: 'forum' },
         { id: 'notifications', label: 'Notifications', icon: 'campaign' },
         { id: 'earnings', label: 'Earnings', icon: 'monitoring' },
-        { id: 'traffic', label: 'Traffic sources', icon: 'ads_click' }
+        { id: 'traffic', label: 'Traffic sources', icon: 'ads_click' },
+        { id: 'funnel', label: 'Survey funnel', icon: 'filter_alt' }
     ];
     tab: AdminTab = 'overview';
     busy = false;
@@ -98,6 +99,7 @@ export class AdminComponent extends BaseComponent implements OnInit {
         if (tab === 'notifications') await this.loadNotifications();
         if (tab === 'earnings' && !this.bonusReport) await this.loadBonusReport();
         if (tab === 'traffic' && !this.acquisition) await this.loadAcquisition();
+        if (tab === 'funnel' && !this.funnel) await this.loadFunnel();
     }
 
     // ───────────── User detail drawer ─────────────
@@ -134,6 +136,37 @@ export class AdminComponent extends BaseComponent implements OnInit {
         if (years) parts.push(`${years} year${years === 1 ? '' : 's'}`);
         if (months) parts.push(`${months} month${months === 1 ? '' : 's'}`);
         return parts.join(' ') || `${days} days`;
+    }
+
+    // ───────────── Survey funnel (exchange) ─────────────
+    funnel: ExchangeFunnelDto | null = null;
+    funnelDays = 7;
+    funnelSort: 'clicks' | 'completes' | 'epc' | 'conversion' = 'clicks';
+    readonly funnelPeriods = [
+        { value: 1, label: 'Today' },
+        { value: 7, label: '7 days' },
+        { value: 30, label: '30 days' }
+    ];
+    readonly platformNames: Record<number, string> = { 13: 'Android app', 18: 'Website', 28: 'iOS app' };
+
+    async loadFunnel(days = this.funnelDays) {
+        this.funnelDays = days;
+        try {
+            this.funnel = await this.adminService.getSurveyFunnel(days);
+        } catch { /* the interceptor already showed the reason */ }
+    }
+
+    get funnelSurveys() {
+        const rows = [...(this.funnel?.surveys ?? [])];
+        const key = this.funnelSort;
+        return rows.sort((a, b) => key === 'epc' ? this.epc(b) - this.epc(a)
+            : key === 'conversion' ? this.pct(b.completes, b.clicks) - this.pct(a.completes, a.clicks)
+            : b[key] - a[key]);
+    }
+
+    /** Member payout earned per click - what a click on this survey is worth to a member. */
+    epc(c: FunnelCounts): number {
+        return c.clicks > 0 ? c.memberPayout / c.clicks : 0;
     }
 
     // ───────────── Traffic sources (ad channels) ─────────────

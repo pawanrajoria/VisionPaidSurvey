@@ -149,7 +149,8 @@
             </div>
         </div>
         <div class="row">
-            <div [class]="otherOffers.length>0? 'col-lg-6' : 'col-12'">
+            <!-- Side by side when both have offers; a section without offers is hidden and the other takes the full row -->
+            <div [class]="offersSideBySide ? 'col-lg-6' : 'col-12'" *ngIf="isGamingOfferLoading || gamingOffers.length > 0">
                 <div class="section-container">
                     <div class="section-header">
                         <div class="section-title">
@@ -172,7 +173,12 @@
                         }@else{
                         <mat-card class="offer-card" *ngFor="let offer of gamingOffers"
                             (click)="openOfferDialog(offer)">
-                            <img loading="lazy" mat-card-image [src]="offer.imageUrl" alt="{{offer.offerName}}">
+                            <!-- Some partner offers have no image (CPAMerchant sends none for many): show the initial instead of the alt text -->
+                            @if (offer.imageUrl) {
+                            <img loading="lazy" mat-card-image [src]="offer.imageUrl" alt="{{offer.offerName}}" (error)="offer.imageUrl = null">
+                            } @else {
+                            <div class="offer-img-fallback" aria-hidden="true">{{ (offer.offerName || '?').charAt(0) }}</div>
+                            }
                             <mat-card-content class="card-content">
                                 <h3>{{offer.offerName}}</h3>
                                 <p>{{offer.providerName}}</p>
@@ -187,7 +193,7 @@
 
                 </div>
             </div>
-            <div class="col-lg-6" *ngIf="otherOffers.length > 0">
+            <div [class]="offersSideBySide ? 'col-lg-6' : 'col-12'" *ngIf="isOtherOfferLoading || otherOffers.length > 0">
                 <div class="section-container">
                     <div class="section-header">
                         <div class="section-title">
@@ -208,7 +214,12 @@
                         <app-empty-skelten></app-empty-skelten>
                         }@else{
                         <mat-card class="offer-card" *ngFor="let offer of otherOffers" (click)="openOfferDialog(offer)">
-                            <img loading="lazy" mat-card-image [src]="offer.imageUrl" alt="{{offer.offerName}}">
+                            <!-- Some partner offers have no image (CPAMerchant sends none for many): show the initial instead of the alt text -->
+                            @if (offer.imageUrl) {
+                            <img loading="lazy" mat-card-image [src]="offer.imageUrl" alt="{{offer.offerName}}" (error)="offer.imageUrl = null">
+                            } @else {
+                            <div class="offer-img-fallback" aria-hidden="true">{{ (offer.offerName || '?').charAt(0) }}</div>
+                            }
                             <mat-card-content class="card-content">
                                 <h3>{{offer.offerName}}</h3>
                                 <p>{{offer.providerName}}</p>
@@ -228,6 +239,10 @@
             <div class="section-header">
                 <div class="section-title"><mat-icon color="primary">assignment</mat-icon> {{ 'app.earn.featuredSurveys' | translate }}</div>
                 <div class="actions">
+                    <!-- The list is ranked by the API (profile survey first, then best expected earnings per minute) -->
+                    <button mat-flat-button color="primary" class="start-best" (click)="startBestSurvey()">
+                        <mat-icon>bolt</mat-icon> {{ 'app.earn.startBestSurvey' | translate }}
+                    </button>
                     <span class="view-all" [routerLink]="['/', currentLocale, 'app', 'survey']">{{ 'app.common.viewAll' | translate }}</span>
                     <button mat-icon-button
                         (click)="scrollLeft('surveySlider')" [attr.aria-label]="'app.common.scrollLeft' | translate"><mat-icon>chevron_left</mat-icon></button>

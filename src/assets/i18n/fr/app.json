@@ -1,5 +1,11 @@
 {
   "app": {
+    "partnerRating": {
+      "title": "Comment était {{partner}} ?",
+      "subtitle": "Votre note aide les autres membres à choisir les meilleurs partenaires.",
+      "notNow": "Pas maintenant",
+      "thanks": "Merci pour votre note !"
+    },
     "common": {
       "points": "Points",
       "pts": "pts",
@@ -52,6 +58,7 @@
       "gamingOffers": "Offres de jeux",
       "otherOffers": "Autres offres",
       "featuredSurveys": "Sondages à la une",
+      "startBestSurvey": "Commencer le meilleur sondage",
       "topPartners": "Meilleurs partenaires",
       "surveyPartners": "Partenaires de sondages",
       "surveys": "Sondages",

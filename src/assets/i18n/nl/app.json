@@ -1,5 +1,11 @@
 {
   "app": {
+    "partnerRating": {
+      "title": "Hoe was {{partner}}?",
+      "subtitle": "Je beoordeling helpt andere leden de beste partners te kiezen.",
+      "notNow": "Niet nu",
+      "thanks": "Bedankt voor je beoordeling!"
+    },
     "common": {
       "points": "Punten",
       "pts": "ptn",
@@ -52,6 +58,7 @@
       "gamingOffers": "Game-aanbiedingen",
       "otherOffers": "Andere aanbiedingen",
       "featuredSurveys": "Uitgelichte enquêtes",
+      "startBestSurvey": "Start beste enquête",
       "topPartners": "Toppartners",
       "surveyPartners": "Enquêtepartners",
       "surveys": "Enquêtes",

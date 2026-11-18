@@ -13,7 +13,6 @@ import { MessageVM } from "../../layout/message/message.vm";
     styleUrls: ['./signup.component.scss']
 })
 export class SignUpComponent implements OnInit {
-    defaultAmount = "10";
     isAccepted = false;
     isResend = false;
     signUpForm!: FormGroup;

@@ -1,5 +1,11 @@
 {
   "app": {
+    "partnerRating": {
+      "title": "{{partner}} 怎么样？",
+      "subtitle": "你的评分能帮助其他会员选择最好的合作伙伴。",
+      "notNow": "以后再说",
+      "thanks": "感谢你的评分！"
+    },
     "common": {
       "points": "积分",
       "pts": "分",
@@ -52,6 +58,7 @@
       "gamingOffers": "游戏任务",
       "otherOffers": "其他任务",
       "featuredSurveys": "精选调查",
+      "startBestSurvey": "开始最佳调查",
       "topPartners": "热门合作伙伴",
       "surveyPartners": "调查合作伙伴",
       "surveys": "调查",

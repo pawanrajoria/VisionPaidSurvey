@@ -196,7 +196,7 @@
     to { opacity: 1; transform: none; }
 }
 
-/* Priority offers: small cards, ~7 per row on desktop, 3 per row on phones. */
+/* Priority offers: one row of small cards that scrolls sideways, so the section stays short. */
 .priority {
     margin: 0 20px 20px;
     padding: 14px;
@@ -224,19 +224,28 @@
     span { font-size: .75rem; color: #6b7c77; }
 }
 
+// A single row: the cards keep their width and the row scrolls (finger / trackpad / shift+wheel)
+// instead of wrapping onto more rows.
 .po-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    display: flex;
     gap: 10px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    padding: 2px 2px 8px;
+    scrollbar-width: thin;
+    scrollbar-color: #b9e3d2 transparent;
 }
 
 .po-card {
+    flex: 0 0 150px;
+    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: 3px;
     min-width: 0;
-    padding: 10px 8px;
+    padding: 8px 8px;
     border: 1px solid #e6eeeb;
     border-radius: 12px;
     background: #fff;
@@ -411,8 +420,8 @@
 
 @media (max-width: 600px) {
     .priority { margin: 0 10px 16px; padding: 10px; }
-    .po-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
-    .po-card { padding: 8px 4px; }
+    .po-grid { gap: 8px; }
+    .po-card { flex-basis: 118px; padding: 8px 4px; }
     .po-img { width: 36px; height: 36px; }
     .po-task { display: none; } /* the task is in the details popup; phones keep the card short */
 }

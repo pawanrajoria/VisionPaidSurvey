@@ -16,7 +16,6 @@ import { SharedDataService } from "../../../shared.data.service";
 export class ForgotPasswordComponent implements OnInit {
     isSuccess = false;
     userEmail: string = "";
-    defaultAmount = "10";
     constructor(private sharedDataService: SharedDataService, private authService: AuthService,
         private message: MessageService, private router: Router
     ) {

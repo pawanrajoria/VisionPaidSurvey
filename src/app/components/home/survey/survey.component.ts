@@ -5,6 +5,7 @@ import { SurveyService } from "./survey.service";
 import { SurveyInstructionPopupComponent } from "./survey-common-popup/survey-instruction-popup/survey-instruction-popup";
 import { BaseSurveyComponent } from "../../../base.survey.component";
 import { Subject, takeUntil } from "rxjs";
+import { markSurveyTried } from "./tried-surveys";
 
 type SurveySort = 'best' | 'short' | 'most';
 
@@ -123,6 +124,8 @@ export class SurveyComponent extends BaseSurveyComponent implements OnInit, OnDe
     }
 
     async attemptSurvey(item: ISurveyVM) {
+        // Remembered so "Start best survey" on the Earn page moves on to the next match.
+        markSurveyTried(item);
         if (item.isProfileSurvey) {
             this.openSurveyInstruction(item);
         }

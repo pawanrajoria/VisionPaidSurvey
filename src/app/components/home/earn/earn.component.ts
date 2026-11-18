@@ -7,6 +7,9 @@ import { EmptySkeltenComponent } from "./empty-skelten/empty-skelten.component";
 import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
 import { MatDialog, MatDialogConfig, MatDialogRef } from "@angular/material/dialog";
 import { IFrameOfferWallDialog } from "../offer-wall/iframe-offerwall/iframe-offerwall.component";
+import { PartnerRatingService } from "./partner-rating/partner-rating.service";
+import { markSurveyTried, pickBestSurvey } from "../survey/tried-surveys";
+import { PartnerRatingDialogComponent } from "./partner-rating/partner-rating-dialog.component";
 import { BaseComponent } from "../../../base.component";
 import { ISurveyVM } from "../survey/survey.vm";
 import { SurveyFeedBackPopupComponent } from "../survey/survey-common-popup/survey-feedback-popup/survey-feedback-popup";
@@ -57,6 +60,7 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
 
     readonly offerService = inject(OfferService);
     readonly surveyService = inject(SurveyService);
+    readonly partnerRatings = inject(PartnerRatingService);
 
     dialogRef: MatDialogRef<any> | null = null;
 
@@ -87,6 +91,14 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
         this.loadPriorityOffers();
         this.getOffers();
         this.getSurveys();
+        this.loadPartnerRatings();
+    }
+
+    /** Real partner ratings on the cards; on phones, asks about the wall the member just came back from. */
+    private async loadPartnerRatings() {
+        await this.partnerRatings.load(this.surveyService.offerspartners, this.surveyService.surveyspartners);
+        const pending = this.partnerRatings.takePending();
+        if (pending) this.askPartnerRating(pending);
     }
 
     async getOffers() {
@@ -119,9 +131,9 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
         }
         self.isFeaturedSurveyLoading = false;
         if (!!output && !!output.surveys && output.surveys.length > 0) {
-            this.featuredSurveys = output.surveys.sort((a: any, b: any) => {
-                return (b.isProfileSurvey === true ? 1 : 0) - (a.isProfileSurvey === true ? 1 : 0);
-            });
+            // Already ranked by the API (profile survey first, then best expected earnings per minute);
+            // keep that order so "Start best survey" opens the first one.
+            this.featuredSurveys = output.surveys;
         }
     }
 
@@ -231,17 +243,37 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
 
         this.filteredOffers = this.offers
             .filter(item => {
-                // An offer without device information is not restricted to a platform.
+                // An offer without device information, or tagged "All", is not restricted to a platform.
                 const devices = item.device ?? [];
                 const matchesCategory =
                     this.selectedDeviceType.length === 0 || devices.length === 0 ||
-                    devices.some(cat => this.selectedDeviceType.includes(cat));
+                    devices.some(cat => cat?.toLowerCase() === 'all' || this.selectedDeviceType.includes(cat));
 
                 const matchesText = item.offerName?.toLowerCase().includes(text);
                 return matchesCategory && matchesText;
             });
-        this.gamingOffers = this.filteredOffers;
-        this.otherOffers = this.filteredOffers.filter(offer => offer?.payoutType?.toLowerCase() == 'cpi' || offer?.payoutType?.toLowerCase() == 'survey');
+        // Direct network (CPAMerchant) offers are shown only in the Priority offers row, not in these sections.
+        const sectionOffers = this.filteredOffers.filter(offer => !offer.isPriority && offer.providerName !== 'CPAMerchant');
+        // Games in Gaming Offers, everything else (installs, sign-ups, surveys) in Other offers. Before, Other offers
+        // only took payoutType "cpi" / "survey", which most networks never send, so it stayed hidden and every
+        // offer landed in Gaming Offers.
+        this.gamingOffers = sectionOffers.filter(offer => this.isGameOffer(offer));
+        this.otherOffers = sectionOffers.filter(offer => !this.isGameOffer(offer));
+    }
+
+    /**
+     * Gaming and Other offers share one row (half each) whenever both have offers. A section without offers is
+     * hidden and the other one then takes the full row.
+     */
+    get offersSideBySide(): boolean {
+        return this.gamingOffers.length > 0 && this.otherOffers.length > 0;
+    }
+
+    /** BitLabs flags games; BitLabs, Lootably and Notik send categories such as "Gaming". */
+    private isGameOffer(offer: IOfferResponseDto): boolean {
+        return !!offer.isGame
+            || (offer.offerCategory ?? []).some(c => /gam(e|ing)/i.test(c ?? ''))
+            || /\bgame\b/i.test(offer.offerName ?? '');
     }
 
     scrollLeft(sliderId: string) {
@@ -296,6 +328,8 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
             // Phones: open the offerwall as the page itself, not in a frame. Inside a frame a game's Play /
             // Install link (Google Play refuses frames, app-store links are blocked from frames) did nothing.
             if (isPhone && this.isBrowser && this.win) {
+                // Asked "How was {partner}?" when the member comes back to this page.
+                this.partnerRatings.rememberPending(partner);
                 this.win.location.href = output.iFrameUrl;
                 return;
             }
@@ -329,12 +363,33 @@ export class EarnComponent extends BaseSurveyComponent implements OnInit {
                 };
 
                 this.dialogRef = this.dialog.open(IFrameOfferWallDialog, config);
+                this.dialogRef.afterClosed().subscribe(() => this.askPartnerRating(partner));
             }
         }
 
     }
 
+    /** "How was {partner}?" after the member closes its wall (at most once a month per partner). */
+    private askPartnerRating(partner: { id: number; name: string }) {
+        if (!partner?.id || !this.partnerRatings.shouldAsk(partner.id)) return;
+        this.partnerRatings.markAsked(partner.id);
+        this.dialog.open(PartnerRatingDialogComponent, {
+            data: { id: partner.id, name: partner.name },
+            width: '360px',
+            maxWidth: '92vw',
+            autoFocus: false,
+            panelClass: 'partner-rating-dialog'
+        });
+    }
+
+    /** "Start best survey": the top-ranked survey the member has not opened in the last 24 hours. */
+    startBestSurvey() {
+        const best = pickBestSurvey(this.featuredSurveys);
+        if (best) this.attemptSurvey(best);
+    }
+
     async attemptSurvey(item: ISurveyVM) {
+        markSurveyTried(item);
         if (item.isProfileSurvey) {
             this.openSurveyInstruction(item);
         }

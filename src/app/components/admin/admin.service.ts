@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 import { ConfigService } from "../../config.service";
 import { BACKGROUND } from "../home/engagement/engagement.service";
-import { AcquisitionChannelDto, AdminActivityPeriodDto, AdminBonusReportDto, AdminEarningsSummaryDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserListDto, BulkUserActionResultDto, DirectOfferAdminListDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest, SendNotificationResult } from "./admin.vm";
+import { AcquisitionChannelDto, AdminActivityPeriodDto, ExchangeFunnelDto, AdminBonusReportDto, AdminEarningsSummaryDto, AdminOverviewDto, AdminPayoutDto, AdminUserDetailDto, AdminUserListDto, BulkUserActionResultDto, DirectOfferAdminListDto, NotificationAudienceDto, PriorityOfferAdminDto, SendNotificationRequest, SendNotificationResult } from "./admin.vm";
 
 @Injectable({ providedIn: 'root' })
 export class AdminService {
@@ -60,6 +60,12 @@ export class AdminService {
     async getEarningsSummary(period: string): Promise<AdminEarningsSummaryDto> {
         const params = new HttpParams().set('period', period);
         return await firstValueFrom(this.http.get<AdminEarningsSummaryDto>(this.base + "earnings-summary", { params }));
+    }
+
+    /** Members' clicks on the survey exchange and what became of them, per platform and survey. */
+    async getSurveyFunnel(days: number): Promise<ExchangeFunnelDto> {
+        const params = new HttpParams().set('days', days);
+        return await firstValueFrom(this.http.get<ExchangeFunnelDto>(this.base + "survey-funnel", { params }));
     }
 
     /** Members who signed up in the last `days` days, grouped by the ad / campaign they came from. */

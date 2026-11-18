@@ -148,6 +148,13 @@ export interface AdminAmountByTypeDto {
 
 export interface AdminUserDetailDto {
     user: AdminUserDto;
+    /** Network revenue this member brought in after chargebacks (USD, all time; profiling survey = 0). */
+    revenue: number;
+    revenueReversed: number;
+    /** Earnings after reversals plus bonuses credited to the member. */
+    paidToMember: number;
+    /** revenue - paidToMember */
+    profit: number;
     bonuses: AdminAmountByTypeDto[];
     earningsBySource: AdminAmountByTypeDto[];
     history: AdminEarningItemDto[];
@@ -367,4 +374,35 @@ export interface AcquisitionChannelDto {
     revenue30Days: number;
     revenue90Days: number;
     profit: number;
+}
+
+/** Members' funnel on the survey exchange (GET admin/survey-funnel). Money is USD. */
+export interface FunnelCounts {
+    clicks: number;
+    completes: number;
+    terminates: number;
+    overQuota: number;
+    securityTerminates: number;
+    dropped: number;
+    reconciled: number;
+    revenue: number;
+    memberPayout: number;
+}
+export interface PlatformFunnelDto extends FunnelCounts {
+    supplierId: number;
+    members: number;
+}
+export interface SurveyFunnelDto extends FunnelCounts {
+    surveyId: number;
+    surveyName: string;
+    clientName: string;
+    countryCode: string;
+    surveyLoi: number;
+    surveyIr: number;
+    medianLoiMinutes: number;
+}
+export interface ExchangeFunnelDto {
+    fromUtc: string;
+    platforms: PlatformFunnelDto[];
+    surveys: SurveyFunnelDto[];
 }

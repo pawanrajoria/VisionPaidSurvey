@@ -1,5 +1,11 @@
 {
   "app": {
+    "partnerRating": {
+      "title": "How was {{partner}}?",
+      "subtitle": "Your rating helps other members pick the best partners.",
+      "notNow": "Not now",
+      "thanks": "Thanks for your rating!"
+    },
     "common": {
       "points": "Points",
       "pts": "pts",
@@ -52,6 +58,7 @@
       "gamingOffers": "Gaming Offers",
       "otherOffers": "Other Offers",
       "featuredSurveys": "Featured Surveys",
+      "startBestSurvey": "Start best survey",
       "topPartners": "Top Partners",
       "surveyPartners": "Survey Partners",
       "surveys": "Surveys",

@@ -15,7 +15,6 @@ import { TranslateService } from "@ngx-translate/core";
     styleUrls: ['./reset-password.component.scss']
 })
 export class ResetPasswordComponent implements OnInit {
-    defaultAmount = "10";
     rsetForm!: FormGroup;
 
     constructor(private fb: FormBuilder, private message: MessageService, private authService: AuthService,

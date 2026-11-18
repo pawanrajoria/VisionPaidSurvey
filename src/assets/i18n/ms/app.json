@@ -1,5 +1,11 @@
 {
   "app": {
+    "partnerRating": {
+      "title": "Bagaimana {{partner}}?",
+      "subtitle": "Penilaian anda membantu ahli lain memilih rakan kongsi terbaik.",
+      "notNow": "Bukan sekarang",
+      "thanks": "Terima kasih atas penilaian anda!"
+    },
     "common": {
       "points": "Mata",
       "pts": "mata",
@@ -52,6 +58,7 @@
       "gamingOffers": "Tawaran Permainan",
       "otherOffers": "Tawaran Lain",
       "featuredSurveys": "Tinjauan Pilihan",
+      "startBestSurvey": "Mula tinjauan terbaik",
       "topPartners": "Rakan Kongsi Utama",
       "surveyPartners": "Rakan Kongsi Tinjauan",
       "surveys": "Tinjauan",

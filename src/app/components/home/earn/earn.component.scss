@@ -131,6 +131,19 @@
       background: rgba(255, 255, 255, 0.08);
     }
 
+    // Offer without an image: its initial on a tile the same size as the artwork.
+    .offer-img-fallback {
+      display: grid;
+      place-items: center;
+      width: 100%;
+      aspect-ratio: 1;
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 44px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
     .card-body {
       width: 80px;
       bottom: 0;

@@ -24,7 +24,6 @@ import { FraudService } from "../../../frauddetection.service";
 export class LoginComponent implements OnInit {
     isEmailValidCheck: boolean = false;
     bonusCode: string = '';
-    defaultAmount: string = "10";
 
     loginForm!: FormGroup;
 

@@ -61,8 +61,15 @@ export class FraudService {
             const fp = await this.fpPromise;
             const result = await fp.get();
 
-            // Modern way to handle Observables as Promises in Angular
-            const token = await firstValueFrom(this.recaptcha.execute('survey_action'));
+            // reCAPTCHA is blocked or not loaded yet for some visitors (ad blockers, slow networks): execute() then
+            // threw "Cannot read properties of null (reading 'execute')" and the whole check was skipped, so no
+            // fingerprint was sent either. Without a token the API scores the visitor as unverified (+30 risk).
+            let token = '';
+            try {
+                token = this.recaptcha ? await firstValueFrom(this.recaptcha.execute('survey_action')) : '';
+            } catch {
+                token = '';
+            }
 
             const payload = {
                 fingerprint: result.visitorId,

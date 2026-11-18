@@ -1,5 +1,11 @@
 {
   "app": {
+    "partnerRating": {
+      "title": "{{partner}} कैसा रहा?",
+      "subtitle": "आपकी रेटिंग दूसरे सदस्यों को सबसे अच्छे पार्टनर चुनने में मदद करती है।",
+      "notNow": "अभी नहीं",
+      "thanks": "रेटिंग देने के लिए धन्यवाद!"
+    },
     "common": {
       "points": "पॉइंट्स",
       "pts": "पॉइंट",
@@ -52,6 +58,7 @@
       "gamingOffers": "गेमिंग ऑफ़र",
       "otherOffers": "अन्य ऑफ़र",
       "featuredSurveys": "चुनिंदा सर्वे",
+      "startBestSurvey": "सबसे अच्छा सर्वे शुरू करें",
       "topPartners": "टॉप पार्टनर",
       "surveyPartners": "सर्वे पार्टनर",
       "surveys": "सर्वे",

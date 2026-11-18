@@ -256,18 +256,31 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0;
-    padding: 6px 4px;
+    gap: 2px;
+    padding: 10px 6px;
     border: 0;
     background: none;
     text-align: center;
+    // Figures, not text to copy: a stray drag no longer paints the strip in selection blue.
+    user-select: none;
 
-    & + .stat { border-left: 1px solid #dfe7e4; }
+    & + .stat { border-left: 1px solid rgba(16, 87, 73, 0.12); }
+
+    .stat-icon {
+      width: 22px;
+      height: 22px;
+      font-size: 22px;
+      color: #105749;
+      margin-bottom: 2px;
+
+      &--fire { color: #f97316; }
+    }
 
     strong {
-      font-size: 15px;
+      font-size: 17px;
+      font-weight: 800;
       line-height: 1.2;
-      color: #14231f;
+      color: #105749;
       font-variant-numeric: tabular-nums;
       white-space: nowrap;
     }
@@ -311,7 +324,9 @@
 .account-streak .stat-strip {
   flex: 1 1 100%;
   display: flex;
-  border: 1px solid #dfe7e4;
-  border-radius: 10px;
-  background: #fff;
+  border: 1px solid rgba(16, 87, 73, 0.14);
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f1faf6 0%, #fff8ec 100%);
+  box-shadow: 0 2px 8px rgba(16, 87, 73, 0.06);
+  overflow: hidden;
 }

@@ -62,14 +62,17 @@
                 <div class="account-streak">
                     <div class="stat-strip">
                     <div class="stat">
+                        <mat-icon class="stat-icon" aria-hidden="true">military_tech</mat-icon>
                         <strong>{{ (streak.longest === 1 ? 'app.common.day_one' : 'app.common.day_other') | translate:{ count: streak.longest } }}</strong>
                         <span>{{ 'app.streak.longest' | translate }}</span>
                     </div>
                     <div class="stat">
+                        <mat-icon class="stat-icon stat-icon--fire" aria-hidden="true">local_fire_department</mat-icon>
                         <strong>{{ (streak.current === 1 ? 'app.common.day_one' : 'app.common.day_other') | translate:{ count: streak.current } }}</strong>
                         <span>{{ 'app.streak.current' | translate }}</span>
                     </div>
                     <div class="stat">
+                        <mat-icon class="stat-icon" aria-hidden="true" [style.color]="tier.color">workspace_premium</mat-icon>
                         <strong [style.color]="tier.color">{{ 'app.tier.' + tier.key | translate }}</strong>
                         <span>{{ 'app.tier.tierLevel' | translate:{ level: userBalanceInfo.userLevel || 1 } }}</span>
                     </div>
